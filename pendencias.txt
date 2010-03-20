@@ -1,0 +1,23 @@
+
+CAP 2 ---
+
+# Próximo à Eq. 2.4, detalhar (conforme livro do Wigmans) a relação da resolução com a energia da partícula.
+
+# na seção 2.3.2, final do primeiro parágrafo, buscar onde tirei a informação que no LHC não se espera mais que alguns eventos de interesse por segundo. (ok)
+
+CAP Trigger ---
+
+buscar referências para DSP e FPGA (ok)
+
+
+
+
+
+
+
+
+-----------------------	
+The LEP collider : construction, project status and outlook / Bachy, Gérard ; Hofmann, A ; Myers, S ; Picasso, Emilio ; Plass, Günther
+CERN-LEP-DI-IM-RF-89-44.- Geneva : CERN, 1990 - 15 p. - Published in : Part. Accel.: 26 (1990) , pp. 19-32
+Presented at : 14th International Conference on High-energy Accelerators, pt.1-5, Tsukuba, Japan, 22 - 26 Aug 1989, pp.19-32 
+

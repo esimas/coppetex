@@ -1,0 +1,121 @@
+%%
+%% This is file `example.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% coppe.dtx  (with options: `example')
+%% 
+%% This is a sample monograph which illustrates the use of `coppe' document
+%% class and `coppe-unsrt' BibTeX style.
+%% 
+%% \CheckSum{1311}
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+%%
+\documentclass[dsc,pdftex]{coppe}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath,amssymb}
+
+\makelosymbols
+\makeloabbreviations
+
+\begin{document}
+  \title{Desenvolvimento de um Algoritmo Baseado no Método de Arnoldi para
+  Solução de Problemas de Autovalor Generalizado}
+  \foreigntitle{Solution of Generalized Eigensystems with Algorithms Based on
+  Arnoldi Methods}
+  \author{George Oliveira}{Ainsworth Jr.}
+  \advisor{Prof.}{Carlos}{Magluta}{D.Sc.}
+  \coadvisor{Prof.}{Fernando Luiz Bastos}{Ribeiro}{D.Sc.}
+  \examiner{Prof.}{Alvaro Luiz Gayoso Azeredo Coutinho}{D.Sc.}
+  \examiner{Prof.}{Webe João Mansur}{Ph.D.}
+  \examiner{Prof.}{Paulo Batista Gonçalves}{D.Sc.}
+  \department{PEC}
+  \date{12}{2008}
+
+  \keyword{Problemas de Autovalor}
+  \keyword{Método de Arnoldi}
+  \keyword{Análise Dinâmica}
+  \maketitle
+
+  \frontmatter
+
+  \dedication{À minha mãe pelo dom da vida e pelo amparo ao longo desses anos.\\
+  Às minhas tias Vanete e Vanilde (\emph{in memoriam}).}
+
+  \chapter*{Agradecimentos}
+  Agradeço ao Conselho Nacional de Desenvolvimento Científico e Tecnológico dos
+  Estados Unidos do Brasil (CNPq) pelo suporte financeiro.
+
+  \begin{abstract}
+  Autovalores e autovetores de operadores lineares são importantes para muitas
+  áreas da Matemática Aplicada. Na Engenharia Civil, sobretudo na Engenharia de
+  Estruturas o uso de problemas de autovalor tem fundamental importância, um
+  exemplo típico é a análise dinâmica, onde os autovalores representam as
+  frequências naturais e os autovetores os modos de vibração associados à sua
+  frequência natural correspondente. A crescente demanda da avaliação numérica
+  de forma mais eficiente dessas quantidades, despertou o interesse na busca de
+  novos métodos para a solução de problemas de autovalor, principalmente quando
+  o problema a ser analisado conduz a quantidades pertencentes ao conjunto dos
+  números complexos.
+  \end{abstract}
+
+  \begin{foreignabstract}
+  Eigenvalues and eigenvectors of linear operators are important in many Applied
+  Mathematics areas. In Civil Engineering, especially in Structural Analysis,
+  eigensystems have a fundamental importance. A typical example is in dynamic
+  analysis, where the eigenvalues represent the natural frequencies and
+  eigenvectors the mode shape. The increasing demand for efficient numeric
+  evaluation of eigenvalues and eigenvectors motivated the search for new
+  methods for the solution of complex eigensystems.
+  \end{foreignabstract}
+
+  \tableofcontents
+  \listoffigures
+  \listoftables
+  \printlosymbols
+  \printloabbreviations
+
+  \mainmatter
+  \chapter{Introdução}
+  Em métodos numéricos para obter soluções aproximadas de equações
+  diferenciais, tais como o método dos elementos finitos (MEF)%
+  \abbrev{MEF}{método de elementos finitos}
+  e o método dos volumes finitos (MVF)%
+  \abbrev{MVF}{método de volumes finitos}, o domínio no qual estas
+  equações foram definidas é discretizado em sub-domínios simples
+  denominados \textit{elementos}.
+
+  Denotemos o domínio por $\Omega$%
+  \symbl{$\Omega$}{domínio de definição de uma equação diferencial}
+
+  \chapter{Revisão Bibliográfica}
+  \chapter{Método Proposto}
+  \chapter{Resultados e Discussões}
+  \chapter{Conclusões}
+
+  \backmatter
+  \nocite{*}
+  \bibliographystyle{coppe-unsrt}
+  \bibliography{coppe}
+
+  \appendix
+  \chapter{Código Fonte}
+\end{document}
+%% 
+%%
+%% End of file `example.tex'.

@@ -1,0 +1,154 @@
+%%
+%% This is file `example.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% coppe.dtx  (with options: `example')
+%%
+%% This is a sample monograph which illustrates the use of `coppe' document
+%% class and `coppe-unsrt' BibTeX style.
+%%
+%% \CheckSum{1311}
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+%%
+\documentclass[dsc,pdftex]{coppe}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{epsfig}
+%\usepackage{rotating}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[]{subfigure}
+
+\graphicspath{{./figuras/}} \DeclareGraphicsExtensions{.pdf}
+
+\makelosymbols
+\makeloabbreviations
+
+\begin{document}
+  \title{Análise de Componentes Independentes para uma Filtragem Online
+Baseada em Calorimetria de Alta Energia e com Fina Segmentação}
+  \foreigntitle{Independent Component Analysis for Online Filtering based on High-Energy and Highly Segmented Calorimetry}
+  \author{Eduardo Furtado de} {Simas Filho.}
+  \advisor{Prof.}{José Manoel de}{Seixas}{D.Sc.}
+  \coadvisor{Prof.}{Luiz Pereira}{Calôba}{Dr.Ing.}
+  \examiner{Prof.}{Luiz Wagner Pereira Biscainho}{D.Sc.}
+  \examiner{Prof.}{Marley M. B. Rebuzzi Vellasco}{Ph.D.}
+  \examiner{Prof.}{Leandro Salazar de Paula}{D.Sc.}
+  \examiner{Prof.}{André Ponce de Leon F. de Carvalho}{Ph.D}
+  \department{PEE}
+  \date{06}{2010}
+
+  \keyword{Análise de Componentes Independentes}
+  \keyword{Filtragem Online}
+  \keyword{Calorimetria de Alta Energia}
+  \maketitle
+
+  \frontmatter
+
+  \dedication{Aos meus amores Cléa e Letícia.}
+
+  \chapter*{Agradecimentos}
+
+Agradeço ao Conselho Nacional de Desenvolvimento Científico e Tecnológico
+(CNPq) pelo suporte financeiro concedido em parte do tempo no qual
+este trabalho foi desenvolvido.
+
+Sou profundamente grato ao apoio, motivação e conhecimentos que me
+foram passados por meus orientadores, os professores José Manoel de
+Seixas e Luiz Pereira Calôba, sem os quais este trabalho não
+existiria.
+
+Agradeço aos colegas, professores e funcionários do Laboratório de
+Processamento de Sinais (LPS/COPPE/UFRJ)  pela inestimável ajuda na
+condução do trabalho, em especial aos amigos Natanael Nunes de
+Moura, Rodrigo Coura Torres e Danilo Enoque Ferreira.
+
+Também gostaria de agradecer ao apoio do Instituto Federal de
+Educação, Ciência e Tecnologia da Bahia, em especial aos professores
+e funcionários do Campus Simões Filho.
+
+Finalmente preciso agradecer à minha família e meus amigos por
+suportarem minha ausência durante este período e por me incentivarem
+sempre a continuar. Em especial a minha esposa Cléa e minha filha
+Letícia pelo amor e apoio em todos os momentos.
+
+
+  \begin{abstract}
+O ATLAS é o maior detector de partículas do experimento LHC. Nas
+colisões do LHC, uma enorme quantidade de informação é produzida,
+porém, apenas uma pequena parcela é importante para a caracterização
+dos fenômenos físicos de inte\-resse, tornando necessário um
+eficiente sistema de filtragem \textit{online} de eventos.
+Informações da energia depositada no sistema de calorímetros
+(medidores de energia) são utilizadas para a identificação das
+partículas. Os elétrons são partículas extremamente importantes para
+o experimento, e, no ambiente do LHC, aparecem mascarados por um
+intenso ruído de fundo composto de jatos hadrônicos, pois esses
+últimos podem apresentar perfil de deposição de energia
+seme\-lhan\-te ao de elétrons. Neste trabalho, é proposta a
+utilização de métodos de extração de características, como a análise
+de componentes independentes, para otimizar o desempenho do segundo
+nível de filtragem \textit{online} do detector ATLAS. A extração de
+características foi efetuada visando explorar toda a segmentação e
+granularidade disponíveis nos calorímetros. A partir da utilização
+da abordagem proposta neste trabalho foi possível alcançar alta
+eficiência de discriminação, gerando dados mais limpos para a
+análise \textit{offline}.
+  \end{abstract}
+
+  \begin{foreignabstract}
+Here goes the abstract ...
+  \end{foreignabstract}
+
+  \tableofcontents
+  \listoffigures
+  \listoftables
+  \input{listasimb}
+  \printlosymbols
+  \printloabbreviations
+
+  \mainmatter
+  %\chapter{Introdução}
+  %\chapter{Revisão Bibliográfica}
+ % \input{teste}
+    \input{cap1}
+    \input{cap2}
+    \input{cap_trigger}
+    \input{cap3}
+    \input{cap4}
+    \input{cap5}
+    \input{cap6}
+%  \chapter{Resultados e Discussões}
+%  \chapter{Conclusões}
+
+  \backmatter
+  %\nocite{*}
+  \bibliographystyle{coppe-unsrt}
+  \bibliography{edsimas}
+
+  \appendix
+ \input{appendfex}
+ \input{appendclas}
+ \input{appendpub}
+\end{document}
+%%
+%%
+%% End of file `example.tex'.

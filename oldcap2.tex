@@ -1,0 +1,843 @@
+ %TCIDATA{Version=5.00.0.2557}
+%TCIDATA{LaTeXparent=0,0,dissosw.tex}
+
+%TCIDATA{ChildDefaults=chapter:2,page:1}
+
+%comecei a trabalhar na versao final em 15 de junho de 2009
+
+\chapter{O detector ATLAS}
+
+
+O projeto e a montagem do detector ATLAS foram conduzidos por uma
+colaboração de 36 países, conhecida como \textit{ATLAS
+Collaboration}, contando com aproximadamente 1800 pesquisadores de
+mais de 150 universidades e centros de pesquisa
+\cite{Homepage:ATLAS}. O ATLAS é um dos detectores de propósito
+geral do LHC. Quando operando em máxima capacidade, serão gerados no
+LHC aproximadamente $10^9$ interações por segundo. O ATLAS tem
+formato cilíndrico e foi projetado para cobrir um ângulo sólido
+próximo a $4\pi$ ao redor da região de colisão. Uma das principais
+tarefas dos detectores será selecionar, dentro de um conjunto
+enorme, os eventos de real interesse.
+
+%definição de luminosidade
+%alta luminosidade, sendo luminosidade o número de partículas por
+%centímetro quadrado por segundo nos feixes de alta energia
+
+\section{Principais desafios em física de partículas}
+
+
+No decorrer do século 20, a compreensão dos componentes elementares
+da matéria forneceu à comunidade científica mundial informações
+importantes a res\-peito das leis fundamentais da natureza. O estudo
+da física de partículas elementares teve início no final do século
+19, quando foi descoberto o elétron, experimentando um crescimento
+acentuado na década de 1950, quando foram descobertas centenas de
+novas partículas.
+
+Inicialmente, pensava-se que a matéria era constituída de partículas
+subatô\-micas chamadas elétrons, prótons e nêutrons. Mais tarde
+descobriu-se que os prótons e nêutrons são compostos de
+\textit{quarks}. Além de elétrons e quarks existem outras partículas
+elementares que não são encontradas na matéria, pois têm curtíssima
+duração. Juntamente com as descobertas experimentais, estudos
+teóricos desenvolveram o Modelo Padrão (SM-\textit{Standard Model})
+\cite{livro:fisica1:2006} que descreve e prevê de forma unificada o
+comportamento das partículas e das forças de interação.
+
+%Em 1905, os estudos de Einstein sobre a teoria da relatividade
+%descreveram como a massa de um objeto aumenta quando este é movido
+%com velocidade próxima à da luz. Nas décadas de 1920 e 1930, físicos
+%como Max Planck, Niels Bohr, Werner Heisenberg, entre outros,
+%desenvolveram o conjunto de idéias que ficou conhecido como mecânica
+%quântica, ao mesmo tempo, astrônomos descobriram que o universo está
+%em expansão \cite{livro:fisica1:2006}.
+
+As características e propriedades dos processos nucleares dependem
+da ener\-gia por partícula. Os fenômenos produzidos quando a energia
+das partículas é menor que $20MeV$ são chamados de física a baixas
+energias. A faixa entre $20MeV$ e $400MeV$ corresponde à física a
+energias intermediárias, e finalmente, fenômenos com energia
+superior a $400MeV$ são estudados na física a altas energias
+\cite{book:chung:2001}.
+
+\begin{figure} \centering
+\includegraphics[width=7cm]{cap2_sm}
+\caption{Diagrama do Modelo Padrão, extraído de
+\cite{livro:fisica1:2006}, mostrando as partículas elementares
+incluindo o, ainda não confirmado, bóson de Higgs.} \label{SM}
+\end{figure}
+
+%falar da força gravitacional
+
+Os experimentos realizados a partir do início da década de 1970
+foram fundamentais para o desenvolvimento e teste do Modelo Padrão,
+mas também despertaram dúvidas a respeito de questões que não são
+completamente respondidas. O SM (ver Figura \ref{SM}), divide as
+partículas elementares em \textit{quarks} e \textit{leptons}, e
+descreve três tipos de força de interação, a eletromagnética, a
+forte (\textit{strong}) e a fraca (\textit{weak}). Existem seis
+tipos de léptons (elétron, múon, tau e três neutrino) e seis tipos
+de quarks (\textit{up}, \textit{down}, \textit{charm},
+\textit{strange}, \textit{top} e \textit{bottom}).
+
+Considera-se que as forças de interação são mediadas por partículas
+chama\-das bósons. Os fótons são responsáveis pela força
+eletromagnética, os bósons W e Z pela força de interação fraca, e os
+glúons pela forte. Mesmo em experimentos com aceleradores, não se
+pode observar diretamente os quarks ou os glúons. Os glúons mantém
+os quarks juntos formando hadrons (prótons e nêutrons). Os quarks e
+glúons, produzidos em colisões, rapidamente se juntam e formam jatos
+hadrônicos, sendo \textit{jato} um conjunto de partículas que se
+move em um cone estreito. O SM também prevê a existência do bóson de
+Higgs, que ainda não foi encontrado experimentalmente, sendo
+responsável por fornecer massa às partículas.
+
+Nas últimas décadas, os experimentos com aceleradores de partículas
+se tornaram gigantescos empreendimentos envolvendo milhares de
+físicos e engenheiros com contribuição financeira e intelectual de
+dezenas de países. Nessas montagens, feixes de partículas são
+acelerados em sentidos opostos, em caminhos circulares ou lineares,
+e quando a energia desejada é atingida os feixes são alinhados para
+que ocorra a colisão. Imediatamente após a colisão, uma grande
+quantidade de partículas elementares é produzida. Algumas delas são
+estáveis, porém outras têm curtíssimo tempo de vida. Os elétrons e
+prótons, por exemplo, têm vida média superior a $10^{23}$ anos,
+enquanto os múons podem ter vida média da ordem de $10^{-6}$
+segundos \cite{book:chung:2001}. Para que todos os eventos sejam
+corretamente identificados, um complexo sistema de detecção precisa
+ser construído.
+
+É comum expressar a massa das partículas em função da energia
+equivalente, os bósons W e Z, por exemplo, têm massa de 80 e 91
+GeV/c$^2$ (onde c é a velocidade da luz). Na Tabela \ref{tab_massa},
+são mostradas as massas de algumas partículas importantes. Se o
+modelo padrão estiver correto e o bóson de Higgs realmente existir,
+esse sua será inferior a 300 GeV/c$^2$. Os aceleradores atualmente
+em operação teriam descoberto o bóson de Higgs se sua massa fosse
+inferior a 115 GeV/c$^2$ \cite{livro:fisica1:2006}.
+
+O acelerador LHC (Grande Colisionador Hadrônico - \textit{Large
+Hadron Collider}) \cite{article:LHC:2002,article:LHC:2008} em
+operação no CERN (Centro Europeu para Pesquisa Nuclear)
+\cite{Homepage:CERN}, será capaz de atingir uma faixa de energia
+entre 115 e 1TeV/c$^2$ e visualizar o bóson de Higgs, caso o Modelo
+Padrão esteja correto, além de contribuir para responder muitos
+outros questionamentos existentes.
+
+\begin{table}
+\centering
+\begin{tabular}{cc }
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  \textbf{Partícula} & \textbf{Massa (TeV/c$^2$)} \\  \hline
+  Elétron  &  0,000000511 \\
+  Próton  & 0,000938 \\
+  Bóson W & 0,080 \\
+  Bóson Z & 0,091 \\
+  Bóson de Higgs ou outras novas partículas & 0,1 a 1 \\
+  \hline
+\end{tabular}
+\caption{Exemplos de valores da massa (em energia equivalente) de
+algumas partículas.} \label{tab_massa}
+\end{table}
+
+Além do bóson de Higgs, existem outras questões que precisam ser
+respondidas. É um desejo antigo dos físicos, desde Einstein, a
+unificação das teorias sobre as forças entre as partículas,
+incluindo no Modelo Padrão a força gravitacional. O estudo da física
+de partículas também é fundamental para o entendimento da natureza e
+origem do universo. Pretende-se, por exemplo, descobrir informações
+sobre a composição da matéria escura \cite{article:darkm:2005},
+super-simetria \cite{article:susy:1996} e violação de CP
+\cite{book:cpv:1999} (do inglês \textit{Charge Parity Violation}.
+
+Entre os maiores laboratórios que conduzem experimentos em física de
+partículas os principais são: CERN , DESY \cite{Homepage:desy}, KEK
+\cite{homepage:kek}, Fermilab \cite{Homepage:Fermilab}, SLAC
+\cite{homepage:slac} e Brookhaven \cite{Homepage:brookhaven},
+localizados respectivamente na Suíça, Alemanha, Japão e os três
+últimos nos Estados Unidos.
+%citar as homepages dos laboratórios
+
+O CERN, fundado em 1954, é atualmente um dos maiores centros de
+pesquisas em física de partículas do mundo. Localizado em Genebra,
+Suíça, o CERN funciona com base num complexo sistema de colaboração
+internacional.
+
+\section{O acelerador LHC}
+
+% procurar a homepage do lhc
+No CERN, está em desenvolvimento o experimento LHC, que será o maior
+acelerador de partículas do mundo e tem início de operação prevista
+para o final de 2007 \cite{Homepage:lhc}. O LHC irá atingir níveis
+de energia de aproximadamente 14 TeV. O percurso do acelerador é
+aproximadamente circular com 27 Km de comprimento a 100 metros de
+profundidade do solo na fronteira franco-suíça. Feixes de prótons
+serão acelerados em sentidos opostos e direcionados para colisão nos
+centros dos detectores.
+
+O LHC tem 6 detectores com propósitos diferentes: ATLAS
+\cite{article:ATLAS:2008}, CMS \cite{article:CMS:2008}, LHCb
+\cite{article:LHCb:2008}, LHCf \cite{article:LHCf:2008}, ALICE
+\cite{article:ALICE:2008} e TOTEM \cite{article:TOTEM:2008},
+conforme ilustrado na Figura \ref{LHC}. O ATLAS e o LHCf estão
+localizados em Meyrin, Suíça, o CMS e o TOTEM em Cessy, França, o
+ALICE em St. Genis-Pouilly, França e o LHCb em Ferney-Voltaire,
+França (os experimentos TOTEM e LHCf não são mostrados na figura
+pois estão em locais próximos respectivamente ao CMS e ATLAS). O
+ATLAS (\textit{A Toroidal LHC AparattuS}) e o CMS (\textit{Compact
+Muon Solenoid}) são detectores de propósito geral, enquanto os
+outros são dedicados a aplicações específicas, como o LHCb, que é
+dedicado a explorar informações sobre a física proveniente dos
+hádrons do tipo \textbf{b} produzida nas colisões do LHC.
+
+\begin{figure}
+\centering
+\includegraphics[width=17cm]{cap2_lhc}
+\caption{Diagrama do complexo de aceleradores do CERN com destaque
+para o LHC e seus detectores.} \label{LHC}
+\end{figure}
+
+%alta luminosidade, sendo luminosidade o número de partículas por
+%centímetro quadrado por segundo nos feixes de alta energia
+
+Quando operando em máxima capacidade, o LHC irá fazer a colisão de
+feixes de prótons a cada 25 ns e atingirá energia 7 vezes maior que
+o Tevatron, que é o acelerador de maior energia em operação
+atual\-mente e funciona  no Fermilab. O número de colisões por
+centímetro quadrado produzidas por segundo é chamado de
+luminosidade. Quanto maior a luminosidade do experimento, maior a
+quantidade de informação (partículas) gerada. Quando operando em
+alta luminosidade ($10^{34}cm^{-2}s^{-1}$) o LHC deve atingir uma
+taxa de interações da ordem de 1 GHz. No LHC, fatores como a alta
+taxa de interações, as altas doses de radiação, a multiplicidade de
+partículas e faixas de energia, em conjunto com a necessidade de
+medições precisas, definiram novos padrões para o projeto dos
+detectores.
+
+A seguir serão descritas de modo geral as principais características
+do detector ATLAS.
+
+\begin{figure} \centering
+\includegraphics[width=13cm]{cap2_ATLAS_diag}
+\caption{Diagrama esquemático do ATLAS.} \label{atlas_diag}
+\end{figure}
+
+\section{Características gerais do detector ATLAS}
+
+Os métodos de detecção em física têm como princípio básico promover
+interação entre as partículas em estudo e um material conhecido,
+produzindo informações sobre a natureza e as características da
+própria partícula. Os instrumentos que possibilitam a medição
+experimental destas quantidades físicas são chamados de detectores.
+Em particular, os detectores de energia são chamados de
+calorímetros. À medida que a energia envolvida aumenta, o sistema de
+detecção precisa ser mais sofisticado \cite{book:chung:2001}.
+
+O ATLAS foi fruto do trabalho de uma grande colaboração que envolveu
+milhares de físicos, engenheiros, técnicos e estudantes por um
+período de quinze anos de projeto, desenvolvimento, fabricação e
+instalação.
+
+O detector ATLAS é dividido em subsistemas dispostos em camadas.
+Conforme ilustrado na Figura \ref{atlas_diag}, os principais
+subsistemas são: detector de trajetórias (ou traço, \textit{inner
+detectors}), calorímetros eletromagnético e hadrônico e os
+detectores de múons.
+
+A função dos detectores de trajetória é  medir o momento das
+partículas eletricamente carregadas a partir da curvatura de sua
+trajetória quando imersos no campo magnético do solenóide central.
+Caminhando do eixo central para as extremidades, em seqüência estão
+os calorímetros, que medem a energia depositada pelas partículas. Na
+interação com as células do calorímetro são produzidos chuveiros de
+partículas secundárias. Num último estágio está o detector de múons,
+onde câmaras imersas em um campo magnético medem a curvatura da
+partícula.
+
+O sistema $xyz$ de coordenadas do ATLAS é único para todos os
+subsistemas. Conforme mostrado na Figura \ref{atlas_coord}, a
+direção do feixe do LHC define o eixo $z$, e o eixos $x$ e $y$
+formam um plano transverso ao feixe. A direção positiva do eixo $x$
+é definida apontando do ponto de interação para o centro do anel do
+LHC, e o eixo $y$ positivo aponta para cima. O ângulo azimutal é
+obtido a partir de:
+
+%fazer figura mostrando os angulos ...
+\begin{equation}\label{phi}
+   \phi=\textrm{arctg}(x/y),
+\end{equation}
+\\
+crescendo em sentido horário, sendo que $\phi=0$ corresponde ao eixo
+$x$ positivo. O ângulo polar $\theta$ é medido a partir do eixo do
+feixe (eixo $z$ positivo). O momento transverso $p_T$, a energia
+transversa $E_T$ e a energia transversa perdida $E_T^{miss}$ são
+definidas no plano $xy$. A pseudo-rapidez $\eta$ é calculada a
+partir do ângulo $\theta$ de espalhamento em relação ao eixo $z$
+(ângulo de saída das partículas após a colisão)
+\cite{LI:ATLAS:1992}:
+
+\begin{figure}[t] \centering
+\includegraphics[width=6cm]{cap2_coord}
+\caption{Eixo de coordenadas do ATLAS.} \label{atlas_coord}
+\end{figure}
+
+\begin{equation}\label{eta}
+    \eta=-\ln\textrm{tg}(\theta /2).
+\end{equation}
+\\
+A partir das definições das equações \ref{phi} e \ref{eta},
+define-se o eixo ($\eta,\phi$), onde o ângulo $\phi$ representa a
+rotação e $\eta$ a direção de projeção das partículas após a
+colisão. Grandes valores da pseudo-rapidez indicam que a colisão das
+partículas não foi frontal, pois o ângulo de saída após o choque é
+pequeno, no limite quando $\theta \rightarrow 0$ então $\eta
+\rightarrow \infty$. Nesse tipo de colisão, como quase não houve
+choque, a produção de partículas elementares é pequena. O ATLAS foi
+projetado com baixa resolução para $\eta>3$.
+
+\begin{figure}[tbph]
+\begin{center}
+\subfigure[]{\label{corte1}\epsfig{file=cap2_atlas_corte1,width=12cm,clip=}}
+\subfigure[]{\label{corte2}\epsfig{file=cap2_atlas_corte2,width=9cm,clip=}}
+\end{center} \caption{(a) Corte transversal do ATLAS, mostrando os
+4 sistemas principais, (b) corte axial do ATLAS indicando a
+penetração de algumas partículas nas camadas do detector, extraídas
+de \cite{Homepage:ATLAS}.}
+\end{figure}
+
+Após uma colisão, as partículas geradas interagem com o material
+componente do detector, perdendo energia e conseqüentemente
+velocidade. Na Figura \ref{corte1} pode-se visualizar os subsistemas
+do ATLAS num corte transversal (paralelo ao plano $xy$). Percebe-se
+que a câmara de múons e o calorímetro hadrônico têm as maiores
+dimensões. Na figura \ref{corte2} é mostrada a penetração e
+conseqüente visualização esperadas de algumas partículas nas camadas
+do detector. Não espera-se, por exemplo, deposição de energia de
+fótons ou elétrons além das camadas eletromagnéticas do calorímetro,
+pois estas partículas interagem intensamente com os materiais que
+compõem a seção eletromagnética, perdendo toda sua energia. As
+partículas hadrônicas interagem com menos intensidade com o
+calorímetro eletromagnético e precisam das camadas hadrônicas do
+para serem paradas. Os múons são partículas que perdem pouca energia
+nos calorímetros, necessitando de um sistema especial para serem
+detectados, o detector de múons.
+
+%parei aqui 24/06
+
+O ATLAS foi projetado e construído considerando-se as condições
+experimentais produzidas pelas colisões do LHC e com o objetivo de
+obter informações importantes para responder à questões chave em
+física de partículas. Entre os principais critérios utilizados para
+o projeto do detector pode-se destacar \cite{article:ATLAS:2008}:
+
+\begin{itemize}
+  \item Os elementos sensores e circuitos eletrônicos devem
+  apresentar resposta rápida e resistência a altos níveis de
+  radiação. A alta granularidade do detector é importante para
+  reduzir a influência dos eventos sobrepostos.
+
+  \item Excelente calorimetria eletromagnética para a identificação de
+elétrons e fótons, complementada por informações acuradas dos
+calorímetros hadrônicos para medições de jatos hadrônicos e energia
+transversa $E_T$ (se o valor para $E_T$ for diferente do esperado
+isso pode indicar a ocorrência de um fenômeno não observado pelo
+detector);
+
+  \item Eficiente sistema de identificação de trajetória para medição do
+momento;
+
+  \item Alta precisão na identificação de múons;
+
+  \item Alta aceitação em pseudo-rapidez ($\eta$) com cobertura quase total no
+ângulo azimutal ($\phi$);
+
+  \item Alta eficiência do sistema de filtragem (\textit{trigger}),
+armazenando a maioria dos eventos físicos de interesse e reduzindo
+ao máximo o ruído de fundo (informação não relevante) produzido nas
+colisões do LHC.
+\end{itemize}
+
+Conforme mencionado no Capítulo \ref{intro}, o estudo conduzido
+neste trabalho utiliza informações do sistema de calorímetros do
+ATLAS e propõe algoritmos para a otimização da detecção (trigger) de
+elétrons. Nas próximas sub-seções serão descritos o sistema de
+calorímetros do ATLAS e a importância da detecção de elétrons para o
+desempenho do experimento.
+
+\begin{table}[bh]
+\centering
+\begin{tabular}{l c r}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  \textbf{PRESAMPLER}    & \textbf{Barril}  & \textbf{Tampa}  \\  \hline
+  Cobertura   &  $|\eta|<1,52$ & $1,5<|\eta|<1,8$   \\
+  Granularidade ($\Delta \eta \times \Delta \phi$)    &  $0,025 \times 0,1$ & $0,025 \times 0,1$  \\
+  \hline
+  \textbf{ELETROMAGNÉTICO}    & \textbf{Barril}  & \textbf{Tampa}  \\  \hline
+  Cobertura   &  $|\eta|<1,52$ & $1,375<|\eta|<3,2$   \\
+  Granularidade ($\Delta \eta \times \Delta \phi$)& &  \\
+  Camada 1      &  $0,003 \times 0,1$ & $0,003 \times 0,1$ a $0,1 \times 0,1$  \\
+  Camada 2      &  $0,025 \times 0,025$ & $0,025 \times 0,025$ a  $0,1 \times 0,1$  \\
+  Camada 3      &  $0,05 \times 0,025$ & $0,05 \times 0,025$   \\
+  \hline
+  \textbf{HADRÔNICO}    & \textbf{Barril}  & \textbf{Barril estendido}     \\  \hline
+  Cobertura   &  $|\eta|<1,0$ & $0,8<|\eta|<1,7$   \\
+  Granularidade ($\Delta \eta \times \Delta \phi$)& &  \\
+  Camadas 1 e 2    &  $0,1 \times 0,1$ & $0,1 \times 0,1$   \\
+  Camada 3   &  $0,2 \times 0,1$ & $0,2 \times 0,1$   \\
+  \hline
+\end{tabular}
+\caption{Região de cobertura em $\eta$ e granularidade das camadas
+dos calorímetros, extraída de \cite{TDR1:ATLAS:1999}.}
+\label{tab_calo}
+\end{table}
+
+\subsection{O sistema de calorimetria}
+
+O sistema de calorímetros do detector ATLAS é sub-dividido em 7
+camadas, sendo 4 eletromagnéticas e 3 hadrônicas (ver Figura
+\ref{atlas_calo}). À medida que as partículas interagem com as
+células do calorímetro, são produzidos chuveiros de partículas
+secundárias, sendo o perfil de deposição de energia usado na
+discriminação da física de interesse.
+
+O calorímetro eletromagnético (EM) é composto de finas folhas de
+chumbo separadas por dispositivos sensores de argônio líquido,
+cobrindo a região onde $|\eta|<3,2$. As camadas do calorímetro
+eletromagnético são divididas em barril ($|\eta|<1,5$) e tampa
+$1,4<|\eta|<3,2$
+
+
+O calorímetro hadrônico envolve o eletromagnético, sendo, na região
+onde $|\eta|<1,7$ composto de placas absorvedoras de aço separadas
+por telhas de material plástico cintilante. Quando as partículas
+atravessam as telhas elas emitem luz de intensidade proporcional à
+energia incidente \cite{TDR1:ATLAS:1999}. O sinal luminoso é então
+convertido em elétrico através de placas foto-multiplicadoras. Esta
+parte do calorímetro hadrônico do ATLAS é conhecida como calorímetro
+de telhas (\textit{Tile Calorimeter} ou simplesmente
+\textit{TileCal}) e é dividida em barril ($|\eta|<1,0$) e
+barril-extendido ($0,8<|\eta|<1,7$). Para a tampa do calorímetro
+hadrônico ($|\eta|>1,5$) utiliza-se a tecnologia do argônio líquido.
+(...refazer a tabela colocando essa informação...)
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=11cm]{cap2_calo}
+\caption{Disposição em camadas dos calorímetros do ATLAS.}
+\label{atlas_calo}
+\end{figure}
+
+A informação da energia depositada nas camadas do calorímetro, com
+fina segmentação, é muito importante para a caracterização física
+das partículas. Após um evento ser aceito pelo sistema de filtragem,
+todas as informações relativas ao evento são armazenadas em mídia
+permanente para posterior análise \textit{off-line}. A
+granularidade, ou quantidade de células por unidade de área, varia
+entre as camadas do calorímetro. A Tabela \ref{tab_calo} traz
+informações sobre a região de cobertura em $\eta$ e a granularidade
+das camadas do calorímetro. Pode-se perceber que o calorímetro
+eletromagnético é mais segmentado que o hadrônico, e que a primeira
+e a segunda camadas EM possuem as melhores resoluções.
+
+Um problema que será freqüente durante o tempo de operação do
+detector é a danificação de células. Devido à alta intensidade de
+energia produzida pelas colisões, algumas regiões podem ser
+danificadas, deixando de registrar corretamente as informações de
+energia depositada, e até parando totalmente de funcionar
+\cite{TP:ATLAS:1994}. Os algoritmos de filtragem de eventos devem
+ter alguma imunidade à perda de informação das células.
+
+\begin{table}[b]
+\centering
+\begin{tabular}{c c }
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  \textbf{Objeto}    & \textbf{Física de interesse}       \\  \hline
+  \textbf{Elétron}   &  Higgs, SUSY, extra-dimensões, novos bósons e \textit{top quarqs}\\
+  \textbf{Photon}    &  Higgs, SUSY e extra-dimensões\\
+  \textbf{Múon}      & Higgs, SUSY, extra-dimensões, novos bósons e \textit{top quarqs}\\
+  \textbf{Jato}   &  SUSY e ressonâncias\\
+  \textbf{Jato + $E_T^{miss}$}    &SUSY e \textit{leptoquarqs}\\
+  \textbf{Tau + $E_T^{miss}$}      & Modelo de Higgs estendido e SUSY\\
+  \hline
+\end{tabular}
+\caption{Principais objetos de interesse no ATLAS, extraída de
+\cite{article:HLT1:2003}.} \label{tab_fisica}
+\end{table}
+
+\subsection{Principais objetos de interesse no ATLAS}
+
+Dentre os eventos gerados nas colisões do LHC, apenas uma pequena
+parte será útil para a caracterização dos processos da ``nova
+física". Com o LHC operando em alta luminosidade podem ocorrer até
+10$^9$ interações por segundo, porém, não espera-se mais do que
+alguns eventos de interesse por segundo.
+
+Provar a existência do bóson de Higgs é um dos principais objetivos
+do LHC. Com o conhecimento adquirido até agora, não é possível
+determinar sua massa $m_H$, embora seu limite inferior tenha sido
+determinado pelos resultados do LEP ($m_H>114$ GeV/c$^2$) e o limite
+superior esperado por estudos teóricos seja $\sim$ 1 TeV/c$^2$
+(citar physics on LHC). Considerando os diversos decaimentos
+possíveis para a partícula de Higgs, espera-se que o canal mais
+limpo para seu estudo aconteça se sua massa ($m_H$) estiver na faixa
+de aproximadamente 150 a 700 GeV/c$^2$ \cite{article:ATLAS:2008}.
+
+Neste caso, o Higgs pode apresentar o decaimento em 2 bósons Z, com
+cada Z decaindo em dois léptons (elétrons ou múons):
+\begin{equation}\label{higgs_dec}
+    H \rightarrow ZZ^{(*)} \rightarrow l^+ l^- l^+ l^-
+\end{equation}
+
+
+ falar do decaimento H-ZZ / Z-ll e depois juntar tudo.
+(ll=elétron ou múon)
+
+
+as assinaturas de Higgs podem ser encontradas a partir do decaimento
+de elétrons, fótons e múons. Estas 3 partículas, assim como os jatos
+e os taus, são importantes para o melhor entendimento da
+supersimetria (SUSY - \emph{supersimetry})
+\cite{livro:fisica1:2006}. Os taus também podem levar aos modelos de
+Higgs estendidos \cite{TDR2:ATLAS:1999}. Um resumo com os principais
+objetos a serem detectados no ATLAS e suas aplicações na física pode
+ser encontrado na Tabela \ref{tab_fisica} \cite{article:HLT1:2003}.
+
+A identificação destes objetos importantes para a física dentro de
+um universo enorme de informações é realizada pelo sistema de
+filtragem. Um dos objetos de interesse na filtragem do ATLAS é o
+elétron. Os elétrons estão imersos em um intenso ruído de fundo
+composto de jatos hadrônicos. Em termos da calorimetria, as
+assinaturas dos jatos são confundidas com as dos elétrons por
+apresentarem perfis de deposição altamente concentrados nas camadas
+eletromagnéticas e quase nenhuma energia nas camadas hadrônicas. O
+canal elétron/jato (e$^-$/j) é importante para o desempenho do
+detector.
+
+% mostrar onde os elétrons são observados: H - ZZ - llll (decaimento do higgs em ZZ ...)
+% procurar outras aplicações ...
+
+%falar que a maior parte dos eventos não é interessante
+
+\section{O sistema de filtragem do ATLAS}
+
+Quando operando em alta luminosidade ($10^{34}cm^{-2}s^{-1}$) o LHC
+deve atingir uma taxa de interações de 1 GHz. A freqüência de
+ocorrência de eventos de física rara é muito pequena. Espera-se que
+por exemplo que se os bósons de Higgs existirem conforme previstos
+no Modelo Padrão, eles ocorram com freqüência inferior a 0,001 Hz
+\cite{TDR:ATLAS:1998}. As estratégias de aceitação de eventos devem
+garantir que as informações de física rara não sejam perdidas,
+respeitando a capacidade máxima de armazenamento permanente.
+
+Considerando que, na média, cada evento no ATLAS corresponda a 1,5
+MBytes em informação e que o LHC produz uma colisão a cada 25ns, ou
+seja uma taxa de $40\times 10^6$ eventos por segundo, chega-se então
+a aproximadamente 60 TBytes de informação por segundo. Com a
+tecnologia disponível atualmente não é possível armazenar essa
+quantidade de informação. Mesmo que fosse viável acumular as
+leituras de todos os eventos, o processo de filtragem offline seria
+extremamente demorado. Assim, é necessário um sistema eficiente de
+filtragem online.
+
+O sistema de filtragem do ATLAS (usualmente chamado de sistema de
+\textit{trigger}) é baseado em 3 níveis de seleção de eventos, o
+nível 1 (LVL1), o nível 2 (LVL2) e o filtro de eventos (EV -
+\textit{event filter}), sendo que os dois últimos compõem a
+filtragem de alto nível (HLT - \textit{High Level Trigger}).
+
+O primeiro nível tem sérias restrições quanto ao tempo de
+processamento, recebendo a plena taxa de eventos do LHC como
+entrada. Esse nível é implementado em hardware dedicado, e usando
+apenas parte da resolução disponível ao detector. O LVL1 entrega ao
+segundo nível a localização das áreas onde possivelmente aconteceram
+eventos de interesse, regiões estas conhecidas como RoI
+(\textit{Regions of Interest}). A seleção de eventos no LVL2 é feita
+através de software especializado, rodando em um conjunto de 1500
+PCs (duplos) dedicados operando em paralelo. Nesse estágio,
+informações do detector de trajetórias, assim como a total resolução
+dos calorímetros estão disponíveis. A seleção de eventos do HLT deve
+fazer uso otimizado dos recursos de CPU e rede disponíveis. Isso
+motiva o projeto das estratégias de extração de características
+utilizando o processamento em regiões de interesse (RoIs), e o
+processo de validação passo a passo (ver Figura \ref{trigger}).  As
+RoIs típicas têm dimensões de $0,4 \times 0,4$ no plano $\eta \times
+\phi$. A estratégia de processamento seqüencial permite que os
+eventos sejam rejeitados na primeira etapa possível, minimizando a
+necessidade de acesso a informações, e facilitando o ajuste e
+eventual modificação das estratégias de extração de características.
+Na tabela \ref{tab_trigg} é apresentado um resumo das principais
+características dos 3 níveis de filtragem do ATLAS.
+
+\begin{figure} \centering
+\includegraphics[width=13cm]{cap2_trigger}
+\caption{Diagrama em blocos do sistema de filtragem e aquisição de
+dados do ATLAS, extraído de \cite{TDR1:ATLAS:1999}.} \label{trigger}
+\end{figure}
+
+Um problema que afetará os algoritmos de extração de características
+é o efeito de empilhamento (do inglês \textit{pile-up}), que ocorre
+quando há uma sobreposição de eventos em regiões do detector
+\cite{article:seixas:1996}. Ou seja, um evento que ainda se
+desenvolve tem seu padrão de deposição de energia distorcido por um
+novo evento que chega e se sobrepõe, gerando um ruído de fundo que
+pode atingir grande intensidade.
+
+%os dados abaixo estao desatualizados e pouco realistas
+
+%Alguns estudos \cite{article:seixas:1996}, \cite{diss:anjos:2001}
+%sugerem que, utilizando processamento neural, a perda de desempenho
+%de discriminação seja da ordem de 2\% quando o efeito de pile-up é
+%adicionado. É importante que os algoritmos propostos sejam testados
+%quando à robustez ao \textit{pile-up}.
+
+Para o projeto e teste dos métodos de extração de características,
+estão sendo usados conhecimentos prévios adquiridos em outras
+experiências com aceleradores de partículas e uma base de dados de
+eventos simulados através de técnicas de Monte Carlo
+\cite{book:montecarlo:2004}. As simulações levam em conta as
+carac\-terísticas físicas do detector e utilizam geradores de
+eventos para colisões proton-proton como HERWIG, ISAJET e PYTHIA,
+descritos em \cite{TDR1:ATLAS:1999} e \cite{TDR:ATLAS:2003}. Os
+algoritmos de classificação e extração de carac\-terísticas estão
+sendo projetados para os dados simulados e serão posteriormente
+adaptados para a realidade de operação quando do início das colisões
+do LHC no final de 2007.
+
+\subsection{Primeiro nível de filtragem}
+
+Conforme mostrado na Figura \ref{trigger} e na Tabela
+\ref{tab_trigg}, o primeiro nível de filtragem é responsável por
+reduzir a taxa de eventos de aproximadamente 40 MHz para 100 kHz. O
+tempo de latência para tomada de decisão de primeiro nível não pode
+ser maior que $2,5\mu s$.
+
+%Com estas restrições o LVL1 está sendo implementado utilizando
+%\textit{hardware} dedicado, através de dispositivos lógicos
+%programáveis de alto desempenho como CPLDs (\textit{Complex
+%Programmable Logic Device}) e FPGAs (\textit{Field-Programmable Gate
+%Array}).
+
+O LVL1 identifica as assinaturas básicas de interesse e, para
+facilitar e tornar mais rápida a tomada de decisão, a granularidade
+dos subsistemas do detector é reduzida utilizando torres de soma
+analógicas \cite{TDR:ATLAS:1998}. Até a tomada de decisão de nível 1
+toda a informação do detector é armazenada em memórias tipo
+\textit{pipeline}. Quando um evento é aceito, as informações
+referentes são descarregadas para uso pelo nível 2 de filtragem.
+
+\begin{table}
+\centering
+\begin{tabular}{c c c c c c}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  \textbf{Nível} & \textbf{Te (Hz)}       & \textbf{Ts (Hz)}      & \textbf{Cr}    & \textbf{Latência (s)} & \textbf{Implementação}\\  \hline
+  \textbf{LVL1}   &  $40\times10^6$        & $75\times (100) 10^3$ & $\approx$ 400 & $2,5 \times 10^{-6}$  & Hardware\\
+  \textbf{LVL2}   &  $75 (100)\times  10^3$ & $1\times10^3$         & 75 (100)      & $10 \times 10^{-3}$   & Software \\
+  \textbf{EF}     & $1\times10^3$          & 100                   & 10            & $\approx 1$           & Software\\
+  \hline
+\end{tabular}
+\caption{Principais características do sistema de \textit{trigger}
+do ATLAS, onde $Te$ e $Ts$ são, respectivamente, as taxas de eventos
+na entrada e na saída e $Cr=Te/Ts$ é o coeficiente de redução de
+eventos.} \label{tab_trigg}
+\end{table}
+
+A tomada de decisão quanto à aceitação ou rejeição de eventos no
+nível 1 é feita pelo processador central de \textit{trigger}
+(\textit{central trigger processor} - CTP), que combina as
+informações disponíveis nos calorímetros e na câmara de múons,
+conforme mostrado na Figura \ref{lvl1}, e possibilita o uso de
+diferentes menus de filtragem.
+
+\begin{figure} \centering
+\includegraphics[width=13cm]{cap2_nivel1}
+\caption{Diagrama em blocos do primeiro nível de filtragem, adaptado
+de \cite{TDR:ATLAS:1998}.} \label{lvl1}
+\end{figure}
+
+O primeiro nível fornece para o nível 2 informações sobre as regiões
+de inte\-resse. As RoI sinalizam as áreas que precisam ser
+analisadas nos níveis mais altos de filtragem. O nível 1 também
+fornece outras informações importantes como o critério utilizado
+para aceitação do evento, as componentes do vetor $E_T^{miss}$ e a
+posição no plano ($\eta$,$\phi$). O nível 2 tem acesso, se
+necessário, a toda a informação do evento com total precisão e
+granularidade, mas em geral apenas uma pequena parte destes dados é
+utilizada.
+
+Na tabela \ref{tab_lvl1} são mostradas as freqüências dos principais
+canais de filtragem esperadas para o LVL1 quando o LHC estiver
+operando em alta luminosidade. Pode-se perceber que a taxa total
+simulada é da ordem de 40 kHz, aproximadamente 2 vezes menor que a
+freqüência de saída esperada para o nível 1 que pode chegar a 100
+kHz. Isso se deve às incertezas nos cálculos realizados a partir dos
+eventos simulados \cite{TDR:ATLAS:1998}.
+
+\begin{table}
+\centering
+\begin{tabular}{c c}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  \textbf{Canal} & \textbf{Freqüência (kHz)} \\  \hline
+  Um múon  &  4 \\
+  Par de múons  & 1 \\
+  Região eletromagnética & 22 \\
+  Par de regiões eletromagnéticas & 5 \\
+  Um jato & 0,2 \\
+  Três jatos & 0,2 \\
+  Quatro jatos & 0,2 \\
+  Jato e $E_T^{miss}$ & 0,5 \\
+  Tau e $E_T^{miss}$ & 1 \\
+  Múon e região eletromagnética & 0,4 \\
+  Outras condições & 5 \\ \hline
+  \textbf{Total} & \textbf{$\approx$ 40} \\
+  \hline
+\end{tabular}
+\caption{Freqüência esperada para os principais canais de
+\textit{trigger} no primeiro nível de filtragem do ATLAS, extraída
+de \cite{TDR:ATLAS:1998}.} \label{tab_lvl1}
+\end{table}
+
+\subsection{Filtragem de alto nível}
+
+O sistema de filtragem de nível 2 (LVL2) e o filtro de eventos (EF)
+são responsáveis pela filtragem de alto nível (HLT - \textit{high
+level trigger}) do ATLAS. O nível 2 deve reduzir a taxa de eventos
+de 100 kHz para 1 kHz, tendo um tempo de latência de aproximadamente
+10 ms para tomar a decisão \cite{TDR:ATLAS:2003}. O EF precisa
+diminuir a taxa de eventos de 1 kHz para 100 Hz. Os eventos que
+forem aceitos pelos 3 níveis de filtragem serão armazenados em mídia
+permanente para futura análise \textit{off-line}. O tempo para a
+tomada de decisão no filtro de eventos é de alguns segundos. As
+estratégias de filtragem de alto nível ainda não estão completamente
+definidas mas serão implementadas em software. Em muitos casos, não
+é desejável uma separação total entre o nível 2 de filtragem e o
+filtro de eventos, podendo haver uma estratégia conjunta para os
+dois níveis.
+
+Considerando os efeitos conjuntos do segundo nível e do filtro de
+eventos, a filtragem de alto nível deve reduzir em 1000 vezes a taxa
+de eventos. As etapas de processamento do HLT são iniciadas pelo
+acesso e preparação das informações das RoI do LVL1. A extração de
+características é efetuada em cada sistema do detector, iniciando
+pela confirmação da RoI no sistema onde a mesma foi originada
+(câmara de múons ou calorímetro), seguida pela confirmação em outros
+sistemas, como a câmara de arrasto \cite{TDR1:ATLAS:1999}. Os
+principais objetos de \textit{trigger} identificados no HLT são
+candidatos a múons, elétrons, fótons, taus, jatos, $E_T^{miss}$ e
+física dos hadrons B. As informações necessárias para a decisão do
+alto nível dependem do tipo de região de interesse fornecida pelo
+LVL1, cada uma tendo suas próprias características de processamento
+\cite{TDR:ATLAS:2003}. A performance geral é medida a partir da
+eficiência na discriminação da física de interesse e do ruído de
+fundo. As principais características dos algoritmos de filtragem de
+eventos no LVL2 são listadas a seguir:
+
+\begin{figure}
+\centering
+\includegraphics[width=9.5cm]{cap2_nivel2}
+\caption{Diagrama em blocos do segundo nível de filtragem, extraídos
+de \cite{TDR:ATLAS:2003}.} \label{lvl2}
+\end{figure}
+
+
+\begin{itemize}
+  \item eficiência maior que 95\% por RoI selecionada no LVL1;
+
+  \item eficiência uniforme em $\eta$ e eficiência uniforme ou
+  crescente com $E_T$;
+
+  \item redução do ruído de fundo minimizando a taxa de eventos classificados de forma errada (falso
+  alarme);
+
+  \item robustez em relação à luminosidade;
+
+  \item robustez ao ruído, canais mortos e imperfeições de
+  alinhamento e calibração.
+\end{itemize}
+
+Um diagrama de blocos do sistema de filtragem de alto nível é
+mostrado na Figura \ref{lvl2}. As informações dos sub-detectores
+(calorímetros, câmaras de arrasto e de múons) são utilizadas
+inicialmente pelo nível 1, enquanto isso são armazenadas em memórias
+temporárias, para posterior uso pelo nível 2. O acesso aos dados dos
+sub-detectores pelo trigger de alto nível é feito através dos
+\textit{Read Out Buffers} (ROB) As informações das RoI são
+armazenadas nos RoIB (\textit{Region of Interest Buffers}). Mais
+informações sobre os componentes dos sistemas de filtragem podem ser
+encontradas em \cite{TDR:ATLAS:1998}, \cite{TDR:ATLAS:2003},
+\cite{TDR1:ATLAS:1999} e \cite{TDR2:ATLAS:1999}.
+
+%detalhar mais o sistema de trigger aqui
+
+A decisão de alto nível é feita, conforme mencionado anteriormente,
+utilizando toda a granularidade e precisão dos sub-detectores do
+ATLAS. O espaço de decisão é multi-dimensional e as estratégias de
+seleção não são triviais, pois precisam ter boa eficiência e curto
+tempo de processamento. Deve-se notar que as características do
+sistema de filtragem podem mudar com o melhor conhecimento do
+detector, após os testes e o início de operação. Percebe-se então
+que o sistema de \textit{trigger} de alto nível demanda esforços no
+sentido de propor, testar e comparar diferentes estratégias de
+seleção.
+
+\subsubsection{Filtragem de elétrons usando informações de calorimetria}
+
+%falar do calo
+
+O \textbf{T2Calo} \cite{TDR:ATLAS:2003} é algoritmo padrão para
+extração de características e teste de hipóteses adotado no HLT do
+ATLAS. Esse algoritmo utiliza informações de calorimetria sendo
+capaz de separar objetos eletromagnéticos isolados de jatos
+hadrô\-nicos, utilizando parâmetros que estimam a forma dos
+chuveiros de deposição de energia \cite{TDR:ATLAS:2003}.
+
+O primeiro passo do T2Calo é refinar a posição da RoI fornecida pelo
+LVL1, encontrando a célula de maior energia na segunda camada do
+calorímetro eletromagnético. Essa posição ($\eta_1 , \phi_1$) será
+posteriormente refinada pelo cálculo da posição da média ponderada
+da energia em uma janela de $3 \times 7$ em ($\eta , \phi$). Para a
+seleção dos objetos eletromagnéticos são calculados os parâmetros:
+\begin{itemize}
+  \item $R_{\eta}^{shape}=E_{37}/E_{77}$, onde $E_{nm}$ é a energia
+  depositada numa janela de $n \times m$ em torno de ($\eta_1 ,
+  \phi_1$);
+
+  \item $R_{\eta}^{strip}=(E_{1st}-E_{2nd})/(E_{1st}+E_{2nd})$ é
+  obtida em uma janela de $\Delta \eta \times \Delta \phi=0,125 \times
+  0,2$, onde $E_{1st}$ e $E_{2nd}$ são a máxima e a segunda maior
+  energias encontradas depois de somar em $\phi$ para cada posição
+  $\eta$;
+
+  \item A energia total $E$ depositada no calorímetro
+  eletromagnético é calculada em uma janela de $3 \times 7$ células
+  em torno de ($\eta_1 ,   \phi_1$);
+
+  \item A energia que passa para o calorímetro hadrônico $E^{had}$ é
+  calculada em uma janela de $\Delta \eta \times \Delta \phi=0,2 \times
+  0,2$ em torno do novo centro da RoI calculado pelo T2Calo.
+
+\end{itemize}
+
+%\subsubsection{T2 Hypo}
+
+Algoritmos com performance superior ao T2Calo vêm sendo propostos
+recentemente, exemplos podem ser encontrados em
+\cite{article:anjos:2006} e \cite{article:herman:2006}. Contudo, a
+estratégia a ser adotada ainda não está definida, sendo esta uma das
+frentes de pesquisa mais importantes na fase final de montagem do
+experimento. Na comunidade da Física de Partículas existe ainda
+alguma resistência ao uso de técnicas não-lineares de processamento
+de sinais, como redes neurais e análise de componentes
+independentes, por serem estratégias relativamente recentes. Uma das
+principais contribuições deste trabalho é a proposição de novas
+técnicas de extração de características e a otimização de técnicas
+existentes, usando métodos avançados de processamento estatístico de
+sinais, visando buscar a máxima eficiência de classificação dos
+eventos e a minimização do tempo de processamento. Testes
+comparativos de desempenho serão realizados para justificar as
+estratégias propostas.

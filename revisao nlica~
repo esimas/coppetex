@@ -1,0 +1,144 @@
+\subsection{ICA não-linear}
+
+Em muitos problemas práticos o modelo básico da ICA, onde os sinais
+observados são considerados combinações lineares das fontes, não
+representa corretamente o cenário real. Os calorímetros do ATLAS são
+um exemplo de ambiente onde os sinais podem ser modificados por fenômenos
+não-lineares (os calorímetros são projetados para serem detectores lineares, porém, por restrição na fase de construção dos sensores e montagem do detector, é razoável esperar que os sinais, na prática, sejam modificados por fenômenos não-lineares de natureza desconhecida como por exemplo saturação de sensores e distorções na conversão dos sinais ópticos para elétricos e na propagação dos sinais). Embora a utilização da estratégia
+linear apresente resultados significativos, mesmo em casos onde a
+mistura é não-linear, espera-se que a adoção de um modelo mais
+próximo à realidade leve a um melhor desempenho.
+
+A equação (\ref{nlica}) apresenta um modelo geral para as misturas
+não-lineares:
+\begin{equation}\label{nlica}
+    \mathbf{x}=\mathbf{F}(\mathbf{s}),
+\end{equation}
+\\
+onde $\mathbf{F}$ é um vetor de $m$ funções de mistura não lineares
+desconhecidas, $\mathbf{x}$ e $\mathbf{s}$ são respectivamente os
+sinais observados e as fontes. Assumindo que o número de
+componentes independentes é igual ao número de misturas, então a
+ICA não-linear consiste em encontrar o mapeamento $\mathbf{G}$:
+$\mathbb{R}^N \rightarrow \mathbb{R}^N$ tal que as componentes de
+$\mathbf{y}$ sejam estatisticamente independentes:
+\begin{equation}\label{nlica2}
+    \mathbf{y}=\mathbf{g}(\mathbf{x}).
+\end{equation}
+
+Uma característica da NLICA é que o problema apresenta múltiplas soluções \cite{17}. Se $\mathbf{x}$ e $\mathbf{y}$ são variáveis aleatórias independentes, é facil provar que $f(\mathbf{x})$ e $g(\mathbf{y})$ (onde $f(.)$ e $g(.)$ são funções diferenciáveis) são também independentes. Fica claro que, sem o uso de alguma restrição, infinitos mapeamentos inversos $G$ satisfazem as condições de independência entre os sinais estimados $y_i$, i=1,...,N, em uma dada aplicação. Se o objetivo do problema for realizar a separação cega das fontes (BSS - \textit{Blind Signal Separation}), neste caso, deseja-se que as componentes $y_i$ sejam as fontes independentes que produziram os sinais observados $\mathbf{x}$, então informações a respeito do modelo de mistura ou das fontes devem ser conhecidas a priori. A NLICA vêm sendo aplicada com sucesso em problemas como processamento de sinais de fala \cite{19} e remoção de ruído em imagens \cite{20}.
+
+Em geral, o número de parâmetros a serem estimados num modelo de ICA não-linear é maior que no caso linear. Os algoritmos de NLICA, se comparados com os de ICA, apresentam maior complexidade computacional e convergência mais lenta. Em problemas de separação cega de fontes o algoritmo a ser utilizado deve ser escolhido utilizando informações a respeito do modelo de mistura. Considerando estas limitações, o uso da NLICA em substituição o modelo linear somente é justificado se a precisão na estimação das componentes aumenta e a aplicação não apresenta restrição ao aumento do tempo de processamento.
+
+Entre os algoritmos de NLICA propostos na literatura, uma classe de métodos impõe restrições estruturais ao modelo de mistura, neste caso, pode-se garantir que as componentes estimadas são iguais às fontes (a menos por indereminações de fator multiplicativo e ordem de estimação dos sinais). Uma solução de implementação mais direta é o uso de mapas auto-organizáveis para estimar o mapeamento não linear, neste caso não há restrição de modelo. Outro método diretamente relacionado com a NLICA, chamado de ICA Local (ou Local ICA), propõe uma etapa de agrupamento dos sinais em conjuntos de características semelhantes, que deve ser realizada antes da ICA (linear). O agrupamento produz um mapeamento não-linear dos dados e a ICA estima as componentes independentes. Mais informações a respeito dos diversos algoritmos e modelos de NLICA serão fornecidas nas próximas seções.
+
+\subsection{Unicidade da Solução em NLICA}
+\label{seq_uni}
+
+No caso não-linear a independencia estatística não é suficiente para garantir a separação das fontes. Se duas variáveis aleatórias $x$ e $y$ são independentes, então $p_{x,y}(x,y)=p_x(x)p_y(y)$, para funções diferenciáveis $f$ e $g$, pode-se provar que \cite{29}:
+\begin{equation}\label{uniq}
+    p_{f(x),g(y)}(x,y)=p_{f(x)}(x)p_{g(y)}(y),
+\end{equation}
+e então as variáveis $f(x)$ e $g(y)$ são também independentes. Esta indeterminação, diferente do fator de escala e da ordem de estimação das componentes que são inerentes a ICA linear, não são aceitáveis em um problema de separação de fontes.
+
+Estudos teóricos indicaram que a unicidade da solução da NLICA pode ser conseguida se o problema apresentar pelo menos uma das características a seguir \cite{18}:
+
+\begin{itemize}
+	\item O número de componentes é igual a dois. Deste modo os sinais podem ser considerados como uma variável complexa.
+	\item As pdf das componentes independentes são limitadas a valores conhecidos.
+	\item A função de mistura $F$ preserva o zero ($F(0)=0$) e é um mapeamento unívoco que preserva localmente a ortogonalidade das coordenadas.
+	\item O modelo de mistura é conhecido a priori e utilizado como informação para o algoritmo de estimação das componentes independentes.
+\end{itemize}
+
+
+\subsubsection{Misturas Pós Não-Lineares}
+
+Um caso especial da ICA não-linear são os métodos de estimação que incluem no algoritmo de estimação das componentes independentes informações a respeito do modelo não-linear que gerou os dados observados. Estas informações se configuram em restrições estruturais ao mapeamento inverso (que é estimado pelo algoritmo). Entre estes modelos, o de misturas \textbf{pós não-lineares} (PNL) \cite{article:jutten:1999} é um dos mais utilizados na literatura. 
+
+No modelo PNL, considera-se que inicialmente ocorre uma combinação linear das fontes (como no modelo básico de
+ICA), e as funções não-lineares $f_i$ são aplicadas antes da
+observação dos sinais $x_i$:
+\begin{equation}\label{pnlin}
+    x_i=f_i\Big(\sum_{j=1}^n a_{ij}s_j \Big).
+\end{equation}
+É importante notar que as não-linearidades são aplicadas individualmente a cada componente da mistura linear (não são permitidas linearidades cruzadas). A Figura \ref{fig_pnl} ilustra o modelo de misturas PNL.
+
+A consideração de que as misturas são pós não-lineares permite uma
+grande simplificação do problema, e as indeterminações existentes se
+tornam semelhantes às do caso linear. A modelagem através da equação
+(\ref{pnlin}) satisfaz grande parte dos fenômenos não-lineares, como,
+por exemplo, a modelagem da distorção de sensores num meio de propagação linear.
+
+Detalhes de alguns algoritmos para estimação das componentes independentes em misturas PNL são fornecidos no Apêndice \ref{apend_ica}.
+
+\subsubsection{Outros modelos de misturas com retrições estruturais}
+
+Alguns modelos com restrições estruturais diferentes do PNL foram propostos na literatura. No trabalho \cite{39}, o modelo de mistura é definido por:
+\begin{equation}\label{eq_pnll}
+	\mathbf{x}=\mathbf{A_2}f(\mathbf{A_1}*\mathbf{s}),
+\end{equation}
+sendo $\mathbf{A_1}$ e $\mathbf{A_2}$ matrizes quadradas e $f=[f_1,f_2,...,f_N]^T$ são funções não-lineares aplicados a cada componente (assim como o modelo PNL, este também não permite não-linearidades aplicadas a mais de um componente). O modelo definido na Equação \ref{eq_pnll} e ilustrado também na Figura \ref{fig_pnll} é chamado Pós Não-linear Linear (PNL-L). O bloco linear $\mathbf{A_2}$ é executado após a aplicação das funções não-lineares, produzindo um modelo mais geral que o PNL. Nos trabalhos \cite{41,42} são propostos algoritmos baseados em redes neurais para a estimação do modelo PNL-L.
+
+Colocar figura PNL-L aqui...
+
+Em \cite{43}, um modelo estrutural chamado mono não-linearidade (ver Figura \ref{fig_mnlin}) foi proposto para o problema da NLICA. Neste modelo os sinais observados são gerados a partir de:
+\begin{equation}\label{eq_mnlin}
+	\mathbf{x}=f^{-1}(\mathbf{A}f(\mathbf{s})).
+\end{equation}
+Este modelo é dito mais geral que o PNL pois as funções não-lineares podem ser aplicadas a mais de uma componente (as funções $f_i$ podem ser funções não-lineares de mais de uma variável). Este modelo é chamado de mistura de mono não-linearidade (ver Figura \ref{fig_mnlin}). A generalidade deste modelo é derivada da teoria da análise funcional (\textit{functional analysis}) \cite{43} e foi mostrado em \cite{42} que esta arquitetura pode representar qualquer mistura com duas camadas de não-linearidades.
+
+Colocar figura Mono-nlin aqui...
+
+\subsubsection{Algoritmos sem restrições estruturais}
+
+Se nenhuma restrição ao modelo de mistura é imposta não há garantia que as componentes independentes estimadas estejam relacionadas com as fontes (ver Seção \ref{seq_uni}). Então, esta classe de algoritmos de NLICA não são capazes de realizar a separação de fontes, a menos quando as premissas da unicidade das soluções sejam atendidas. Entre os métodos de NLICA sem restrições estruturais, pode-se destacar o uso de mapas auto-organizáveis, que foi um dos primeiros algoritmos utilizados para NLICA \cite{46}, e os métodos que utilizam inferência Bayesiana \cite{56}.
+
+\textbf{NLICA a partir de Mapas Auto-Organizáveis}:
+
+Uma das primeiras tentativas bem suscedidas de realizar NLICA utilizou mapas auto-organizáveis \cite{46}. Pode-se provar que as coordenadas $y_1$ e y_2$ do neurônio vencedor no mapa (ver Figura \ref{fig_som_nlica}) são independentes e aproximadamente uniformente distribuídas \cite{46}. Para estimar a NLICA, o SOM é treinado usando como entradas os sinais observados, e as coordenadas do neurônio vencedor correspondem a uma aproximação das componentes independentes. 
+
+Entre as desvantagens do método pode-se destacar: 
+
+\begin{itemize}
+	\item O mapeamento é discreto (existe um número limitado de neurônios no mapa), então algum tipo de regularização é necessária para produzir componentes contínuas. Esse problema pode ser minimizado aumentando-se o número de neurônios do mapa.
+	\item As componentes a serem estimadas devem ter pdf sub-gaussiana (quanto mais próxima da distribuição uniforme, melhor).
+	\item O custo computacional aumenta rapidamente com o número de componentes independentes a serem estimadas.
+\end{itemize}
+
+Para avaliar o custo computacional, o número de parâmetros Np do SOM pode ser avaliado pela expressão:
+\begin{equation}
+	Np=N \times Q_L^N
+\end{equation}
+onde $N$ é o número de componentes a serem estimadas (que é considerado igual ao número de sinais observados) e $Q_L$ é o número de níveis de quantização desejado. 
+
+Com uma formulação alternativa aos SOM, o Mapeamento Topográfico Generativo (GTM - \textit{Generative Topographic Mapping}) foi introduzido em \cite{article:bishop:1998}, e apresenta princípios estatísticos mais fundamentados que o mapa SOM. O método GTM básico tem poucas vantagens práticas em relação aos Mapas Auto-Organizáveis, pois aqui as componentes independentes também são assumidas como processos uniformemente distribuídos e o espaço de características é formado a partir de uma grade retangular discreta m-dimensional. Porém, devido a sua formulação matemática mais fundamentada, o GTM pode ser facilmente estendido para variáveis não uniformes. O trabalho \cite{article:pajunen:1997} propõe uma modificação à formulação básica onde são introduzidos coeficientes de ponderação que permitem a estimação de componentes independentes com qualquer tipo de distribuição. Os componentes são modelados como misturas de sinais Gaussianos e os parâmetros são estimados usando o algoritmo EM (\textit{Expectation Maximization}) \cite{article:hyvarinen:2000}. O treinamento do GMT envolve dois passos, a avaliação da probabilidade a \textit{posteriori} e a adaptação dos parâmetros do modelo.
+
+\textbf{NLICA a partir de Inferência Bayesiana}:
+
+Nos métodos baseados em inferência Bayesiana, considera-se que os sinais observados são gerados a partir de \cite{56}:
+\begin{equation}
+	\mathbf{x}=f(\mathbf{s}) + \mathbf{n}
+\end{equation}
+onde $\mathbf{n}$ é definido como ruído Gaussiano independente dos componentes a serem estimados.
+
+Os componentes independentes são modelados como misturas de sinais de distribuição Gaussiana. Pode-se provar que \cite{56} dado um número suficiente de Gaussianas, virtualmente qualquer distribuição de probabilidade pode ser modelada com uma certa precisão. Uma variação deste método foi aplicada em \cite{57} para o modelo linear da ICA. Em grande parte dos algoritmos Bayesianos para NLICA, redes neurais tipo MLP de duas camadas são treinadas para aproximar o mapeamento não linear:
+\begin{equation}
+	f(\mathbf{s}))=\mathbf{B}\Phi(\mathbf{As}+\mathbf{a})+\mathbf{b}
+\end{equation}
+
+Em um método de estimação Bayesiano, probabilidades a \textit{posteriori} são associadas a cada modelo não-linear que possivelmente teria gerado os dados observados. Verificar uma quantidade tão grande de modelos não é possível na prática, então os métodos Bayesianos para NLICA utilizam uma técnica chamada de aprendizagem amostral (EL - \textit{ensemble learning}) \cite{58}. Na EL, somente o conjunto mais provável de modelos é testado utilizando uma aproximação paramétrica que é ajustada à probabilidade a \textit{posteriori} \cite{59}.
+
+
+
+
+\subsubsection{Local ICA}
+
+Se o modelo da ICA for utilizado para extração de características (ao invés de separação de fontes), uma melhor descrição dos dados pode ser obtida se forem exploradas características locais. Considerando um conjunto de sinais multi-dimensionais com estatística variável, o modelo da ICA linear pode não ser capaz de revelar a estrutura fundamental dos dados. Neste caso, é mais razoável realizar a estração de características (estimação das componentes independentes) a partir de k subconjuntos dos dados. Os sinais pertencentes ao k-ésimo subconjunto apresentam características semelhantes. Este procedimento leva ao modelo da ICA local.
+
+COnforme proposto em \cite{70}, um conjunto de dados de alta dimensão pode ser separado em conjuntos, através de algum algoritmo de agrupamento como o k-means \cite{71} ou SOM \cite{53}, e componentes independentes lineares são então estimadas de cada subconjunto (ver Figura \ref{fig_local}). Determinar o número ideal de agrupamentos em um conjunto de dados não é uma tarefa simples e geralmente requer informação a priori. No trabalho \cite{72} foi proposto um critério para a escolha do número de agrupamentos em um problema ``cego" de processamento de sinais.
+
+Na ICA Local, o agrupamento é responsável por uma representação não-linear dos dados, enquanto modelos de ICA linear aplicados a cada cluster descrevem as características locais dos dados. A ICA local pode ser considerada como um compromisso entre os modelos linear e não-linear da ICA \cite{17}. O objetivo é obter uma melhor representação dos dados (se comparado com o modelo linear da ICA), evitando os problemas computacionais do modelo não-linear \cite{73}. Em diferentes abordagens, os agrupamentos podem ser montados com superposição, usando por exemplo fronteiras \textit{fuzzy} \cite{74,75}, ou sem superposição \cite{73, 76}.
+
+
+
+

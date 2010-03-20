@@ -1,0 +1,134 @@
+\chapter{Metodologia Proposta}
+
+\section{Sistemas de Classificação Propostos para a Seleção de Elétrons no Segundo-Nível de Filtragem do ATLAS}
+
+Os sistemas de filtragem propostos neste trabalho são divididos em
+duas etapas distintas. Inicialmente os sinais medidos são
+pré-processados para que suas características discriminantes se
+tornem mais acessíveis. As características extraídas são utilizadas
+como entrada para os classificadores propriamente ditos. Nesta Seção
+serão descritos os sistemas de filtragem utilizados.
+
+Os métodos de extração de características propostos neste trabalho
+(SOM, PCA, ICA e NLICA) operam sempre sobre os sinais em anéis para
+a extração de características discriminantes e assim aumentar a
+eficiência dos classificadores. A estimação das características
+discriminantes dos anéis pode ser realizada de duas formas distintas
+conforme descrito a seguir.
+
+\subsubsection{Características Globais}
+
+Os sinais em anéis produzidos em todas as camadas do calorímetro
+podem ser justapostos em um único vetor de características (de 100
+componentes). Este vetor é então utilizado como entrada para os
+algoritmos de aprendizado estatístico, este procedimento é ilustrado
+na Figura \ref{fig_fexg}
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=13cm]{cap3_fex_glob}
+\caption{Processo de extração de características globais.}
+\label{fig_fexg}
+\end{figure}
+
+\subsubsection{Características Segmentadas}
+
+Alternativamente, as características discriminantes podem ser
+estimadas separadamente para os anéis produzidos em cada camada do
+calorímetro. Este procedimento, em geral, produz resultados de mais
+fácil interpretação física pois sabe-se que cada camada do
+calorímetro possui características distintas como o tipo e a
+granularidade das células detectoras. A Figura \ref{fig_fexs}
+ilustra este procedimento.
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=11cm]{cap3_fex_seg}
+\caption{Processo de extração de características segmentadas.}
+\label{fig_fexs}
+\end{figure}
+
+\subsection{Classificadores Neurais Supervisionados}
+
+Neste trabalho foram utilizados classificadores neurais tipo
+perceptrons de múltiplas camadas (MLP). Mais detalhes sobre
+classificação de sinais e a implementação de classificadores neurais
+supervisionados podem ser encontrados no Apêndice \ref{apend_clas}.
+Os classificadores, assim como os algoritmos de extração de
+características, podem ser aplicados de modo global e de modo
+segmentado.
+
+\subsubsection{Classificador Global}
+
+O classificador global opera sobre um conjunto de características
+discriminantes globais, produzindo a decisão elétron/jato. A Figura
+\ref{fig_clasg} ilustra a operação do classificador global.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=8cm]{cap3_clas_glo}
+\caption{Decisão utilizando classificador global.} \label{fig_clasg}
+\end{figure}
+
+\subsubsection{Classificadores Segmentados}
+
+Considerando o sistema de calorímetros do detector ATLAS, a
+informação disponível está segmentada em diversas camadas com
+características físicas e granularidade diferentes. Para melhor
+explorar as características do detector, está sendo proposto o uso
+de um conjunto de classificadores neurais, cada um especialista na
+informação de uma camada do calorímetro (ver Figura
+\ref{fig_classeg}).
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=10.6cm]{cap3_clas_seg}
+\caption{Decisão utilizando classificadores segmentados.}
+\label{fig_classeg}
+\end{figure}
+
+Um problema que surge na utilização de múltiplos classificadores
+segmentados é como combinar suas saídas para produzir da decisão
+final. Neste contexto, pode-se utilizar as informações de dois
+modos, através dos rótulos de classe atribuídos por cada
+classificador ou utilizando-se a saída contínua (que no caso dos
+classificadores utilizados varia de -1 a 1).
+
+\subsection{Combinação de Múltiplos Classificadores}
+
+Quando estão disponíveis informações de múl\-ti\-plos
+classificadores, surge o problema de como combiná-las de forma
+ótima. A depender do tipo de saída escolhida para os
+classificadores, sendo va\-riá\-veis contínuas (com excursão de -1 a
+1) ou va\-riá\-veis discretas (rótulos de classe), a combinação pode
+ser realizada através de estratégias distintas
+\cite{kuncheva:comb:2004}.
+
+Considerando K classificadores com saídas contínuas $u_k$, uma forma
+usualmente utilizada para combinação é a média das saídas:
+\begin{equation}\label{med}
+    \mu (\mathbf{x}) = \sum_{k=1}^K u_k (\mathbf{x})
+\end{equation}
+
+Considerando que os múltiplos classificadores apre\-sentam
+eficiência diferente, pode-se dar aos mais eficientes maior poder de
+decisão com o uso de fatores de ponderação $\alpha_k$:
+\begin{equation}\label{medpon}
+    \mu (\mathbf{x}) = \sum_{k=1}^K \alpha_k u_k (\mathbf{x})
+\end{equation}
+
+Outra forma para a combinação de classificadores de saídas contínuas
+$u_k$ é o cálculo da média geométrica:
+\begin{equation}\label{medgeo}
+    \mu (\mathbf{x}) = \sqrt[K]{\prod_{k=1}^K u_k
+    (\mathbf{x})}
+\end{equation}
+
+Alternativamente, considerando que a saída dos múltiplos
+classificadores é o rótulo de classe associado ao vetor de entrada
+$\mathbf{x}$, um método muito utilizado para combinação das
+informações é a votação da maioria \cite{kuncheva:comb:2004}. Neste
+caso, também podem ser utilizados fatores de ponde\-ração, caso as
+eficiências dos classificadores sejam diferentes. Deste modo, o voto
+de um classificador mais eficiente tem mais influência na decisão
+final.

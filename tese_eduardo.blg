@@ -1,0 +1,161 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.6)
+The top-level auxiliary file: tese_eduardo.aux
+The style file: coppe-unsrt.bst
+Database file #1: edsimas.bib
+Repeated entry---line 281 of file edsimas.bib
+ : %@article{Article:Simasimtc:2005
+ :                                 ,
+I'm skipping whatever remains of this entry
+Warning--I'm ignoring article:fernandez:2005's extra "address" field
+--line 785 of file edsimas.bib
+You're missing a field name---line 1632 of file edsimas.bib
+ : 
+ : %  AUTHOR =       {C. Jutten and M. Babaie Zadeh and S. Hosseini},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 1846 of file edsimas.bib
+ :   
+ :   pages =        {117-128},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 1870 of file edsimas.bib
+ :   
+ :   pages =        {1008-1012},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 2436 of file edsimas.bib
+ : %@article{article:susy:1996
+ :                            ,
+I'm skipping whatever remains of this entry
+You're missing a field name---line 3686 of file edsimas.bib
+ :   
+ :   %year =         {2006},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 3700 of file edsimas.bib
+ :   
+ :   %year =         {2006},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 3714 of file edsimas.bib
+ :   
+ :   %year =         {2006},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 3728 of file edsimas.bib
+ :   
+ :   %year =         {2006},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 3744 of file edsimas.bib
+ :   
+ :   %year =         {2006},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 3758 of file edsimas.bib
+ :   
+ :   %year =         {2006},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 3774 of file edsimas.bib
+ :   
+ :   %year =         {2006},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 3804 of file edsimas.bib
+ :   
+ :   %year =         {2006},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Unbalanced braces---line 4284 of file edsimas.bib
+ : 
+ : }
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Unbalanced braces---line 4692 of file edsimas.bib
+ : 
+ : }
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 4862 of file edsimas.bib
+ :   
+ :   volume =       "2"
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 5014 of file edsimas.bib
+ :   
+ :   volume =       {51},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 5074 of file edsimas.bib
+ :   
+ :   month =        {Aug},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 5258 of file edsimas.bib
+ : 
+ : %  AUTHOR =       {S. Bellini},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty pages in seixas:pcd:1995
+Warning--there's a number but no series in article:crystalnn:1993
+Warning--there's a number but no series in article:hegra:1995
+Warning--there's a number but no series in article:lucas:som
+Warning--there's a number but no series in article:fernandez:2005
+Name 2 in "P. Gao and W. Woo, and S. S. Dlay" has a comma at the end for entry article:gao:nl2005
+while executing---line 2563 of file coppe-unsrt.bst
+Warning--can't use both author and editor fields in article:lappalainen:2000
+Warning--empty booktitle in article:lappalainen:2000
+Warning--can't use both author and editor fields in aricle:minskin:2000
+Warning--empty booktitle in aricle:minskin:2000
+Name 2 in "A. Ilin and S. Achard, and C. Jutten" has a comma at the end for entry article:ilin:2004ie
+while executing---line 2563 of file coppe-unsrt.bst
+Name 2 in "J. Karhunen and S. Malaroiu, and M. Ilmoniemi" has a comma at the end for entry karhunen:local:2000
+while executing---line 2563 of file coppe-unsrt.bst
+Warning--can't use both author and editor fields in aricle:palmieri:2000
+Warning--empty booktitle in aricle:palmieri:2000
+Warning--there's a number but no series in article:lan:2005
+Warning--can't use both author and editor fields in article:lan:2006
+Warning--empty booktitle in article:lan:2006
+You've used 153 entries,
+            2438 wiz_defined-function locations,
+            1432 strings with 27448 characters,
+and the built_in function-call counts, 35718 in all, are:
+= -- 2852
+> -- 887
+< -- 144
++ -- 431
+- -- 278
+* -- 3338
+:= -- 4766
+add.period$ -- 338
+call.type$ -- 153
+change.case$ -- 19
+chr.to.int$ -- 39
+cite$ -- 167
+duplicate$ -- 2138
+empty$ -- 4076
+format.name$ -- 278
+if$ -- 8184
+int.to.chr$ -- 0
+int.to.str$ -- 153
+missing$ -- 172
+newline$ -- 534
+num.names$ -- 154
+pop$ -- 533
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 801
+stack$ -- 0
+substring$ -- 2313
+swap$ -- 885
+text.length$ -- 131
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 14
+while$ -- 296
+width$ -- 156
+write$ -- 1487
+(There were 22 error messages)

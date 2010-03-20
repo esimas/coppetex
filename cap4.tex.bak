@@ -1,0 +1,93 @@
+
+\chapter{Resultados}
+
+Os resultados apresentados neste trabalho foram obtidos a partir de
+dados simulados (utilizando simuladores de Monte Carlo para colisões
+próton-próton) e dados reais medidos no detector (sinais de raios
+cósmicos e também dos primeiros ciclos de operação do LHC). Neste
+capítulo, inicialmente, serão descritas as características das
+diversas bases de dados utilizadas. A seguir, os resultados obtidos
+através da aplicação das diversas técnicas de processamento de
+sinais propostas neste trabalho serão apresentados.
+
+\section{Descrição dos dados utilizados}
+
+Nesta seção serão descritas as principais características das bases
+de dados utilizadas. Os sinais simulados utilizados foram obtidos a
+partir de simuladores de Monte Carlo para colisões próton-próton
+[...]. As simulações consideram as características esperadas nas
+colisões do LHC e as especificações do ATLAS. Assim como na operação
+real do detector, é possível aplicar diferentes cortes (formas de
+seleção) de nível 1 nos dados simulados. Os cortes podem mudar de
+acordo com a "física" que se deseja obter. Os dados simulados são
+extremamente importantes para o projeto e teste dos discriminadores,
+uma vez que os simuladores fornecem a identidade (classe) da
+partícula, permitindo o treinamento supervisionado dos algoritmos de
+filtragem. Nos dados experimentais essa informação não está
+disponível. Nesse caso, outras estratégias precisam ser utilizadas
+para avaliar o desempenho dos algoritmos.
+
+\subsection{Sinais simulados - Corte E10 \textit{loose}}
+
+Neste conjunto de sinais, a seleção de nível 1 realiza apenas um
+corte linear na energia total do evento, deixando passar somente
+eventos com energia da ordem de 10 GeV ou maior (os eventos de baixa
+energia são eliminados). Este corte é mais utilizado para teste do
+sistema de filtragem no período inicial de operação do detector,
+pois é pouco provável a identificação de assinaturas relevantes, uma
+vez que uma grande quantidade de eventos de falso-alarme é aprovada
+pelo nível 1.
+
+... , gráficos eta, phi e energia
+
+\subsection{Sinais simulados - Corte E15i}
+
+Um corte de nível 1 mais sofisticado foi aplicado para a obtenção
+desse conjunto de sinais. A energia mínima agora é da ordem de 15
+GeV e, adicionalmente, foram efetuados cortes considerando outras
+características do perfil de deposição de energia. Conforme descrito
+no Capítulo 2, os elétrons apresentam perfil de energia mais
+concentrado em torno do ponto de colisão e com pouca ou nenhuma
+energia medida nas camadas hadrônicas. Considerando essas
+características, são aplicados:
+\begin{itemize}
+  \item corte de vazamento para as camadas hadrônicas - a energia nas camadas
+hadrônicas é calculada e se ela for maior que um valor limite o
+evento é rejeitado pelo L1;
+  \item corte de isolamento em energia - efetuado a partir da relação entre a
+  energia no centro ($\sum E_C$) e na periferia ($\sum E_P$) do perfil de deposição de energia
+  da segunda camada eletromagnética, se $\frac{\sum E_P}{\sum E_C}$ for maior que um limiar pré-estabelecido o evento é rejeitado pelo L1.
+\end{itemize}
+
+Este corte de nível 1 se aproxima da característica esperada para a
+fase operação do detector.
+
+... , gráficos eta, phi e energia
+
+\subsection{Raios Cósmicos}
+
+Os raios cósmicos são (descrever e justificar porque contaminam o
+detector) , gráficos eta, phi e energia
+
+\subsection{Sinais Reais de Colisões do LHC}
+
+Nestes sinais não existe a caracterização prévia do tipo de
+partícula (como havia no caso dos sinais simulados). Para a
+avaliação do desempenho dos discriminadores com estes dados foi
+utilizada a decisão do sistema \textit{offline} de filtragem. A
+filtragem \textit{offline} dispõe de um tempo muito maior para a
+tomada de decisão ... (mais info sobre o offline) ...
+
+(, gráficos eta, phi e energia, qual o corte de nível 1 ??)
+
+
+\section{Resultados - Dados simulados / corte L1 do tipo E10 \textit{loose}}
+
+
+\section{Resultados - Dados simulados / corte L1 do tipo E15i}
+
+
+\section{Resultados - Sinais de raios cósmicos}
+
+
+\section{Sinais Reais de Colisões do LHC}

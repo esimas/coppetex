@@ -1,0 +1,2512 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PESSOAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@inproceedings{simas:ica09:fisica,
+  Address = {Paraty, Brazil},
+  Author = {E. F. {Simas Filho} and J. M. Seixas and L. P. Caloba},
+  Booktitle = {Independent Component Analysis And Signal Separation, 8th International Conference},
+  Editor = {T. Adali and C. Jutten and J. Romano and A. Barros},
+  Month = {March},
+  Pages = {718-725},
+  Publisher = {Springer},
+  Series = {Lecture Notes In Conputer Science},
+  Title = {High-Energy Particle Online Discriminators Based on Nonlinear Independent Components},
+  Year = {2009}}
+
+@article{simas:acat:2009,
+  Author = {E. F. {Simas Filho} and J. M. Seixas and L. P. Caloba},
+  Journal = {Proceedings of Science},
+  Title = {Optimized Calorimeter Signal Compaction for an {ICA} based {ATLAS} Electron/Jet Second-Level Trigger},
+  Volume = {ACAT08},
+  number = {102},
+  Pages = {1-10},
+  Year = {2009}}
+
+@inbook{sonar:ica,
+  Address = {Vienna, Austria},
+  Author = {N. N. Moura and E. F. {Simas Filho} and J. M. Seixas},
+  Chapter = {Independent Component Analysis for Passive Sonar Signal Processing},
+  Editor = {Sergio Rui Silva},
+  Pages = {91-110},
+  Publisher = {In-Tech},
+  Title = {Advances in Sonar Signal Processing},
+  Year = {2009}}
+
+@INPROCEEDINGS{article:simas:2008:eusipco,
+  AUTHOR =       {Eduardo F. {Simas Filho} and José M. Seixas and Luiz P. Caloba},
+  TITLE =        {Segmented self-organized feature extraction for online filtering in a high event rate
+detector},
+  BOOKTITLE =    {Proceedings of the European Conference on Signal Processing},
+  YEAR =         {2008},
+  volume =       {1},
+  pages =        {1-5},
+  address =      {Lausanne, Switzerland},
+  month =        {August},
+}
+
+
+@INPROCEEDINGS{article:simas:2008:iscas,
+  AUTHOR =       {Eduardo F. {Simas Filho} and José M. Seixas and Luiz P. Caloba},
+  TITLE =        {Local Independent Component Analysis Applied to Highly Segmented Detectors},
+  BOOKTITLE =    {Proceedings of the IEEE International Symposium on Circuits and Systems},
+  YEAR =         {2008},
+  volume =       {1},
+  pages =        {3005-3008},
+  address =      {Seatle, US},
+  month =        {May},
+}
+
+@ARTICLE{article:simas:2007:cbrn,
+  AUTHOR =       {Eduardo {Simas Filho} and Luiz Caloba and José Seixas},
+  TITLE =        {Análise de Componentes Independentes para Filtragem online num ambiente de alta taxa de eventos e informação segmentada},
+  JOURNAL =      {Anais do VIII Congresso Brasileiro de Redes Neurais - CBRN},
+  YEAR =         {2007},
+  month =        {Outubro},
+}
+
+@ARTICLE{article:simas:2007:cbrn:ing,
+  AUTHOR =       {Eduardo F. {Simas Filho} and Luiz Caloba and José Seixas},
+  TITLE =        {Independent Component Analysis Applied for Online Filtering on a High Events Rate and Segmented Information Environment},
+  JOURNAL =      {Proceedings of the VIII Brazilian Conference on Neural Networks - CBRN},
+  YEAR =         {2007},
+  month =        {October},
+}
+
+@ARTICLE{article:simas:2007:PoS,
+  AUTHOR =       {E. F. {Simas Filho} and Luiz Pereira Caloba and José Manoel Seixas},
+  TITLE =        {Self-organized mapping of calorimetry information for high efficient online electron/jet identification in ATLAS},
+  JOURNAL =      {Proceedings of Science, PoS (ACAT2007) 055},
+  YEAR =         {2007},
+  month =        {October},
+}
+
+@ARTICLE{article:simas:2007:isda:hist,
+  AUTHOR =       {Eduardo F. {Simas Filho} and Luiz Alberto Luz de Almeida},
+  TITLE =        {Time Delay Neural Network Applied for Compensation of Temperature Sensors Nonlinear Dynamics on Hysteresis Measurements},
+  JOURNAL =      {Proceedings of the 7th International Conference on Intelligent Systems Design and Applications, Rio de Janeiro, Brazil},
+  YEAR =         {2007},
+  month =        {October},
+  pages =        {653-658},
+}
+
+
+@ARTICLE{article:simas:2007:isda:fis,
+  AUTHOR =       {Eduardo F. {Simas Filho} and José M. Seixas and Luiz P. Caloba},
+  TITLE =        {Segmented Independent Component Analysis for online filtering using highly segmented detectors},
+  JOURNAL =      {Proceedings of the 7th International Conference on Intelligent Systems Design and Applications},
+  YEAR =         {2007},
+  month =        {October},
+  pages =        {659-664},
+}
+
+@ARTICLE{article:simas:2007:acat,
+  AUTHOR =       {Eduardo Simas and Luiz Pereira Caloba and José Manoel Seixas},
+  TITLE =        {Self-organized mapping of calorimetry information for high efficient online electron/jet identification in ATLAS},
+  JOURNAL =      {XI International Workshop aon Advanced Computing and Analysis Techniques in Physics Research, ACAT07},
+  YEAR =         {2007},
+  month =        {Abril},
+}
+
+
+@ARTICLE{Article:simas:2006:fisica,
+  AUTHOR =       {Eduardo F. {SIMAS FILHO} and Luiz Pereira Caloba and José Manoel Seixas},
+  TITLE =        {Filtragem Ótima para o Trigger de Segundo Nível do ATLAS baseado em Calorimetria},
+  JOURNAL =      {XXVII Encontro Nacional de Física de Partículas e Campos},
+  YEAR =         {2006},
+  month =        {setembro},
+}
+
+
+@INPROCEEDINGS{Article:Simas:2006,
+  AUTHOR =       {Eduardo F. {SIMAS FILHO} and L. A. L. {ALMEIDA}},
+  TITLE =        {Filtragem inversa de medições de histerese térmica utilizando Redes Neurais},
+  BOOKTITLE =    {Anais do XVI Congresso Brasileiro de Automática},
+  YEAR =         {2006},
+  volume =       {1},
+  pages =        {1-6},
+  address =      {Salvador, Brasil},
+  month =        {Outubro},
+}
+
+@INPROCEEDINGS{Article:Simasimtc:2005,
+  AUTHOR =       {Eduardo F. {SIMAS FILHO} and L. A. L. {ALMEIDA} and Antonio C. C. Lima},
+  TITLE =        {Vibration Monitoring of On-Load Tap Changers Using a Genetic Algorithm},
+  YEAR =         {2005},
+  BOOKTITLE =    {Proceedings of the IEEE Instrumentation and Measurement Technology Conference},
+  volume =       {3},
+  pages =        {2288-2293},
+  address =      {Ottawa, Canada},
+}
+
+%@ARTICLE{Article:Simasimtc:2005,
+%  AUTHOR =       {Eduardo F. de {SIMAS FILHO} and L. A. L. {de ALMEIDA} and Antonio C. C. Lima},
+%  TITLE =        {Vibration Monitoring of On-Load Tap Changers Using a Genetic Algorithm},
+%  JOURNAL =      {Proceedings of the IEEE Instrumentation and Measurement Technology Conference},
+%  YEAR =         {2005}
+%  number =       {13},
+%  pages =        {411-430},
+%}
+
+@ARTICLE{Article:Simas:2005,
+  AUTHOR =       {Eduardo F. {SIMAS FILHO} and L. A. L. {ALMEIDA} and Antonio C. {de} C. Lima},
+  TITLE =        {Diagnóstico Automático de Reguladores de Tensão Utilizando Algoritmos Genéticos e Redes Neurais},
+  JOURNAL =      {Anais do VII Congresso Brasileiro de Redes Neurais - CBRN2005, Natal-RN, Brasil},
+  YEAR =         {2005},
+  month=         {Outubro}
+}
+
+
+@ARTICLE{Article:Simas:2004,
+  AUTHOR =       {Eduardo F. de Simas Filho and Frederico A. Wegelin and L. A. L. de Almeida and Antonio C. de C. Lima},
+  TITLE =        {Monitoramento de Comutadores de Derivação em Transformadores Utilizando Análise de Vibração},
+  JOURNAL =      {XV Congresso Brasileiro de Automática-CBA2004, Gramado-RS},
+  YEAR =         {2004},
+  month =        {September}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Revisão NN + ICA + PCA em Física %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@ARTICLE{article:lindsey:1992,
+  AUTHOR =       {C.S. Lindsey and B. Denby and H. Haggerty and K. Johns},
+  TITLE =        {Real Time Track Finding with a {VLSI} Neural Network},
+  JOURNAL =      {Nuclear Instruments and Methods in Physics Research A},
+  YEAR =         {1992},
+  volume =       {A},
+  number =       {317},
+  pages =        {346-356},
+}
+
+@ARTICLE{article:denby:1999,
+  AUTHOR =       {B. Denby},
+  TITLE =        {Neural Networks in high-energy physics, a ten year perspective},
+  JOURNAL =      {Computer Physics Communications},
+  YEAR =         {1999},
+  volume =       {1},
+  number =       {119},
+  pages =        {219-231},
+}
+
+@ARTICLE{article:hera:2008,
+  AUTHOR =       {Trinh Thi Nguyet},
+  TITLE =        {Searches for new physics by the {H1} experiment at {HERA}},
+  JOURNAL =      {Acta Physica Polonica B Proceedings Supplement},
+  YEAR =         {2008},
+  volume =       {1},
+  number =       {2},
+  pages =        {407-409},
+}
+
+@ARTICLE{article:nnphys:1995,
+  AUTHOR =       {Hermann Kolanoski},
+  TITLE =        {Application of artificial neural networks in particle physics},
+  JOURNAL =      {Nuclear Instruments and Methods in Physics Research A},
+  YEAR =         {1995},
+  volume =       {1},
+  number =       {367},
+  pages =        {14-20},
+}
+
+@ARTICLE{article:mlhep:2009,
+  AUTHOR =       {Shimon Whiteson and Daniel Whiteson},
+  TITLE =        {Machine learning for event selection in high energy physics},
+  JOURNAL =      {Engineering Applications of Artificial Intelligence},
+  YEAR =         {2009},
+  volume =       {22},
+  number =       {8},
+  pages =        {1203-1217},
+}
+
+@INPROCEEDINGS{article:crystalnn:1993,
+  AUTHOR =       {Thomas Degener },
+  TITLE =        {A Feed Forward Neural Network for Recognition of Fluctuations in Electromagnetic Showers},
+  BOOKTITLE =    {Proceedings of the International Workshop on Software Engineering, Artificial Intelligence and Expert Systems for High Energy and Nuclear Physics},
+  YEAR =         {1993},
+  volume =       {1},
+  number =       {1},
+  pages =        {1-11},
+  address =      {Oberammergan, Germany},
+}
+
+@ARTICLE{article:crystal:1992,
+  AUTHOR =       {E. Aker},
+  TITLE =        {The Crystal Barrel Spectrometer at LEAR},
+  JOURNAL =      {Nuclear Instruments and Methods in Physics Research A},
+  YEAR =         {1992},
+  volume =       {321},
+  number =       {6},
+  pages =        {69-108},
+}
+
+@INPROCEEDINGS{article:hegra:1995,
+  AUTHOR =       {S. Westerhoff and H. Meyer},
+  TITLE =        {Neural nets as a tool for separating gamma and hadron induced Air Showers},
+  BOOKTITLE =    {Proceedings of the AIHENP},
+  YEAR =         {1995},
+  volume =       {1},
+  number =       {1},
+  pages =        {1-8},
+  address =      {Pisa, Italy},
+}
+
+@ARTICLE{article:proriol:1995,
+  AUTHOR =       {J. Proriol},
+  TITLE =        {Selection of variables for neural network analysis. Comparison of several methods with high energy physics analysis},
+  JOURNAL =      {Nuclear Instruments and Methods in Research A},
+  YEAR =         {1995},
+  volume =       {361},
+  number =       {3},
+  pages =        {581-585},
+}
+
+@ARTICLE{article:bussino:2005,
+  AUTHOR =       {S. Bussino and M. Mari},
+  TITLE =        {Gamma-hadron discrimination in extensive air showers using a neural network},
+  JOURNAL =      {Astroparticle Physics},
+  YEAR =         {2005},
+  volume =       {1},
+  number =       {15},
+  pages =        {65-77},
+}
+
+@ARTICLE{article:riggi:2007,
+  AUTHOR =       {S. Riggi and R. Caruso and A. Insolia and M. Scuderi},
+  TITLE =        {A neural network approach to event-by-event cosmic ray primary mass identification},
+  JOURNAL =      {Proceedings of Science},
+  YEAR =         {2007},
+  volume =       {ACAT07},
+  number =       {035},
+  pages =        {1-13},
+}
+
+%%% ICA + PCA + SOM em física %%%%%%%%%%%%%%%
+
+@ARTICLE{article:som:had:1999,
+  AUTHOR =       {K. H. Becks and J. Dress and U. Flagmeyer and U. Müller},
+  TITLE =        {Separation of hadronic W-decays from QCD-background with self-organizing maps},
+  JOURNAL =      {Nuclear Instruments and Metohds in Physics Research A},
+  YEAR =         {1999},
+  volume =       {426},
+  number =       {2},
+  pages =        {599-604},
+}
+
+@ARTICLE{article:lang:som,
+  AUTHOR =       {M. J. Lang},
+  TITLE =        {Application of {Kohonen} network classifier in {TeV} gamma-ray astronomy},
+  JOURNAL =      {Journal of Physics G: Nuclear Particle Physics},
+  YEAR =         {1998},
+  volume =       {1},
+  number =       {24},
+  pages =        {2279-2287},
+}
+
+@ARTICLE{article:lange:som,
+  AUTHOR =       {J. S. Lange},
+  TITLE =        {Transputer self-organizing map algorithm for beam background rejection at the BELLE silicaaon vertex detector},
+  JOURNAL =      {Nuclear Instruments and Methods in Physics Research A},
+  YEAR =         {1999},
+  volume =       {420},
+  number =       {1},
+  pages =        {288-309},
+}
+
+@ARTICLE{article:aatos:som,
+  AUTHOR =       {Aatos Heikkinen},
+  TITLE =        {Separation of Higgs boson signal from Drell-Yan background with self-organizing maps},
+  JOURNAL =      {Proceedins of Science},
+  YEAR =         {2007},
+  volume =       {ACAT07},
+  number =       {065},
+  pages =        {1-8},
+}
+
+@INPROCEEDINGS{article:lucas:som,
+  AUTHOR =       {L. Wyrzykowski and V. Belokurov},
+  TITLE =        {Self-organizing maps, an application to the {OGLE} data and the {Gaia} {Science} {Alerts}},
+  BOOKTITLE =      {Proceedings of the International Conference on Classification and discovery in large astronomical surveys, {AIP} Conference Proceedings},
+  YEAR =         {2008},
+  volume =       {1083},
+  number =       {1},
+  pages =        {201-206},
+  address =      {Rinberg Castle, Germany},
+}
+
+@ARTICLE{article:proriol:pca,
+  AUTHOR =       {J. Proriol},
+  TITLE =        {Selection of variables for neural network analysis. Comparison of several methods with high-energy physics data},
+  JOURNAL =      {Nuclear Instruments and Methods in Physics Research A},
+  YEAR =         {1995},
+  volume =       {361},
+  number =       {1},
+  pages =        {581-585},
+}
+
+@ARTICLE{article:wolter:multi,
+  AUTHOR =       {M. Wolter},
+  TITLE =        {Multivariate Analysis Methods in Physics},
+  JOURNAL =      {Physics of Particles and Nuclei},
+  YEAR =         {2007},
+  volume =       {38},
+  number =       {2},
+  pages =        {255-268},
+}
+
+@ARTICLE{article:akras:pca,
+  AUTHOR =       {S. Akras and P. Boumis},
+  TITLE =        {A principal component analysis approach to the morphology of planetary nebulae},
+  JOURNAL =      {Astrophysics Journal},
+  YEAR =         {2007},
+  volume =       {1},
+  number =       {1},
+  pages =        {1-8},
+}
+
+@ARTICLE{article:cadavid:pcaica,
+  AUTHOR =       {A. C. Cadavid and J. K. Lawrence and A. Ruzmaikin},
+  TITLE =        {Principal Components and Independent Component Analysis of Solar and Space Data},
+  JOURNAL =      {Solar Physics Journal},
+  YEAR =         {2008},
+  volume =       {248},
+  number =       {2},
+  pages =        {247-261},
+}
+
+@ARTICLE{article:booster:ica,
+  AUTHOR =       {X. Huang and S. Y. Lee and E. Prebys and R. Tomlin},
+  TITLE =        {Application of independent component analysis to {Fermilab} {BOOSTER}},
+  JOURNAL =      {Physical Review Special Topics, Accelerators and Beams},
+  YEAR =         {2005},
+  volume =       {8},
+  number =       {6},
+  pages =        {1-14},
+}
+
+@INPROCEEDINGS{article:fernandez:2005,
+  AUTHOR =       {C. Fernandez and S. Nayeri},
+  TITLE =        {Independent Component Analysis Applications in Physics},
+  BOOKTITLE =    {Proceedings of the Int. Joint Conference on Neural Networks},
+  YEAR =         {2005},
+  address =      {Montreal, Canada},
+  volume =       {1},
+  number =       {1},
+  pages =        {2213-2216},
+  address =      {Montreal, Canada},
+}
+
+@ARTICLE{article:costagli:ica,
+  AUTHOR =       {M. Costaglia and E. E. Kuruoglu and A. Ahmed},
+  TITLE =        {Astrophysical Source Separation using Particle Filters},
+  JOURNAL =      {Lecture Notes in Computer Science - Independent Component Analysis and Blind Signal Separation},
+  YEAR =         {2004},
+  volume =       {3195},
+  pages =        {930-937},
+}
+
+@ARTICLE{article:igual:ica,
+  AUTHOR =       {J. Igual and R. Linhares and A. Salazar},
+  TITLE =        {Source Separation of Astrophysical Ice Mixtures},
+  JOURNAL =      {Lecture Notes in Computer Science - Independent Component Analysis and Blind Signal Separation},
+  YEAR =         {2006},
+  volume =       {3889},
+  pages =        {368-375},
+}
+
+@ARTICLE{article:vio:ica,
+  AUTHOR =       {R. Vioo and P. Andreani},
+  TITLE =        {A Modified {ICA} Approach for Signal Separation in {CMB} maps},
+  JOURNAL =      {Astronomy and Astrophysics Journal},
+  YEAR =         {2008},
+  month =        {February},
+  volume =       {802},
+  pages =        {1-12},
+}
+
+@INPROCEEDINGS{article:cardoso:2005,
+  AUTHOR =       {Y. Moudden and P. Abrial and J. B. Melin and J. L. Starck and J. F. Cardoso and J. Delabrouille and M. K. Nguyen},
+  TITLE =        {Independent Component Separation from Incomplete Spherical Data using Wavelets. Application to CMB Data Analysis},
+  BOOKTITLE =    {Proceedings of the International Conference on Physics in Signal and Image Processing},
+  YEAR =         {2005},
+  volume =       {1},
+  pages =        {1-6},
+  address =      {Toulouse, France},
+}
+
+Oja, Erkki (1989). "Neural Networks, Principal Components, and Subspaces". International Journal of Neural Systems (IJNS) 1 (1): 61–68.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Nonlinear ICA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@INPROCEEDINGS{article:kai:2006,
+  AUTHOR =       {S. Kai and W. Qi and D. Mingli},
+  TITLE =        {Approach to nonlinear blind source separation based on niche genetic algorithm},
+  BOOKTITLE =    {Proceedings of the Sixth International Conference on Intelligent Systems Design and Applications},
+  YEAR =         {2006},
+  volume =       {1},
+  pages =        {441-445},
+  address =      {Jinan, China},
+}
+
+@INPROCEEDINGS{article:tan:20000,
+  AUTHOR =       {Y. Tan and J. Wang},
+  TITLE =        {Nonlinear blind separation using an {RBF} network model},
+  BOOKTITLE =    {Proceedings of the IEEE International Symposium on Circuits and Systems},
+  YEAR =         {2000},
+  volume =       {3},
+  pages =        {634-637},
+  address =      {Geneva, Switzerland},
+}
+
+@INPROCEEDINGS{article:lan:2005,
+  AUTHOR =       {T. Lan and D. Erdogmus},
+  TITLE =        {Local Linear ICA for Mutual Information Estimation in Feature Selection},
+  BOOKTITLE =    {Proceedings of the IEEE Workshop on Machine Learning for Signal Processing},
+  YEAR =         {2005},
+  editor =       {C. Vince and T. Adali},
+  volume =       {1},
+  number =       {1},
+  pages =        {3-8},
+  address =      {Connecticut, USA},
+  month =        {September},
+}
+
+@INBOOK{article:lan:2006,
+  AUTHOR =       {T. Lan and Y. Huang and D. Erdogmus},
+  editor =       {J. Rosca and D. Erdogmus and J. C. Principe and S. Haykin},
+  TITLE =        {Independent Component Analysis and Blind Signal Separation},
+  CHAPTER =      {A Comparison of Linear ICA and Local Linear ICA for Mutual Information Based Feature Ranking},
+  pages =        {823-830},
+  PUBLISHER =    {Springer},
+  YEAR =         {2006},
+  volume =       {3889},
+  series =       {Lecture Notes in Computer Science},
+}
+
+
+@ARTICLE{article:rojas:ica:2003,
+  AUTHOR =       {F. Rojas and C. G. Puntonet and I. Rojas},
+  TITLE =        {Independent component analysis evolution based method for nonlinear speech processing},
+  JOURNAL =      {Artificial Neural Nets Problem Solving Methods, PT II},
+  YEAR =         {2003},
+  volume =       {2687},
+  pages =        {679-686},
+}
+
+@ARTICLE{article:solazzi:pnl:2004,
+  AUTHOR =       {M. Solazzi and A. Uncini},
+  TITLE =        {Spline neural networks for blind separation of post-nonlinear-linear mixtures},
+  JOURNAL =      {IEEE Transactions on Circuits and Systems - I: Regular Papers},
+  YEAR =         {2004},
+  volume =       {51},
+  number =       {4},
+  pages =        {817-829},
+}
+
+
+@ARTICLE{article:woo:nl2005,
+  AUTHOR =       {W. L. Woo and S. S. Dlay},
+  TITLE =        {Nonlinear blind source separation using a hybrid RBF-FMLP network},
+  JOURNAL =      {IEE Proceedings on Vision, Image and Signal Processing},
+  YEAR =         {2005},
+  volume =       {8},
+  number =       {2},
+  pages =        {173-183},
+}
+
+
+@BOOK{book:function:1984,
+  AUTHOR =       {D. H. Griffel},
+  TITLE =        {Applied Functional Analysis},
+  PUBLISHER =    {Dover},
+  YEAR =         {1985},
+  address =      {West Sussex, UK},
+}
+
+@INPROCEEDINGS{article:gao:nl2005,
+  AUTHOR =       {P. Gao and W. Woo, and S. S. Dlay},
+  TITLE =        {Neural network approaches to nonlinear blind source separation},
+  BOOKTITLE =    {Proceedings of the Eighth International Symposium on Signal Processing and Its Applications},
+  YEAR =         {2005},
+  volume =       {1},
+  pages =        {78-81},
+  address =      {Sydney, Australia},
+}
+
+@INPROCEEDINGS{article:lappalainen:bay1999,
+  AUTHOR =       {H. Lappalainen},
+  TITLE =        {Ensemble learning for independent component analysis},
+  BOOKTITLE =    {Proceedings of the International Workshop on Independent Component Analysis and Blind Signal Separation},
+  YEAR =         {1999},
+  volume =       {1},
+  pages =        {7-12},
+  address =      {Aussois, France},
+}
+
+
+@INBOOK{aricle:minskin:2000,
+  AUTHOR =       {H. Lappalainen and J. W. Miskin},
+  editor=        {M. Girolami},
+  TITLE =        {Advances in Independent Component Analysis},
+  CHAPTER =      {Ensemble learning},
+  pages =        {75-92},
+  PUBLISHER =    {Springer},
+  YEAR =         {2000},
+  adress =       {London, UK},
+}
+
+@INPROCEEDINGS{article:valpola:2000ica,
+  AUTHOR =       {H. Valpola},
+  TITLE =        {Nonlinear independent component analysis using ensemble learning: Theory},
+  BOOKTITLE =    {Proceedings of the International Workshop on Independent Component Analysis and Blind Signal Separation},
+  YEAR =         {2000},
+  volume =       {1},
+  pages =        {351-356},
+  address =      {Helsinki, Finland},
+}
+
+@INPROCEEDINGS{article:honkela:2004ica,
+  AUTHOR =       {A. Honkela},
+  TITLE =        {Approximating nonlinear transformations of probability distributions for nonlinear independent component analysis},
+  BOOKTITLE =    {ProceedingsProceedings of the IEEE International Joint Conference on Neural Networks},
+  YEAR =         {2004},
+  volume =       {3},
+  pages =        {2169-2174},
+  address =      {Budapest, Hungary},
+}
+
+@ARTICLE{article:honkela:2007,
+  AUTHOR =       {A. Honkela and H. Valpola and A. Ilin and J. Karhunen},
+  TITLE =        {Blind separation of nonlinear mixtures by variational bayesian learning},
+  JOURNAL =      {Digital Signal Processing},
+  YEAR =         {2007},
+  volume =       {17},
+  number =       {5},
+  pages =        {914-934},
+}
+
+@INPROCEEDINGS{article:ilin:2004ie,
+  AUTHOR =       {A. Ilin and S. Achard, and C. Jutten},
+  TITLE =        {Bayesian versus constrained structure approaches for source separation in post-nonlinear mixtures},
+  BOOKTITLE =    {Proceedings of the IEEE International Joint Conference on Neural Networks},
+  YEAR =         {2004},
+  volume =       {3},
+  pages =        {2181-2186},
+  address =      {Budapest, Hungary},
+  month =        {July},
+}
+
+
+@INPROCEEDINGS{karhunen:local:1999,
+  AUTHOR =       {J. Karhunen and S. Malaroiu},
+  TITLE =        {Local independent component analysis using clustering},
+  BOOKTITLE =    {Proceedings of the International Workshop on Independent Component Analysis and Blind Signal Separation},
+  YEAR =         {1999},
+  volume =       {1},
+  pages =        {1-6},
+  address =      {Aussois, France},
+}
+
+@ARTICLE{karhunen:local:2000,
+  AUTHOR =       {J. Karhunen and S. Malaroiu, and M. Ilmoniemi},
+  TITLE =        {Local linear independent component analysis based on clustering},
+  JOURNAL =      {International Journal of Neural Systems},
+  YEAR =         {2000},
+  volume =       {10},
+  pages =        {439-451},
+}
+
+
+@INPROCEEDINGS{article:honda:2000,
+  AUTHOR =       {K. Honda and H. Ichihashi and M. Ohue and K. Kitaguchi},
+  TITLE =        {Extraction of local independent components using fuzzy clustering},
+  BOOKTITLE =    {Proceedings of 6th International Conference on Neural Networks and Soft Computing},
+  YEAR =         {2000},
+  volume =       {1},
+  pages =        {837-842},
+  address =      {Zakopane, Polland},
+}
+
+
+@INPROCEEDINGS{article:honda:2006,
+  AUTHOR =       {T. Maenaka and K. Honda and H. Ichihashi},
+  TITLE =        {Local independent component analysis with fuzzy clustering and regression-principal component analysis},
+  BOOKTITLE =    {Proceedings of IEEE International Conference on Fuzzy Systems},
+  YEAR =         {2006},
+  volume =       {1},
+  pages =        {857-862},
+  address =      {Vancouver, Canada},
+}
+
+
+@INBOOK{aricle:palmieri:2000,
+  AUTHOR =       {F. Palmieri and A. Budillon},
+  editor=        {M. Girolami},
+  TITLE =        {Advances in Independent Component Analysis},
+  CHAPTER =      {Multi-class independent component analysis for rank deficient distributions},
+  pages =        {145-160},
+  PUBLISHER =    {Springer-Verlag},
+  YEAR =         {2000},
+  adress =       {London, UK},
+}
+
+
+@book{book:almeida:2006,
+  Author = {Luis B. Almeida},
+  Publisher = {Morgan and Claypool},
+  Title = {Nonlinear Source Separation},
+  Year = {2006}}
+
+@ARTICLE{article:nlica_ga:2001,
+  AUTHOR =       {Ying Tan and Jun Wang},
+  TITLE =        {Nonlinear Blind Source Separation using Higher Order Statistics and a Genetic Algorithm},
+  JOURNAL =      {IEEE Transactions on Evolutionary Computation},
+  YEAR =         {2001},
+  volume =       {5},
+  number =       {6},
+  pages =        {600-612},
+}
+
+
+@INPROCEEDINGS{article:solazzi:2001,
+  AUTHOR =       {M. Solazzi and F. Piazza and A. Uncini},
+  TITLE =        {Nonlinear blind source separation by spline neural networks},
+  BOOKTITLE =    {Proceedings of the 2001 IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)},
+  YEAR =         {2001},
+  volume =       {5},
+  pages =        {2781-2784},
+}
+
+@INPROCEEDINGS{jutten:nlica:2003,
+  AUTHOR =       {C. Jutten and J. Karhunen},
+  TITLE =        {Advances in Nonlinear Blind Source Separation},
+  BOOKTITLE =    {Proceedings of the 4th Int. Symp. on Independent Component Analysis and Blind Signal Separation},
+  YEAR =         {2003},
+  address =      {Nara, Japan},
+  volume =       {1},
+  pages =        {245-256},
+}
+
+@ARTICLE{article:hyvarinen:1999,
+  AUTHOR =       {A. Hyvärinen and P. Pajunen},
+  TITLE =        {Nonlinear Independent Component Analysis:
+Existence and Uniqueness results},
+  JOURNAL =      {Neural Networks},
+  YEAR =         {1999},
+  volume =       {12},
+  number =       {3},
+  pages =        {429-439},
+}
+
+@ARTICLE{article:hyvarinen:1996,
+  AUTHOR =       {P. Pajunen and A. Hyvärinen and J. Karhunen},
+  TITLE =        {Non-Linear Blind Source Separation},
+  JOURNAL =      {Proc. Int. Conf. on Neural Information Processing},
+  YEAR =         {1996},
+  pages =        {1207-1210},
+}
+
+@ARTICLE{article:jutten:1999,
+  AUTHOR =       {A. Taleb and C. Jutten},
+  TITLE =        {Source Separation in post-nonlinear mixtures},
+  JOURNAL =      {IEEE Transactions on Signal Processing},
+  YEAR =         {1999},
+  volume =       {47},
+  number =       {10},
+  pages =        {2807-2820},
+}
+
+
+@ARTICLE{article:allinson:2002,
+  AUTHOR =       {Michel Haritopoulos and H. Yin and N. M. Allinson},
+  TITLE =        {Image denoising using self-organizing map-based nonlinear independent component analysis},
+  JOURNAL =      {Neural Networks},
+  YEAR =         {2002},
+  volume =       {15},
+  number =       {8-9},
+  pages =        {1085-1098},
+}
+
+
+
+@ARTICLE{article:nonlinearICAbayesian:2007,
+  AUTHOR =       {Antti Honkela and Harri Valpola and Alexander Ilin and Juha Karhunen},
+  TITLE =        {Blind separation of nonlinear mixtures by variational Bayesian learning},
+  JOURNAL =      {Digital Signal Processing (Article in Press)},
+  YEAR =         {2007},
+}
+
+
+@INBOOK{article:lappalainen:2000,
+  AUTHOR =       {H. Lappalainen and A. Honkela},
+  editor=        {M. Girolami},
+  TITLE =        {Advances in Independent Component Analysis},
+  CHAPTER =      {Bayesian nonlinear independent component analysis by multi-layer perceptrons},
+  pages =        {93-121},
+  PUBLISHER =    {Springer},
+  YEAR =         {2000},
+  adress =       {London, UK},
+}
+
+@ARTICLE{article:puntonet:2003,
+  AUTHOR =       {Ruben Martin-Clemente and S. Homillo-Mellado and Jose I. Acha and Carlos G. Puntonet},
+  TITLE =        {Neural Net with Two Hidden Layers for Non-Linear Blind Source Separation},
+  JOURNAL =      {IEEE Transactions on},
+  YEAR =         {2003},
+}
+
+@INPROCEEDINGS{article:pajunen:1997,
+  AUTHOR =       {P. Pajunen and J. Karhunen},
+  TITLE =        {A maximum likelihood approach to nonlinear blind source separation},
+  BOOKTITLE =    {Proceedings of the International Conference on Artificial Neural Networks},
+  YEAR =         {1997},
+  volume =       {1},
+  pages =        {541-546},
+  address =      {Lausanne, Switzerland},
+}
+
+
+@ARTICLE{article:bishop:1998,
+  AUTHOR =       {C. M. Bishop and M. Svensen and C. K. I. Willians},
+  TITLE =        {GTM: The generative topographic mapping},
+  JOURNAL =      {Neural Computation},
+  YEAR =         {1998},
+  volume =       {10},
+  pages =        {215-234},
+}
+
+
+@INPROCEEDINGS{article:pajunen:1996,
+  AUTHOR =       {P. Pajunen and A. Hyvarinen and J. Karhunen},
+  TITLE =        {Nonlinear blind source separation by self-organizing maps},
+  BOOKTITLE =    {Proceedings of the International Conference on Neural Information Processing},
+  YEAR =         {1996},
+  volume =       {1},
+  pages =        {1207-1210},
+  address =      {Hong Kong},
+  month =        {September},
+}
+
+@ARTICLE{article:jutten:2004,
+  AUTHOR =       {C. Jutten and M. B. Zadeh and S. Hosseini},
+  TITLE =        {Three Easy ways for Separating Nonlinear Mixtures},
+  JOURNAL =      {Signal Processing},
+  YEAR =         {2004},
+  volume =       {217-229},
+}
+
+
+%@ARTICLE{article:jutten:2004,
+%  AUTHOR =       {C. Jutten and M. Babaie Zadeh and S. Hosseini},
+%  TITLE =        {Three easy ways for separating nonlinear mixtures},
+%  JOURNAL =      {Signal Processing},
+%  YEAR =         {2004},
+%  pages =        {217–229},
+% }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@INPROCEEDINGS{article:cuenca:2003,
+  AUTHOR =       {W. M. Cuenca and A. F. Levy and J. M. Seixas and S. Carneiro},
+  TITLE =        {Análise de Componentes Independentes para Extração Cega de Ruídos Gaussianos dos Sinais de Descargas Parcias em Equipamentos de Alta Tensão},
+  BOOKTITLE =    {Anais do Congresso Brasileiro de Redes Neurais},
+  YEAR =         {2003},
+  volume =       {1},
+  pages =        {133-138},
+  address =      {São Paulo},
+}
+
+@ARTICLE{article:akuzawa:2001,
+  AUTHOR =       {T. Akuzawa and N. Murata},
+  TITLE =        {Multiplicative Nonholonomic Newton-like Algorithm},
+  JOURNAL =      {Chaos, Solitons and Fractals},
+  YEAR =         {2001},
+  volume =       {12},
+  number =       {4},
+  pages =        {785-793},
+}
+
+@INPROCEEDINGS{article:extakuzawa:2000,
+  AUTHOR =       {T. Akuzawa},
+  TITLE =        {Extended Quasi-Newton Method for the ICA},
+  BOOKTITLE =    {Proceedings of the Int. Workshop Independent Component Anal. Blind Signal Separation},
+  YEAR =         {2000},
+  pages =        {521-525},
+  address =      {Helsinki, Finland},
+}
+
+@INPROCEEDINGS{article:fobi:1989,
+  AUTHOR =       {J. F. Cardoso},
+  TITLE =        {Source separation using higher order moments},
+  BOOKTITLE =    {Proceedings of the IEEE Int. Conf. on Acoustics, Speech and Signal Processing},
+  YEAR =         {1989},
+  volume =       {4},
+  pages =        {2109-2112},
+  address =      {Glasgow, UK},
+}
+
+@BOOK{book:QCD:2003,
+  AUTHOR =       {R. K. Ellis and W. J. Stirling and B. R. Webber},
+  TITLE =        {QCD and Collider Physics},
+  PUBLISHER =    {Cambrige University Press},
+  YEAR =         {2003},
+  series =       {Cambridge Monographs on Particle Physics, Nuclear Physics and Cosmology},
+  address =      {Cambridge-UK},
+}
+
+@BOOK{book:fernow:1986,
+  AUTHOR =       {Richard C. Fernow},
+  TITLE =        {Introduction to Experimental Particle Physics},
+  PUBLISHER =    {Cambrige University Press},
+  YEAR =         {1986},
+  address =      {Cambridge-UK},
+}
+
+@BOOK{book:martin:2006,
+  AUTHOR =       {B. R. Martin},
+  TITLE =        {Nuclear and Particle Physics, An Introduction},
+  PUBLISHER =    {Wiley},
+  YEAR =         {2006},
+  address =      {West Sussex, UK},
+}
+
+@BOOK{book:feynman:1977,
+  AUTHOR =       {Richard P. Feynman and Robert B. Leighton and Matthew Sands},
+  TITLE =        {The Feynman Lectures on Physics},
+  PUBLISHER =    {Addison-Wesley},
+  YEAR =         {1977},
+  volume =       {Chapter 2 - Basic Physics},
+  address =      {US},
+}
+
+@BOOK{book:mist:2003,
+  AUTHOR =       {Martins J. G. Veltman},
+  TITLE =        {Facts and Mysteries in Elementary Particle Physics},
+  PUBLISHER =    {World Scientific},
+  YEAR =         {2003},
+  address =      {New Jersey, US},
+}
+
+@BOOK{book:lhc:2008,
+  editor =       {Gordon Kane and Aaron Pierce},
+  TITLE =        {Perspectives on LHC Physics},
+  PUBLISHER =    {World Scientific},
+  YEAR =         {2008},
+  address =      {Singapore},
+ }
+
+@ARTICLE{atlascalo:2002,
+  AUTHOR =       {P. Puzo},
+  TITLE =        {{ATLAS} Calorimetry},
+  JOURNAL =      {Nuclear Instruments and Methods in Physics Research A},
+  YEAR =         {2002},
+  volume =       {494},
+  pages =        {340-345},
+}
+
+@ARTICLE{trig_conf:2006,
+  AUTHOR =       {{ATLAS-Colaboration}},
+  TITLE =        {Configuration of the {ATLAS} Trigger},
+  JOURNAL =      {IEEE Trans. on Nuclear Science},
+  YEAR =         {2006},
+  volume =       {53},
+  number =       {3},
+  month =        {June},
+}
+% AUTHOR =       {Andre {dos Anjos} and N. Ellis and J. Haller},
+
+@ARTICLE{article:anjos:2006,
+  AUTHOR =       {Andre {dos Anjos} and R.C. Torres and J.M. Seixas},
+  TITLE =        {Neural triggering system operating on high resolution calorimetry information},
+  JOURNAL =      {Nuclear Instruments and Methods in Physics Research A},
+  YEAR =         {2006},
+  volume =       {559},
+  number =       {1},
+  pages =        {134-138},
+}
+
+@inproceedings{ica:clas:2004,
+  Address = {Charleston, USA},
+  Author = {V. Sanchez Poblador and Enric Monte Moreno and Jordi Solé Casals},
+  Booktitle = {Ind. Comp. Analysis And Signal Separation, 5th Int. Conf.},
+  Month = {September},
+  Pages = {1165-1172},
+  Publisher = {Springer},
+  Series = {LNCS},
+  Title = {{ICA} as a Preprocessing Technique for Classification},
+  Year = {2004}}
+  %Editor = {C.G. Puntonet and A. Prieto},
+
+@article{ica_app:2005,
+  Author = {S. Choi and A. Cichocki and H.M Park and Y. Lee},
+  Journal = {Neural Inf. Processing - Letters and Reviews},
+  Number = {1},
+  Title = {Blind Source Separation and Independent Component Analysis - {A} Review},
+  Volume = {6},
+  Year = {2005}}
+
+@inproceedings{app:nlica:spee,
+  Address = {Charleston, USA},
+  Author = {Chen Wei and Li Chin Khor and Wai Lok Woo and Satnam Singh Dlay},
+  Booktitle = {Independent Component Analysis And Signal Separation, 8th International Conference},
+  Editor = {J. Rosca and D. Erdogmus and J. C. Principe and S. Haykin},
+  Month = {March},
+  Pages = {773-780},
+  Publisher = {Springer},
+  Series = {Lecture Notes In Conputer Science},
+  Title = {Post-nonlinear Underdetermined ICA by Bayesian Statistics},
+  Year = {2006}}
+
+@inproceedings{app:nlica:qui,
+  Address = {Paraty, Brazil},
+  Author = {L. T. Duarte and C. Jutten and S. Moussaoui},
+  Booktitle = {Independent Component Analysis And Signal Separation, 8th International Conference},
+  Editor = {T. Adali and C. Jutten and J. Romano and A. Barros},
+  Month = {March},
+  Pages = {662-669},
+  Publisher = {Springer},
+  Series = {Lecture Notes In Conputer Science},
+  Title = {Ion Selective Electrode Array Based on a Bayesian Nonlinear Source Separation Method},
+  Year = {2009}}
+
+@inproceedings{app:ica:und1,
+  Address = {Charleston, USA},
+  Author = {M. Syskind and D. L. Wang and J. Larsen and U. Kjem},
+  Booktitle = {Independent Component Analysis And Signal Separation, 8th International Conference},
+  Editor = {J. Rosca and D. Erdogmus and J. C. Principe and S. Haykin},
+  Month = {March},
+  Pages = {674-681},
+  Publisher = {Springer},
+  Series = {Lecture Notes In Conputer Science},
+  Title = {Separating Underdetermined Convolutive Speech Mixtures},
+  Year = {2006}}
+
+@inproceedings{app:ica:und2,
+  Address = {Paraty, Brazil},
+  Author = {M. Natora and F. Franke and M. Munk and K. Obermayer},
+  Booktitle = {Independent Component Analysis And Signal Separation, 8th International Conference},
+  Editor = {T. Adali and C. Jutten and J. Romano and A. Barros},
+  Month = {March},
+  Pages = {459-467},
+  Publisher = {Springer},
+  Series = {Lecture Notes In Conputer Science},
+  Title = {BSS of Sparse Overcomplete Mixtures and Application to Neural Recordings},
+  Year = {2009}}
+
+@book{ga:book,
+  Author = {R. L. Haupt and S. E. Haupt},
+  Date-Modified = {2009-05-14 14:06:13 -0300},
+  Edition = {2nd},
+  Publisher = {Wiley-Interscience},
+  Title = {Practical Genetic Algorithms},
+  Year = {2004}}
+
+@BOOK{book:tensor:2008,
+  AUTHOR =       {A. D. Michal},
+  TITLE =        {Matrix and Tensor Calculus},
+  PUBLISHER =    {Dover},
+  YEAR =         {2008},
+  edition =      {1st},
+  address =      {West Sussex, UK},
+}
+
+
+@BOOK{haykin:nn:2008,
+  AUTHOR =       {Simon Haykin},
+  TITLE =        {Neural Networks and Learning Machines},
+  PUBLISHER =    {Prentice Hall},
+  YEAR =         {2008},
+  edition =      {3rd},
+  address =      {New Jersey, US},
+}
+
+@BOOK{kuncheva:comb:2004,
+  AUTHOR =       {Ludmila Kuncheva},
+  TITLE =        {Combining Pattern Classifiers, Methods and Algorithms},
+  PUBLISHER =    {Wiley},
+  YEAR =         {2004},
+  address =      {New York, US},
+}
+
+@ARTICLE{article:ALICE:2008,
+  AUTHOR =       {{ALICE Colaboration}},
+  TITLE =        {{ALICE} Experiment at the {CERN} {LHC}},
+  JOURNAL =      {Journal of Instrumentation},
+  YEAR =         {2008},
+  volume =       {3},
+  number =       {S08002},
+  pages =        {1-245},
+}
+
+@ARTICLE{article:CMS:2008,
+  AUTHOR =       {{CMS Colaboration}},
+  TITLE =        {{CMS} Experiment at the {CERN} {LHC}},
+  JOURNAL =      {Journal of Instrumentation},
+  YEAR =         {2008},
+  volume =       {3},
+  number =       {S08004},
+  pages =        {1-334},
+}
+
+@ARTICLE{article:LHCb:2008,
+  AUTHOR =       {{LHCb Colaboration}},
+  TITLE =        {{LHC}b Detector at the {LHC}},
+  JOURNAL =      {Journal of Instrumentation},
+  YEAR =         {2008},
+  volume =       {3},
+  number =       {S08005},
+  pages =        {1-205},
+}
+
+@ARTICLE{article:LHCf:2008,
+  AUTHOR =       {{LHCf Colaboration}},
+  TITLE =        {{LHC}f Experiment at the {CERN} {L}arge {H}adron {C}ollider},
+  JOURNAL =      {Journal of Instrumentation},
+  YEAR =         {2008},
+  volume =       {3},
+  number =       {S08006},
+  pages =        {1-36},
+}
+
+@ARTICLE{article:TOTEM:2008,
+  AUTHOR =       {{TOTEM Colaboration}},
+  TITLE =        {{TOTEM} Experiment at the {CERN} {L}arge {H}adron {C}ollider},
+  JOURNAL =      {Journal of Instrumentation},
+  YEAR =         {2008},
+  volume =       {3},
+  number =       {S08007},
+  pages =        {1-107},
+}
+
+
+@ARTICLE{article:ATLAS:2008,
+  AUTHOR =       {{ATLAS Colaboration}},
+  TITLE =        {{ATLAS} Experiment at {CERN} {L}arge {H}adron {C}ollider},
+  JOURNAL =      {Journal of Instrumentation},
+  YEAR =         {2008},
+  volume =       {3},
+  number =       {S08003},
+  pages =        {1-407},
+}
+
+@ARTICLE{article:LHC:2008,
+  AUTHOR =       {L. Evans and P. Bryant},
+  TITLE =        {{LHC} Machine},
+  JOURNAL =      {Journal of Instrumentation},
+  YEAR =         {2008},
+  volume =       {3},
+  number =       {S08001},
+  pages =        {1-158},
+}
+
+@ARTICLE{article:atlas:2006,
+  AUTHOR =       {Alex Barriuso Poy and John Erik Sloper and Viatcheslav Khomutnikov and Giovanna Lehmann Miotto},
+  TITLE =        {Operation of the {ATLAS} Experiment: Organization of the Detector Controls and the Data Acquisition System},
+  JOURNAL =      {Proceedings of the 32nd IEEE Annual Conference on Industrial Electronics},
+  YEAR =         {2006},
+  pages =        {190-194},
+  month =        {Nov.},
+}
+
+@ARTICLE{trigger:2006,
+  AUTHOR =       {A. Gesualdi Mello{, et al.}},
+  TITLE =        {Overview of the High-Level Trigger Electron and Photon Selection for the {ATLAS} Experiment at the {LHC}},
+  JOURNAL =      {IEEE Transactions on Nuclear Science},
+  YEAR =         {2006},
+  volume =       {53},
+  number =       {5},
+  pages =        {2839-2843},
+  month =        {October},
+}
+
+%  AUTHOR =       {A. Gesualdi Mello and A. dos Anjos and S. Armstrong and J. T. M. Baines and C. P. Bee and M. Biglietti and J. A. Bogaerts and
+%M. Bosman and B. Caron and P. Casado and G. Cataldi and D. Cavalli and G. Comune and P. Conde Muiño and G. Crone and D. Damazio and
+%A. De Santo and M. Diaz Gomez and A. Di Mattia and N. Ellis and D. Emeliyanov and B. Epp and S. Falciano and H. Garitaonandia and
+%S. George and V. Ghete and R. Goncalo and J. Haller and S. Kabana and A. Khomich and G. Kilvington and J. Kirk and N. Konstantinidis and
+%A. Kootz and A. J. Lankford and A. Lowe and L. Luminari and T. Maeno and J. Masik and C. Meessen and R. Moore and P. Morettini and
+%A. Negri and N. Nikitin and A. Nisati and C. Osuna and C. Padilla and N. Panikashvili and F. Parodi and E. Pasqualucci and V. Perez Reale and
+%J. L. Pinfold and P. Pinto and Z. Qian and S. Resconi and S. Rosati and C. Sanchez and C. Santamarina and D. A. Scannicchio and
+%C. Schiavi and E. Segura and J. M. de Seixas and S. Sivoklokov and A. Sobreira and R. Soluk and E. Stefanidis and S. Sushkov and
+%M. Sutton and S. Tapprogge and S. Tarem and E. Thomas and F. Touchard and G. Usaib and B. Venda Pinto and A. Ventura and V. Vercesi and
+%T. Wengler and P. Werner and S. J. Wheeler and F. J. Wickens and W. Wiedenmann and M. Wielers and G. Zobernig},
+
+@ARTICLE{article:tilecal:2006,
+  AUTHOR =       {P. Adragna{, et al.}},
+  TITLE =        {The {ATLAS} Hadronic Tile Calorimeter: From Construction Toward Physics},
+  JOURNAL =      {IEEE Transactions on Nuclear Science},
+  YEAR =         {2006},
+  volume =       {53},
+  number =       {5},
+  pages =        {1275-1281},
+  month =        {June},
+}
+
+@BOOK{book:cpv:1999,
+  AUTHOR =       {I. Bigi and A. Sanda},
+  TITLE =        {CP violation},
+  PUBLISHER =    {Cambridge University Press},
+  YEAR =         {1999},
+  address =      {Cambridge, UK},
+}
+
+@MISC{article:susy:1996,
+  author =       {J. D. Lykken},
+  title =        {Introduction to Supersymmetry},
+  howpublished = {Lectures at the Theoretical Advanced Study Institute (TASI 96):Fields, Strings, and Duality},
+  year =         {1996},
+  month =        {June},
+  publisher =    {{FERMILAB} Publications},
+  volume =       {445-T},
+  pages =        {1-67},
+  address =      {Batavia, US},
+}
+
+%@ARTICLE{article:susy:1996,
+%  AUTHOR =       {J. D. Lykken},
+%  TITLE =        {Introduction to Supersymmetry},
+%  JOURNAL =      {{FERMILAB} Publications},
+%  YEAR =         {1996},
+%  volume =       {445-T},
+%  pages =        {1-67},
+%  address =      {Batavia, US},
+%}
+
+@ARTICLE{article:darkm:2005,
+  AUTHOR =       {G. Bertone and D. Hooper and J. Silk},
+  TITLE =        {Particle dark matter, evidence, candidates and constraints},
+  JOURNAL =      {Physics Reports},
+  YEAR =         {2005},
+  volume =       {405},
+  pages =        {279-390},
+}
+
+@ARTICLE{article:wigmans:2005,
+  AUTHOR =       {N. Akchurin and K. Carrell and J. Hauptman and H. Kim and H.P. Paar and A. Penzo and R. Thomas and R. Wigmans},
+  TITLE =        {Electron detection with a dual-readout calorimeter},
+  JOURNAL =      {Nuclear Instruments and Methods in Physics Research A},
+  YEAR =         {2005},
+  volume =       {536},
+  pages =        {29-51},
+}
+
+
+@BOOK{book:wigmans:2000,
+  AUTHOR =       {R. Wigmans},
+  TITLE =        {Calorimetry: Energy Measurement in Particle Physics},
+  PUBLISHER =    {Clarendon Press},
+  YEAR =         {2000},
+  address =      {Gloucestershire, UK},
+}
+
+@ARTICLE{article:elecalo:2003,
+  AUTHOR =       {Bengt Lund-Jensen},
+  TITLE =        {The Status of the Construction and the Performance of the {ATLAS} Liquid Argon Electromagnetic Calorimeters},
+  JOURNAL =      {IEEE Nuclear Science Symposium Conference Record},
+  YEAR =         {2003},
+  volume =       {1},
+  pages =        {41-44},
+}
+
+
+@INPROCEEDINGS{seixas:pcd:1995,
+  AUTHOR =       {L.P. Caloba and J.M. Seixas and F.S. Pereira},
+  TITLE =        {Neural Discriminating Analysis for a Second-Level Trigger System},
+  BOOKTITLE =    {Proceedings of the International Conference on Computing in High Energy Physics (CHEP95)},
+  YEAR =         {1995},
+  month =        {September},
+  address =      {Rio de Janeiro, Brazil},
+}
+
+@INPROCEEDINGS{seixas:pcd:1999,
+  AUTHOR =       {Eugenio Suarez Caner and J.M. Seixas},
+  TITLE =        {Neural Discriminating Analysis on Pre-processed Data},
+  BOOKTITLE =    {Proceedings of the 6th IEEE International Conference on Electronics, Circuits and Systems (ICECS)},
+  YEAR =         {1999},
+  pages =        {415-418},
+  month =        {September},
+  address =      {Pafos, Cyprus},
+}
+
+
+
+@ARTICLE{article:localica:karhunen1999,
+  AUTHOR =       {Juha Karhunen and Simona Malaroiu},
+  TITLE =        {Local Independent Component Analysis Using Clustering},
+  JOURNAL =      {Proceedings of the International Workshop on Independent Component Analysis and Blind Signal Separation},
+  YEAR =         {1999},
+}
+
+
+@ARTICLE{article:fastica:1999,
+  AUTHOR =       {Aapo Hyvarinen},
+  TITLE =        {Fast and Robust Fixed-Point Algorithms for Independent Component Analysis},
+  JOURNAL =      {IEEE Transactions on Neural Networks},
+  YEAR =         {1999},
+  volume =       {10},
+  number =       {3},
+  pages =        {626-634},
+}
+
+@ARTICLE{article:kurtosis:2004,
+  AUTHOR =       {Tae-Hwan Kim and Halbert White},
+  TITLE =        {On More Robust Estimation of Skewness and Kurtosis},
+  JOURNAL =      {Finance Research Letters},
+  YEAR =         {2004},
+  volume =       {1},
+  pages =        {56-73},
+ }
+
+
+@ARTICLE{denoise:ica2000,
+  AUTHOR =       {A. Budillon and Francesco Palmieri and Rosario Varriale},
+  TITLE =        {A Hybrid Method for Blind Signal De-noising via Independent Component Analysis},
+  JOURNAL =      {Proceedings of the International Workshop on Independent Component Analysis and Blind Signal Separation - ICA2000},
+  YEAR =         {2000},
+  pages =        {145-150},
+}
+
+
+@ARTICLE{article:som:kohonen:1990,
+  AUTHOR =       {T. Kohonen},
+  TITLE =        {The Self-Organizing Map},
+  JOURNAL =      {Proceedings of the IEEE},
+  YEAR =         {1990},
+  volume =       {78},
+  number =       {9},
+  pages =        {1464-1480},
+  month =        {September},
+}
+
+@ARTICLE{article:som:oja:1996,
+  AUTHOR =       {T. Kohonen and E. Oja and O. Simula and A. Visa and J. Kangas},
+  TITLE =        {Engineering Applications of the Self-Organizing Map},
+  JOURNAL =      {Proceedings of the IEEE},
+  YEAR =         {1996},
+  volume =       {84},
+  number =       {10},
+  pages =        {1358-1384},
+  month =        {October},
+}
+
+
+@ARTICLE{moura:isda:2007,
+  AUTHOR =       {N. N. Moura and J. M. Seixas and W. Soares Filho and A. V. Greco},
+  TITLE =        {Independent Compoent Analysis for Optimal Passive Sonar Signal Detection},
+  JOURNAL =      {Proceedings of the 7th International Conference on Intelligent Systems Design and Applications - ISDA},
+  YEAR =         {2007},
+}
+
+@BOOK{book:physics:martin2006,
+  AUTHOR =       {B. R. Martin},
+  TITLE =        {Nuclear and Particle Physics},
+  PUBLISHER =    {Wiley},
+  YEAR =         {2006},
+  address =      {New York, US},
+}
+
+@ARTICLE{article:rprop:1993,
+  AUTHOR =       {M. Riedmiller and H. Braun},
+  TITLE =        {A direct adaptive method for faster backpropagation learning, the {RPROP} algorithm},
+  JOURNAL =      {Proc. of Int. Conf. on Neural Networks},
+  YEAR =         {1993},
+  pages =        {586-591},
+}
+
+@ARTICLE{article:relev:1994,
+  AUTHOR =       {A. Gruber and J. Möck and J. Fröchtenicht and D. Goldner},
+  TITLE =        {Performance of backpropagation
+networks in the second level trigger of the H1-experiment},
+  JOURNAL =      {New Computing
+Techniques in Physics Research},
+  YEAR =         {1994},
+}
+% and C. Kiesling and T. Klober and
+%H. Kolanoski and T. Krämerkämper and P. Ribarics
+
+@BOOK{Book:Haykin_ingles:2001,
+  AUTHOR =       "Simon Haykin",
+  TITLE =        "Neural Networks, Principles and Practice",
+  PUBLISHER =    "Bookman",
+  YEAR =         "2001"
+}
+
+@BOOK{book:fisica:martin:2006,
+  AUTHOR =       {B. R. Martin},
+  TITLE =        {Nuclear and Particle Physics},
+  PUBLISHER =    {Wiley},
+  YEAR =         {2006},
+  address =      {New York, US},
+}
+
+
+@PHDTHESIS{tese:andre:2006,
+  AUTHOR =       {André Rabello dos Anjos},
+  TITLE =        {Sistema de filtragem online aplicada a um ambiente com alta taxa de eventos},
+  SCHOOL =       {COPPE/UFRJ},
+  YEAR =         {2006},
+  month =        {Dezembro},
+}
+
+@PHDTHESIS{tese:herman:2006,
+  AUTHOR =       {Herman Pessoa Lima Junior},
+  TITLE =        {Monitoração online e distribuído para um ambiente com alta taxa de eventos e fina segmentação},
+  SCHOOL =       {Universidade Federal do Rio de Janeiro},
+  YEAR =         {2006},
+}
+
+@PHDTHESIS{tese:hermaning:2006,
+  AUTHOR =       {Herman Pessoa {Lima Jr}},
+  TITLE =        {Online Distributed Monitoring for a High Rate and Highly Segmented Environment},
+  SCHOOL =       {Electrical Engineering Program, Federal Universiy of Rio de Janeiro},
+  YEAR =         {2006},
+}
+
+@BOOK{book:pca:2002,
+  AUTHOR =       {I. T. Jolliffe},
+  TITLE =        {Principal Component Analysis},
+  PUBLISHER =    {Springer},
+  YEAR =         {2002},
+  edition =      {2nd},
+  address =      {New York, US},
+}
+
+@BOOK{book:chung:2001,
+  AUTHOR =       {K. C. Chung},
+  TITLE =        {Introdução à Física Nuclear},
+  PUBLISHER =    {EdUERJ},
+  YEAR =         {2001},
+  address =      {Rio de Janeiro},
+}
+
+
+@ARTICLE{article:dey:1999,
+  AUTHOR =       {J. S. Baras and S. Dey},
+  TITLE =        {Combined Compression and Classification with Learning Vector Quantization},
+  JOURNAL =      {IEEE Transactions on Information Theory},
+  YEAR =         {1999},
+  volume =       {45},
+  number =       {6},
+  pages =        {1911-1920},
+}
+
+
+@ARTICLE{article:daugman:1998,
+  AUTHOR =       {J. G. Daugman},
+  TITLE =        {Complete discrete 2-D Gabor transforms by neural networks for image analysis and compression},
+  JOURNAL =      {IEEE Transactions on Acoustic Speech and SignalProcessing},
+  YEAR =         {1998},
+  pages =        {1169-1179},
+}
+
+
+
+
+@ARTICLE{article:foo:2006,
+  AUTHOR =       {A. M. Base and P. Gruber and F. Theisa and S. Foo},
+  TITLE =        {Blind source separation based on self-organizing neural network},
+  JOURNAL =      {Engineering Applications of Artificial Intelligence},
+  YEAR =         {2006},
+  volume =       {19},
+  number =       {3},
+  pages =        {305-311},
+}
+
+
+@BOOK{book:kohonen:2001,
+  AUTHOR =       {Teuvo Kohonen},
+  TITLE =        {Self Organizing Maps},
+  PUBLISHER =    {Springer},
+  YEAR =         {2001},
+  edition =      {3rd},
+  address =      {Berlin, Germany},
+}
+
+
+@BOOK{book:freeman:1991,
+  AUTHOR =       {James A. Freeman and David M. Skapura},
+  TITLE =        {Neural Networks Algorithms, Applications, and Programming Techniques},
+  PUBLISHER =    {Addison Wesley},
+  YEAR =         {1991},
+}
+
+
+%  number =       {84},
+
+@ARTICLE{article:amri:1998,
+  AUTHOR =       {A. Cichocki and S.C. Douglas and S. Amari},
+  TITLE =        {Robust techniques for independent component analysis
+with noisy data},
+  JOURNAL =      {Neurocomputing},
+  YEAR =         {1998},
+  volume =       {22},
+  number =       {1-3},
+  pages =        {113-129},
+}
+
+@BOOK{book:amari:2002,
+  AUTHOR =       {A. Cichocki and S.I. Amari},
+  TITLE =        {Adaptive Blind Signal and Image Processing},
+  PUBLISHER =    {John Willey and Sons},
+  YEAR =         {2002},
+  address =      {West Sussex, UK},
+}
+
+
+@INPROCEEDINGS{article:jutten:2002,
+  AUTHOR =       {A. Paraschiv-Ionescu and C. Jutten and K. Aminian and B. Najafi},
+  TITLE =        {Source separation in strong noisy mixtures a study of wavelet de-noising pre-processing},
+  BOOKTITLE =    {IEEE International Conference on Acoustics, Speech, and Signal Processing},
+  YEAR =         {2002},
+  volume =       {2},
+  pages =        {1681-1684},
+  address =      {Orlando, US},
+}
+
+
+@ARTICLE{article:hyvarinen:1999noisy,
+  AUTHOR =       {A. Hyvarinen},
+  TITLE =        {Sparse Code Shrinkage: Denoising of Nongaussian Data by Maximum Likelihood
+Estimation},
+  JOURNAL =      {Neural Computation},
+  YEAR =         {1999},
+  volume =       {11},
+  number =       {7},
+  pages =        {1739-1768},
+}
+
+@ARTICLE{article:hyvarinen:1998noisy,
+  AUTHOR =       {A. Hyvarinen},
+  TITLE =        {Independent Component Analysis in the Presence of Gaussian Noise by Maximizing
+Joint Likelihood},
+  JOURNAL =      {Neurocomputing},
+  YEAR =         {1998},
+  volume =       {22},
+  number =       {1-3},
+  pages =        {49-67},
+}
+
+@ARTICLE{article:gray:1984,
+  AUTHOR =       {Robert M. Gray},
+  TITLE =        {Vector Quantization},
+  JOURNAL =      {IEEE ASSP Magazine},
+  YEAR =         {1984},
+  volume =       {Part 1},
+  pages =        {4-29},
+  month =        {April},
+}
+
+
+@ARTICLE{article:gersho:1982,
+  AUTHOR =       {Allen Gersho},
+  TITLE =        {On the Structure of Vector Quantizers},
+  JOURNAL =      {IEEE Transactions on Information Theory},
+  YEAR =         {1982},
+  volume =       {28},
+  number =       {2},
+  pages =        {157-166},
+  month =        {March},
+}
+
+
+@INPROCEEDINGS{article:kohonenLVQ:1990,
+  AUTHOR =       {Teuvo Kohonen},
+  TITLE =        {Improved versions of learning vector quantization},
+  BOOKTITLE =    {Proceedings of the International Joint Conference on Neural Networks},
+  YEAR =         {1990},
+  volume =       {1},
+  pages =        {545-550},
+  address =      {San Diego, US},
+}
+
+
+@ARTICLE{article:fisher:1936,
+  AUTHOR =       {R. A. Fisher},
+  TITLE =        {The Use of Multiple Measurements in Taxonimic Problems},
+  JOURNAL =      {Annals of Eugenics},
+  YEAR =         {1936},
+  volume =       {7},
+  pages =        {179-188},
+}
+
+@BOOK{book:duda:2000,
+  AUTHOR =       {Richard O. Duda and Peter E. Hart and David G. Stork},
+  TITLE =        {Pattern Classification},
+  PUBLISHER =    {Wiley},
+  YEAR =         {2000},
+  edition =      {2nd},
+  address =      {New York, US},
+}
+
+
+@ARTICLE{article:oja:1982,
+  AUTHOR =       {E. Oja},
+  TITLE =        {A Simplified Neuron Model as a Principal Component Analyser},
+  JOURNAL =      {Journal of Mathematical Biology},
+  YEAR =         {1982},
+  volume =       {15},
+  pages =        {267-273},
+}
+
+
+@ARTICLE{article:shannon:1948,
+  AUTHOR =       {C. E. Shannon},
+  TITLE =        {A Mathematical Theory of Communication},
+  JOURNAL =      {The Bell System Technical Journal},
+  YEAR =         {1948},
+  volume =       {27},
+  number =       {6},
+  pages =        {379-423},
+  month =        {July},
+}
+
+
+@ARTICLE{article:Cardoso:1993,
+  AUTHOR =       {Jean-Francois Cardoso and Antoine Souloumiac},
+  TITLE =        {Blind Beamforming for Non-gaussian Signals},
+  JOURNAL =      {IEE Proceedings-F},
+  YEAR =         {1993},
+  volume =       {140},
+  number =       {6},
+  pages =        {362-370},
+  month =        {November},
+}
+
+@ARTICLE{article:Cichocki:1996,
+  AUTHOR =       {Andrzej Cichocki and Rolf Unbehauen},
+  TITLE =        {Robust Neural Networks with On-Line Learning for Blind Identification and Blind Separation of Sources},
+  JOURNAL =      {IEEE Transactions on Circuits and Systems-I: Fundamental Theory and Applications},
+  YEAR =         {1996},
+  volume =       {43},
+  number =       {11},
+  month =        {November},
+}
+
+@ARTICLE{article:hyvarinen:1998,
+  AUTHOR =       {Aapo Hyvarinen},
+  TITLE =        {New approximations of diferencial entropy for independent component analysis and projection pursuit},
+  JOURNAL =      {Advances in Neural Information Signal Processing},
+  YEAR =         {1998},
+  volume =       {10},
+  pages =        {273-279},
+}
+
+@BOOK{book:diniz:pds,
+  AUTHOR =       {Paulo Sergio Ramirez Diniz and Eduardo Antônio Barros da Silva and Sérgio Lima Neto},
+  TITLE =        {Processamento Digital de Sinais},
+  PUBLISHER =    {Bookman},
+  YEAR =         {2004},
+}
+
+@BOOK{book:diniz:adap,
+  AUTHOR =       {Paulo Sergio Ramirez Diniz},
+  TITLE =        {Adaptive Filtering: Algorithms and Practical Implementation},
+  PUBLISHER =    {Springer},
+  YEAR =         {2008},
+}
+
+@BOOK{book:cover:1991,
+  AUTHOR =       {T. M. Cover and J. A. Thomas},
+  TITLE =        {Elements of Information Theory},
+  PUBLISHER =    {Wiley},
+  YEAR =         {1991},
+  address =      {New York, US},
+}
+
+@ARTICLE{article:hyvarinen:2000,
+  AUTHOR =       {Aapo Hyvarinen and Erkki Oja},
+  TITLE =        {Independent Component Analysis: Algorithms and Applications},
+  JOURNAL =      {Neural Networks},
+  YEAR =         {2000},
+  volume =       {13},
+  number =       {4-5},
+  pages =        {411-430},
+}
+
+@ARTICLE{article:seixas:1996,
+  AUTHOR =       {J. M. Seixas and L. Calôba, M. Souza},
+  TITLE =        {Neural Second-Level trigger system based on calorimetry},
+  JOURNAL =      {Computer Physics Communications},
+  YEAR =         {1996},
+  volume =       {95},
+  number =       {2-3},
+  month =        {June},
+  pages =        {143-157},
+}
+
+@MASTERSTHESIS{diss:anjos:2001,
+  AUTHOR =       {André Rabello {dos ANJOS}},
+  TITLE =        {Sistema Neuronal de decisão baseado em calorimetria de altas energias, Dissertação de Mestrado},
+  SCHOOL =       {COPPE / UFRJ},
+  YEAR =         {2001},
+  month =        {Abril},
+}
+
+
+@ARTICLE{article:herman:2006,
+  AUTHOR =       {H.P. {Lima Jr}. and J.M. Seixas},
+  TITLE =        {A segmented principal component analysis applied to calorimetry information at ATLAS},
+  JOURNAL =      {Nuclear Instruments and Methods in Physics Research A},
+  YEAR =         {2006},
+  volume =       {559},
+  number =       {1},
+  pages =        {129-133},
+  month =        {April},
+}
+
+@ARTICLE{article:HLT1:2003,
+  AUTHOR =       {Reiner Hauser},
+  TITLE =        {The ATLAS High Level Trigger System},
+  JOURNAL =      {U.S. Atlas Computing Meeting, Brookhaven},
+  YEAR =         {2003},
+  month =        {Aug},
+}
+
+
+@ARTICLE{article:LHC:2002,
+  AUTHOR =       {M.J. Price},
+  TITLE =        {The {LHC} project},
+  JOURNAL =      {Nuclear Instruments and Methods in Physics Research A},
+  YEAR =         {2002},
+  pages =        {46-61},
+  volume =       {478},
+}
+
+
+@BOOK{book:peebles:2001,
+  AUTHOR =       {Peyton Z. {PEEBLES Jr.}},
+  TITLE =        {Probability, Random Variables and Random Signal Principals},
+  PUBLISHER =    {Mc Graw Hill},
+  YEAR =         {2001},
+  address =      {New York, US},
+}
+
+@BOOK{book:oja:2001,
+  AUTHOR =       {Aapo Hyvarinen and Juha Karhunen and Erkki Oja},
+  TITLE =        {Independent Component Analysis},
+  PUBLISHER =    {Wiley},
+  YEAR =         {2001},
+  address =      {New York, US},
+}
+
+@BOOK{book:shanmugan:1988,
+  AUTHOR =       {K. Sam Shanmugan and A. M. Breipohl},
+  TITLE =        {Random Signals, Detection, Estimation and Data Analysis},
+  PUBLISHER =    {Wiley},
+  YEAR =         {1988},
+  address =      {New York, US},
+}
+
+
+@BOOK{book:wasserman:1989,
+  AUTHOR =       {P. Wasserman},
+  TITLE =        {Neural Computing, Theory and Practice},
+  PUBLISHER =    {Van Nostrand Reinhold},
+  YEAR =         {1989},
+  address =      {New York, US},
+}
+
+@ARTICLE{article:seixas:2005,
+  AUTHOR =       {A. dos Anjos and R.C. Torres and T.C. Xavier and B.C. Ferreira and J.M. Seixas},
+  TITLE =        {Otimização do Segundo Nível de Trigger do ATLAS Baseado em Calorimetria},
+  JOURNAL =      {XXVI Encontro Brasileiro de Física de Partículas e Campos},
+  YEAR =         {2005},
+}
+
+
+@BOOK{book:vantrees1:2001,
+  AUTHOR =       {Harry L. Van Trees},
+  TITLE =        {Detection, Estimation, and Modulation Theory, Part I},
+  PUBLISHER =    {Wiley},
+  YEAR =         {2001},
+  address =      {New York, US},
+}
+
+@BOOK{book:vantrees3:2001,
+  AUTHOR =       {Harry L. Van Trees},
+  TITLE =        {Detection, Estimation, and Modulation Theory, Part III},
+  PUBLISHER =    {Wiley},
+  YEAR =         {2001},
+  address =      {New York, US},
+}
+
+@BOOK{book:montecarlo:2004,
+  AUTHOR =       {C.P. Robert and G. Casella},
+  TITLE =        {Monte Carlo Statistical Methods},
+  PUBLISHER =    {Springer-Verlag},
+  YEAR =         {2004},
+  address =      {New York, US},
+}
+
+@MISC{Homepage:brookhaven,
+  author =       {Brookhaven},
+  title =        {Brookhaven National Laboratory},
+  howpublished = {Disponível em: $<$http://www.bnl.gov/$>$. Acesso em: 02 de julho de 2009},
+  year =         {2009},
+}
+
+@MISC{homepage:kek,
+  author =       {KEK},
+  title =        {{KEK} High-Energy Accelerator},
+  howpublished = {Disponível em: $<$http://www.kek.jp/$>$. Acesso em: 02 de julho de 2009},
+}
+
+@MISC{homepage:slac,
+  author =       {SLAC},
+  title =        {{SLAC} Laboratory},
+  howpublished = {Disponível em: $<$http://www.slac.stanford.edu/$>$. Acesso em: 02 de julho de 2009},
+}
+
+@MISC{Homepage:alice,
+  author =       {ALICE-Collaboration},
+  title =        {ALICE Experiment},
+  howpublished = {Disponível em: $<$http://aliceinfo.cern.ch/$>$. Acesso em: 28 de março de 2007},
+  %year =         {2006},
+}
+
+@MISC{Homepage:lhcb,
+  author =       {LHCb-Collaboration},
+  title =        {LHCb Experiment},
+  howpublished = {Disponível em: $<$http://lhcb.web.cern.ch/lhcb/$>$. Acesso em: 28 de março de 2007},
+  %year =         {2006},
+}
+
+@MISC{Homepage:lhcexperiments,
+  author =       {LHC-Collaboration},
+  title =        {LHC Experiments},
+  howpublished = {Disponível em: $<$http://lhc.web.cern.ch/lhc$>$. Acesso em: 28 de março de 2007},
+  %year =         {2006},
+}
+
+@MISC{Homepage:lhc,
+  author =       {LHC-Collaboration},
+  title =        {Large Hadron Collider},
+  howpublished = {Disponível em: $<$http://lhc.web.cern.ch/lhc/$>$. Acesso em: 28 de março de 2007},
+  %year =         {2006},
+}
+
+
+@MISC{Homepage:desy,
+  author =       {DESY},
+  title =        {Deutsches Elektronen-SynchrotronDie},
+  howpublished = {Disponível em :$<$http://www.desy.de/$>$. Acesso em: 02 de julho de 2009},
+  %year =         {2006},
+}
+
+@MISC{Homepage:Fermilab,
+  author =       {Fermilab},
+  title =        {Fermi National Accelerator Laboratory},
+  howpublished = {Disponível em :$<$http://www.fnal.gov//$>$. Acesso em: 02 de julho de 2009},
+  %year =         {2006},
+}
+
+
+@MISC{Homepage:CERN,
+  author =       {CERN-Colaboration},
+  title =        {CERN},
+  howpublished = {Disponível em :$<$http://www.cern.ch/$>$. Acesso em: 20 de março de 2007},
+  %year =         {2006},
+}
+
+@MISC{Homepage:fotolhc,
+  author =       {{High-Energy Physics Group, Carnegie Melon University}},
+  title =        {Area Map of CERN Site},
+  howpublished = {Disponível em :$<$http://www-hep.phys.cmu.edu/cms/PICT-ARCH/lhc-map.gif$>$. Acesso em: 28 de junho de 2009},
+}
+
+%  author =       {{Carnegie Melon University} {High-Energy Physics Group}},
+
+@MISC{Homepage:ATLAS,
+  author =       {ATLAS-Collaboration},
+  title =        {Experiment Overview},
+  howpublished = {Disponível em :$<$http://www.atlas.ch/$>$. Acesso em: 20 de março de 2007},
+  %year =         {2006},
+}
+
+@TECHREPORT{LI:ATLAS:1992,
+  AUTHOR =       {ATLAS-Collaboration},
+  TITLE =        {Letter of Intents for a General Purpose pp Experiment at the
+Large Hadron Collider at CERN},
+  INSTITUTION =  {CERN},
+  YEAR =         {1992},
+  month =        {October},
+  address =      {Geneva, Switzerland},
+}
+
+@TECHREPORT{TP:ATLAS:1994,
+  AUTHOR =       {ATLAS-Collaboration},
+  TITLE =        {Technical Proposal for a General Purpose pp Experiment at the
+Large Hadron Collider at CERN},
+  INSTITUTION =  {CERN},
+  YEAR =         {1994},
+  month =        {December},
+  address =      {Geneva, Switzerland},
+}
+
+@TECHREPORT{TDR1:ATLAS:1999,
+  AUTHOR =       {ATLAS-Collaboration},
+  TITLE =        {ATLAS Detector and Physics Performance Technical Design Report, Volume 1},
+  INSTITUTION =  {CERN},
+  YEAR =         {1999},
+  month =        {May},
+  address =      {Geneva, Switzerland},
+}
+
+@TECHREPORT{TDR2:ATLAS:1999,
+  AUTHOR =       {ATLAS-Collaboration},
+  TITLE =        {ATLAS Detector and Physics Performance Technical Design Report, Volume 2},
+  INSTITUTION =  {CERN},
+  YEAR =         {1999},
+  month =        {May},
+  address =      {Geneva, Switzerland},
+}
+
+@TECHREPORT{TDR:ATLAS:2003,
+  AUTHOR =       {ATLAS-Collaboration},
+  TITLE =        {ATLAS High-Level Trigger, Data Acquisition and Controls Technical Design Report},
+  INSTITUTION =  {CERN},
+  YEAR =         {2003},
+  month =        {May},
+  address =      {Geneva, Switzerland},
+}
+
+@TECHREPORT{TDR:ATLAS:1998,
+  AUTHOR =       {ATLAS-Collaboration},
+  TITLE =        {First-Level Trigger Technical Design Report},
+  INSTITUTION =  {CERN},
+  YEAR =         {1998},
+  month =        {June},
+  address =      {Geneva, Switzerland},
+}
+
+
+@BOOK{livro:fisica1:2006,
+  AUTHOR =       {Committee on Elementary Particle Physics in the 21st Century, National Research Council},
+  TITLE =        {Revealing the Hidden Nature of Space and Time: Charting the Course for Elementary Particle Physics},
+  PUBLISHER =    {National Academic Press},
+  YEAR =         {2006},
+  address =      {Washington-DC, US},
+}
+
+@BOOK{livro:fisica2:1998,
+  AUTHOR =       {Committee on Elementary Particle Physics, National Research Council},
+  TITLE =        {Elementary Particle Physics, Revealing the Secrets of Energy and Matter},
+  PUBLISHER =    {National academic Press},
+  YEAR =         {1998},
+  address =      {Washington, D.C., US},
+}
+
+%%%%%%%%%%%%%%%%%%MESTRADO%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@ARTICLE{Article:Paulo:2004,
+  AUTHOR =       "Paulo Roberto Araújo Da Silva and A. C. De C. Lima and L. A. L. De Almeida",
+  TITLE =        "Um Novo Algoritmo Para Cálculo Do Wavelet Modulus Maxima Em Sinais De Vibração De Transformadores De Potência",
+  JOURNAL =      "XV Congresso Brasileiro de Automática-CBA2004, Gramado-RS",
+  YEAR =         "2004",
+  month =        "September"
+}
+
+@ARTICLE{Article:Echavarria:2000,
+  AUTHOR =       "R. Echavarria and M. Cotorogea and A. Claudio and V. Sanchez",
+  TITLE =        "Design and implementation of a fast on-load tap changing regulator",
+  JOURNAL =      "IEEE Industry Applications Conference",
+  YEAR =         "2000",
+  volume =       "4",
+  pages =        "2078-2085",
+  month =        "Oct"
+}
+
+
+@ARTICLE{Article:Kay:1997,
+  AUTHOR =       "A. G. Kay",
+  TITLE =        "The monitoring and protection of on load tap changers",
+  JOURNAL =      "IEE Colloquium on Condition Monitoring of Large Machines and Power Transformers (Digest No: 1997/086)",
+  YEAR =         "1997",
+  pages =        "5/1-5/9"
+}
+
+
+@ARTICLE{Article:Zhu:2000,
+  AUTHOR =       "T. X. Zhu and S. K. Tso and K. L. Lo",
+  TITLE =        "An Investigation into OLTC Effects on Voltage Collapse",
+  JOURNAL =      "IEEE Transactions on Power Systems",
+  YEAR =         "2000",
+  volume =       "15",
+  number =       "2",
+  pages =        "515-521",
+  month =        "May"
+}
+
+
+@ARTICLE{Article:Peck:1995,
+  AUTHOR =       "D. A. Peck",
+  TITLE =        "On-load tap-changers current experience and future developments. Principles and resulting benefits of separate tank (external) tap-changers",
+  JOURNAL =      "IEE European Seminar on Developments On-Load Tapchangers: Current Experience and Future",
+  YEAR =         "1995",
+  month =        "Nov"
+}
+
+
+@ARTICLE{Article:cigre:2001,
+  AUTHOR =       "P. Guuinic and J. Aubin",
+  TITLE =        "Cigre's Work on Power Transforms",
+  JOURNAL =      "EPRI Substation Equipment Diagnostics Conference IX",
+  YEAR =         "2001",
+  month =        "February"
+}
+
+
+@ARTICLE{Article:Gao:2002,
+  AUTHOR =       "Dawei Gao and Qingchun Lu and Jishou Luo",
+  TITLE =        "A new scheme for on-load tap-changer of transformers",
+  JOURNAL =      "International Conference on Power System Technology Proceedings",
+  YEAR =         "2002",
+  volume =       "2",
+  pages =        "1016-1020",
+  month =        "Oct."
+}
+
+
+@ARTICLE{Article:Handley:2001,
+  AUTHOR =       "B. Handley and M. Redfern and S. White",
+  TITLE =        "On load tap-changer conditioned based maintenance",
+  JOURNAL =      "IEE Proceedings on Generation, Transmission and Distribution",
+  YEAR =         "2001",
+  volume =       "148",
+  pages =        "296-300",
+  month =        "July"
+}
+
+
+@ARTICLE{Article:Burg:1967,
+  AUTHOR =       "J. P. Burg",
+  TITLE =        "Maximum Entropy Spectral Analysis",
+  JOURNAL =      "Proceedings of the 37th Meeting of the Society of Exploration Geophysicists",
+  YEAR =         "1967"
+}
+
+@ARTICLE{Article:Kang2:2001,
+  AUTHOR =       "Pengju Kang and D. Birtwhistle",
+  TITLE =        "Condition Assessment of Power Trans-former On Load Tap-Changers Using Wavelet Analysis",
+  JOURNAL =      "IEEE Transactions on Power Delivery",
+  YEAR =         "2001",
+  volume =       "16",
+  number =       "3
+}
+
+@ARTICLE{Article:Mallat:1992,
+  AUTHOR =       "Stephane Mallat and Wen L. Hwang",
+  TITLE =        "Singularity Detection an Processing With Wavelets",
+  JOURNAL =      "IEEE Transactions on Information Theory",
+  YEAR =         "1992",
+  volume =       "38",
+  number =       "2"
+}
+
+
+
+@ARTICLE{Article:Kang:2001,
+  AUTHOR =       "P.Kang and D. Birtwhistle",
+  TITLE =        "Condition monitoring of power transformer on-load-tap-changers. Part 1: Automatic condition diagnostics",
+  JOURNAL =      "IEE Proceedings on Generation, Transmission and Distribution",
+  YEAR =         "2001",
+  volume =       "148",
+  number =       "4",
+  pages =        "301-306"
+}
+
+@ARTICLE{Article:Kang1:2001,
+  AUTHOR =       "P.Kang and D. Birtwhistle",
+  TITLE =        "Condition monitoring of power transformer on-load-tap-changers. Part 2: Detection of ageing from vibration signatures",
+  JOURNAL =      "IEE Proceedings on Generation, Transmission and Distribution",
+  YEAR =         "2001",
+  volume =       "148",
+  number =       "4",
+  pages =        "307-311"
+}
+
+
+@ARTICLE{Article:Martins:1998,
+  author =       "H.J.A Martins, J.A. Duque, W. Cerqueira, L.A. Domingues, J.A. Chaves and M. Braga",
+  title =        "Failures/Solutions in on-load tap-changers, 145kV",
+  journal =      "IEEE International Symposium on Eletrical Insulation",
+  year =         "1998",
+  pages =        "43-48",
+  month =        "June"
+}
+
+@ARTICLE{Article:Kang2:2000,
+  AUTHOR =       "Pengju Kang, David Birtwhistle, John Daley and David McCulloch",
+  TITLE =        "Non-Invasive on-line condition monitoring of on load tap changers",
+  JOURNAL =      "IEE Proceedings on Generation, Transmission and Distribution",
+  YEAR =         "2000",
+  volume =       "3",
+  pages =        "2223-2228",
+  month =        "Jan."
+}
+
+@ARTICLE{Article:Wang:2000,
+  AUTHOR =       "Henyuan Wang and Yilu Liu and P.J. Griffin",
+  TITLE =        " Artificial intelligence in OLTC fault diagnosis using dissolved gas-in-oil information",
+  JOURNAL =      "IEEE Power Engineering Society Summer Meeting",
+  YEAR =         "2000",
+  volume =       "4",
+  pages =        "2422 - 2427",
+  month =        "July"
+}
+
+@ARTICLE{Article:Foata:2000,
+  AUTHOR =       " M. Foata and R. Beauchemin and C. Rajotte",
+  TITLE =        "On-line testing of on-load tap changers with a portable acoustic system",
+  JOURNAL =      "IEEE 9th International Conference on Transmission and Distribution Construction, Operation and Live-Line Maintenance Proceedings",
+  YEAR =         "2000",
+  pages =        "293 - 298",
+  month =        "Oct."
+}
+
+@ARTICLE{Article:Syswerda:1989,
+  AUTHOR =       "G. Syswerda",
+  TITLE =        "Uniform Crossover in Genetic Algorithms",
+  JOURNAL =      "Proceedings of the 3rd International Conference on Genetic Algorithms",
+  YEAR =         "1989",
+  pages =        "2-9"
+
+}
+
+@ARTICLE{Article:Whitley:1994,
+  AUTHOR =       "Darrell Whitley",
+  TITLE =        "A Genetic Algorithm Tutorial",
+  JOURNAL =      "Colorado Advanced Software Institute Press",
+  YEAR =         "1994"
+}
+
+@ARTICLE{Article:Whitley:2002,
+  AUTHOR =       "Darrell Whitley",
+  TITLE =        "An Overview of Evolutionary Algorithms: Practical Issues and Common Pitfalls",
+  JOURNAL =      "Colorado Advanced Software Institute Press",
+  YEAR =         "2002"
+}
+
+
+@ARTICLE{Article:Zoppoli:1996,
+  AUTHOR =       "R. Zoppoli and T. Parisini and M. Sanguineti",
+  TITLE =        "Neural Aproximators for Function Optimization",
+  JOURNAL =      "Proceedings of the 35th conference on decision and control",
+  YEAR =         "1996",
+  volume =       "3",
+  pages =        "3290-3293",
+  address =      "Kobe, Japan"
+}
+
+@ARTICLE{Article:Ciuca:1998,
+  AUTHOR =       "Ion Ciuca",
+  TITLE =        "On Function Approximators Implementable as Layered Neural Networks",
+  JOURNAL =      "Proceedings of the 24th Euromicro Conference",
+  YEAR =         "1998",
+  volume =       "2",
+  pages =        "663 - 669"
+}
+
+
+@ARTICLE{Article:Rosen:1992,
+  AUTHOR =       "Bruce Rosen",
+  TITLE =        "Function Optimization Based on Advanced Simulates Annealing",
+  JOURNAL =      "Workshop on Physics and Computation, PhysComp '92",
+  YEAR =         "1992"
+}
+
+
+
+@ARTICLE{Article:Finnerty:1994,
+  AUTHOR =       "Scott Finnerty and Sandip Sen",
+  TITLE =        "Simulated Annealing Based Classification",
+  JOURNAL =      "Proceedings of the Sixth International Conference on Tools with Artificial Intelligence",
+  YEAR =         "1994",
+  pages =        "824 - 827"
+}
+
+
+@ARTICLE{Article:Holland:1975,
+  AUTHOR =       "John Holland",
+  TITLE =        "Adaptation in Natural and Artificial Systems",
+  JOURNAL =      "University of Michigan Press",
+  YEAR =         "1975"
+}
+
+@ARTICLE{Article:Costa:2002,
+  AUTHOR =       "Lino Costa and Pedro Oliveira",
+  TITLE =        "An Evolution Strategy for Multiobjective Optimization",
+  JOURNAL =      "Proceedings of the 2002 Congress on Evolutionary Computation",
+  YEAR =         "2002",
+  volume =       "1",
+  pages =        "97 - 102"
+}
+
+
+@ARTICLE{Article:Rodzin:2002,
+  AUTHOR =       "Sergey Rodzin",
+  TITLE =        "Schemes of Evolution Strategies",
+  JOURNAL =      "IEEE International Conference on Artificial Inteligente Systems",
+  YEAR =         "2002"
+}
+
+@BOOK{Article:Rechenberg:1973,
+  AUTHOR =       "I. Rechenberg",
+  TITLE =        "Evolutionsstrategie. Optimierung technischer Systeme nach Prinzipien der biologischen Evolution",
+  PUBLISHER =    "Fromann-Holzboog",
+  YEAR =         "1973"
+}
+
+
+@PHDTHESIS{Article:Schwefel:1975,
+  AUTHOR =       "Hans-Paul Schwefel",
+  TITLE =        "Evolutionsstrategie und numerische Optimierung",
+  SCHOOL =       "TU Berlin",
+  YEAR =         "1975"
+}
+
+
+@ARTICLE{Article:Guo:2002,
+  AUTHOR =       "Zhijiang Guo, Hongtao Zheng and Jingping Jiang",
+  TITLE =        "A powerful modified genetic algorithm for multimodal function optimization",
+  JOURNAL =      "IEEE Proceedings of the American Control Conference",
+  YEAR =         "2002"
+}
+
+@ARTICLE{Article:Someya:2001,
+  AUTHOR =       "Hiroshi Someya and Masayuki Yamamura",
+  TITLE =        "Genetic Algorithm with Search Area Adaptation for the Function Optimization and its Experimental Analysis",
+  JOURNAL =      "Proceedings of the 2001 Congress on Evolutionary Computation",
+  YEAR =         "2001",
+  volume =       "2",
+  pages =        "933 - 940"
+}
+
+
+@ARTICLE{Article:Renders:1996,
+  AUTHOR =       "Jean-Michel REnders and Stéphane P. Flasse",
+  TITLE =        "Hybrid Methods Using Genetic Algorithm for Global Optimization",
+  JOURNAL =      "IEEE Transactions on Systems, Man and Cybernetics",
+  YEAR =         "1996"
+}
+
+@ARTICLE{Article:Tanomaru:1995,
+  AUTHOR =       "Julio Tanomaru",
+  TITLE =        "Motivação, Fundamentos e Aplicações de Algoritmos Genéticos",
+  JOURNAL =      "II Congresso Brasileiro de Redes Neurais, III Escola de Redes Neurais",
+  YEAR =         "1995",
+  month =        "Nov.
+}
+
+@ARTICLE{Article:Ackley:1987,
+  AUTHOR =       "D. Ackley",
+  TITLE =        "A Connectionist Machine for Genetic Hillclibimg",
+  JOURNAL =      "Kluwer Academic Publishers",
+  YEAR =         "1987"
+}
+
+@MANUAL{Manual:Mcgraw-Edison,
+  TITLE =        "Reguladores de Tensão McGraw-Edison VR-32/CL-5, Instalação, Operação, Manutenção e Informações Sobre Peças de Reposição",
+  AUTHOR =       "McGraw-Edison",
+  organization = "McGraw-Edison",
+  month =        "Agosto",
+  year =         "1999"
+}
+
+@BOOK{Book:McConnel:1995,
+  AUTHOR =       "Kenneth G. McConnel",
+  TITLE =        "Vibration testing: theory and practice",
+  PUBLISHER =    "Wiley-Interscience",
+  YEAR =         "1995"
+}
+
+
+
+@BOOK{Book:Goldberg:1989,
+  AUTHOR =       "*David E. Goldberg",
+  TITLE =        "Genetic Algorithms in Search, Optimization and Machine Learning",
+  PUBLISHER =    "Addison-Wesley",
+  YEAR =         "1989",
+  address =      "Boston, US"
+}
+
+
+
+@BOOK{Book:Mitchell:1996,
+  AUTHOR =       "Melanie Mitchel",
+  TITLE =        "An Introduction to Genetic Algorithms",
+  PUBLISHER =    "The MIT Press",
+  YEAR =         "1996"
+}
+
+
+@BOOK{Book:Luenberger:1984,
+  AUTHOR =       "David G. Luenberger",
+  TITLE =        "Linear and Nonlinear Programming",
+  PUBLISHER =    "Addison-Wesley",
+  YEAR =         "1984",
+  address =      "Boston, US"
+}
+
+@BOOK{Book:Goldman:1999,
+  AUTHOR =       "Steve Goldman",
+  TITLE =        "Vibration Spectrum Analysis",
+  PUBLISHER =    "Industrial Press",
+  YEAR =         "1999"
+}
+
+@BOOK{Book:Christie:1969,
+  AUTHOR =       "Clarence V. Christie",
+  TITLE =        "Elementos de Eletrotécnica",
+  PUBLISHER =    "Ed. Globo",
+  YEAR =         "1969"
+}
+
+@BOOK{Book:Martignoni:1967,
+  AUTHOR =       "Alfonso Martignoni",
+  TITLE =        "Transformadores",
+  PUBLISHER =    "Ed. MEC-EI",
+  YEAR =         "1967"
+}
+
+@BOOK{Book:Haykin:2001,
+  AUTHOR =       "Simon Haykin",
+  TITLE =        "Redes Neurais, Princípios e Prática",
+  PUBLISHER =    "Bookman",
+  YEAR =         "2001"
+}
+
+@BOOK{Book:Beer:1991,
+  AUTHOR =       "Ferdinad Beer and Russel Johnston",
+  TITLE =        "Mecânica Vetorial para Engnheiros",
+  PUBLISHER =    "Makron, Mc Graw-Hill",
+  YEAR =         "1991"
+  volume =       "2"
+}
+
+
+@BOOK{Book:Rao:2000,
+  AUTHOR =       "J.S. Rao",
+  TITLE =        "Vibratory Condition Monitoring of Machines",
+  PUBLISHER =    "CRC Press, Narosa",
+  YEAR =         "2000"
+}
+
+@BOOK{Book:Heck:2000,
+  AUTHOR =       "Edward W. Kamen and Bonnie S. Heck",
+  TITLE =        "Fundamentals of Signals and Systems, Using the Web and Matlab\circledR",
+  PUBLISHER =    "Prentice Hall",
+  YEAR =         "2000",
+  edition =      "Second"
+}
+
+@BOOK{Book:Marple:1987,
+  AUTHOR =       "S. Lawrence Marple",
+  TITLE =        "Digital Spectral Analysis, with applications.",
+  PUBLISHER =    "Prentice Hall P T R",
+  YEAR =         "1987"
+}
+
+@BOOK{Book:Fatta:1988,
+  AUTHOR =       "David J. De Fatta, Joseph G. Lucas, William S. Hodgkiss",
+  TITLE =        "Digital Signal Processing: A System Design Approach",
+  PUBLISHER =    "Wiley",
+  YEAR =         "1988"
+
+}
+
+@BOOK{Book:Papoulis:1991,
+  AUTHOR =       "Athanasios Papoulis",
+  TITLE =        "Probability, Random Variables, and Stochastic Processes",
+  PUBLISHER =    "McGraw-Hill",
+  YEAR =         "1991",
+  edition =      "3rd",
+  address =      "New York, US"
+}
+
+
+@BOOK{Book:Sedras:1995,
+  AUTHOR =       "Adel S. Sedras and Kenneth C. Smith",
+  TITLE =        "Microeletrônica",
+  PUBLISHER =    "Makron Books",
+  YEAR =         "1995",
+  volume =       "2"
+}
+
+@BOOK{Book:Ifeachor:1993,
+  AUTHOR =       "Emmanuel C. Ifeachor and Barrie W. Jervis",
+  TITLE =        "Digital Signal Processing, a practical approach",
+  PUBLISHER =    "Addison Wesley",
+  YEAR =         "1993"
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%histerese
+@ARTICLE{Article:bauchspies:1997,
+  AUTHOR =       {Adolfo Bauchspiess and Adriana de C. Drummond and Alexandre R. S. Romariz},
+  TITLE =        {Servocontrole não linear Auto-Sintonizado por Redes Neurais de Base Radial},
+  JOURNAL =      {Anais do 3o. Simpósio Brasileiro de Automação Inteligente},
+  YEAR =         {1997},
+}
+
+
+@ARTICLE{Article:Dorronsoro:2003,
+  AUTHOR =       {José R. Dorronsoro and Vicente López and Carlos Santa Cruz and Juan A. Sigüenza},
+  TITLE =        {Autoassociative Neural Networks and Noise Filtering},
+  JOURNAL =      {IEEE Transactions on Signal Processing},
+  YEAR =         {2003},
+  month =        {May}
+  volume =       {51},
+  number =       {5},
+  pages =        {1431-1438}
+}
+
+@ARTICLE{Article:ichikawa:1992,
+  AUTHOR =       {Y. Ichikawa and T. Sawa},
+  TITLE =        {Neural Networks Application for Direct Feedback Controllers},
+  JOURNAL =      {IEEE Transactions on Neural Networks},
+  YEAR =         {1992},
+  volume =       {3},
+  number =       {2},
+  pages =        {224-231}
+}
+
+@ARTICLE{Article:poggio:1990,
+  AUTHOR =       {T. Poggio and F. Girosi},
+  TITLE =        {Neural Networks for Approximation and Learning},
+  JOURNAL =      {Proceedings of the IEEE},
+  YEAR =         {1990},
+  volume =       {78},
+  pages =        {1481-1479}
+}
+
+@ARTICLE{Article:powell:1985,
+  AUTHOR =       {M. J. D. Powell},
+  TITLE =        {Radial Basis Function for Multivariable Interpolation, a review},
+  JOURNAL =      {IMA Conference on Algorithms for the Approximation of Function and Data},
+  YEAR =         {1985},
+  pages =        {143-167}
+  month =        {Aug},
+}
+
+@ARTICLE{Article:LuizAlb:2002,
+  AUTHOR =       {L. A. L. de Almeida and G. S. Deep and A. M. N. Lima},
+  TITLE =        {Nonlinear Inverse Filtering for Measurement of Thermal Hysteresis},
+  JOURNAL =      {Proceedings of the IEEE Instrumentation and Measurement Technology Conference},
+  YEAR =         {2002},
+  month =        {Aug},
+}
+
+
+@ARTICLE{Article:pau:1990,
+  AUTHOR =       {L.F. Pau and F.S. Johansen},
+  TITLE =        {Neural Network Signal
+Understanding for Instrumentation},
+  JOURNAL =      {IEEE Transactions on Instrumentation and Measurement},
+  YEAR =         {1990},
+  volume =       {39},
+  number =       {4},
+  pages =        {558-564},
+  month =        {Aug},
+}
+
+
+@BOOK{book:freeman:1992,
+  AUTHOR =       {J A. Freeman},
+  TITLE =        {Neural Networks: Algorithms, Applications, and Programming Techniques},
+  PUBLISHER =    {Addison-Wesley},
+  YEAR =         {1992},
+  address =      {Boston, US},
+}
+
+
+@BOOK{tese:luiz:2003,
+  AUTHOR =       {Luiz Alberto Luz de Almeida},
+  TITLE =        {Modelo de Histerese para Transição Semicondutor-Metal
+em Filmes Finos de $VO_2$},
+  PUBLISHER =    {Universidade Fede\-ral de Campina Grande, Tese de Doutorado},
+  YEAR =         {2003},
+  month =        {Janeiro},
+}
+
+@ARTICLE{Article:Crilly:1991,
+  AUTHOR =       "P. B. Crilly",
+  TITLE =        "A quantitative evaluation of various iterative deconvolution algorithms",
+  JOURNAL =      "IEEE Transactions on Instrumentation and Measurement",
+  YEAR =         "1991",
+  volume =       "40",
+  pages =        "558-562",
+  month =        "June"
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  BLIND DECONVOLUTION  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@ARTICLE{article:feng:deconv,
+  AUTHOR =       {Chih Chun Feng and Chong Yung Chi},
+  TITLE =        {Performance of Cumulant Based Inverse Filters for Blind Deconvolution},
+  JOURNAL =      {IEEE Transactions on Signal Processing},
+  YEAR =         {1999},
+  volume =       {47},
+  number =       {7},
+  pages =        {1922-1935},
+}
+
+@ARTICLE{article:colonese:deconv,
+  AUTHOR =       {S. Colonnese and G. Panci and G. Scarano},
+  TITLE =        {Using SOS in blind Bussgang equalization for QAM communication systems},
+  JOURNAL =      {Signal Processing Advances in Wireless Communications, IEEE 5th Workshop on},
+  YEAR =         {2004},
+  pages =        {415-418},
+}
+
+
+@BOOK{book:haykin:adapfilter,
+  AUTHOR =       {Simon Haykin},
+  TITLE =        {Adaptive Filter Theory},
+  PUBLISHER =    {Prentice Hall},
+  YEAR =         {2001},
+  edition =      {4th},
+}
+
+@INBOOK{article:bellini:bd,
+  AUTHOR =       {S. Bellini},
+  editor =       {S. Haykin},
+  TITLE =        {Blind Deconvolution},
+  CHAPTER =      {Bussgang techniques for blind deconvolution and equalization},
+  PUBLISHER =    {Prentice-Hall},
+  YEAR =         {1994},
+}
+
+
+%@ARTICLE{article:bellini:bd,
+%  AUTHOR =       {S. Bellini},
+%  TITLE =        {Bussgang techniques for blind deconvolution and equalization},
+%  JOURNAL =      {In Blind Deconvolution},
+%  YEAR =         {S. Haykin ed., Prentice-Hall, 1994},
+%}
+
+
+@ARTICLE{article:fiori:bd,
+  AUTHOR =       {S. Fiori},
+  TITLE =        {Analysis of modified "Bussgang" algorithms ({MBA}s) for channel equalization},
+  JOURNAL =      {IEEE Transactions on Circuits and Systems I: Regular Papers},
+  YEAR =         {2004},
+  volume =       {51},
+  number =       {8},
+  pages =        {1552-1560},
+}
+
+
+@ARTICLE{article:scarano:bussg,
+  AUTHOR =       {G. Scarano and G. Jacovitti},
+  TITLE =        {On the optimality of Bussgang and super exponential blinddeconvolution methods},
+  JOURNAL =      {Proceedings of the IEEE Signal Processing Workshop on Higher-Order Statistics},
+  YEAR =         {1997},
+  pages =        {244-247},
+}
+
+@BOOK{book:spiegel:stat,
+  AUTHOR =       {Murray R Spiegel and John J. Schiller and R. Alu Srinivasan},
+  TITLE =        {Probability and Statistics},
+  PUBLISHER =    {McGraw-Hill},
+  YEAR =         {2000},
+  edition =      {2},
+  address =      {New York, US},
+}

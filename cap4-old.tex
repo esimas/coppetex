@@ -1,0 +1,916 @@
+%TCIDATA{Version=5.00.0.2557}
+%TCIDATA{LaTeXparent=0,0,dissosw.tex}
+%TCIDATA{ChildDefaults=chapter:4,page:1}
+
+
+\chapter{Propostas para otimização do \textit{trigger} de alto nível}
+
+Neste capítulo serão apresentadas as estratégias propostas para a
+otimização da filtragem de alto nível do ATLAS utilizando
+informações de calorimetria. Alguns algoritmos propostos na
+literatura para a discriminação elétron/jato serão apresentados para
+fundamentar futuras comparações de desempenho. O processo de
+classificação pode ser dividido em duas etapas: inicialmente é
+realizada a extração de características, em seguida essas
+informações são utilizadas no teste de hipótese para a discriminação
+eletrón/jato. As técnicas de extração de características utilizadas
+foram detalhadas no capítulo 3. No apêndice A são mostrados os
+fundamentos teóricos das técnicas de teste de hipótese utilizadas.
+%
+%\section{Introdução}
+%Serão discutidas inicialmente as formas de pré-processamento e
+%formatação dos sinais dos calorímetros, com destaque para a
+%formatação em anéis.
+%Apenas o conjunto de treino é considerado para o projeto dos
+%classificadores, os eventos de teste são utilizados somente para
+%verificação do desempenho de discriminação.
+%Uma maior atenção será destinada às técnicas não-lineares usando
+%redes neurais.
+%
+%Para o projeto dos classificadores e das técnicas de extração de
+%características a quantidade de eventos das duas classes precisa ser
+%equalizada , evitando que o desempenho de discriminação dos
+%diferentes tipos de partícula seja desigual.
+
+\section{Formatação dos sinais}
+
+O conjunto de eventos disponível, que foi obtido através de
+simulações utilizando algoritmos de Monte Carlo para colisões
+próton-próton \cite{LI:ATLAS:1992}, foi dividido em dois grupos, um
+utilizado para o projeto, e outro para o teste de desempenho das
+técnicas propostas. Os eventos são compostos por: 11283 elétrons e
+3774 jatos para o conjunto de treino e 11298 elétrons e 3735 jatos
+para o conjunto de teste. O tipo de partícula correspondente a cada
+evento foi certificado pelo método de Monte Carlo. Os efeitos da
+filtragem de primeiro nível, assim como a interação com os
+subsistemas do detector são considerados durante as simulações. A
+diferença no número de elementos das duas classes é justificada pela
+filtragem de primeiro nível, que já eliminou grande parte dos jatos.
+
+Os algoritmos propostos neste trabalho operam sobre as leituras das
+células do calorímetro. Os dados brutos das RoIs são limitados a
+regiões de no máximo $0,4\times 0,4$ no plano $(\eta,\phi)$, e
+depois formatados em anéis concêntricos de deposição de energia. Nas
+Figuras \ref{evento} e \ref{evento2} são mostrados os perfis de
+deposição de energia de um evento em duas camadas do calorímetro, a
+\textit{pre-sampler} e a segunda camada eletromagnética. Informações
+destes perfis serão utilizadas na discriminação elétron/jato
+($e^-/j$).
+
+Em estudos recentes demonstrou-se que o uso de informações das
+células dos calorímetros, segmentadas por camadas, permite uma
+melhor caracterização das partículas quando comparado ao T2Calo
+\cite{article:anjos:2006}, \cite{article:herman:2006}.
+
+\begin{figure}[tbph]
+\begin{center}
+\subfigure[]{\label{evento}\epsfig{file=cap4_jato_roi.eps,width=7.4cm,clip=}}
+\subfigure[]{\label{evento2}\epsfig{file=cap4_ele_roi.eps,width=7.4cm,clip=}}
+\end{center}
+\caption{Deposição de energia de um (a) jato e um (b) elétron no
+calorímetro eletromagnético, extraído de \cite{diss:anjos:2001}}
+\end{figure}
+
+%\begin{figure}[tbph]
+%\begin{center}
+%\subfigure[]{\label{aneis}\epsfig{file=cap4_aneis.eps,width=6.5cm,clip=}}
+%\subfigure[]{\label{aneis_ncomp}\epsfig{file=cap4_roiincomp.eps,width=3cm,clip=}}
+%\end{center}
+%\caption{Formatação dos sinais do calorímetro em anéis (a) RoI
+%completa e (b) RoI incompleta}
+%\end{figure}
+
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=11cm]{cap4_aneis.eps}
+\caption{Formatação dos sinais do calorímetro em anéis}
+\label{aneis}
+\end{figure}
+
+
+\subsection{Formatação em anéis}
+
+\begin{table}[tbph]
+\centering
+\begin{tabular}{c c }
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  \textbf{Camada}    & \textbf{Número de células}       \\  \hline
+  \textbf{\textit{Pre-sampler}}   &  64\\
+  \textbf{Primeira Eletromagnética}    &  512\\
+  \textbf{Segunda Eletromagnética}      & 256\\
+  \textbf{Terceira Eletromagnética}   &  128\\
+  \textbf{Primeira Hadrônica}    & 16\\
+  \textbf{Segunda Hadrônica}      & 16\\
+  \textbf{Terceira Hadrônica}      & 8\\  \hline
+  \textbf{Total}      & 1000\\
+  \hline
+\end{tabular}
+\caption{Número de células de cada camada do calorímetro na
+formatação em anéis.} \label{tab_aneis}
+\end{table}
+
+
+A formatação em anéis foi proposta anteriormente em
+\cite{article:anjos:2006} e \cite{article:herman:2006}, se mostrando
+bastante eficiente na classificação $e^-/j$ por preservar a
+estrutura de deposição de energia. Essa formatação torna  o
+processamento independente do ponto de impacto na RoI. As células
+são dispostas em anéis concêntricos de deposição de energia
+organizados por camada. Assim, a célula que absorveu maior energia
+em uma dada camada é considerada como o primeiro anel, e os anéis
+subseqüentes são formados pelas células que envolvem o anel
+anterior. Os novos anéis são formados até que não exista mais
+nenhuma célula sensibilizada na RoI. Nem sempre os anéis estão
+completos, pois as RoI não são simétricas em torno da célula mais
+energética. Como os sinais formatados em anéis têm dimensão fixa, os
+valores de energia que faltam são completados com zeros. Na Figura
+\ref{aneis} é mostrada a formatação dos sinais da RoI em anéis assim
+como a disposição de cada célula no sinal unidimensional obtido, são
+ilustrados exemplos de RoIs simétrica e não-simétrica.
+
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=11.5cm]{cap4_sinal_aneis.eps}
+\caption{Sinal típico de um jato formatado em anéis.}
+\label{sinal_aneis}
+\end{figure}
+
+A tabela \ref{tab_aneis} mostra a quantidade de células em cada
+camada no sinal formatado em anéis, percebe-se que as camadas
+eletromagnéticas têm maior granularidade (quantidade de células por
+unidade de área). Na Figura \ref{sinal_aneis}, pode-se observar um
+sinal típico de um jato para a formatação proposta. Com essa
+formatação a dimensão do espaço de entradas é 1000, fazendo
+necessário o uso de técnicas de compactação como pré-processamento
+para extração de características. Para tornar os sinais
+independentes da energia da partícula é necessário realizar uma
+normalização em energia.
+
+Uma modificação na \textbf{formatação em anéis} com o objetivo de
+reduzir a dimensão do espaço de entradas é proposta em
+\cite{article:anjos:2006}. As células dos anéis são somadas e
+normalizadas por camada do calorímetro conforme equações \ref{so1} e
+\ref{so2}:
+
+\begin{equation}
+% \nonumber to remove numbering (before each equation)
+   S_i=\frac{\sigma_i}{\displaystyle\sum_{k=1}^N \sigma_k - \sum_{k=1}^{i-1} \sigma_k}
+   \label{so1}
+\end{equation}
+
+\begin{equation}
+% \nonumber to remove numbering (before each equation)
+  \sigma_i=\sum_{\text{anel i}}C_k
+     \label{so2}
+\end{equation}
+\\
+onde $\sigma_i$ é a soma das células $C_k$ do anel $i$.
+
+A estrutura em \textbf{soma de anéis} preserva o perfil de deposição
+de energia em torno do ponto central de interação. A normalização
+equaliza a diferença em energia entre os primeiros e os últimos
+anéis e amplifica, de modo controlado, as variáveis discriminatórias
+que estão mais distantes do centro da RoI.
+
+%Conforme descrito nas equações
+%O processo adotado na normalização seqüencial é descrita a seguir: o
+%primeiro anel tem seu valor dividido pelo total de energia
+%depositado na camada, o segundo anel tem sua amplitude dividida pela
+%energia total na camada menos a energia do primeiro anel, esse
+%processo continua recursivamente. Para evitar a amplificação
+%excessiva do ruído, os anéis mais periféricos têm seu valor dividido
+%por uma constante.
+
+As dimensões de cada camada na formatação soma de anéis são
+mostradas na tabela \ref{tab_somaaneis}. Há uma redução da ordem de
+10 vezes quando comparada com a formatação em anéis. Na Figura
+\ref{sinal_somaaneis} pode-se visualizar o sinal típico de um jato
+formatado em soma de anéis.
+
+\begin{table}[tbph]
+\centering
+\begin{tabular}{c c }
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  \textbf{Camada}    & \textbf{Dimensão}       \\  \hline
+  \textbf{\textit{Pre-sampler}}   &  8\\
+  \textbf{Primeira Eletromagnética}    &  64\\
+  \textbf{Segunda Eletromagnética}      & 8\\
+  \textbf{Terceira Eletromagnética}   &  8\\
+  \textbf{Primeira Hadrônica}    & 4\\
+  \textbf{Segunda Hadrônica}      & 4\\
+  \textbf{Terceira Hadrônica}      & 4\\  \hline
+  \textbf{Total}      & 100\\
+  \hline
+\end{tabular}
+\caption{Dimensão de cada camada do calorímetro na formatação soma
+de anéis.} \label{tab_somaaneis}
+\end{table}
+
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=11.5cm]{cap4_sinal_somaaneis.eps}
+\caption{Sinal típico de um jato formatado em soma de anéis.}
+\label{sinal_somaaneis}
+\end{figure}
+
+\section{Análise de desempenho de discriminação}
+
+Como figuras de mérito do desempenho das técnicas de extração de
+características e classificação, foram utilizadas nesse trabalho a
+curva ROC (\textit{Receiver Operating Characteristics}) e o produto
+SP.
+
+A curva ROC é obtida calculando a probabilidade de detecção (PD) e a
+probabilidade de falso alarme (PF) variando-se o patamar de decisão
+\cite{book:vantrees1:2001}.
+
+O índice SP  é definido na equação \ref{sp}
+\cite{article:seixas:2005}:
+
+\begin{equation}\label{sp}
+    SP=(Ef_1+Ef_2)(Ef_1\times Ef_2)
+\end{equation}
+\\
+onde $Ef_1$ e $Ef_2$ são respectivamente a eficiência de detecção
+para as classes $C_1$ e $C_2$.
+
+Quando $Ef_1=Ef_2=1$ o valor máximo $SP=2$ é atingido. Como a curva
+ROC e o índice SP são calculados variando o patamar de decisão,
+podem ser usados para a escolha do patamar ótimo para operação do
+classificador.
+
+
+\section{Estratégias de extração de características propostas}
+
+A partir dos sinais do calorímetro formatados em \textbf{anéis} e em
+\textbf{soma de anéis}, algumas estratégias de extração de
+características foram testadas. Os principais objetivos dos
+algoritmos propostos são a maximização da eficiência de
+discriminação das partículas e a obtenção de baixo custo
+computacional, uma vez que se trata de uma filtragem online com alta
+taxa de eventos. Os resultados mais significativos foram obtidos
+utilizando métodos neurais de classificação e algoritmos derivados
+do modelo básico da ICA para extração de características. A seguir
+as técnicas utilizadas serão discutidas.
+
+\subsection{Vetor de entradas com dimensões reduzidas}
+
+Com a formatação em anéis, o número de células necessárias para a
+descrição de cada evento é 1000. A grande dimensão dos dados é um
+entrave para o processamento e classificação on-line. Visando
+diminuição do tempo de processamento dos algoritmos de extração de
+características, propõe-se a utilização de uma base de dados
+reduzida. Nesse estudo será testada a eficiência de discriminação
+dos anéis mais energéticos, comparando o desempenho das técnicas
+lineares (Discriminante de Fisher e Filtros Casados) com algoritmos
+não-lineares (Redes Neurais e Análise de Componentes Independentes).
+
+Primeiramente os classificadores foram projetados usando apenas a
+célula mais energética de cada camada, reduzindo-se drasticamente a
+dimensão das entradas de 1000 para 7. Em uma segunda abordagem,
+foram utilizadas as células correspondentes aos dois primeiros anéis
+de cada camada, chegando num vetor de dimensão 63.
+
+%Espera-se que os anéis mais energéticos forneçam informação
+%suficiente para a discriminação de grande parte dos jatos, aqueles
+%que depositam energia nas camadas hadrônicas, mas, provavelmente, os
+%jatos com perfil de deposição com pouca energia hadrônica serão
+%confundidos com elétrons.
+
+
+\subsubsection{Usando apenas a célula mais energética de cada camada}
+
+
+Nessa abordagem serão utilizadas apenas informações de 7 células,
+correspondentes aos picos de energia de cada camada do calorímetro.
+Para tornar os sinais independentes da energia total da partícula,
+procedeu-se uma normalização pelo valor máximo de cada evento.
+
+Os resultados obtidos com as técnicas lineares foram comparados no
+trabalho \cite{Article:simas:2006:fisica}. Conforme mostrado no
+Apêndice A, o filtro casado é o filtro ótimo para a maximização da
+relação sinal-ruído em ambiente de ruído branco. Para sinais
+digitais o filtro casado corresponde a um correlacionador.
+
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=9cm]{cap4_vetred.eps}
+\caption{Diagrama do processo de discriminação das partículas usando
+apenas os anéis mais energéticos.} \label{ficas}
+\end{figure}
+
+Foram utilizados dois modelos para o filtro casado, um
+determinístico, considerando-se inicialmente que os sinais de
+entrada têm pouca variação estatística, outro estocástico, onde o
+sinal de entrada é expandido na série de \textit{Karhunen-Loève} em
+uma parte estocástica e outra determinística, conforme proposto em
+\cite{book:vantrees3:2001}. No problema de classificação $e^-/j$
+existem duas classes de sinais distintas. A formulação dos filtros
+precisa ser modificada usando agora duas hipóteses:
+\begin{equation}\label{fcass}
+     \begin{array}{cc}
+       H_1: & S_1[k]+r[k] \\
+       H_2: & S_2[k]+r[k] \\
+     \end{array}
+\end{equation}
+\\
+onde na hipótese $H_i$ estão presentes o sinal $S_i[k]$ e o ruído
+$r[k]$, $i=1,2$. Os sinais 1 e 2 são respectivamente sinais típicos
+de elétrons e jatos. Sabe-se que nos calorímetros do ATLAS devido às
+características físicas do sistema, o ruído não é branco. Sendo
+assim, para que os filtros casados tenham desempenho satisfatório é
+necessário projetar filtros branqueadores para o ruído
+\cite{book:vantrees3:2001}. Obter informações a respeito do ruído em
+eventos simulados é uma tarefa difícil. Como as camadas do
+calorímetro possuem características distintas, o ruído precisou ser
+estimado para cada uma delas. Células distantes dos picos de
+energia, com baixa correlação entre as posições adjacentes e energia
+média em torno de 10MeV foram as melhores estimativas encontradas
+para o ruído.
+
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=15cm]{cap4_ficas.eps}
+\caption{Diagrama do filtro casado utilizado.} \label{ficas}
+\end{figure}
+
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=10cm]{cap4_comp_1anel.eps}
+\caption{Curvas ROC e índices SP obtidos para a célula mais
+energética através de técnicas lineares.} \label{1anel}
+\end{figure}
+
+Na Figura \ref{ficas} é mostrado um diagrama simplificado dos
+filtros casados implementados, pode-se visualizar o filtro
+branqueador $\mathbf{W}$ e os estágios de normalização pela
+amplitude $1/(E_i)^{0,5}$ ($i=1,2$).
+
+Outra técnica linear utilizada para extração de características foi
+o discriminante de  Fisher (DF) \cite{book:duda:2000}. Para a
+obtenção das projeções do DF foi utilizada a expressão analítica
+mostrada nas equações \ref{fisher1}, \ref{fisher2} e \ref{fisher3}.
+
+A comparação dos métodos foi realizada através das curvas ROC, do
+índice SP e da distribuição de probabilidade das classes após a
+aplicação dos métodos. Os resultados obtidos com os filtros casados
+e o discriminante de Fisher para as células mais energéticas de cada
+camada são mostrados na Figura \ref{1anel}. Nas Figuras
+\ref{fcasad}, \ref{fisher} e \ref{fcase} são ilustradas as
+distribuições de probabilidade das classes após as técnicas lineares
+utilizadas. De um modo geral, o método linear que obteve melhor
+resultado foi o filtro casado para sinais estocásticos, seguido de
+perto pelo discriminante de Fisher.
+
+\begin{figure}[tbph]
+\begin{center}
+\subfigure[]{\label{fcasad}\epsfig{file=cap4_freq_1a_fcas.eps,width=7.4cm,clip=}}
+\subfigure[]{\label{fisher}\epsfig{file=cap4_freq_1a_fisher.eps,width=7.4cm,clip=}}
+\subfigure[]{\label{fcase}\epsfig{file=cap4_freq_1a_fcase.eps,width=7.4cm,clip=}}
+\subfigure[]{\label{frn}\epsfig{file=cap4_freq_1a_rn.eps,width=7.4cm,clip=}}
+\end{center}
+\caption{Densidades de probabilidade no espaço de características
+para a célula mais energética usando (a) filtro casado com abordagem
+determinística, (b) discriminante de Fisher, (c) filtro casado com
+abordagem estocástica e (d) classificador neural.}
+\end{figure}
+
+Os resultados obtidos com as técnicas lineares foram inferiores ao
+obtido pelo algoritmo atualmente em uso no ATLAS (T2Calo). Numa
+tentativa de melhorar a eficiência de discriminação foi projetado um
+classificador neural.
+
+Para escolha da melhor topologia da rede neural a ser utilizada,
+foram feitos testes comparativos entre algumas redes
+\textit{feed-forward backpropagation} de duas camadas, com 2, 3, 5 e
+10 neurônios na camada escondida. Para redes com mais de 5 neurônios
+foi comum a ocorrência de sobre-aprendizado (\textit{overtraining}),
+ou seja, a rede se especializou no conjunto de treinamento mas
+perdeu capacidade de generalização. Processo semelhante foi
+realizado em todo o trabalho para o projeto de classificadores
+neurais.
+
+Na Figura \ref{frn} pode-se verificar o melhor desempenho da rede
+neural na tarefa de separar as classes no espaço de características,
+quando comparada aos métodos lineares.
+
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=10cm]{cap4_comp_1anel_rn.eps}
+\caption{Curvas ROC e índices SP obtidos para a célula mais
+energética através de redes neurais e ICA.} \label{comp_1a_rn}
+\end{figure}
+
+%falta fazer uma figura ...
+
+%Um melhor resultado foi obtido aplicando-se Análise de Componentes
+%Independentes sobre os sinais antes da classificação neural,
+%conforme diagrama da Figura ... .
+
+Realizando-se a extração de características por ICA
+\cite{book:oja:2001} antes da classificação neural, o desempenho de
+discriminação melhorou. Para um falso alarme (classificação de jato
+como elétron) de 5\% a probabilidade de detecção de elétrons passou
+de 92,7\% para 94,5\%, e o produto SP aumentou de 1,66 para 1,68.
+
+O desempenho dos métodos propostos foi comparado na Figura
+\ref{comp_1a_rn} usando as curvas ROC e o índice SP. Pode-se
+perceber que os métodos não-lineares apresentaram resultados
+significativamente melhores. Para uma probabilidade de detecção de
+90 \% o classificador neural apresenta um falso alarme perto de 2\%,
+enquanto que o discriminante de Fisher apresenta 57 \% de falso
+alarme para a mesma probabilidade de detecção.
+
+\subsubsection{Usando os dois anéis mais energéticos de cada camada}
+
+O procedimento realizado anteriormente para as células mais
+energéticas de cada camada foi repetido para os dois anéis mais
+energéticos. O vetor de entradas agora tem dimensão 63, sendo 1
+célula do primeiro anel e 8 do segundo para cada uma das 7 camadas.
+Conforme mencionado anteriormente, as 8 células seguintes ao
+primeiro anel podem não corresponder exatamente ao segundo anel caso
+a RoI não esteja completa, nesse caso as informações que faltam
+serão completadas com zeros.
+
+Os resultados obtidos com as técnicas lineares são comparados na
+Figura \ref{comp_2a_lin}, pode-se ver que o uso das informações
+referentes ao que chamou-se segundo anel mais energético não
+representou grande melhoria de desempenho de classificação.
+Resultados semelhantes foram obtidos aplicando ICA e redes neurais
+ao novo conjunto de sinais. A tabela \ref{tab_prima} mostra os
+índices SP calculados para os métodos propostos.
+
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=10cm]{cap4_comp_2aneis.eps}
+\caption{Curvas ROC e índices SP obtidos para os dois anéis mais
+energéticos de cada camada através de técnicas lineares.}
+\label{comp_2a_lin}
+\end{figure}
+
+\begin{table}[tbph]
+\centering
+\begin{tabular}{c c c}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  \textbf{Técnica utilizada} & \textbf{1$^o$ anel} &  \textbf{1$^o$ e 2$^o$ anéis} \\  \hline
+  \textbf{Filtro Casado} & 0,76 &  0,83 \\
+  \textbf{Discriminante de Fisher} & 1,14  & 1,22 \\
+  \textbf{F. Casado estocástico} & 1,20  & 1,24 \\
+  \textbf{Rede Neural} & 1,66  & 1,68 \\
+  \textbf{ICA + Rede Neural} & 1,68  & 1,70 \\
+\hline
+\end{tabular}
+\caption{Produtos SP calculados para os primeiros anéis.}
+\label{tab_prima}
+\end{table}
+
+A partir dos resultados obtidos até aqui percebeu-se que os
+classificadores não-lineares (redes neurais) apresentaram resultados
+mais significativos do que os métodos lineares. Pode-se notar
+também, que o uso de técnicas de processamento estatístico como ICA,
+para extração de características, facilitam o trabalho dos
+algoritmos de teste de hipótese.
+
+Considerando a eficiência de discriminação superior obtida com ICA e
+redes neurais para os primeiros anéis, as estratégias de
+discriminação propostas a seguir estão direcionadas para essas duas
+técnicas. Há a necessidade de definir uma melhor estratégia para a
+redução de dimensão do espaço de entrada, para isso serão utilizadas
+técnicas de compactação como a PCA e análise de relevância das
+entradas.
+
+\subsection{Análise de componentes independentes sobre os sinais
+formatados em soma de anéis}
+
+A partir dos sinais formatados em \textbf{soma de anéis} (100 anéis)
+realizou-se a extração de características através de ICA. O
+algoritmo utilizado para a estimação das componentes independentes
+foi o FastICA \cite{article:hyvarinen:2000}. Como pré-processamento
+foi realizada compactação por PCA para diferentes níveis de retenção
+de energia.
+
+Na Figura \ref{diag_sanel} é mostrado um diagrama da técnica
+proposta. Num procedimento não segmentado, as informações de todas
+as camadas do calorímetro são agrupadas num único sinal sobre o qual
+são aplicadas as rotinas de PCA e ICA.
+
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=9cm]{cap4_icasoma.eps}
+\caption{Diagrama da ICA sobre os sinais em soma de anéis.}
+\label{diag_sanel}
+\end{figure}
+
+O processo de discriminação foi realizado por uma rede neural
+treinada de modo supervisionado. Os classificadores neurais
+utilizados possuem uma camada oculta com 5 neurônios tipo tangente
+hiperbólica.
+
+A quantidade de componentes após a compactação por PCA e os índices
+SP calculados, após a classificação neural a partir das componentes
+independentes, são mostrados na Tabela \ref{tabsoma_nseg} para 8
+níveis diferentes de retenção de energia.
+
+\begin{table}[tbph]
+\centering
+\begin{tabular}{c c c c c c c c c}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  \textbf{Energia preservada} & \textbf{100\%} &  \textbf{99\%} &  \textbf{95\%} &   \textbf{90\%} &  \textbf{85\%} & \textbf{80\%} & \textbf{70\%} & \textbf{60\%} \\  \hline
+  \textbf{Número de Componentes} &  100 &  88 & 55 &  41  & 31 & 26 &17 &11 \\
+  \textbf{Produto SP} & 1,80  & 1,81 & 1,82 & 1,82  & 1,82 & 1,83 & 1,83 &1,81\\
+\hline
+
+\end{tabular}
+\caption{Número de componentes e produto SP aplicando ICA aos sinais
+formatados em soma de anéis para os diferentes níveis de compactação
+por PCA.} \label{tabsoma_nseg}
+\end{table}
+
+A Figura \ref{ica_sanel} mostra as curvas ROC e o produto SP para
+100\%, 90\% e 80\% de retenção de energia. Melhor resultado foi
+obtido para o último caso, onde o SP calculado foi 1,83,
+correspondendo a uma probabilidade de detecção de elétrons de 97\%
+para um falso alarme de 2,8\%
+
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=11cm]{cap4_ica_saneis_nseg.eps}
+\caption{Curvas ROC obtidas com a ICA sobre os sinais formatados em
+soma de anéis.} \label{ica_sanel}
+\end{figure}
+
+
+\subsection{Análise de componentes independentes segmentada sobre os sinais
+formatados em anéis}
+
+Utilizando agora as células do calorímetro \textbf{formatadas em
+anéis} (1000 células) e pré-processamento por PCA, em 3 níveis de
+retenção de energia: 90\%, 95\% e 99\%, a extração de
+características foi realizada através de uma análise de componentes
+independentes segmentada (SICA - \textit{Segmented Independent
+Component Analysis}). A classificação novamente foi realizada por
+redes neurais. Nesse estudo as componentes independentes foram
+extraídas usando o algoritmo FastICA conforme proposto em
+\cite{article:hyvarinen:2000}.
+
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=9cm]{cap4_icaaneis.eps}
+\caption{Esquemático do ICA segmentado aplicado aos sinais
+formatados em anéis.} \label{icaanel}
+\end{figure}
+
+\begin{table}[tbph]
+\centering
+\begin{tabular}{c c c c c}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  \multicolumn{1}{c}{\textbf{Camada}}&  \multicolumn{1}{c}{\textbf{Dimensão}}  & \multicolumn{3}{c}{\textbf{Energia preservada}} \\
+    \textbf{do calorímetro} & \textbf{original} & 99\% & 95\% & 90\% \\  \hline
+  \textbf{\textit{Pre-sampler}}   &  64 & 56& 43 & 32\\
+  \textbf{Primeira Eletromagnética}    &  512 & 300 & 170 & 104\\
+  \textbf{Segunda Eletromagnética}      & 256 & 120 & 45 & 44\\
+  \textbf{Terceira Eletromagnética}   &  128 & 115 & 94 & 75\\
+  \textbf{Primeira Hadrônica}    & 16 & 15 & 12 & 9\\
+  \textbf{Segunda Hadrônica}      & 16 & 13 & 9 & 6\\
+  \textbf{Terceira Hadrônica}      & 8 & 3 & 2 & 1 \\  \hline
+  \textbf{Total}      & 1000 & 622 & 375 & 271\\
+  \hline
+\end{tabular}
+\caption{Número de células de cada camada do calorímetro após a
+compactação segmentada por PCA.} \label{compac}
+\end{table}
+
+Tanto a PCA como a ICA foram aplicadas sobre o conjunto de sinais de
+forma segmentada, ou seja, por camada do calorímetro. Na Figura
+\ref{icaanel} pode-se visualizar um diagrama esquemático do método
+proposto. O número de componentes, em cada camada, após a
+compactação por PCA, para os diferentes níveis de retenção de
+energia, é mostrado na tabela \ref{compac}. O processamento
+segmentado das informações é importante por preservar as
+características físicas distintas das camadas do detector.
+
+As componentes independentes segmentadas estimadas para os eventos
+ilustrados nas Figuras \ref{rings_signale} e \ref{rings_signalj} são
+mostradas nas Figuras \ref{rings_ice} e \ref{rings_icj}. Observou-se
+que as ICs dos elétrons são mais concentradas (como os perfis de
+deposição de energia típicos de elétrons), e a energia das ICs dos
+jatos está mais distribuída em diferentes componentes. A extração de
+características por SICA reforça as diferenças entre as assinaturas
+de elétrons e jatos, melhorando o desempenho de discriminação das
+partículas.
+
+\begin{figure}[tbph]
+\begin{center}
+\subfigure[]{\label{rings_signale}\epsfig{file=cap4_ele.eps,width=7.4cm,clip=}}
+\subfigure[]{\label{rings_signalj}\epsfig{file=cap4_jato3.eps,width=7.4cm,clip=}}
+\end{center}
+\caption{Sinais formatados em anéis para (a) elétron e (b) jato
+típicos.}
+\end{figure}
+
+\begin{figure}[p]
+\begin{center}
+\subfigure[]{\label{rings_ice}\epsfig{file=cap4_ic_ele.eps,width=7.4cm,clip=}}
+\subfigure[]{\label{rings_icj}\epsfig{file=cap4_ic_jato3.eps,width=7.4cm,clip=}}
+\end{center}
+\caption{Componentes independentes de (a) elétron e (b) jato
+típicos, para 90\% de retenção de energia por SPCA.}
+\end{figure}
+
+
+O desempenho de classificação melhorou com o aumento da compactação,
+e o melhor índice SP foi atingido quando o sinal de entrada foi
+projetado por PCA preservando 90\% da energia. As 1000 componentes
+originais foram reduzidas a 271 componentes principais, na Figura
+\ref{icaanel_com} os três resultados são comparados.
+
+
+%\begin{figure}[tbph]
+%\begin{center}
+%\subfigure[]{\label{icaaneis99}\epsfig{file=cap4_icaaneis99.eps,width=7.4cm,clip=}}
+%\subfigure[]{\label{icaaneis95}\epsfig{file=cap4_icaaneis95.eps,width=7.4cm,clip=}}
+%\subfigure[]{\label{icaaneis90}\epsfig{file=cap4_icaaneis90.eps,width=7.4cm,clip=}}
+%\end{center}
+%\caption{Resultados obtidos aplicando ICA sobre os anéis para
+%compactação por PCA de (a) 99\%, (b) 95\% e (c) 90\% da energia,
+%melhor ponto SP em círculos.}
+%\end{figure}
+
+A diminuição do número de entradas, guiada pela PCA, parece
+facilitar a classificação neural. Uma análise detalhada da
+relevância das entradas será realizada visando diminuir ainda mais a
+dimensão do problema. A análise de relevância elimina entradas que
+contribuem pouco para a discriminação. Sabe-se que o uso de
+informações não discriminantes pode piorar o desempenho dos
+classificadores.
+
+% testar uma diminuição maior da energia ... (75%)
+
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=11cm]{cap4_icaaneis_com.eps}
+\caption{Comparação entre os resultados obtidos para a aplicação de
+ICA sobre os sinais  formatados em anéis para diferentes níveis de
+compactação por PCA.} \label{icaanel_com}
+\end{figure}
+
+Em um trabalho anterior \cite{article:herman:2006}, foi proposta a
+classificação elétron/jato a partir dos sinais compactados por SPCA.
+Com a SPCA, para uma eficiência de elétrons de 92\% a probabilidade
+de falso alarme obtida foi de 4,8\%, enquanto que com a SICA (90\%
+de retenção de energia por SPCA) obteve-se 2,7\%, mostrando que SICA
+sobre os sinais pré-processados por SPCA conseguiu uma melhora
+considerável de desempenho.
+
+%for a electron efficiency of 92\% the false alarm probability was
+%found to be 4.8\%, whereas SICA (90\% SPCA compaction) exhibits
+%2.7\%, showing that SICA over SPCA pre-processed signals achieves a
+%considerable improvement in performance.
+
+%\begin{table}[tbph]
+%\centering
+%\begin{tabular}{c c c}
+%  \hline
+ % % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+%  \textbf{Compactação}    & \textbf{PCs preservadas} & \textbf{SP}      \\  \hline
+%  \textbf{99\%}   &  622 & 1,72\\
+%  \textbf{95\%}    &  375 & 1,74\\
+%  \textbf{90\%}      & 271 & 1,77\\
+%  \hline
+%\end{tabular}
+%\caption{Resumo dos resultados obtidos para a aplicação de ICA sobre
+%os sinais  formatados em anéis.} \label{tab_icaaneis}
+%\end{table}
+
+\subsection{Análise de componentes independentes segmentada sobre os sinais
+formatados em soma de anéis}
+
+Uma abordagem semelhante à proposta no ítem anterior foi também
+aplicada aos sinais formatados em soma de anéis. A compactação por
+SPCA foi realizada para 5 níveis diferentes de retenção de energia
+(99\%, 95\%, 90\%, 85\% e 80\%).
+
+\begin{table}[tbph]
+\centering
+\begin{tabular}{c c c c c c c }
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  \multicolumn{1}{c}{\textbf{Camada}}&  \multicolumn{1}{c}{\textbf{Dimensão}}  & \multicolumn{5}{c}{\textbf{Energia preservada}} \\
+    \textbf{do calorímetro} & \textbf{original} & 99\% & 95\% & 90\% & 85\% & 80\% \\  \hline
+  \textbf{\textit{Pre-sampler}}   &  8 & 8& 7& 6 & 6 &5\\
+  \textbf{Primeira Eletromagnética}    &  64 & 58 & 53 & 44 & 36 & 30 \\
+  \textbf{Segunda Eletromagnética}      & 8 & 7 & 5 & 4 &3 & 3\\
+  \textbf{Terceira Eletromagnética}   &  8 & 8 & 7 & 6 & 5 & 5\\
+  \textbf{Primeira Hadrônica}    & 4 & 4 & 4 & 3 & 3 & 3\\
+  \textbf{Segunda Hadrônica}      & 4 & 4 & 4 & 3 & 3 & 3\\
+  \textbf{Terceira Hadrônica}      & 4 & 4 & 4 & 3 & 3 & 2\\  \hline
+  \textbf{Total}      & 100 & 93 & 84 & 69 & 59 & 51\\
+  \hline \hline
+  \textbf{Produto SP} & 1,81 & 1,81 & 1,83 & 1,83 & 1,82 & 1,83 \\ \hline
+\end{tabular}
+\caption{Número de células de cada camada do calorímetro após a
+compactação por SPCA.} \label{compac}
+\end{table}
+
+Melhor desempenho de discriminação foi obtido usando os sinais
+formatados em soma de anéis. Nas melhores configurações atingiu-se
+SP=1,83, enquanto que para os sinais formatados em anéis o melhor SP
+foi 1,77. Em termos da eficiência de discriminação, para uma
+probabilidade de detecção de 97\% a SICA aplicada sobre as células
+do calorímetro formatadas em anéis apresentou falso alarme de 4,9\%,
+em quanto que a SICA sobre a soma dos anéis 3\%.
+
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=12cm]{cap4_ica_saneis_seg.eps}
+\caption{Curvas ROC obtidas com a ICA segmentada sobre os sinais
+formatados em soma de anéis.} \label{ica_sanel}
+\end{figure}
+
+\subsection{Mapeamento auto-organizável sobre os sinais em soma de
+anéis}
+
+
+%Em outra tentativa de otimização da discriminação $e^-/j$ no ATLAS,
+%foi utilizada uma rede neural auto-organizável (SOM - \textit{Self
+%Organizing Map}) para a extração de características.
+
+Conforme Capítulo 3, o SOM é capaz de transformar um sinal de
+entrada de dimensão arbitrária em um mapa uni ou bi-dimensional de
+modo adaptativo e topologicamente organizado
+\cite{Book:Haykin:2001}. Foi mostrado também, que os mapas
+auto-organizáveis fornecem uma aproximação para a ICA não-linear,
+sendo úteis para aplicação em ambientes com características
+não-lineares como os calorímetros do ATLAS.
+
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=12cm]{cap4_som_class.eps}
+\caption{Diagrama dos métodos de discriminação $e^-/j$ usando SOM e
+LVQ.} \label{som1}
+\end{figure}
+
+Considerando o exposto acima, mapas auto-organizáveis foram
+utilizados para extração de características nos sinais dos
+calorímetros do ATLAS formatados em soma de anéis. Os resultados
+obtidos com a técnica proposta foram apresentados no trabalho
+\cite{article:simas:2007:acat}.
+
+Os sinais em soma de anéis (100 anéis) foram utilizados por haverem
+apresentado melhor desempenho de discriminação quando comparados com
+a formatação em anéis (1000 células). Foram testados dois mapas, um
+com 60 neurônios (grade $6 \times 10$) e outro com 80 (grade $8
+\times 10$).
+
+Visando um melhor desempenho de classificação, os mapas obtidos
+foram ajustados de modo supervisionado através de Quantização
+Vetorial por Aprendizado (LVQ-\textit{Learning Vector
+Quantization}).
+
+
+\begin{table}[tbph]
+\centering
+\begin{tabular}{c |c c c| c c c}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  \multicolumn{1}{c}{} &  \multicolumn{3}{|c|}{\textbf{Auto-organizado}}
+  &  \multicolumn{3}{c}{\textbf{Ajustado por LVQ}} \\
+  \textbf{Mapa}    & \textbf{$Ef_E$} & \textbf{$Ef_j$} & \textbf{SP} & \textbf{$Ef_E$} & \textbf{$Ef_j$} & \textbf{SP}  \\  \hline
+  \textbf{$6\times 10$}   &  0.894 & 0.982 & 1.64 & 0.915 & 0.979 & 1.70\\
+  \textbf{$8\times 10$}    &  0.919 & 0.951 & 1.63 & 0.923 &  0.977 & 1.71\\
+  \hline
+\end{tabular}
+\caption{Resumo dos resultados obtidos para o mapeamento
+auto-organizável sobre a soma em anéis, classificando a partir do
+neurônio vencedor.} \label{tab_som1}
+\end{table}
+
+
+\begin{figure}[tbph]
+\begin{center}
+\subfigure[]{\label{mapa6x10}\epsfig{file=cap4_mapa2d_6x10.eps,width=6.8cm,clip=}}
+\hspace{1cm}
+\subfigure[]{\label{mapa6x10lvq}\epsfig{file=cap4_mapa2d_lvq_6x10.eps,width=6.8cm,clip=}}
+\end{center}
+\caption{Arrumação topológica das classes nos neurônios para (a)
+treinamento auto-organizado e (b) ajuste com LVQ.}\label{map6x10}
+\end{figure}
+
+O algoritmo utilizado para o ajuste supervisionado dos pesos foi o
+\textbf{LVQ1} \cite{article:kohonenLVQ:1990}, conforme mostrado nas
+equações \ref{lvq1} e \ref{lvq2}.
+
+Foram utilizadas duas formas diferentes para o teste de hipótese a
+partir do mapa auto-organizado ajustado por LVQ (ver Figura
+\ref{som1}). Inicialmente, para cada neurônio vencedor $k$ foi
+identificada a classe $i$ de ativação mais provável no conjunto de
+treino. No calculo da eficiência de discriminação a classe $i$ foi
+associada a todos os elementos do conjunto de teste que ativaram o
+mesmo neurônio $k$. Caso um elemento da classe $j\neq i$ seja
+responsável pela ativação do neurônio $k$, então houve um erro de
+classificação. Esse procedimento foi chamado de classificação pelo
+neurônio vencedor.
+
+%parei aqui 28/01 01:56
+
+\begin{figure}[tbh]
+\begin{center}
+\subfigure[]{\label{probmapa6x10}\epsfig{file=cap4_prob3d_mapa6x10.eps,width=7.4cm,clip=}}
+\subfigure[]{\label{probmapa6x10lvq}\epsfig{file=cap4_prob3d_mapa6x10_lvq.eps,width=7.4cm,clip=}}
+\end{center}
+\caption{Quantidade (\%) de elementos de cada classe que ativaram os
+neurônios da grade, para (a) treinamento não-supervisionado e (b)
+ajuste por LVQ.} \label{prob3d_som1}
+\end{figure}
+
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=11cm]{cap4_som_rocs.eps}
+\caption{ROCs obtidas para a aproximação da ICA não linear usando
+mapas auto-organizados.} \label{som_rn}
+\end{figure}
+
+Melhores resultados foram obtidos realizando-se o teste de hipótese
+através de um classificador neural aplicado às saídas do mapa de
+características, conforme diagrama da Figura \ref{som1}. A
+classificação a partir do mapa de características é detalhada na
+seção \ref{mlp_somm}, para o treinamento da rede MLP foram
+considerados os valores de todas as saídas e não apenas do neurônio
+vencedor como proposto anteriormente.
+
+Na Figura \ref{map6x10} têm-se os mapas bi-dimensionais obtidos a
+partir da associação do neurônio vencedor $k$ à classe $i$ que tem a
+maior probabilidade de ativação no referido neurônio. Percebe-se que
+após o ajuste por LVQ as regiões associadas a cada classe ficam
+melhor definidas (ver Figura \ref{mapa6x10lvq}). Considerando as
+distribuições de probabilidade de ativação dos neurônios do mapa por
+elétrons e jatos mostradas nas Figuras \ref{probmapa6x10} e
+\ref{probmapa6x10lvq}, percebe-se que as regiões de sobreposição de
+classe diminuem bastante após a LVQ.
+
+Os índices de desempenho calculados para a classificação pelo
+neurônio vencedor são mostrados na Tabela \ref{tab_som1}. Percebe-se
+que o mapa $6\times 10$ apresentou resultados ligeiramente melhores
+que o $8\times 10$, no treinamento auto-organizado, mas atingiu
+menor SP após a LVQ.
+
+A utilização da informação de todas as saídas do mapa para alimentar
+um classificador neural conseguiu resultados bastante animadores,
+com alta eficiência de discriminação nas duas classes. As curvas ROC
+e os índices SP obtidos são mostrados na figura \ref{som_rn}.
+
+Com o estudo detalhado da relevância das entradas espera-se melhorar
+o desempenho do teste de hipótese. Serão realizados testes com
+outros mapas variando-se a quantidade de neurônios numa tentativa de
+otimizar o mapeamento dos eventos para as saídas codificadas.
+
+%\begin{figure}[tbph]
+%\begin{center}
+%\subfigure[]{\label{freqmapa6x10}\epsfig{file=cap4_m6x10_freq.eps,width=7.4cm,clip=}}
+%\subfigure[]{\label{freqmapa6x10lvq}\epsfig{file=cap4_lvq_m6x10_freq.eps,width=7.4cm,clip=}}
+%\end{center}
+%\caption{Distribuição de probabilidade na ativação por elétrons e
+%jatos para os neurônio do mapa após (a) treinamento auto-organizado
+%e (b) ajuste com LVQ.}\label{freqmap6x10}
+%\end{figure}
+
+\section{Comparação dos resultados obtidos}
+
+A extração de característica utilizando algoritmos de ICA se mostrou
+eficiente para revelar a estrutura dos sinais dos calorímetros do
+ATLAS e maximizar o desempenho do teste de hipótese. Dentre as
+técnicas propostas, os melhores resultados foram obtidos para a
+aproximação da análise de componentes independentes não-lineares
+obtida através dos mapas auto-organizáveis.
+
+Foi verificado que a base de dados em soma de anéis permite a
+obtenção de melhor desempenho de classificação. A compactação (soma
+dos anéis) e a normalização seqüencial, descritas nas equações
+\ref{so1} e \ref{so2}, parecem realçar as diferenças entre as
+assinaturas de elétrons e jatos.
+
+Um resumo dos resultados obtidos até aqui são apresentados na tabela
+\ref{res_resul} em função dos produtos SP calculados para as
+abordagens propostas.
+
+\begin{table}[tbph]
+\centering
+\begin{tabular}{c c c}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  \textbf{Técnica}    & \textbf{Formatação dos sinais} & \textbf{Máximo SP} \\  \hline
+  \textbf{ICA}   &  Anéis mais energéticos & 1,69\\
+  \textbf{ICA segmentado}   &  Anéis & 1,77\\
+  \textbf{ICA}   &  Soma de anéis & 1,82\\
+  \textbf{ICA segmentado}   &  Soma de anéis & 1,83\\
+  \textbf{ICA não-linear}    &  Soma de anéis & 1,86 \\
+  \hline
+\end{tabular}
+\caption{Produtos SP obtidos para as técnicas de extração de
+características propostas.} \label{res_resul}
+\end{table}

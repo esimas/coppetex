@@ -1,0 +1,34 @@
+\begin{thebibliography}{1}
+\newcommand{\enquote}[1]{``#1''}
+
+\bibitem{KNU86a}
+\MakeUppercase{ Knuth, D.~E.}, {\em The {{\TeX}book}\/}.
+\newblock Addison-Wesley: Reading, MA, USA, 1984.
+
+\bibitem{KNT69a}
+\MakeUppercase{ Lamport, L.}, {\em {\LaTeX \rm:} {A} Document Preparation
+  System\/}.
+\newblock Addison-Wesley: Reading, MA, USA, 1986.
+
+\bibitem{TNR08a}
+\MakeUppercase{ CPGP/COPPE/UFRJ}, {\em Norma para a Elaboração Gráfica de
+  Teses\/}, Rio de Janeiro, RJ, Brasil, Julho de 2008.
+
+\bibitem{PAT88a}
+\MakeUppercase{ Patashnik, O.}, \enquote{BibTeXing}, Documentation for general
+  Bib\TeX\ users.
+
+\bibitem{PAT88b}
+\MakeUppercase{ Patashnik, O.}, \enquote{Designing BibTeX Styles}, The part of
+  BibTeX 's documentation that's not meant for general users.
+
+\bibitem{WW79a}
+\MakeUppercase{ Strunk, Jr., W., White, E.~B.}, {\em The Elements of Style\/}.
+\newblock 3rd ed.
+\newblock Macmillan, 1979.
+
+\bibitem{TeX:FAQ}
+\enquote{{\TeX} {Frequently} {Asked} {Questions}},
+  \\http://www.tex.ac.uk/cgi-bin/texfaq2html?introduction=yes.
+
+\end{thebibliography}

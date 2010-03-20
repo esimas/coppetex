@@ -1,0 +1,72 @@
+\BOOKMARK [0][-]{chapter*.3}{Lista de Figuras}{}
+\BOOKMARK [0][-]{chapter*.4}{Lista de Tabelas}{}
+\BOOKMARK [0][-]{chapter*.5}{S\355mbolos e Abreviaturas}{}
+\BOOKMARK [0][-]{chapter.1}{Introdu\347\343o}{}
+\BOOKMARK [1][-]{section.1.1}{Contexto}{chapter.1}
+\BOOKMARK [1][-]{section.1.2}{Motiva\347\343o}{chapter.1}
+\BOOKMARK [1][-]{section.1.3}{Objetivos}{chapter.1}
+\BOOKMARK [1][-]{section.1.4}{Metodologia}{chapter.1}
+\BOOKMARK [1][-]{section.1.5}{Conte\372do do trabalho}{chapter.1}
+\BOOKMARK [0][-]{chapter.2}{F\355sica de Part\355culas e o detector ATLAS}{}
+\BOOKMARK [1][-]{section.2.1}{Panorama geral da f\355sica de part\355culas elementares}{chapter.2}
+\BOOKMARK [1][-]{section.2.2}{O acelerador LHC}{chapter.2}
+\BOOKMARK [1][-]{section.2.3}{Caracter\355sticas gerais do detector ATLAS}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.3.1}{O sistema de calorimetria do ATLAS}{section.2.3}
+\BOOKMARK [2][-]{subsection.2.3.2}{Principais objetos de interesse no ATLAS}{section.2.3}
+\BOOKMARK [0][-]{chapter.3}{O Sistema de Filtragem do detector ATLAS}{}
+\BOOKMARK [1][-]{section.3.1}{Introdu\347\343o aos sistemas de filtragem em HEP}{chapter.3}
+\BOOKMARK [1][-]{section.3.2}{O sistema de filtragem online do ATLAS}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.2.1}{Primeiro n\355vel de filtragem}{section.3.2}
+\BOOKMARK [2][-]{subsection.3.2.2}{Filtragem de alto n\355vel}{section.3.2}
+\BOOKMARK [0][-]{chapter.4}{Filtragem de El\351trons partir de Informa\347\365es de Calorimetria no ATLAS}{}
+\BOOKMARK [1][-]{section.4.1}{Filtragem de el\351trons no L1}{chapter.4}
+\BOOKMARK [1][-]{section.4.2}{Filtragem de el\351trons no L2 - Algoritmo T2Calo}{chapter.4}
+\BOOKMARK [1][-]{section.4.3}{Neural Ringer - Alternativa para Filtragem de El\351trons no L2}{chapter.4}
+\BOOKMARK [1][-]{section.4.4}{Descri\347\343o dos dados utilizados}{chapter.4}
+\BOOKMARK [2][-]{subsection.4.4.1}{Sinais simulados - Corte E10 loose}{section.4.4}
+\BOOKMARK [2][-]{subsection.4.4.2}{Sinais simulados - Corte E15i}{section.4.4}
+\BOOKMARK [2][-]{subsection.4.4.3}{Raios C\363smicos}{section.4.4}
+\BOOKMARK [2][-]{subsection.4.4.4}{Sinais Reais de Colis\365es do LHC}{section.4.4}
+\BOOKMARK [0][-]{chapter.5}{Revis\343o da Literatura}{}
+\BOOKMARK [1][-]{section.5.1}{Aplica\347\365es em F\355sica de Altas Energias e \301reas Correlatas}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.1.1}{Aplica\347\365es de classificadores neurais}{section.5.1}
+\BOOKMARK [2][-]{subsection.5.1.2}{Aplica\347\365es de t\351cnicas estat\355sticas de extra\347\343o de caracter\355sticas}{section.5.1}
+\BOOKMARK [1][-]{section.5.2}{T\351cnicas de Extra\347\343o de Caracter\355sticas Utilizadas neste Trabalho}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.2.1}{Mapas auto-organiz\341veis}{section.5.2}
+\BOOKMARK [2][-]{subsection.5.2.2}{An\341lise de Componentes Principais}{section.5.2}
+\BOOKMARK [2][-]{subsection.5.2.3}{An\341lise de Componentes Independentes}{section.5.2}
+\BOOKMARK [2][-]{subsection.5.2.4}{ICA n\343o-linear}{section.5.2}
+\BOOKMARK [0][-]{chapter.6}{Metodologia Proposta}{}
+\BOOKMARK [1][-]{section.6.1}{Sistemas de Classifica\347\343o Propostos para a Sele\347\343o de El\351trons no Segundo-N\355vel de Filtragem do ATLAS}{chapter.6}
+\BOOKMARK [2][-]{subsection.6.1.1}{Classificadores Neurais Supervisionados}{section.6.1}
+\BOOKMARK [2][-]{subsection.6.1.2}{Combina\347\343o de M\372ltiplos Classificadores}{section.6.1}
+\BOOKMARK [0][-]{chapter.7}{Resultados}{}
+\BOOKMARK [1][-]{section.7.1}{Resultados - Dados simulados / corte L1 do tipo E10 loose}{chapter.7}
+\BOOKMARK [1][-]{section.7.2}{Resultados - Dados simulados / corte L1 do tipo E15i}{chapter.7}
+\BOOKMARK [1][-]{section.7.3}{Resultados - Sinais de raios c\363smicos}{chapter.7}
+\BOOKMARK [1][-]{section.7.4}{Resultados - Sinais Reais de Colis\365es do LHC}{chapter.7}
+\BOOKMARK [0][-]{chapter*.18}{Refer\352ncias Bibliogr\341ficas}{}
+\BOOKMARK [0][-]{appendix.A}{Aspectos Te\363ricos das T\351cnicas de Extra\347\343o de Caracter\355sticas}{}
+\BOOKMARK [1][-]{section.A.1}{Mapas auto-organiz\341veis}{appendix.A}
+\BOOKMARK [2][-]{subsection.A.1.1}{Quantiza\347\343o vetorial por aprendizado}{section.A.1}
+\BOOKMARK [2][-]{subsection.A.1.2}{Classifica\347\343o a partir do mapa de caracter\355sticas}{section.A.1}
+\BOOKMARK [1][-]{section.A.2}{An\341lise de Componentes Principais}{appendix.A}
+\BOOKMARK [2][-]{subsection.A.2.1}{Redu\347\343o de dimens\343o}{section.A.2}
+\BOOKMARK [1][-]{section.A.3}{An\341lise de Componentes Independentes}{appendix.A}
+\BOOKMARK [2][-]{subsection.A.3.1}{Princ\355pios de estima\347\343o das componentes independentes}{section.A.3}
+\BOOKMARK [2][-]{subsection.A.3.2}{Pr\351-processamento dos sinais para ICA}{section.A.3}
+\BOOKMARK [2][-]{subsection.A.3.3}{Principais algoritmos para ICA}{section.A.3}
+\BOOKMARK [2][-]{subsection.A.3.4}{Extens\365es ao modelo b\341sico de ICA}{section.A.3}
+\BOOKMARK [1][-]{section.A.4}{ICA n\343o-linear}{appendix.A}
+\BOOKMARK [2][-]{subsection.A.4.1}{Algoritmo Taleb-Jutten para o modelo PNL}{section.A.4}
+\BOOKMARK [0][-]{appendix.B}{Conceitos fundamentais em classifica\347\343o de sinais}{}
+\BOOKMARK [1][-]{section.B.1}{Teste de Hip\363teses}{appendix.B}
+\BOOKMARK [1][-]{section.B.2}{Crit\351rio de Bayes}{appendix.B}
+\BOOKMARK [1][-]{section.B.3}{Filtros Casados}{appendix.B}
+\BOOKMARK [1][-]{section.B.4}{Discriminante linear de Fisher}{appendix.B}
+\BOOKMARK [1][-]{section.B.5}{Classificadores Neurais}{appendix.B}
+\BOOKMARK [0][-]{appendix.C}{Lista de Publica\347\365es}{}
+\BOOKMARK [1][-]{section.C.1}{Publica\347\365es em peri\363dicos}{appendix.C}
+\BOOKMARK [1][-]{section.C.2}{Cap\355tulo de Livro}{appendix.C}
+\BOOKMARK [1][-]{section.C.3}{Artigos em Confer\352ncias}{appendix.C}
+\BOOKMARK [1][-]{section.C.4}{Resumos em Confer\352ncias}{appendix.C}

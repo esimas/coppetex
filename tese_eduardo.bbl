@@ -1,0 +1,822 @@
+\begin{thebibliography}{100}
+\newcommand{\enquote}[1]{``#1''}
+
+\bibitem{article:ATLAS:2008}
+\MakeUppercase{ {ATLAS Colaboration}}, \enquote{{ATLAS} Experiment at {CERN}
+  {L}arge {H}adron {C}ollider}, {\em Journal of Instrumentation\/}, v.~3, n.
+  S08003, pp.~1--407, 2008.
+
+\bibitem{TDR1:ATLAS:1999}
+\MakeUppercase{ ATLAS-Collaboration}, {\em ATLAS Detector and Physics
+  Performance Technical Design Report, Volume 1\/}, Tech. rep., CERN, Geneva,
+  Switzerland, May 1999.
+
+\bibitem{article:HLT1:2003}
+\MakeUppercase{ Hauser, R.}, \enquote{The ATLAS High Level Trigger System}.
+\newblock In: {\em Proceedings of the U.S. Atlas Computing Meeting\/}, v.~1,
+  pp. 1--5, Upton, EUA, 2003.
+
+\bibitem{TDR:ATLAS:1998}
+\MakeUppercase{ ATLAS-Collaboration}, {\em First-Level Trigger Technical Design
+  Report\/}, Tech. rep., CERN, Geneva, Switzerland, June 1998.
+
+\bibitem{article:LHC:2008}
+\MakeUppercase{ Evans, L., Bryant, P.}, \enquote{{LHC} Machine}, {\em Journal
+  of Instrumentation\/}, v.~3, n. S08001, pp.~1--158, 2008.
+
+\bibitem{book:pca:2002}
+\MakeUppercase{ Jolliffe, I.~T.}, {\em Principal Component Analysis\/}.
+\newblock 2nd ed.
+\newblock Springer: New York, US, 2002.
+
+\bibitem{book:oja:2001}
+\MakeUppercase{ Hyvarinen, A., Karhunen, J., Oja, E.}, {\em Independent
+  Component Analysis\/}.
+\newblock Wiley: New York, US, 2001.
+
+\bibitem{haykin:nn:2008}
+\MakeUppercase{ Haykin, S.}, {\em Neural Networks and Learning Machines\/}.
+\newblock 3rd ed.
+\newblock Prentice Hall: New Jersey, US, 2008.
+
+\bibitem{livro:fisica1:2006}
+\MakeUppercase{ Committee on Elementary Particle Physics in the~21st Century,
+  N. R.~C.}, {\em Revealing the Hidden Nature of Space and Time: Charting the
+  Course for Elementary Particle Physics\/}.
+\newblock National Academic Press: Washington-DC, US, 2006.
+
+\bibitem{LI:ATLAS:1992}
+\MakeUppercase{ ATLAS-Collaboration}, {\em Letter of Intents for a General
+  Purpose pp Experiment at the Large Hadron Collider at CERN\/}, Tech. rep.,
+  CERN, Geneva, Switzerland, October 1992.
+
+\bibitem{tese:andre:2006}
+\MakeUppercase{ dos Anjos, A.~R.}, {\em Sistema de filtragem online aplicada a
+  um ambiente com alta taxa de eventos\/}, Ph.D. Thesis, COPPE/UFRJ, Dezembro
+  2006.
+
+\bibitem{tese:torres:2010}
+\MakeUppercase{ Torres, R.~C.}, {\em Título tese torres\/}, Ph.D. Thesis,
+  COPPE/UFRJ, Dezembro 2010.
+
+\bibitem{seixas:pcd:1995}
+\MakeUppercase{ Caloba, L., Seixas, J., Pereira, F.}, \enquote{Neural
+  Discriminating Analysis for a Second-Level Trigger System}.
+\newblock In: {\em Proceedings of the International Conference on Computing in
+  High Energy Physics (CHEP95)\/}, Rio de Janeiro, Brazil, September 1995.
+
+\bibitem{book:wigmans:2000}
+\MakeUppercase{ Wigmans, R.}, {\em Calorimetry: Energy Measurement in Particle
+  Physics\/}.
+\newblock Clarendon Press: Gloucestershire, UK, 2000.
+
+\bibitem{book:almeida:2006}
+\MakeUppercase{ Almeida, L.~B.}, {\em Nonlinear Source Separation\/}.
+\newblock Morgan and Claypool, 2006.
+
+\bibitem{Homepage:ATLAS}
+\MakeUppercase{ ATLAS-Collaboration}, \enquote{Experiment Overview}, Disponível
+  em :$<$http://www.atlas.ch/$>$. Acesso em: 20 de março de 2007.
+
+\bibitem{book:fernow:1986}
+\MakeUppercase{ Fernow, R.~C.}, {\em Introduction to Experimental Particle
+  Physics\/}.
+\newblock Cambrige University Press: Cambridge-UK, 1986.
+
+\bibitem{book:martin:2006}
+\MakeUppercase{ Martin, B.~R.}, {\em Nuclear and Particle Physics, An
+  Introduction\/}.
+\newblock Wiley: West Sussex, UK, 2006.
+
+\bibitem{book:chung:2001}
+\MakeUppercase{ Chung, K.~C.}, {\em Introdução à Física Nuclear\/}.
+\newblock EdUERJ: Rio de Janeiro, 2001.
+
+\bibitem{book:mist:2003}
+\MakeUppercase{ Veltman, M. J.~G.}, {\em Facts and Mysteries in Elementary
+  Particle Physics\/}.
+\newblock World Scientific: New Jersey, US, 2003.
+
+\bibitem{book:QCD:2003}
+\MakeUppercase{ Ellis, R.~K., Stirling, W.~J., Webber, B.~R.}, {\em QCD and
+  Collider Physics\/}.
+\newblock {\em Cambridge Monographs on Particle Physics, Nuclear Physics and
+  Cosmology\/}, Cambrige University Press: Cambridge-UK, 2003.
+
+\bibitem{article:LHC:2002}
+\MakeUppercase{ Price, M.}, \enquote{The {LHC} project}, {\em Nuclear
+  Instruments and Methods in Physics Research A\/}, v.~478, pp.~46--61, 2002.
+
+\bibitem{Homepage:CERN}
+\MakeUppercase{ CERN-Colaboration}, \enquote{CERN}, Disponível em
+  :$<$http://www.cern.ch/$>$. Acesso em: 20 de março de 2007.
+
+\bibitem{article:darkm:2005}
+\MakeUppercase{ Bertone, G., Hooper, D., Silk, J.}, \enquote{Particle dark
+  matter, evidence, candidates and constraints}, {\em Physics Reports\/},
+  v.~405, pp.~279--390, 2005.
+
+\bibitem{article:susy:1996}
+\MakeUppercase{ Lykken, J.~D.}, \enquote{Introduction to Supersymmetry},
+  Lectures at the Theoretical Advanced Study Institute (TASI 96):Fields,
+  Strings, and Duality, June 1996.
+
+\bibitem{book:cpv:1999}
+\MakeUppercase{ Bigi, I., Sanda, A.}, {\em CP violation\/}.
+\newblock Cambridge University Press: Cambridge, UK, 1999.
+
+\bibitem{Homepage:desy}
+\MakeUppercase{ DESY}, \enquote{Deutsches Elektronen-SynchrotronDie},
+  Disponível em :$<$http://www.desy.de/$>$. Acesso em: 02 de julho de 2009.
+
+\bibitem{homepage:kek}
+\MakeUppercase{ KEK}, \enquote{{KEK} High-Energy Accelerator}, Disponível em:
+  $<$http://www.kek.jp/$>$. Acesso em: 02 de julho de 2009.
+
+\bibitem{Homepage:Fermilab}
+\MakeUppercase{ Fermilab}, \enquote{Fermi National Accelerator Laboratory},
+  Disponível em :$<$http://www.fnal.gov//$>$. Acesso em: 02 de julho de 2009.
+
+\bibitem{homepage:slac}
+\MakeUppercase{ SLAC}, \enquote{{SLAC} Laboratory}, Disponível em:
+  $<$http://www.slac.stanford.edu/$>$. Acesso em: 02 de julho de 2009.
+
+\bibitem{Homepage:brookhaven}
+\MakeUppercase{ Brookhaven}, \enquote{Brookhaven National Laboratory},
+  Disponível em: $<$http://www.bnl.gov/$>$. Acesso em: 02 de julho de 2009,
+  2009.
+
+\bibitem{Homepage:lhc}
+\MakeUppercase{ LHC-Collaboration}, \enquote{Large Hadron Collider}, Disponível
+  em: $<$http://lhc.web.cern.ch/lhc/$>$. Acesso em: 28 de março de 2007.
+
+\bibitem{article:CMS:2008}
+\MakeUppercase{ {CMS Colaboration}}, \enquote{{CMS} Experiment at the {CERN}
+  {LHC}}, {\em Journal of Instrumentation\/}, v.~3, n. S08004, pp.~1--334,
+  2008.
+
+\bibitem{article:LHCb:2008}
+\MakeUppercase{ {LHCb Colaboration}}, \enquote{{LHC}b Detector at the {LHC}},
+  {\em Journal of Instrumentation\/}, v.~3, n. S08005, pp.~1--205, 2008.
+
+\bibitem{article:LHCf:2008}
+\MakeUppercase{ {LHCf Colaboration}}, \enquote{{LHC}f Experiment at the {CERN}
+  {L}arge {H}adron {C}ollider}, {\em Journal of Instrumentation\/}, v.~3, n.
+  S08006, pp.~1--36, 2008.
+
+\bibitem{article:ALICE:2008}
+\MakeUppercase{ {ALICE Colaboration}}, \enquote{{ALICE} Experiment at the
+  {CERN} {LHC}}, {\em Journal of Instrumentation\/}, v.~3, n. S08002,
+  pp.~1--245, 2008.
+
+\bibitem{article:TOTEM:2008}
+\MakeUppercase{ {TOTEM Colaboration}}, \enquote{{TOTEM} Experiment at the
+  {CERN} {L}arge {H}adron {C}ollider}, {\em Journal of Instrumentation\/},
+  v.~3, n. S08007, pp.~1--107, 2008.
+
+\bibitem{atlastracking:2007}
+\MakeUppercase{ Rossi, L.}, \enquote{The ATLAS tracking and vertexing
+  detector}, {\em Nuclear Instruments and Methods in Physics Research Section
+  A\/}, v.~580, n.~2, 2007.
+
+\bibitem{atlascalo:2002}
+\MakeUppercase{ Puzo, P.}, \enquote{{ATLAS} Calorimetry}, {\em Nuclear
+  Instruments and Methods in Physics Research A\/}, v.~494, n.~1, pp.~340--345,
+  2002.
+
+\bibitem{atlasmuon:2004}
+\MakeUppercase{ Pontecorvo, L.}, \enquote{The {ATLAS} muon spectrometer}, {\em
+  The European Physical Journal C - Particles and Fields\/}, v.~34, n.~1, 2004.
+
+\bibitem{article:tilecal:2006}
+\MakeUppercase{ Adragna{, et al.}, P.}, \enquote{The {ATLAS} Hadronic Tile
+  Calorimeter: From Construction Toward Physics}, {\em IEEE Transactions on
+  Nuclear Science\/}, v.~53, n.~5, pp.~1275--1281, June 2006.
+
+\bibitem{article:trigconf:2009}
+\MakeUppercase{ Kai, S., Qi, W., Mingli, D.}, \enquote{Approach to nonlinear
+  blind source separation based on niche genetic algorithm}.
+\newblock In: {\em Proceedings of the 16th IEEE-NPSS Real Time Conference\/},
+  v.~1, pp. 326--333, Pequim, China, 2009.
+
+\bibitem{drees:lep:2001}
+\MakeUppercase{ Drees, J.}, \enquote{Review of final LEP results or a tribute
+  to LEP}.
+\newblock In: {\em Proceedings of the International Symposium on Lepton and
+  Photon Interactions at High Energies\/}, pp. 349--373, Roma, ItÃ¡lia, Julho
+  2001.
+
+\bibitem{book:lhc:2008}
+\MakeUppercase{ Kane, G., Pierce, A.}, (eds), {\em Perspectives on LHC
+  Physics\/}.
+\newblock World Scientific: Singapore, 2008.
+
+\bibitem{TDR2:ATLAS:1999}
+\MakeUppercase{ ATLAS-Collaboration}, {\em ATLAS Detector and Physics
+  Performance Technical Design Report, Volume 2\/}, Tech. rep., CERN, Geneva,
+  Switzerland, May 1999.
+
+\bibitem{article:trigger:watz}
+\MakeUppercase{ Watts, G.}, \enquote{Review of Triggering}.
+\newblock In: {\em Proceedings of the IEEE Nuclear Science Symposium and
+  Medical Imaging Conference\/}, v.~1, pp. 282--287, Portland, EUA, October
+  2003.
+
+\bibitem{book:fpga:2009}
+\MakeUppercase{ da~Costa, C.}, {\em Projeto de Circuitos Digitais com FPGA\/}.
+\newblock Érica, 2009.
+
+\bibitem{book:diniz:pds}
+\MakeUppercase{ Diniz, P. S.~R., da~Silva, E. A.~B., Neto, S.~L.}, {\em
+  Processamento Digital de Sinais\/}.
+\newblock Bookman, 2004.
+
+\bibitem{article:trigger:volker2004}
+\MakeUppercase{ Volker~Lindenstruth, I.~K.}, \enquote{Overview of trigger
+  systems}, {\em Nuclear Instruments and Methods in Physics Research A\/},
+  v.~535, n.~1, pp.~48--56, 2004.
+
+\bibitem{article:triggerint:2008}
+\MakeUppercase{ Riu, I., Abolins, M., et. al, P.~A.}, \enquote{Integration of
+  the Trigger and Data Acquisition Systems in {ATLAS}}, {\em IEEE Transactions
+  on Nuclear Science\/}, v.~55, n.~1, pp.~106--112, 2008.
+
+\bibitem{article:cms:trigger:2004}
+\MakeUppercase{ Seez, C.}, \enquote{The {CMS} trigger system}, {\em The
+  European Physical Journal C - Particles and Fields\/}, v.~34, n.~1,
+  pp.~151--159, 2004.
+
+\bibitem{book:montecarlo:2004}
+\MakeUppercase{ Robert, C., Casella, G.}, {\em Monte Carlo Statistical
+  Methods\/}.
+\newblock Springer-Verlag: New York, US, 2004.
+
+\bibitem{TDR:ATLAS:2003}
+\MakeUppercase{ ATLAS-Collaboration}, {\em ATLAS High-Level Trigger, Data
+  Acquisition and Controls Technical Design Report\/}, Tech. rep., CERN,
+  Geneva, Switzerland, May 2003.
+
+\bibitem{article:laradd:2007}
+\MakeUppercase{ Cerqueira, A.~S., Calôba, L.~P., Seixas, J.~M.},
+  \enquote{Analog System for Building the First-Level Triggering Signal
+  Provided By the Hadronic Calorimeter of ATLAS Detector}, {\em Nuclear
+  Instruments and Methods in Physics Research - A\/}, v.~570, n.~1,
+  pp.~117--125, 2007.
+
+\bibitem{article:anjos:2006}
+\MakeUppercase{ {dos Anjos}, A., Torres, R., Seixas, J.}, \enquote{Neural
+  triggering system operating on high resolution calorimetry information}, {\em
+  Nuclear Instruments and Methods in Physics Research A\/}, v.~559, n.~1,
+  pp.~134--138, 2006.
+
+\bibitem{article:herman:2006}
+\MakeUppercase{ {Lima Jr}., H., Seixas, J.}, \enquote{A segmented principal
+  component analysis applied to calorimetry information at ATLAS}, {\em Nuclear
+  Instruments and Methods in Physics Research A\/}, v.~559, n.~1, pp.~129--133,
+  April 2006.
+
+\bibitem{article:lindsey:1992}
+\MakeUppercase{ Lindsey, C., Denby, B., Haggerty, H., \MakeLowercase{et~al.}},
+  \enquote{Real Time Track Finding with a {VLSI} Neural Network}, {\em Nuclear
+  Instruments and Methods in Physics Research A\/}, v.~A, n. 317, pp.~346--356,
+  1992.
+
+\bibitem{article:denby:1999}
+\MakeUppercase{ Denby, B.}, \enquote{Neural Networks in high-energy physics, a
+  ten year perspective}, {\em Computer Physics Communications\/}, v.~1, n. 119,
+  pp.~219--231, 1999.
+
+\bibitem{article:hera:2008}
+\MakeUppercase{ Nguyet, T.~T.}, \enquote{Searches for new physics by the {H1}
+  experiment at {HERA}}, {\em Acta Physica Polonica B Proceedings
+  Supplement\/}, v.~1, n.~2, pp.~407--409, 2008.
+
+\bibitem{article:nnphys:1995}
+\MakeUppercase{ Kolanoski, H.}, \enquote{Application of artificial neural
+  networks in particle physics}, {\em Nuclear Instruments and Methods in
+  Physics Research A\/}, v.~1, n. 367, pp.~14--20, 1995.
+
+\bibitem{article:crystal:1992}
+\MakeUppercase{ Aker, E.}, \enquote{The Crystal Barrel Spectrometer at LEAR},
+  {\em Nuclear Instruments and Methods in Physics Research A\/}, v.~321, n.~6,
+  pp.~69--108, 1992.
+
+\bibitem{article:crystalnn:1993}
+\MakeUppercase{ Degener, T.}, \enquote{A Feed Forward Neural Network for
+  Recognition of Fluctuations in Electromagnetic Showers}.
+\newblock In: {\em Proceedings of the International Workshop on Software
+  Engineering, Artificial Intelligence and Expert Systems for High Energy and
+  Nuclear Physics\/}, v.~1, n.~1, pp. 1--11, Oberammergan, Germany, 1993.
+
+\bibitem{article:hegra:1995}
+\MakeUppercase{ Westerhoff, S., Meyer, H.}, \enquote{Neural nets as a tool for
+  separating gamma and hadron induced Air Showers}.
+\newblock In: {\em Proceedings of the AIHENP\/}, v.~1, n.~1, pp. 1--8, Pisa,
+  Italy, 1995.
+
+\bibitem{article:proriol:1995}
+\MakeUppercase{ Proriol, J.}, \enquote{Selection of variables for neural
+  network analysis. Comparison of several methods with high energy physics
+  analysis}, {\em Nuclear Instruments and Methods in Research A\/}, v.~361,
+  n.~3, pp.~581--585, 1995.
+
+\bibitem{article:bussino:2005}
+\MakeUppercase{ Bussino, S., Mari, M.}, \enquote{Gamma-hadron discrimination in
+  extensive air showers using a neural network}, {\em Astroparticle Physics\/},
+  v.~1, n.~15, pp.~65--77, 2005.
+
+\bibitem{article:mlhep:2009}
+\MakeUppercase{ Whiteson, S., Whiteson, D.}, \enquote{Machine learning for
+  event selection in high energy physics}, {\em Engineering Applications of
+  Artificial Intelligence\/}, v.~22, n.~8, pp.~1203--1217, 2009.
+
+\bibitem{article:riggi:2007}
+\MakeUppercase{ Riggi, S., Caruso, R., Insolia, A., \MakeLowercase{et~al.}},
+  \enquote{A neural network approach to event-by-event cosmic ray primary mass
+  identification}, {\em Proceedings of Science\/}, v.~ACAT07, n. 035,
+  pp.~1--13, 2007.
+
+\bibitem{article:lang:som}
+\MakeUppercase{ Lang, M.~J.}, \enquote{Application of {Kohonen} network
+  classifier in {TeV} gamma-ray astronomy}, {\em Journal of Physics G: Nuclear
+  Particle Physics\/}, v.~1, n.~24, pp.~2279--2287, 1998.
+
+\bibitem{article:som:had:1999}
+\MakeUppercase{ Becks, K.~H., Dress, J., Flagmeyer, U.,
+  \MakeLowercase{et~al.}}, \enquote{Separation of hadronic W-decays from
+  QCD-background with self-organizing maps}, {\em Nuclear Instruments and
+  Metohds in Physics Research A\/}, v.~426, n.~2, pp.~599--604, 1999.
+
+\bibitem{article:lange:som}
+\MakeUppercase{ Lange, J.~S.}, \enquote{Transputer self-organizing map
+  algorithm for beam background rejection at the BELLE silicaaon vertex
+  detector}, {\em Nuclear Instruments and Methods in Physics Research A\/},
+  v.~420, n.~1, pp.~288--309, 1999.
+
+\bibitem{article:lucas:som}
+\MakeUppercase{ Wyrzykowski, L., Belokurov, V.}, \enquote{Self-organizing maps,
+  an application to the {OGLE} data and the {Gaia} {Science} {Alerts}}.
+\newblock In: {\em Proceedings of the International Conference on
+  Classification and discovery in large astronomical surveys, {AIP} Conference
+  Proceedings\/}, v. 1083, n.~1, pp. 201--206, Rinberg Castle, Germany, 2008.
+
+\bibitem{article:aatos:som}
+\MakeUppercase{ Heikkinen, A.}, \enquote{Separation of Higgs boson signal from
+  Drell-Yan background with self-organizing maps}, {\em Proceedins of
+  Science\/}, v.~ACAT07, n. 065, pp.~1--8, 2007.
+
+\bibitem{article:proriol:pca}
+\MakeUppercase{ Proriol, J.}, \enquote{Selection of variables for neural
+  network analysis. Comparison of several methods with high-energy physics
+  data}, {\em Nuclear Instruments and Methods in Physics Research A\/}, v.~361,
+  n.~1, pp.~581--585, 1995.
+
+\bibitem{article:wolter:multi}
+\MakeUppercase{ Wolter, M.}, \enquote{Multivariate Analysis Methods in
+  Physics}, {\em Physics of Particles and Nuclei\/}, v.~38, n.~2, pp.~255--268,
+  2007.
+
+\bibitem{article:akras:pca}
+\MakeUppercase{ Akras, S., Boumis, P.}, \enquote{A principal component analysis
+  approach to the morphology of planetary nebulae}, {\em Astrophysics
+  Journal\/}, v.~1, n.~1, pp.~1--8, 2007.
+
+\bibitem{article:cadavid:pcaica}
+\MakeUppercase{ Cadavid, A.~C., Lawrence, J.~K., Ruzmaikin, A.},
+  \enquote{Principal Components and Independent Component Analysis of Solar and
+  Space Data}, {\em Solar Physics Journal\/}, v.~248, n.~2, pp.~247--261, 2008.
+
+\bibitem{article:booster:ica}
+\MakeUppercase{ Huang, X., Lee, S.~Y., Prebys, E., \MakeLowercase{et~al.}},
+  \enquote{Application of independent component analysis to {Fermilab}
+  {BOOSTER}}, {\em Physical Review Special Topics, Accelerators and Beams\/},
+  v.~8, n.~6, pp.~1--14, 2005.
+
+\bibitem{article:fernandez:2005}
+\MakeUppercase{ Fernandez, C., Nayeri, S.}, \enquote{Independent Component
+  Analysis Applications in Physics}.
+\newblock In: {\em Proceedings of the Int. Joint Conference on Neural
+  Networks\/}, v.~1, n.~1, pp. 2213--2216, Montreal, Canada, 2005.
+
+\bibitem{article:costagli:ica}
+\MakeUppercase{ Costaglia, M., Kuruoglu, E.~E., Ahmed, A.},
+  \enquote{Astrophysical Source Separation using Particle Filters}, {\em
+  Lecture Notes in Computer Science - Independent Component Analysis and Blind
+  Signal Separation\/}, v.~3195, pp.~930--937, 2004.
+
+\bibitem{article:igual:ica}
+\MakeUppercase{ Igual, J., Linhares, R., Salazar, A.}, \enquote{Source
+  Separation of Astrophysical Ice Mixtures}, {\em Lecture Notes in Computer
+  Science - Independent Component Analysis and Blind Signal Separation\/},
+  v.~3889, pp.~368--375, 2006.
+
+\bibitem{article:cardoso:2005}
+\MakeUppercase{ Moudden, Y., Abrial, P., Melin, J.~B., \MakeLowercase{et~al.}},
+  \enquote{Independent Component Separation from Incomplete Spherical Data
+  using Wavelets. Application to CMB Data Analysis}.
+\newblock In: {\em Proceedings of the International Conference on Physics in
+  Signal and Image Processing\/}, v.~1, pp. 1--6, Toulouse, France, 2005.
+
+\bibitem{article:vio:ica}
+\MakeUppercase{ Vioo, R., Andreani, P.}, \enquote{A Modified {ICA} Approach for
+  Signal Separation in {CMB} maps}, {\em Astronomy and Astrophysics Journal\/},
+  v.~802, pp.~1--12, February 2008.
+
+\bibitem{book:kohonen:2001}
+\MakeUppercase{ Kohonen, T.}, {\em Self Organizing Maps\/}.
+\newblock 3rd ed.
+\newblock Springer: Berlin, Germany, 2001.
+
+\bibitem{article:foo:2006}
+\MakeUppercase{ Base, A.~M., Gruber, P., Theisa, F., \MakeLowercase{et~al.}},
+  \enquote{Blind source separation based on self-organizing neural network},
+  {\em Engineering Applications of Artificial Intelligence\/}, v.~19, n.~3,
+  pp.~305--311, 2006.
+
+\bibitem{article:oja:pca}
+\MakeUppercase{ Oja, E.}, \enquote{Neural Networks, Principal Components, and
+  Subspaces}, {\em International Journal of Neural Systems\/}, v.~1, n.~1,
+  pp.~61--68, 1989.
+
+\bibitem{Book:Papoulis:1991}
+\MakeUppercase{ Papoulis, A.}, {\em Probability, Random Variables, and
+  Stochastic Processes\/}.
+\newblock 3rd ed.
+\newblock McGraw-Hill: New York, US, 1991.
+
+\bibitem{book:amari:2002}
+\MakeUppercase{ Cichocki, A., Amari, S.}, {\em Adaptive Blind Signal and Image
+  Processing\/}.
+\newblock John Willey and Sons: West Sussex, UK, 2002.
+
+\bibitem{article:hyvarinen:2000}
+\MakeUppercase{ Hyvarinen, A., Oja, E.}, \enquote{Independent Component
+  Analysis: Algorithms and Applications}, {\em Neural Networks\/}, v.~13, n.
+  4-5, pp.~411--430, 2000.
+
+\bibitem{jutten:nlica:2003}
+\MakeUppercase{ Jutten, C., Karhunen, J.}, \enquote{Advances in Nonlinear Blind
+  Source Separation}.
+\newblock In: {\em Proceedings of the 4th Int. Symp. on Independent Component
+  Analysis and Blind Signal Separation\/}, v.~1, pp. 245--256, Nara, Japan,
+  2003.
+
+\bibitem{article:rojas:ica:2003}
+\MakeUppercase{ Rojas, F., Puntonet, C.~G., Rojas, I.}, \enquote{Independent
+  component analysis evolution based method for nonlinear speech processing},
+  {\em Artificial Neural Nets Problem Solving Methods, PT II\/}, v.~2687,
+  pp.~679--686, 2003.
+
+\bibitem{article:allinson:2002}
+\MakeUppercase{ Haritopoulos, M., Yin, H., Allinson, N.~M.}, \enquote{Image
+  denoising using self-organizing map-based nonlinear independent component
+  analysis}, {\em Neural Networks\/}, v.~15, n. 8-9, pp.~1085--1098, 2002.
+
+\bibitem{article:jutten:1999}
+\MakeUppercase{ Taleb, A., Jutten, C.}, \enquote{Source Separation in
+  post-nonlinear mixtures}, {\em IEEE Transactions on Signal Processing\/},
+  v.~47, n.~10, pp.~2807--2820, 1999.
+
+\bibitem{article:hyvarinen:1999}
+\MakeUppercase{ Hyvarinen, A., Pajunen, P.}, \enquote{Nonlinear Independent
+  Component Analysis: Existence and Uniqueness results}, {\em Neural
+  Networks\/}, v.~12, n.~3, pp.~429--439, 1999.
+
+\bibitem{article:solazzi:pnl:2004}
+\MakeUppercase{ Solazzi, M., Uncini, A.}, \enquote{Spline neural networks for
+  blind separation of post-nonlinear-linear mixtures}, {\em IEEE Transactions
+  on Circuits and Systems - I: Regular Papers\/}, v.~51, n.~4, pp.~817--829,
+  2004.
+
+\bibitem{article:woo:nl2005}
+\MakeUppercase{ Woo, W.~L., Dlay, S.~S.}, \enquote{Nonlinear blind source
+  separation using a hybrid RBF-FMLP network}, {\em IEE Proceedings on Vision,
+  Image and Signal Processing\/}, v.~8, n.~2, pp.~173--183, 2005.
+
+\bibitem{article:gao:nl2005}
+\MakeUppercase{ Gao, P., Woo, W., Dlay, S.~S.}, \enquote{Neural network
+  approaches to nonlinear blind source separation}.
+\newblock In: {\em Proceedings of the Eighth International Symposium on Signal
+  Processing and Its Applications\/}, v.~1, pp. 78--81, Sydney, Australia,
+  2005.
+
+\bibitem{book:function:1984}
+\MakeUppercase{ Griffel, D.~H.}, {\em Applied Functional Analysis\/}.
+\newblock Dover: West Sussex, UK, 1985.
+
+\bibitem{article:pajunen:1996}
+\MakeUppercase{ Pajunen, P., Hyvarinen, A., Karhunen, J.}, \enquote{Nonlinear
+  blind source separation by self-organizing maps}.
+\newblock In: {\em Proceedings of the International Conference on Neural
+  Information Processing\/}, v.~1, pp. 1207--1210, Hong Kong, September 1996.
+
+\bibitem{article:lappalainen:2000}
+\MakeUppercase{ Lappalainen, H., Honkela, A.}, \enquote{Advances in Independent
+  Component Analysis}, chap. Bayesian nonlinear independent component analysis
+  by multi-layer perceptrons, pp. 93--121, Springer, 2000.
+
+\bibitem{article:bishop:1998}
+\MakeUppercase{ Bishop, C.~M., Svensen, M., Willians, C. K.~I.}, \enquote{GTM:
+  The generative topographic mapping}, {\em Neural Computation\/}, v.~10,
+  pp.~215--234, 1998.
+
+\bibitem{article:pajunen:1997}
+\MakeUppercase{ Pajunen, P., Karhunen, J.}, \enquote{A maximum likelihood
+  approach to nonlinear blind source separation}.
+\newblock In: {\em Proceedings of the International Conference on Artificial
+  Neural Networks\/}, v.~1, pp. 541--546, Lausanne, Switzerland, 1997.
+
+\bibitem{article:lappalainen:bay1999}
+\MakeUppercase{ Lappalainen, H.}, \enquote{Ensemble learning for independent
+  component analysis}.
+\newblock In: {\em Proceedings of the International Workshop on Independent
+  Component Analysis and Blind Signal Separation\/}, v.~1, pp. 7--12, Aussois,
+  France, 1999.
+
+\bibitem{aricle:minskin:2000}
+\MakeUppercase{ Lappalainen, H., Miskin, J.~W.}, \enquote{Advances in
+  Independent Component Analysis}, chap. Ensemble learning, pp. 75--92,
+  Springer, 2000.
+
+\bibitem{article:valpola:2000ica}
+\MakeUppercase{ Valpola, H.}, \enquote{Nonlinear independent component analysis
+  using ensemble learning: Theory}.
+\newblock In: {\em Proceedings of the International Workshop on Independent
+  Component Analysis and Blind Signal Separation\/}, v.~1, pp. 351--356,
+  Helsinki, Finland, 2000.
+
+\bibitem{article:honkela:2004ica}
+\MakeUppercase{ Honkela, A.}, \enquote{Approximating nonlinear transformations
+  of probability distributions for nonlinear independent component analysis}.
+\newblock In: {\em ProceedingsProceedings of the IEEE International Joint
+  Conference on Neural Networks\/}, v.~3, pp. 2169--2174, Budapest, Hungary,
+  2004.
+
+\bibitem{article:honkela:2007}
+\MakeUppercase{ Honkela, A., Valpola, H., Ilin, A., \MakeLowercase{et~al.}},
+  \enquote{Blind separation of nonlinear mixtures by variational bayesian
+  learning}, {\em Digital Signal Processing\/}, v.~17, n.~5, pp.~914--934,
+  2007.
+
+\bibitem{article:ilin:2004ie}
+\MakeUppercase{ Ilin, A., Achard, S., Jutten, C.}, \enquote{Bayesian versus
+  constrained structure approaches for source separation in post-nonlinear
+  mixtures}.
+\newblock In: {\em Proceedings of the IEEE International Joint Conference on
+  Neural Networks\/}, v.~3, pp. 2181--2186, Budapest, Hungary, July 2004.
+
+\bibitem{karhunen:local:1999}
+\MakeUppercase{ Karhunen, J., Malaroiu, S.}, \enquote{Local independent
+  component analysis using clustering}.
+\newblock In: {\em Proceedings of the International Workshop on Independent
+  Component Analysis and Blind Signal Separation\/}, v.~1, pp. 1--6, Aussois,
+  France, 1999.
+
+\bibitem{book:duda:2000}
+\MakeUppercase{ Duda, R.~O., Hart, P.~E., Stork, D.~G.}, {\em Pattern
+  Classification\/}.
+\newblock 2nd ed.
+\newblock Wiley: New York, US, 2000.
+
+\bibitem{article:som:oja:1996}
+\MakeUppercase{ Kohonen, T., Oja, E., Simula, O., \MakeLowercase{et~al.}},
+  \enquote{Engineering Applications of the Self-Organizing Map}, {\em
+  Proceedings of the IEEE\/}, v.~84, n.~10, pp.~1358--1384, October 1996.
+
+\bibitem{article:simas:2008:eusipco}
+\MakeUppercase{ {Simas Filho}, E.~F., Seixas, J.~M., Caloba, L.~P.},
+  \enquote{Segmented self-organized feature extraction for online filtering in
+  a high event rate detector}.
+\newblock In: {\em Proceedings of the European Conference on Signal
+  Processing\/}, v.~1, pp. 1--5, Lausanne, Switzerland, August 2008.
+
+\bibitem{karhunen:local:2000}
+\MakeUppercase{ Karhunen, J., Malaroiu, S., Ilmoniemi, M.}, \enquote{Local
+  linear independent component analysis based on clustering}, {\em
+  International Journal of Neural Systems\/}, v.~10, pp.~439--451, 2000.
+
+\bibitem{article:honda:2000}
+\MakeUppercase{ Honda, K., Ichihashi, H., Ohue, M., \MakeLowercase{et~al.}},
+  \enquote{Extraction of local independent components using fuzzy clustering}.
+\newblock In: {\em Proceedings of 6th International Conference on Neural
+  Networks and Soft Computing\/}, v.~1, pp. 837--842, Zakopane, Polland, 2000.
+
+\bibitem{article:honda:2006}
+\MakeUppercase{ Maenaka, T., Honda, K., Ichihashi, H.}, \enquote{Local
+  independent component analysis with fuzzy clustering and regression-principal
+  component analysis}.
+\newblock In: {\em Proceedings of IEEE International Conference on Fuzzy
+  Systems\/}, v.~1, pp. 857--862, Vancouver, Canada, 2006.
+
+\bibitem{aricle:palmieri:2000}
+\MakeUppercase{ Palmieri, F., Budillon, A.}, \enquote{Advances in Independent
+  Component Analysis}, chap. Multi-class independent component analysis for
+  rank deficient distributions, pp. 145--160, Springer-Verlag, 2000.
+
+\bibitem{article:lan:2005}
+\MakeUppercase{ Lan, T., Erdogmus, D.}, \enquote{Local Linear ICA for Mutual
+  Information Estimation in Feature Selection}.
+\newblock In: {\em Proceedings of the IEEE Workshop on Machine Learning for
+  Signal Processing\/}, v.~1, n.~1, pp. 3--8, Connecticut, USA, September 2005.
+
+\bibitem{article:lan:2006}
+\MakeUppercase{ Lan, T., Huang, Y., Erdogmus, D.}, \enquote{Independent
+  Component Analysis and Blind Signal Separation}, v. 3889, chap. A Comparison
+  of Linear ICA and Local Linear ICA for Mutual Information Based Feature
+  Ranking, pp. 823--830, {\em Lecture Notes in Computer Science\/}, Springer,
+  2006.
+
+\bibitem{book:cover:1991}
+\MakeUppercase{ Cover, T.~M., Thomas, J.~A.}, {\em Elements of Information
+  Theory\/}.
+\newblock Wiley: New York, US, 1991.
+
+\bibitem{kuncheva:comb:2004}
+\MakeUppercase{ Kuncheva, L.}, {\em Combining Pattern Classifiers, Methods and
+  Algorithms\/}.
+\newblock Wiley: New York, US, 2004.
+
+\bibitem{article:gersho:1982}
+\MakeUppercase{ Gersho, A.}, \enquote{On the Structure of Vector Quantizers},
+  {\em IEEE Transactions on Information Theory\/}, v.~28, n.~2, pp.~157--166,
+  March 1982.
+
+\bibitem{article:gray:1984}
+\MakeUppercase{ Gray, R.~M.}, \enquote{Vector Quantization}, {\em IEEE ASSP
+  Magazine\/}, v.~Part 1, pp.~4--29, April 1984.
+
+\bibitem{article:kohonenLVQ:1990}
+\MakeUppercase{ Kohonen, T.}, \enquote{Improved versions of learning vector
+  quantization}.
+\newblock In: {\em Proceedings of the International Joint Conference on Neural
+  Networks\/}, v.~1, pp. 545--550, San Diego, US, 1990.
+
+\bibitem{article:dey:1999}
+\MakeUppercase{ Baras, J.~S., Dey, S.}, \enquote{Combined Compression and
+  Classification with Learning Vector Quantization}, {\em IEEE Transactions on
+  Information Theory\/}, v.~45, n.~6, pp.~1911--1920, 1999.
+
+\bibitem{book:freeman:1991}
+\MakeUppercase{ Freeman, J.~A., Skapura, D.~M.}, {\em Neural Networks
+  Algorithms, Applications, and Programming Techniques\/}.
+\newblock Addison Wesley, 1991.
+
+\bibitem{book:peebles:2001}
+\MakeUppercase{ {PEEBLES Jr.}, P.~Z.}, {\em Probability, Random Variables and
+  Random Signal Principals\/}.
+\newblock Mc Graw Hill: New York, US, 2001.
+
+\bibitem{book:spiegel:stat}
+\MakeUppercase{ Spiegel, M.~R., Schiller, J.~J., Srinivasan, R.~A.}, {\em
+  Probability and Statistics\/}.
+\newblock 2nd ed.
+\newblock McGraw-Hill: New York, US, 2000.
+
+\bibitem{article:shannon:1948}
+\MakeUppercase{ Shannon, C.~E.}, \enquote{A Mathematical Theory of
+  Communication}, {\em The Bell System Technical Journal\/}, v.~27, n.~6,
+  pp.~379--423, July 1948.
+
+\bibitem{article:hyvarinen:1998}
+\MakeUppercase{ Hyvarinen, A.}, \enquote{New approximations of diferencial
+  entropy for independent component analysis and projection pursuit}, {\em
+  Advances in Neural Information Signal Processing\/}, v.~10, pp.~273--279,
+  1998.
+
+\bibitem{article:Cichocki:1996}
+\MakeUppercase{ Cichocki, A., Unbehauen, R.}, \enquote{Robust Neural Networks
+  with On-Line Learning for Blind Identification and Blind Separation of
+  Sources}, {\em IEEE Transactions on Circuits and Systems-I: Fundamental
+  Theory and Applications\/}, v.~43, n.~11, November 1996.
+
+\bibitem{article:Cardoso:1993}
+\MakeUppercase{ Cardoso, J.-F., Souloumiac, A.}, \enquote{Blind Beamforming for
+  Non-gaussian Signals}, {\em IEE Proceedings-F\/}, v.~140, n.~6, pp.~362--370,
+  November 1993.
+
+\bibitem{article:fastica:1999}
+\MakeUppercase{ Hyvarinen, A.}, \enquote{Fast and Robust Fixed-Point Algorithms
+  for Independent Component Analysis}, {\em IEEE Transactions on Neural
+  Networks\/}, v.~10, n.~3, pp.~626--634, 1999.
+
+\bibitem{Book:Luenberger:1984}
+\MakeUppercase{ Luenberger, D.~G.}, {\em Linear and Nonlinear Programming\/}.
+\newblock Addison-Wesley: Boston, US, 1984.
+
+\bibitem{book:tensor:2008}
+\MakeUppercase{ Michal, A.~D.}, {\em Matrix and Tensor Calculus\/}.
+\newblock 1st ed.
+\newblock Dover: West Sussex, UK, 2008.
+
+\bibitem{article:fobi:1989}
+\MakeUppercase{ Cardoso, J.~F.}, \enquote{Source separation using higher order
+  moments}.
+\newblock In: {\em Proceedings of the IEEE Int. Conf. on Acoustics, Speech and
+  Signal Processing\/}, v.~4, pp. 2109--2112, Glasgow, UK, 1989.
+
+\bibitem{article:akuzawa:2001}
+\MakeUppercase{ Akuzawa, T., Murata, N.}, \enquote{Multiplicative Nonholonomic
+  Newton-like Algorithm}, {\em Chaos, Solitons and Fractals\/}, v.~12, n.~4,
+  pp.~785--793, 2001.
+
+\bibitem{article:extakuzawa:2000}
+\MakeUppercase{ Akuzawa, T.}, \enquote{Extended Quasi-Newton Method for the
+  ICA}.
+\newblock In: {\em Proceedings of the Int. Workshop Independent Component Anal.
+  Blind Signal Separation\/}, pp. 521--525, Helsinki, Finland, 2000.
+
+\bibitem{article:cuenca:2003}
+\MakeUppercase{ Cuenca, W.~M., Levy, A.~F., Seixas, J.~M.,
+  \MakeLowercase{et~al.}}, \enquote{Análise de Componentes Independentes para
+  Extração Cega de Ruídos Gaussianos dos Sinais de Descargas Parcias em
+  Equipamentos de Alta Tensão}.
+\newblock In: {\em Anais do Congresso Brasileiro de Redes Neurais\/}, v.~1, pp.
+  133--138, SÃ£o Paulo, 2003.
+
+\bibitem{article:amri:1998}
+\MakeUppercase{ Cichocki, A., Douglas, S., Amari, S.}, \enquote{Robust
+  techniques for independent component analysis with noisy data}, {\em
+  Neurocomputing\/}, v.~22, n. 1-3, pp.~113--129, 1998.
+
+\bibitem{article:hyvarinen:1998noisy}
+\MakeUppercase{ Hyvarinen, A.}, \enquote{Independent Component Analysis in the
+  Presence of Gaussian Noise by Maximizing Joint Likelihood}, {\em
+  Neurocomputing\/}, v.~22, n. 1-3, pp.~49--67, 1998.
+
+\bibitem{article:hyvarinen:1999noisy}
+\MakeUppercase{ Hyvarinen, A.}, \enquote{Sparse Code Shrinkage: Denoising of
+  Nongaussian Data by Maximum Likelihood Estimation}, {\em Neural
+  Computation\/}, v.~11, n.~7, pp.~1739--1768, 1999.
+
+\bibitem{article:jutten:2002}
+\MakeUppercase{ Paraschiv-Ionescu, A., Jutten, C., Aminian, K.,
+  \MakeLowercase{et~al.}}, \enquote{Source separation in strong noisy mixtures
+  a study of wavelet de-noising pre-processing}.
+\newblock In: {\em IEEE International Conference on Acoustics, Speech, and
+  Signal Processing\/}, v.~2, pp. 1681--1684, Orlando, US, 2002.
+
+\bibitem{article:nlica_ga:2001}
+\MakeUppercase{ Tan, Y., Wang, J.}, \enquote{Nonlinear Blind Source Separation
+  using Higher Order Statistics and a Genetic Algorithm}, {\em IEEE
+  Transactions on Evolutionary Computation\/}, v.~5, n.~6, pp.~600--612, 2001.
+
+\bibitem{article:kai:2006}
+\MakeUppercase{ Kai, S., Qi, W., Mingli, D.}, \enquote{Approach to nonlinear
+  blind source separation based on niche genetic algorithm}.
+\newblock In: {\em Proceedings of the Sixth International Conference on
+  Intelligent Systems Design and Applications\/}, v.~1, pp. 441--445, Jinan,
+  China, 2006.
+
+\bibitem{Book:Goldberg:1989}
+\MakeUppercase{ Goldberg, D.~E.}, {\em Genetic Algorithms in Search,
+  Optimization and Machine Learning\/}.
+\newblock Addison-Wesley: Boston, US, 1989.
+
+\bibitem{article:tan:20000}
+\MakeUppercase{ Tan, Y., Wang, J.}, \enquote{Nonlinear blind separation using
+  an {RBF} network model}.
+\newblock In: {\em Proceedings of the IEEE International Symposium on Circuits
+  and Systems\/}, v.~3, pp. 634--637, Geneva, Switzerland, 2000.
+
+\bibitem{book:vantrees1:2001}
+\MakeUppercase{ Trees, H. L.~V.}, {\em Detection, Estimation, and Modulation
+  Theory, Part I\/}.
+\newblock Wiley: New York, US, 2001.
+
+\bibitem{book:shanmugan:1988}
+\MakeUppercase{ Shanmugan, K.~S., Breipohl, A.~M.}, {\em Random Signals,
+  Detection, Estimation and Data Analysis\/}.
+\newblock Wiley: New York, US, 1988.
+
+\bibitem{article:fisher:1936}
+\MakeUppercase{ Fisher, R.~A.}, \enquote{The Use of Multiple Measurements in
+  Taxonimic Problems}, {\em Annals of Eugenics\/}, v.~7, pp.~179--188, 1936.
+
+\bibitem{Article:Simasimtc:2005}
+\MakeUppercase{ {SIMAS FILHO}, E.~F., {ALMEIDA}, L. A.~L., Lima, A. C.~C.},
+  \enquote{Vibration Monitoring of On-Load Tap Changers Using a Genetic
+  Algorithm}.
+\newblock In: {\em Proceedings of the IEEE Instrumentation and Measurement
+  Technology Conference\/}, v.~3, pp. 2288--2293, Ottawa, Canada, 2005.
+
+\bibitem{Article:Simas:2006}
+\MakeUppercase{ {SIMAS FILHO}, E.~F., {ALMEIDA}, L. A.~L.}, \enquote{Filtragem
+  inversa de medições de histerese térmica utilizando Redes Neurais}.
+\newblock In: {\em Anais do XVI Congresso Brasileiro de Automática\/}, v.~1,
+  pp. 1--6, Salvador, Brasil, Outubro 2006.
+
+\bibitem{Article:Zoppoli:1996}
+\MakeUppercase{ Zoppoli, R., Parisini, T., Sanguineti, M.}, \enquote{Neural
+  Aproximators for Function Optimization}, {\em Proceedings of the 35th
+  conference on decision and control\/}, v.~3, pp.~3290--3293, 1996.
+
+\bibitem{Article:ichikawa:1992}
+\MakeUppercase{ Ichikawa, Y., Sawa, T.}, \enquote{Neural Networks Application
+  for Direct Feedback Controllers}, {\em IEEE Transactions on Neural
+  Networks\/}, v.~3, n.~2, pp.~224--231, 1992.
+
+\bibitem{book:wasserman:1989}
+\MakeUppercase{ Wasserman, P.}, {\em Neural Computing, Theory and Practice\/}.
+\newblock Van Nostrand Reinhold: New York, US, 1989.
+
+\end{thebibliography}

@@ -1,0 +1,1116 @@
+\chapter{Aprendizado estatístico na filtragem de segundo nível do ATLAS}
+
+Neste capítulo serão mostrados os fundamentos teóricos de algumas
+técnicas de aprendizado estatístico utilizadas para extração de
+características e classificação. Os algoritmos para extração de
+características têm como principal objetivo encontrar informações
+importantes ocultas num conjunto de sinais. A partir da estatística
+de segunda ordem, a análise de componentes principais (PCA -
+\textit{Principal Component Analysis}) é capaz de realizar uma
+transformação ótima para reconstrução da informação, as componentes
+na nova base são ortogonais e ordenadas por energia. A análise de
+componentes independentes (ICA - \textit{Independent Component
+Analysis}) utiliza estatística de ordem superior para encontrar
+direções onde os sinais projetados são independentes
+estatisticamente. A ICA transforma os sinais, sem supervisão
+externa, tornando sua estrutura essencial mais acessível
+\cite{book:oja:2001}.  Características promissoras das técnicas
+serão evidenciadas, indicando sua aplicação no problema de
+classificação de eventos em experimentos de física de partículas de
+altas energias.
+
+\section{Aplicações em Física de Altas Energias e Áreas Correlatas}
+
+\section{Extração de Características}
+
+\subsection{Análise de Componentes Principais}
+
+A análise de componentes principais (PCA - \textit{Principal
+Component Analysis}) é uma técnica estatística de processamento de
+sinais também conhecida como transformação de
+\textit{Karhunen-Loève}. O objetivo da PCA é encontrar uma
+representação do sinal de entrada onde grande parcela da energia
+esteja concentrada num pequeno número de componentes. Pode-se então,
+reduzir a dimensão selecionando apenas as de maior energia, de modo
+que o sinal recuperado a partir da informação compactada tenha
+pequeno erro médio quadrático em relação ao original. A análise de
+componentes principais é bastante usada para compactação de
+informação. Usando informações da estatística de segunda ordem a
+transformação por PCA busca um espaço onde as projeções das entradas
+são não-correlacionadas e têm máxima variância. O trabalho
+\cite{article:herman:2006} utiliza a PCA, de forma segmentada, para
+compactação de sinais de calorimetria do ATLAS, em seguida
+classificadores neurais realizam a decição elétron/jato, conseguindo
+boa eficiência de classificação. A seguir serão desenvolvidos, de
+forma resumida os fundamentos matemáticos da PCA.
+
+Considerando-se um vetor $\mathbf{x}$ aleatório com $N$ elementos,
+assume-se que ele tenha média zero:
+
+\begin{equation}\label{Xm}
+    \mathcal{E}\{\mathbf{x}\}=0
+\end{equation}
+\\
+onde $\mathcal{E}\{.\}$ é o operador esperança. Se $\mathbf{x}$ tem
+média não nula faz-se $\mathbf{x}\leftarrow
+\mathbf{x}-\mathcal{E}\{\mathbf{x}\}$.
+
+A projeção $y_i$ de $\mathbf{x}$ na direção de $\mathbf{w}_i$ pode
+ser expressa por:
+
+\begin{equation}\label{proj1}
+    y_i=\mathbf{w}_i^T\mathbf{x}=\sum_{k=1}^N w_{ki}x_k
+\end{equation}
+\\
+Na transformação por PCA, as componentes $y_i$ ($i=1,...,N$) devem
+ser ortogonais, onde $y_1$ a de máxima variância. Para tornar a
+variância independente da norma de $\mathbf{w}_i$, faz-se:
+
+\begin{equation}\label{normaw}
+    \mathbf{w}_i \leftarrow \frac{\mathbf{w}_i}{\| \mathbf{w}_i \|}
+\end{equation}
+\\
+A variância, decresce à medida que $i$ aumenta. Fazendo com que
+$||\mathbf{w}_i||=1$, torna-se a variância função apenas da direção
+das projeções. A ortogonalidade garante a não correlação entre as
+componentes.
+
+Como $\mathcal{E}\{\mathbf{x}\}=0$, então $\mathcal{E}\{y_i\}=0$,
+logo a variância da projeção $y_i$ é calculada por
+$\mathcal{E}\{y_i^2\}$. Seguindo a definição da PCA, $y_1$ tem
+máxima variância, logo $\mathbf{w}_1$ é encontrado pela maximização
+de \cite{book:oja:2001}:
+
+\begin{equation}\label{w1pca}
+    J_1^{PCA}(\mathbf{w}_1)=\mathcal{E}\{y_i^2\}=\mathcal{E}\{(\mathbf{w}_1^T\mathbf{x})^2\}
+    =\mathbf{w}_1^T\mathcal{E}\{\mathbf{x}\mathbf{x}^T\}\mathbf{w}_1=
+    \mathbf{w}_1^T \mathbf{C}_x\mathbf{w}_1
+\end{equation}
+\\
+onde $\mathbf{C}_x$ é a matriz de covariância de $\mathbf{x}$.
+
+A solução para o problema de maximização da equação \ref{w1pca} pode
+ser encontrado na algebra linear em função dos autovetores
+$\mathbf{e}_1,\mathbf{e}_2,...,\mathbf{e}_N$ da matriz
+$\mathbf{C}_x$. A ordem dos autovetores é tal que os autovalores
+associados satisfazem $d_1>d_2>...>d_N$. Desta forma têm-se:
+
+\begin{equation}\label{pca1}
+    \begin{array}{ccc}
+      \mathbf{w}_i= \mathbf{e}_i,& & 1\leq i \leq N
+    \end{array}
+\end{equation}
+
+Percebe-se que a PCA de $\mathbf{x}$ e a decomposição por autovalor
+da matriz $\mathbf{C}_x$ (de dimensão $N\times N$) são equivalentes.
+Limitações computacionais na extração das componentes principais
+utilizando as equações \ref{proj1} e \ref{pca1} aparecem quando a
+dimensão $N$ do vetor $\mathbf{x}$ aumenta, pois o processo de
+obtenção dos autovetores se torna proibitivamente lento. Nesse caso,
+uma solução é utilizar métodos iterativos de extração das
+componentes principais através de redes neurais.
+
+\subsubsection{Redução de dimensão}
+
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=5.5cm]{cap3_pca}
+\caption{Compressão e recuperação do sinal $\mathbf{x}$ utilizando a
+transformação por PCA.} \label{pca}
+\end{figure}
+
+A principal aplicação da PCA é a compactação da informação. A
+redução de dimensão é obtida utilizando-se para a reconstrução do
+sinal original $\mathbf{x}$ um número $K$ de componentes principais
+sendo $K<N$. Na Figura \ref{pca} é ilustrado o processo de redução
+de dimensão utilizando análise de componentes principais. Em geral,
+o número de componentes é escolhido visando preservar uma parcela
+$V_e$ da energia total, de modo que $\mathbf{\widehat{x}} \approx
+\mathbf{x}$. A variância explicada $V_e$ de um conjunto de
+componentes pode ser calculada usando:
+\begin{equation}\label{vexp}
+    V_e(K)=\frac{\displaystyle\sum_{i=1}^K d_i}{\displaystyle\sum_{i=1}^N d_i}
+\end{equation}
+\\
+sendo $d_i$ o autovalor da matriz $\mathbf{C}_x$ de covariãncia do
+processo correspondente à componente $i$.
+
+%A curva de carga, onde para cada componente $k$ extraída é associada
+%a energia acumulada $\sum_{i=1}^k E_i$, é uma forma gráfica de
+%visualizar a concentração da energia nas componentes principais. Na
+%Figura \ref{carga} é mostrada uma curva de carga obtida da
+%compactação de sinais de calorimetria do ATLAS.
+%
+%\begin{figure}[tbph]
+%\centering
+%\includegraphics[width=9.5cm]{cap3_cdecarga}
+%\caption{Curva de carga obtida da extração das componentes
+%principais de células da segunda camada do calorímetro hadrônico do
+%ATLAS.} \label{carga}
+%\end{figure}
+
+A transformação por PCA é ótima no sentido de representação do sinal
+nas primeiras componentes, mas não há garantia que a compactação
+facilite o processo de classificação. Quando as direções de maior
+variância coincidem com as de melhor discriminação das classes então
+a PCA é também útil para o reconhecimento de padrões, caso contrário
+a redução de dimensão pode dificultar a separação. Entretanto, em
+problemas de classificação onde a dimensão da entrada é
+excessivamente grande, o pré-processamento por PCA reduz o custo
+computacional e conseqüentemente o tempo de processamento.
+
+%\subsection{Extração das componentes principais usando métodos iterativos}
+%
+%Conforme mencionado anteriormente, quando a dimensão do espaço de
+%entradas aumenta, a extração das componentes principais pelo método
+%analítico descrito nas equações \ref{w1pca} e \ref{pca1} se torna
+%muito custosa computacionalmente. Visando superar essa dificuldade,
+%alguns métodos iterativos utilizando redes neurais foram propostos
+%para a extração da PCA.
+%
+%\begin{figure}[b]
+%\centering
+%\includegraphics[width=6cm]{cap3_perceptron}
+%\caption{Modelo matemático do neurônio.} \label{perc}
+%\end{figure}
+%
+%Um único neurônio linear com uma regra de aprendizagem hebbiana é
+%capaz de extrair a primeira componente principal
+%\cite{article:oja:1982}. Na Figura \ref{perc} é mostrado o modelo
+%matemático do neurônio, se $\varphi(u)=u$, então o neurônio é dito
+%linear. A saída $y$ é calculada por:
+%\begin{equation}\label{uk}
+%    y_k=\sum_{j=0}^{m}\omega_{j}x_{j}
+%\end{equation}
+%
+%Utilizando a regra de aprendizagem de Hebb, o ajuste dos pesos
+%$\omega_i$ é realizado através de \cite{Book:Haykin:2001}:
+%\begin{equation}\label{hebb}
+%    \omega_i(n+1)=\omega_i(n)+\xi y(n)x_i(n)
+%\end{equation}
+%\\
+%sendo $\xi$ a taxa de aprendizagem. O uso da equação \ref{hebb} leva
+%os pesos sinápticos a um crescimento ilimitado. Para evitar esse
+%problema pode ser adotada uma normalização na regra de aprendizagem
+%\cite{article:oja:1982}:
+%\begin{equation}\label{hebb2}
+%    \omega_i(n+1)=\dfrac{\omega_i(n)+\xi y(n)x_i(n)}{\bigg(\displaystyle \sum_{i=1}^m [\omega_i(n)+\xi y(n)x_i(n)]^2\bigg)^{1/2}}
+%\end{equation}
+%
+%Está demonstrado em \cite{Book:Haykin:2001} que a saída do neurônio
+%linear com aprendizagem hebbiana converge para a primeira componente
+%principal. A extração das demais componentes pode ser então
+%realizada de modo deflacionário utilizando o método de
+%ortogonalização de Gram-Schimidt \cite{book:oja:2001}, que elimina
+%do conjunto de sinais as projeções da componente a ser extraída.
+%
+%Existem também outras arquiteturas de redes neurais capazes de
+%extrair as componentes principais simultaneamente. Neste caso o
+%treinamento é um pouco mais complicado e a convergência mais lenta.
+%
+\subsection{Análise de Componentes Independentes}
+
+Diferente da PCA que busca as direções ortogonais de máxima
+variância, a análise de componentes independentes (ICA -
+\textit{Independent Component Analysis}) é uma transformação onde as
+componentes na saída são estatisticamente independentes. Para isso é
+necessário utilizar informações da estatística de ordem superior.
+%como a simetria (terceira ordem) e principalmente a curtose (quarta
+%ordem).
+
+%Também conhecida como Separação Cega de Fontes (BSS - \textit{Blind
+%Source Separation} ou \textit{Blind Signal Separation}),
+A ICA tem como objetivo encontrar o vetor de fontes independentes
+$\mathbf{s}$, a partir da observação apenas do vetor de misturas
+$\mathbf{x}$, na forma matricial pode-se escrever
+\cite{book:amari:2002}:
+\begin{equation}\label{icamatrix}
+\mathbf{x}=\mathbf{As}
+\end{equation}
+\\
+onde $\mathbf{A}$ é a matriz de mistura.
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=9cm]{cap3_cocktail}
+\caption{Diagrama do \textit{cocktail party problem}.}
+\label{cocktail}
+\end{figure}
+
+
+Um problema clássico que pode ser solucionado usando ICA é conhecido
+como \textit{cocktail-party problem}, e está formulado de forma
+simplificada omitindo atrasos temporais e outros fenômenos físicos
+como a existência de múltiplas reflexões, nas equações \ref{cpp} e
+\ref{ccp2} (ver Figura \ref{cocktail}). Considerando que numa sala
+existem duas pessoas falando simultaneamente e dois microfones em
+diferentes posições, os sinais gravados $x_1(t)$ e $x_2(t)$ são uma
+soma ponderada das fontes $s_1(t)$ e $s_2(t)$:
+\begin{eqnarray}\label{cpp}
+% \nonumber to remove numbering (before each equation)
+  x_1(t)=a_{11}s_1(t)+a_{12}s_2(t) \\
+  \label{ccp2} x_2(t)=a_{21}s_1(t)+a_{22}s_2(t)
+\end{eqnarray}
+\\
+os coeficientes $a_{ij}$ dependem das distâncias dos microfones às
+pessoas, e são os elementos da matriz de mistura $\mathbf{A}$ do
+modelo da equação \ref{icamatrix}, onde:
+
+\begin{equation}\label{matrizA}
+    \mathbf{A}=\left(
+                 \begin{array}{cc}
+                   a_{11} &a_{12} \\
+                   a_{21} & a_{22} \\
+                 \end{array}
+               \right)
+\end{equation}
+\\
+Se os fatores $a_{ij}$ são conhecidos o problema é facilmente
+resolvido a partir de:
+\begin{equation}\label{icamatrix2}
+\mathbf{s}=\mathbf{Wx}
+\end{equation}
+\\
+onde $\mathbf{W=A}^{-1}$. Na pratica, tanto as fontes $s_i$ como os
+$a_{ij}$ devem ser obtidos apenas dos sinais misturados $x_i$.
+
+Uma solução para o problema exposto nas equações \ref{cpp} e
+\ref{ccp2} pode ser obtida usando informações sobre as propriedades
+estatísticas das fontes $s_i$. Assumindo que as fontes são
+estatisticamente independentes, o que é uma consideração realista na
+maioria dos casos e que não precisa ser exatamente verdadeira na
+prática, é possível obter as fontes a partir das misturas
+\cite{article:hyvarinen:2000}.
+
+As técnicas de ICA foram desenvolvidas inicialmente para solucionar
+pro\-blemas semelhantes ao \textit{cocktail-party problem}, porém
+mais recentemente surgiram outras aplicações interessantes como
+extração de características, separação de fontes em
+telecomunicações, redução de ruído em imagens \cite{book:oja:2001}.
+
+%\begin{figure}[tbph]
+%\centering
+%\includegraphics[width=8cm]{cap3_fontes}
+%\caption{Sinais originais $s_i(t)$.} \label{fontes}
+%\end{figure}
+%
+%\begin{figure}[tbph]
+%\centering
+%\includegraphics[width=8cm]{cap3_mix}
+%\caption{Sinais misturados $x_i(t)$.} \label{misturas}
+%\end{figure}
+%
+%\begin{figure}[tbph]
+%\centering
+%\includegraphics[width=8cm]{cap3_rec}
+%\caption{Sinais recuperados a partir das misturas usando um
+%algoritmo de ICA} \label{recuperados}
+%\end{figure}
+%
+\begin{figure}[tbph]
+\begin{center}
+\subfigure[]{\label{fontes}\epsfig{file=cap3_fontes,width=7.5cm,clip=}}
+\subfigure[]{\label{misturas}\epsfig{file=cap3_mix,width=7.5cm,clip=}}
+\subfigure[]{\label{recuperados}\epsfig{file=cap3_rec,width=7.5cm,clip=}}
+\end{center}
+\caption{(a) Sinais originais $s_i(t)$, (b) Sinais misturados
+$x_i(t)$ e (c) Sinais recuperados $s_{rec}(t)$ a partir das misturas
+usando um algoritmo de ICA.}
+\end{figure}
+
+Em um exemplo de aplicação de ICA, a Figura \ref{fontes} mostra as
+fontes $s_1(t)$ e $s_2(t)$, que foram misturadas linearmente gerando
+os sinais $x_1(t)$ e $x_2(t)$ da Figura \ref{misturas}. Após a
+aplicação de um algoritmo para extração das componentes
+independentes (FastICA \cite{article:hyvarinen:2000}), foram obtidas
+as curvas da Figura \ref{recuperados}. Percebe-se que os sinais
+recuperados são cópias dos originais exceto por fatores
+multiplicativos. Esta é uma das limitações inerentes do modelo da
+ICA, não há como garantir o fator de escala (que pode ser positivo
+ou negativo) ou a ordem de extração das componentes.
+
+\subsubsection{Independência Estatística} Considerando duas variáveis
+aleatórias (VAs) $x$ e $y$, se elas são independentes, então o
+conhecimento de uma não traz nenhuma informação a respeito da outra.
+Um sinal musical e um ruído sonoro originado de uma máquina elétrica
+são exemplos de variáveis independentes.
+
+Matematicamente $x$ e $y$ são independentes estatisticamente se e
+somente se \cite{Book:Papoulis:1991}:
+\begin{equation}\label{indep1}
+    p_{x,y}(x,y)=p_{x}(x)p_{y}(y)
+\end{equation}
+\\
+onde $p_{x,y}(x,y)$, $p_{x}(x)$ e $p_{y}(y)$ são respectivamente as
+funções de densidade de probabilidade conjunta e marginais de $x$ e
+$y$. Pode-se obter uma expressão equivalente à equação \ref{indep1}
+se para todas as funções $g(x)$ e $h(y)$ absolutamente integráveis
+em $x$ e $y$ vale a igualdade:
+\begin{equation}\label{indep2}
+    \mathcal{E}\{g(x)h(y)\}=\mathcal{E}\{g(x)\}\mathcal{E}\{h(y)\}
+\end{equation}
+\\
+Para evitar a estimação das funções de densidade de probabilidade,
+em geral, utiliza-se a equação \ref{indep2}. A definição de
+independência pode ser facilmente estendida para mais de duas
+variáveis aleatórias. Percebe-se da equação \ref{indep2} que a
+independência é um princípio restritivo que a não-correlação (quando
+$g(x)=x$ e $h(y)=y$).
+
+\subsubsection{Princípios de estimação das componentes independentes}
+
+No modelo básico da ICA (equação \ref{icamatrix})assume-se que a
+matriz $\mathbf{A}$ é quadrada e não são considerados os atrasos
+temporais nem a existência de ruído aditivo. O princípio básico para
+a extração das componentes independentes é obtido do teorema do
+limite central. Como a soma de duas variáveis aleatórias é sempre
+mais próxima de uma distribuição normal do que as variáveis
+originais, os sinais misturados $x_i$, que são gerados a partir do
+somatório ponderado das fontes $s_i$, têm distribuições de
+probabilidade mais semelhantes à gaussiana quando comparadas aos
+sinais originais. As fontes podem ser obtidas então pela maximização
+da não-gaussianidade.
+%A curtose e a negentropia são usualmente
+%utilizadas para medição da não-gaussianidade em ICA.
+
+\subsubsubsection{Maximização da não-gaussianidade}
+
+A \textbf{curtose} é o cumulante de quarta ordem, e para uma
+variável $y$ de média zero e variância unitária é definida por:
+\begin{equation}\label{curtose}
+    kurt(y)=\mathcal{E}\{y^4\}-3(\mathcal{E}\{y^2\})^2
+\end{equation}
+
+Variando no intervalo $[-2,\infty)$, a curtose é igual a zero para
+uma variável gaussiana, os valores negativos indicam
+sub-gaussianidade e os positivos super-gaussianidade.
+%Nas Figuras
+%\ref{subgauss} e \ref{supergauss} pode-se visualizar exemplos dos 3
+%tipo de distribuições, gaussiana ou normal, sub-gaussiana (mais
+%achatada) ou super-gaussiana (mais concentrada em torno da média). O
+%menor valor da curtose ocorre para variáveis uniformemente
+%distribuídas.
+%
+%\begin{figure}[tbph]
+%\begin{center}
+%\subfigure[]{\label{subgauss}\epsfig{file=cap3_subgauss,width=11cm,clip=}}
+%\subfigure[]{\label{supergauss}\epsfig{file=cap3_supergauss,width=11cm,clip=}}
+%\end{center}
+%\caption{Distribuições de probabilidade (a) sub-gaussiana e (b)
+%super-gaussiana.}
+%\end{figure}
+
+A curtose é um parâmetro estatístico facilmente calculado a partir
+das rea\-lizações da variável aleatória, porém seu valor pode ser
+bastante influenciado por um pequeno conjunto de pontos na calda da
+distribuição, sendo nesse caso pouco robusta para a estimativa da
+não-gaussianidade. Conhecidos como intrusos (ou \textit{outliers})
+esses pontos podem realmente pertencer à variável aleatória, ou ter
+sido artificialmente introduzido por algum fenômeno desconhecido
+como erro de medida ou de digitação.
+
+Uma estimação alternativa da não-gaussianidade pode ser obtida a
+partir da \textbf{negentropia}, que é calculada por
+\cite{book:cover:1991}:
+\begin{equation}\label{negen}
+    J(\mathbf{x})=H(\mathbf{x}_{gauss})-H(\mathbf{x})
+\end{equation}
+\\
+onde $H(.)$ é a entropia, e $\mathbf{x}_{gauss}$ é uma variável
+aleatória gaussiana com a mesma média e variância de $\mathbf{x}$. A
+entropia é um dos conceitos básicos da teoria da informação e pode
+ser interpretada como o grau de informação contido em uma variável.
+Para uma variável aleatória discreta a entropia é definida como
+\cite{article:shannon:1948}:
+\begin{equation}\label{entro1}
+    H(X)=-\sum_i P(X=a_i)log P(X=a_i)
+\end{equation}
+\\
+onde os $a_i$ são os possíveis valores da variável $X$, e $P(X=a_i)$
+a probabilidade de $X$ ser igual à $a_i$.
+
+Um resultado importante obtido a partir da teoria da informação é
+que uma variável gaussiana tem a máxima entropia entre todas as
+variáveis de mesma variância. Considerando a equação \ref{negen}, a
+negentropia é sempre não negativa e zero quando a variável é
+gaussiana, servindo como uma medição da não gaussianidade. O grande
+problema no cálculo de $J(.)$ é a necessidade de estimar as
+probabilidades da equação \ref{entro1}. Para evitar esse cálculo
+utilizam-se aproximações da negentropia, conforme descrito em
+\cite{book:oja:2001} existem duas aproximações mais usualmente
+utilizadas para a negentropia, uma utiliza cumulantes de ordem
+superior, e outra funções não-polinomiais. O uso de cumulantes traz
+de volta o problema da pouca robustez a \textit{outliers}. É
+mostrado em \cite{article:hyvarinen:1998} que o uso das funções
+não-polinomiais leva ao método da máxima entropia.
+
+\subsubsection{Minimização da informação mútua}
+
+Um outro método de estimação de ICA, também derivado da teoria da
+informação, é obtido pela minimização da informação mútua. A
+informação mútua $I(.)$ entre $m$ variáveis aleatórias escalares
+$y_i$ é definida como \cite{article:hyvarinen:2000}:
+\begin{equation}\label{mutinf}
+    I(y_1,y_2,...,y_m)=\sum_{i=1}^m H(y_i) - H(\mathbf{y})
+\end{equation}
+
+A entropia $H(y_i)$ pode ser interpretada como o comprimento de
+código nece\-ssário para representar a variável $y_i$. Conforme a
+equação \ref{mutinf}, a informação mútua é a diferença entre o
+somatório das entropias de cada uma das $m$ variáveis $y_i$ e a
+entropia do vetor aleatório $\mathbf{y}=[y_1,y_2,...y_m]$. Pode-se
+provar que a codificação mais eficiente é obtida quando se utiliza o
+conjunto de variáveis $\mathbf{y}$. Utilizar as variáveis
+isoladamente sempre gera um maior código, menos quando as $y_i$ são
+independentes pois desta forma uma variável não carrega informação
+sobre as demais, sendo a informação mútua é igual a zero. Desta
+forma $I(y_1,y_2,...,y_m)$ pode ser utilizada como uma medida da
+dependência entre as variáveis. A matriz $\mathbf{W}$ de
+transformação inversa da ICA, conforme equação \ref{icamatrix2} pode
+ser estimada através da minimização da informação mútua dos sinais
+$s_i$ recuperados.
+
+\subsubsection{ICA através da descorrelação não linear}
+
+A igualdade da equação \ref{indep2}, repetida aqui para comodidade
+do leitor:
+\begin{equation}\label{indep22}
+    \mathcal{E}\{g(x)h(y)\}=\mathcal{E}\{g(x)\}\mathcal{E}\{h(y)\}
+\end{equation}
+\\
+garante que as variáveis $x$ e $y$ são independentes, quando todas
+funções $g(.)$ e $h(.)$, integráveis em $x$ e $y$, são
+descorrelacionadas. Portanto, a extração das ICs pode ser obtida
+testando a correlação entre todas as funções não-lineares $g(.)$ e
+$h(.)$.
+
+Existem alguns algoritmos propostos na literatura para o problema da
+decorrelação não-linear como o \textit{Hérault-Jutten}
+\cite{book:oja:2001} e o \textit{Chichocki-Unbehauen}
+\cite{article:Cichocki:1996}, mas como não é possível testar a
+descorrelação entre todas as funções não-lineares, escolhe-se $f(.)$
+e $g(.)$ visando obter boas aproximações das componentes
+independentes. O algoritmo \textit{Hérault-Jutten}, por exemplo,
+aconselha o uso de $f(y)=y^3$ e $g(y)=arctan(y)$, já o
+\textit{Chichocki-Unbehauen} sugere uma função polinomial e a
+tangente hiperbólica.
+
+A PCA não-linear (NLPCA - \textit{Non-linear Principal Component
+Analysis}) pode ser vista como uma extensão não linear da PCA, e é
+capaz de encontrar projeções descorrelacionadas não-linearmente.
+Enquanto o objetivo da PCA é minimizar o erro médio quadrático de
+reconstrução do sinal, projetando as componentes numa base
+ortonormal, a NLPCA pode ser definida de modo simples através da
+função objetivo a ser minimizada:
+\begin{equation}\label{nlpca}
+    J(\mathbf{w}_1,\mathbf{w}_2,...,\mathbf{w}_n)=\mathcal{E}\{||\mathbf{x}-\sum_{i=1}^n g_i(\mathbf{w}_i^Tx)\mathbf{w}_i||^2\}
+\end{equation}
+\\
+onde $g_1(.), g_2(.), ..., g_n(.)$ é um conjunto de funções
+escalares e não-lineares, e os vetores $\mathbf{w}_i$ formam a base
+do sub-espaço onde serão projetadas as entradas $\mathbf{x}$. Quando
+o mínimo de $J(\mathbf{w}_1,\mathbf{w}_2,...,\mathbf{w}_n)$ for
+encontrado, o produto $\mathbf{w}_i^Tx$ dará as componentes
+principais não-lineares. Se $g_i(y)=y$ para todo $i$, então equação
+\ref{nlpca} se reduz à função objetivo da PCA. Quando os sinais
+satisfazem ao modelo da ICA, mostrado na equação \ref{icamatrix}, a
+NLPCA obtém uma aproximação das componentes independentes.
+
+
+\subsection{Pré-processamento dos sinais para ICA}
+
+Em geral, os algoritmos de extração das componentes independentes
+têm seu trabalho simplificado quando os sinais são centralizados, ou
+seja, têm sua média removida fazendo:
+\begin{equation}\label{remedia}
+    \mathbf{x}\leftarrow \mathbf{x}-\mathcal{E}\{\mathbf{x}\}
+\end{equation}
+
+Outra transformação importante é o branqueamento. Um vetor
+$\mathbf{z}=(z_1,z_2,...,z_n)^T$ é dito branco quando os elementos
+$z_i$ são descorrelacionados e têm variância unitária. O
+branqueamento pode ser realizado por uma transformação linear:
+\begin{equation}\label{branq}
+    \mathbf{z}=\mathbf{V}\mathbf{x}
+\end{equation}
+
+O branqueamento, que é apenas a descorrelação seguida de uma
+norma\-lização, pode ser realizado por uma transformação através de
+PCA. Com as variáveis branqueadas a extração da ICA é facilitada
+pois os sinais já estão descorrelacionados.
+
+Em problemas com vetores de entrada com alta dimensão, é importante
+a compactação da informação através de PCA ou Análise de Relevância
+para facilitar o processo de extração das componentes independentes.
+
+\subsection{Principais algoritmos para ICA}
+
+Recentemente, diversos algoritmos vêm sendo propostos para a
+extração das componentes independentes. Essas rotinas diferem
+basicamente no princípio teórico no qual fundamentam a ICA
+(não-gaussianidade, informação mútua, descorrelação não-linear, etc)
+e na forma como tentam buscar a otimização da função objetivo
+escolhida. Os principais parâmetros para avaliação de desempenho são
+o tempo de processamento (complexidade computacional) e a precisão
+na extração das componentes.
+
+Um estudo comparativo entre diversos métodos de estimação das
+componentes independentes foi realizado em \cite{book:oja:2001}. O
+algoritmo \textbf{FastICA}, descrito com detalhes em
+\cite{book:oja:2001} e \cite{article:hyvarinen:2000}, é o que
+apresenta menor custo computacional. Algoritmos que realizam
+descorrelação não linear e NLPCA têm desempenho semelhante ao
+FastICA em termos da precisão na obtenção da matriz $\mathbf{W}$,
+porém exigem maior esforço de computação. O algoritmo \textbf{JADE}
+(\textit{Joint Approximate Diagonalization of Eigen-matrices})
+proposto em \cite{article:Cardoso:1993} também é muito utilizado em
+ICA mostrando bons resultados.
+
+
+\subsection{Extensões ao modelo básico de ICA}
+%Porém, por o presente trabalho ser desenvolvido num ambiente
+%extremamente complexo, com elevada dimensão e alta taxa de eventos,
+%algumas modificações podem ser implementadas visando o
+%aperfeiçoamento da formulação de ICA.
+
+A análise de componentes independentes em sua formulação básica
+mostrada nas equações \ref{icamatrix} e \ref{icamatrix2} é empregada
+com sucesso em uma grande variedade aplicações. O modelo básico de
+ICA não considera que os sinais podem estar contaminados por ruído
+aditivo, ou que o sinal misturado seja gerado de forma não linear.
+No ambiente do calorímetro do ATLAS, o ruído estará presente nas
+células absorvedoras de energia, e por características de construção
+do sistema, transformações não lineares dos sinais estarão
+presentes.
+
+Como será mostrado com mais detalhes no capítulo 4, os sinais de
+energia obtidos nos calorímetros têm uma disposição espacial. É
+interessante então, o uso de técnicas específicas para processamento
+de imagens. Com esse objetivo será mostrada uma adaptação de ICA
+para a extração de características de imagens. Com o uso dessas
+modificações na formulação de ICA espera-se obter estratégias de
+extração de características mais fieis ao ambiente de origem dos
+sinais.
+
+\subsubsection{ICA para sinais ruidosos}
+
+Sabe-se que os sinais reais no ambiente do calorímetro do ATLAS
+estarão contaminados por ruído. A formulação básica da ICA, mostrado
+na equação \ref{icamatrix}, não considera a presença de ruído. Um
+modelo mais realista, ver equação \ref{noisy_ica}, permite a
+obtenção do modelo da ICA para sinais ruidosos (\textit{Noisy ICA})
+\cite{book:oja:2001}:
+\begin{equation}\label{noisy_ica}
+    \mathbf{x}=\mathbf{As}+\mathbf{n}
+\end{equation}
+\\
+onde $\mathbf{n}=(n_1,n_2,...)$ é o vetor de ruído. Em geral
+considera-se que o ruído é gaussiano e independente das componentes
+independentes. Assume-se também que, matriz de covariância do ruído
+$\Sigma=\sigma^2 I$ é conhecida.
+
+A equação \ref{noisy_ica} pode ser associada a ruído de sensores,
+uma vez que o ruído $n_i$ é adicionado separadamente a cada fonte
+$x_i$. O ruído de fonte, que é adicionado às componentes
+independentes $s_i$ é representado pela equação a seguir:
+\begin{equation}\label{noisy_ica2}
+    \mathbf{x}=\mathbf{A}(\mathbf{s}+\mathbf{n})
+\end{equation}
+
+Um caso especial que pode simplificar bastante o problema de
+estimação das componentes independentes em ambiente ruidoso acontece
+quando existem apenas poucas fontes de ruído. Se o número total de
+componentes de ruído é menor que o de componentes independentes o
+modelo básico da ICA pode ser adaptado. Define-se o vetor
+$\mathbf{\widetilde{s}}=(s_1,...,s_k,n_1,...,n_l)^T$, onde $s_i$
+($i=1,...,k$) são as componentes independentes e $n_j$ ($j=1,...,l$)
+são as fontes de ruído. Assumindo-se que o número de misturas é
+$k+l$, então o modelo básico da ICA pode ser aplicado a
+$x=A\widetilde{s}$ e usando um algoritmo deflacionário consegue-se
+estimar as $k$ componentes menos gaussianas, que são as próprias
+ICs.
+
+Na maioria das vezes deseja-se considerar que o ruído foi adicionado
+a cada uma das misturas, assim $k+l$ é maior que o número de
+misturas, e o modelo básico da ICA não pode ser aplicado ao vetor
+$\widetilde{s}$.
+
+O processo de estimação das componentes independentes já é bastante
+difícil na formulação básica, quando o ruído é considerado o cenário
+piora consideravelmente. Nos modelos das equações \ref{noisy_ica} e
+\ref{noisy_ica2} pode-se verificar que as ICs não são obtidas apenas
+com a inversa da matriz de misturas $\mathbf{W}$:
+\begin{equation}\label{noisy_ica3}
+    \mathbf{Wx}=\mathbf{s}+\mathbf{Wn}
+\end{equation}
+
+Existem duas soluções para o problema da equação \ref{noisy_ica3},
+uma necessita de métodos de otimização numérica para obter uma
+aproximação do ruído e, a partir de então, estimar as componentes
+independentes. Em uma abordagem mais simples e que parece ser a mais
+promissora para o \textit{noisy ICA}, são utilizadas técnicas de
+remoção de tendência para reduzir os efeitos do ruído, adaptando os
+métodos básicos de ICA para o caso ruidoso \cite{article:amri:1998}.
+%
+%Se a medida da não-gaussianidade for a curtose, é quase trivial a
+%construção de métodos deflacionários para a \textit{noisy ICA}, pois
+%a curtose é imune ao ruído gaussiano \cite{book:oja:2001}. Porém
+%sabe-se que os cumulantes de alta ordem são sensíveis a pontos fora
+%da distribuição principal (\textit{outliers}), dificultando o uso
+%para a extração das componentes independentes.
+
+O algoritmo FastICA pode ser adaptado para sinais contaminados por
+ruído usando medidas não tendenciosas da gaussianidade
+\cite{article:hyvarinen:1998noisy}:
+\begin{equation}\label{noisyfastica}
+    \mathbf{w}^*=E\{\tilde{\mathbf{x}}g(\mathbf{w}^T)\tilde{\mathbf{x}}\}-(I+\tilde{\mathbf{\Sigma}})\mathbf{w}E\{g'(\mathbf{w}^T\tilde{\mathbf{x}})\}
+\end{equation}
+\\
+onde o novo valor $\mathbf{w}^*$ é normalizado para norma unitária
+após cada iteração, e $\tilde{\mathbf{\Sigma}}$ é dado por:
+\begin{equation}\label{sigg}
+    \tilde{\mathbf{\Sigma}}=E\{\tilde{\mathbf{n}}\tilde{\mathbf{n}}^T\}=(\mathbf{C}-\mathbf{\Sigma})^{-1/2}\mathbf{\Sigma}(\mathbf{C}-\mathbf{\Sigma})^{-1/2}
+\end{equation}
+\\
+sendo $\mathbf{C}=E\{\mathbf{x}\mathbf{x}^T\}$ a matriz de
+covariância dos sinais ruidosos observados. A função $g(.)$ pode ser
+escolhida entre as abaixo:
+\begin{equation}\label{e}
+    \begin{array}{ccc}
+       g_1(u)=\tanh(u), & g_2(u)=u \exp (-u^2/2), & g_3(u)=u^3
+     \end{array}
+\end{equation}
+
+Outras técnicas como o "encolhimento de código esparso"
+(\textit{Sparse Code Shrinkage}) \cite{article:hyvarinen:1999noisy}
+também são utilizadas para a extração das componentes independentes
+para sinais ruidosos. Em casos onde o nível de ruído é muito alto,
+pode-se tentar o uso de técnicas de processamento de sinais como
+wavelets ou filtragem adaptativa \cite{article:jutten:2002}.
+
+\subsubsection{ICA não-linear}
+
+Em muitos problemas práticos o modelo básico da ICA, onde os sinais
+observados são considerados combinações lineares das fontes, não
+representa corretamente o cenário real. Os calorímetros do ATLAS são
+um exemplo de ambiente onde a interação entre as fontes é feita
+através de fenômenos não-lineares. Embora a utilização da estratégia
+linear apresente resultados significativos, mesmo em casos onde a
+mistura é não-linear, espera-se que a adoção de um modelo mais
+próximo à realidade leve a um melhor desempenho.
+
+A equação \ref{nlica} apresenta um modelo geral para as misturas
+não-lineares:
+\begin{equation}\label{nlica}
+    \mathbf{x}=\mathbf{f}(\mathbf{s})
+\end{equation}
+\\
+onde $\mathbf{f}$ é um vetor de $m$ funções de mistura não lineares
+desconhecidas, $\mathbf{x}$ e $\mathbf{s}$ são respectivamente os
+sinais observados e as fontes. Assumindo que o número $n$ de
+componentes independentes é igual ao número de misturas $m$, então a
+ICA não-linear consiste em encontrar o mapeamento $\mathbf{h}$:
+$\mathbb{R}^n \rightarrow \mathbb{R}^n$ tal que as componentes
+$\mathbf{y}$ sejam estatísticamente independentes:
+\begin{equation}\label{nlica2}
+    \mathbf{y}=\mathbf{h}(\mathbf{x})
+\end{equation}
+%
+%Das equações \ref{nlica} e \ref{nlica2} percebe-se que no caso
+%não-linear as soluções dos problemas de separação cega de fontes
+%(BSS - \textit{Blind Source Separation}) e análise de componentes
+%independentes são distintas. A ICA não-linear busca as componentes
+%independentes $\mathbf{y}$ que não são iguais às fontes de sinais
+%$\mathbf{s}$. A BSS não-linear necessita de conhecimento prévio
+%sobre as fontes para chegar a uma solução.
+
+Um caso especial importante da ICA não-linear são as misturas
+\textbf{pós não-lineares} \cite{article:jutten:1999}. Inicialmente
+ocorre uma combinação linear das fontes como no modelo básico de
+ICA, e as funções não lineares $f_i$ são aplicadas antes da
+observação dos sinais $x_i$:
+\begin{equation}\label{pnlin}
+    x_i=f_i\Big(\sum_{j=1}^n a_{ij}s_j \Big)
+\end{equation}
+
+No caso geral da equação \ref{nlica} existem muitas soluções
+possíveis, conforme demonstrado em \cite{article:hyvarinen:1999}. A
+unicidade da solução é obtida apenas quando são realizadas algumas
+considerações como o uso de mapas de suavização, de informações a
+priori a respeito das fontes, ou quando são impostas restrições
+estruturais aos sinais envolvidos \cite{article:jutten:2004}.
+
+A consideração de que as misturas são pós não-lineares permite uma
+grande simplificação do problema, e as indeterminações existentes se
+tornam semelhantes às do caso linear. A modelagem através da equação
+\ref{pnlin} satisfaz grande parte dos fenômenos não-lineares como,
+por exemplo, a modelagem da distorção de sensores.
+
+Os métodos propostos na literatura para a ICA não-linear são, em
+geral, muito custosos computacionalmente, e a carga computacional
+aumenta rapidamente com a dimensão do problema.
+
+Os principais métodos propostos para a separação de fontes
+misturadas não-linearmente são descritos a seguir:
+
+\begin{description}
+  \item[Separação de misturas pós não-lineares] - Os métodos de
+  separação de misturas pós não-lineares, conforme equação \ref{pnlin}, são compostos, em geral, de
+  duas etapas. A primeira deve cancelar os efeitos das não-linearidades
+  $f_i$, e a segunda separa as misturas aproximadamente
+  lineares após o primeiro estágio. No trabalho
+  \cite{article:jutten:1999} a informação mútua $I(\mathbf{y})$ é
+  utilizada como função custo para os dois estágios. Na parte
+  linear, sendo os sinais independentes na saída
+  $\mathbf{y}=\mathbf{Bv}$, a minimização da informação mútua leva
+  a:
+  \begin{equation}\label{pnlmix1}
+    \frac{\partial I(\mathbf{y})}{\partial \mathbf{B}}=-E\{\mathbf{\psi x}^T
+    \}-\{\mathbf{B}^T \}^{-1}
+  \end{equation}
+
+A equação \ref{pnlmix1} é conhecida como o algoritmo de
+Bell-Sejnowski, onde $\psi_i$ são funções das componentes $y_i$:
+\begin{equation}\label{pnlmix2}
+    \psi_i(u)=\frac{d\log p_i(u)}{du}=\frac{p'_i(u)}{p_i(u)}
+\end{equation}
+\\
+onde $p_i(u)$ é a densidade de probabilidade de $y_i$.
+
+%Para o estágio não-linear pode ser derivada a regra de aprendizado
+%\cite{article:jutten:1999}:
+%\begin{equation}\label{pnlmix3}
+%    \frac{\partial I(\mathbf{y})}{\partial \mathbf{\theta_k}}=-E\Big\{ \frac{\partial \log |g_k'(\mathbf{\theta_k},x_k)|}{\partial
+%    \mathbf{\theta_k}}\Big\}-E\Big\{ \sum_{i=1}^n \psi_i(y_i)b_{ik} \frac{\partial g_k(\mathbf{\theta_k},x_k)}{\partial
+%    \mathbf{\theta_k}} \Big\}
+%\end{equation}
+%\\
+%onde $x_k$ e $b_{ik}$ são, respectivamente, os elementos do vetor de
+%entradas e da matriz $\mathbf{B}$.
+No trabalho
+\cite{article:jutten:1999} um a rede MLP é utilizada para aproximar
+as funções não-lineares $g_k(.)$, e as funções $\psi_i(.)$ são
+estimadas adaptativamente a partir das saídas $\mathbf{y}$.
+
+  \item[BSS não-linear usando mapas auto-organizáveis] - Os mapas
+  auto-organizáveis (SOM - \textit{Self Organizing Maps}) propostos inicialmente por Kohonen \cite{book:kohonen:2001} são redes neurais treinadas sem supervisão, capazes de realizar um mapeamento não-linear das entradas para um
+  espaço de características que em geral é bi-dimensional. Uma das
+  primeiras tentativas de solucionar o problema da ICA não-linear
+  foi realizada utilizando SOM \cite{article:pajunen:1996}. A aproximação das fontes é obtida projetando cada
+  vetor de entrada $x$ no mapa. O método pode ser aplicado a todos
+  os tipos de misturas não-lineares. A
+  convergência para os sinais originais apenas pode ser garantida quando suas
+  distribuições de probabilidade são uniformes. Quanto mais distante
+  da distribuição uniforme for a fonte, pior a aproximação obtida
+  pelo mapa SOM. Outras limitações do método são o alto custo
+  computacional do treinamento e a característica discreta das
+  saídas do mapa. A teoria dos mapas auto-organizáveis e sua aplicação em ICA serão detalhados na próxima
+  seção.
+
+%(procurar artigos sobre o generative topographic mapping)
+  \item[Mapeamento topográfico generativo] - Com uma formulação alternativa aos SOM, o Mapeamento Topográfico
+  Generativo (GTM - \textit{Generative Topographic Mapping}) foi
+  introduzido em \cite{article:bishop:1998}, e apresenta
+  princípios estatísticos mais fundamentados que o mapa SOM.
+  %O mapeamento a partir
+  %das fontes para os sinais observados é feito através de um modelo
+  %de mistura de gaussianas. Os parâmetros do modelo são estimados
+  %usando o método da máxima verossimilhança (citar referências) (ML
+  %- \textit{Maximum Likelihood method}). Em seguida, o mapeamento
+  %inverso, que realiza a separação das fontes a partir dos sinais,
+  %pode ser facilmente obtido. Uma diferença fundamental entre os
+  %métodos GTM e SOM é que o primeiro assume inicialmente um modelo
+  %para as fontes.
+
+  O método GTM básico tem poucas vantagens práticas em relação aos
+  Mapas Auto-Organizáveis, pois as fontes são assumidas como
+  processos uniformemente distribuídos. Porém, devido a sua
+  formulação mais fundamentada, o GTM pode ser facilmente estendido
+  para variáveis não uniformes. O trabalho \cite{article:pajunen:1997} propõe uma
+  modificação à formulação básica onde são introduzidos coeficientes
+  de ponderação que permitem a separação de fontes com qualquer tipo
+  de distribuição.
+
+\end{description}
+
+Existem ainda outras formulações utilizadas para solucionar o
+problema da separação cega de fontes não-linearmente misturadas. No
+trabalho \cite{article:puntonet:2003} são usadas redes tipo
+perceptron de múltiplas camadas (MLP - \textit{Multi-Layer
+Perceptron}) de duas camadas escondidas para realizar a ICA
+não-linear. O processo de aprendizagem da MLP é modificado, em
+substituição ao algoritmo de retro-propagação é utilizada a regra de
+aprendizagem Bayesiana não supervisionada
+\cite{article:lappalainen:2000}.
+
+\subsubsection{Extração de características em imagens através de ICA}
+
+Os sinais dos calorímetros do ATLAS formatados em regiões de
+interesse (RoIs) têm características espaciais semelhantes às de
+imagens monocromáticas, portanto, é natural verificar o desempenho
+de estratégias de extração de características especialmente
+desenvolvidas para esse tipo de sinal.
+
+Funções de Gabor \cite{article:daugman:1998}, e Transformada Wavelet
+\cite{Article:Mallat:1992} são técnicas freqüentemente utilizados
+para extração de carac\-terísticas e processamento de imagens. Essas
+transformações são fixadas independente dos sinais a serem
+processados. Em muitos casos é interessante estimar as
+transformações a partir dos sinais a serem processados, isso pode
+ser feito utilizando ICA. Considerando um modelo para uma sinal em
+preto e branco, onde a escala de intensidade de cinza é obtida de
+$L(x,y)$, pode-se chegar a:
+
+%Os filtros ou funções de Gabor \cite{article:daugman:1998} são
+%freqüentemente utilizados para extração de características e
+%processamento de imagens. Essas funções são definidas a partir de 3
+%parâmetros: localização espacial, orientação e freqüência.  Uma
+%função de Gabor de duas dimensões pode ser definida pela equação:
+%
+%\begin{equation}\label{gabor}
+%    g(x,y)=\exp[-\alpha ^2_y  (y-y_0)^2-\alpha ^2_x (x-x_0)^2][
+%\cos(2\pi \beta(x-x_0)+\gamma)+i\sin(2\pi \beta(x-x_0)+\gamma) ]
+%\end{equation}
+%\\
+%onde $\alpha$ é a constante da função de modulação gaussiana que
+%determina a largura da função, $x_0$ e $y_0$ são os centros das
+%gaussianas, $\beta$ é a freqüência de oscilação e $\gamma$  é a fase
+%da oscilação. A expressão da equação \ref{gabor} define duas funções
+%escalares distintas, uma a partir da parte real e outra da parte
+%imaginária.
+%
+%Outra ferramenta matemática muito utilizada para processamento de
+%sinais de imagens é a Transformada Wavelet
+%\cite{Article:Mallat:1992}, que utiliza uma única função protótipo
+%chamada wavelet mãe $\Phi(x)$. As funções da base são obtidas
+%através de translações e reescalamento de $\Phi(x)$. São usadas uma
+%família de funções que podem ser definidas a partir de:
+%
+%\begin{equation}\label{wavelet}
+%    \Phi_{s,l}(x)=2^{-s/2} \Phi(x) (2^{-s} x - l)
+%\end{equation}
+%\\
+%sendo as variáveis $s$ e $l$ responsáveis pelas modificações na
+%wavelet mãe. A transformada wavelet em 2D é obtida  tomando
+%inicialmente a transformada em uma dimensão de todas as colunas (ou
+%linhas) e depois fazendo o mesmo na outra dimensão.
+%
+%As transformações mostradas nas equações \ref{gabor} e
+%\ref{wavelet} são fixadas independente dos sinais a serem
+%processados. Em muitos casos é interessante estimar as
+%transformações a partir dos sinais, isso pode ser feito utilizando
+%ICA. Considerando um modelo para uma sinal em preto e branco, onde a
+%escala de intensidade de cinza é obtida de $I(x,y)$, pode-se chegar
+%a:
+
+\begin{equation}\label{int_ima}
+    L(x,y)=\sum_{i=1}^n a_i(x,y)s_i
+\end{equation}
+\\
+onde os coeficientes $a_i(x,y)$ são consideradas como funções base
+ou funções de carac\-terísticas, e os coeficientes $s_i$ são
+estocásticos e variáveis para cada imagem.
+%De modo alternativo,
+%pode-se coletar os valores dos pixels em um único vetor
+%$\mathbf{x}=\mathbf{As}$ como no modelo básico de ICA.
+
+Na prática não há a necessidade de processar toda a imagem de uma
+vez, pode-se utilizar janelas de tamanho fixo ($n \times n$). Para
+evitar problemas nas regiões das bordas, pode-se adotar uma janela
+deslizante, percorrendo assim toda a imagem.
+
+Armazenando os valores $L(x,y)$ dos pixels em um único vetor $x_L$,
+equação \ref{int_ima} pode ser reescrita como:
+
+\begin{equation}\label{int_ima2}
+    \mathbf{x_L}=\mathbf{As}
+\end{equation}
+\\
+como no modelo básico de ICA. Pode-se provar que, para imagens de
+cenas naturais, a análise de componentes independentes consegue
+extrair as funções características $a_i(x,y)$ e os coeficientes
+estocásticos $s_i$ \cite{book:oja:2001}.
+
+
+\section{Mapas auto-organizáveis}
+
+O mapa auto-organizável (SOM - \textit{Self Organizing Map}) é uma
+rede neural com treinamento não-supervisionado, baseado na
+aprendizagem competitiva, que é capaz de realizar uma organização
+topológica das entradas. Os SOM foram propostos por Teuvo Kohonen em
+1982 \cite{book:kohonen:2001}, sendo capazes de realizar um
+mapeamento não-linear dos sinais de um espaço de entrada contínuo de
+dimensão $k$ para um espaço de características discreto que, em
+geral, é bidimensional. Cada neurônio da grade está diretamente
+conectado a todos os nós de entrada. Na Figura \ref{soms} pode-se
+visualizar o diagrama de um mapa auto-organizável.
+
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=6cm]{cap3_som}
+\caption{Diagrama de um mapa auto-organizável} \label{soms}
+\end{figure}
+
+O mapa auto-organizável compacta informação e preserva relações
+topológicas ou métricas do conjunto de sinais. Os SOM estão ligadas
+à ICA por conseguirem extrair informações ocultas dos sinais de
+forma não supervisionada \cite{article:foo:2006}. Uma aproximação
+das componentes independentes não-lineares pode ser obtida
+utilizando mapas auto-organizáveis \cite{book:oja:2001}.
+
+Três processos estão envolvidos na formação do mapa auto-organizado:
+a \textbf{competição}, onde para cada vetor de entrada há apenas um
+neurônio vencedor; a \textbf{cooperação}, quando o neurônio vencedor
+determina uma vizinhança topológica de neurônios excitados; e a
+\textbf{adaptação}, que procede o ajuste dos pesos sinápticos para
+reforçar a resposta do neurônio vencedor, e de seus vizinhos, ao
+padrão de entrada.
+
+A atualização dos pesos é feita através da equação:
+\begin{equation}\label{pesos_som}
+    w_j(n+1)=w_j(n)+\eta (n) h_{ij}(n)(x(n)-w_j(n))
+\end{equation}
+\\
+sendo $\eta (n)$ a taxa de aprendizagem e $h_{ij}(n)$ a função de
+vizinhança definida por:
+\begin{equation}\label{neigbor}
+h_{ij}(n)=\exp(-d_{ij}^2/2\sigma^2(n))
+\end{equation}
+\\
+O mapa de características possui algumas propriedades listadas a
+seguir \cite{Book:Haykin:2001}:
+
+\begin{enumerate}
+  \item é formado pelo conjunto de
+vetores de pesos sinápticos $w_i$ no espaço de saída discreto e
+fornece uma boa aproximação para o espaço de entrada;
+
+  \item é ordenado de modo
+topológico. Padrões de entrada semelhantes são mapeados para regiões
+adjacentes no mapa de características;
+
+  \item regiões do espaço de entrada que possuem alta
+probabilidade de ocorrência são mapeadas para domínios maiores do
+espaço de saída;
+
+  \item fornece
+uma aproximação discreta das curvas principais, podendo ser visto
+como uma generalização não-linear da análise de componentes
+principais.
+\end{enumerate}
+
+No mapa de características o neurônio que apresentar maior saída é
+consi\-derado o vencedor, ou seja a saída do SOM é do tipo "vencedor
+leva tudo" (\textit{winner takes all}). O neurônio ativado é
+escolhido a partir de sua semelhança com a entrada apresentada. É
+comum a utilização da distância euclidiana como métrica da
+proxi\-midade entre dois vetores, neste caso o neurônio vencedor é
+aquele que minimiza $i(\mathbf{x})=\| \mathbf{x}(n)-\mathbf{w_j}
+\|$.
+
+Os mapas auto-organizáveis pertencem à classe de algoritmos de
+codificação vetorial, sendo capazes de de encontrar, de forma
+otimizada, um número fixo de vetores ou palavras de código que
+melhor representam o conjunto de sinais.
+
+\subsection{Quantização vetorial por aprendizado}
+
+A quantização vetorial (VQ - \textit{Vector Quantization}) é uma
+técnica de codificação onde um espaço de entrada é mapeado em um
+grupo finito de vetores repre\-sentativos (\textit{codebook})
+\cite{article:gersho:1982}. A codificação é definida como um
+particionamento do espaço de entrada em um número finito de regiões.
+O quantizador realiza um mapeamento do espaço $\mathbb{R}^k$, em um
+subconjunto finito $Y$ de $\mathbb{R}^k$:
+
+\begin{equation}\label{lv1}
+\begin{array}{cc}
+  Q: & \mathbb{R}^k \rightarrow \mathbf{Y}
+\end{array}
+\end{equation}
+\\
+sendo $ \mathbf{Y}=\{y_1,y_2,...,y_k\}$ o livro de código. Para cada
+palavra de código $y_i$ existe uma partição $R_i$ do espaço de
+entrada que satisfaz:
+\begin{equation}\label{lv2}
+R_i=Q^{-1}(\mathbf{y_i})=\{ \mathbf{x} \in  \mathbb{R}^k :
+Q(\mathbf{x})=\mathbf{y}_i \}
+\end{equation}
+\begin{equation}\label{lv3}
+    \begin{array}{ccc}
+  \bigcup_{i=1}^{N} R_i= \mathbb{R}^k, &  R_i \bigcap R_j=0,&i\neq j
+\end{array}
+\end{equation}
+\\
+Quando um quantizador vetorial possui mínima distorção é denominado
+\textbf{quantizador de Voronoi}. Neste caso, diz-se que o espaço de
+entrada está particionado de acordo com a regra do vizinho mais
+próximo, e as partições criadas são chamadas de células de Voronoi
+\cite{article:gray:1984}. Usando a distância euclidiana como
+parâmetro de distorção, o quantizador $Q^*$ é dito ótimo se para
+qualquer outro quantizador $Q$, com o mesmo número de pontos, a
+condição abaixo é satisfeita:
+
+\begin{equation}\label{llv}
+    E|| \mathbf{x} - Q^*(\mathbf{x}) ||^2 \leq E|| \mathbf{x} - Q^(\mathbf{x}) ||^2
+\end{equation}
+\\
+As palavras de código ou os vetores de Voronoi podem ser calculados
+de modo aproximado pelo algoritmo SOM. O codebook é formado a partir
+dos pesos sinápticos dos neuronios do mapa. As células de Voronoi
+são compostas pelos pontos do espaço de entrada que estão mais
+próximos do vetor de código correspondente.
+
+Em um problema de classificação, pode-se empregar a quantização vetorial por aprendizado (\textit{Learning Vector
+Quantization}) \cite{article:kohonenLVQ:1990}, que utiliza informações sobre as classes para mover
+ligeiramente os vetores de Voronoi, visando uma melhora no desempenho de decisão do classificador.
+
+Na sua forma básica, o algoritmo LVQ escolhe aleatoriamente um vetor
+de entrada $\mathbf{x}$, quando seu rótulo de classe
+$\mathcal{C}_{\mathbf{x_i}}$ e o de um vetor de Voronoi
+$\mathbf{w_c}$ concordam, então, $\mathbf{w_c}$ é movido na direção
+de $\mathbf{x}$:
+
+\begin{equation}\label{lvq1}
+  \mathcal{C}_{\mathbf{w_c}}=\mathcal{C}_{\mathbf{x_i}} \rightarrow \mathbf{w_c}(n+1)=\mathbf{w_c}(n)+
+    \alpha[\mathbf{x}-\mathbf{w_c}(n)]
+\end{equation}
+\\
+onde $\alpha$ é a taxa de aprendizagem ($0< \alpha <1$). Caso
+contrário, $\mathbf{w}$ é afastado de $\mathbf{x}$:
+
+\begin{equation}\label{lvq2}
+  \mathcal{C}_{\mathbf{w_c}}\neq \mathcal{C}_{\mathbf{x_i}} \rightarrow
+  \mathbf{w_c}(n+1)=\mathbf{w_c}(n)-
+    \alpha[\mathbf{x}-\mathbf{w_c}(n)]
+\end{equation}
+\\
+Conforme proposto em \cite{article:kohonenLVQ:1990}, podem ser
+implementadas algumas modificações na forma básica do algoritmo de
+LVQ visando melhorar o desempenho do método, chega-se então aos
+algoritmos LVQ-2 e LVQ-2.1, que ajustam dois vetores de código
+simultâneamente.
+
+Alguns exemplos da aplicação da quantização vetorial por aprendizado
+para compressão de sinais e classificação podem ser encontrados em
+\cite{article:kohonenLVQ:1990} e \cite{article:dey:1999}.
+
+\subsection{Classificação a partir do mapa de
+características}\label{mlp_somm}
+
+Considerando um problema de classificação, o mapeamento
+auto-organizável consegue transformar o conjunto de sinais,
+revelando características ocultas. A nova organização do conjunto de
+entrada pode ser utilizada para guiar o processo de discriminação,
+em \cite{book:freeman:1991} é proposta uma estratégia de
+classificação a partir do mapa de características onde uma rede
+neural MLP é conectada às saídas do SOM (ver Figura
+\ref{som_class}). A MLP é treinada com supervisão usando informações
+a respeito das classes de sinais.
+
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=10cm]{cap3_somclass}
+\caption{Diagrama da classificação a partir do mapa de
+características} \label{som_class}
+\end{figure}

@@ -1,0 +1,1167 @@
+\chapter{Aprendizado estatístico na filtragem de segundo nível do ATLAS}
+
+Neste capítulo serão mostrados os fundamentos teóricos de algumas
+técnicas de aprendizado estatístico utilizadas para extração de
+características e classificação na filtragem de segundo nível do
+ATLAS. A partir da estatística de segunda ordem, a análise de
+componentes principais (PCA - \textit{Principal Component Analysis})
+é capaz de realizar uma transformação na qual os componentes na nova
+base são ortogonais e ordenadas por energia (variância). A análise
+de componentes independentes (ICA - \textit{Independent Component
+Analysis}) utiliza estatística de ordem superior para encontrar
+direções onde os sinais projetados são independentes
+estatisticamente. A ICA transforma os sinais, sem supervisão
+externa, tornando sua estrutura essencial mais acessível
+\cite{book:oja:2001}. Os mapas auto-organizáveis (SOM -
+\textit{Self-Organizing Map}) também são muito utilizados para
+extração de características e agrupamento. O SOM é um tipo de rede
+neural de treinamento não-supervisionado capaz de produzir um espaço
+de características onde sinais semelhantes são mapeados em regiões
+adjacentes deste espaço. As redes neurais de treinamento
+supervisionado são bastante utilizadas para classificação pois sua
+habilidade de produzir hiperplanos não-lineares de separação em
+geral produz melhores resultados que os classificadores lineares. Na
+Seção \ref{aplic} serão mostradas aplicações de técnicas de
+aprendizado estatístico em Física de Partículas. Na Seção
+\ref{extr_carac} e os aspectos teóricos das técnicas utilizadas
+serão discutidos, e em 3.3 os sistemas de classificação propostos
+serão descritos.
+
+\section{Aplicações em Física de Altas Energias e Áreas Correlatas}
+\label{aplic}
+
+Nesta Seção serão descritas algumas aplicações de técnicas de aprendizado estatístico em Física de Alta Energia (HEP - \textit{High-Energy Physics}).
+
+\subsection{Aplicações de classificadores neurais}
+
+As redes neurais de treinamento supervisionado vêm sendo utilizadas
+para classificação de eventos em sistemas de \textit{trigger} de
+detectores de partículas em física de alta energia desde o início da década de 1990. O primeiro
+\textit{trigger} baseado em redes neurais foi projetado e testado no
+FermiLab para a identificação da trajetória de múons
+\cite{article:lindsey:1992}. O \textit{trigger} neural não foi
+implementado no experimento mas operou em paralelo com o algoritmo
+oficial, obtendo uma resolução 40 vezes melhor.
+
+O primeiro sistema de \textit{trigger} neural operando em um
+experimento de HEP \cite{article:denby:1999} foi implementado no
+segundo nível de filtragem do detector H1 (um dos detectores do
+acelerador HERA, que operou no laboratório DESY na Alemanha)~\cite{article:hera:2008}. No H1, o segundo nível de filtragem foi
+baseado em redes neurais, um classificador neural foi treinado para
+cada canal de filtragem existente no experimento. As redes neurais
+foram implementadas em hardware dedicado para minimizar o tempo de
+resposta~\cite{article:nnphys:1995}.
+
+Exemplos mostram também a aplicação de redes neurais para a análise
+de chuveiros de partículas gerados nos calorímetros. A colaboração
+do \textit{Crystal Barrel}, detector do experimento LEAR do CERN
+\cite{article:crystal:1992}, conseguiu a identificação de fótons e
+píons \cite{article:crystalnn:1993}. No experimento HEGRA
+\cite{article:hegra:1995} (localizado na ilha La Palma, Espanha),
+conseguiu-se a separação entre fótons e hádrons com um classificador
+neural supervisionado. A colaboração do H1 consegui discriminar
+elétrons de píons utilizando os perfis dos calorímetros
+eletromagnéticos e hadrônicos \cite{article:denby:1999}. Um
+\textit{trigger} de segundo nível baseado em redes neurais e
+informação de calorimetria foi proposto para o LHC em
+\cite{seixas:pcd:1995}. No último trabalho, informações do perfil de
+deposição de energia nos calorímetros foram utilizados para produzir
+a identificação de elétrons. Outros exemplos da aplicação de redes
+neurais para classificação de sinais de calorimetria pode ser
+encontrados em \cite{article:nnphys:1995}.
+
+Outras aplicações de redes neurais em HEP também são comuns, entre
+as quais pode-se destacar a identificação do sabor de quarks no
+experimento LEP do CERN~\cite{article:proriol:1995}, o trigger de
+neutrinos do experimento CHOOZ \cite{article:denby:1999}, a
+discriminação gamma-hadron a partir de chuveiros de partículas
+gerados por raios cósmicos \cite{article:bussino:2005}, a medição da
+massa de top-quarks no acelerador Tevatron do Fermilab
+\cite{article:mlhep:2009}, a identificação da massa de eventos de
+raios cósmicos, no Observatório Pierre Auger
+\cite{article:riggi:2007}.
+
+Mesmo com todos os exemplos de aplicações bem sucedidas de redes
+neurais, o seu uso está longe de ser uma unanimidade entre a
+comunidade de HEP. Uma ca\-rac\-terística particular do campo de
+aplicação é que há uma busca pelo entendimento de novos fenômenos,
+que são representados (nos dados simulados, que em geral são
+utilizados no treinamento dos classificadores) por modelos teóricos
+aproximados, que nem sempre estão corretos. Um experimento pode
+concluir que um modelo teórico existente está incompleto ou até
+mesmo errado. O uso de redes neurais é justificado pela facilidade
+de operação em alta dimensão (inúmeras variáveis são utilizadas no
+processo de identificação da física de interesse), porém, a
+dependência dos modelos teóricos é mais difícil de ser verificada ou
+corrigida nos classificadores não-lineares (em comparação com os
+cortes lineares mais usualmente utilizados em HEP)
+\cite{article:denby:1999}. Essa característica particular da HEP
+talvez tenha produzido uma resistência maior ao uso de redes neurais
+em comparação a outros campos da ciência. No caso da aplicação no
+detector H1, toda a colaboração do experimento precisou se convencer
+que as redes não eram uma caixa preta misteriosa e um esforço
+conjunto foi feito no sentido de entender como as redes funcionam e
+como podem ser ajustadas de modo ótimo para cada problema
+\cite{article:nnphys:1995}. De um modo geral, o uso de redes neurais
+está consolidado e bem aceito como ferramenta importante na análise
+\textit{offline}, porém, no trigger online a situação ainda é
+ambígua, com grupos a favor e outros contra
+\cite{article:denby:1999}.
+
+
+\subsection{Aplicações de técnicas estatísticas de extração de ca\-rac\-terísticas}
+
+Mais recentemente, a partir do final da década de 1990, os métodos
+de aprendizado estatístico multi-variável como PCA, ICA e SOM vêm
+sendo aplicados com sucesso em problemas na área de física de alta
+energia. Nestes algoritmos, o aprendizado é feito de modo
+não-supervisionado, e as características estimadas não dependem de
+conhecimento prévio a respeito dos sinais utilizados.
+
+Um dos primeiros trabalhos neste tópico \cite{article:lang:som}, foi
+publicado em 1998 e utiliza mapas auto-organizáveis (SOM) para a
+classificação de eventos de raios gama em astronomia de alta
+energia. Em~\cite{article:som:had:1999}, mapas SOM foram aplicados
+para a separação de bósons W do ruído de fundo composto por jatos
+hadrônicos. No trabalho~\cite{article:lange:som}, o ruído de fundo
+gerado na aceleração do feixe de partículas foi rejeitado a partir de mapas auto-organizáveis
+modificados. Redes SOM também foram utilizadas com sucesso para
+análise, classificação e monitoramento de sinais do telescópio OGLE
+(no Chile)~\cite{article:lucas:som} e para a identificação de
+prováveis assinaturas de bósons de Higgs~\cite{article:aatos:som}.
+
+A análise de componentes principais (PCA) é um técnica de
+descorrelação e compactação bastante utilizada em diversas áreas do
+conhecimento. Em física de alta energia, PCA foi aplicada para a
+seleção de variáveis de entrada de um discriminador neural no
+trabalho \cite{article:proriol:pca}. Em \cite{article:wolter:multi},
+são apresentadas diversas aplicações em HEP onde é utilizada a PCA
+para extração de características e compactação. No trabalho
+\cite{article:akras:pca}, sinais ópticos de nebulosas planetárias
+são processados por PCA com o objetivo de extrair informações a
+respeito de suas características morfológicas. Numa outra aplicação
+em astrofísica, PCA é utilizada, em conjunto com ICA, para a remoção
+do ruído de fundo e de outras fontes de interferência, permitindo
+melhor visualização de dados de ventos e tempestades solares
+\cite{article:cadavid:pcaica}. O trabalho
+\cite{article:herman:2006} utiliza a PCA, de forma segmentada, para
+compactação de sinais de calorimetria do ATLAS, em seguida
+classificadores neurais realizam a decisão elétron/jato, conseguindo
+boa eficiência de classificação.
+
+A análise de componentes independentes (ICA) tem aplicação mais
+recente em HEP, sendo que um dos primeiros trabalhos foi publicado
+em 2005 e descreve a elimi\-na\-ção de ruído na análise de sinais do
+feixe de partículas do experimento BOOSTER do Fermilab
+\cite{article:booster:ica}. Neste trabalho também é realizada uma
+comparação com um sistema semelhante baseado em PCA e a ICA
+apresenta resultados melhores. No trabalho
+\cite{article:fernandez:2005}, ICA é utilizada para análise de dados
+multi-variados em experimentos de física atômica e nuclear. A
+aplicação de ICA proporcionou redução do ruído de fundo, permitindo
+melhor visualização do sinal de interesse. ICA também foi aplicado
+com sucesso para separação de sinais em astrofísica de alta energia
+conforme detalhado a seguir. Em \cite{article:costagli:ica}, ICA foi
+aplicada para a separação de imagens de fontes sobrepostas
+adquiridas pelo satélite Planck da Agência Espacial Européia; no
+trabalho \cite{article:igual:ica} utiliza-se a análise de
+componentes independentes, em substituição aos filtros casados, para
+a decomposição de sinais astrofísicos simulados compostos pela
+combinação de moléculas elementares em estado congelado. Ainda na
+área de astrofísica, nos trabalhos
+\cite{article:cardoso:2005,article:vio:ica} ICA foi aplicado para a
+caracterização da radiação cósmica de fundo em microondas (CMB -
+\textit{Cosmic Microwave Background}). A CMB é uma forma de energia
+eletromagnética que preenche todo o universo e foi inicialmente
+observada em 1965. A CMB é visualizada apenas por rádio-telescópios.
+
+A partir destes exemplos, percebe-se que, apesar da aplicação mais
+recente em física de alta energia e áreas correlatas, diversos
+problemas de extração de ca\-rac\-te\-rísticas, remoção de ruído,
+agrupamento não-supervisionado (\textit{clustering}) e visualização vêm
+sendo resolvidos com a aplicação das técnicas estatísticas de
+processamento não-supervisionado de sinais.
+
+
+\section{Técnicas de Extração de Características Utilizadas neste Trabalho}
+\label{extr_carac}
+
+A seguir serão descritos, de modo resumido, as técnicas de extração de
+características utilizadas neste trabalho para a maximização da
+eficiência do canal elétron/jato do segundo nível de filtragem do
+detector ATLAS. Mais detalhes teóricos a respeito dos métodos podem
+ser encontrados no Apêndice \ref{apend_fex}.
+
+\subsection{Mapas auto-organizáveis}
+
+O mapa auto-organizável (SOM - \textit{Self Organizing Map}) é uma
+rede neural com treinamento não-supervisionado, baseado na
+aprendizagem competitiva, que é capaz de realizar uma organização
+topológica das entradas. O SOM foi proposto por Teuvo Kohonen em
+1982 \cite{book:kohonen:2001}, sendo capaz de realizar um
+mapeamento não-linear dos sinais de um espaço de entrada contínuo de
+dimensão $k$ para um espaço de características discreto que, em
+geral, é bidimensional. Cada neurônio da grade está diretamente
+conectado a todos os nós de entrada. Na Figura \ref{soms} pode-se
+visualizar o diagrama de um mapa auto-organizável bi-dimensional.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=6cm]{cap3_som}
+\caption{Diagrama de um mapa auto-organizável} \label{soms}
+\end{figure}
+
+O mapa auto-organizável compacta informação e preserva relações
+topológicas ou métricas do conjunto de sinais. Os SOM estão ligadas
+à ICA por conseguirem extrair informações ocultas dos sinais de
+forma não supervisionada \cite{article:foo:2006}. Uma apro\-xi\-mação
+das componentes independentes não-lineares pode ser obtida
+utilizando mapas auto-organizáveis \cite{book:oja:2001}.
+
+Três processos estão envolvidos na formação do mapa auto-organizado:
+a \textbf{competição}, onde para cada vetor de entrada há apenas um
+neurônio vencedor; a \textbf{cooperação}, quando o neurônio vencedor
+determina uma vizinhança topológica de neurônios excitados; e a
+\textbf{adaptação}, que procede ao ajuste dos pesos sinápticos para
+reforçar a resposta do neurônio vencedor, e de seus vizinhos, ao
+padrão de entrada.
+
+A atualização do vetor de pesos $w_j$ do neurônio j é feita através da equação:
+\begin{equation}\label{pesos_som}
+    w_j(n+1)=w_j(n)+\eta (n) h_{ij}(n)(x(n)-w_j(n)),
+\end{equation}
+\\
+sendo $\eta (n)$ a taxa de aprendizagem, a função de
+vizinhança $h_{ij}(n)$ pode ser definida por:
+\begin{equation}\label{neigbor}
+h_{ij}(n)=\exp(-d_{ij}^2/2\sigma^2(n))
+\end{equation}
+\\
+onde $d_{ij}$ é a distância do neurônio j para o neurônio vencedor i
+e $\sigma(n)$ é a largura da função vizinhança na n-ésima iteração.
+
+O mapa de características possui algumas propriedades, listadas a
+seguir \cite{haykin:nn:2008}:
+
+\begin{enumerate}
+  \item é formado pelo conjunto de
+vetores de pesos sinápticos $w_i$ no espaço de saída discreto e
+fornece uma boa aproximação para o espaço de entrada;
+
+  \item é ordenado de modo
+topológico. Padrões de entrada semelhantes são mapeados para regiões
+adjacentes no mapa de características;
+
+  \item regiões do espaço de entrada que possuem alta
+probabilidade de ocorrência são mapeadas para domínios maiores do
+espaço de saída;
+
+  \item fornece
+uma aproximação discreta das curvas principais, podendo ser visto
+como uma generalização não-linear da análise de componentes
+principais.
+\end{enumerate}
+
+No mapa de características o neurônio que apresentar maior saída é
+consi\-derado o vencedor, ou seja a saída do SOM é do tipo ``vencedor
+leva tudo" (WTA - \textit{winner takes all}). O neurônio ativado é
+escolhido a partir de sua semelhança com a entrada apresentada. É
+comum a utilização da distância euclidiana como métrica da
+proxi\-midade entre dois vetores; nesse caso, o neurônio vencedor é
+aquele que minimiza $i(\mathbf{x})=\| \mathbf{x}(n)-\mathbf{w_j}
+\|$.
+
+Uma outra forma de operar um mapa auto-organizável é utilizar as projeções dos sinais de entrada no mapa de características, ou seja as saídas $u_j$ de cada neurônio j que pode ser calculada por:
+\begin{equation}\label{som_out}
+ u_j=\mathbf{x}^T\mathbf{w_j}
+\end{equation}
+O vetor $\mathbf{u}=[u_1,...,u_K]^T$ pode ser considerado como a projeção de $\mathbf{x}$ no mapa de características.
+
+Os mapas auto-organizáveis pertencem à classe de algoritmos de
+codificação vetorial, sendo capazes de encontrar de forma
+otimizada um número fixo de vetores ou palavras de código que
+melhor representem o conjunto de sinais.
+
+
+\subsection{Análise de Componentes Principais}
+
+A análise de componentes principais (PCA - \textit{Principal
+Component Analysis}) é uma técnica estatística de processamento de
+sinais diretamente ligada à transformação de \textit{Karhunen-Loève}
+\cite{book:pca:2002}. O objetivo da PCA é encontrar uma
+transformação linear onde os sinais projetados sejam
+não-correlacionados e grande parcela da energia (variância). esteja
+concentrada num pequeno número de componentes. Para isso, são
+exploradas informações da estatística de segunda ordem. A análise de
+componentes principais é bastante usada para compactação de
+informação. Para reduzir a dimensão dos dados, seleciona-se apenas
+os componentes de maior energia, de modo que o sinal recuperado a
+partir da informação compactada tenha pequeno erro médio quadrático
+se comparado ao original. A seguir serão desenvolvidos, de forma
+resumida, os fundamentos matemáticos da PCA.
+
+Considerando-se um vetor $\mathbf{x}=[x_1,...,X_N]^T$ aleatório com $N$ elementos,
+assume-se que ele tenha média zero:
+
+\begin{equation}\label{Xm}
+    \mathcal{E}\{\mathbf{x}\}=0
+\end{equation}
+\\
+onde $\mathcal{E}\{.\}$ é o operador esperança. Se $\mathbf{x}$ tem
+média não nula faz-se $\mathbf{x}\leftarrow
+\mathbf{x}-\mathcal{E}\{\mathbf{x}\}$.
+
+A projeção $z_i$ de $\mathbf{x}$ na direção de $\mathbf{v}_i$ pode
+ser expressa por:
+
+\begin{equation}\label{proj1}
+    z_i=\mathbf{v}_i^T\mathbf{x}=\sum_{k=1}^N v_{ki}x_k
+\end{equation}
+\\
+Na transformação por PCA, as componentes $z_i$ ($i=1,...,N$) devem
+ser ortogonais e ordenadas (de modo decrescente) pela variância das
+projeções, sendo, então, $z_1$ a projeção de máxima variância. Para
+tornar a variância independente da norma de $\mathbf{v}_i$, faz-se:
+
+\begin{equation}\label{normaw}
+    \mathbf{v}_i \leftarrow \frac{\mathbf{v}_i}{\| \mathbf{v}_i \|}
+\end{equation}
+\\
+Fazendo-se com que $||\mathbf{v}_i||=1$, torna-se a variância função apenas da direção
+das projeções. A ortogonalidade garante a não-correlação entre as
+componentes.
+
+Como $\mathcal{E}\{\mathbf{x}\}=0$, então $\mathcal{E}\{z_i\}=0$,
+logo a variância da projeção $z_i$ é calculada por
+$\mathcal{E}\{z_i^2\}$. Seguindo a definição da PCA, $z_1$ tem
+máxima variância; logo, $\mathbf{v}_1$ é encontrado pela maximização
+de \cite{book:oja:2001}:
+
+\begin{equation}\label{w1pca}
+    J_1^{PCA}(\mathbf{v}_1)=\mathcal{E}\{z_i^2\}=\mathcal{E}\{(\mathbf{v}_1^T\mathbf{x})^2\}
+    =\mathbf{v}_1^T\mathcal{E}\{\mathbf{x}\mathbf{x}^T\}\mathbf{v}_1=
+    \mathbf{v}_1^T \mathbf{C}_x\mathbf{v}_1,
+\end{equation}
+\\
+onde $\mathbf{C}_x$ é a matriz de covariância de $\mathbf{x}$.
+
+A solução para o problema de maximização da equação (\ref{w1pca}) pode
+ser encontrada na álgebra linear em função dos autovetores
+$\mathbf{e}_1,\mathbf{e}_2,...,\mathbf{e}_N$ da matriz
+$\mathbf{C}_x$. A ordem dos autovetores é tal que os autovalores
+associados satisfazem $d_1>d_2>...>d_N$. Desta forma, tem-se:
+
+\begin{equation}\label{pca1}
+    \begin{array}{ccc}
+      \mathbf{v}_i= \mathbf{e}_i,& & 1\leq i \leq N
+    \end{array}
+\end{equation}
+
+Percebe-se que a PCA de $\mathbf{x}$ e a decomposição por
+autovalores da matriz $\mathbf{C}_x$ (de dimensão $N\times N$) são
+equivalentes. Limitações computacionais na extração das componentes
+principais utilizando as equações (\ref{proj1}) e (\ref{pca1})
+aparecem quando a dimensão $N$ do vetor $\mathbf{x}$ aumenta, pois o
+processo de obtenção dos autovetores se torna proibitivamente lento.
+Nesse caso, uma solução é utilizar métodos iterativos de extração
+das componentes principais através de redes neurais
+\cite{article:oja:pca}.
+
+
+\subsection{Análise de Componentes Independentes}
+
+Diferente da PCA, que busca as direções ortogonais de máxima
+variância, a análise de componentes independentes (ICA -
+\textit{Independent Component Analysis}) é uma transformação onde as
+componentes na saída são estatisticamente independentes.
+
+\begin{itemize}
+\item \textbf{Independência Estatística}: Considerando duas variáveis
+aleatórias (VAs) $x$ e $y$, se elas são independentes, então o
+conhecimento de uma não traz nenhuma informação a respeito da outra.
+Um sinal musical e um ruído sonoro originado de uma máquina elétrica
+são exemplos de variáveis independentes.
+
+Matematicamente, $y_1$ e $y_2$ são independentes estatisticamente se e
+somente se \cite{Book:Papoulis:1991}:
+\begin{equation}\label{indep1}
+    p_{y1,y2}(y_1,y_2)=p_{y1}(y_1)p_{y2}(y_2),
+\end{equation}
+\\
+onde $p_{y1,y2}(y_1,y_2)$, $p_{y1}(y_1)$ e $p_{y2}(y_2)$ são
+respectivamente as funções de densidade de probabilidade (pdf -
+\textit{probability density function}) conjunta e marginais de $y_1$
+e $y_2$. O conceito de independência envolve o conhecimento de toda
+a estatística dos dados, sendo assim muito mais abrangente que a
+não-correlação (utilizada pela PCA), que somente utiliza estatística
+de segunda ordem (variância).
+
+Pode-se obter uma expressão equivalente à equação (\ref{indep1}) se, para todas as
+funções $g(y_1)$ e $h(y_2)$ absolutamente integráveis em $y_1$ e $y_2$, vale
+a igualdade:
+\begin{equation}\label{indep2}
+    \mathcal{E}\{g(y_1)h(y_2)\}=\mathcal{E}\{g(y_1)\}\mathcal{E}\{h(y_2)\}
+\end{equation}
+\\
+Para evitar a estimação das funções de densidade de probabilidade,
+pode-se utilizar a equação (\ref{indep2}). A definição de
+independência pode ser facilmente estendida para mais de duas
+variáveis aleatórias. Percebe-se da equação (\ref{indep2}) que a
+independência é um princípio mais restritivo que a não-correlação
+(quando $g(x)=x$ e $h(y)=y$). No Apêndice \ref{apend_fex} serão
+detalhados os princípios matemáticos mais utilizados para a
+estimação das componentes independentes.
+
+\end{itemize}
+
+Na ICA, considera-se que um sinal multi-dimensional
+$\mathbf{x}(t)=[x_1(t),...,x_N(t)]^T$ observado (ou medido) é gerado
+a partir da combinação linear das fontes independentes
+$\mathbf{s}(t)=[s_1(t),...,s_N(t)]^T$. Na forma matricial e
+suprimindo-se o índice temporal t, pode-se escrever
+\cite{book:amari:2002}:
+\begin{equation}\label{icamatrix}
+\mathbf{x}=\mathbf{As},
+\end{equation}
+\\
+onde $\mathbf{A}$ (N$\times$N) é a matriz de mistura.
+
+O objetivo final da ICA é encontrar uma aproximação $\mathbf{y}$ das
+fontes independentes ou da transformação linear $\mathbf{A}$
+utilizando apenas os sinais observados $\mathbf{x}$. O vetor
+$\mathbf{y}$ é definido por:
+\begin{equation}\label{ica_inv}
+ \mathbf{y}=\mathbf{Wx}
+\end{equation}
+sendo $\mathbf{w}$ a matriz de separação.
+
+Um problema clássico que pode ser solucionado usando-se ICA é conhecido
+como \textit{cocktail-party problem}, e está formulado de forma
+simplificada omitindo atrasos temporais e outros fenômenos físicos
+como a existência de múltiplas reflexões, nas equações (\ref{cpp}) e
+(\ref{ccp2}) (ver Figura \ref{cocktail}). Considerando que numa sala
+existem duas pessoas falando simultaneamente e dois microfones em
+diferentes posições, os sinais gravados $x_1(t)$ e $x_2(t)$ são uma
+soma ponderada das fontes $s_1(t)$ e $s_2(t)$:
+\begin{eqnarray}\label{cpp}
+% \nonumber to remove numbering (before each equation)
+  x_1(t)=a_{11}s_1(t)+a_{12}s_2(t) \\
+  \label{ccp2} x_2(t)=a_{21}s_1(t)+a_{22}s_2(t);
+\end{eqnarray}
+\\
+os coeficientes $a_{ij}$ dependem das distâncias dos microfones às
+pessoas, e podem ser considerados como os elementos da matriz de mistura $\mathbf{A}$ do
+modelo da equação \ref{icamatrix}, onde:
+
+\begin{equation}\label{matrizA}
+    \mathbf{A}=\left(
+                 \begin{array}{cc}
+                   a_{11} &a_{12} \\
+                   a_{21} & a_{22} \\
+                 \end{array}
+               \right).
+\end{equation}
+\\
+Se os fatores $a_{ij}$ são conhecidos, o problema é facilmente
+resolvido a partir de:
+\begin{equation}\label{icamatrix2}
+\mathbf{s}=\mathbf{Wx},
+\end{equation}
+\\
+onde $\mathbf{W=A}^{-1}$. Na prática, tanto as fontes $s_i$ como os
+$a_{ij}$ devem ser obtidos apenas dos sinais misturados $x_i$.
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=9cm]{cap3_cocktail}
+\caption{Diagrama do \textit{cocktail party problem}.}
+\label{cocktail}
+\end{figure}
+
+Em um exemplo de aplicação de ICA, a Figura \ref{sinais}-a mostra as
+fontes $s_1(t)$ e $s_2(t)$, que foram misturadas linearmente gerando
+os sinais $x_1(t)$ e $x_2(t)$ da Figura \ref{sinais}-b. Após a
+aplicação de um algoritmo para extração das componentes
+independentes (FastICA \cite{article:hyvarinen:2000}), foram obtidas
+as curvas da Figura \ref{sinais}-c. Percebe-se que os sinais
+recuperados são cópias dos originais, a menos de fatores
+multiplicativos. Esta é uma das limitações inerentes do modelo da
+ICA, não há como garantir o fator de escala (que pode ser positivo
+ou negativo) ou a ordem de extração das componentes.
+
+\begin{figure}[h!]
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap3_fontes,width=7.5cm}}
+  \vspace{.3cm}
+  \centerline{(a)}\medskip
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap3_mix,width=7.5cm}}
+  \vspace{.3cm}
+  \centerline{(b)}\medskip
+\end{minipage}
+\hfill \linebreak
+\begin{minipage}[b]{0.98\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap3_rec,width=7.5cm}}
+  \vspace{.3cm}
+  \centerline{(c)}\medskip
+\end{minipage}
+\caption{Sinais (a) fonte, (b) observados e (c) recuperados através
+da ICA.} \label{sinais}
+\end{figure}
+
+%\begin{figure}[t!]
+%\begin{center}
+%\subfigure[]{\label{fontes}\epsfig{file=cap3_fontes,width=7.5cm,clip=}}
+%\subfigure[]{\label{misturas}\epsfig{file=cap3_mix,width=7.5cm,clip=}}
+%\subfigure[]{\label{recuperados}\epsfig{file=cap3_rec,width=7.4cm,clip=}}
+%\end{center}
+%\caption{Sinais (a) fonte, (b) observados e (c) recuperados através
+%da ICA.}
+%\end{figure}
+
+As técnicas de ICA foram desenvolvidas inicialmente para solucionar
+pro\-blemas de separação cega de sinais (BSS - \textit{Blind Signal
+Separation}) semelhantes ao \textit{cocktail-party problem}, porém
+mais recentemente surgiram outras aplicações interessantes, como
+extração de características, separação de fontes em telecomunicações
+e redução de ruído em imagens
+\cite{book:oja:2001,article:hyvarinen:2000}. Atualmente a ICA tem
+sido aplicada com sucesso tanto para separação de sinais como para
+extração de características.
+
+\subsection{ICA não-linear}
+
+Em muitos problemas práticos o modelo básico da ICA, onde os sinais
+observados são considerados combinações lineares e instantâneas das
+fontes, não representa corretamente o cenário real. Os calorímetros
+do ATLAS são um exemplo de ambiente onde os sinais podem ser
+modificados por fenômenos não-lineares (os calorímetros são
+projetados para serem detectores lineares, porém, por restrições na
+construção dos sensores e montagem do detector, é razoável esperar
+que os sinais, na prática, sejam modificados por fenômenos
+não-lineares de natureza desconhecida, como por exemplo saturação de
+sensores, distorções na conversão dos sinais ópticos para elétricos
+e na propagação dos sinais).
+
+A equação (\ref{nlica}) apresenta um modelo geral para as misturas
+não-lineares:
+\begin{equation}\label{nlica}
+    \mathbf{x}=\mathbf{F}(\mathbf{s}),
+\end{equation}
+\\
+onde $\mathbf{F}$ é um mapeamento não-linear de $\mathbb{R}^N
+\rightarrow \mathbb{R}^N$
+
+vetor de $m$ funções de mistura não lineares desconhecidas,
+$\mathbf{x}$ e $\mathbf{s}$ são respectivamente os sinais observados
+e as fontes. A ICA não-linear consiste em encontrar o mapeamento
+$\mathbf{G}$: $\mathbb{R}^N \rightarrow \mathbb{R}^N$ tal que as
+componentes de $\mathbf{y}$ sejam estatisticamente independentes:
+\begin{equation}\label{nlica2}
+    \mathbf{y}=\mathbf{G}(\mathbf{x}).
+\end{equation}
+
+Uma característica da NLICA é que o problema apresenta múltiplas
+soluções~\cite{jutten:nlica:2003}. Se $\mathbf{y_1}$ e
+$\mathbf{y_2}$ são variáveis aleatórias independentes, é fácil
+provar que $f(\mathbf{y_1})$ e $g(\mathbf{y_2})$ (onde $f(.)$ e
+$g(.)$ são funções diferenciáveis) são também independentes \cite{}.
+Fica claro que, sem o uso de alguma restrição, infinitos mapeamentos
+inversos $G$ satisfazem a condição de independência entre os sinais
+estimados $y_i$, i=1,...,N, em uma dada aplicação. Se o objetivo do
+problema for realizar a separação cega das fontes (BSS -
+\textit{Blind Signal Separation}), neste caso, deseja-se que as
+componentes $y_i$ sejam as fontes independentes que produziram os
+sinais observados $\mathbf{x}$, então, informações a respeito do
+modelo de mistura ou das fontes devem ser conhecidas a priori. A
+NLICA vêm sendo aplicada com sucesso em problemas como processamento
+de sinais de fala \cite{article:rojas:ica:2003} e remoção de ruído
+em imagens \cite{article:allinson:2002}.
+
+Em geral, o número de parâmetros a serem estimados num modelo de ICA
+não-linear é maior que no caso linear. Os algoritmos de NLICA, se
+comparados com os de ICA, apresentam maior complexidade
+computacional e convergência mais lenta. Em problemas de separação
+cega de fontes o algoritmo a ser utilizado deve ser esco\-lhi\-do
+utilizando informações a respeito do modelo de mistura. Considerando
+estas limitações, o uso da NLICA em substituição ao modelo linear
+somente é justificado se a precisão na estimação das componentes
+aumenta e a aplicação não apresenta restrição ao aumento do tempo de
+processamento.
+
+Entre os algoritmos de NLICA propostos na literatura, uma classe de
+métodos impõe restrições estruturais ao modelo de mistura, neste
+caso, pode-se garantir que as componentes estimadas são iguais às
+fontes (a menos por indeterminações de fator multiplicativo e ordem
+de estimação dos sinais, assim como no modelo linear). Uma solução
+de implementação mais direta é o uso de mapas auto-organizáveis para
+estimar o mapeamento não-li\-near, neste caso não há restrição de
+modelo. Outro método diretamente relacionado com a NLICA, chamado de
+ICA Local, propõe uma etapa de agrupamento dos sinais em conjuntos
+de características semelhantes, que deve ser realizada antes da ICA.
+O agrupamento produz um mapeamento não-linear dos dados e a ICA
+(linear) estima as componentes independentes. Mais informações a
+respeito dos diversos algoritmos e modelos de NLICA serão fornecidas
+nas próximas seções.
+
+\subsubsection{Unicidade da Solução em NLICA} \label{seq_uni}
+
+No caso não-linear, a independência estatística não é suficiente
+para garantir a sepa\-ração das fontes. Se duas variáveis aleatórias
+$y_1$ e $y_2$ são independentes, então
+$p_{y1,y2}(y_1,y_2)=p_{y1}(y_1)p_{y2}(y_2)$, para funções
+diferenciáveis $f$ e $g$, pode-se provar
+que~\cite{article:jutten:1999}:
+\begin{equation}\label{uniq}
+    p_{f(y_1),g(y_2)}(y_1,y_2)=p_{f(y_1)}(y_1)p_{g(y_2)}(y_2),
+\end{equation}
+e então as variáveis $f(y_1)$ e $g(y_2)$ são também independentes.
+Esta indeterminação, diferente do fator de escala e da ordem de
+estimação das componentes (que são inerentes a ICA linear), não são
+aceitáveis em um problema de separação de fontes.
+
+Estudos teóricos indicaram que a unicidade da solução da NLICA pode
+ser conseguida se o problema apresentar pelo menos uma das
+características a seguir \cite{article:hyvarinen:1999}:
+
+\begin{itemize}
+    \item O número de componentes é igual a dois. Deste modo os sinais podem ser considerados como uma variável complexa.
+    \item As pdf das componentes independentes são limitadas a valores conhecidos.
+    \item A função de mistura $\mathbf{F}$ preserva o zero ($\mathbf{F}(0)=0$) e é um mapeamento unívoco que preserva localmente a ortogonalidade das coordenadas.
+    \item O modelo de mistura é conhecido a priori e utilizado como informação para o algoritmo de estimação das componentes independentes.
+\end{itemize}
+
+
+\subsubsection{Misturas Pós Não-Lineares}
+
+Um caso especial da ICA não-linear são os métodos de estimação que
+incluem no algoritmo de estimação das componentes independentes
+informações a respeito do modelo não-linear que gerou os dados
+observados. Estas informações se configuram em restrições
+estruturais ao mapeamento inverso (que é estimado pelo algoritmo).
+Entre estes modelos, o de misturas \textbf{pós não-lineares} (PNL)
+\cite{article:jutten:1999} é um dos mais utilizados na literatura.
+
+No modelo PNL, considera-se que inicialmente ocorre uma combinação
+linear das fontes (como no modelo básico de ICA), e as funções
+não-lineares $f_i$ são aplicadas antes da observação dos sinais
+$x_i$:
+\begin{equation}\label{pnlin}
+    x_i=f_i\Big(\sum_{j=1}^n a_{ij}s_j \Big).
+\end{equation}
+É importante notar que as não-linearidades são aplicadas
+individualmente a cada componente da mistura linear (não são
+permitidas linearidades cruzadas). A Figura~\ref{fig_pnl} ilustra o
+modelo de misturas PNL.
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=10cm]{cap3_pnl}
+\caption{Diagrama do modelo de mistura PNL.} \label{fig_pnl}
+\end{figure}
+
+A consideração de que as misturas são pós não-lineares permite uma
+grande simplificação do problema, e as indeterminações existentes se
+tornam semelhantes às do caso linear. A modelagem através da equação
+(\ref{pnlin}) satisfaz grande parte dos fenômenos não-lineares,
+como, por exemplo, a modelagem da distorção de sensores num meio de
+propagação linear.
+
+Detalhes de alguns algoritmos para estimação das componentes
+independentes em misturas PNL são fornecidos no Apêndice
+\ref{apend_fex}.
+
+\subsubsection{Outros modelos de misturas com restrições estruturais}
+
+Alguns modelos com restrições estruturais diferentes do PNL foram
+propostos na literatura. No trabalho
+\cite{article:solazzi:pnl:2004}, o modelo de mistura é definido por:
+\begin{equation}\label{eq_pnll}
+    \mathbf{x}=\mathbf{A_2}f(\mathbf{A_1}\mathbf{s}),
+\end{equation}
+sendo $\mathbf{A_1}$ e $\mathbf{A_2}$ matrizes quadradas e
+$f=[f_1,f_2,...,f_N]^T$ são funções não-lineares aplicados a cada
+componente (assim como o modelo PNL, este também não permite
+não-linearidades aplicadas a mais de um componente). O modelo
+definido na Equação \ref{eq_pnll} e ilustrado também na Figura
+\ref{fig_pnll} é chamado Pós Não-linear Linear (PNL-L). O bloco
+linear $\mathbf{A_2}$ é executado após a aplicação das funções
+não-lineares, produzindo um modelo mais geral que o PNL. Nos
+trabalhos \cite{article:woo:nl2005,article:gao:nl2005} são propostos
+algoritmos baseados em redes neurais para a estimação do modelo
+PNL-L.
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=7cm]{cap3_pnll}
+\caption{Diagrama do modelo PNL-L.} \label{fig_pnll}
+\end{figure}
+
+Em \cite{article:gao:nl2005}, um modelo estrutural chamado mono
+não-linearidade (ver Figura \ref{fig_mnlin}) foi proposto para o
+problema da NLICA. Neste modelo os sinais observados são gerados a
+partir de:
+\begin{equation}\label{eq_mnlin}
+    \mathbf{x}=f^{-1}(\mathbf{A}f(\mathbf{s})).
+\end{equation}
+Este modelo é dito mais geral que o PNL pois as funções não-lineares
+podem ser aplicadas a mais de uma componente (as funções $f_i$ podem
+ser funções não-lineares de mais de uma variável). Este modelo é
+chamado de mistura de mono não-linearidade (ver Figura
+\ref{fig_mnlin}). A generalidade deste modelo é derivada da teoria
+da análise funcional (\textit{functional analysis})
+\cite{book:function:1984} e foi mostrado em
+\cite{article:gao:nl2005} que esta arquitetura pode representar
+qualquer mistura com duas camadas de não-linearidades.
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=8.5cm]{cap3_mononl}
+\caption{Diagrama do modelo da Mono não-linearidade.}
+\label{fig_mnlin}
+\end{figure}
+
+\subsubsection{Algoritmos sem restrições estruturais}
+
+Se nenhuma restrição ao modelo de mistura é imposta não há garantia
+que os componentes independentes estimados estejam relacionadas com
+as fontes (ver Seção \ref{seq_uni}). Então, esta classe de
+algoritmos de NLICA não é capaz de realizar a separação de fontes, a
+menos quando as premissas da unicidade das soluções sejam atendidas.
+Entre os métodos de NLICA sem restrições estruturais, pode-se
+destacar o uso de mapas auto-organizáveis, que foi um dos primeiros
+algoritmos utilizados para NLICA \cite{article:pajunen:1996}, e os
+métodos que utilizam inferência Bayesiana
+\cite{article:lappalainen:2000}.
+
+\textbf{NLICA a partir de Mapas Auto-Organizáveis}:
+
+Uma das primeiras tentativas bem sucedidas de realizar NLICA
+utilizou mapas auto-organizáveis \cite{article:pajunen:1996}.
+Pode-se provar que as coordenadas $y_1$ e $y_2$ do neurônio vencedor
+no mapa (ver Figura \ref{fig_som_nlica}) são independentes e
+aproximadamente uniformemente distribuídas
+\cite{article:pajunen:1996}. Para estimar a NLICA, o SOM é treinado
+usando como entradas os sinais observados, e as coordenadas do
+neurônio vencedor correspondem a uma aproximação das componentes
+independentes.
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=8cm]{cap3_som_nlica}
+\caption{NLICA a partir de SOM.} \label{fig_som_nlica}
+\end{figure}
+
+Entre as desvantagens do método pode-se destacar:
+
+\begin{itemize}
+    \item O mapeamento é discreto (existe um número limitado de neurônios no mapa),
+    então algum tipo de regularização é necessária para produzir componentes contínuos.
+    Esse problema pode ser minimizado aumentando-se o número de neurônios do mapa.
+    \item Os componentes a serem estimados devem ter pdf sub-gaussiana (quanto mais próxima da distribuição uniforme, melhor).
+    \item O custo computacional aumenta rapidamente com o número de componentes independentes a serem estimados.
+\end{itemize}
+
+Para avaliar o custo computacional, o número de parâmetros Np do SOM
+pode ser estimado pela expressão:
+\begin{equation}
+    Np=N \times (Q_L)^N
+\end{equation}
+onde $N$ é o número de componentes a serem estimados (que é
+considerado igual ao número de sinais observados) e $Q_L$ é o número
+de níveis de quantização desejado.
+
+Com uma formulação alternativa aos SOM, o Mapeamento Topográfico
+Generativo (GTM - \textit{Generative Topographic Mapping}) foi
+introduzido em \cite{article:bishop:1998}, e apresenta princípios
+estatísticos mais fundamentados que o mapa SOM. O método GTM básico
+tem poucas vantagens práticas em relação aos Mapas
+Auto-Organizáveis, pois aqui as componentes independentes também são
+assumidas como processos uniformemente distribuídos e o espaço de
+características é formado a partir de uma grade retangular discreta
+m-dimensional. Porém, devido a sua formulação matemática mais
+fundamentada, o GTM pode ser facilmente estendido para variáveis não
+uniformes. O trabalho \cite{article:pajunen:1997} propõe uma
+modificação à formulação básica onde são introduzidos
+coe\-fi\-cientes de ponderação que permitem a estimação de
+componentes independentes com qualquer tipo de distribuição. Os
+componentes são modelados como misturas de sinais Gaussianos e os
+parâmetros são estimados usando o algoritmo \textit{Expectation
+Maximization} \cite{article:hyvarinen:2000}. O treinamento do GMT
+envolve dois passos, a avaliação da probabilidade a
+\textit{posteriori} e a adaptação dos parâmetros do modelo.
+
+\textbf{NLICA a partir de Inferência Bayesiana}:
+
+Nos métodos baseados em inferência Bayesiana, considera-se que os
+sinais observados são gerados a partir de
+\cite{article:lappalainen:2000}:
+\begin{equation}
+    \mathbf{x}=f(\mathbf{s}) + \mathbf{n}
+\end{equation}
+onde $\mathbf{n}$ é definido como ruído Gaussiano independente dos
+componentes a serem estimados.
+
+Os componentes independentes são modelados como misturas de sinais
+de distribuição Gaussiana. Pode-se provar que
+\cite{article:lappalainen:2000} dado um número suficiente de
+Gaussianas, virtualmente qualquer distribuição de probabilidade pode
+ser modelada com uma certa precisão. Uma variação deste método foi
+aplicada em \cite{article:lappalainen:bay1999} para o modelo linear
+da ICA. Em grande parte dos algoritmos Bayesianos para NLICA, redes
+neurais tipo MLP de duas camadas são treinadas para aproximar o
+mapeamento não linear:
+\begin{equation}
+    f(\mathbf{s})=\mathbf{B}\Phi(\mathbf{As}+\mathbf{a})+\mathbf{b}
+\end{equation}
+
+Em um método de estimação Bayesiano, probabilidades a
+\textit{posteriori} são associadas a cada modelo não-linear que
+possivelmente teria gerado os dados observados. Verificar uma
+quantidade tão grande de modelos não é possível na prática, então os
+métodos Bayesianos para NLICA utilizam uma técnica chamada de
+``aprendizagem amostral" (EL - \textit{ensemble learning})
+\cite{aricle:minskin:2000}. Na EL, somente o conjunto mais provável
+de modelos é testado utilizando uma aproximação paramétrica que é
+ajustada à probabilidade a \textit{posteriori}
+\cite{article:valpola:2000ica}.
+
+Métodos Bayesianos de NLICA foram propostos
+em~\cite{article:honkela:2004ica} e \cite{article:honkela:2007}. No
+trabalho \cite{article:ilin:2004ie} foram realizados testes
+experimentais para comparar o desempenho dos mode\-los Bayesiano e
+PNL na estimação dos componentes independentes, as principais
+conclusões foram:
+\begin{itemize}
+    \item os algoritmos PNL apresentam desempenho superior quando as misturas
+     seguem o modelo PNL clássico (não-linearidades inversíveis e mesmo número de componentes independentes e
+     sinais observados);
+    \item o desempenho de ambos os métodos pode ser melhorada a partir da
+    exploração da informação de mais misturas que componentes independentes;
+    \item a principal vantagem do método Bayesiano é que mapeamentos mais
+    genéricos podem ser produzidos (uma vez que não há restrições estruturais).
+    Estes métodos geralmente apresentam maior custo computacional e necessitam
+    de várias inicializações para obter uma solução ótima (podem apresentar
+    problemas com mínimos locais da função custo).
+\end{itemize}
+
+
+\subsubsection{Local ICA}
+
+Se o modelo da ICA for utilizado para extração de características
+(ao invés de sepa\-ração de fontes), uma melhor descrição dos dados
+pode ser obtida se forem exploradas características locais.
+Considerando um conjunto de sinais multi-dimensionais com
+estatística variável, o modelo da ICA linear pode não ser capaz de
+revelar a estrutura fundamental dos dados. Neste caso, é mais
+razoável realizar a extração de características (estimação das
+componentes independentes) a partir de k subconjuntos dos dados (ver
+Figura \ref{fig_local}). Os sinais pertencentes ao k-ésimo
+subconjunto apresentam características semelhantes. Este
+procedimento leva ao modelo da ICA local.
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=8.5cm]{cap3_local}
+\caption{Diagrama do modelo da ICA local.} \label{fig_local}
+\end{figure}
+
+Conforme proposto em \cite{karhunen:local:1999}, um conjunto de
+dados de alta dimensão pode ser separado em sub-conjuntos, através
+de algum algoritmo de agrupamento como o k-means
+\cite{book:duda:2000} ou SOM \cite{article:som:oja:1996}, e
+componentes independentes lineares são então estimadas de cada
+subconjunto. Determinar o número ideal de agrupamentos em um
+conjunto de dados não é uma tarefa simples e geralmente requer
+informação a priori. No trabalho \cite{article:simas:2008:eusipco}
+foi proposto um critério para a escolha do número de agrupamentos em
+um problema ``cego" de processamento de sinais.
+
+Na ICA Local, o agrupamento é responsável por uma representação
+não-linear dos dados, enquanto modelos de ICA linear aplicados a
+cada sub-conjunto (\textit{cluster}) descrevem as características
+locais dos dados. A ICA local pode ser considerada como um
+compromisso entre os modelos linear e não-linear da ICA
+\cite{jutten:nlica:2003}. O objetivo é obter uma melhor
+representação dos dados (se comparado com o modelo linear da ICA),
+evitando os problemas computacionais do modelo não-linear
+\cite{karhunen:local:2000}. Em diferentes abordagens, os
+agrupamentos podem ser montados com superposição, usando por exemplo
+fronteiras \textit{fuzzy}
+\cite{article:honda:2000,article:honda:2006}, ou sem superposição
+\cite{karhunen:local:2000,aricle:palmieri:2000}.
+
+Nos trabalhos \cite{article:lan:2005,article:lan:2006} a ICA Local
+foi aplicada para a estimação da informação mútua. A informação
+mútua \cite{book:cover:1991} é uma importante ferramenta em diversas
+aplicações de processamento de sinais, especialmente na seleção de
+ca\-rac\-terísticas.
+
+\section{Sistemas de Classificação Utilizados na Filtragem de Segundo-Nível do ATLAS}
+
+Os sistemas de filtragem propostos neste trabalho são divididos em
+duas etapas distintas. Inicialmente os sinais medidos são
+pré-processados para que suas características discriminantes se
+tornem mais acessíveis. As características extraídas são utilizadas
+como entrada para os classificadores propriamente ditos. Nesta Seção
+serão descritos os sistemas de filtragem utilizados.
+
+\subsection{Pré-processamento - Extração de Características}
+
+Os sinais do perfil de deposição de energia utilizados para
+discriminação elétron/jato são medidos nas sete camadas dos
+calorímetros do ATLAS. Considerando a granularidade de cada camada,
+uma Região de Interesse (RoI) típica (de tamanho 0,4$ \times 0,4$ em
+$\eta \times \phi$) é descrita por aproximadamente 700 células. Um
+procedimento foi proposto em \cite{tese:andre:2006} para compactar
+os sinais dos calorímetros mantendo a interpretação física do perfil
+de deposição de energia. As células sensoras de cada camada são
+formatadas em anéis concêntricos de deposição de energia.
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=6.5cm]{cap3_aneis}
+\caption{Diagrama do processo de construção dos anéis.}
+\label{fig_aneis}
+\end{figure}
+
+Considerando um conjunto de células de uma RoI em uma certa camada
+do calorímetro, conforme ilustrado na Figura \ref{fig_aneis}, a
+célula mais energética de cada camada é considerada como o primeiro
+anel. Em seguida as células ao redor do primeiro anel definem o
+segundo anel e assim sucessivamente. A energia amostrada pelas
+células pertencentes a um dado anel são somadas produzindo o sinal
+de energia em anéis. É interessante notar que, devido à diferença de
+granularidade entre as camadas do calorímetro, um número diferente
+de anéis é gerado para cada camada. A Tabela \ref{tab_aneis} mostra
+a distribuição dos anéis por camada. A Figura \ref{fig_sig3d} mostra
+os sinais medidos na segunda camada eletromagnética do calorímetro
+respectivamente para um elétron e um jato.
+
+\begin{table}[th]
+\centering \caption{Número de anéis formados para cada camada do
+calorímetro do ATLAS.}\vspace{0.2cm} \footnotesize
+\begin{tabular}{c | c c c c c c c | c}
+    \hline
+     \textbf{Camada} & \textbf{PS} & \textbf{E1} & \textbf{E2} & \textbf{E3} & \textbf{H0} & \textbf{H1} & \textbf{H0} & \textbf{Total} \\
+\hline
+    \textbf{Anéis} & 8 & 64 & 8 & 8 & 4 & 4 & 4 & 100 \\
+\hline
+\end{tabular}
+\label{tab_aneis}
+\end{table}
+
+\begin{figure}[h!]
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap3_ele_e2_3d,width=7.5cm}}
+  \vspace{.3cm}
+  \centerline{(a)}\medskip
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap3_jet_e2_3d,width=7.5cm}}
+  \vspace{.3cm}
+  \centerline{(b)}\medskip
+\end{minipage}
+\hfill \linebreak \caption{Sinais medidos na camada EM2 para (a)
+elétron e (b) jato.} \label{fig_sig3d}
+\end{figure}
+
+A Figura \ref{fig_sig_anel} mostra sinais em anéis respectivamente
+para um elétron típico, um jato típico e um jato com perfil
+semelhante ao de elétrons. Percebe-se que o perfil de deposição
+medido para elétrons apresenta pouco espalhamento (é contido em uma
+pequena região) e é quase totalmente concentrado nas camadas
+eletromagnéticas. Os jatos tipicamente apresentam maior energia
+hadrônica e deposição em uma maior área do calorímetro. Alguns jatos
+(como o mostrado na Figura \ref{fig_sig_anel}-c) podem apresentar
+perfil de deposição de energia semelhante ao de elétrons,
+representando um ruído de fundo de difícil identificação.
+
+%\begin{figure}[th]
+%\begin{center}
+%\subfigure[]{\label{fig_calo_ele}\epsfig{file=cap3_ele_e2_3d,width=7.5cm,clip=}}
+%\subfigure[]{\label{fig_calo_jet}\epsfig{file=cap3_jet_e2_3d,width=7.5cm,clip=}}
+%\end{center}
+%\caption{Sinais medidos na camada EM2 para (a) elétron e (b) jato.}
+%\end{figure}
+
+
+\begin{figure}[h!]
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap3_ele_tip,width=7.5cm}}
+  \vspace{.3cm}
+  \centerline{(a)}\medskip
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap3_jet_tip,width=7.5cm}}
+  \vspace{.3cm}
+  \centerline{(b)}\medskip
+\end{minipage}
+\hfill \linebreak
+\begin{minipage}[b]{0.98\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap3_jet_ele,width=7.5cm}}
+  \vspace{.3cm}
+  \centerline{(c)}\medskip
+\end{minipage}
+\caption{Sinais em anéis para (a) elétron típico, (b) jato típico e
+(c) jato com perfil semelhante ao de elétrons.} \label{fig_sig_anel}
+\end{figure}
+
+%\begin{figure}[th]
+%\begin{center}
+%\subfigure[]{\label{fig_elet}\epsfig{file=cap3_ele_tip,width=7.5cm,clip=}}
+%\subfigure[]{\label{fig_jett}\epsfig{file=cap3_jet_tip,width=7.5cm,clip=}}
+%\subfigure[]{\label{fig_jete}\epsfig{file=cap3_jet_ele,width=7.4cm,clip=}}
+%\end{center}
+%\caption{Sinais (a) fonte, (b) observados e (c) recuperados através
+%da ICA.}
+%\end{figure}
+
+Antes da utilização nos sistemas de classificação (teste de
+hipótese) os sinais em anéis são normalizados dividindo-se a energia
+de cada anel pela energia total do evento:
+\begin{equation}
+ r_i=\frac{r_i}{\sum_{i=1}^{100}r_i}
+\end{equation}
+
+A formatação em anéis produz uma compactação por um fator de 7 vezes
+(de 700 células para 100 anéis), mantendo a interpretação física do
+perfil de deposição de energia, tornando o sinal independente do
+ponto de colisão no detector e reduzindo a influência do ruído de
+cada célula.
+
+Os métodos de extração de características propostos neste trabalho
+(SOM, PCA, ICA e NLICA) operam sempre sobre os sinais em anéis para
+a extração de características discriminantes e assim aumentar a
+eficiência dos classificadores. A estimação das características
+discriminantes dos anéis pode ser realizada de duas formas distintas
+conforme descrito a seguir.
+
+\subsubsection{Características Globais}
+
+Os sinais em anéis produzidos em todas as camadas do calorímetro
+podem ser justapostos em um único vetor de características (de 100
+componentes). Este vetor é então utilizado como entrada para os
+algoritmos de aprendizado estatístico, este procedimento é ilustrado
+na Figura \ref{fig_fexg}
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=13cm]{cap3_fex_glob}
+\caption{Processo de extração de características globais.}
+\label{fig_fexg}
+\end{figure}
+
+\subsubsection{Características Segmentadas}
+
+Alternativamente, as características discriminantes podem ser
+estimadas separadamente para os anéis produzidos em cada camada do
+calorímetro. Este procedimento, em geral, produz resultados de mais
+fácil interpretação física pois sabe-se que cada camada do
+calorímetro possui características distintas como o tipo e a
+granularidade das células detectoras. A Figura \ref{fig_fexs}
+ilustra este procedimento.
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=11cm]{cap3_fex_seg}
+\caption{Processo de extração de características segmentadas.}
+\label{fig_fexs}
+\end{figure}
+
+\subsection{Classificadores Neurais Supervisionados}
+
+Neste trabalho foram utilizados classificadores neurais tipo
+perceptrons de múltiplas camadas (MLP). Mais detalhes sobre
+classificação de sinais e a implementação de classificadores neurais
+supervisionados podem ser encontrados no Apêndice \ref{apend_clas}.
+Os classificadores, assim como os algoritmos de extração de
+características, podem ser aplicados de modo global e de modo
+segmentado.
+
+\subsubsection{Classificador Global}
+
+O classificador global opera sobre um conjunto de características
+discriminantes globais, produzindo a decisão elétron/jato. A Figura
+\ref{fig_clasg} ilustra a operação do classificador global.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=8cm]{cap3_clas_glo}
+\caption{Decisão utilizando classificador global.} \label{fig_clasg}
+\end{figure}
+
+\subsubsection{Classificadores Segmentados}
+
+Considerando o sistema de calorímetros do detector ATLAS, a
+informação disponível está segmentada em diversas camadas com
+características físicas e granularidade diferentes. Para melhor
+explorar as características do detector, está sendo proposto o uso
+de um conjunto de classificadores neurais, cada um especialista na
+informação de uma camada do calorímetro (ver Figura
+\ref{fig_classeg}).
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=10.6cm]{cap3_clas_seg}
+\caption{Decisão utilizando classificadores segmentados.}
+\label{fig_classeg}
+\end{figure}
+
+Um problema que surge na utilização de múltiplos classificadores
+segmentados é como combinar suas saídas para produzir da decisão
+final. Neste contexto, pode-se utilizar as informações de dois
+modos, através dos rótulos de classe atribuídos por cada
+classificador ou utilizando-se a saída contínua (que no caso dos
+classificadores utilizados varia de -1 a 1).
+
+\subsection{Combinação de Múltiplos Classificadores}
+
+Quando estão disponíveis informações de múl\-ti\-plos
+classificadores, surge o problema de como combiná-las de forma
+ótima. A depender do tipo de saída escolhida para os
+classificadores, sendo va\-riá\-veis contínuas (com excursão de -1 a
+1) ou va\-riá\-veis discretas (rótulos de classe), a combinação pode
+ser realizada através de estratégias distintas
+\cite{kuncheva:comb:2004}.
+
+Considerando K classificadores com saídas contínuas $u_k$, uma forma
+usualmente utilizada para combinação é a média das saídas:
+\begin{equation}\label{med}
+    \mu (\mathbf{x}) = \sum_{k=1}^K u_k (\mathbf{x})
+\end{equation}
+
+Considerando que os múltiplos classificadores apre\-sentam
+eficiência diferente, pode-se dar aos mais eficientes maior poder de
+decisão com o uso de fatores de ponderação $\alpha_k$:
+\begin{equation}\label{medpon}
+    \mu (\mathbf{x}) = \sum_{k=1}^K \alpha_k u_k (\mathbf{x})
+\end{equation}
+
+Outra forma para a combinação de classificadores de saídas contínuas
+$u_k$ é o cálculo da média geométrica:
+\begin{equation}\label{medgeo}
+    \mu (\mathbf{x}) = \sqrt[K]{\prod_{k=1}^K u_k
+    (\mathbf{x})}
+\end{equation}
+
+Alternativamente, considerando que a saída dos múltiplos
+classificadores é o rótulo de classe associado ao vetor de entrada
+$\mathbf{x}$, um método muito utilizado para combinação das
+informações é a votação da maioria \cite{kuncheva:comb:2004}. Neste
+caso, também podem ser utilizados fatores de ponde\-ração, caso as
+eficiências dos classificadores sejam diferentes. Deste modo, o voto
+de um classificador mais eficiente tem mais influência na decisão
+final.

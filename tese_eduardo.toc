@@ -1,0 +1,92 @@
+\select@language {brazil}
+\select@language {english}
+\select@language {brazil}
+\contentsline {chapter}{Lista de Figuras}{xi}{chapter*.3}
+\contentsline {chapter}{Lista de Tabelas}{xiii}{chapter*.4}
+\contentsline {chapter}{S\IeC {\'\i }mbolos e Abreviaturas}{xiv}{chapter*.5}
+\contentsline {chapter}{\numberline {1}Introdu\c c\~ao}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Contexto}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Motiva\c c\~ao}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}Objetivos}{5}{section.1.3}
+\contentsline {section}{\numberline {1.4}Metodologia}{6}{section.1.4}
+\contentsline {section}{\numberline {1.5}Conte\'udo do trabalho}{7}{section.1.5}
+\contentsline {chapter}{\numberline {2}F\IeC {\'\i }sica de Part\IeC {\'\i }culas e o detector ATLAS}{8}{chapter.2}
+\contentsline {section}{\numberline {2.1}Panorama geral da f\IeC {\'\i }sica de part\IeC {\'\i }culas elementares}{8}{section.2.1}
+\contentsline {section}{\numberline {2.2}O acelerador LHC}{13}{section.2.2}
+\contentsline {section}{\numberline {2.3}Caracter\IeC {\'\i }sticas gerais do detector ATLAS}{14}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}O sistema de calorimetria do ATLAS}{19}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Principais objetos de interesse no ATLAS}{25}{subsection.2.3.2}
+\contentsline {chapter}{\numberline {3}O Sistema de Filtragem do detector ATLAS}{28}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introdu\c c\~ao aos sistemas de filtragem em HEP}{28}{section.3.1}
+\contentsline {section}{\numberline {3.2}O sistema de filtragem \textit {online} do ATLAS}{30}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Primeiro n\IeC {\'\i }vel de filtragem}{33}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Filtragem de alto n\IeC {\'\i }vel}{35}{subsection.3.2.2}
+\contentsline {subsubsection}{Desafios do HLT}{37}{section*.8}
+\contentsline {chapter}{\numberline {4}Filtragem de El\'etrons partir de Informa\c c\~oes de Calorimetria no ATLAS}{39}{chapter.4}
+\contentsline {section}{\numberline {4.1}Filtragem de el\'etrons no L1}{39}{section.4.1}
+\contentsline {section}{\numberline {4.2}Filtragem de el\'etrons no L2 - Algoritmo T2Calo}{41}{section.4.2}
+\contentsline {section}{\numberline {4.3}Neural Ringer - Alternativa para Filtragem de El\'etrons no L2}{42}{section.4.3}
+\contentsline {section}{\numberline {4.4}Descri\c c\~ao dos dados utilizados}{44}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Sinais simulados - Corte E10 \textit {loose}}{45}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Sinais simulados - Corte E15i}{46}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Raios C\'osmicos}{46}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.4}Sinais Reais de Colis\~oes do LHC}{46}{subsection.4.4.4}
+\contentsline {chapter}{\numberline {5}Revis\~ao da Literatura}{47}{chapter.5}
+\contentsline {section}{\numberline {5.1}Aplica\c c\~oes em F\IeC {\'\i }sica de Altas Energias e \'Areas Correlatas}{48}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Aplica\c c\~oes de classificadores neurais}{48}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Aplica\c c\~oes de t\'ecnicas estat\IeC {\'\i }sticas de extra\c c\~ao de ca\penalty \@M \hskip \z@skip \discretionary {-}{}{}\penalty \@M \hskip \z@skip rac\penalty \@M \hskip \z@skip \discretionary {-}{}{}\penalty \@M \hskip \z@skip ter\IeC {\'\i }sticas}{49}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}T\'ecnicas de Extra\c c\~ao de Caracter\IeC {\'\i }sticas Utilizadas neste Trabalho}{51}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Mapas auto-organiz\'aveis}{51}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}An\'alise de Componentes Principais}{53}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}An\'alise de Componentes Independentes}{55}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}ICA n\~ao-linear}{58}{subsection.5.2.4}
+\contentsline {subsubsection}{Unicidade da Solu\c c\~ao em NLICA}{60}{section*.9}
+\contentsline {subsubsection}{Misturas P\'os N\~ao-Lineares}{61}{section*.10}
+\contentsline {subsubsection}{Outros modelos de misturas com restri\c c\~oes estruturais}{62}{section*.11}
+\contentsline {subsubsection}{Algoritmos sem restri\c c\~oes estruturais}{62}{section*.12}
+\contentsline {subsubsection}{Local ICA}{66}{section*.13}
+\contentsline {chapter}{\numberline {6}Metodologia Proposta}{68}{chapter.6}
+\contentsline {section}{\numberline {6.1}Sistemas de Classifica\c c\~ao Propostos para a Sele\c c\~ao de El\'etrons no Segundo-N\IeC {\'\i }vel de Filtragem do ATLAS}{68}{section.6.1}
+\contentsline {subsubsection}{Caracter\IeC {\'\i }sticas Globais}{68}{section*.14}
+\contentsline {subsubsection}{Caracter\IeC {\'\i }sticas Segmentadas}{69}{section*.15}
+\contentsline {subsection}{\numberline {6.1.1}Classificadores Neurais Supervisionados}{69}{subsection.6.1.1}
+\contentsline {subsubsection}{Classificador Global}{70}{section*.16}
+\contentsline {subsubsection}{Classificadores Segmentados}{70}{section*.17}
+\contentsline {subsection}{\numberline {6.1.2}Combina\c c\~ao de M\'ultiplos Classificadores}{71}{subsection.6.1.2}
+\contentsline {chapter}{\numberline {7}Resultados}{72}{chapter.7}
+\contentsline {section}{\numberline {7.1}Resultados - Dados simulados / corte L1 do tipo E10 \textit {loose}}{72}{section.7.1}
+\contentsline {section}{\numberline {7.2}Resultados - Dados simulados / corte L1 do tipo E15i}{72}{section.7.2}
+\contentsline {section}{\numberline {7.3}Resultados - Sinais de raios c\'osmicos}{72}{section.7.3}
+\contentsline {section}{\numberline {7.4}Resultados - Sinais Reais de Colis\~oes do LHC}{72}{section.7.4}
+\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{73}{chapter*.18}
+\contentsline {chapter}{\numberline {A}Aspectos Te\'oricos das T\'ecnicas de Extra\c c\~ao de Caracter\IeC {\'\i }sticas}{89}{appendix.A}
+\contentsline {section}{\numberline {A.1}Mapas auto-organiz\'aveis}{89}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Quantiza\c c\~ao vetorial por aprendizado}{89}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Classifica\c c\~ao a partir do mapa de caracter\IeC {\'\i }sticas}{91}{subsection.A.1.2}
+\contentsline {section}{\numberline {A.2}An\'alise de Componentes Principais}{91}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}Redu\c c\~ao de dimens\~ao}{91}{subsection.A.2.1}
+\contentsline {section}{\numberline {A.3}An\'alise de Componentes Independentes}{92}{section.A.3}
+\contentsline {subsection}{\numberline {A.3.1}Princ\IeC {\'\i }pios de estima\c c\~ao das componentes independentes}{92}{subsection.A.3.1}
+\contentsline {subsubsection}{Maximiza\c c\~ao da n\~ao-Gaussianidade}{93}{section*.19}
+\contentsline {subsubsection}{Minimiza\c c\~ao da informa\c c\~ao m\'utua}{94}{section*.20}
+\contentsline {subsubsection}{ICA atrav\'es da descorrela\c c\~ao n\~ao linear}{95}{section*.21}
+\contentsline {subsection}{\numberline {A.3.2}Pr\'e-processamento dos sinais para ICA}{96}{subsection.A.3.2}
+\contentsline {subsection}{\numberline {A.3.3}Principais algoritmos para ICA}{96}{subsection.A.3.3}
+\contentsline {subsubsection}{Algoritmo FastICA}{97}{section*.22}
+\contentsline {subsubsection}{Algoritmo JADE}{98}{section*.23}
+\contentsline {subsubsection}{Algoritmo Multiplicativo com Itera\c c\~ao de Newton}{99}{section*.24}
+\contentsline {subsection}{\numberline {A.3.4}Extens\~oes ao modelo b\'asico de ICA}{100}{subsection.A.3.4}
+\contentsline {subsubsection}{ICA para sinais ruidosos}{101}{section*.25}
+\contentsline {section}{\numberline {A.4}ICA n\~ao-linear}{102}{section.A.4}
+\contentsline {subsection}{\numberline {A.4.1}Algoritmo Taleb-Jutten para o modelo PNL}{103}{subsection.A.4.1}
+\contentsline {chapter}{\numberline {B}Conceitos fundamentais em classifica\c c\~ao de sinais}{105}{appendix.B}
+\contentsline {section}{\numberline {B.1}Teste de Hip\'oteses}{105}{section.B.1}
+\contentsline {section}{\numberline {B.2}Crit\'erio de Bayes}{106}{section.B.2}
+\contentsline {section}{\numberline {B.3}Filtros Casados}{107}{section.B.3}
+\contentsline {section}{\numberline {B.4}Discriminante linear de Fisher}{109}{section.B.4}
+\contentsline {section}{\numberline {B.5}Classificadores Neurais}{109}{section.B.5}
+\contentsline {chapter}{\numberline {C}Lista de Publica\c c\~oes}{112}{appendix.C}
+\contentsline {section}{\numberline {C.1}Publica\c c\~oes em peri\'odicos}{112}{section.C.1}
+\contentsline {section}{\numberline {C.2}Cap\IeC {\'\i }tulo de Livro}{114}{section.C.2}
+\contentsline {section}{\numberline {C.3}Artigos em Confer\^encias}{114}{section.C.3}
+\contentsline {section}{\numberline {C.4}Resumos em Confer\^encias}{118}{section.C.4}

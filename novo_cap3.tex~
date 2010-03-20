@@ -1,0 +1,85 @@
+
+
+\subsubsection{Filtragem de elétrons no LVL2}
+
+%falar do calo
+
+O \textbf{T2Calo} \cite{TDR:ATLAS:2003} é o algoritmo padrão para
+extração de características e teste de hipóteses adotado no
+segundo nível de filtragem do ATLAS. Esse algoritmo utiliza
+informações de calorimetria, sendo capaz de separar objetos
+eletromagnéticos isolados de jatos hadrô\-nicos, utilizando
+parâmetros que estimam a forma dos chuveiros de deposição de
+energia \cite{TDR:ATLAS:2003}.
+
+O primeiro passo do T2Calo é refinar a posição da RoI fornecida pelo
+LVL1, encontrando a célula de maior energia na segunda camada do
+calorímetro eletromagnético. Essa posição ($\eta_1 , \phi_1$) será
+posteriormente refinada pelo cálculo da posição da média ponderada
+da energia em uma janela de $3 \times 7$ em ($\eta , \phi$). Para a
+seleção dos objetos eletromagnéticos são calculados os parâmetros:
+\begin{itemize}
+  \item $R_{\eta}^{shape}=E_{37}/E_{77}$, onde $E_{nm}$ é a energia
+  depositada numa janela de $n \times m$ em torno de ($\eta_1 ,
+  \phi_1$);
+
+  \item $R_{\eta}^{strip}=(E_{1st}-E_{2nd})/(E_{1st}+E_{2nd})$ é
+  obtida em uma janela de $\Delta \eta \times \Delta \phi=0,125 \times
+  0,2$, onde $E_{1st}$ e $E_{2nd}$ são o máximo e o segundo maior
+  valor de energia encontrados depois de somar em $\phi$ para cada posição
+  $\eta$;
+
+  \item A energia total $E$ depositada no calorímetro
+  eletromagnético é calculada em uma janela de $3 \times 7$ células
+  em torno de ($\eta_1 ,   \phi_1$);
+
+  \item A energia que passa para o calorímetro hadrônico $E^{had}$ é
+  calculada em uma janela de $\Delta \eta \times \Delta \phi=0,2 \times
+  0,2$ em torno do novo centro da RoI calculado pelo T2Calo.
+
+\end{itemize}
+
+%\subsubsection{T2 Hypo}
+
+Considerando que o perfil de deposição de energia dos elétrons é,
+em geral, mais concentrado ao redor do ponto de máximo e que,
+também não espera-se deposição de uma quantidade significativa de
+energia nas camadas hadrônicas por elétrons, percebe-se que, o
+T2Calo opera através de cortes lineares utilizando informações da
+física de interesse.
+
+Técnicas de extração de características e classificação que fazem
+uso do processamento estatístico de sinais e cortes não-lineares no
+espaço de busca foram propostas como uma alternativa ao T2Calo para
+a discriminação elétron/jato no LVL2. Exem\-plos podem ser
+encontrados em \cite{article:anjos:2006} e
+\cite{article:herman:2006}.
+
+Como resultado destes trabalhos, foi implementado na plataforma de
+software do ATLAS o discriminador Neural-Ringer
+\cite{article:anjos:2006,tese:andre:2006}, que utiliza um
+classificador neural supervisionado para o canal elétron-jato no
+LVL2. Para extração de características, os sinais dos calorímetros
+são formatados em anéis concêntricos de deposição de energia (mais
+detalhes a respeito serão fornecidos no Capítulo 4). Este
+discriminador apresentou desempenho superior ao T2Calo, com tempo de
+processamento que, embora seja maior, atende aos requisitos do nível
+2.
+
+Num ambiente complexo como o que é gerado a cada colisão do LHC,
+onde o nível de ruído de fundo é extremamente alto e os eventos de
+interesse são raros, qualquer melhora na eficiência dos algoritmos
+de filtragem significa menor quantidade de eventos não relevantes
+armazenados mídia permanente, facilitando a análise
+\textit{offline}.
+
+O sucesso obtido com o Neural-Ringer motiva a busca por técnicas de
+pré-processamento que contribuam para a otimização do custo
+computacional, ou para o aumento da eficiência de discriminação.
+Neste contexto, o presente trabalho propõe o uso de técnicas de
+extração de características como Análise de Componentes
+Independentes e métodos correlatos para a compactação da informação
+e extração de características discriminantes. No próximo capítulo,
+as técnicas de aprendizado estatístico para extração de
+características e classificação utilizadas neste trabalho serão
+descritas e comentadas.
