@@ -1,4 +1,4 @@
-\chapter{Filtragem de Elétrons partir de Informações de Calorimetria}
+\chapter{Filtragem de Elétrons partir de Informações de Calorimetria no ATLAS}
 
 Considerando informações do perfil de deposição de energia medido nos calorímetros, os elétrons podem ser confundidos com jatos hadrônicos. Os algoritmos utilizados tradicionalmente para filtragem de elétrons exploram diferenças espaciais (longitudinais e laterais) entre os chuveiros eletromagnéticos e hadrônicos.
 
@@ -132,7 +132,7 @@ as técnicas de aprendizado estatístico para extração de
 características e classificação utilizadas neste trabalho serão
 descritas e comentadas.
 
-\section{Neural Ringer - Alternativa para Filtragem de Elétrons no L2 do ATLAS}
+\section{Neural Ringer - Alternativa para Filtragem de Elétrons no L2}
 
 Os sinais do perfil de deposição de energia utilizados para
 discriminação elétron/jato são medidos nas sete camadas dos
@@ -291,7 +291,55 @@ pois é pouco provável a identificação de assinaturas relevantes, uma
 vez que uma grande quantidade de eventos de falso-alarme é aprovada
 pelo nível 1.
 
-... , gráficos eta, phi e energia
+\begin{figure}[h!]
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e10_ele_et,width=8cm}}
+  \vspace{.3cm}
+  \centerline{(a)}\medskip
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e10_ele_eta,width=8cm}}
+  \vspace{.3cm}
+  \centerline{(b)}\medskip
+\end{minipage}
+\hfill \linebreak
+\begin{minipage}[b]{0.98\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e10_ele_phi,width=8cm}}
+  \vspace{.3cm}
+  \centerline{(c)}\medskip
+\end{minipage}
+\caption{Distribuição das assinaturas de elétrons aprovadas pelo corte E10-\textit{loose} em (a) energia, (b) $\eta$ e
+(c) $\phi$.} \label{fig_e10_dist}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e10_jat_et,width=8cm}}
+  \vspace{.3cm}
+  \centerline{(a)}\medskip
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e10_jat_eta,width=8cm}}
+  \vspace{.3cm}
+  \centerline{(b)}\medskip
+\end{minipage}
+\hfill \linebreak
+\begin{minipage}[b]{0.98\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e10_jat_phi,width=8cm}}
+  \vspace{.3cm}
+  \centerline{(c)}\medskip
+\end{minipage}
+\caption{Distribuição das assinaturas de jatos aprovadas pelo corte E10-\textit{loose} em (a) energia, (b) $\eta$ e
+(c) $\phi$.} \label{fig_e10_dist}
+\end{figure}
 
 \subsection{Sinais simulados - Corte E15i}
 
