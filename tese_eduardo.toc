@@ -23,14 +23,14 @@
 \contentsline {subsection}{\numberline {3.2.2}Filtragem de alto n\IeC {\'\i }vel}{35}{subsection.3.2.2}
 \contentsline {subsubsection}{Desafios do HLT}{37}{section*.8}
 \contentsline {chapter}{\numberline {4}Filtragem de El\'etrons partir de Informa\c c\~oes de Calorimetria no ATLAS}{39}{chapter.4}
-\contentsline {section}{\numberline {4.1}Filtragem de el\'etrons no L1}{39}{section.4.1}
+\contentsline {section}{\numberline {4.1}Filtragem de el\'etrons no L1}{40}{section.4.1}
 \contentsline {section}{\numberline {4.2}Filtragem de el\'etrons no L2 - Algoritmo T2Calo}{41}{section.4.2}
-\contentsline {section}{\numberline {4.3}Neural Ringer - Alternativa para Filtragem de El\'etrons no L2}{42}{section.4.3}
-\contentsline {section}{\numberline {4.4}Descri\c c\~ao dos dados utilizados}{44}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Sinais simulados - Corte E10 \textit {loose}}{45}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Sinais simulados - Corte E15i}{46}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Raios C\'osmicos}{47}{subsection.4.4.3}
-\contentsline {subsection}{\numberline {4.4.4}Sinais Reais de Colis\~oes do LHC}{47}{subsection.4.4.4}
+\contentsline {section}{\numberline {4.3}Neural Ringer - Alternativa para Filtragem de El\'etrons no L2}{43}{section.4.3}
+\contentsline {section}{\numberline {4.4}Descri\c c\~ao dos dados utilizados}{45}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Sinais simulados - Corte E10 \textit {loose}}{46}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Sinais simulados - Corte E15i}{47}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Raios C\'osmicos}{48}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.4}Sinais Reais de Colis\~oes do LHC}{49}{subsection.4.4.4}
 \contentsline {chapter}{\numberline {5}Revis\~ao da Literatura}{50}{chapter.5}
 \contentsline {section}{\numberline {5.1}Aplica\c c\~oes em F\IeC {\'\i }sica de Altas Energias e \'Areas Correlatas}{51}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Aplica\c c\~oes de classificadores neurais}{51}{subsection.5.1.1}

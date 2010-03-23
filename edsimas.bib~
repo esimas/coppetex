@@ -455,6 +455,38 @@ detector},
 }
 
 
+@ARTICLE{article:atlas:lar:2010,
+  AUTHOR =       {M. Aharrouche and C.Adam-Bourdarios and M.Aleksa D.Banfi and D.Benchekroun and K.Benslama},
+  TITLE =        {Measurement of the response of the {ATLAS} liquid argon barrel calorimeter to electrons at the 2004 combined test-beam},
+  JOURNAL =      {Nuclear Instruments and Methods in Physics Research A},
+  YEAR =         {2010},
+  volume =       {614},
+  number =       {1},
+  pages =        {400-432},
+}
+ 
+@ARTICLE{article:egtrigeer:2006,
+  AUTHOR =       {A. Gesualdi Mello and A. dos Anjos and S. Armstrong and J. T. M. Baines and C. P. Bee and M. Biglietti and
+J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
+  TITLE =        {Overview of the High-Level Trigger Electron and Photon Selection for the ATLAS Experiment at the LHC},
+  JOURNAL =      {IEEE Transactions on Nuclear Science},
+  YEAR =         {2006},
+  volume =       {53},
+  number =       {5},
+  pages =        {2839-2843},
+}
+
+@ARTICLE{article:hlttrigeer:2006,
+  AUTHOR =       {Carlo Schiavi},
+  TITLE =        {Implementation and Performance of the High Level Trigger Electron and Photon Selection for the ATLAS Experiment at the LHC},
+  JOURNAL =      {IEEE Transactions on Nuclear Science},
+  YEAR =         {2006},
+  volume =       {53},
+  number =       {5},
+  pages =        {1424-1429},
+}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Nonlinear ICA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 @INPROCEEDINGS{article:kai:2006,
@@ -820,7 +852,7 @@ Existence and Uniqueness results},
 %  TITLE =        {Three easy ways for separating nonlinear mixtures},
 %  JOURNAL =      {Signal Processing},
 %  YEAR =         {2004},
-%  pages =        {217229},
+%  pages =        {217-229},
 % }
 
 

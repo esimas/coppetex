@@ -1,6 +1,6 @@
 \chapter{Filtragem de Elétrons partir de Informações de Calorimetria no ATLAS}
 
-Considerando informações do perfil de deposição de energia medido nos calorímetros, os elétrons podem ser confundidos com jatos hadrônicos. Os algoritmos utilizados tradicionalmente para filtragem de elétrons exploram diferenças espaciais (longitudinais e laterais) entre os chuveiros eletromagnéticos e hadrônicos.
+Neste capítulo serão descritos os principais aspectos do processo de filtragem \texit{online} de elétrons no detector ATLAS. Conhecimento adequado da energia de elétrons e fótons em uma larga faixa de energia (de alguns GeV a poucos TeV) são necessários para medições precisas de fenômenos não descritos pelo modelo padrão e para a busca pela partícula de Higgs no decaimento H$\rightarrow$ZZ*$\rightarrow$4e. A seleção de elétrons é também muito importante para os processos de calibração e alinhamento do detector durante a faze inicial de operação. Com a análise de eventos conhecidos (como por exemplo o decaimento Z$\rightarrow$ee) pode-se gerar informações valiosas para o melhor conhecimento das características do detector \cite{article:imphlttrigeer:2006}. A discriminação destas partículas é baseada nas informações do sistema de calorímetros. Considerando informações do perfil de deposição de energia medido nos calorímetros, os elétrons podem ser confundidos com jatos hadrônicos. A identificação de elétrons é realizada analisando-se o formato transversal do chuveiro e o vazamento para as camadas hadrônicas \cite{article:egtrigeer:2006}. Estes parâmetros variam com a energia da partícula e nem sempre são capazes de produzir alta eficiência de discriminação.
 
 \section{Filtragem de elétrons no L1}
 
@@ -363,7 +363,55 @@ evento é rejeitado pelo L1;
 Este corte de nível 1 se aproxima da característica esperada para a
 fase operação do detector.
 
-... , gráficos eta, phi e energia
+\begin{figure}[h!]
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e15_ele_et,width=8cm}}
+  \vspace{.3cm}
+  \centerline{(a)}\medskip
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e15_ele_eta,width=8cm}}
+  \vspace{.3cm}
+  \centerline{(b)}\medskip
+\end{minipage}
+\hfill \linebreak
+\begin{minipage}[b]{0.98\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e15_ele_phi,width=8cm}}
+  \vspace{.3cm}
+  \centerline{(c)}\medskip
+\end{minipage}
+\caption{Distribuição das assinaturas de elétrons aprovadas pelo corte E15i em (a) energia, (b) $\eta$ e
+(c) $\phi$.} \label{fig_e15_dist_ele}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e15_jat_et,width=8cm}}
+  \vspace{.3cm}
+  \centerline{(a)}\medskip
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e15_jat_eta,width=8cm}}
+  \vspace{.3cm}
+  \centerline{(b)}\medskip
+\end{minipage}
+\hfill \linebreak
+\begin{minipage}[b]{0.98\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e15_jat_phi,width=8cm}}
+  \vspace{.3cm}
+  \centerline{(c)}\medskip
+\end{minipage}
+\caption{Distribuição das assinaturas de jatos aprovadas pelo corte E15i em (a) energia, (b) $\eta$ e
+(c) $\phi$.} \label{fig_e15_dist_jat}
+\end{figure}
 
 \subsection{Raios Cósmicos}
 
