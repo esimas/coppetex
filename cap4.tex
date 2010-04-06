@@ -1,374 +1,10 @@
 \chapter{Revisão da Literatura}
 
-Neste capítulo serão mostrados os fundamentos teóricos de algumas
-técnicas de aprendizado estatístico utilizadas para extração de
-características e classificação na filtragem de segundo nível do
-ATLAS. A partir da estatística de segunda ordem, a análise de
-componentes principais (PCA - \textit{Principal Component Analysis})
-é capaz de realizar uma transformação na qual os componentes na nova
-base são ortogonais e ordenadas por energia (variância). A análise
-de componentes independentes (ICA - \textit{Independent Component
-Analysis}) utiliza estatística de ordem superior para encontrar
-direções onde os sinais projetados são independentes
-estatisticamente. A ICA transforma os sinais, sem supervisão
-externa, tornando sua estrutura essencial mais acessível
-\cite{book:oja:2001}. Os mapas auto-organizáveis (SOM -
-\textit{Self-Organizing Map}) também são muito utilizados para
-extração de características e agrupamento. O SOM é um tipo de rede
-neural de treinamento não-supervisionado capaz de produzir um espaço
-de características onde sinais semelhantes são mapeados em regiões
-adjacentes deste espaço. As redes neurais de treinamento
-supervisionado são bastante utilizadas para classificação pois sua
-habilidade de produzir hiperplanos não-lineares de separação em
-geral produz melhores resultados que os classificadores lineares. Na
-Seção \ref{aplic} serão mostradas aplicações de técnicas de
-aprendizado estatístico em Física de Partículas. Na Seção
-\ref{extr_carac} e os aspectos teóricos das técnicas utilizadas
-serão discutidos, e em 3.3 os sistemas de classificação propostos
-serão descritos.
-
-\section{Aplicações em Física de Altas Energias e Áreas Correlatas}
-\label{aplic}
-
-Nesta Seção serão descritas algumas aplicações de técnicas de aprendizado estatístico em Física de Alta Energia (HEP - \textit{High-Energy Physics}).
-
-\subsection{Aplicações de classificadores neurais}
-
-As redes neurais de treinamento supervisionado vêm sendo utilizadas
-para classificação de eventos em sistemas de \textit{trigger} de
-detectores de partículas em física de alta energia desde o início da década de 1990. O primeiro
-\textit{trigger} baseado em redes neurais foi projetado e testado no
-FermiLab para a identificação da trajetória de múons
-\cite{article:lindsey:1992}. O \textit{trigger} neural não foi
-implementado no experimento mas operou em paralelo com o algoritmo
-oficial, obtendo uma resolução 40 vezes melhor.
-
-O primeiro sistema de \textit{trigger} neural operando em um
-experimento de HEP \cite{article:denby:1999} foi implementado no
-segundo nível de filtragem do detector H1 (um dos detectores do
-acelerador HERA, que operou no laboratório DESY na Alemanha)~\cite{article:hera:2008}. No H1, o segundo nível de filtragem foi
-baseado em redes neurais, um classificador neural foi treinado para
-cada canal de filtragem existente no experimento. As redes neurais
-foram implementadas em hardware dedicado para minimizar o tempo de
-resposta~\cite{article:nnphys:1995}.
-
-Exemplos mostram também a aplicação de redes neurais para a análise
-de chuveiros de partículas gerados nos calorímetros. A colaboração
-do \textit{Crystal Barrel}, detector do experimento LEAR do CERN
-\cite{article:crystal:1992}, conseguiu a identificação de fótons e
-píons \cite{article:crystalnn:1993}. No experimento HEGRA
-\cite{article:hegra:1995} (localizado na ilha La Palma, Espanha),
-conseguiu-se a separação entre fótons e hádrons com um classificador
-neural supervisionado. A colaboração do H1 consegui discriminar
-elétrons de píons utilizando os perfis dos calorímetros
-eletromagnéticos e hadrônicos \cite{article:denby:1999}. Um
-\textit{trigger} de segundo nível baseado em redes neurais e
-informação de calorimetria foi proposto para o LHC em
-\cite{seixas:pcd:1995}. No último trabalho, informações do perfil de
-deposição de energia nos calorímetros foram utilizados para produzir
-a identificação de elétrons. Outros exemplos da aplicação de redes
-neurais para classificação de sinais de calorimetria pode ser
-encontrados em \cite{article:nnphys:1995}.
-
-Outras aplicações de redes neurais em HEP também são comuns, entre
-as quais pode-se destacar a identificação do sabor de quarks no
-experimento LEP do CERN~\cite{article:proriol:1995}, o trigger de
-neutrinos do experimento CHOOZ \cite{article:denby:1999}, a
-discriminação gamma-hadron a partir de chuveiros de partículas
-gerados por raios cósmicos \cite{article:bussino:2005}, a medição da
-massa de top-quarks no acelerador Tevatron do Fermilab
-\cite{article:mlhep:2009}, a identificação da massa de eventos de
-raios cósmicos, no Observatório Pierre Auger
-\cite{article:riggi:2007}.
-
-Mesmo com todos os exemplos de aplicações bem sucedidas de redes
-neurais, o seu uso está longe de ser uma unanimidade entre a
-comunidade de HEP. Uma ca\-rac\-terística particular do campo de
-aplicação é que há uma busca pelo entendimento de novos fenômenos,
-que são representados (nos dados simulados, que em geral são
-utilizados no treinamento dos classificadores) por modelos teóricos
-aproximados, que nem sempre estão corretos. Um experimento pode
-concluir que um modelo teórico existente está incompleto ou até
-mesmo errado. O uso de redes neurais é justificado pela facilidade
-de operação em alta dimensão (inúmeras variáveis são utilizadas no
-processo de identificação da física de interesse), porém, a
-dependência dos modelos teóricos é mais difícil de ser verificada ou
-corrigida nos classificadores não-lineares (em comparação com os
-cortes lineares mais usualmente utilizados em HEP)
-\cite{article:denby:1999}. Essa característica particular da HEP
-talvez tenha produzido uma resistência maior ao uso de redes neurais
-em comparação a outros campos da ciência. No caso da aplicação no
-detector H1, toda a colaboração do experimento precisou se convencer
-que as redes não eram uma caixa preta misteriosa e um esforço
-conjunto foi feito no sentido de entender como as redes funcionam e
-como podem ser ajustadas de modo ótimo para cada problema
-\cite{article:nnphys:1995}. De um modo geral, o uso de redes neurais
-está consolidado e bem aceito como ferramenta importante na análise
-\textit{offline}, porém, no trigger online a situação ainda é
-ambígua, com grupos a favor e outros contra
-\cite{article:denby:1999}.
+Neste capítulo, serão mostrados os fundamentos teóricos das técnicas de aprendizado estatístico utilizadas para extração de
+características na filtragem de segundo nível do ATLAS. Entre as técnicas de extração de características abordadas estão a análise de componentes independentes, em seus modelos não-linear e linear (NLICA e ICA), e para compactação, a análise de componentes principais (PCA) e os componentes principais de discriminação (PCD). Entre as técnicas citadas, maior destaque será dado a aquelas que exploram informações estatísticas de ordem superior (HOS - \textit{Higher-Order Statistics}), ou seja NLICA, ICA e PCD. Na Seção \ref{aplic} serão mostradas aplicações dos métodos listados acima em problemas de física de altas energias (HEP - \textit{High-Energy Physics}), juntamente com uma revisão bibliográfica das aplicações de redes neurais em HEP.
 
 
-\subsection{Aplicações de técnicas estatísticas de extração de ca\-rac\-terísticas}
-
-Mais recentemente, a partir do final da década de 1990, os métodos
-de aprendizado estatístico multi-variável como PCA, ICA e SOM vêm
-sendo aplicados com sucesso em problemas na área de física de alta
-energia. Nestes algoritmos, o aprendizado é feito de modo
-não-supervisionado, e as características estimadas não dependem de
-conhecimento prévio a respeito dos sinais utilizados.
-
-Um dos primeiros trabalhos neste tópico \cite{article:lang:som}, foi
-publicado em 1998 e utiliza mapas auto-organizáveis (SOM) para a
-classificação de eventos de raios gama em astronomia de alta
-energia. Em~\cite{article:som:had:1999}, mapas SOM foram aplicados
-para a separação de bósons W do ruído de fundo composto por jatos
-hadrônicos. No trabalho~\cite{article:lange:som}, o ruído de fundo
-gerado na aceleração do feixe de partículas foi rejeitado a partir de mapas auto-organizáveis
-modificados. Redes SOM também foram utilizadas com sucesso para
-análise, classificação e monitoramento de sinais do telescópio OGLE
-(no Chile)~\cite{article:lucas:som} e para a identificação de
-prováveis assinaturas de bósons de Higgs~\cite{article:aatos:som}.
-
-A análise de componentes principais (PCA) é um técnica de
-descorrelação e compactação bastante utilizada em diversas áreas do
-conhecimento. Em física de alta energia, PCA foi aplicada para a
-seleção de variáveis de entrada de um discriminador neural no
-trabalho \cite{article:proriol:pca}. Em \cite{article:wolter:multi},
-são apresentadas diversas aplicações em HEP onde é utilizada a PCA
-para extração de características e compactação. No trabalho
-\cite{article:akras:pca}, sinais ópticos de nebulosas planetárias
-são processados por PCA com o objetivo de extrair informações a
-respeito de suas características morfológicas. Numa outra aplicação
-em astrofísica, PCA é utilizada, em conjunto com ICA, para a remoção
-do ruído de fundo e de outras fontes de interferência, permitindo
-melhor visualização de dados de ventos e tempestades solares
-\cite{article:cadavid:pcaica}. O trabalho
-\cite{article:herman:2006} utiliza a PCA, de forma segmentada, para
-compactação de sinais de calorimetria do ATLAS, em seguida
-classificadores neurais realizam a decisão elétron/jato, conseguindo
-boa eficiência de classificação.
-
-A análise de componentes independentes (ICA) tem aplicação mais
-recente em HEP, sendo que um dos primeiros trabalhos foi publicado
-em 2005 e descreve a elimi\-na\-ção de ruído na análise de sinais do
-feixe de partículas do experimento BOOSTER do Fermilab
-\cite{article:booster:ica}. Neste trabalho também é realizada uma
-comparação com um sistema semelhante baseado em PCA e a ICA
-apresenta resultados melhores. No trabalho
-\cite{article:fernandez:2005}, ICA é utilizada para análise de dados
-multi-variados em experimentos de física atômica e nuclear. A
-aplicação de ICA proporcionou redução do ruído de fundo, permitindo
-melhor visualização do sinal de interesse. ICA também foi aplicado
-com sucesso para separação de sinais em astrofísica de alta energia
-conforme detalhado a seguir. Em \cite{article:costagli:ica}, ICA foi
-aplicada para a separação de imagens de fontes sobrepostas
-adquiridas pelo satélite Planck da Agência Espacial Européia; no
-trabalho \cite{article:igual:ica} utiliza-se a análise de
-componentes independentes, em substituição aos filtros casados, para
-a decomposição de sinais astrofísicos simulados compostos pela
-combinação de moléculas elementares em estado congelado. Ainda na
-área de astrofísica, nos trabalhos
-\cite{article:cardoso:2005,article:vio:ica} ICA foi aplicado para a
-caracterização da radiação cósmica de fundo em microondas (CMB -
-\textit{Cosmic Microwave Background}). A CMB é uma forma de energia
-eletromagnética que preenche todo o universo e foi inicialmente
-observada em 1965. A CMB é visualizada apenas por rádio-telescópios.
-
-A partir destes exemplos, percebe-se que, apesar da aplicação mais
-recente em física de alta energia e áreas correlatas, diversos
-problemas de extração de ca\-rac\-te\-rísticas, remoção de ruído,
-agrupamento não-supervisionado (\textit{clustering}) e visualização vêm
-sendo resolvidos com a aplicação das técnicas estatísticas de
-processamento não-supervisionado de sinais.
-
-
-\section{Técnicas de Extração de Características Utilizadas neste Trabalho}
-\label{extr_carac}
-
-A seguir serão descritos, de modo resumido, as técnicas de extração de
-características utilizadas neste trabalho para a maximização da
-eficiência do canal elétron/jato do segundo nível de filtragem do
-detector ATLAS. Mais detalhes teóricos a respeito dos métodos podem
-ser encontrados no Apêndice \ref{apend_fex}.
-
-\subsection{Mapas auto-organizáveis}
-
-O mapa auto-organizável (SOM - \textit{Self Organizing Map}) é uma
-rede neural com treinamento não-supervisionado, baseado na
-aprendizagem competitiva, que é capaz de realizar uma organização
-topológica das entradas. O SOM foi proposto por Teuvo Kohonen em
-1982 \cite{book:kohonen:2001}, sendo capaz de realizar um
-mapeamento não-linear dos sinais de um espaço de entrada contínuo de
-dimensão $k$ para um espaço de características discreto que, em
-geral, é bidimensional. Cada neurônio da grade está diretamente
-conectado a todos os nós de entrada. Na Figura \ref{soms} pode-se
-visualizar o diagrama de um mapa auto-organizável bi-dimensional.
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=6cm]{cap3_som}
-\caption{Diagrama de um mapa auto-organizável} \label{soms}
-\end{figure}
-
-O mapa auto-organizável compacta informação e preserva relações
-topológicas ou métricas do conjunto de sinais. Os SOM estão ligadas
-à ICA por conseguirem extrair informações ocultas dos sinais de
-forma não supervisionada \cite{article:foo:2006}. Uma apro\-xi\-mação
-das componentes independentes não-lineares pode ser obtida
-utilizando mapas auto-organizáveis \cite{book:oja:2001}.
-
-Três processos estão envolvidos na formação do mapa auto-organizado:
-a \textbf{competição}, onde para cada vetor de entrada há apenas um
-neurônio vencedor; a \textbf{cooperação}, quando o neurônio vencedor
-determina uma vizinhança topológica de neurônios excitados; e a
-\textbf{adaptação}, que procede ao ajuste dos pesos sinápticos para
-reforçar a resposta do neurônio vencedor, e de seus vizinhos, ao
-padrão de entrada.
-
-A atualização do vetor de pesos $w_j$ do neurônio j é feita através da equação:
-\begin{equation}\label{pesos_som}
-    w_j(n+1)=w_j(n)+\eta (n) h_{ij}(n)(x(n)-w_j(n)),
-\end{equation}
-\\
-sendo $\eta (n)$ a taxa de aprendizagem, a função de
-vizinhança $h_{ij}(n)$ pode ser definida por:
-\begin{equation}\label{neigbor}
-h_{ij}(n)=\exp(-d_{ij}^2/2\sigma^2(n))
-\end{equation}
-\\
-onde $d_{ij}$ é a distância do neurônio j para o neurônio vencedor i
-e $\sigma(n)$ é a largura da função vizinhança na n-ésima iteração.
-
-O mapa de características possui algumas propriedades, listadas a
-seguir \cite{haykin:nn:2008}:
-
-\begin{enumerate}
-  \item é formado pelo conjunto de
-vetores de pesos sinápticos $w_i$ no espaço de saída discreto e
-fornece uma boa aproximação para o espaço de entrada;
-
-  \item é ordenado de modo
-topológico. Padrões de entrada semelhantes são mapeados para regiões
-adjacentes no mapa de características;
-
-  \item regiões do espaço de entrada que possuem alta
-probabilidade de ocorrência são mapeadas para domínios maiores do
-espaço de saída;
-
-  \item fornece
-uma aproximação discreta das curvas principais, podendo ser visto
-como uma generalização não-linear da análise de componentes
-principais.
-\end{enumerate}
-
-No mapa de características o neurônio que apresentar maior saída é
-consi\-derado o vencedor, ou seja a saída do SOM é do tipo ``vencedor
-leva tudo" (WTA - \textit{winner takes all}). O neurônio ativado é
-escolhido a partir de sua semelhança com a entrada apresentada. É
-comum a utilização da distância euclidiana como métrica da
-proxi\-midade entre dois vetores; nesse caso, o neurônio vencedor é
-aquele que minimiza $i(\mathbf{x})=\| \mathbf{x}(n)-\mathbf{w_j}
-\|$.
-
-Uma outra forma de operar um mapa auto-organizável é utilizar as projeções dos sinais de entrada no mapa de características, ou seja as saídas $u_j$ de cada neurônio j que pode ser calculada por:
-\begin{equation}\label{som_out}
- u_j=\mathbf{x}^T\mathbf{w_j}
-\end{equation}
-O vetor $\mathbf{u}=[u_1,...,u_K]^T$ pode ser considerado como a projeção de $\mathbf{x}$ no mapa de características.
-
-Os mapas auto-organizáveis pertencem à classe de algoritmos de
-codificação vetorial, sendo capazes de encontrar de forma
-otimizada um número fixo de vetores ou palavras de código que
-melhor representem o conjunto de sinais.
-
-
-\subsection{Análise de Componentes Principais}
-
-A análise de componentes principais (PCA - \textit{Principal
-Component Analysis}) é uma técnica estatística de processamento de
-sinais diretamente ligada à transformação de \textit{Karhunen-Loève}
-\cite{book:pca:2002}. O objetivo da PCA é encontrar uma
-transformação linear onde os sinais projetados sejam
-não-correlacionados e grande parcela da energia (variância). esteja
-concentrada num pequeno número de componentes. Para isso, são
-exploradas informações da estatística de segunda ordem. A análise de
-componentes principais é bastante usada para compactação de
-informação. Para reduzir a dimensão dos dados, seleciona-se apenas
-os componentes de maior energia, de modo que o sinal recuperado a
-partir da informação compactada tenha pequeno erro médio quadrático
-se comparado ao original. A seguir serão desenvolvidos, de forma
-resumida, os fundamentos matemáticos da PCA.
-
-Considerando-se um vetor $\mathbf{x}=[x_1,...,X_N]^T$ aleatório com $N$ elementos,
-assume-se que ele tenha média zero:
-
-\begin{equation}\label{Xm}
-    \mathcal{E}\{\mathbf{x}\}=0
-\end{equation}
-\\
-onde $\mathcal{E}\{.\}$ é o operador esperança. Se $\mathbf{x}$ tem
-média não nula faz-se $\mathbf{x}\leftarrow
-\mathbf{x}-\mathcal{E}\{\mathbf{x}\}$.
-
-A projeção $z_i$ de $\mathbf{x}$ na direção de $\mathbf{v}_i$ pode
-ser expressa por:
-
-\begin{equation}\label{proj1}
-    z_i=\mathbf{v}_i^T\mathbf{x}=\sum_{k=1}^N v_{ki}x_k
-\end{equation}
-\\
-Na transformação por PCA, as componentes $z_i$ ($i=1,...,N$) devem
-ser ortogonais e ordenadas (de modo decrescente) pela variância das
-projeções, sendo, então, $z_1$ a projeção de máxima variância. Para
-tornar a variância independente da norma de $\mathbf{v}_i$, faz-se:
-
-\begin{equation}\label{normaw}
-    \mathbf{v}_i \leftarrow \frac{\mathbf{v}_i}{\| \mathbf{v}_i \|}
-\end{equation}
-\\
-Fazendo-se com que $||\mathbf{v}_i||=1$, torna-se a variância função apenas da direção
-das projeções. A ortogonalidade garante a não-correlação entre as
-componentes.
-
-Como $\mathcal{E}\{\mathbf{x}\}=0$, então $\mathcal{E}\{z_i\}=0$,
-logo a variância da projeção $z_i$ é calculada por
-$\mathcal{E}\{z_i^2\}$. Seguindo a definição da PCA, $z_1$ tem
-máxima variância; logo, $\mathbf{v}_1$ é encontrado pela maximização
-de \cite{book:oja:2001}:
-
-\begin{equation}\label{w1pca}
-    J_1^{PCA}(\mathbf{v}_1)=\mathcal{E}\{z_i^2\}=\mathcal{E}\{(\mathbf{v}_1^T\mathbf{x})^2\}
-    =\mathbf{v}_1^T\mathcal{E}\{\mathbf{x}\mathbf{x}^T\}\mathbf{v}_1=
-    \mathbf{v}_1^T \mathbf{C}_x\mathbf{v}_1,
-\end{equation}
-\\
-onde $\mathbf{C}_x$ é a matriz de covariância de $\mathbf{x}$.
-
-A solução para o problema de maximização da equação (\ref{w1pca}) pode
-ser encontrada na álgebra linear em função dos autovetores
-$\mathbf{e}_1,\mathbf{e}_2,...,\mathbf{e}_N$ da matriz
-$\mathbf{C}_x$. A ordem dos autovetores é tal que os autovalores
-associados satisfazem $d_1>d_2>...>d_N$. Desta forma, tem-se:
-
-\begin{equation}\label{pca1}
-    \begin{array}{ccc}
-      \mathbf{v}_i= \mathbf{e}_i,& & 1\leq i \leq N
-    \end{array}
-\end{equation}
-
-Percebe-se que a PCA de $\mathbf{x}$ e a decomposição por
-autovalores da matriz $\mathbf{C}_x$ (de dimensão $N\times N$) são
-equivalentes. Limitações computacionais na extração das componentes
-principais utilizando as equações (\ref{proj1}) e (\ref{pca1})
-aparecem quando a dimensão $N$ do vetor $\mathbf{x}$ aumenta, pois o
-processo de obtenção dos autovetores se torna proibitivamente lento.
-Nesse caso, uma solução é utilizar métodos iterativos de extração
-das componentes principais através de redes neurais
-\cite{article:oja:pca}.
-
-
-\subsection{Análise de Componentes Independentes}
+\section{Análise de Componentes Independentes}
 
 Diferente da PCA, que busca as direções ortogonais de máxima
 variância, a análise de componentes independentes (ICA -
@@ -534,7 +170,7 @@ e redução de ruído em imagens
 sido aplicada com sucesso tanto para separação de sinais como para
 extração de características.
 
-\subsection{ICA não-linear}
+\section{ICA não-linear}
 
 Em muitos problemas práticos o modelo básico da ICA, onde os sinais
 observados são considerados combinações lineares e instantâneas das
@@ -609,7 +245,7 @@ O agrupamento produz um mapeamento não-linear dos dados e a ICA
 respeito dos diversos algoritmos e modelos de NLICA serão fornecidas
 nas próximas seções.
 
-\subsubsection{Unicidade da Solução em NLICA} \label{seq_uni}
+\subsection{Unicidade da Solução em NLICA} \label{seq_uni}
 
 No caso não-linear, a independência estatística não é suficiente
 para garantir a sepa\-ração das fontes. Se duas variáveis aleatórias
@@ -637,7 +273,7 @@ características a seguir \cite{article:hyvarinen:1999}:
 \end{itemize}
 
 
-\subsubsection{Misturas Pós Não-Lineares}
+\subsection{Misturas Pós Não-Lineares}
 
 Um caso especial da ICA não-linear são os métodos de estimação que
 incluem no algoritmo de estimação das componentes independentes
@@ -726,7 +362,7 @@ qualquer mistura com duas camadas de não-linearidades.
 \label{fig_mnlin}
 \end{figure}
 
-\subsubsection{Algoritmos sem restrições estruturais}
+\subsection{Algoritmos sem restrições estruturais}
 
 Se nenhuma restrição ao modelo de mistura é imposta não há garantia
 que os componentes independentes estimados estejam relacionadas com
@@ -851,7 +487,7 @@ conclusões foram:
 \end{itemize}
 
 
-\subsubsection{Local ICA}
+\subsection{ICA Local}
 
 Se o modelo da ICA for utilizado para extração de características
 (ao invés de sepa\-ração de fontes), uma melhor descrição dos dados
@@ -901,4 +537,342 @@ foi aplicada para a estimação da informação mútua. A informação
 mútua \cite{book:cover:1991} é uma importante ferramenta em diversas
 aplicações de processamento de sinais, especialmente na seleção de
 ca\-rac\-terísticas.
+
+
+\section{Mapas auto-organizáveis}
+
+O mapa auto-organizável (SOM - \textit{Self Organizing Map}) é uma
+rede neural com treinamento não-supervisionado, baseado na
+aprendizagem competitiva, que é capaz de realizar uma organização
+topológica das entradas. O SOM foi proposto por Teuvo Kohonen em
+1982 \cite{book:kohonen:2001}, sendo capaz de realizar um
+mapeamento não-linear dos sinais de um espaço de entrada contínuo de
+dimensão $k$ para um espaço de características discreto que, em
+geral, é bidimensional. Cada neurônio da grade está diretamente
+conectado a todos os nós de entrada. Na Figura \ref{soms} pode-se
+visualizar o diagrama de um mapa auto-organizável bi-dimensional.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=6cm]{cap3_som}
+\caption{Diagrama de um mapa auto-organizável} \label{soms}
+\end{figure}
+
+O mapa auto-organizável compacta informação e preserva relações
+topológicas ou métricas do conjunto de sinais. Os SOM estão ligadas
+à ICA por conseguirem extrair informações ocultas dos sinais de
+forma não supervisionada \cite{article:foo:2006}. Uma apro\-xi\-mação
+das componentes independentes não-lineares pode ser obtida
+utilizando mapas auto-organizáveis \cite{book:oja:2001}.
+
+Três processos estão envolvidos na formação do mapa auto-organizado:
+a \textbf{competição}, onde para cada vetor de entrada há apenas um
+neurônio vencedor; a \textbf{cooperação}, quando o neurônio vencedor
+determina uma vizinhança topológica de neurônios excitados; e a
+\textbf{adaptação}, que procede ao ajuste dos pesos sinápticos para
+reforçar a resposta do neurônio vencedor, e de seus vizinhos, ao
+padrão de entrada.
+
+A atualização do vetor de pesos $w_j$ do neurônio j é feita através da equação:
+\begin{equation}\label{pesos_som}
+    w_j(n+1)=w_j(n)+\eta (n) h_{ij}(n)(x(n)-w_j(n)),
+\end{equation}
+\\
+sendo $\eta (n)$ a taxa de aprendizagem, a função de
+vizinhança $h_{ij}(n)$ pode ser definida por:
+\begin{equation}\label{neigbor}
+h_{ij}(n)=\exp(-d_{ij}^2/2\sigma^2(n))
+\end{equation}
+\\
+onde $d_{ij}$ é a distância do neurônio j para o neurônio vencedor i
+e $\sigma(n)$ é a largura da função vizinhança na n-ésima iteração.
+
+O mapa de características possui algumas propriedades, listadas a
+seguir \cite{haykin:nn:2008}:
+
+\begin{enumerate}
+  \item é formado pelo conjunto de
+vetores de pesos sinápticos $w_i$ no espaço de saída discreto e
+fornece uma boa aproximação para o espaço de entrada;
+
+  \item é ordenado de modo
+topológico. Padrões de entrada semelhantes são mapeados para regiões
+adjacentes no mapa de características;
+
+  \item regiões do espaço de entrada que possuem alta
+probabilidade de ocorrência são mapeadas para domínios maiores do
+espaço de saída;
+
+  \item fornece
+uma aproximação discreta das curvas principais, podendo ser visto
+como uma generalização não-linear da análise de componentes
+principais.
+\end{enumerate}
+
+No mapa de características o neurônio que apresentar maior saída é
+consi\-derado o vencedor, ou seja a saída do SOM é do tipo ``vencedor
+leva tudo" (WTA - \textit{winner takes all}). O neurônio ativado é
+escolhido a partir de sua semelhança com a entrada apresentada. É
+comum a utilização da distância euclidiana como métrica da
+proxi\-midade entre dois vetores; nesse caso, o neurônio vencedor é
+aquele que minimiza $i(\mathbf{x})=\| \mathbf{x}(n)-\mathbf{w_j}
+\|$.
+
+Uma outra forma de operar um mapa auto-organizável é utilizar as projeções dos sinais de entrada no mapa de características, ou seja as saídas $u_j$ de cada neurônio j que pode ser calculada por:
+\begin{equation}\label{som_out}
+ u_j=\mathbf{x}^T\mathbf{w_j}
+\end{equation}
+O vetor $\mathbf{u}=[u_1,...,u_K]^T$ pode ser considerado como a projeção de $\mathbf{x}$ no mapa de características.
+
+Os mapas auto-organizáveis pertencem à classe de algoritmos de
+codificação vetorial, sendo capazes de encontrar de forma
+otimizada um número fixo de vetores ou palavras de código que
+melhor representem o conjunto de sinais.
+
+\section{Técnicas de Pré-Processamento - Compactação}
+
+\subsection{Análise de Componentes Principais}
+
+A análise de componentes principais (PCA - \textit{Principal
+Component Analysis}) é uma técnica estatística de processamento de
+sinais diretamente ligada à transformação de \textit{Karhunen-Loève}
+\cite{book:pca:2002}. O objetivo da PCA é encontrar uma
+transformação linear onde os sinais projetados sejam
+não-correlacionados e grande parcela da energia (variância). esteja
+concentrada num pequeno número de componentes. Para isso, são
+exploradas informações da estatística de segunda ordem. A análise de
+componentes principais é bastante usada para compactação de
+informação. Para reduzir a dimensão dos dados, seleciona-se apenas
+os componentes de maior energia, de modo que o sinal recuperado a
+partir da informação compactada tenha pequeno erro médio quadrático
+se comparado ao original. A seguir serão desenvolvidos, de forma
+resumida, os fundamentos matemáticos da PCA.
+
+Considerando-se um vetor $\mathbf{x}=[x_1,...,X_N]^T$ aleatório com $N$ elementos,
+assume-se que ele tenha média zero:
+
+\begin{equation}\label{Xm}
+    \mathcal{E}\{\mathbf{x}\}=0
+\end{equation}
+\\
+onde $\mathcal{E}\{.\}$ é o operador esperança. Se $\mathbf{x}$ tem
+média não nula faz-se $\mathbf{x}\leftarrow
+\mathbf{x}-\mathcal{E}\{\mathbf{x}\}$.
+
+A projeção $z_i$ de $\mathbf{x}$ na direção de $\mathbf{v}_i$ pode
+ser expressa por:
+
+\begin{equation}\label{proj1}
+    z_i=\mathbf{v}_i^T\mathbf{x}=\sum_{k=1}^N v_{ki}x_k
+\end{equation}
+\\
+Na transformação por PCA, as componentes $z_i$ ($i=1,...,N$) devem
+ser ortogonais e ordenadas (de modo decrescente) pela variância das
+projeções, sendo, então, $z_1$ a projeção de máxima variância. Para
+tornar a variância independente da norma de $\mathbf{v}_i$, faz-se:
+
+\begin{equation}\label{normaw}
+    \mathbf{v}_i \leftarrow \frac{\mathbf{v}_i}{\| \mathbf{v}_i \|}
+\end{equation}
+\\
+Fazendo-se com que $||\mathbf{v}_i||=1$, torna-se a variância função apenas da direção
+das projeções. A ortogonalidade garante a não-correlação entre as
+componentes.
+
+Como $\mathcal{E}\{\mathbf{x}\}=0$, então $\mathcal{E}\{z_i\}=0$,
+logo a variância da projeção $z_i$ é calculada por
+$\mathcal{E}\{z_i^2\}$. Seguindo a definição da PCA, $z_1$ tem
+máxima variância; logo, $\mathbf{v}_1$ é encontrado pela maximização
+de \cite{book:oja:2001}:
+
+\begin{equation}\label{w1pca}
+    J_1^{PCA}(\mathbf{v}_1)=\mathcal{E}\{z_i^2\}=\mathcal{E}\{(\mathbf{v}_1^T\mathbf{x})^2\}
+    =\mathbf{v}_1^T\mathcal{E}\{\mathbf{x}\mathbf{x}^T\}\mathbf{v}_1=
+    \mathbf{v}_1^T \mathbf{C}_x\mathbf{v}_1,
+\end{equation}
+\\
+onde $\mathbf{C}_x$ é a matriz de covariância de $\mathbf{x}$.
+
+A solução para o problema de maximização da equação (\ref{w1pca}) pode
+ser encontrada na álgebra linear em função dos autovetores
+$\mathbf{e}_1,\mathbf{e}_2,...,\mathbf{e}_N$ da matriz
+$\mathbf{C}_x$. A ordem dos autovetores é tal que os autovalores
+associados satisfazem $d_1>d_2>...>d_N$. Desta forma, tem-se:
+
+\begin{equation}\label{pca1}
+    \begin{array}{ccc}
+      \mathbf{v}_i= \mathbf{e}_i,& & 1\leq i \leq N
+    \end{array}
+\end{equation}
+
+Percebe-se que a PCA de $\mathbf{x}$ e a decomposição por
+autovalores da matriz $\mathbf{C}_x$ (de dimensão $N\times N$) são
+equivalentes. Limitações computacionais na extração das componentes
+principais utilizando as equações (\ref{proj1}) e (\ref{pca1})
+aparecem quando a dimensão $N$ do vetor $\mathbf{x}$ aumenta, pois o
+processo de obtenção dos autovetores se torna proibitivamente lento.
+Nesse caso, uma solução é utilizar métodos iterativos de extração
+das componentes principais através de redes neurais
+\cite{article:oja:pca}.
+
+\subsection{Componentes Principais de Discriminação}
+
+blá
+
+\section{Aplicações em Física de Altas Energias e Áreas Correlatas}
+\label{aplic}
+
+Nesta Seção serão descritas algumas aplicações de técnicas de aprendizado estatístico em Física de Alta Energia (HEP - \textit{High-Energy Physics}).
+
+\subsection{Aplicações de classificadores neurais}
+
+As redes neurais de treinamento supervisionado vêm sendo utilizadas
+para classificação de eventos em sistemas de \textit{trigger} de
+detectores de partículas em física de alta energia desde o início da década de 1990. O primeiro
+\textit{trigger} baseado em redes neurais foi projetado e testado no
+FermiLab para a identificação da trajetória de múons
+\cite{article:lindsey:1992}. O \textit{trigger} neural não foi
+implementado no experimento mas operou em paralelo com o algoritmo
+oficial, obtendo uma resolução 40 vezes melhor.
+
+O primeiro sistema de \textit{trigger} neural operando em um
+experimento de HEP \cite{article:denby:1999} foi implementado no
+segundo nível de filtragem do detector H1 (um dos detectores do
+acelerador HERA, que operou no laboratório DESY na Alemanha)~\cite{article:hera:2008}. No H1, o segundo nível de filtragem foi
+baseado em redes neurais, um classificador neural foi treinado para
+cada canal de filtragem existente no experimento. As redes neurais
+foram implementadas em hardware dedicado para minimizar o tempo de
+resposta~\cite{article:nnphys:1995}.
+
+Exemplos mostram também a aplicação de redes neurais para a análise
+de chuveiros de partículas gerados nos calorímetros. A colaboração
+do \textit{Crystal Barrel}, detector do experimento LEAR do CERN
+\cite{article:crystal:1992}, conseguiu a identificação de fótons e
+píons \cite{article:crystalnn:1993}. No experimento HEGRA
+\cite{article:hegra:1995} (localizado na ilha La Palma, Espanha),
+conseguiu-se a separação entre fótons e hádrons com um classificador
+neural supervisionado. A colaboração do H1 consegui discriminar
+elétrons de píons utilizando os perfis dos calorímetros
+eletromagnéticos e hadrônicos \cite{article:denby:1999}. Um
+\textit{trigger} de segundo nível baseado em redes neurais e
+informação de calorimetria foi proposto para o LHC em
+\cite{seixas:pcd:1995}. No último trabalho, informações do perfil de
+deposição de energia nos calorímetros foram utilizados para produzir
+a identificação de elétrons. Outros exemplos da aplicação de redes
+neurais para classificação de sinais de calorimetria pode ser
+encontrados em \cite{article:nnphys:1995}.
+
+Outras aplicações de redes neurais em HEP também são comuns, entre
+as quais pode-se destacar a identificação do sabor de quarks no
+experimento LEP do CERN~\cite{article:proriol:1995}, o trigger de
+neutrinos do experimento CHOOZ \cite{article:denby:1999}, a
+discriminação gamma-hadron a partir de chuveiros de partículas
+gerados por raios cósmicos \cite{article:bussino:2005}, a medição da
+massa de top-quarks no acelerador Tevatron do Fermilab
+\cite{article:mlhep:2009}, a identificação da massa de eventos de
+raios cósmicos, no Observatório Pierre Auger
+\cite{article:riggi:2007}.
+
+Mesmo com todos os exemplos de aplicações bem sucedidas de redes
+neurais, o seu uso está longe de ser uma unanimidade entre a
+comunidade de HEP. Uma ca\-rac\-terística particular do campo de
+aplicação é que há uma busca pelo entendimento de novos fenômenos,
+que são representados (nos dados simulados, que em geral são
+utilizados no treinamento dos classificadores) por modelos teóricos
+aproximados, que nem sempre estão corretos. Um experimento pode
+concluir que um modelo teórico existente está incompleto ou até
+mesmo errado. O uso de redes neurais é justificado pela facilidade
+de operação em alta dimensão (inúmeras variáveis são utilizadas no
+processo de identificação da física de interesse), porém, a
+dependência dos modelos teóricos é mais difícil de ser verificada ou
+corrigida nos classificadores não-lineares (em comparação com os
+cortes lineares mais usualmente utilizados em HEP)
+\cite{article:denby:1999}. Essa característica particular da HEP
+talvez tenha produzido uma resistência maior ao uso de redes neurais
+em comparação a outros campos da ciência. No caso da aplicação no
+detector H1, toda a colaboração do experimento precisou se convencer
+que as redes não eram uma caixa preta misteriosa e um esforço
+conjunto foi feito no sentido de entender como as redes funcionam e
+como podem ser ajustadas de modo ótimo para cada problema
+\cite{article:nnphys:1995}. De um modo geral, o uso de redes neurais
+está consolidado e bem aceito como ferramenta importante na análise
+\textit{offline}, porém, no trigger online a situação ainda é
+ambígua, com grupos a favor e outros contra
+\cite{article:denby:1999}.
+
+
+\subsection{Aplicações de técnicas estatísticas de extração de ca\-rac\-terísticas}
+
+Mais recentemente, a partir do final da década de 1990, os métodos
+de aprendizado estatístico multi-variável como PCA, ICA e SOM vêm
+sendo aplicados com sucesso em problemas na área de física de alta
+energia. Nestes algoritmos, o aprendizado é feito de modo
+não-supervisionado, e as características estimadas não dependem de
+conhecimento prévio a respeito dos sinais utilizados.
+
+Um dos primeiros trabalhos neste tópico \cite{article:lang:som}, foi
+publicado em 1998 e utiliza mapas auto-organizáveis (SOM) para a
+classificação de eventos de raios gama em astronomia de alta
+energia. Em~\cite{article:som:had:1999}, mapas SOM foram aplicados
+para a separação de bósons W do ruído de fundo composto por jatos
+hadrônicos. No trabalho~\cite{article:lange:som}, o ruído de fundo
+gerado na aceleração do feixe de partículas foi rejeitado a partir de mapas auto-organizáveis
+modificados. Redes SOM também foram utilizadas com sucesso para
+análise, classificação e monitoramento de sinais do telescópio OGLE
+(no Chile)~\cite{article:lucas:som} e para a identificação de
+prováveis assinaturas de bósons de Higgs~\cite{article:aatos:som}.
+
+A análise de componentes principais (PCA) é um técnica de
+descorrelação e compactação bastante utilizada em diversas áreas do
+conhecimento. Em física de alta energia, PCA foi aplicada para a
+seleção de variáveis de entrada de um discriminador neural no
+trabalho \cite{article:proriol:pca}. Em \cite{article:wolter:multi},
+são apresentadas diversas aplicações em HEP onde é utilizada a PCA
+para extração de características e compactação. No trabalho
+\cite{article:akras:pca}, sinais ópticos de nebulosas planetárias
+são processados por PCA com o objetivo de extrair informações a
+respeito de suas características morfológicas. Numa outra aplicação
+em astrofísica, PCA é utilizada, em conjunto com ICA, para a remoção
+do ruído de fundo e de outras fontes de interferência, permitindo
+melhor visualização de dados de ventos e tempestades solares
+\cite{article:cadavid:pcaica}. O trabalho
+\cite{article:herman:2006} utiliza a PCA, de forma segmentada, para
+compactação de sinais de calorimetria do ATLAS, em seguida
+classificadores neurais realizam a decisão elétron/jato, conseguindo
+boa eficiência de classificação.
+
+A análise de componentes independentes (ICA) tem aplicação mais
+recente em HEP, sendo que um dos primeiros trabalhos foi publicado
+em 2005 e descreve a elimi\-na\-ção de ruído na análise de sinais do
+feixe de partículas do experimento BOOSTER do Fermilab
+\cite{article:booster:ica}. Neste trabalho também é realizada uma
+comparação com um sistema semelhante baseado em PCA e a ICA
+apresenta resultados melhores. No trabalho
+\cite{article:fernandez:2005}, ICA é utilizada para análise de dados
+multi-variados em experimentos de física atômica e nuclear. A
+aplicação de ICA proporcionou redução do ruído de fundo, permitindo
+melhor visualização do sinal de interesse. ICA também foi aplicado
+com sucesso para separação de sinais em astrofísica de alta energia
+conforme detalhado a seguir. Em \cite{article:costagli:ica}, ICA foi
+aplicada para a separação de imagens de fontes sobrepostas
+adquiridas pelo satélite Planck da Agência Espacial Européia; no
+trabalho \cite{article:igual:ica} utiliza-se a análise de
+componentes independentes, em substituição aos filtros casados, para
+a decomposição de sinais astrofísicos simulados compostos pela
+combinação de moléculas elementares em estado congelado. Ainda na
+área de astrofísica, nos trabalhos
+\cite{article:cardoso:2005,article:vio:ica} ICA foi aplicado para a
+caracterização da radiação cósmica de fundo em microondas (CMB -
+\textit{Cosmic Microwave Background}). A CMB é uma forma de energia
+eletromagnética que preenche todo o universo e foi inicialmente
+observada em 1965. A CMB é visualizada apenas por rádio-telescópios.
+
+A partir destes exemplos, percebe-se que, apesar da aplicação mais
+recente em física de alta energia e áreas correlatas, diversos
+problemas de extração de ca\-rac\-te\-rísticas, remoção de ruído,
+agrupamento não-supervisionado (\textit{clustering}) e visualização vêm
+sendo resolvidos com a aplicação das técnicas estatísticas de
+processamento não-supervisionado de sinais.
+
+
 

@@ -94,7 +94,7 @@ interação forte) dos quatro tipos de interação é mostrada na Tabela
 \begin{table}[b!]
 \centering
 \caption{Intensidade relativa (em comparação com a interação forte)
-dos diversos tipos de interação.}
+dos diversos tipos de interação.}\vspace{.3cm}
 \begin{tabular}{cc }
   \hline
   % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
@@ -189,7 +189,7 @@ esteja correto.
 \begin{table}[h!]
 \centering
 \caption{Exemplos de valores da massa (em energia equivalente) de
-algumas partículas.}
+algumas partículas.}\vspace{.3cm}
 \begin{tabular}{cc }
   \hline
   % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
@@ -221,7 +221,6 @@ partículas os principais são: CERN, DESY \cite{Homepage:desy}, KEK
 \cite{homepage:slac} e Brookhaven \cite{Homepage:brookhaven},
 localizados respectivamente na Suíça, Alemanha, Japão e os três
 últimos nos Estados Unidos.
-%citar as homepages dos laboratórios
 
 O CERN, fundado em 1954, é atualmente um dos maiores centros de
 pesquisas em física de partículas do mundo. Localizado em Genebra,
@@ -245,14 +244,6 @@ colisão nos centros dos detectores.
 \includegraphics[width=15cm]{cap2_lhc_map2}
 \caption{Mapa de localização dos detectores do LHC.} \label{mapaLHC}
 \end{figure}
-%\cite{Homepage:fotolhc}
-
-%\begin{figure}[h!]
-%\centering
-%\includegraphics[width=16cm]{cap2_lhc}
-%\caption{Diagrama do complexo de aceleradores do CERN com destaque
-%para o LHC e seus detectores.} \label{LHC}
-%\end{figure}
 
 O LHC tem 6 detectores com propósitos diferentes: ATLAS
 \cite{article:ATLAS:2008}, CMS~\cite{article:CMS:2008},
@@ -344,7 +335,6 @@ formam um plano transverso ao feixe. A direção positiva do eixo $x$
 LHC, e o eixo $y$ positivo aponta para cima. O ângulo azimutal é
 obtido a partir de:
 
-%fazer figura mostrando os angulos ...
 \begin{equation}\label{phi}
    \phi=\textrm{arctg}(x/y),
 \end{equation}
@@ -401,8 +391,6 @@ eletromagnético e precisam das camadas hadrônicas para serem
 paradas. Os múons, em geral, são partículas que perdem pouca energia
 nos calorímetros, necessitando de um sistema especial para serem
 detectados, o detector de múons.
-
-%parei aqui 24/06
 
 O ATLAS foi projetado e construído considerando-se as condições
 experimentais produzidas pelas colisões do LHC e com o objetivo de
@@ -518,7 +506,6 @@ calorímetro a resolução em energia para hádrons é pior que para
 elétrons de mesma energia. Isso se deve ao fato de ocorrerem
 flutuações na energia visível (detectável) aos calorímetros
 \cite{book:wigmans:2000}.
-
 
 Como as características dos chuveiros eletromagnéticos e hadrônicos
 são di\-fe\-ren\-tes, na prática, são utilizados tipos de
@@ -731,7 +718,7 @@ na Tabela \ref{tab_fisica}.
 \begin{table}[h!]
 \centering
 \caption{Principais objetos de interesse no ATLAS, extraída de
-\cite{article:HLT1:2003}.}
+\cite{article:HLT1:2003}.}\vspace{.3cm}
 \begin{tabular}{c c }
   \hline
   % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...

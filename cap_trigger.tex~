@@ -54,7 +54,7 @@ já os múons necessitam de um detector específico (o sistema de múons). O sistema
 Considerando os detectores ATLAS e CMS (os dois detectores de propósito geral do LHC), diferentes
 soluções foram utilizadas para resolver o problema de filtragem e aquisição de dados. No ATLAS, o 
 nível 1 transmite para o nível 2 um sub-conjunto da informação total do detector (conhecido como região
-de interesse - ROI, do inglês \textit{region of interest}) que contém as características necessárias para a identificação da assinatura em questão \cite{article:triggerint:2008}. O CMS utiliza um sistema de filtragem de primeiro nível que envia toda a informação do evento ao HLT 
+de interesse - RoI, do inglês \textit{region of interest}) que contém as características necessárias para a identificação da assinatura em questão \cite{article:triggerint:2008}. O CMS utiliza um sistema de filtragem de primeiro nível que envia toda a informação do evento ao HLT 
 \cite{article:cms:trigger:2004}.
 
 A utilização das RoI exige inteligência para selecionar adequadamente a informação necessária, mas
@@ -102,13 +102,13 @@ disponível ao detector. O L1 entrega ao segundo nível a
 localização das áreas onde possivelmente aconteceram eventos de
 interesse, regiões estas conhecidas como RoI (\textit{Regions of
 Interest}). A seleção de eventos no L2 é feita através de
-\textit{software} especializado, rodando em um conjunto de ~700 PCs (Computadores Pessoais)
+\textit{software} especializado, rodando em um conjunto de $\approx$700 PCs (Computadores Pessoais)
 dedicados operando em ambiente de processamento distribuído  \cite{article:triggerint:2008}. Neste nível, o tempo médio para
 tomada de decisão é 40 ms e informações do detector de trajetórias e das câmaras de múons,
 assim como a total resolução dos calorímetros, estão disponíveis. O filtro
 de eventos é o último estágio do sistema de filtragem, recebendo uma
 taxa de eventos mais baixa, tendo latência de alguns segundos
-para tomada de decisão. O EF tem acesso a todo o evento (não somente à RoI como no L2) e utiliza técnicas semelhantes às da reconstrução \textit{offline} operando num conjunto de ~2000 PCs \cite{article:triggerint:2008}.
+para tomada de decisão. O EF tem acesso a todo o evento (não somente à RoI como no L2) e utiliza técnicas semelhantes às da reconstrução \textit{offline} operando num conjunto de $\approx$2000 PCs \cite{article:triggerint:2008}.
 
 A estratégia de processamento sequencial
 permite que os eventos sejam rejeitados na primeira etapa,
@@ -257,14 +257,14 @@ incertezas inerentes aos eventos simulados
 O sistema de filtragem de nível 2 (L2) e o filtro de eventos (EF)
 são responsáveis pela filtragem de alto nível (HLT -
 \textit{high-level trigger}) do ATLAS. O nível 2 deve reduzir a taxa
-de eventos de 75 kHz (podendo chegar até 100 kHz) para ~3,5 kHz,
+de eventos de 75 kHz (podendo chegar até 100 kHz) para $\approx$3,5 kHz,
 tendo um tempo de latência de aproximadamente 10 ms para tomar a
 decisão \cite{TDR:ATLAS:2003}. O EF precisa diminuir a taxa de
 eventos de 3,5 kHz para 200 Hz. Os eventos que forem aceitos pelos
 três níveis de filtragem serão armazenados em mídia permanente para
 futura análise \textit{offline}. O tempo para a tomada de decisão no
 filtro de eventos é de alguns segundos. O HLT é implementado em
-\textit{software} e opera em um conjunto de PCs (~2800) em paralelo \cite{article:triggerint:2008}. Considerando os efeitos conjuntos do segundo nível e do filtro de
+\textit{software} e opera em um conjunto de PCs ($\approx$2800) em paralelo \cite{article:triggerint:2008}. Considerando os efeitos conjuntos do segundo nível e do filtro de
 eventos, a filtragem de alto nível deve reduzir em aproximadamente
 500 vezes a taxa de eventos.
 
@@ -275,7 +275,7 @@ necessárias para a decisão do alto nível dependem do tipo de
 região de interesse fornecida pelo L1, cada uma tendo suas
 próprias características de processamento \cite{TDR:ATLAS:2003}.
 
-O segundo nível opera guiado pelas informações da RoI fornecidas pelo L1. Conforme mostrado na Figura~\ref{fig_l2}, após um evento ser aceito pelo L1, as informações da RoI são descarregadas pelos \textit{drivers} de saída e armazenadas nos ROBs (\textit{Read-Out Buffers}) enquanto aguardam a decisão de nível 2 \cite{TDR:ATLAS:2003}. Com o uso das RoIs, apenas ~2\% da informação do detector é necessária para produzir a decisão do L2, reduzindo consideravelmente a taxa de transmissão na rede de dados do L2 \cite{article:triggerint:2008}. Os algoritmos de seleção de eventos operam nas unidades de processamento do L2 (L2PU - \textit{Level 2 processing units}). O supervisor de nível 2 (L2SV - \textit{Level 2 supervisor}) indica a L2PU que ficará responsável por um determinado evento. As principais
+O segundo nível opera guiado pelas informações da RoI fornecidas pelo L1. Conforme mostrado na Figura~\ref{fig_l2}, após um evento ser aceito pelo L1, as informações da RoI são descarregadas pelos \textit{drivers} de saída e armazenadas nos ROBs (\textit{Read-Out Buffers}) enquanto aguardam a decisão de nível 2 \cite{TDR:ATLAS:2003}. Com o uso das RoIs, apenas $\approx$2\% da informação do detector é necessária para produzir a decisão do L2, reduzindo consideravelmente a taxa de transmissão na rede de dados do L2 \cite{article:triggerint:2008}. Os algoritmos de seleção de eventos operam nas unidades de processamento do L2 (L2PU - \textit{Level 2 processing units}). O supervisor de nível 2 (L2SV - \textit{Level 2 supervisor}) indica a L2PU que ficará responsável por um determinado evento. As principais
 características desejadas para os algoritmos de filtragem no L2 são listadas a seguir~\cite{TDR:ATLAS:2003}:
 \begin{itemize}
   \item alta eficiência ($>$ 95\%) por RoI selecionada no L1;

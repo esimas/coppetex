@@ -1,45 +1,79 @@
 \chapter{Filtragem de Elétrons partir de Informações de Calorimetria no ATLAS}
 
-Neste capítulo serão descritos os principais aspectos do processo de filtragem \texit{online} de elétrons no detector ATLAS. Conhecimento adequado da energia de elétrons e fótons em uma larga faixa de energia (de alguns GeV a poucos TeV) são necessários para medições precisas de fenômenos não descritos pelo modelo padrão e para a busca pela partícula de Higgs no decaimento H$\rightarrow$ZZ*$\rightarrow$4e. A seleção de elétrons é também muito importante para os processos de calibração e alinhamento do detector durante a faze inicial de operação. Com a análise de eventos conhecidos (como por exemplo o decaimento Z$\rightarrow$ee) pode-se gerar informações valiosas para o melhor conhecimento das características do detector \cite{article:imphlttrigeer:2006}. A discriminação destas partículas é baseada nas informações do sistema de calorímetros. Considerando informações do perfil de deposição de energia medido nos calorímetros, os elétrons podem ser confundidos com jatos hadrônicos. A identificação de elétrons é realizada analisando-se o formato transversal do chuveiro e o vazamento para as camadas hadrônicas \cite{article:egtrigeer:2006}. Estes parâmetros variam com a energia da partícula e nem sempre são capazes de produzir alta eficiência de discriminação.
+Neste capítulo serão descritos os principais aspectos do processo de filtragem \textit{online} de elétrons no detector ATLAS. O conhecimento adequado da energia de elétrons e fótons em uma larga faixa (de alguns GeV a poucos TeV) é necessário para medições precisas de fenômenos não descritos pelo modelo padrão e para a busca pela partícula de Higgs no decaimento H$\rightarrow$ZZ*$\rightarrow$4e. A seleção de elétrons é também muito importante para os processos de calibração e alinhamento do detector durante a fase inicial de operação. Com a análise de eventos conhecidos (como por exemplo o decaimento Z$\rightarrow$ee) pode-se gerar informações valiosas para o melhor conhecimento das características do detector \cite{article:imphlttrigeer:2006}. A discriminação destas partículas é baseada nas informações do sistema de calorímetros. Considerando informações do perfil de deposição de energia medido nos calorímetros, os elétrons podem ser confundidos com jatos hadrônicos (que neste caso representam ruído de fundo para o experimento). No LHC, a geração de jatos será bastante intensa (por exemplo, para energia de 40 GeV a relação de produção elétron/jato é da ordem de 10$^{-5}$~\cite{article:ATLAS:2008}) o que tornará difícil a identificação da física de interesse. Tradicionalmente,a identificação de elétrons é realizada analisando-se o formato transversal do chuveiro e o vazamento para as camadas hadrônicas \cite{article:egtrigeer:2006}. Estes parâmetros variam com a energia da partícula e nem sempre são capazes de produzir alta eficiência de discriminação.
+
+\section{Desempenho esperado dos calorímetros}
+
+A precisão nas medições dos calorímetros do ATLAS varia com a energia e a posição de interação. A grande quantidade de material instalado entre o ponto de colisão e o sistema de calorímetros provoca severas perdas na medição da energia de elétrons, conforme mostrado na Figura \ref{cap3_fig_enloss}. Um outro fator que pode provocar medição incorreta no calorímetro eletromagnético é o vazamento de energia além da terceira camada eletromagnética. 
+Devido a características construtivas do detector, na região de transição entre o barril e a tampa do calorímetro (entre $\eta=1.37$ e $\eta=1.52$, conhecido como \textit{crack}), a resolução da energia é bastante degradada.
+
+\begin{figure}[h!] \centering
+\includegraphics[width=9cm]{cap3_enperdida}
+\caption{Energia perdida por elétrons antes do calorímetro, adaptado de~\cite{article:ATLAS:2008}.} \label{cap3_fig_enloss}
+\end{figure}
+
+Numa tentativa de corrigir as medições de energia, fatores de ponderação dependentes de $\eta$ são utilizados na estimativa da energia total do evento~\cite{article:ATLAS:2008}:
+\begin{equation}
+ E=s(\eta)[c(\eta)+w_0(\eta).E_{PS}+E_{EM1}+E_{EM2}+w_3(\eta).E_{EM3}]
+\end{equation}
+sendo $s$ um fator global de correção, $c$ uma tendência (ou bias), $w_0$ corrige a energia perdida antes do calorímetro e $w_3$ corrige o vazamento longitudinal de energia, os termos $E_{PS}$, $E_{EM1}$, $E_{EM2}$ e $E_{EM3}$ representam a energia medida em cada camada do calorímetro eletromagnético (\textit{presampler}, primeira, segunda e terceira camadas eletromagnéticas).
+
+Os erros relativos ($\frac{\sigma_E}{E}$) esperados em função da energia e de $\eta$ para assinaturas de elétrons são mostrados na Figura \ref{cap3_enres}. Percebe-se que a precisão diminui para baixa energia e próximo ao \textit{crack} ($\eta \approx 1.5$). Sempre que o erro de medição aumenta, a caracterização das partículas é prejudicada, provocando queda de desempenho dos algoritmos de filtragem de elétrons.
+
+\begin{figure}[h!]
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap3_enres,width=8cm}}
+ \vspace{.3cm}
+  \centerline{(a)}\medskip
+\end{minipage}
+\hfill
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap3_etares,width=8cm}}
+ \vspace{.3cm}
+  \centerline{(b)}\medskip
+ \end{minipage}
+\caption{Erro relativo do calorímetro na medição da energia de elétrons para diferentes valores de (a) energia e (b)~$\eta$, adaptado de~\cite{article:ATLAS:2008}.} \label{cap3_enres}
+\end{figure}
 
 \section{Filtragem de elétrons no L1}
+
+O primeiro nível de filtragem opera com granularidade reduzida para tornar mais rápido o processo de decisão. Então, no L1, as células dos calorímetros são somadas para formar sinais conhecidos
+como torres de \textit{trigger} (TT). O tamanho das torres de \textit{trigger} é
+diferente para as camadas eletromagnéticas e hadrônicas. No calorímetro eletromagnético, cada TT cobre uma área de 0,1
+$\times$ 0,1 no plano $\eta \times \phi$, já no calorímetro
+hadrônico, cada TT representa uma região de 0,2 $\times$ 0,2 no plano $\eta \times \phi$. 
 
 A filtragem de elétrons no L1 é baseada em cortes lineares nos
 parâmetros do perfil de deposição de energia medido nos
 calorímetros. A definição dos critérios de seleção leva em conta o
 conhecimento das características típicas do perfil de deposição de
 energia de objetos eletromagnéticos (elétrons e fótons), que
-tipicamente apresentam:
+geralmente apresentam:
 \begin{itemize}
-  \item concentração ao redor do ponto de colisão;
+  \item concentração ao redor do ponto de colisão (centro da RoI);
   \item alta concentração de energia na seção eletromagnética;
   \item baixa concentração de energia na seção hadrônica.
 \end{itemize}
 
-Conforme dito anteriormente, no primeiro nível de filtragem as
-células dos calorímetros são somadas para formar sinais conhecidos
-como torres de \textit{trigger} (TT). O tamanho das torres de \textit{trigger} é
-diferente para as camadas eletromagnéticas e hadrônicas. No calorímetro eletromagnético, cada TT cobre uma área de 0,1
-$\times$ 0,1 no plano $\eta \times \phi$, já no calorímetro
-hadrônicos cada TT representa uma região de 0,2 $\times$ 0,2 no plano $\eta \times \phi$. A partir da análise
+A partir da análise
 de uma janela deslizante, cobrindo uma região de 4 $\times$ 4 TT (16
-no total), quatro critérios podem ser utilizados pelo L1 para
+no total), alguns critérios podem ser utilizados pelo L1 para
 definir um possível candidato a elétron:
 \begin{enumerate}
-  \item Haver mais energia na região central de 2 $\times$ 2 TT, do
-  que na periferia;
-  \item As energias das TTs da região central (de 2 $\times$ 2 TT)
-  são somadas duas a duas e utiliza-se o maior valor encontrado, que deve exceder um patamar de energia eletromagnética;
+  \item Os valores de energia das TTs da região central (de 2 $\times$ 2 TT)
+  são somados dois a dois e utiliza-se o maior valor encontrado, que deve exceder um patamar de energia eletromagnética;
   \item O nível de energia na periferia (fora da região central de 2 $\times$ 2
   TT) é calculado para verificar o isolamento em energia do objeto
   em questão;
-  \item A energia nas camadas hadrônicas é somada para verificar o
+  \item A energia depositada nas camadas hadrônicas é somada para verificar o
   vazamento de energia fora do calorímetro eletromagnético (isolamento hadrônico).
 \end{enumerate}
 Os patamares de seleção do nível 1 podem ser ajustados e os
 critérios combinados, a depender das características da física de
 interesse que se deseja estudar num dado momento de operação do
-detector.
+detector. O sistema de filtragem do L1 é implementado utilizando hardware dedicado (através de FPGAs) conforme detalhado em \cite{artigo:L1:implem}.
 
 \begin{figure} \centering
 \includegraphics[width=9cm]{cap2_trigger_tower}
@@ -50,7 +84,12 @@ eletromagnético.} \label{lvl1tt}
 
 \section{Filtragem de elétrons no L2 - Algoritmo T2Calo}
 
-%falar do calo
+\begin{figure} \centering
+\includegraphics[width=13cm]{cap1_esquema}
+\caption{Processo de identificação de elétrons no L2.} \label{fig_esqL2}
+\end{figure}
+
+O processo de discriminação de elétrons no segundo-nível de filtragem \textit{online} do ATLAS, conforme ilustrado na Figura \ref{fig_esqL2}, pode ser dividido em duas etapas distintas, extração de características (onde parâmetros discriminantes são estimados a partir dos dados brutos medidos nos calorímetros) e teste de hipóteses (a discriminação propriamente dita é realizada a partir das características estimadas).
 
 O \textbf{T2Calo} \cite{TDR:ATLAS:2003} é o algoritmo padrão para
 extração de características e teste de hipóteses adotado no
@@ -58,14 +97,15 @@ segundo nível de filtragem do ATLAS. Esse algoritmo utiliza
 informações de calorimetria, sendo capaz de separar objetos
 eletromagnéticos isolados de jatos hadrô\-nicos, utilizando
 parâmetros que estimam a forma dos chuveiros de deposição de
-energia \cite{TDR:ATLAS:2003}.
+energia \cite{TDR:ATLAS:2003}. O T2Calo opera de modo semelhante ao algoritmo de filtragem do L1, porém agora, ao invés de usar as torres de \textit{trigger}, toda a granularidade dos calorímetros está disponível.
 
-O primeiro passo do T2Calo é refinar a posição da RoI fornecida pelo
+O primeiro passo do T2Calo é refinar a posição do centro da RoI fornecida pelo
 L1, encontrando a célula de maior energia na segunda camada do
-calorímetro eletromagnético. Essa posição ($\eta_1 , \phi_1$) será
+calorímetro eletromagnético ($\eta_1 , \phi_1$). Essa posição será
 posteriormente refinada pelo cálculo da posição da média ponderada
-da energia em uma janela de $3 \times 7$ em ($\eta , \phi$). Para a
-seleção dos objetos eletromagnéticos são calculados os parâmetros:
+da energia em uma janela de $3 \times 7$ em ($\eta , \phi$). 
+
+Para a seleção dos objetos eletromagnéticos, o T2Calo estima os parâmetros descritos a seguir:
 \begin{itemize}
   \item $R_{\eta}^{shape}=E_{37}/E_{77}$, onde $E_{nm}$ é a energia
   depositada numa janela de $n \times m$ em torno de ($\eta_1 ,
@@ -87,8 +127,6 @@ seleção dos objetos eletromagnéticos são calculados os parâmetros:
 
 \end{itemize}
 
-%\subsubsection{T2 Hypo}
-
 Considerando que o perfil de deposição de energia dos elétrons é,
 em geral, mais concentrado ao redor do ponto de máximo e que,
 também não espera-se deposição de uma quantidade significativa de
@@ -96,23 +134,41 @@ energia nas camadas hadrônicas por elétrons, percebe-se que, o
 T2Calo opera através de cortes lineares utilizando informações da
 física de interesse.
 
-Técnicas de extração de características e classificação que fazem
-uso do processamento estatístico de sinais e cortes não-lineares no
-espaço de busca foram propostas como uma alternativa ao T2Calo para
-a discriminação elétron/jato no L2. Exem\-plos podem ser
-encontrados em \cite{article:anjos:2006} e
-\cite{article:herman:2006}.
+Embora estas duas características (concentração em torno do centro da RoI e vazamento hadrônico) sejam bastante úteis na identificação de elétrons, uma análise um pouco mais detalhada revela que, pelo fato dos jatos apresentarem uma grande flutuação em suas características, o uso apenas destes parâmetros pode não produzir o desempenho de discriminação desejado. Na Figura \ref{cap3_anwigmans}, considerando a razão $\frac{E_{HAD}}{E_{EM}}$ (num conjunto de eventos simulados), percebe-se que há uma razoável superposição entre elétrons e jatos, principalmente em baixa energia. Comportamento semelhante é verificado na Figura \ref{cap3_anperfil} onde elétrons e jatos são comparados a partir da razão $\frac{E_{P}}{E_{C}}$, sendo $E_{P}$ e $E_{C}$, respectivamente, a energia na periferia e no centro da RoI (a célula mais energética e as imediatamente adjacentes a ela foram considerados como centro da RoI no cálculo de $E_{C}$, a energia depositada no restante da RoI foi somada para produzir $E_{P}$).
 
-Como resultado destes trabalhos, foi implementado na plataforma de
-software do ATLAS o discriminador Neural-Ringer
-\cite{article:anjos:2006,tese:andre:2006}, que utiliza um
-classificador neural supervisionado para o canal elétron-jato no
-L2. Para extração de características, os sinais dos calorímetros
-são formatados em anéis concêntricos de deposição de energia (mais
-detalhes a respeito serão fornecidos no Capítulo 4). Este
-discriminador apresentou desempenho superior ao T2Calo, com tempo de
-processamento que, embora seja maior, atende aos requisitos do nível
-2.
+\begin{figure}[h!]
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap3_Ehad_em20,width=8cm}}
+ \vspace{.3cm}
+  \centerline{(a)}\medskip
+\end{minipage}
+\hfill
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap3_Ehad_em60,width=8cm}}
+ \vspace{.3cm}
+  \centerline{(b)}\medskip
+ \end{minipage}
+\caption{Distribuição de elétrons e jatos quanto à razão $\frac{E_{HAD}}{E_{EM}}$ para energia (a) menor que 20 GeV e (b) maior que 60 GeV.} \label{cap3_anwigmans}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap3_EpEc20,width=8cm}}
+ \vspace{.3cm}
+  \centerline{(a)}\medskip
+\end{minipage}
+\hfill
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap3_EpEc60,width=8cm}}
+ \vspace{.3cm}
+  \centerline{(b)}\medskip
+ \end{minipage}
+\caption{Distribuição de elétrons e jatos quanto à razão $\frac{E_{P}}{E_{C}}$ para energia (a) menor que 20 GeV e (b) maior que 60 GeV.} \label{cap3_anperfil}
+\end{figure}
 
 Num ambiente complexo como o que é gerado a cada colisão do LHC,
 onde o nível de ruído de fundo é extremamente alto e os eventos de
@@ -121,35 +177,28 @@ de filtragem significa menor quantidade de eventos não relevantes
 armazenados mídia permanente, facilitando a análise
 \textit{offline}.
 
-O sucesso obtido com o Neural-Ringer motiva a busca por técnicas de
-pré-processamento que contribuam para a otimização do custo
-computacional, ou para o aumento da eficiência de discriminação.
-Neste contexto, o presente trabalho propõe o uso de técnicas de
-extração de características como Análise de Componentes
-Independentes e métodos correlatos para a compactação da informação
-e extração de características discriminantes. No próximo capítulo,
-as técnicas de aprendizado estatístico para extração de
-características e classificação utilizadas neste trabalho serão
-descritas e comentadas.
+Técnicas de extração de características que fazem
+uso combinado da física de interesse e do processamento estatístico de sinais em conjunto com classificadores capazes de produzir cortes não-lineares no espaço de busca foram propostas como uma alternativa ao T2Calo para
+a discriminação elétron/jato no L2. Estes discriminadores, que apresentam elevada eficiência de discriminação, serão descritos na próxima seção.
 
 \section{Neural Ringer - Alternativa para Filtragem de Elétrons no L2}
+
+Um discriminador alternativo (Neural Ringer) foi proposto em \cite{article:seixas:1996} para o canal elétron/jato no segundo nível de filtragem do ATLAS. Conforme ilustrado na Figura \ref{fig_ringerdiag}, o processo de extração de características compreende um arranjo topológico dos sinais medidos no calorímetro (com a construção de anéis a partir do perfil de deposição de energia), e o teste de hipóteses é realizado por um classificador neural supervisionado (arquitetura Perceptron de Múltiplas Camadas) \cite{haykin:nn:2008}.
+
+\begin{figure} \centering
+\includegraphics[width=12cm]{cap3_ringerdiag}
+\caption{Fluxo de processamento do \textit{Neural Ringer}.} \label{fig_ringerdiag}
+\end{figure}
+
+\subsection{Extração de Características - Anelamento}
 
 Os sinais do perfil de deposição de energia utilizados para
 discriminação elétron/jato são medidos nas sete camadas dos
 calorímetros do ATLAS. Considerando a granularidade de cada camada,
 uma Região de Interesse (RoI) típica (de tamanho 0,4$ \times 0,4$ em
-$\eta \times \phi$) é descrita por aproximadamente 700 células. Um
-procedimento foi proposto em \cite{tese:andre:2006} para compactar
-os sinais dos calorímetros mantendo a interpretação física do perfil
-de deposição de energia. As células sensoras de cada camada são
-formatadas em anéis concêntricos de deposição de energia.
-
-\begin{figure}[th]
-\centering
-\includegraphics[width=6.5cm]{cap3_aneis}
-\caption{Diagrama do processo de construção dos anéis.}
-\label{fig_aneis}
-\end{figure}
+$\eta \times \phi$) é descrita por aproximadamente 1000 células \cite{tese:andre:2006}. Visando compactar
+os sinais dos calorímetros e ao mesmo tempo manter a interpretação física do perfil
+de deposição de energia, as células sensoras de cada camada são agrupadas em anéis concêntricos de deposição de energia.
 
 Considerando um conjunto de células de uma RoI em uma certa camada
 do calorímetro, conforme ilustrado na Figura \ref{fig_aneis}, a
@@ -160,13 +209,18 @@ células pertencentes a um dado anel são somadas produzindo o sinal
 de energia em anéis. É interessante notar que, devido à diferença de
 granularidade entre as camadas do calorímetro, um número diferente
 de anéis é gerado para cada camada. A Tabela \ref{tab_aneis} mostra
-a distribuição dos anéis por camada. A Figura \ref{fig_sig3d} mostra
-os sinais medidos na segunda camada eletromagnética do calorímetro
-respectivamente para um elétron e um jato.
+a distribuição dos anéis por camada. No processo de formatação é considerado um número fixo de anéis por camada, porém, dependendo da posição do centro da RoI, esta pode não estar completa (as células sensoras que compõem os anéis podem não existir caso a partícula interaja próximo a uma extremidade ou descontinuidade do calorímetro), neste caso, assume-se igual a zero as leituras das células que faltam. Outra característica a ser observada é que, em algumas camadas, as células não são quadradas (por exemplo, a EM1 é composta de células que são semelhantes a ranhuras), neste caso, falar em anéis é uma abstração (pois ao final do processo descrito acima não existem realmente anéis de células sensoras). A Figura \ref{fig_sig3d} mostra os sinais medidos na segunda camada eletromagnética do calorímetro,
+respectivamente, para um elétron e um jato e os sinais dos anéis gerados.
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=6.5cm]{cap3_aneis}
+\caption{Diagrama do processo de construção dos anéis.}
+\label{fig_aneis}
+\end{figure}
 
 \begin{table}[th]
-\centering \caption{Número de anéis formados para cada camada do
-calorímetro do ATLAS.}\vspace{0.2cm} \footnotesize
+\centering \caption{Número de anéis formados para cada camada do calorímetro do ATLAS.}\vspace{0.2cm} \footnotesize
 \begin{tabular}{c | c c c c c c c | c}
     \hline
      \textbf{Camada} & \textbf{PS} & \textbf{E1} & \textbf{E2} & \textbf{E3} & \textbf{H0} & \textbf{H1} & \textbf{H0} & \textbf{Total} \\
@@ -191,20 +245,11 @@ calorímetro do ATLAS.}\vspace{0.2cm} \footnotesize
   \vspace{.3cm}
   \centerline{(b)}\medskip
 \end{minipage}
-\hfill \linebreak \caption{Sinais medidos na camada EM2 para (a)
+\hfill \linebreak \caption{Sinais típicos medidos na camada EM2 para (a)
 elétron e (b) jato.} \label{fig_sig3d}
 \end{figure}
 
-A Figura \ref{fig_sig_anel} mostra sinais em anéis respectivamente
-para um elétron típico, um jato típico e um jato com perfil
-semelhante ao de elétrons. Percebe-se que o perfil de deposição
-medido para elétrons apresenta pouco espalhamento (é contido em uma
-pequena região) e é quase totalmente concentrado nas camadas
-eletromagnéticas. Os jatos tipicamente apresentam maior energia
-hadrônica e deposição em uma maior área do calorímetro. Alguns jatos
-(como o mostrado na Figura \ref{fig_sig_anel}-c) podem apresentar
-perfil de deposição de energia semelhante ao de elétrons,
-representando um ruído de fundo de difícil identificação.
+A Figura \ref{fig_sig_anel} mostra sinais em anéis, respectivamente, para um elétron típico, um jato típico e um jato com perfil semelhante ao de elétrons. Percebe-se que o perfil de deposição medido para elétrons apresenta pouco espalhamento (é contido em uma pequena região) e é concentrado nas camadas eletromagnéticas. Os jatos apresentam uma maior variação em suas características físicas. Essas partículas tipicamente depositam uma considerável quantidade de energia nas camadas hadrônicas e possuem perfil de deposição com pouca concentração espacial (ver Figura \ref{fig_sig_anel}-b). Entretanto, alguns jatos (como o mostrado na Figura \ref{fig_sig_anel}-c) podem apresentar perfil de deposição de energia semelhante ao de elétrons. Esse último tipo de assinatura hadrônica representa a maioria dos jatos aprovados como elétrons pelo L1, compondo um ruído de fundo de difícil identificação. 
 
 %\begin{figure}[th]
 %\begin{center}
@@ -216,7 +261,7 @@ representando um ruído de fundo de difícil identificação.
 
 
 \begin{figure}[h!]
-\begin{minipage}[b]{.48\linewidth}
+\begin{minipage}[b]{0.48\linewidth}
   \centering
  \centerline{\epsfig{file=cap3_ele_tip,width=7.5cm}}
   \vspace{.3cm}
@@ -240,16 +285,6 @@ representando um ruído de fundo de difícil identificação.
 (c) jato com perfil semelhante ao de elétrons.} \label{fig_sig_anel}
 \end{figure}
 
-%\begin{figure}[th]
-%\begin{center}
-%\subfigure[]{\label{fig_elet}\epsfig{file=cap3_ele_tip,width=7.5cm,clip=}}
-%\subfigure[]{\label{fig_jett}\epsfig{file=cap3_jet_tip,width=7.5cm,clip=}}
-%\subfigure[]{\label{fig_jete}\epsfig{file=cap3_jet_ele,width=7.4cm,clip=}}
-%\end{center}
-%\caption{Sinais (a) fonte, (b) observados e (c) recuperados através
-%da ICA.}
-%\end{figure}
-
 Antes da utilização nos sistemas de classificação (teste de
 hipótese) os sinais em anéis são normalizados dividindo-se a energia
 de cada anel pela energia total do evento:
@@ -263,82 +298,87 @@ perfil de deposição de energia, tornando o sinal independente do
 ponto de colisão no detector e reduzindo a influência do ruído de
 cada célula.
 
+\subsection{Teste de Hipóteses - Classificador Neural}
+
+Para o processo de discriminação (teste de hipóteses) o Neural Ringer utiliza um classificador neural supervisonado na arquitetura Perceptron de Múltiplas Camadas (MLP \textit{Multi-Layer Perceptron})~\cite{haykin:nn:2008}. Os classificadores neurais são capazes de produzir superfícies não-lineares de separação, aumentando a eficiência de discriminação quando comparados aos classificadores lineares. Devido a sua estrutura paralelamente distribuída, é capaz de responder rapidamente quando um padrão de entrada é aplicado. Considerando as características expostas (alta eficiência e processamento rápido) os classificadores neurais são adequados ao ambiente do segundo nível de filtragem \textit{online} do ATLAS.
+
+\section{Extensões ao Neural Ringer}
+
+Com eficiência mais alta que o algoritmo padrão (T2Calo) e tempo de processamento dentro da janela aceita para o L2, o discriminador Neural Ringer mostrou-se uma opção bastante interessante para o problema da filtragem \textit{online} de elétrons no ATLAS. Trabalhos vêm sendo desenvolvidos com o objetivo de melhorar a eficiência do Neural Ringer com a adição de uma etapa de pré-processamento ao classificador neural (ver Figura \ref{fig_ringerext}), na qual, os sinais em anéis são mapeados em um conjunto (em geral mais compacto) de características discriminantes. A seguir estes trabalhos serão descritos brevemente.
+
+
+\begin{figure} \centering
+\includegraphics[width=15cm]{cap3_ringerext}
+\caption{Fluxo de processamento das extensões ao \textit{Neural Ringer}.} \label{fig_ringerext}
+\end{figure}
+
+
+\subsection{Pré-processamento linear}
+
+Embora a construção dos anéis já seja responsável por uma considerável redução de dimensão (por um fator de 7 vezes), no trabalho \cite{tese:herman:2006} foi realizado um estudo detalhado a respeito da utilização da Análise de Componentes Principais (PCA - \textit{Principal Component Analysis}) para compactação. A PCA foi aplicada aos sinais em anéis e o classificador neural treinado a partir das componentes principais estimadas. Com a PCA, foi alcançado um fator de redução de aproximadamente 4 vezes, mantendo desempenho semelhante ao Neural Ringer tradicional. Visando melhorar explorar toda a granularidade e segmentação disponível aos calorímetros do ATLAS, foi proposta a realização do processo de compactação de modo segmentado (a nível de cada camada do calorímetro).
+
+No trabalho \cite{tese:torres:2010}, foi utilizada uma técnica de compactação mais adequada a problemas de classificação, a PCD (\textit{Principal Components for Discrimination}, ou em português Componentes Principais de Discriminação).  Foi realizado também um estudo referente à aplicação da Análise de Componentes Independentes (ICA \textit{Independent Component Analysis}) como uma etapa adicional de pré-processamento, aparecendo logo após a compactação. Os resultados mostraram que a combinação de ICA e PCD foi capaz de melhorar o desempenho em relação ao Neural Ringer, sem modificar significativamente o tempo de processamento necessário para a tomada de decisão.
+
+
+\subsection{Pré-processamento não-linear}
+
+Conforme descrito no Capítulo 2, os calorímetros, embora projetados para serem detectores lineares na identificação de elétrons, na prática, seu comportamento é não-linear, devido a fenômenos como saturação de sensores, atenuação da luz (em calorímetros cintilantes), etc. Então, talvez uma técnica não-linear de extração de características seja mais adequada ao problema.
+
+Os trabalhos desenvolvidos anteriormente utilizam apenas técnicas lineares como PCA, PCD e ICA. Os estudos desenvolvidos durante a elaboração desta tese tiveram o objetivo de investigar a aplicação da versão não-linear da análise de componentes independentes (NLICA) para extração de características no segundo nível de filtragem \textit{online} de elétrons do ATLAS. Considerando que existem diversos algoritmos para a estimação da NLICA, neste trabalho foram realizados estudos com alguns destes métodos. Os diversos modelos foram comparados considerando eficiência de discriminação e tempo de processamento necessário para produzir a decisão.
+
 \section{Descrição dos dados utilizados}
 
 Nesta seção serão descritas as principais características das bases
-de dados utilizadas. Os sinais simulados utilizados foram obtidos a
-partir de simuladores de Monte Carlo para colisões próton-próton
-[...]. As simulações consideram as características esperadas nas
-colisões do LHC e as especificações do ATLAS. Assim como na operação
-real do detector, é possível aplicar diferentes cortes (formas de
-seleção) de nível 1 nos dados simulados. Os cortes podem mudar de
-acordo com a "física" que se deseja obter. Os dados simulados são
-extremamente importantes para o projeto e teste dos discriminadores,
-uma vez que os simuladores fornecem a identidade (classe) da
-partícula, permitindo o treinamento supervisionado dos algoritmos de
-filtragem. Nos dados experimentais essa informação não está
-disponível. Nesse caso, outras estratégias precisam ser utilizadas
-para avaliar o desempenho dos algoritmos.
+de dados utilizadas. Os sinais podem ser divididos em duas classes, simulados e experimentais:
+
+\begin{itemize}
+\item \textbf{Sinais Simulados}: Em física de altas energias, o projeto dos detectores e sistemas de filtragem é realizado com o auxílio de de simuladores de colisões. Os simuladores utilizam informações a respeito da física (obtidas em experimentos anteriores e em modelos teóricos) e são capazes de reproduzir as características esperadas nas colisões de um acelerador (que ainda não está operacional). Os sinais simulados foram obtidos a partir de simuladores para colisões próton-próton \cite{TDR1:ATLAS:1999} que utilizam a técnica de Monte Carlo \cite{book:montecarlo:2004}. As simulações consideram as características esperadas nas colisões do LHC e as especificações do ATLAS. Assim como na operação real do detector, é possível aplicar diferentes cortes (formas de seleção) de nível 1 nos dados simulados. Nos dados simulados existe a informação do tipo de partícula correspondente a cada assinatura, permitindo o treinamento supervisionado dos algoritmos de filtragem. O conjunto de sinais simulados utilizado neste trabalho é composto por assinaturas de aproximadamente 160.000 elétrons e 100.000 jatos.
+
+\item \textbf{Sinais Experimentais}: São sinais que foram adquiridos no detector ATLAS, na fase de testes e nas primeiras colisões do LHC, realizadas no final de 2009 e início de 2010. Nos dados experimentais não está disponível a informação do tipo de partícula correspondente a cada assinatura (exceto no caso dos sinais produzidos por raios cósmicos). Nesse caso, outras estratégias precisam ser utilizadas para avaliar o desempenho dos algoritmos. É comum fazer uma comparação com a identificação obtida no processo de reconstrução \textit{offline}.
+\end{itemize}
 
 \subsection{Sinais simulados - Corte E10 \textit{loose}}
 
-Neste conjunto de sinais, a seleção de nível 1 realiza apenas um
+A seleção de nível 1 a partir do Corte E10 \textit{loose} realiza apenas um
 corte linear na energia total do evento, deixando passar somente
 eventos com energia da ordem de 10 GeV ou maior (os eventos de baixa
 energia são eliminados). Este corte é mais utilizado para teste do
 sistema de filtragem no período inicial de operação do detector,
 pois é pouco provável a identificação de assinaturas relevantes, uma
-vez que uma grande quantidade de eventos de falso-alarme é aprovada
-pelo nível 1.
+vez que, uma grande quantidade de eventos de falso-alarme é aprovada
+pelo nível 1. Considerando a base de dados simulada, após esse corte, chegaram ao nível 2 aproximadamente
 
 \begin{figure}[h!]
 \begin{minipage}[b]{.48\linewidth}
   \centering
  \centerline{\epsfig{file=cap4n_e10_ele_et,width=8cm}}
-  \vspace{.3cm}
-  \centerline{(a)}\medskip
 \end{minipage}
 \hfill
-\begin{minipage}[b]{0.48\linewidth}
-  \centering
- \centerline{\epsfig{file=cap4n_e10_ele_eta,width=8cm}}
-  \vspace{.3cm}
-  \centerline{(b)}\medskip
-\end{minipage}
-\hfill \linebreak
-\begin{minipage}[b]{0.98\linewidth}
-  \centering
- \centerline{\epsfig{file=cap4n_e10_ele_phi,width=8cm}}
-  \vspace{.3cm}
-  \centerline{(c)}\medskip
-\end{minipage}
-\caption{Distribuição das assinaturas de elétrons aprovadas pelo corte E10-\textit{loose} em (a) energia, (b) $\eta$ e
-(c) $\phi$.} \label{fig_e10_dist}
-\end{figure}
-
-\begin{figure}[h!]
 \begin{minipage}[b]{.48\linewidth}
   \centering
  \centerline{\epsfig{file=cap4n_e10_jat_et,width=8cm}}
-  \vspace{.3cm}
-  \centerline{(a)}\medskip
-\end{minipage}
+ \end{minipage}
+\hfill \linebreak
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e10_ele_eta,width=8cm}}
+ \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\linewidth}
   \centering
  \centerline{\epsfig{file=cap4n_e10_jat_eta,width=8cm}}
-  \vspace{.3cm}
-  \centerline{(b)}\medskip
-\end{minipage}
+ \end{minipage}
 \hfill \linebreak
-\begin{minipage}[b]{0.98\linewidth}
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e10_ele_phi,width=8cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
   \centering
  \centerline{\epsfig{file=cap4n_e10_jat_phi,width=8cm}}
-  \vspace{.3cm}
-  \centerline{(c)}\medskip
 \end{minipage}
-\caption{Distribuição das assinaturas de jatos aprovadas pelo corte E10-\textit{loose} em (a) energia, (b) $\eta$ e
-(c) $\phi$.} \label{fig_e10_dist}
+\caption{Distribuição em energia, $\eta$ e $\phi$ das assinaturas de elétrons (esquerda) e jatos (direita) aprovadas pelo corte de primeiro nível E10-\textit{loose}.} \label{fig_e10_dist}
 \end{figure}
 
 \subsection{Sinais simulados - Corte E15i}
@@ -367,58 +407,41 @@ fase operação do detector.
 \begin{minipage}[b]{.48\linewidth}
   \centering
  \centerline{\epsfig{file=cap4n_e15_ele_et,width=8cm}}
-  \vspace{.3cm}
-  \centerline{(a)}\medskip
 \end{minipage}
 \hfill
-\begin{minipage}[b]{0.48\linewidth}
-  \centering
- \centerline{\epsfig{file=cap4n_e15_ele_eta,width=8cm}}
-  \vspace{.3cm}
-  \centerline{(b)}\medskip
-\end{minipage}
-\hfill \linebreak
-\begin{minipage}[b]{0.98\linewidth}
-  \centering
- \centerline{\epsfig{file=cap4n_e15_ele_phi,width=8cm}}
-  \vspace{.3cm}
-  \centerline{(c)}\medskip
-\end{minipage}
-\caption{Distribuição das assinaturas de elétrons aprovadas pelo corte E15i em (a) energia, (b) $\eta$ e
-(c) $\phi$.} \label{fig_e15_dist_ele}
-\end{figure}
-
-\begin{figure}[h!]
 \begin{minipage}[b]{.48\linewidth}
   \centering
  \centerline{\epsfig{file=cap4n_e15_jat_et,width=8cm}}
-  \vspace{.3cm}
-  \centerline{(a)}\medskip
-\end{minipage}
+ \end{minipage}
+\hfill \linebreak
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e15_ele_eta,width=8cm}}
+ \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\linewidth}
   \centering
  \centerline{\epsfig{file=cap4n_e15_jat_eta,width=8cm}}
-  \vspace{.3cm}
-  \centerline{(b)}\medskip
-\end{minipage}
+ \end{minipage}
 \hfill \linebreak
-\begin{minipage}[b]{0.98\linewidth}
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e15_ele_phi,width=8cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
   \centering
  \centerline{\epsfig{file=cap4n_e15_jat_phi,width=8cm}}
-  \vspace{.3cm}
-  \centerline{(c)}\medskip
 \end{minipage}
-\caption{Distribuição das assinaturas de jatos aprovadas pelo corte E15i em (a) energia, (b) $\eta$ e
-(c) $\phi$.} \label{fig_e15_dist_jat}
+\caption{Distribuição em energia, $\eta$ e $\phi$ das assinaturas de elétrons (esquerda) e jatos (direita) aprovadas pelo corte de primeiro nível E15i.} \label{fig_e10_dist}
 \end{figure}
 
-\subsection{Raios Cósmicos}
+\subsection{Sinais Medidos no ATLAS - Raios Cósmicos}
 
 Os raios cósmicos são (descrever e justificar porque contaminam o
 detector) , gráficos eta, phi e energia
 
-\subsection{Sinais Reais de Colisões do LHC}
+\subsection{Sinais Medidos no ATLAS - Colisões do LHC}
 
 Nestes sinais não existe a caracterização prévia do tipo de
 partícula (como havia no caso dos sinais simulados). Para a

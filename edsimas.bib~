@@ -6,7 +6,7 @@
   Author = {E. F. {Simas Filho} and J. M. Seixas and L. P. Caloba},
   Booktitle = {Independent Component Analysis And Signal Separation, 8th International Conference},
   Editor = {T. Adali and C. Jutten and J. Romano and A. Barros},
-  Month = {March},
+  Month = {Março},
   Pages = {718-725},
   Publisher = {Springer},
   Series = {Lecture Notes In Conputer Science},
@@ -40,8 +40,8 @@ detector},
   YEAR =         {2008},
   volume =       {1},
   pages =        {1-5},
-  address =      {Lausanne, Switzerland},
-  month =        {August},
+  address =      {Lausanne, Suiça},
+  month =        {Agosto},
 }
 
 
@@ -52,8 +52,8 @@ detector},
   YEAR =         {2008},
   volume =       {1},
   pages =        {3005-3008},
-  address =      {Seatle, US},
-  month =        {May},
+  address =      {Seatle, Estados Unidos},
+  month =        {Maio},
 }
 
 @ARTICLE{article:simas:2007:cbrn,
@@ -69,7 +69,7 @@ detector},
   TITLE =        {Independent Component Analysis Applied for Online Filtering on a High Events Rate and Segmented Information Environment},
   JOURNAL =      {Proceedings of the VIII Brazilian Conference on Neural Networks - CBRN},
   YEAR =         {2007},
-  month =        {October},
+  month =        {Outubro},
 }
 
 @ARTICLE{article:simas:2007:PoS,
@@ -77,7 +77,7 @@ detector},
   TITLE =        {Self-organized mapping of calorimetry information for high efficient online electron/jet identification in ATLAS},
   JOURNAL =      {Proceedings of Science, PoS (ACAT2007) 055},
   YEAR =         {2007},
-  month =        {October},
+  month =        {Outubro},
 }
 
 @ARTICLE{article:simas:2007:isda:hist,
@@ -85,7 +85,7 @@ detector},
   TITLE =        {Time Delay Neural Network Applied for Compensation of Temperature Sensors Nonlinear Dynamics on Hysteresis Measurements},
   JOURNAL =      {Proceedings of the 7th International Conference on Intelligent Systems Design and Applications, Rio de Janeiro, Brazil},
   YEAR =         {2007},
-  month =        {October},
+  month =        {Outubro},
   pages =        {653-658},
 }
 
@@ -95,7 +95,7 @@ detector},
   TITLE =        {Segmented Independent Component Analysis for online filtering using highly segmented detectors},
   JOURNAL =      {Proceedings of the 7th International Conference on Intelligent Systems Design and Applications},
   YEAR =         {2007},
-  month =        {October},
+  month =        {Outubro},
   pages =        {659-664},
 }
 
@@ -161,7 +161,7 @@ detector},
   TITLE =        {Monitoramento de Comutadores de Derivação em Transformadores Utilizando Análise de Vibração},
   JOURNAL =      {XV Congresso Brasileiro de Automática-CBA2004, Gramado-RS},
   YEAR =         {2004},
-  month =        {September}
+  month =        {Setembro}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% RevisÃ£o NN + ICA + PCA em FÃ­sica %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -224,7 +224,7 @@ detector},
   volume =       {1},
   number =       {1},
   pages =        {1-11},
-  address =      {Oberammergan, Germany},
+  address =      {Oberammergan, Alemanha},
 }
 
 @ARTICLE{article:crystal:1992,
@@ -245,7 +245,7 @@ detector},
   volume =       {1},
   number =       {1},
   pages =        {1-8},
-  address =      {Pisa, Italy},
+  address =      {Pisa, Itália},
 }
 
 @ARTICLE{article:proriol:1995,
@@ -328,7 +328,7 @@ detector},
   volume =       {1083},
   number =       {1},
   pages =        {201-206},
-  address =      {Rinberg Castle, Germany},
+  address =      {Rinberg Castle, Alemanha},
 }
 
 @ARTICLE{article:proriol:pca,
@@ -416,7 +416,7 @@ detector},
   TITLE =        {A Modified {ICA} Approach for Signal Separation in {CMB} maps},
   JOURNAL =      {Astronomy and Astrophysics Journal},
   YEAR =         {2008},
-  month =        {February},
+  month =        {Fevereiro},
   volume =       {802},
   pages =        {1-12},
 }
@@ -445,8 +445,8 @@ detector},
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  TRIGGER NOVOS  %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 @INPROCEEDINGS{article:trigconf:2009,
-  AUTHOR =       {S. Kai and W. Qi and D. Mingli},
-  TITLE =        {Approach to nonlinear blind source separation based on niche genetic algorithm},
+  AUTHOR =       {C. Padilla},
+  TITLE =        {The ATLAS Trigger System},
   BOOKTITLE =    {Proceedings of the 16th IEEE-NPSS Real Time Conference},
   YEAR =         {2009},
   volume =       {1},
@@ -476,7 +476,7 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   pages =        {2839-2843},
 }
 
-@ARTICLE{article:hlttrigeer:2006,
+@ARTICLE{article:imphlttrigeer:2006,
   AUTHOR =       {Carlo Schiavi},
   TITLE =        {Implementation and Performance of the High Level Trigger Electron and Photon Selection for the ATLAS Experiment at the LHC},
   JOURNAL =      {IEEE Transactions on Nuclear Science},
@@ -486,6 +486,16 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   pages =        {1424-1429},
 }
 
+
+@ARTICLE{artigo:L1:implem,
+  AUTHOR =       {J. Garvey and S. Hillier and G. Mahout and R. Staley and P. Watkins and A. Watson and R. Achenbach and P. Hanke},
+  TITLE =        {Use of an {FPGA} to identify electromagnetic clusters and isolated hadrons in the {ATLAS} level-1 calorimeter trigger},
+  JOURNAL =      {Nuclear Instruments and Methods in Physics Research A},
+  YEAR =         {2003},
+  volume =       {512},
+  number =       {1},
+  pages =        {400-432},
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Nonlinear ICA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -506,7 +516,7 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   YEAR =         {2000},
   volume =       {3},
   pages =        {634-637},
-  address =      {Geneva, Switzerland},
+  address =      {Genebra, Suiça},
 }
 
 @INPROCEEDINGS{article:lan:2005,
@@ -518,8 +528,8 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   volume =       {1},
   number =       {1},
   pages =        {3-8},
-  address =      {Connecticut, USA},
-  month =        {September},
+  address =      {Connecticut, Estados Unidos},
+  month =        {Setembro},
 }
 
 @INBOOK{article:lan:2006,
@@ -571,7 +581,7 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   TITLE =        {Applied Functional Analysis},
   PUBLISHER =    {Dover},
   YEAR =         {1985},
-  address =      {West Sussex, UK},
+  address =      {West Sussex, Reino Unido},
 }
 
 @INPROCEEDINGS{article:gao:nl2005,
@@ -603,7 +613,7 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   pages =        {75-92},
   PUBLISHER =    {Springer},
   YEAR =         {2000},
-  adress =       {London, UK},
+  adress =       {London, Reino Unido},
 }
 
 @INPROCEEDINGS{article:valpola:2000ica,
@@ -613,7 +623,7 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   YEAR =         {2000},
   volume =       {1},
   pages =        {351-356},
-  address =      {Helsinki, Finland},
+  address =      {Helsinki, Finlândia},
 }
 
 @INPROCEEDINGS{article:honkela:2004ica,
@@ -623,7 +633,7 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   YEAR =         {2004},
   volume =       {3},
   pages =        {2169-2174},
-  address =      {Budapest, Hungary},
+  address =      {Budapest, Hungria},
 }
 
 @ARTICLE{article:honkela:2007,
@@ -643,8 +653,8 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   YEAR =         {2004},
   volume =       {3},
   pages =        {2181-2186},
-  address =      {Budapest, Hungary},
-  month =        {July},
+  address =      {Budapest, Hungria},
+  month =        {Julho},
 }
 
 
@@ -675,7 +685,7 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   YEAR =         {2000},
   volume =       {1},
   pages =        {837-842},
-  address =      {Zakopane, Polland},
+  address =      {Zakopane, Polônia},
 }
 
 
@@ -698,7 +708,7 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   pages =        {145-160},
   PUBLISHER =    {Springer-Verlag},
   YEAR =         {2000},
-  adress =       {London, UK},
+  adress =       {London, Reino Unido},
 }
 
 
@@ -733,7 +743,7 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   TITLE =        {Advances in Nonlinear Blind Source Separation},
   BOOKTITLE =    {Proceedings of the 4th Int. Symp. on Independent Component Analysis and Blind Signal Separation},
   YEAR =         {2003},
-  address =      {Nara, Japan},
+  address =      {Nara, Japão},
   volume =       {1},
   pages =        {245-256},
 }
@@ -796,7 +806,7 @@ Existence and Uniqueness results},
   pages =        {93-121},
   PUBLISHER =    {Springer},
   YEAR =         {2000},
-  adress =       {London, UK},
+  adress =       {London, Reino Unido},
 }
 
 @ARTICLE{article:puntonet:2003,
@@ -813,7 +823,7 @@ Existence and Uniqueness results},
   YEAR =         {1997},
   volume =       {1},
   pages =        {541-546},
-  address =      {Lausanne, Switzerland},
+  address =      {Lausanne, Suiça},
 }
 
 
@@ -835,7 +845,7 @@ Existence and Uniqueness results},
   volume =       {1},
   pages =        {1207-1210},
   address =      {Hong Kong},
-  month =        {September},
+  month =        {Setembro},
 }
 
 @ARTICLE{article:jutten:2004,
@@ -884,7 +894,7 @@ Existence and Uniqueness results},
   BOOKTITLE =    {Proceedings of the Int. Workshop Independent Component Anal. Blind Signal Separation},
   YEAR =         {2000},
   pages =        {521-525},
-  address =      {Helsinki, Finland},
+  address =      {Helsinki, Finlândia},
 }
 
 @INPROCEEDINGS{article:fobi:1989,
@@ -894,7 +904,7 @@ Existence and Uniqueness results},
   YEAR =         {1989},
   volume =       {4},
   pages =        {2109-2112},
-  address =      {Glasgow, UK},
+  address =      {Glasgow, Reino Unido},
 }
 
 @BOOK{book:QCD:2003,
@@ -903,7 +913,7 @@ Existence and Uniqueness results},
   PUBLISHER =    {Cambrige University Press},
   YEAR =         {2003},
   series =       {Cambridge Monographs on Particle Physics, Nuclear Physics and Cosmology},
-  address =      {Cambridge-UK},
+  address =      {Cambridge-Reino Unido},
 }
 
 @BOOK{book:fernow:1986,
@@ -911,7 +921,7 @@ Existence and Uniqueness results},
   TITLE =        {Introduction to Experimental Particle Physics},
   PUBLISHER =    {Cambrige University Press},
   YEAR =         {1986},
-  address =      {Cambridge-UK},
+  address =      {Cambridge-Reino Unido},
 }
 
 @BOOK{book:martin:2006,
@@ -919,7 +929,7 @@ Existence and Uniqueness results},
   TITLE =        {Nuclear and Particle Physics, An Introduction},
   PUBLISHER =    {Wiley},
   YEAR =         {2006},
-  address =      {West Sussex, UK},
+  address =      {West Sussex, Reino Unido},
 }
 
 @BOOK{book:feynman:1977,
@@ -928,7 +938,7 @@ Existence and Uniqueness results},
   PUBLISHER =    {Addison-Wesley},
   YEAR =         {1977},
   volume =       {Chapter 2 - Basic Physics},
-  address =      {US},
+  address =      {Estados Unidos},
 }
 
 @BOOK{book:mist:2003,
@@ -936,7 +946,7 @@ Existence and Uniqueness results},
   TITLE =        {Facts and Mysteries in Elementary Particle Physics},
   PUBLISHER =    {World Scientific},
   YEAR =         {2003},
-  address =      {New Jersey, US},
+  address =      {Nova Jersey, Estados Unidos},
 }
 
 @BOOK{book:lhc:2008,
@@ -944,7 +954,7 @@ Existence and Uniqueness results},
   TITLE =        {Perspectives on LHC Physics},
   PUBLISHER =    {World Scientific},
   YEAR =         {2008},
-  address =      {Singapore},
+  address =      {Singapura},
  }
 
 
@@ -988,7 +998,7 @@ Existence and Uniqueness results},
   YEAR =         {2006},
   volume =       {53},
   number =       {3},
-  month =        {June},
+  month =        {Junho},
 }
 % AUTHOR =       {Andre {dos Anjos} and N. Ellis and J. Haller},
 
@@ -1003,10 +1013,10 @@ Existence and Uniqueness results},
 }
 
 @inproceedings{ica:clas:2004,
-  Address = {Charleston, USA},
+  Address = {Charleston, Estados Unidos},
   Author = {V. Sanchez Poblador and Enric Monte Moreno and Jordi SolÃ© Casals},
   Booktitle = {Ind. Comp. Analysis And Signal Separation, 5th Int. Conf.},
-  Month = {September},
+  Month = {Setembro},
   Pages = {1165-1172},
   Publisher = {Springer},
   Series = {LNCS},
@@ -1023,11 +1033,11 @@ Existence and Uniqueness results},
   Year = {2005}}
 
 @inproceedings{app:nlica:spee,
-  Address = {Charleston, USA},
+  Address = {Charleston, Estados Unidos},
   Author = {Chen Wei and Li Chin Khor and Wai Lok Woo and Satnam Singh Dlay},
   Booktitle = {Independent Component Analysis And Signal Separation, 8th International Conference},
   Editor = {J. Rosca and D. Erdogmus and J. C. Principe and S. Haykin},
-  Month = {March},
+  Month = {Março},
   Pages = {773-780},
   Publisher = {Springer},
   Series = {Lecture Notes In Conputer Science},
@@ -1039,7 +1049,7 @@ Existence and Uniqueness results},
   Author = {L. T. Duarte and C. Jutten and S. Moussaoui},
   Booktitle = {Independent Component Analysis And Signal Separation, 8th International Conference},
   Editor = {T. Adali and C. Jutten and J. Romano and A. Barros},
-  Month = {March},
+  Month = {Março},
   Pages = {662-669},
   Publisher = {Springer},
   Series = {Lecture Notes In Conputer Science},
@@ -1047,11 +1057,11 @@ Existence and Uniqueness results},
   Year = {2009}}
 
 @inproceedings{app:ica:und1,
-  Address = {Charleston, USA},
+  Address = {Charleston, Estados Unidos},
   Author = {M. Syskind and D. L. Wang and J. Larsen and U. Kjem},
   Booktitle = {Independent Component Analysis And Signal Separation, 8th International Conference},
   Editor = {J. Rosca and D. Erdogmus and J. C. Principe and S. Haykin},
-  Month = {March},
+  Month = {Março},
   Pages = {674-681},
   Publisher = {Springer},
   Series = {Lecture Notes In Conputer Science},
@@ -1063,7 +1073,7 @@ Existence and Uniqueness results},
   Author = {M. Natora and F. Franke and M. Munk and K. Obermayer},
   Booktitle = {Independent Component Analysis And Signal Separation, 8th International Conference},
   Editor = {T. Adali and C. Jutten and J. Romano and A. Barros},
-  Month = {March},
+  Month = {Março},
   Pages = {459-467},
   Publisher = {Springer},
   Series = {Lecture Notes In Conputer Science},
@@ -1084,7 +1094,7 @@ Existence and Uniqueness results},
   PUBLISHER =    {Dover},
   YEAR =         {2008},
   edition =      {1st},
-  address =      {West Sussex, UK},
+  address =      {West Sussex, Reino Unido},
 }
 
 
@@ -1094,7 +1104,7 @@ Existence and Uniqueness results},
   PUBLISHER =    {Prentice Hall},
   YEAR =         {2008},
   edition =      {3rd},
-  address =      {New Jersey, US},
+  address =      {Nova Jersey, Estados Unidos},
 }
 
 @BOOK{kuncheva:comb:2004,
@@ -1102,7 +1112,7 @@ Existence and Uniqueness results},
   TITLE =        {Combining Pattern Classifiers, Methods and Algorithms},
   PUBLISHER =    {Wiley},
   YEAR =         {2004},
-  address =      {New York, US},
+  address =      {Nova York, Estados Unidos},
 }
 
 @ARTICLE{article:ALICE:2008,
@@ -1193,7 +1203,7 @@ Existence and Uniqueness results},
   volume =       {53},
   number =       {5},
   pages =        {2839-2843},
-  month =        {October},
+  month =        {Outubro},
 }
 
 %  AUTHOR =       {A. Gesualdi Mello and A. dos Anjos and S. Armstrong and J. T. M. Baines and C. P. Bee and M. Biglietti and J. A. Bogaerts and
@@ -1215,7 +1225,7 @@ Existence and Uniqueness results},
   volume =       {53},
   number =       {5},
   pages =        {1275-1281},
-  month =        {June},
+  month =        {Junho},
 }
 
 
@@ -1235,7 +1245,7 @@ Existence and Uniqueness results},
   TITLE =        {CP violation},
   PUBLISHER =    {Cambridge University Press},
   YEAR =         {1999},
-  address =      {Cambridge, UK},
+  address =      {Cambridge, Reino Unido},
 }
 
 @MISC{article:susy:1996,
@@ -1243,11 +1253,11 @@ Existence and Uniqueness results},
   title =        {Introduction to Supersymmetry},
   howpublished = {Lectures at the Theoretical Advanced Study Institute (TASI 96):Fields, Strings, and Duality},
   year =         {1996},
-  month =        {June},
+  month =        {Junho},
   publisher =    {{FERMILAB} Publications},
   volume =       {445-T},
   pages =        {1-67},
-  address =      {Batavia, US},
+  address =      {Batavia, Estados Unidos},
 }
 
 %@ARTICLE{article:susy:1996,
@@ -1257,7 +1267,7 @@ Existence and Uniqueness results},
 %  YEAR =         {1996},
 %  volume =       {445-T},
 %  pages =        {1-67},
-%  address =      {Batavia, US},
+%  address =      {Batavia, Estados Unidos},
 %}
 
 @ARTICLE{article:darkm:2005,
@@ -1284,7 +1294,7 @@ Existence and Uniqueness results},
   TITLE =        {Calorimetry: Energy Measurement in Particle Physics},
   PUBLISHER =    {Clarendon Press},
   YEAR =         {2000},
-  address =      {Gloucestershire, UK},
+  address =      {Gloucestershire, Reino Unido},
 }
 
 @ARTICLE{article:elecalo:2003,
@@ -1312,7 +1322,7 @@ Existence and Uniqueness results},
   TITLE =        {Neural Discriminating Analysis for a Second-Level Trigger System},
   BOOKTITLE =    {Proceedings of the International Conference on Computing in High Energy Physics (CHEP95)},
   YEAR =         {1995},
-  month =        {September},
+  month =        {Setembro},
   address =      {Rio de Janeiro, Brazil},
 }
 
@@ -1322,7 +1332,7 @@ Existence and Uniqueness results},
   BOOKTITLE =    {Proceedings of the 6th IEEE International Conference on Electronics, Circuits and Systems (ICECS)},
   YEAR =         {1999},
   pages =        {415-418},
-  month =        {September},
+  month =        {Setembro},
   address =      {Pafos, Cyprus},
 }
 
@@ -1373,7 +1383,7 @@ Existence and Uniqueness results},
   volume =       {78},
   number =       {9},
   pages =        {1464-1480},
-  month =        {September},
+  month =        {Setembro},
 }
 
 @ARTICLE{article:som:oja:1996,
@@ -1384,7 +1394,7 @@ Existence and Uniqueness results},
   volume =       {84},
   number =       {10},
   pages =        {1358-1384},
-  month =        {October},
+  month =        {Outubro},
 }
 
 
@@ -1400,7 +1410,7 @@ Existence and Uniqueness results},
   TITLE =        {Nuclear and Particle Physics},
   PUBLISHER =    {Wiley},
   YEAR =         {2006},
-  address =      {New York, US},
+  address =      {Nova York, Estados Unidos},
 }
 
 @ARTICLE{article:rprop:1993,
@@ -1434,7 +1444,7 @@ Techniques in Physics Research},
   TITLE =        {Nuclear and Particle Physics},
   PUBLISHER =    {Wiley},
   YEAR =         {2006},
-  address =      {New York, US},
+  address =      {Nova York, Estados Unidos},
 }
 
 
@@ -1443,7 +1453,7 @@ Techniques in Physics Research},
   TITLE =        {Título tese torres},
   SCHOOL =       {COPPE/UFRJ},
   YEAR =         {2010},
-  month =        {Dezembro},
+  month =        {Março},
 }
 
 @PHDTHESIS{tese:andre:2006,
@@ -1456,7 +1466,7 @@ Techniques in Physics Research},
 
 @PHDTHESIS{tese:herman:2006,
   AUTHOR =       {Herman Pessoa Lima Junior},
-  TITLE =        {Monitoração online e distribuído para um ambiente com alta taxa de eventos e fina segmentação},
+  TITLE =        {Monitoração online e distribuída para um ambiente com alta taxa de eventos e fina segmentação},
   SCHOOL =       {Universidade Federal do Rio de Janeiro},
   YEAR =         {2006},
 }
@@ -1474,7 +1484,7 @@ Techniques in Physics Research},
   PUBLISHER =    {Springer},
   YEAR =         {2002},
   edition =      {2nd},
-  address =      {New York, US},
+  address =      {Nova York, Estados Unidos},
 }
 
 @BOOK{book:chung:2001,
@@ -1525,7 +1535,7 @@ Techniques in Physics Research},
   PUBLISHER =    {Springer},
   YEAR =         {2001},
   edition =      {3rd},
-  address =      {Berlin, Germany},
+  address =      {Berlin, Alemanha},
 }
 
 
@@ -1555,7 +1565,7 @@ with noisy data},
   TITLE =        {Adaptive Blind Signal and Image Processing},
   PUBLISHER =    {John Willey and Sons},
   YEAR =         {2002},
-  address =      {West Sussex, UK},
+  address =      {West Sussex, Reino Unido},
 }
 
 
@@ -1566,7 +1576,7 @@ with noisy data},
   YEAR =         {2002},
   volume =       {2},
   pages =        {1681-1684},
-  address =      {Orlando, US},
+  address =      {Orlando, Estados Unidos},
 }
 
 
@@ -1599,7 +1609,7 @@ Joint Likelihood},
   YEAR =         {1984},
   volume =       {Part 1},
   pages =        {4-29},
-  month =        {April},
+  month =        {Abril},
 }
 
 
@@ -1611,7 +1621,7 @@ Joint Likelihood},
   volume =       {28},
   number =       {2},
   pages =        {157-166},
-  month =        {March},
+  month =        {Março},
 }
 
 
@@ -1622,7 +1632,7 @@ Joint Likelihood},
   YEAR =         {1990},
   volume =       {1},
   pages =        {545-550},
-  address =      {San Diego, US},
+  address =      {San Diego, Estados Unidos},
 }
 
 
@@ -1641,7 +1651,7 @@ Joint Likelihood},
   PUBLISHER =    {Wiley},
   YEAR =         {2000},
   edition =      {2nd},
-  address =      {New York, US},
+  address =      {Nova York, Estados Unidos},
 }
 
 
@@ -1663,7 +1673,7 @@ Joint Likelihood},
   volume =       {27},
   number =       {6},
   pages =        {379-423},
-  month =        {July},
+  month =        {Julho},
 }
 
 
@@ -1675,7 +1685,7 @@ Joint Likelihood},
   volume =       {140},
   number =       {6},
   pages =        {362-370},
-  month =        {November},
+  month =        {Novembro},
 }
 
 @ARTICLE{article:Cichocki:1996,
@@ -1685,7 +1695,7 @@ Joint Likelihood},
   YEAR =         {1996},
   volume =       {43},
   number =       {11},
-  month =        {November},
+  month =        {Novembro},
 }
 
 @ARTICLE{article:hyvarinen:1998,
@@ -1723,7 +1733,7 @@ Joint Likelihood},
   TITLE =        {Elements of Information Theory},
   PUBLISHER =    {Wiley},
   YEAR =         {1991},
-  address =      {New York, US},
+  address =      {Nova York, Estados Unidos},
 }
 
 @ARTICLE{article:hyvarinen:2000,
@@ -1743,7 +1753,7 @@ Joint Likelihood},
   YEAR =         {1996},
   volume =       {95},
   number =       {2-3},
-  month =        {June},
+  month =        {Junho},
   pages =        {143-157},
 }
 
@@ -1764,7 +1774,7 @@ Joint Likelihood},
   volume =       {559},
   number =       {1},
   pages =        {129-133},
-  month =        {April},
+  month =        {Abril},
 }
 
 
@@ -1794,7 +1804,7 @@ Joint Likelihood},
   TITLE =        {Probability, Random Variables and Random Signal Principals},
   PUBLISHER =    {Mc Graw Hill},
   YEAR =         {2001},
-  address =      {New York, US},
+  address =      {Nova York, Estados Unidos},
 }
 
 @BOOK{book:oja:2001,
@@ -1802,7 +1812,7 @@ Joint Likelihood},
   TITLE =        {Independent Component Analysis},
   PUBLISHER =    {Wiley},
   YEAR =         {2001},
-  address =      {New York, US},
+  address =      {Nova York, Estados Unidos},
 }
 
 @BOOK{book:shanmugan:1988,
@@ -1810,7 +1820,7 @@ Joint Likelihood},
   TITLE =        {Random Signals, Detection, Estimation and Data Analysis},
   PUBLISHER =    {Wiley},
   YEAR =         {1988},
-  address =      {New York, US},
+  address =      {Nova York, Estados Unidos},
 }
 
 
@@ -1819,7 +1829,7 @@ Joint Likelihood},
   TITLE =        {Neural Computing, Theory and Practice},
   PUBLISHER =    {Van Nostrand Reinhold},
   YEAR =         {1989},
-  address =      {New York, US},
+  address =      {Nova York, Estados Unidos},
 }
 
 @ARTICLE{article:seixas:2005,
@@ -1835,7 +1845,7 @@ Joint Likelihood},
   TITLE =        {Detection, Estimation, and Modulation Theory, Part I},
   PUBLISHER =    {Wiley},
   YEAR =         {2001},
-  address =      {New York, US},
+  address =      {Nova York, Estados Unidos},
 }
 
 @BOOK{book:vantrees3:2001,
@@ -1843,7 +1853,7 @@ Joint Likelihood},
   TITLE =        {Detection, Estimation, and Modulation Theory, Part III},
   PUBLISHER =    {Wiley},
   YEAR =         {2001},
-  address =      {New York, US},
+  address =      {Nova York, Estados Unidos},
 }
 
 @BOOK{book:montecarlo:2004,
@@ -1851,7 +1861,7 @@ Joint Likelihood},
   TITLE =        {Monte Carlo Statistical Methods},
   PUBLISHER =    {Springer-Verlag},
   YEAR =         {2004},
-  address =      {New York, US},
+  address =      {Nova York, Estados Unidos},
 }
 
 @MISC{Homepage:brookhaven,
@@ -1945,8 +1955,8 @@ Joint Likelihood},
 Large Hadron Collider at CERN},
   INSTITUTION =  {CERN},
   YEAR =         {1992},
-  month =        {October},
-  address =      {Geneva, Switzerland},
+  month =        {Outubro},
+  address =      {Genebra, Suiça},
 }
 
 @TECHREPORT{TP:ATLAS:1994,
@@ -1955,8 +1965,8 @@ Large Hadron Collider at CERN},
 Large Hadron Collider at CERN},
   INSTITUTION =  {CERN},
   YEAR =         {1994},
-  month =        {December},
-  address =      {Geneva, Switzerland},
+  month =        {Dezembro},
+  address =      {Genebra, Suiça},
 }
 
 @TECHREPORT{TDR1:ATLAS:1999,
@@ -1964,8 +1974,8 @@ Large Hadron Collider at CERN},
   TITLE =        {ATLAS Detector and Physics Performance Technical Design Report, Volume 1},
   INSTITUTION =  {CERN},
   YEAR =         {1999},
-  month =        {May},
-  address =      {Geneva, Switzerland},
+  month =        {Maio},
+  address =      {Genebra, Suiça},
 }
 
 @TECHREPORT{TDR2:ATLAS:1999,
@@ -1973,8 +1983,8 @@ Large Hadron Collider at CERN},
   TITLE =        {ATLAS Detector and Physics Performance Technical Design Report, Volume 2},
   INSTITUTION =  {CERN},
   YEAR =         {1999},
-  month =        {May},
-  address =      {Geneva, Switzerland},
+  month =        {Maio},
+  address =      {Genebra, Suiça},
 }
 
 @TECHREPORT{TDR:ATLAS:2003,
@@ -1982,8 +1992,8 @@ Large Hadron Collider at CERN},
   TITLE =        {ATLAS High-Level Trigger, Data Acquisition and Controls Technical Design Report},
   INSTITUTION =  {CERN},
   YEAR =         {2003},
-  month =        {May},
-  address =      {Geneva, Switzerland},
+  month =        {Maio},
+  address =      {Genebra, Suiça},
 }
 
 @TECHREPORT{TDR:ATLAS:1998,
@@ -1991,8 +2001,8 @@ Large Hadron Collider at CERN},
   TITLE =        {First-Level Trigger Technical Design Report},
   INSTITUTION =  {CERN},
   YEAR =         {1998},
-  month =        {June},
-  address =      {Geneva, Switzerland},
+  month =        {Junho},
+  address =      {Genebra, Suiça},
 }
 
 
@@ -2001,7 +2011,7 @@ Large Hadron Collider at CERN},
   TITLE =        {Revealing the Hidden Nature of Space and Time: Charting the Course for Elementary Particle Physics},
   PUBLISHER =    {National Academic Press},
   YEAR =         {2006},
-  address =      {Washington-DC, US},
+  address =      {Washington-DC, Estados Unidos},
 }
 
 @BOOK{livro:fisica2:1998,
@@ -2009,7 +2019,7 @@ Large Hadron Collider at CERN},
   TITLE =        {Elementary Particle Physics, Revealing the Secrets of Energy and Matter},
   PUBLISHER =    {National academic Press},
   YEAR =         {1998},
-  address =      {Washington, D.C., US},
+  address =      {Washington, D.C., Estados Unidos},
 }
 
 
@@ -2031,7 +2041,7 @@ Large Hadron Collider at CERN},
   YEAR =         {2003},
   volume =       {1},
   pages =        {282-287},
-  month =        {October},
+  month =        {Outubro},
   address =      {Portland, EUA},
 }
 
@@ -2043,7 +2053,7 @@ Large Hadron Collider at CERN},
   YEAR =         {2008},
   volume =       {1},
   pages =        {1851-1858},
-  month =        {October},
+  month =        {Outubro},
   address =      {Dresden, Alemanha},
 }
 
@@ -2087,7 +2097,7 @@ Large Hadron Collider at CERN},
   TITLE =        "Um Novo Algoritmo Para Cálculo Do Wavelet Modulus Maxima Em Sinais De Vibração De Transformadores De Potência",
   JOURNAL =      "XV Congresso Brasileiro de Automática-CBA2004, Gramado-RS",
   YEAR =         "2004",
-  month =        "September"
+  month =        "Setembro"
 }
 
 @ARTICLE{Article:Echavarria:2000,
@@ -2118,7 +2128,7 @@ Large Hadron Collider at CERN},
   volume =       "15",
   number =       "2",
   pages =        "515-521",
-  month =        "May"
+  month =        "Maio"
 }
 
 
@@ -2136,7 +2146,7 @@ Large Hadron Collider at CERN},
   TITLE =        "Cigre's Work on Power Transforms",
   JOURNAL =      "EPRI Substation Equipment Diagnostics Conference IX",
   YEAR =         "2001",
-  month =        "February"
+  month =        "Fevereiro"
 }
 
 
@@ -2158,7 +2168,7 @@ Large Hadron Collider at CERN},
   YEAR =         "2001",
   volume =       "148",
   pages =        "296-300",
-  month =        "July"
+  month =        "Julho"
 }
 
 
@@ -2216,7 +2226,7 @@ Large Hadron Collider at CERN},
   journal =      "IEEE International Symposium on Eletrical Insulation",
   year =         "1998",
   pages =        "43-48",
-  month =        "June"
+  month =        "Junho"
 }
 
 @ARTICLE{Article:Kang2:2000,
@@ -2236,7 +2246,7 @@ Large Hadron Collider at CERN},
   YEAR =         "2000",
   volume =       "4",
   pages =        "2422 - 2427",
-  month =        "July"
+  month =        "Julho"
 }
 
 @ARTICLE{Article:Foata:2000,
@@ -2279,7 +2289,7 @@ Large Hadron Collider at CERN},
   YEAR =         "1996",
   volume =       "3",
   pages =        "3290-3293",
-  address =      "Kobe, Japan"
+  address =      "Kobe, Japão"
 }
 
 @ARTICLE{Article:Ciuca:1998,
@@ -2411,7 +2421,7 @@ Large Hadron Collider at CERN},
   TITLE =        "Genetic Algorithms in Search, Optimization and Machine Learning",
   PUBLISHER =    "Addison-Wesley",
   YEAR =         "1989",
-  address =      "Boston, US"
+  address =      "Boston, Estados Unidos"
 }
 
 
@@ -2429,7 +2439,7 @@ Large Hadron Collider at CERN},
   TITLE =        "Linear and Nonlinear Programming",
   PUBLISHER =    "Addison-Wesley",
   YEAR =         "1984",
-  address =      "Boston, US"
+  address =      "Boston, Estados Unidos"
 }
 
 @BOOK{Book:Goldman:1999,
@@ -2505,7 +2515,7 @@ Large Hadron Collider at CERN},
   PUBLISHER =    "McGraw-Hill",
   YEAR =         "1991",
   edition =      "3rd",
-  address =      "New York, US"
+  address =      "Nova York, Estados Unidos"
 }
 
 
@@ -2540,7 +2550,7 @@ Large Hadron Collider at CERN},
   TITLE =        {Autoassociative Neural Networks and Noise Filtering},
   JOURNAL =      {IEEE Transactions on Signal Processing},
   YEAR =         {2003},
-  month =        {May}
+  month =        {Maio}
   volume =       {51},
   number =       {5},
   pages =        {1431-1438}
@@ -2601,7 +2611,7 @@ Understanding for Instrumentation},
   TITLE =        {Neural Networks: Algorithms, Applications, and Programming Techniques},
   PUBLISHER =    {Addison-Wesley},
   YEAR =         {1992},
-  address =      {Boston, US},
+  address =      {Boston, Estados Unidos},
 }
 
 
@@ -2621,7 +2631,7 @@ em Filmes Finos de $VO_2$},
   YEAR =         "1991",
   volume =       "40",
   pages =        "558-562",
-  month =        "June"
+  month =        "Junho"
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  BLIND DECONVOLUTION  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2695,5 +2705,5 @@ em Filmes Finos de $VO_2$},
   PUBLISHER =    {McGraw-Hill},
   YEAR =         {2000},
   edition =      {2},
-  address =      {New York, US},
+  address =      {Nova York, Estados Unidos},
 }
