@@ -484,7 +484,7 @@ procedimento leva ao modelo da ICA local.
 
 Conforme proposto em \cite{karhunen:local:1999}, um conjunto de
 dados de alta dimensão pode ser separado em sub-conjuntos, através
-de algum algoritmo de agrupamento como o k-means
+de algum algoritmo de agrupamento como o \textit{k-means}
 \cite{book:duda:2000} ou SOM \cite{article:som:oja:1996}, e
 componentes independentes lineares são então estimadas de cada
 subconjunto. Determinar o número ideal de agrupamentos em um
@@ -623,7 +623,7 @@ partir da informação compactada tenha pequeno erro médio quadrático
 se comparado ao original. A seguir serão desenvolvidos, de forma
 resumida, os fundamentos matemáticos da PCA.
 
-Considerando-se um vetor $\mathbf{x}=[x_1,...,X_N]^T$ aleatório com $N$ elementos,
+Considerando-se um vetor $\mathbf{x}=[x_1,...,x_N]^T$ aleatório com $N$ elementos,
 assume-se que ele tenha média zero:
 
 \begin{equation}\label{Xm}
@@ -693,9 +693,15 @@ das componentes principais, através de redes neurais
 
 \subsection{Componentes Principais de Discriminação}
 
-Considerando um problema de classificação de padrões, o uso da PCA para compactação pode ser prejudial, pois, os componentes menos energéticos (que são eliminados após a PCA) podem carregar informações discriminantes. Neste caso, pode-se utilizar técnicas de compactação mais adequadas. As componentes principais de discriminação (PCD - \textit{Principal Dsicriminanting Components}) são obtidas a partir da projeção dos sinais de entrada em um conjunto compacto que carrega toda a informação importante para discriminação entre as classes.
+Considerando um problema de classificação de padrões, o uso da PCA para compactação pode ser prejudicial, pois, os componentes menos energéticos (que são eliminados após a PCA) podem carregar informações discriminantes. Neste caso, pode-se utilizar técnicas de compactação mais adequadas. As componentes principais de discriminação (PCD - \textit{Principal Dsicriminanting Components}) são obtidas a partir da projeção dos sinais de entrada em um conjunto compacto que carrega toda a informação importante para discriminação entre as classes.
 
-Conforme proposto em \cite{} as PCD, para um problema de classificação binário (onde existem apenas duas classes possíveis), podem ser estimadas a partir de uma rede neural (de arquitetura MLP e alimentada adiante) com uma camada oculta.
+Conforme proposto em \cite{}, para um problema de classificação, o objetivo da PCD é obter uma projeção linear dos sinais de entrada $\mathbf{x}=[x_1,...,x_N]^T$ nos componentes $\mathbf{z}=[z_1,...,z_K]^T$ (com $K<N$) que maximizam a discriminação entre as classes (ou seja, $z_i$ são os componentes principais de discriminação). 
+
+Considerando um problema de discriminação onde existem apenas duas classes possíveis, os PCD podem ser estimados a partir de uma rede neural (de arquitetura MLP - \textit{Multi-Layer Perceptron})~\cite{haykin:nn:2008} com uma camada oculta e um neurônio de saída, treinada para obter máxima discriminação entre as classes. Conforme indicado na Figura~\ref{fig_pcd}, uma rede neural com um neurônio na camada oculta é capaz de estimar o primeiro PCD, que é obtido a partir da projeção das entradas na direção dos pesos sinápticos do neurônio oculto:
+\begin{equation}
+ z_1=[b_{1,1},b_{1,2},...,b_{1,N}]\times[x_1,...,x_N]^T + b_{0,1},
+\end{equation}
+onde $b_{0,1}$ é o \textit{bias} do neurônio. Adicionando-se mais neurônios ocultos consegue-se estimar os demais PCD. No processo de estimação dos PCD, estatística de ordem elevada é acessada a partir da utilização de funções de ativação não-lineares.
 
 Alguns modelos semelhantes ao da PCD foram propostos na literatura ... citar outros trabalhos conforme artigo ICA para classificação ...
 

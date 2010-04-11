@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.12.21)  11 APR 2010 01:18
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.12.21)  11 APR 2010 11:16
 entering extended mode
  %&-line parsing enabled.
 **tese_eduardo
@@ -756,24 +756,28 @@ Underfull \hbox (badness 5091) in paragraph at lines 604--604
 []\OT1/cmr/bx/n/17.28 T^^Secnicas de Pr^^Se-Processamento - Com-
  []
 
-[69] [70] [71] [72] [73] [74]) (./cap5.tex [75]
+[69] [70]
+
+LaTeX Warning: Reference `fig_pcd' on page 71 undefined on input line 700.
+
+[71] [72] [73] [74]) (./cap5.tex [75]
 Cap\'{\i }tulo 6.
-<./figuras/cap3_fex_glob.pdf, id=1987, 597.50786pt x 284.52759pt>
+<./figuras/cap3_fex_glob.pdf, id=1989, 597.50786pt x 284.52759pt>
 File: ./figuras/cap3_fex_glob.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_fex_glob.pdf> [76
 
 ]
-<./figuras/cap3_fex_seg.pdf, id=1994, 483.69688pt x 284.52759pt>
+<./figuras/cap3_fex_seg.pdf, id=1996, 483.69688pt x 284.52759pt>
 File: ./figuras/cap3_fex_seg.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_fex_seg.pdf> [77 <./figuras/cap3_fex_glob.pdf> <./figuras/c
 ap3_fex_seg.pdf>]
-<./figuras/cap3_clas_glo.pdf, id=2070, 369.8858pt x 85.35829pt>
+<./figuras/cap3_clas_glo.pdf, id=2072, 369.8858pt x 85.35829pt>
 File: ./figuras/cap3_clas_glo.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_clas_glo.pdf>
-<./figuras/cap3_clas_seg.pdf, id=2072, 519.26277pt x 284.52759pt>
+<./figuras/cap3_clas_seg.pdf, id=2074, 519.26277pt x 284.52759pt>
 File: ./figuras/cap3_clas_seg.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_clas_seg.pdf> [78 <./figuras/cap3_clas_glo.pdf> <./figuras/
@@ -844,11 +848,11 @@ Pvel em:
 Ap\^endice A.
 [100
 
-] [101] <./figuras/cap3_somclass.pdf, id=2267, 504.88625pt x 165.61874pt>
+] [101] <./figuras/cap3_somclass.pdf, id=2269, 504.88625pt x 165.61874pt>
 File: ./figuras/cap3_somclass.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_somclass.pdf>
-<./figuras/cap3_pca.pdf, id=2268, 138.5175pt x 94.3525pt>
+<./figuras/cap3_pca.pdf, id=2270, 138.5175pt x 94.3525pt>
 File: ./figuras/cap3_pca.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_pca.pdf> [102 <./figuras/cap3_somclass.pdf>] [103 <./figura
@@ -862,13 +866,13 @@ Underfull \hbox (badness 1762) in paragraph at lines 338--342
 
 LaTeX Warning: Reference `cap_fex' on page 113 undefined on input line 651.
 
-[113] <./figuras/cap3_pnljutten.pdf, id=2433, 347.12366pt x 237.5805pt>
+[113] <./figuras/cap3_pnljutten.pdf, id=2435, 347.12366pt x 237.5805pt>
 File: ./figuras/cap3_pnljutten.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_pnljutten.pdf>) (./appendclas.tex [114 <./figuras/cap3_pnlj
 utten.pdf>] [115]
 Ap\^endice B.
-<./figuras/cap3_transicao.pdf, id=2464, 446.66875pt x 145.54375pt>
+<./figuras/cap3_transicao.pdf, id=2466, 446.66875pt x 145.54375pt>
 File: ./figuras/cap3_transicao.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_transicao.pdf> [116
@@ -879,11 +883,11 @@ LaTeX Font Info:    Try loading font information for U+euf on input line 68.
 (/usr/share/texmf-texlive/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2002/01/19 v2.2g AMS font definitions
 ) [117]
-<./figuras/cap3_fcas.pdf, id=2489, 254.9525pt x 113.42375pt>
+<./figuras/cap3_fcas.pdf, id=2491, 254.9525pt x 113.42375pt>
 File: ./figuras/cap3_fcas.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_fcas.pdf> [118] [119 <./figuras/cap3_fcas.pdf>] [120]
-<./figuras/cap3_class.pdf, id=2533, 269.005pt x 305.14pt>
+<./figuras/cap3_class.pdf, id=2535, 269.005pt x 305.14pt>
 File: ./figuras/cap3_class.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_class.pdf> [121 <./figuras/cap3_class.pdf>])
@@ -1024,10 +1028,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6214 strings out of 94074
- 87617 string characters out of 1165152
+ 6216 strings out of 94074
+ 87639 string characters out of 1165152
  152280 words of memory out of 1500000
- 8704 multiletter control sequences out of 10000+50000
+ 8705 multiletter control sequences out of 10000+50000
  17902 words of font info for 62 fonts, out of 1200000 for 2000
  645 hyphenation exceptions out of 8191
  32i,14n,41p,1639b,419s stack positions out of 5000i,500n,6000p,200000b,5000s
@@ -1050,9 +1054,9 @@ usr/share/texmf-texlive/fonts/type1/bluesky/ams/eufm10.pfb></usr/share/texmf-te
 xlive/fonts/type1/public/cmex/fmex8.pfb></usr/share/texmf-texlive/fonts/type1/b
 luesky/ams/msam10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/ams/msbm10.
 pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on tese_eduardo.pdf (148 pages, 4219710 bytes).
+Output written on tese_eduardo.pdf (148 pages, 4221076 bytes).
 PDF statistics:
- 2808 PDF objects out of 2984 (max. 8388607)
- 578 named destinations out of 1000 (max. 131072)
+ 2810 PDF objects out of 2984 (max. 8388607)
+ 579 named destinations out of 1000 (max. 131072)
  1035 words of extra memory for PDF output out of 10000 (max. 10000000)
 

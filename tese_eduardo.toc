@@ -53,7 +53,7 @@
 \contentsline {subsection}{\numberline {5.4.2}Componentes Principais de Discrimina\c c\~ao}{71}{subsection.5.4.2}
 \contentsline {section}{\numberline {5.5}Aplica\c c\~oes em F\IeC {\'\i }sica de Altas Energias e \'Areas Correlatas}{72}{section.5.5}
 \contentsline {subsection}{\numberline {5.5.1}Aplica\c c\~oes de classificadores neurais}{72}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}Aplica\c c\~oes de t\'ecnicas estat\IeC {\'\i }sticas de extra\c c\~ao de ca\penalty \@M \hskip \z@skip \discretionary {-}{}{}\penalty \@M \hskip \z@skip rac\penalty \@M \hskip \z@skip \discretionary {-}{}{}\penalty \@M \hskip \z@skip ter\IeC {\'\i }sticas}{73}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.2}Aplica\c c\~oes de t\'ecnicas estat\IeC {\'\i }sticas de extra\c c\~ao de ca\penalty \@M \hskip \z@skip \discretionary {-}{}{}\penalty \@M \hskip \z@skip rac\penalty \@M \hskip \z@skip \discretionary {-}{}{}\penalty \@M \hskip \z@skip ter\IeC {\'\i }sticas}{74}{subsection.5.5.2}
 \contentsline {chapter}{\numberline {6}Metodologia Proposta}{76}{chapter.6}
 \contentsline {section}{\numberline {6.1}Sistemas de Classifica\c c\~ao Propostos para a Sele\c c\~ao de El\'etrons no Segundo-N\IeC {\'\i }vel de Filtragem do ATLAS}{76}{section.6.1}
 \contentsline {subsubsection}{Caracter\IeC {\'\i }sticas Globais}{76}{section*.11}
