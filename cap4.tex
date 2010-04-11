@@ -6,20 +6,14 @@ características na filtragem de segundo nível do ATLAS. Entre as técnicas de ext
 
 \section{Análise de Componentes Independentes}
 
-Diferente da PCA, que busca as direções ortogonais de máxima
-variância, a análise de componentes independentes (ICA -
-\textit{Independent Component Analysis}) é uma transformação onde as
-componentes na saída são estatisticamente independentes.
+Em muitos problemas de processamento de sinais multi-dimensionais deseja-se encontrar uma transformação que, de algum modo, torne a estrutura essencial dos dados mais acessível~\cite{book:oja:2001}. Em geral, não há muita informação disponível, e a busca pela nova representação dos sinais é feita através de aprendizado não-supervisionado. Entre as técnicas lineares que buscam, através de premissas distintas, por uma nova representação do conjunto de sinais pode-se mencionar a Análise de Componentes Principais (PCA - \textit{Principal Component Analysis})~\cite{book:pca:2002}, a Análise de Fatores (\textit{Factor Analysis})~\cite{book:factor:1967} e a Análise de Componentes Independentes (ICA - \textit{Independent Component Analysis})~\cite{book:oja:2001}. 
+
+Entre as técnicas listadas acimas, a análise de componentes independentes (ICA - \textit{Independent Component Analysis}) busca por uma transformação onde os componentes na saída são estatisticamente independentes. A ICA vêm sendo aplicada na solução de diversos problemas na área de processamento de sinais como cancelamento de ruído~\cite{article:ica:noisecan}, sonar passivo~\cite{article:moura:sonarbook}, telecomunicações~\cite{article:icateleco:2007}, reconhecimento facial~\cite{article:icaface:2007} e biomédica~\cite{article:icabio:2007}. 
 
 \begin{itemize}
 \item \textbf{Independência Estatística}: Considerando duas variáveis
-aleatórias (VAs) $x$ e $y$, se elas são independentes, então o
-conhecimento de uma não traz nenhuma informação a respeito da outra.
-Um sinal musical e um ruído sonoro originado de uma máquina elétrica
-são exemplos de variáveis independentes.
-
-Matematicamente, $y_1$ e $y_2$ são independentes estatisticamente se e
-somente se \cite{Book:Papoulis:1991}:
+aleatórias (VAs) $y_1$ e $y_2$, se elas são independentes, então o
+conhecimento de uma não traz nenhuma informação a respeito da outra. Matematicamente, $y_1$ e $y_2$ são independentes estatisticamente se e somente se \cite{Book:Papoulis:1991}:
 \begin{equation}\label{indep1}
     p_{y1,y2}(y_1,y_2)=p_{y1}(y_1)p_{y2}(y_2),
 \end{equation}
@@ -27,9 +21,9 @@ somente se \cite{Book:Papoulis:1991}:
 onde $p_{y1,y2}(y_1,y_2)$, $p_{y1}(y_1)$ e $p_{y2}(y_2)$ são
 respectivamente as funções de densidade de probabilidade (pdf -
 \textit{probability density function}) conjunta e marginais de $y_1$
-e $y_2$. O conceito de independência envolve o conhecimento de toda
+e $y_2$ \cite{Book:Papoulis:1991}. O conceito de independência envolve o conhecimento de toda
 a estatística dos dados, sendo assim muito mais abrangente que a
-não-correlação (utilizada pela PCA), que somente utiliza estatística
+descorrelação (utilizada pela PCA), que somente utiliza estatística
 de segunda ordem (variância).
 
 Pode-se obter uma expressão equivalente à equação (\ref{indep1}) se, para todas as
@@ -43,11 +37,10 @@ Para evitar a estimação das funções de densidade de probabilidade,
 pode-se utilizar a equação (\ref{indep2}). A definição de
 independência pode ser facilmente estendida para mais de duas
 variáveis aleatórias. Percebe-se da equação (\ref{indep2}) que a
-independência é um princípio mais restritivo que a não-correlação
+independência é um princípio mais restritivo que a descorrelação
 (quando $g(x)=x$ e $h(y)=y$). No Apêndice \ref{apend_fex} serão
 detalhados os princípios matemáticos mais utilizados para a
-estimação das componentes independentes.
-
+estimação dos componentes independentes.
 \end{itemize}
 
 Na ICA, considera-se que um sinal multi-dimensional
@@ -63,17 +56,17 @@ suprimindo-se o índice temporal t, pode-se escrever
 onde $\mathbf{A}$ (N$\times$N) é a matriz de mistura.
 
 O objetivo final da ICA é encontrar uma aproximação $\mathbf{y}$ das
-fontes independentes ou da transformação linear $\mathbf{A}$
+fontes independentes ou da transformação linear $\mathbf{A}$,
 utilizando apenas os sinais observados $\mathbf{x}$. O vetor
 $\mathbf{y}$ é definido por:
 \begin{equation}\label{ica_inv}
  \mathbf{y}=\mathbf{Wx}
 \end{equation}
-sendo $\mathbf{w}$ a matriz de separação.
+sendo $\mathbf{W}$ a matriz de separação.
 
 Um problema clássico que pode ser solucionado usando-se ICA é conhecido
-como \textit{cocktail-party problem}, e está formulado de forma
-simplificada omitindo atrasos temporais e outros fenômenos físicos
+como \textit{cocktail-party problem}~\cite{book:oja:2001}, e está formulado de forma
+simplificada, omitindo atrasos temporais e outros fenômenos físicos,
 como a existência de múltiplas reflexões, nas equações (\ref{cpp}) e
 (\ref{ccp2}) (ver Figura \ref{cocktail}). Considerando que numa sala
 existem duas pessoas falando simultaneamente e dois microfones em
@@ -104,7 +97,7 @@ resolvido a partir de:
 \mathbf{s}=\mathbf{Wx},
 \end{equation}
 \\
-onde $\mathbf{W=A}^{-1}$. Na prática, tanto as fontes $s_i$ como os
+onde $\mathbf{W=A}^{-1}$. Na prática, tanto as fontes $s_i$ como os fatores
 $a_{ij}$ devem ser obtidos apenas dos sinais misturados $x_i$.
 
 \begin{figure}[th]
@@ -115,7 +108,7 @@ $a_{ij}$ devem ser obtidos apenas dos sinais misturados $x_i$.
 \end{figure}
 
 Em um exemplo de aplicação de ICA, a Figura \ref{sinais}-a mostra as
-fontes $s_1(t)$ e $s_2(t)$, que foram misturadas linearmente gerando
+fontes $s_1(t)$ e $s_2(t)$, que foram misturadas linearmente, gerando
 os sinais $x_1(t)$ e $x_2(t)$ da Figura \ref{sinais}-b. Após a
 aplicação de um algoritmo para extração das componentes
 independentes (FastICA \cite{article:hyvarinen:2000}), foram obtidas
@@ -123,7 +116,7 @@ as curvas da Figura \ref{sinais}-c. Percebe-se que os sinais
 recuperados são cópias dos originais, a menos de fatores
 multiplicativos. Esta é uma das limitações inerentes do modelo da
 ICA, não há como garantir o fator de escala (que pode ser positivo
-ou negativo) ou a ordem de extração das componentes.
+ou negativo) ou a ordem de extração dos componentes.
 
 \begin{figure}[h!]
 \begin{minipage}[b]{.48\linewidth}
@@ -162,27 +155,18 @@ da ICA.} \label{sinais}
 
 As técnicas de ICA foram desenvolvidas inicialmente para solucionar
 pro\-blemas de separação cega de sinais (BSS - \textit{Blind Signal
-Separation}) semelhantes ao \textit{cocktail-party problem}, porém
-mais recentemente surgiram outras aplicações interessantes, como
+Separation}) semelhantes ao \textit{cocktail-party problem}, porém,
+mais recentemente, surgiram outras aplicações interessantes, como
 extração de características, separação de fontes em telecomunicações
 e redução de ruído em imagens
-\cite{book:oja:2001,article:hyvarinen:2000}. Atualmente a ICA tem
-sido aplicada com sucesso tanto para separação de sinais como para
+\cite{book:oja:2001,article:hyvarinen:2000}. Atualmente, ICA é aplicada com sucesso tanto para separação de sinais como para
 extração de características.
 
 \section{ICA não-linear}
 
-Em muitos problemas práticos o modelo básico da ICA, onde os sinais
+Em muitos problemas práticos, o modelo básico da ICA, onde os sinais
 observados são considerados combinações lineares e instantâneas das
-fontes, não representa corretamente o cenário real. Os calorímetros
-do ATLAS são um exemplo de ambiente onde os sinais podem ser
-modificados por fenômenos não-lineares (os calorímetros são
-projetados para serem detectores lineares, porém, por restrições na
-construção dos sensores e montagem do detector, é razoável esperar
-que os sinais, na prática, sejam modificados por fenômenos
-não-lineares de natureza desconhecida, como por exemplo saturação de
-sensores, distorções na conversão dos sinais ópticos para elétricos
-e na propagação dos sinais).
+fontes, não representa corretamente o cenário real.
 
 A equação (\ref{nlica}) apresenta um modelo geral para as misturas
 não-lineares:
@@ -191,13 +175,10 @@ não-lineares:
 \end{equation}
 \\
 onde $\mathbf{F}$ é um mapeamento não-linear de $\mathbb{R}^N
-\rightarrow \mathbb{R}^N$
-
-vetor de $m$ funções de mistura não lineares desconhecidas,
-$\mathbf{x}$ e $\mathbf{s}$ são respectivamente os sinais observados
+\rightarrow \mathbb{R}^N$, $\mathbf{x}$ e $\mathbf{s}$ são respectivamente os sinais observados
 e as fontes. A ICA não-linear consiste em encontrar o mapeamento
-$\mathbf{G}$: $\mathbb{R}^N \rightarrow \mathbb{R}^N$ tal que as
-componentes de $\mathbf{y}$ sejam estatisticamente independentes:
+$\mathbf{G}$: $\mathbb{R}^N \rightarrow \mathbb{R}^N$ tal que os
+componentes de $\mathbf{y}$ sejam estatisticamente independentes~\cite{article:simas:2007:lnlm}:
 \begin{equation}\label{nlica2}
     \mathbf{y}=\mathbf{G}(\mathbf{x}).
 \end{equation}
@@ -206,42 +187,40 @@ Uma característica da NLICA é que o problema apresenta múltiplas
 soluções~\cite{jutten:nlica:2003}. Se $\mathbf{y_1}$ e
 $\mathbf{y_2}$ são variáveis aleatórias independentes, é fácil
 provar que $f(\mathbf{y_1})$ e $g(\mathbf{y_2})$ (onde $f(.)$ e
-$g(.)$ são funções diferenciáveis) são também independentes \cite{}.
+$g(.)$ são funções diferenciáveis) são também independentes \cite{article:hyvarinen:1999}.
 Fica claro que, sem o uso de alguma restrição, infinitos mapeamentos
-inversos $G$ satisfazem a condição de independência entre os sinais
+inversos $\mathbf{G}$ satisfazem a condição de independência entre os sinais
 estimados $y_i$, i=1,...,N, em uma dada aplicação. Se o objetivo do
 problema for realizar a separação cega das fontes (BSS -
 \textit{Blind Signal Separation}), neste caso, deseja-se que as
 componentes $y_i$ sejam as fontes independentes que produziram os
-sinais observados $\mathbf{x}$, então, informações a respeito do
+sinais observados $\mathbf{x}$. Então, informações a respeito do
 modelo de mistura ou das fontes devem ser conhecidas a priori. A
-NLICA vêm sendo aplicada com sucesso em problemas como processamento
+NLICA vem sendo aplicada com sucesso em problemas como processamento
 de sinais de fala \cite{article:rojas:ica:2003} e remoção de ruído
 em imagens \cite{article:allinson:2002}.
 
 Em geral, o número de parâmetros a serem estimados num modelo de ICA
-não-linear é maior que no caso linear. Os algoritmos de NLICA, se
+não-linear é maior do que no caso linear \cite{}. Os algoritmos de NLICA, se
 comparados com os de ICA, apresentam maior complexidade
-computacional e convergência mais lenta. Em problemas de separação
-cega de fontes o algoritmo a ser utilizado deve ser esco\-lhi\-do
+computacional e convergência mais lenta \cite{}. Em problemas de separação
+cega de fontes, o algoritmo a ser utilizado deve ser esco\-lhi\-do
 utilizando informações a respeito do modelo de mistura. Considerando
-estas limitações, o uso da NLICA em substituição ao modelo linear
-somente é justificado se a precisão na estimação das componentes
-aumenta e a aplicação não apresenta restrição ao aumento do tempo de
-processamento.
+estas limitações, as aplicações de NLICA devem considerar se existem restrições quanto ao aumento do tempo de
+processamento na estimação dos componentes.
 
 Entre os algoritmos de NLICA propostos na literatura, uma classe de
-métodos impõe restrições estruturais ao modelo de mistura, neste
-caso, pode-se garantir que as componentes estimadas são iguais às
-fontes (a menos por indeterminações de fator multiplicativo e ordem
-de estimação dos sinais, assim como no modelo linear). Uma solução
+métodos impõe restrições estruturais ao modelo de mistura. Neste
+caso, pode-se garantir que os componentes estimados são iguais às
+fontes (a menos das indeterminações de fator multiplicativo e ordem
+de estimação dos sinais, assim como ocorre no modelo linear). Uma solução
 de implementação mais direta é o uso de mapas auto-organizáveis para
 estimar o mapeamento não-li\-near, neste caso não há restrição de
 modelo. Outro método diretamente relacionado com a NLICA, chamado de
 ICA Local, propõe uma etapa de agrupamento dos sinais em conjuntos
 de características semelhantes, que deve ser realizada antes da ICA.
 O agrupamento produz um mapeamento não-linear dos dados e a ICA
-(linear) estima as componentes independentes. Mais informações a
+(linear) estima os componentes independentes. Mais informações a
 respeito dos diversos algoritmos e modelos de NLICA serão fornecidas
 nas próximas seções.
 
@@ -250,7 +229,7 @@ nas próximas seções.
 No caso não-linear, a independência estatística não é suficiente
 para garantir a sepa\-ração das fontes. Se duas variáveis aleatórias
 $y_1$ e $y_2$ são independentes, então
-$p_{y1,y2}(y_1,y_2)=p_{y1}(y_1)p_{y2}(y_2)$, para funções
+$p_{y1,y2}(y_1,y_2)=p_{y1}(y_1)p_{y2}(y_2)$. Para funções
 diferenciáveis $f$ e $g$, pode-se provar
 que~\cite{article:jutten:1999}:
 \begin{equation}\label{uniq}
@@ -266,7 +245,7 @@ ser conseguida se o problema apresentar pelo menos uma das
 características a seguir \cite{article:hyvarinen:1999}:
 
 \begin{itemize}
-    \item O número de componentes é igual a dois. Deste modo os sinais podem ser considerados como uma variável complexa.
+    \item O número de componentes é igual a dois. Deste modo, os sinais podem ser considerados como uma variável complexa.
     \item As pdf das componentes independentes são limitadas a valores conhecidos.
     \item A função de mistura $\mathbf{F}$ preserva o zero ($\mathbf{F}(0)=0$) e é um mapeamento unívoco que preserva localmente a ortogonalidade das coordenadas.
     \item O modelo de mistura é conhecido a priori e utilizado como informação para o algoritmo de estimação das componentes independentes.
@@ -276,12 +255,12 @@ características a seguir \cite{article:hyvarinen:1999}:
 \subsection{Misturas Pós Não-Lineares}
 
 Um caso especial da ICA não-linear são os métodos de estimação que
-incluem no algoritmo de estimação das componentes independentes
+incluem no algoritmo de estimação dos componentes independentes
 informações a respeito do modelo não-linear que gerou os dados
 observados. Estas informações se configuram em restrições
 estruturais ao mapeamento inverso (que é estimado pelo algoritmo).
 Entre estes modelos, o de misturas \textbf{pós não-lineares} (PNL)
-\cite{article:jutten:1999} é um dos mais utilizados na literatura.
+\cite{article:jutten:1999} é um dos mais utilizados na literatura, com aplicações em ... \cite{}.
 
 No modelo PNL, considera-se que inicialmente ocorre uma combinação
 linear das fontes (como no modelo básico de ICA), e as funções
@@ -308,11 +287,11 @@ tornam semelhantes às do caso linear. A modelagem através da equação
 como, por exemplo, a modelagem da distorção de sensores num meio de
 propagação linear.
 
-Detalhes de alguns algoritmos para estimação das componentes
+Detalhes de alguns algoritmos para estimação dos componentes
 independentes em misturas PNL são fornecidos no Apêndice
 \ref{apend_fex}.
 
-\subsubsection{Outros modelos de misturas com restrições estruturais}
+\subsection{Outros modelos de misturas com restrições estruturais}
 
 Alguns modelos com restrições estruturais diferentes do PNL foram
 propostos na literatura. No trabalho
@@ -346,7 +325,7 @@ partir de:
     \mathbf{x}=f^{-1}(\mathbf{A}f(\mathbf{s})).
 \end{equation}
 Este modelo é dito mais geral que o PNL pois as funções não-lineares
-podem ser aplicadas a mais de uma componente (as funções $f_i$ podem
+podem ser aplicadas a mais de um componente (as funções $f_i$ podem
 ser funções não-lineares de mais de uma variável). Este modelo é
 chamado de mistura de mono não-linearidade (ver Figura
 \ref{fig_mnlin}). A generalidade deste modelo é derivada da teoria
@@ -364,18 +343,15 @@ qualquer mistura com duas camadas de não-linearidades.
 
 \subsection{Algoritmos sem restrições estruturais}
 
-Se nenhuma restrição ao modelo de mistura é imposta não há garantia
-que os componentes independentes estimados estejam relacionadas com
-as fontes (ver Seção \ref{seq_uni}). Então, esta classe de
-algoritmos de NLICA não é capaz de realizar a separação de fontes, a
-menos quando as premissas da unicidade das soluções sejam atendidas.
+Se nenhuma restrição ao modelo de mistura é imposta, não há garantia
+que os componentes independentes estimados estejam relacionados com
+as fontes (ver Seção \ref{seq_uni}). 
 Entre os métodos de NLICA sem restrições estruturais, pode-se
-destacar o uso de mapas auto-organizáveis, que foi um dos primeiros
-algoritmos utilizados para NLICA \cite{article:pajunen:1996}, e os
+destacar o uso de mapas auto-organizáveis~\cite{article:pajunen:1996} e os
 métodos que utilizam inferência Bayesiana
 \cite{article:lappalainen:2000}.
 
-\textbf{NLICA a partir de Mapas Auto-Organizáveis}:
+\subsubsection{NLICA a partir de Mapas Auto-Organizáveis}:
 
 Uma das primeiras tentativas bem sucedidas de realizar NLICA
 utilizou mapas auto-organizáveis \cite{article:pajunen:1996}.
@@ -384,7 +360,7 @@ no mapa (ver Figura \ref{fig_som_nlica}) são independentes e
 aproximadamente uniformemente distribuídas
 \cite{article:pajunen:1996}. Para estimar a NLICA, o SOM é treinado
 usando como entradas os sinais observados, e as coordenadas do
-neurônio vencedor correspondem a uma aproximação das componentes
+neurônio vencedor correspondem a uma aproximação dos componentes
 independentes.
 
 \begin{figure}[th]
@@ -393,14 +369,14 @@ independentes.
 \caption{NLICA a partir de SOM.} \label{fig_som_nlica}
 \end{figure}
 
-Entre as desvantagens do método pode-se destacar:
+Entre as desvantagens do método pode-se destacar \cite{jutten:nlica:2003}:
 
 \begin{itemize}
     \item O mapeamento é discreto (existe um número limitado de neurônios no mapa),
-    então algum tipo de regularização é necessária para produzir componentes contínuos.
+    então, algum tipo de regularização é necessária para produzir componentes contínuos.
     Esse problema pode ser minimizado aumentando-se o número de neurônios do mapa.
     \item Os componentes a serem estimados devem ter pdf sub-gaussiana (quanto mais próxima da distribuição uniforme, melhor).
-    \item O custo computacional aumenta rapidamente com o número de componentes independentes a serem estimados.
+    \item O custo computacional para treinamento dos mapas aumenta rapidamente com o número de componentes independentes a serem estimados.
 \end{itemize}
 
 Para avaliar o custo computacional, o número de parâmetros Np do SOM
@@ -410,7 +386,7 @@ pode ser estimado pela expressão:
 \end{equation}
 onde $N$ é o número de componentes a serem estimados (que é
 considerado igual ao número de sinais observados) e $Q_L$ é o número
-de níveis de quantização desejado.
+de níveis de quantização desejado \cite{article:simas:2007:lnlm}.
 
 Com uma formulação alternativa aos SOM, o Mapeamento Topográfico
 Generativo (GTM - \textit{Generative Topographic Mapping}) foi
@@ -432,7 +408,7 @@ Maximization} \cite{article:hyvarinen:2000}. O treinamento do GMT
 envolve dois passos, a avaliação da probabilidade a
 \textit{posteriori} e a adaptação dos parâmetros do modelo.
 
-\textbf{NLICA a partir de Inferência Bayesiana}:
+\subsubsection{NLICA a partir de Inferência Bayesiana}:
 
 Nos métodos baseados em inferência Bayesiana, considera-se que os
 sinais observados são gerados a partir de
@@ -444,12 +420,11 @@ onde $\mathbf{n}$ é definido como ruído Gaussiano independente dos
 componentes a serem estimados.
 
 Os componentes independentes são modelados como misturas de sinais
-de distribuição Gaussiana. Pode-se provar que
-\cite{article:lappalainen:2000} dado um número suficiente de
+de distribuição Gaussiana. Pode-se provar que, dado um número suficiente de
 Gaussianas, virtualmente qualquer distribuição de probabilidade pode
-ser modelada com uma certa precisão. Uma variação deste método foi
+ser modelada com uma certa precisão~\cite{article:lappalainen:2000}. Uma variação deste método foi
 aplicada em \cite{article:lappalainen:bay1999} para o modelo linear
-da ICA. Em grande parte dos algoritmos Bayesianos para NLICA, redes
+da ICA. Em grande parte dos algoritmos Bayesianos para NLICA~\cite{}, redes
 neurais tipo MLP de duas camadas são treinadas para aproximar o
 mapeamento não linear:
 \begin{equation}
@@ -457,9 +432,9 @@ mapeamento não linear:
 \end{equation}
 
 Em um método de estimação Bayesiano, probabilidades a
-\textit{posteriori} são associadas a cada modelo não-linear que
-possivelmente teria gerado os dados observados. Verificar uma
-quantidade tão grande de modelos não é possível na prática, então os
+\textit{posteriori} são associadas a cada modelo não-linear que,
+possivelmente, teria gerado os dados observados. Verificar uma
+quantidade tão grande de modelos não é possível na prática; então, os
 métodos Bayesianos para NLICA utilizam uma técnica chamada de
 ``aprendizagem amostral" (EL - \textit{ensemble learning})
 \cite{aricle:minskin:2000}. Na EL, somente o conjunto mais provável
@@ -469,7 +444,7 @@ ajustada à probabilidade a \textit{posteriori}
 
 Métodos Bayesianos de NLICA foram propostos
 em~\cite{article:honkela:2004ica} e \cite{article:honkela:2007}. No
-trabalho \cite{article:ilin:2004ie} foram realizados testes
+trabalho~\cite{article:ilin:2004ie} foram realizados testes
 experimentais para comparar o desempenho dos mode\-los Bayesiano e
 PNL na estimação dos componentes independentes, as principais
 conclusões foram:
@@ -513,10 +488,11 @@ de algum algoritmo de agrupamento como o k-means
 \cite{book:duda:2000} ou SOM \cite{article:som:oja:1996}, e
 componentes independentes lineares são então estimadas de cada
 subconjunto. Determinar o número ideal de agrupamentos em um
-conjunto de dados não é uma tarefa simples e geralmente requer
-informação a priori. No trabalho \cite{article:simas:2008:eusipco}
-foi proposto um critério para a escolha do número de agrupamentos em
-um problema ``cego" de processamento de sinais.
+conjunto de dados não é uma tarefa simples e, geralmente, requer
+informação a priori~\cite{}. 
+%No trabalho \cite{article:simas:2008:eusipco}
+%foi proposto um critério para a escolha do número de agrupamentos em
+%um problema ``cego" de processamento de sinais.
 
 Na ICA Local, o agrupamento é responsável por uma representação
 não-linear dos dados, enquanto modelos de ICA linear aplicados a
@@ -558,15 +534,15 @@ visualizar o diagrama de um mapa auto-organizável bi-dimensional.
 \caption{Diagrama de um mapa auto-organizável} \label{soms}
 \end{figure}
 
-O mapa auto-organizável compacta informação e preserva relações
-topológicas ou métricas do conjunto de sinais. Os SOM estão ligadas
+O mapa auto-organizável compacta a informação e preserva relações
+topológicas ou métricas do conjunto de sinais. Os SOM estão ligados
 à ICA por conseguirem extrair informações ocultas dos sinais de
 forma não supervisionada \cite{article:foo:2006}. Uma apro\-xi\-mação
 das componentes independentes não-lineares pode ser obtida
 utilizando mapas auto-organizáveis \cite{book:oja:2001}.
 
 Três processos estão envolvidos na formação do mapa auto-organizado:
-a \textbf{competição}, onde para cada vetor de entrada há apenas um
+a \textbf{competição}, onde, para cada vetor de entrada, há apenas um
 neurônio vencedor; a \textbf{cooperação}, quando o neurônio vencedor
 determina uma vizinhança topológica de neurônios excitados; e a
 \textbf{adaptação}, que procede ao ajuste dos pesos sinápticos para
@@ -578,8 +554,8 @@ A atualização do vetor de pesos $w_j$ do neurônio j é feita através da equação:
     w_j(n+1)=w_j(n)+\eta (n) h_{ij}(n)(x(n)-w_j(n)),
 \end{equation}
 \\
-sendo $\eta (n)$ a taxa de aprendizagem, a função de
-vizinhança $h_{ij}(n)$ pode ser definida por:
+sendo $\eta (n)$ a taxa de aprendizagem, um tipo de função de
+vizinhança $h_{ij}(n)$ usualmente utilizada é definida por:
 \begin{equation}\label{neigbor}
 h_{ij}(n)=\exp(-d_{ij}^2/2\sigma^2(n))
 \end{equation}
@@ -603,13 +579,9 @@ adjacentes no mapa de características;
 probabilidade de ocorrência são mapeadas para domínios maiores do
 espaço de saída;
 
-  \item fornece
-uma aproximação discreta das curvas principais, podendo ser visto
-como uma generalização não-linear da análise de componentes
-principais.
 \end{enumerate}
 
-No mapa de características o neurônio que apresentar maior saída é
+No mapa de características, o neurônio que apresentar maior saída é
 consi\-derado o vencedor, ou seja a saída do SOM é do tipo ``vencedor
 leva tudo" (WTA - \textit{winner takes all}). O neurônio ativado é
 escolhido a partir de sua semelhança com a entrada apresentada. É
@@ -625,11 +597,13 @@ Uma outra forma de operar um mapa auto-organizável é utilizar as projeções dos s
 O vetor $\mathbf{u}=[u_1,...,u_K]^T$ pode ser considerado como a projeção de $\mathbf{x}$ no mapa de características.
 
 Os mapas auto-organizáveis pertencem à classe de algoritmos de
-codificação vetorial, sendo capazes de encontrar de forma
-otimizada um número fixo de vetores ou palavras de código que
+codificação vetorial, sendo capazes de encontrar, de forma
+otimizada, um número fixo de vetores ou palavras de código que
 melhor representem o conjunto de sinais.
 
 \section{Técnicas de Pré-Processamento - Compactação}
+
+No processamento de sinais multi-dimensionais, é comum a utilização de técnicas de processamento de sinais que visam a redução da dimensionalidade do problema...
 
 \subsection{Análise de Componentes Principais}
 
@@ -638,12 +612,13 @@ Component Analysis}) é uma técnica estatística de processamento de
 sinais diretamente ligada à transformação de \textit{Karhunen-Loève}
 \cite{book:pca:2002}. O objetivo da PCA é encontrar uma
 transformação linear onde os sinais projetados sejam
-não-correlacionados e grande parcela da energia (variância). esteja
+não-correlacionados e grande parcela da energia (variância) esteja
 concentrada num pequeno número de componentes. Para isso, são
-exploradas informações da estatística de segunda ordem. A análise de
+exploradas informações da estatística de segunda ordem. 
+
+A análise de
 componentes principais é bastante usada para compactação de
-informação. Para reduzir a dimensão dos dados, seleciona-se apenas
-os componentes de maior energia, de modo que o sinal recuperado a
+informação. Como a PCA projeta os sinais em componentes ordenados por energia, uma métrica geralmente utilizada para reduzir a dimensão dos dados consiste na seleção apenas dos componentes de maior energia, de modo que o sinal recuperado a
 partir da informação compactada tenha pequeno erro médio quadrático
 se comparado ao original. A seguir serão desenvolvidos, de forma
 resumida, os fundamentos matemáticos da PCA.
@@ -666,8 +641,8 @@ ser expressa por:
     z_i=\mathbf{v}_i^T\mathbf{x}=\sum_{k=1}^N v_{ki}x_k
 \end{equation}
 \\
-Na transformação por PCA, as componentes $z_i$ ($i=1,...,N$) devem
-ser ortogonais e ordenadas (de modo decrescente) pela variância das
+Na transformação por PCA, os componentes $z_i$ ($i=1,...,N$) devem
+ser ortogonais e ordenados (de modo decrescente) pela variância das
 projeções, sendo, então, $z_1$ a projeção de máxima variância. Para
 tornar a variância independente da norma de $\mathbf{v}_i$, faz-se:
 
@@ -676,13 +651,14 @@ tornar a variância independente da norma de $\mathbf{v}_i$, faz-se:
 \end{equation}
 \\
 Fazendo-se com que $||\mathbf{v}_i||=1$, torna-se a variância função apenas da direção
-das projeções. A ortogonalidade garante a não-correlação entre as
-componentes.
+das projeções. 
+%A ortogonalidade garante a não-correlação entre as
+%componentes.
 
 Como $\mathcal{E}\{\mathbf{x}\}=0$, então $\mathcal{E}\{z_i\}=0$,
 logo a variância da projeção $z_i$ é calculada por
 $\mathcal{E}\{z_i^2\}$. Seguindo a definição da PCA, $z_1$ tem
-máxima variância; logo, $\mathbf{v}_1$ é encontrado pela maximização
+máxima variância; logo, $\mathbf{v}_1$ pode ser encontrado pela maximização
 de \cite{book:oja:2001}:
 
 \begin{equation}\label{w1pca}
@@ -694,7 +670,7 @@ de \cite{book:oja:2001}:
 onde $\mathbf{C}_x$ é a matriz de covariância de $\mathbf{x}$.
 
 A solução para o problema de maximização da equação (\ref{w1pca}) pode
-ser encontrada na álgebra linear em função dos autovetores
+ser encontrada na álgebra linear, em função dos autovetores
 $\mathbf{e}_1,\mathbf{e}_2,...,\mathbf{e}_N$ da matriz
 $\mathbf{C}_x$. A ordem dos autovetores é tal que os autovalores
 associados satisfazem $d_1>d_2>...>d_N$. Desta forma, tem-se:
@@ -712,12 +688,16 @@ principais utilizando as equações (\ref{proj1}) e (\ref{pca1})
 aparecem quando a dimensão $N$ do vetor $\mathbf{x}$ aumenta, pois o
 processo de obtenção dos autovetores se torna proibitivamente lento.
 Nesse caso, uma solução é utilizar métodos iterativos de extração
-das componentes principais através de redes neurais
-\cite{article:oja:pca}.
+das componentes principais, através de redes neurais
+\cite{article:oja:pca,tese:joao:2007}.
 
 \subsection{Componentes Principais de Discriminação}
 
-blá
+Considerando um problema de classificação de padrões, o uso da PCA para compactação pode ser prejudial, pois, os componentes menos energéticos (que são eliminados após a PCA) podem carregar informações discriminantes. Neste caso, pode-se utilizar técnicas de compactação mais adequadas. As componentes principais de discriminação (PCD - \textit{Principal Dsicriminanting Components}) são obtidas a partir da projeção dos sinais de entrada em um conjunto compacto que carrega toda a informação importante para discriminação entre as classes.
+
+Conforme proposto em \cite{} as PCD, para um problema de classificação binário (onde existem apenas duas classes possíveis), podem ser estimadas a partir de uma rede neural (de arquitetura MLP e alimentada adiante) com uma camada oculta.
+
+Alguns modelos semelhantes ao da PCD foram propostos na literatura ... citar outros trabalhos conforme artigo ICA para classificação ...
 
 \section{Aplicações em Física de Altas Energias e Áreas Correlatas}
 \label{aplic}

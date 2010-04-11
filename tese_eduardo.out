@@ -38,8 +38,9 @@
 \BOOKMARK [1][-]{section.5.2}{ICA n\343o-linear}{chapter.5}
 \BOOKMARK [2][-]{subsection.5.2.1}{Unicidade da Solu\347\343o em NLICA}{section.5.2}
 \BOOKMARK [2][-]{subsection.5.2.2}{Misturas P\363s N\343o-Lineares}{section.5.2}
-\BOOKMARK [2][-]{subsection.5.2.3}{Algoritmos sem restri\347\365es estruturais}{section.5.2}
-\BOOKMARK [2][-]{subsection.5.2.4}{ICA Local}{section.5.2}
+\BOOKMARK [2][-]{subsection.5.2.3}{Outros modelos de misturas com restri\347\365es estruturais}{section.5.2}
+\BOOKMARK [2][-]{subsection.5.2.4}{Algoritmos sem restri\347\365es estruturais}{section.5.2}
+\BOOKMARK [2][-]{subsection.5.2.5}{ICA Local}{section.5.2}
 \BOOKMARK [1][-]{section.5.3}{Mapas auto-organiz\341veis}{chapter.5}
 \BOOKMARK [1][-]{section.5.4}{T\351cnicas de Pr\351-Processamento - Compacta\347\343o}{chapter.5}
 \BOOKMARK [2][-]{subsection.5.4.1}{An\341lise de Componentes Principais}{section.5.4}
@@ -59,7 +60,7 @@
 \BOOKMARK [1][-]{section.8.3}{Resultados - Dados experimentais / raios c\363smicos}{chapter.8}
 \BOOKMARK [1][-]{section.8.4}{Resultados - Dados experimentais / colis\365es do LHC}{chapter.8}
 \BOOKMARK [0][-]{chapter.9}{Conclus\365es}{}
-\BOOKMARK [0][-]{chapter*.14}{Refer\352ncias Bibliogr\341ficas}{}
+\BOOKMARK [0][-]{chapter*.15}{Refer\352ncias Bibliogr\341ficas}{}
 \BOOKMARK [0][-]{appendix.A}{Aspectos Te\363ricos das T\351cnicas de Extra\347\343o de Caracter\355sticas}{}
 \BOOKMARK [1][-]{section.A.1}{Mapas auto-organiz\341veis}{appendix.A}
 \BOOKMARK [2][-]{subsection.A.1.1}{Quantiza\347\343o vetorial por aprendizado}{section.A.1}

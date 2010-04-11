@@ -290,6 +290,39 @@
   um ambiente com alta taxa de eventos e fina segmentação\/}, Ph.D. Thesis,
   Universidade Federal do Rio de Janeiro, 2006.
 
+\bibitem{book:factor:1967}
+\MakeUppercase{ Harman, H.~H.}, {\em Modern Factor Analysis\/}.
+\newblock 2nd ed.
+\newblock University of Chicago Press: Chicago, Estados Unidos, 1967.
+
+\bibitem{article:ica:noisecan}
+\MakeUppercase{ Park, H.~M., Oh, S.~H., Lee, S.~Y.}, \enquote{Adaptive noise
+  cancelling based on independent component analysis}, {\em Electronics
+  Letters\/}, v.~38, n.~15, pp.~832--833, 2002.
+
+\bibitem{article:moura:sonarbook}
+\MakeUppercase{ Moura, N.~N., Filho, E. F.~S., Seixas, J.~M.},
+  \enquote{Advances in Sonar Technology}, chap. Independent Component Analysis
+  for Passive Sonar Signal Processing, pp. 91--110, In-Tech, 2009.
+
+\bibitem{article:icateleco:2007}
+\MakeUppercase{ Sarperi, L., Zhu, X., Nandi, A.~K.}, \enquote{Blind OFDM
+  receiver based on independent component analysis for {MIMO} systems}, {\em
+  IEEE Transactions on Wireless Communications\/}, v.~6, n.~11, pp.~4079--4089,
+  2007.
+
+\bibitem{article:icaface:2007}
+\MakeUppercase{ Kwak, K.~C., Pedrycz, W.}, \enquote{Face recognition using an
+  enhanced independent component analysis approach}, {\em IEEE Transactions on
+  Neural Networks\/}, v.~18, n.~2, pp.~530--541, 2007.
+
+\bibitem{article:icabio:2007}
+\MakeUppercase{ Escudero, J., Hornero, R., Abasolo, D.,
+  \MakeLowercase{et~al.}}, \enquote{Artifact removal in magneto-encephalogram
+  background activity with independent component analysis}, {\em IEEE
+  Transactions on Biomedical Engineering\/}, v.~54, n.~11, pp.~1965--1973,
+  2007.
+
 \bibitem{Book:Papoulis:1991}
 \MakeUppercase{ Papoulis, A.}, {\em Probability, Random Variables, and
   Stochastic Processes\/}.
@@ -306,12 +339,23 @@
   Analysis: Algorithms and Applications}, {\em Neural Networks\/}, v.~13, n.
   4-5, pp.~411--430, 2000.
 
+\bibitem{article:simas:2007:lnlm}
+\MakeUppercase{ {Simas Filho}, E., Seixas, J.~M., Caloba, L.~P.},
+  \enquote{Nonlinear Independent Component Analysis, Theoretical Review and
+  Applications}, {\em Learning and Nonlinear Models\/}, v.~5, n.~2,
+  pp.~99--120, 2007.
+
 \bibitem{jutten:nlica:2003}
 \MakeUppercase{ Jutten, C., Karhunen, J.}, \enquote{Advances in Nonlinear Blind
   Source Separation}.
 \newblock In: {\em Proceedings of the 4th Int. Symp. on Independent Component
   Analysis and Blind Signal Separation\/}, v.~1, pp. 245--256, Nara, Japão,
   2003.
+
+\bibitem{article:hyvarinen:1999}
+\MakeUppercase{ Hyvarinen, A., Pajunen, P.}, \enquote{Nonlinear Independent
+  Component Analysis: Existence and Uniqueness results}, {\em Neural
+  Networks\/}, v.~12, n.~3, pp.~429--439, 1999.
 
 \bibitem{article:rojas:ica:2003}
 \MakeUppercase{ Rojas, F., Puntonet, C.~G., Rojas, I.}, \enquote{Independent
@@ -328,11 +372,6 @@
 \MakeUppercase{ Taleb, A., Jutten, C.}, \enquote{Source Separation in
   post-nonlinear mixtures}, {\em IEEE Transactions on Signal Processing\/},
   v.~47, n.~10, pp.~2807--2820, 1999.
-
-\bibitem{article:hyvarinen:1999}
-\MakeUppercase{ Hyvarinen, A., Pajunen, P.}, \enquote{Nonlinear Independent
-  Component Analysis: Existence and Uniqueness results}, {\em Neural
-  Networks\/}, v.~12, n.~3, pp.~429--439, 1999.
 
 \bibitem{article:solazzi:pnl:2004}
 \MakeUppercase{ Solazzi, M., Uncini, A.}, \enquote{Spline neural networks for
@@ -435,13 +474,6 @@
   \enquote{Engineering Applications of the Self-Organizing Map}, {\em
   Proceedings of the IEEE\/}, v.~84, n.~10, pp.~1358--1384, Outubro 1996.
 
-\bibitem{article:simas:2008:eusipco}
-\MakeUppercase{ {Simas Filho}, E.~F., Seixas, J.~M., Caloba, L.~P.},
-  \enquote{Segmented self-organized feature extraction for online filtering in
-  a high event rate detector}.
-\newblock In: {\em Proceedings of the European Conference on Signal
-  Processing\/}, v.~1, pp. 1--5, Lausanne, Suiça, Agosto 2008.
-
 \bibitem{karhunen:local:2000}
 \MakeUppercase{ Karhunen, J., Malaroiu, S., Ilmoniemi, M.}, \enquote{Local
   linear independent component analysis based on clustering}, {\em
@@ -499,6 +531,10 @@
 \MakeUppercase{ Oja, E.}, \enquote{Neural Networks, Principal Components, and
   Subspaces}, {\em International Journal of Neural Systems\/}, v.~1, n.~1,
   pp.~61--68, 1989.
+
+\bibitem{tese:joao:2007}
+\MakeUppercase{ de~Oliveira~e Souza~Filho, J.~B.}, {\em Classificação Neural de
+  Sinais Passivos\/}, Ph.D. Thesis, COPPE/UFRJ, Julho 2007.
 
 \bibitem{article:lindsey:1992}
 \MakeUppercase{ Lindsey, C., Denby, B., Haggerty, H., \MakeLowercase{et~al.}},

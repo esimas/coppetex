@@ -34,27 +34,27 @@
 \contentsline {figure}{\numberline {4.13}{\ignorespaces Distribui\c c\~ao em energia, $\eta $ e $\phi $ das assinaturas de el\'etrons (esquerda) e jatos (direita) aprovadas pelo corte de primeiro n\IeC {\'\i }vel E15i.}}{54}{figure.4.13}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Diagrama do \textit {cocktail party problem}.}}{58}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Sinais (a) fonte, (b) observados e (c) recuperados atrav\'es da ICA.}}{58}{figure.5.2}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Sinais (a) fonte, (b) observados e (c) recuperados atrav\'es da ICA.}}{59}{figure.5.2}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Diagrama do modelo de mistura PNL.}}{62}{figure.5.3}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Diagrama do modelo PNL-L.}}{62}{figure.5.4}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Diagrama do modelo da Mono n\~ao-linearidade.}}{63}{figure.5.5}
 \contentsline {figure}{\numberline {5.6}{\ignorespaces NLICA a partir de SOM.}}{64}{figure.5.6}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Diagrama do modelo da ICA local.}}{66}{figure.5.7}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Diagrama do modelo da ICA local.}}{67}{figure.5.7}
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Diagrama de um mapa auto-organiz\'avel}}{68}{figure.5.8}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Processo de extra\c c\~ao de caracter\IeC {\'\i }sticas globais.}}{76}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Processo de extra\c c\~ao de caracter\IeC {\'\i }sticas segmentadas.}}{76}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Decis\~ao utilizando classificador global.}}{77}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Decis\~ao utilizando classificadores segmentados.}}{77}{figure.6.4}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Processo de extra\c c\~ao de caracter\IeC {\'\i }sticas globais.}}{77}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Processo de extra\c c\~ao de caracter\IeC {\'\i }sticas segmentadas.}}{77}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Decis\~ao utilizando classificador global.}}{78}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Decis\~ao utilizando classificadores segmentados.}}{78}{figure.6.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Diagrama da classifica\c c\~ao a partir do mapa de caracter\IeC {\'\i }sticas}}{100}{figure.A.1}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Compress\~ao e recupera\c c\~ao do sinal $\mathbf {x}$ utilizando a transforma\c c\~ao por PCA.}}{101}{figure.A.2}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Diagrama do algoritmo de Taleb-Jutten para o modelo PNL.}}{112}{figure.A.3}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Diagrama da classifica\c c\~ao a partir do mapa de caracter\IeC {\'\i }sticas}}{102}{figure.A.1}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Compress\~ao e recupera\c c\~ao do sinal $\mathbf {x}$ utilizando a transforma\c c\~ao por PCA.}}{103}{figure.A.2}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Diagrama do algoritmo de Taleb-Jutten para o modelo PNL.}}{114}{figure.A.3}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Esquem\'atico do problema de classifica\c c\~ao bin\'ario.}}{114}{figure.B.1}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Diagrama em blocos de um filtro casado.}}{117}{figure.B.2}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Exemplo de uma rede neural utilizada para separa\c c\~ao dos sinais de entrada em 3 classes.}}{119}{figure.B.3}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Esquem\'atico do problema de classifica\c c\~ao bin\'ario.}}{116}{figure.B.1}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Diagrama em blocos de um filtro casado.}}{119}{figure.B.2}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Exemplo de uma rede neural utilizada para separa\c c\~ao dos sinais de entrada em 3 classes.}}{121}{figure.B.3}
 \addvspace {10\p@ }
