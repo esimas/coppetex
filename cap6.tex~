@@ -1,14 +1,6 @@
 \chapter{Resultados}
 
-Os resultados apresentados neste trabalho foram obtidos a partir de
-dados simulados (utilizando simuladores de Monte Carlo para colisões
-próton-próton) e dados reais medidos no detector (sinais de raios
-cósmicos e também dos primeiros ciclos de operação do LHC). Neste
-capítulo, inicialmente, serão descritas as características das
-diversas bases de dados utilizadas. A seguir, os resultados obtidos
-através da aplicação das diversas técnicas de processamento de
-sinais propostas neste trabalho serão apresentados.
-
+Neste capítulo serão apresentados os resultados obtidos através das técnicas propostas. Para isso serão utilizados quatro conjuntos de sinais distintos, dois de dados simulados, com diferentes cortes de nível 1 e outros dois com sinais medidos no detector.
 
 \section{Resultados - Dados simulados / corte L1 do tipo E10 \textit{loose}}
 
@@ -16,7 +8,7 @@ sinais propostas neste trabalho serão apresentados.
 \section{Resultados - Dados simulados / corte L1 do tipo E15i}
 
 
-\section{Resultados - Sinais de raios cósmicos}
+\section{Resultados - Dados experimentais / raios cósmicos}
 
 
-\section{Resultados - Sinais Reais de Colisões do LHC}
+\section{Resultados - Dados experimentais / colisões do LHC}

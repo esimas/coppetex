@@ -1,7 +1,7 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.12.21)  11 APR 2010 11:16
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.12.21)  13 APR 2010 12:34
 entering extended mode
  %&-line parsing enabled.
-**tese_eduardo
+**tese_eduardo.tex
 (./tese_eduardo.tex
 LaTeX2e <2005/12/01>
 Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
@@ -526,8 +526,8 @@ File: ./figuras/capt_trigdiag.pdf Graphic file (type pdf)
 
 <use ./figuras/capt_trigdiag.pdf> [29 <./figuras/capt_trigdiag.pdf
 
-pdfTeX warning: pdflatex (file ./figuras/capt_trigdiag.pdf): PDF inclusion: Pag
-e Group detected which pdfTeX can't handle. Ignoring it.
+pdfTeX warning: /usr/bin/pdflatex (file ./figuras/capt_trigdiag.pdf): PDF inclu
+sion: Page Group detected which pdfTeX can't handle. Ignoring it.
 >] [30] <./figuras/cap2_trigger.pdf, id=1064, 816.04875pt x 734.745pt>
 File: ./figuras/cap2_trigger.pdf Graphic file (type pdf)
 
@@ -603,8 +603,8 @@ File: ./figuras/cap3_aneis.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_aneis.pdf> [46 <./figuras/cap3_ringerdiag.pdf
 
-pdfTeX warning: pdflatex (file ./figuras/cap3_ringerdiag.pdf): PDF inclusion: P
-age Group detected which pdfTeX can't handle. Ignoring it.
+pdfTeX warning: /usr/bin/pdflatex (file ./figuras/cap3_ringerdiag.pdf): PDF inc
+lusion: Page Group detected which pdfTeX can't handle. Ignoring it.
 >] <./figuras/cap3_ele_e2_3d.pdf, id=1367, 400.49625pt x 301.125pt>
 File: ./figuras/cap3_ele_e2_3d.pdf Graphic file (type pdf)
 
@@ -637,8 +637,8 @@ File: ./figuras/cap3_ringerext.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_ringerext.pdf> [49 <./figuras/cap3_ringerext.pdf
 
-pdfTeX warning: pdflatex (file ./figuras/cap3_ringerext.pdf): PDF inclusion: Pa
-ge Group detected which pdfTeX can't handle. Ignoring it.
+pdfTeX warning: /usr/bin/pdflatex (file ./figuras/cap3_ringerext.pdf): PDF incl
+usion: Page Group detected which pdfTeX can't handle. Ignoring it.
 >] [50] [51]
 <./figuras/cap4n_e10_ele_et.pdf, id=1459, 427.5975pt x 295.1025pt>
 File: ./figuras/cap4n_e10_ele_et.pdf Graphic file (type pdf)
@@ -752,46 +752,50 @@ File: ./figuras/cap3_som.pdf Graphic file (type pdf)
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [67 <./figuras/cap3_local.pdf>] [68 <./figuras/cap3_som.pdf>]
-Underfull \hbox (badness 5091) in paragraph at lines 604--604
+Underfull \hbox (badness 5091) in paragraph at lines 601--601
 []\OT1/cmr/bx/n/17.28 T^^Secnicas de Pr^^Se-Processamento - Com-
  []
 
 [69] [70]
 
-LaTeX Warning: Reference `fig_pcd' on page 71 undefined on input line 700.
+LaTeX Warning: Reference `fig_pcd' on page 71 undefined on input line 697.
 
-[71] [72] [73] [74]) (./cap5.tex [75]
+[71]
+
+LaTeX Warning: Reference `fig_pcd' on page 72 undefined on input line 701.
+
+[72] [73] [74] [75] [76]) (./cap5.tex [77]
 Cap\'{\i }tulo 6.
-<./figuras/cap3_fex_glob.pdf, id=1989, 597.50786pt x 284.52759pt>
+<./figuras/cap3_fex_glob.pdf, id=2026, 597.50786pt x 284.52759pt>
 File: ./figuras/cap3_fex_glob.pdf Graphic file (type pdf)
 
-<use ./figuras/cap3_fex_glob.pdf> [76
+<use ./figuras/cap3_fex_glob.pdf> [78
 
 ]
-<./figuras/cap3_fex_seg.pdf, id=1996, 483.69688pt x 284.52759pt>
+<./figuras/cap3_fex_seg.pdf, id=2033, 483.69688pt x 284.52759pt>
 File: ./figuras/cap3_fex_seg.pdf Graphic file (type pdf)
 
-<use ./figuras/cap3_fex_seg.pdf> [77 <./figuras/cap3_fex_glob.pdf> <./figuras/c
+<use ./figuras/cap3_fex_seg.pdf> [79 <./figuras/cap3_fex_glob.pdf> <./figuras/c
 ap3_fex_seg.pdf>]
-<./figuras/cap3_clas_glo.pdf, id=2072, 369.8858pt x 85.35829pt>
+<./figuras/cap3_clas_glo.pdf, id=2109, 369.8858pt x 85.35829pt>
 File: ./figuras/cap3_clas_glo.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_clas_glo.pdf>
-<./figuras/cap3_clas_seg.pdf, id=2074, 519.26277pt x 284.52759pt>
+<./figuras/cap3_clas_seg.pdf, id=2111, 519.26277pt x 284.52759pt>
 File: ./figuras/cap3_clas_seg.pdf Graphic file (type pdf)
 
-<use ./figuras/cap3_clas_seg.pdf> [78 <./figuras/cap3_clas_glo.pdf> <./figuras/
-cap3_clas_seg.pdf>]) (./cap_tempos.tex [79]
+<use ./figuras/cap3_clas_seg.pdf> [80 <./figuras/cap3_clas_glo.pdf> <./figuras/
+cap3_clas_seg.pdf>]) (./cap_tempos.tex [81]
 Cap\'{\i }tulo 7.
-) (./cap6.tex [80
+) (./cap6.tex [82
 
 ]
 Cap\'{\i }tulo 8.
-) (./conclusoes.tex [81
+) (./conclusoes.tex [83
 
 ]
 Cap\'{\i }tulo 9.
-) [82
+) [84
 
 ] (./tese_eduardo.bbl
 Underfull \hbox (badness 1629) in paragraph at lines 20--22
@@ -799,7 +803,7 @@ Underfull \hbox (badness 1629) in paragraph at lines 20--22
 -ch-ni-cal De-sign Re-port\OT1/cmr/m/n/12 ,
  []
 
-[83
+[85
 
 
 ]
@@ -808,7 +812,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 78--80
 ^Pvel em
  []
 
-[84]
+[86]
 Underfull \hbox (badness 10000) in paragraph at lines 129--131
 []\OT1/cmr/m/n/12 DESY, ``Deuts-ches Elektronen-SynchrotronDie'', Dis-pon^^S^^P
 vel em
@@ -843,55 +847,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 150--152
 Pvel em:
  []
 
-[85] [86] [87] [88] [89] [90] [91] [92] [93] [94] [95] [96] [97] [98])
-(./appendfex.tex [99]
+[87] [88] [89] [90] [91] [92] [93] [94] [95] [96] [97] [98] [99] [100] [101]
+[102]) (./appendfex.tex [103]
 Ap\^endice A.
-[100
+[104
 
-] [101] <./figuras/cap3_somclass.pdf, id=2269, 504.88625pt x 165.61874pt>
+] [105] <./figuras/cap3_somclass.pdf, id=2316, 504.88625pt x 165.61874pt>
 File: ./figuras/cap3_somclass.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_somclass.pdf>
-<./figuras/cap3_pca.pdf, id=2270, 138.5175pt x 94.3525pt>
+<./figuras/cap3_pca.pdf, id=2317, 138.5175pt x 94.3525pt>
 File: ./figuras/cap3_pca.pdf Graphic file (type pdf)
 
-<use ./figuras/cap3_pca.pdf> [102 <./figuras/cap3_somclass.pdf>] [103 <./figura
-s/cap3_pca.pdf>] [104] [105] [106]
+<use ./figuras/cap3_pca.pdf> [106 <./figuras/cap3_somclass.pdf>] [107 <./figura
+s/cap3_pca.pdf>] [108] [109] [110]
 Underfull \hbox (badness 1762) in paragraph at lines 338--342
 []\OT1/cmr/m/n/12 Outra trans-forma^^Xc~ao im-por-tante ^^Se o bran-que-a-mento
 . Um ve-tor $\OT1/cmr/bx/n/12 z \OT1/cmr/m/n/12 =
  []
 
-[107] [108] [109] [110] [111] [112]
+[111] [112] [113] [114] [115] [116]
 
-LaTeX Warning: Reference `cap_fex' on page 113 undefined on input line 651.
+LaTeX Warning: Reference `cap_fex' on page 117 undefined on input line 651.
 
-[113] <./figuras/cap3_pnljutten.pdf, id=2435, 347.12366pt x 237.5805pt>
+[117] <./figuras/cap3_pnljutten.pdf, id=2482, 347.12366pt x 237.5805pt>
 File: ./figuras/cap3_pnljutten.pdf Graphic file (type pdf)
 
-<use ./figuras/cap3_pnljutten.pdf>) (./appendclas.tex [114 <./figuras/cap3_pnlj
-utten.pdf>] [115]
+<use ./figuras/cap3_pnljutten.pdf>) (./appendclas.tex [118 <./figuras/cap3_pnlj
+utten.pdf>] [119]
 Ap\^endice B.
-<./figuras/cap3_transicao.pdf, id=2466, 446.66875pt x 145.54375pt>
+<./figuras/cap3_transicao.pdf, id=2513, 446.66875pt x 145.54375pt>
 File: ./figuras/cap3_transicao.pdf Graphic file (type pdf)
 
-<use ./figuras/cap3_transicao.pdf> [116
+<use ./figuras/cap3_transicao.pdf> [120
 
  <./figuras/cap3_transicao.pdf>]
 LaTeX Font Info:    Try loading font information for U+euf on input line 68.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2002/01/19 v2.2g AMS font definitions
-) [117]
-<./figuras/cap3_fcas.pdf, id=2491, 254.9525pt x 113.42375pt>
+) [121]
+<./figuras/cap3_fcas.pdf, id=2537, 254.9525pt x 113.42375pt>
 File: ./figuras/cap3_fcas.pdf Graphic file (type pdf)
 
-<use ./figuras/cap3_fcas.pdf> [118] [119 <./figuras/cap3_fcas.pdf>] [120]
-<./figuras/cap3_class.pdf, id=2535, 269.005pt x 305.14pt>
+<use ./figuras/cap3_fcas.pdf> [122] [123 <./figuras/cap3_fcas.pdf>] [124]
+<./figuras/cap3_class.pdf, id=2582, 269.005pt x 305.14pt>
 File: ./figuras/cap3_class.pdf Graphic file (type pdf)
 
-<use ./figuras/cap3_class.pdf> [121 <./figuras/cap3_class.pdf>])
-(./appendpub.tex [122]
+<use ./figuras/cap3_class.pdf> [125 <./figuras/cap3_class.pdf>])
+(./appendpub.tex [126]
 Ap\^endice C.
 
 Underfull \hbox (badness 10000) in paragraph at lines 13--21
@@ -903,7 +907,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--37
 []\OT1/cmr/bx/n/12 Resumo\OT1/cmr/m/n/12 :
  []
 
-[123
+[127
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 43--53
@@ -926,7 +930,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--81
 []\OT1/cmr/bx/n/12 Resumo\OT1/cmr/m/n/12 :
  []
 
-[124]
+[128]
 Underfull \hbox (badness 10000) in paragraph at lines 93--101
 []\OT1/cmr/bx/n/12 Resumo\OT1/cmr/m/n/12 :
  []
@@ -942,7 +946,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--119
 []\OT1/cmr/bx/n/12 Resumo\OT1/cmr/m/n/12 :
  []
 
-[125]
+[129]
 Underfull \hbox (badness 10000) in paragraph at lines 126--138
 []\OT1/cmr/bx/n/12 Resumo\OT1/cmr/m/n/12 :
  []
@@ -952,7 +956,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 144--149
 []\OT1/cmr/bx/n/12 Resumo\OT1/cmr/m/n/12 :
  []
 
-[126]
+[130]
 Underfull \hbox (badness 10000) in paragraph at lines 155--162
 []\OT1/cmr/bx/n/12 Resumo\OT1/cmr/m/n/12 :
  []
@@ -973,7 +977,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 179--186
 []\OT1/cmr/bx/n/12 Resumo\OT1/cmr/m/n/12 :
  []
 
-[127]
+[131]
 Underfull \hbox (badness 10000) in paragraph at lines 192--203
 []\OT1/cmr/bx/n/12 Resumo\OT1/cmr/m/n/12 :
  []
@@ -989,7 +993,7 @@ Underfull \hbox (badness 1796) in paragraph at lines 210--217
 r/m/it/12 In-de-pen-dent Com-po-
  []
 
-[128]
+[132]
 Underfull \hbox (badness 10000) in paragraph at lines 223--231
 []\OT1/cmr/bx/n/12 Resumo\OT1/cmr/m/n/12 :
  []
@@ -1004,7 +1008,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 254--259
 []\OT1/cmr/bx/n/12 Resumo\OT1/cmr/m/n/12 :
  []
 
-[129]
+[133]
 Underfull \hbox (badness 10000) in paragraph at lines 266--276
 []\OT1/cmr/bx/n/12 Resumo\OT1/cmr/m/n/12 :
  []
@@ -1019,7 +1023,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 293--298
 []\OT1/cmr/bx/n/12 Resumo\OT1/cmr/m/n/12 :
  []
 
-[130]) AED: lastpage setting LastPage [131] (./tese_eduardo.aux)
+[134]) AED: lastpage setting LastPage [135] (./tese_eduardo.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1028,13 +1032,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6216 strings out of 94074
- 87639 string characters out of 1165152
- 152280 words of memory out of 1500000
- 8705 multiletter control sequences out of 10000+50000
- 17902 words of font info for 62 fonts, out of 1200000 for 2000
+ 6247 strings out of 94074
+ 88326 string characters out of 1165152
+ 151934 words of memory out of 1500000
+ 8718 multiletter control sequences out of 10000+50000
+ 17607 words of font info for 61 fonts, out of 1200000 for 2000
  645 hyphenation exceptions out of 8191
- 32i,14n,41p,1639b,419s stack positions out of 5000i,500n,6000p,200000b,5000s
+ 32i,14n,41p,1643b,419s stack positions out of 5000i,500n,6000p,200000b,5000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
 ve/fonts/type1/bluesky/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/blue
 sky/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx6.pfb></
@@ -1049,14 +1053,14 @@ xlive/fonts/type1/bluesky/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/blu
 esky/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy10.pfb></
 usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy6.pfb></usr/share/texmf-texl
 ive/fonts/type1/bluesky/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/blue
-sky/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmu10.pfb></
-usr/share/texmf-texlive/fonts/type1/bluesky/ams/eufm10.pfb></usr/share/texmf-te
-xlive/fonts/type1/public/cmex/fmex8.pfb></usr/share/texmf-texlive/fonts/type1/b
-luesky/ams/msam10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/ams/msbm10.
-pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on tese_eduardo.pdf (148 pages, 4221076 bytes).
+sky/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/ams/eufm10.pfb>
+</usr/share/texmf-texlive/fonts/type1/public/cmex/fmex8.pfb></usr/share/texmf-t
+exlive/fonts/type1/bluesky/ams/msam10.pfb></usr/share/texmf-texlive/fonts/type1
+/bluesky/ams/msbm10.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvb
+8a.pfb>
+Output written on tese_eduardo.pdf (152 pages, 4233271 bytes).
 PDF statistics:
- 2810 PDF objects out of 2984 (max. 8388607)
- 579 named destinations out of 1000 (max. 131072)
+ 2857 PDF objects out of 2984 (max. 8388607)
+ 598 named destinations out of 1000 (max. 131072)
  1035 words of extra memory for PDF output out of 10000 (max. 10000000)
 

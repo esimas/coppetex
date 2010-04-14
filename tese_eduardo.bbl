@@ -281,7 +281,7 @@
   and Methods in Physics Research A\/}, v.~512, n.~1, pp.~400--432, 2003.
 
 \bibitem{article:seixas:1996}
-\MakeUppercase{ Seixas, J.~M., L.~CalÃ´ba, M.~S.}, \enquote{Neural Second-Level
+\MakeUppercase{ Seixas, J.~M., L.~Calôba, M.~S.}, \enquote{Neural Second-Level
   trigger system based on calorimetry}, {\em Computer Physics
   Communications\/}, v.~95, n. 2-3, pp.~143--157, Junho 1996.
 
@@ -536,11 +536,51 @@
 \MakeUppercase{ de~Oliveira~e Souza~Filho, J.~B.}, {\em Classificação Neural de
   Sinais Passivos\/}, Ph.D. Thesis, COPPE/UFRJ, Julho 2007.
 
+\bibitem{seixas:pcd:1999}
+\MakeUppercase{ Caner, E.~S., Seixas, J.}, \enquote{Neural Discriminating
+  Analysis on Pre-processed Data}.
+\newblock In: {\em Proceedings of the 6th IEEE International Conference on
+  Electronics, Circuits and Systems (ICECS)\/}, pp. 415--418, Pafos, Cyprus,
+  Setembro 1999.
+
+\bibitem{article:nnfex1:1996}
+\MakeUppercase{ Lu, H., Setiono, R., Liu, H.}, \enquote{Effective Data Mining
+  Using Neural Networks}, {\em IEEE Transactions on Knowledge and Data
+  Engineering\/}, v.~8, n.~6, pp.~957--961, 1996.
+
+\bibitem{article:nnfex2:1996}
+\MakeUppercase{ Steppe, J.~M., ans S.~K.~Rogers, K. W. B.~J.},
+  \enquote{Integrated Feature Architecture Selection}, {\em IEEE Transactions
+  on Neural Networks\/}, v.~7, n.~4, pp.~1007--1014, 1996.
+
+\bibitem{article:nnfex:1999}
+\MakeUppercase{ McGarry, K.~J., Wermter, S., MacIntyre, J.}, \enquote{Knowledge
+  Extraction from Radial Basis Functions Networks and Multi-Layer Perceptrons}.
+\newblock In: {\em Proceedings of the International Joint Conference on Neural
+  Networks\/}, v.~4, pp. 2494--2497, Washington-DC, Estados Unidos, 1999.
+
+\bibitem{article:h1trig:2004}
+\MakeUppercase{ Kiesling, C., Janauschek, L., Placakyte, R.,
+  \MakeLowercase{et~al.}}, \enquote{The H1 neural network trigger}.
+\newblock In: {\em Proceedings of the Intelligent Sensors, Sensor Networks and
+  Information Processing Conference\/}, v.~1, pp. 319--324, Melbourne,
+  Austrália, 2004.
+
 \bibitem{article:lindsey:1992}
 \MakeUppercase{ Lindsey, C., Denby, B., Haggerty, H., \MakeLowercase{et~al.}},
   \enquote{Real Time Track Finding with a {VLSI} Neural Network}, {\em Nuclear
   Instruments and Methods in Physics Research A\/}, v.~A, n. 317, pp.~346--356,
   1992.
+
+\bibitem{article:driftnn:1993}
+\MakeUppercase{ Lindsey, C.~S., Denby, B., Haggerty, H.}, \enquote{Drift
+  chamber tracking with neural networks}, {\em IEEE Transactions on Nuclear
+  Science\/}, v.~40, n.~4, pp.~607--614, 2002.
+
+\bibitem{article:nnd0daq:1989}
+\MakeUppercase{ Cutts, D., Hoftun, J.~S., Sornborger, A.}, \enquote{The use of
+  neural networks in the D0 data aquisition system}, {\em IEEE Transaction on
+  Nuclear Science\/}, v.~36, n.~5, pp.~1490--1493, 1989.
 
 \bibitem{article:denby:1999}
 \MakeUppercase{ Denby, B.}, \enquote{Neural Networks in high-energy physics, a
@@ -552,10 +592,33 @@
   experiment at {HERA}}, {\em Acta Physica Polonica B Proceedings
   Supplement\/}, v.~1, n.~2, pp.~407--409, 2008.
 
+\bibitem{article:h1trig2:2004}
+\MakeUppercase{ Zimmermann, J., Kiesling, C.}, \enquote{Neural networks for the
+  H1 experiment}.
+\newblock In: {\em Proceedings of the IEEE Nuclear Science Symposium\/}, v.~3,
+  pp. 1869--1872, Roma, Itália, 2004.
+
 \bibitem{article:nnphys:1995}
 \MakeUppercase{ Kolanoski, H.}, \enquote{Application of artificial neural
   networks in particle physics}, {\em Nuclear Instruments and Methods in
   Physics Research A\/}, v.~1, n. 367, pp.~14--20, 1995.
+
+\bibitem{article:spencer:1989}
+\MakeUppercase{ Spencer, J.~E.}, \enquote{Real-Time Applications of Neural
+  Nets}, {\em IEEE Transactions on Nuclear Science\/}, v.~36, n.~5,
+  pp.~1485--1489, 1989.
+
+\bibitem{article:denbynnh:2003}
+\MakeUppercase{ Denby, B., Garda, P., Granado, B., \MakeLowercase{et~al.}},
+  \enquote{Fast triggering in high-energy physics experiments using hardware
+  neural networks}, {\em IEEE Transactions on Neural Networks\/}, v.~14, n.~5,
+  pp.~1010--1027, 2003.
+
+\bibitem{article:nnhad:2007}
+\MakeUppercase{ Won, E.}, \enquote{A hardware implementation of artificial
+  neural networks using field programable gate arrays}, {\em Nuclear
+  Instruments and Metohds in Physics Research A\/}, v.~581, n.~1, pp.~816--820,
+  2007.
 
 \bibitem{article:crystal:1992}
 \MakeUppercase{ Aker, E.}, \enquote{The Crystal Barrel Spectrometer at LEAR},
@@ -596,6 +659,22 @@
   \enquote{A neural network approach to event-by-event cosmic ray primary mass
   identification}, {\em Proceedings of Science\/}, v.~ACAT07, n. 035,
   pp.~1--13, 2007.
+
+\bibitem{article:nngamma:2009}
+\MakeUppercase{ Marone, A., ans F.~Cadini, C.~F., Zio, E.,
+  \MakeLowercase{et~al.}}, \enquote{Employing Neural Networks to Determine the
+  Position of Interaction of Medium-High Energy Gamma Rays}.
+\newblock In: {\em Proceedings of the IEEE Nuclear Science Symposium\/}, v.~1,
+  pp. 645--649, Orlando, Estados Unidos, 2009.
+
+\bibitem{article:centroide:2006}
+\MakeUppercase{ Choulakian, V.}, \enquote{The optimality of the centroid
+  method}, {\em Psychometrika Journal\/}, v.~68, n.~3, pp.~473--475, 2006.
+
+\bibitem{article:ml:1997}
+\MakeUppercase{ Aldrich, J.}, \enquote{{R.} {A.} {Fisher} and the making of
+  maximum likelihood 1912-1922}, {\em Statistical Science\/}, v.~12, n.~3,
+  pp.~162--176, 1997.
 
 \bibitem{article:lang:som}
 \MakeUppercase{ Lang, M.~J.}, \enquote{Application of {Kohonen} network
@@ -694,6 +773,13 @@
   Algorithms\/}.
 \newblock Wiley: Nova York, Estados Unidos, 2004.
 
+\bibitem{article:simas:2008:eusipco}
+\MakeUppercase{ {Simas Filho}, E.~F., Seixas, J.~M., Caloba, L.~P.},
+  \enquote{Segmented self-organized feature extraction for online filtering in
+  a high event rate detector}.
+\newblock In: {\em Proceedings of the European Conference on Signal
+  Processing\/}, v.~1, pp. 1--5, Lausanne, Suiça, Agosto 2008.
+
 \bibitem{article:gersho:1982}
 \MakeUppercase{ Gersho, A.}, \enquote{On the Structure of Vector Quantizers},
   {\em IEEE Transactions on Information Theory\/}, v.~28, n.~2, pp.~157--166,
@@ -789,7 +875,7 @@
   Extração Cega de Ruídos Gaussianos dos Sinais de Descargas Parcias em
   Equipamentos de Alta Tensão}.
 \newblock In: {\em Anais do Congresso Brasileiro de Redes Neurais\/}, v.~1, pp.
-  133--138, SÃ£o Paulo, 2003.
+  133--138, São Paulo, 2003.
 
 \bibitem{article:amri:1998}
 \MakeUppercase{ Cichocki, A., Douglas, S., Amari, S.}, \enquote{Robust

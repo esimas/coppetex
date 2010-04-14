@@ -19,3 +19,24 @@ Presented at : 14th International Conference on High-energy Accelerators, pt.1-5
 CAP 4 (Revisão ICA e etc)
 
 - Porque não usou o algoritmo GMT em substituição ao SOM para estimar as NLICAs ??
+
+-----------------------
+
+novas refs - 
+
+H. Lu and R. Setiono and H. Liu
+Efective Data Mining Using Neural Neetworks
+IEEE Transactions on Knowledge and Data Engineering
+vol. 8, no. 6, 1996
+
+J. M. Steppe and K. W. Bauer Jr ans S. K. Rogers
+Integrated Feature Extraction and Architecture Selection
+IEEE Transactions on Neural Networks
+vol. 7, no. 4, 1996.
+
+K. J. McGarry and S. Wermter and J. MacIntyre
+Knowledge Extraction from Radial Basis Functions Networks and Multi-Layer Perceptrons
+Proceedings of the International Joint Conference on Neural Networks
+vol.4, pp 2494-2497, Washington-DC, Estados Unidos, Julho, 1999.
+
+
