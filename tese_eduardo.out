@@ -15,10 +15,11 @@
 \BOOKMARK [2][-]{subsection.2.3.2}{Principais objetos de interesse no ATLAS}{section.2.3}
 \BOOKMARK [0][-]{chapter.3}{O Sistema de Filtragem do detector ATLAS}{}
 \BOOKMARK [1][-]{section.3.1}{Introdu\347\343o aos sistemas de filtragem em HEP}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.1.1}{Aplica\347\365es de redes neurais artificiais}{section.3.1}
 \BOOKMARK [1][-]{section.3.2}{O sistema de filtragem online do ATLAS}{chapter.3}
 \BOOKMARK [2][-]{subsection.3.2.1}{Primeiro n\355vel de filtragem}{section.3.2}
 \BOOKMARK [2][-]{subsection.3.2.2}{Filtragem de alto n\355vel}{section.3.2}
-\BOOKMARK [0][-]{chapter.4}{Filtragem de El\351trons partir de Informa\347\365es de Calorimetria no ATLAS}{}
+\BOOKMARK [0][-]{chapter.4}{Detec\347\343o de El\351trons a partir de Informa\347\365es de Calorimetria no ATLAS}{}
 \BOOKMARK [1][-]{section.4.1}{Desempenho esperado dos calor\355metros}{chapter.4}
 \BOOKMARK [1][-]{section.4.2}{Filtragem de el\351trons no L1}{chapter.4}
 \BOOKMARK [1][-]{section.4.3}{Filtragem de el\351trons no L2 - Algoritmo T2Calo}{chapter.4}
@@ -28,12 +29,7 @@
 \BOOKMARK [1][-]{section.4.5}{Extens\365es ao Neural Ringer}{chapter.4}
 \BOOKMARK [2][-]{subsection.4.5.1}{Pr\351-processamento linear}{section.4.5}
 \BOOKMARK [2][-]{subsection.4.5.2}{Pr\351-processamento n\343o-linear}{section.4.5}
-\BOOKMARK [1][-]{section.4.6}{Descri\347\343o dos dados utilizados}{chapter.4}
-\BOOKMARK [2][-]{subsection.4.6.1}{Sinais simulados - Corte E10 loose}{section.4.6}
-\BOOKMARK [2][-]{subsection.4.6.2}{Sinais simulados - Corte E15i}{section.4.6}
-\BOOKMARK [2][-]{subsection.4.6.3}{Sinais Medidos no ATLAS - Raios C\363smicos}{section.4.6}
-\BOOKMARK [2][-]{subsection.4.6.4}{Sinais Medidos no ATLAS - Colis\365es do LHC}{section.4.6}
-\BOOKMARK [0][-]{chapter.5}{Revis\343o da Literatura}{}
+\BOOKMARK [0][-]{chapter.5}{T\351cnicas Utilizadas para Extra\347\343o de Caracter\355sticas}{}
 \BOOKMARK [1][-]{section.5.1}{An\341lise de Componentes Independentes}{chapter.5}
 \BOOKMARK [1][-]{section.5.2}{ICA n\343o-linear}{chapter.5}
 \BOOKMARK [2][-]{subsection.5.2.1}{Unicidade da Solu\347\343o em NLICA}{section.5.2}
@@ -45,20 +41,22 @@
 \BOOKMARK [1][-]{section.5.4}{T\351cnicas de Pr\351-Processamento - Compacta\347\343o}{chapter.5}
 \BOOKMARK [2][-]{subsection.5.4.1}{An\341lise de Componentes Principais}{section.5.4}
 \BOOKMARK [2][-]{subsection.5.4.2}{Componentes Principais de Discrimina\347\343o}{section.5.4}
-\BOOKMARK [1][-]{section.5.5}{Aplica\347\365es em F\355sica de Altas Energias e \301reas Correlatas}{chapter.5}
-\BOOKMARK [2][-]{subsection.5.5.1}{Aplica\347\365es de redes neurais}{section.5.5}
-\BOOKMARK [2][-]{subsection.5.5.2}{Aplica\347\365es de t\351cnicas estat\355sticas de extra\347\343o de caracter\355sticas}{section.5.5}
+\BOOKMARK [1][-]{section.5.5}{Aplica\347\365es}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.5.1}{F\355sica de Altas Energias e \301reas Correlatas}{section.5.5}
 \BOOKMARK [0][-]{chapter.6}{Metodologia Proposta}{}
 \BOOKMARK [1][-]{section.6.1}{Sistemas de Classifica\347\343o Propostos para a Sele\347\343o de El\351trons no Segundo-N\355vel de Filtragem do ATLAS}{chapter.6}
 \BOOKMARK [2][-]{subsection.6.1.1}{Classificadores Neurais Supervisionados}{section.6.1}
 \BOOKMARK [2][-]{subsection.6.1.2}{Combina\347\343o de M\372ltiplos Classificadores}{section.6.1}
-\BOOKMARK [0][-]{chapter.7}{Estudo a Respeito do Tempo de Processamento dos Algoritmos}{}
-\BOOKMARK [1][-]{section.7.1}{Rotinas comuns a todos os algoritmos}{chapter.7}
+\BOOKMARK [0][-]{chapter.7}{Descri\347\343o dos dados utilizados}{}
+\BOOKMARK [1][-]{section.7.1}{Sinais simulados - Corte E10 loose}{chapter.7}
+\BOOKMARK [1][-]{section.7.2}{Sinais simulados - Corte E15i}{chapter.7}
+\BOOKMARK [1][-]{section.7.3}{Sinais Medidos no ATLAS - Raios C\363smicos}{chapter.7}
+\BOOKMARK [1][-]{section.7.4}{Sinais Medidos no ATLAS - Colis\365es do LHC}{chapter.7}
 \BOOKMARK [0][-]{chapter.8}{Resultados}{}
-\BOOKMARK [1][-]{section.8.1}{Resultados - Dados simulados / corte L1 do tipo E10 loose}{chapter.8}
-\BOOKMARK [1][-]{section.8.2}{Resultados - Dados simulados / corte L1 do tipo E15i}{chapter.8}
-\BOOKMARK [1][-]{section.8.3}{Resultados - Dados experimentais / raios c\363smicos}{chapter.8}
-\BOOKMARK [1][-]{section.8.4}{Resultados - Dados experimentais / colis\365es do LHC}{chapter.8}
+\BOOKMARK [1][-]{section.8.1}{Resultados - Dados simulados}{chapter.8}
+\BOOKMARK [1][-]{section.8.2}{Resultados - Dados experimentais}{chapter.8}
+\BOOKMARK [1][-]{section.8.3}{Estudo a Respeito do Tempo de Processamento dos Algoritmos}{chapter.8}
+\BOOKMARK [2][-]{subsection.8.3.1}{Rotinas comuns a todos os algoritmos}{section.8.3}
 \BOOKMARK [0][-]{chapter.9}{Conclus\365es}{}
 \BOOKMARK [0][-]{chapter*.15}{Refer\352ncias Bibliogr\341ficas}{}
 \BOOKMARK [0][-]{appendix.A}{Aspectos Te\363ricos das T\351cnicas de Extra\347\343o de Caracter\355sticas}{}

@@ -4,6 +4,9 @@ Neste capítulo serão apresentados os resultados obtidos através das técnicas pro
 
 \section{Resultados - Dados simulados / corte L1 do tipo E10 \textit{loose}}
 
+No trabalho \cite{article:simas:2008:eusipco}
+foi proposto um critério para a escolha do número de agrupamentos em
+um problema ``cego" de processamento de sinais.
 
 \section{Resultados - Dados simulados / corte L1 do tipo E15i}
 
@@ -12,3 +15,15 @@ Neste capítulo serão apresentados os resultados obtidos através das técnicas pro
 
 
 \section{Resultados - Dados experimentais / colisões do LHC}
+
+
+\section{Estudo a Respeito do Tempo de Processamento dos Algoritmos}
+
+Neste capítulo será apresentado um estudo a respeito do tempo de processamento exigido pelos algoritmos 
+propostos. Considerando que a aplicação exige uma resposta em no máximo 40 ms, o tempo de processamento 
+é um fator limitante na escolha dos algoritmos de filtragem.
+
+\subsection{Rotinas comuns a todos os algoritmos}
+
+O algoritmo anelador (responsável pela geração dos sinais em anéis) foi implementado como um ... do T2Calo 
+(discriminador oficial do ATLAS) e portanto utiliza parte das informações produzidas por esse último. 

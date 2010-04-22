@@ -56,8 +56,9 @@
   2006.
 
 \bibitem{tese:torres:2010}
-\MakeUppercase{ Torres, R.~C.}, {\em Título tese torres\/}, Ph.D. Thesis,
-  COPPE/UFRJ, Março 2010.
+\MakeUppercase{ Torres, R.~C.}, {\em Sistema Online de Filtragem em um Ambiente
+  com Alta Taxa de Eventos e Fina Granularidade\/}, Ph.D. Thesis, COPPE/UFRJ,
+  Março 2010.
 
 \bibitem{seixas:pcd:1995}
 \MakeUppercase{ Caloba, L., Seixas, J., Pereira, F.}, \enquote{Neural
@@ -221,6 +222,11 @@
   Medical Imaging Conference\/}, v.~1, pp. 282--287, Portland, EUA, Outubro
   2003.
 
+\bibitem{article:trigger:volker2004}
+\MakeUppercase{ Volker~Lindenstruth, I.~K.}, \enquote{Overview of trigger
+  systems}, {\em Nuclear Instruments and Methods in Physics Research A\/},
+  v.~535, n.~1, pp.~48--56, 2004.
+
 \bibitem{book:fpga:2009}
 \MakeUppercase{ da~Costa, C.}, {\em Projeto de Circuitos Digitais com FPGA\/}.
 \newblock Érica, 2009.
@@ -230,10 +236,18 @@
   Processamento Digital de Sinais\/}.
 \newblock Bookman, 2004.
 
-\bibitem{article:trigger:volker2004}
-\MakeUppercase{ Volker~Lindenstruth, I.~K.}, \enquote{Overview of trigger
-  systems}, {\em Nuclear Instruments and Methods in Physics Research A\/},
-  v.~535, n.~1, pp.~48--56, 2004.
+\bibitem{book:asic:1997}
+\MakeUppercase{ Smith, M. J.~S.}, {\em Application Specific Integrated
+  Circuits\/}.
+\newblock Addison-Wesley Professional: Nova York, Estados Unidos, 1997.
+
+\bibitem{Homepage:cdf}
+\MakeUppercase{ CDF-Collaboration}, \enquote{The CDF Experiment}, Disponível
+  em: $<$http://www-cdf.fnal.gov/$>$. Acesso em: 21 de abril de 2010.
+
+\bibitem{Homepage:d0}
+\MakeUppercase{ D0-Collaboration}, \enquote{The D0 Experiment}, Disponível em:
+  $<$http://www-cdf.fnal.gov/$>$. Acesso em: 21 de abril de 2010.
 
 \bibitem{article:triggerint:2008}
 \MakeUppercase{ Riu, I., Abolins, M., et. al, P.~A.}, \enquote{Integration of
@@ -244,6 +258,129 @@
 \MakeUppercase{ Seez, C.}, \enquote{The {CMS} trigger system}, {\em The
   European Physical Journal C - Particles and Fields\/}, v.~34, n.~1,
   pp.~151--159, 2004.
+
+\bibitem{article:h1trig:2004}
+\MakeUppercase{ Kiesling, C., Janauschek, L., Placakyte, R.,
+  \MakeLowercase{et~al.}}, \enquote{The H1 neural network trigger}.
+\newblock In: {\em Proceedings of the Intelligent Sensors, Sensor Networks and
+  Information Processing Conference\/}, v.~1, pp. 319--324, Melbourne,
+  Austrália, 2004.
+
+\bibitem{article:lindsey:1992}
+\MakeUppercase{ Lindsey, C., Denby, B., Haggerty, H., \MakeLowercase{et~al.}},
+  \enquote{Real Time Track Finding with a {VLSI} Neural Network}, {\em Nuclear
+  Instruments and Methods in Physics Research A\/}, v.~A, n. 317, pp.~346--356,
+  1992.
+
+\bibitem{article:driftnn:1993}
+\MakeUppercase{ Lindsey, C.~S., Denby, B., Haggerty, H.}, \enquote{Drift
+  chamber tracking with neural networks}, {\em IEEE Transactions on Nuclear
+  Science\/}, v.~40, n.~4, pp.~607--614, 2002.
+
+\bibitem{article:nnd0daq:1989}
+\MakeUppercase{ Cutts, D., Hoftun, J.~S., Sornborger, A.}, \enquote{The use of
+  neural networks in the D0 data aquisition system}, {\em IEEE Transaction on
+  Nuclear Science\/}, v.~36, n.~5, pp.~1490--1493, 1989.
+
+\bibitem{article:denby:1999}
+\MakeUppercase{ Denby, B.}, \enquote{Neural Networks in high-energy physics, a
+  ten year perspective}, {\em Computer Physics Communications\/}, v.~1, n. 119,
+  pp.~219--231, 1999.
+
+\bibitem{article:hera:2008}
+\MakeUppercase{ Nguyet, T.~T.}, \enquote{Searches for new physics by the {H1}
+  experiment at {HERA}}, {\em Acta Physica Polonica B Proceedings
+  Supplement\/}, v.~1, n.~2, pp.~407--409, 2008.
+
+\bibitem{article:h1trig2:2004}
+\MakeUppercase{ Zimmermann, J., Kiesling, C.}, \enquote{Neural networks for the
+  H1 experiment}.
+\newblock In: {\em Proceedings of the IEEE Nuclear Science Symposium\/}, v.~3,
+  pp. 1869--1872, Roma, Itália, 2004.
+
+\bibitem{article:nnphys:1995}
+\MakeUppercase{ Kolanoski, H.}, \enquote{Application of artificial neural
+  networks in particle physics}, {\em Nuclear Instruments and Methods in
+  Physics Research A\/}, v.~1, n. 367, pp.~14--20, 1995.
+
+\bibitem{article:spencer:1989}
+\MakeUppercase{ Spencer, J.~E.}, \enquote{Real-Time Applications of Neural
+  Nets}, {\em IEEE Transactions on Nuclear Science\/}, v.~36, n.~5,
+  pp.~1485--1489, 1989.
+
+\bibitem{article:denbynnh:2003}
+\MakeUppercase{ Denby, B., Garda, P., Granado, B., \MakeLowercase{et~al.}},
+  \enquote{Fast triggering in high-energy physics experiments using hardware
+  neural networks}, {\em IEEE Transactions on Neural Networks\/}, v.~14, n.~5,
+  pp.~1010--1027, 2003.
+
+\bibitem{article:nnhad:2007}
+\MakeUppercase{ Won, E.}, \enquote{A hardware implementation of artificial
+  neural networks using field programable gate arrays}, {\em Nuclear
+  Instruments and Metohds in Physics Research A\/}, v.~581, n.~1, pp.~816--820,
+  2007.
+
+\bibitem{article:crystal:1992}
+\MakeUppercase{ Aker, E.}, \enquote{The Crystal Barrel Spectrometer at LEAR},
+  {\em Nuclear Instruments and Methods in Physics Research A\/}, v.~321, n.~6,
+  pp.~69--108, 1992.
+
+\bibitem{article:crystalnn:1993}
+\MakeUppercase{ Degener, T.}, \enquote{A Feed Forward Neural Network for
+  Recognition of Fluctuations in Electromagnetic Showers}.
+\newblock In: {\em Proceedings of the International Workshop on Software
+  Engineering, Artificial Intelligence and Expert Systems for High Energy and
+  Nuclear Physics\/}, v.~1, n.~1, pp. 1--11, Oberammergan, Alemanha, 1993.
+
+\bibitem{article:hegra:1995}
+\MakeUppercase{ Westerhoff, S., Meyer, H.}, \enquote{Neural nets as a tool for
+  separating gamma and hadron induced Air Showers}.
+\newblock In: {\em Proceedings of the AIHENP\/}, v.~1, n.~1, pp. 1--8, Pisa,
+  Itália, 1995.
+
+\bibitem{article:seixas:1996}
+\MakeUppercase{ Seixas, J.~M., L.~Calôba, M.~S.}, \enquote{Neural Second-Level
+  trigger system based on calorimetry}, {\em Computer Physics
+  Communications\/}, v.~95, n. 2-3, pp.~143--157, Junho 1996.
+
+\bibitem{article:anjos:2006}
+\MakeUppercase{ {dos Anjos}, A., Torres, R., Seixas, J.}, \enquote{Neural
+  triggering system operating on high resolution calorimetry information}, {\em
+  Nuclear Instruments and Methods in Physics Research A\/}, v.~559, n.~1,
+  pp.~134--138, 2006.
+
+\bibitem{article:proriol:1995}
+\MakeUppercase{ Proriol, J.}, \enquote{Selection of variables for neural
+  network analysis. Comparison of several methods with high energy physics
+  analysis}, {\em Nuclear Instruments and Methods in Research A\/}, v.~361,
+  n.~3, pp.~581--585, 1995.
+
+\bibitem{article:mlhep:2009}
+\MakeUppercase{ Whiteson, S., Whiteson, D.}, \enquote{Machine learning for
+  event selection in high energy physics}, {\em Engineering Applications of
+  Artificial Intelligence\/}, v.~22, n.~8, pp.~1203--1217, 2009.
+
+\bibitem{article:riggi:2007}
+\MakeUppercase{ Riggi, S., Caruso, R., Insolia, A., \MakeLowercase{et~al.}},
+  \enquote{A neural network approach to event-by-event cosmic ray primary mass
+  identification}, {\em Proceedings of Science\/}, v.~ACAT07, n. 035,
+  pp.~1--13, 2007.
+
+\bibitem{article:nngamma:2009}
+\MakeUppercase{ Marone, A., ans F.~Cadini, C.~F., Zio, E.,
+  \MakeLowercase{et~al.}}, \enquote{Employing Neural Networks to Determine the
+  Position of Interaction of Medium-High Energy Gamma Rays}.
+\newblock In: {\em Proceedings of the IEEE Nuclear Science Symposium\/}, v.~1,
+  pp. 645--649, Orlando, Estados Unidos, 2009.
+
+\bibitem{article:centroide:2006}
+\MakeUppercase{ Choulakian, V.}, \enquote{The optimality of the centroid
+  method}, {\em Psychometrika Journal\/}, v.~68, n.~3, pp.~473--475, 2006.
+
+\bibitem{article:ml:1997}
+\MakeUppercase{ Aldrich, J.}, \enquote{{R.} {A.} {Fisher} and the making of
+  maximum likelihood 1912-1922}, {\em Statistical Science\/}, v.~12, n.~3,
+  pp.~162--176, 1997.
 
 \bibitem{book:montecarlo:2004}
 \MakeUppercase{ Robert, C., Casella, G.}, {\em Monte Carlo Statistical
@@ -279,11 +416,6 @@
   \enquote{Use of an {FPGA} to identify electromagnetic clusters and isolated
   hadrons in the {ATLAS} level-1 calorimeter trigger}, {\em Nuclear Instruments
   and Methods in Physics Research A\/}, v.~512, n.~1, pp.~400--432, 2003.
-
-\bibitem{article:seixas:1996}
-\MakeUppercase{ Seixas, J.~M., L.~Calôba, M.~S.}, \enquote{Neural Second-Level
-  trigger system based on calorimetry}, {\em Computer Physics
-  Communications\/}, v.~95, n. 2-3, pp.~143--157, Junho 1996.
 
 \bibitem{tese:herman:2006}
 \MakeUppercase{ Junior, H. P.~L.}, {\em Monitoração online e distribuída para
@@ -558,123 +690,6 @@
   Extraction from Radial Basis Functions Networks and Multi-Layer Perceptrons}.
 \newblock In: {\em Proceedings of the International Joint Conference on Neural
   Networks\/}, v.~4, pp. 2494--2497, Washington-DC, Estados Unidos, 1999.
-
-\bibitem{article:h1trig:2004}
-\MakeUppercase{ Kiesling, C., Janauschek, L., Placakyte, R.,
-  \MakeLowercase{et~al.}}, \enquote{The H1 neural network trigger}.
-\newblock In: {\em Proceedings of the Intelligent Sensors, Sensor Networks and
-  Information Processing Conference\/}, v.~1, pp. 319--324, Melbourne,
-  Austrália, 2004.
-
-\bibitem{article:lindsey:1992}
-\MakeUppercase{ Lindsey, C., Denby, B., Haggerty, H., \MakeLowercase{et~al.}},
-  \enquote{Real Time Track Finding with a {VLSI} Neural Network}, {\em Nuclear
-  Instruments and Methods in Physics Research A\/}, v.~A, n. 317, pp.~346--356,
-  1992.
-
-\bibitem{article:driftnn:1993}
-\MakeUppercase{ Lindsey, C.~S., Denby, B., Haggerty, H.}, \enquote{Drift
-  chamber tracking with neural networks}, {\em IEEE Transactions on Nuclear
-  Science\/}, v.~40, n.~4, pp.~607--614, 2002.
-
-\bibitem{article:nnd0daq:1989}
-\MakeUppercase{ Cutts, D., Hoftun, J.~S., Sornborger, A.}, \enquote{The use of
-  neural networks in the D0 data aquisition system}, {\em IEEE Transaction on
-  Nuclear Science\/}, v.~36, n.~5, pp.~1490--1493, 1989.
-
-\bibitem{article:denby:1999}
-\MakeUppercase{ Denby, B.}, \enquote{Neural Networks in high-energy physics, a
-  ten year perspective}, {\em Computer Physics Communications\/}, v.~1, n. 119,
-  pp.~219--231, 1999.
-
-\bibitem{article:hera:2008}
-\MakeUppercase{ Nguyet, T.~T.}, \enquote{Searches for new physics by the {H1}
-  experiment at {HERA}}, {\em Acta Physica Polonica B Proceedings
-  Supplement\/}, v.~1, n.~2, pp.~407--409, 2008.
-
-\bibitem{article:h1trig2:2004}
-\MakeUppercase{ Zimmermann, J., Kiesling, C.}, \enquote{Neural networks for the
-  H1 experiment}.
-\newblock In: {\em Proceedings of the IEEE Nuclear Science Symposium\/}, v.~3,
-  pp. 1869--1872, Roma, Itália, 2004.
-
-\bibitem{article:nnphys:1995}
-\MakeUppercase{ Kolanoski, H.}, \enquote{Application of artificial neural
-  networks in particle physics}, {\em Nuclear Instruments and Methods in
-  Physics Research A\/}, v.~1, n. 367, pp.~14--20, 1995.
-
-\bibitem{article:spencer:1989}
-\MakeUppercase{ Spencer, J.~E.}, \enquote{Real-Time Applications of Neural
-  Nets}, {\em IEEE Transactions on Nuclear Science\/}, v.~36, n.~5,
-  pp.~1485--1489, 1989.
-
-\bibitem{article:denbynnh:2003}
-\MakeUppercase{ Denby, B., Garda, P., Granado, B., \MakeLowercase{et~al.}},
-  \enquote{Fast triggering in high-energy physics experiments using hardware
-  neural networks}, {\em IEEE Transactions on Neural Networks\/}, v.~14, n.~5,
-  pp.~1010--1027, 2003.
-
-\bibitem{article:nnhad:2007}
-\MakeUppercase{ Won, E.}, \enquote{A hardware implementation of artificial
-  neural networks using field programable gate arrays}, {\em Nuclear
-  Instruments and Metohds in Physics Research A\/}, v.~581, n.~1, pp.~816--820,
-  2007.
-
-\bibitem{article:crystal:1992}
-\MakeUppercase{ Aker, E.}, \enquote{The Crystal Barrel Spectrometer at LEAR},
-  {\em Nuclear Instruments and Methods in Physics Research A\/}, v.~321, n.~6,
-  pp.~69--108, 1992.
-
-\bibitem{article:crystalnn:1993}
-\MakeUppercase{ Degener, T.}, \enquote{A Feed Forward Neural Network for
-  Recognition of Fluctuations in Electromagnetic Showers}.
-\newblock In: {\em Proceedings of the International Workshop on Software
-  Engineering, Artificial Intelligence and Expert Systems for High Energy and
-  Nuclear Physics\/}, v.~1, n.~1, pp. 1--11, Oberammergan, Alemanha, 1993.
-
-\bibitem{article:hegra:1995}
-\MakeUppercase{ Westerhoff, S., Meyer, H.}, \enquote{Neural nets as a tool for
-  separating gamma and hadron induced Air Showers}.
-\newblock In: {\em Proceedings of the AIHENP\/}, v.~1, n.~1, pp. 1--8, Pisa,
-  Itália, 1995.
-
-\bibitem{article:proriol:1995}
-\MakeUppercase{ Proriol, J.}, \enquote{Selection of variables for neural
-  network analysis. Comparison of several methods with high energy physics
-  analysis}, {\em Nuclear Instruments and Methods in Research A\/}, v.~361,
-  n.~3, pp.~581--585, 1995.
-
-\bibitem{article:bussino:2005}
-\MakeUppercase{ Bussino, S., Mari, M.}, \enquote{Gamma-hadron discrimination in
-  extensive air showers using a neural network}, {\em Astroparticle Physics\/},
-  v.~1, n.~15, pp.~65--77, 2005.
-
-\bibitem{article:mlhep:2009}
-\MakeUppercase{ Whiteson, S., Whiteson, D.}, \enquote{Machine learning for
-  event selection in high energy physics}, {\em Engineering Applications of
-  Artificial Intelligence\/}, v.~22, n.~8, pp.~1203--1217, 2009.
-
-\bibitem{article:riggi:2007}
-\MakeUppercase{ Riggi, S., Caruso, R., Insolia, A., \MakeLowercase{et~al.}},
-  \enquote{A neural network approach to event-by-event cosmic ray primary mass
-  identification}, {\em Proceedings of Science\/}, v.~ACAT07, n. 035,
-  pp.~1--13, 2007.
-
-\bibitem{article:nngamma:2009}
-\MakeUppercase{ Marone, A., ans F.~Cadini, C.~F., Zio, E.,
-  \MakeLowercase{et~al.}}, \enquote{Employing Neural Networks to Determine the
-  Position of Interaction of Medium-High Energy Gamma Rays}.
-\newblock In: {\em Proceedings of the IEEE Nuclear Science Symposium\/}, v.~1,
-  pp. 645--649, Orlando, Estados Unidos, 2009.
-
-\bibitem{article:centroide:2006}
-\MakeUppercase{ Choulakian, V.}, \enquote{The optimality of the centroid
-  method}, {\em Psychometrika Journal\/}, v.~68, n.~3, pp.~473--475, 2006.
-
-\bibitem{article:ml:1997}
-\MakeUppercase{ Aldrich, J.}, \enquote{{R.} {A.} {Fisher} and the making of
-  maximum likelihood 1912-1922}, {\em Statistical Science\/}, v.~12, n.~3,
-  pp.~162--176, 1997.
 
 \bibitem{article:lang:som}
 \MakeUppercase{ Lang, M.~J.}, \enquote{Application of {Kohonen} network
