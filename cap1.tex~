@@ -254,20 +254,18 @@ disponíveis no detector.
 O projeto dos discriminadores de partículas foi realizado
 a partir de um conjunto de eventos simulados. Estas simulações, por Monte Carlo,
 consideram todas as características físicas do detector e do
-acelerador. Foram utilizados também conjuntos de dados experimentais obtidos na
+acelerador. Foram utilizados, também, conjuntos de dados experimentais obtidos na
 fase inicial de operação do LHC. Sabe-se que
 os raios cósmicos representam ruído de fundo para o canal elétron/jato, pois produzem múons no detector.
 Assim, os algoritmos propostos foram também testados para uma base de dados
 composta de eventos de raios cósmicos, visando verificar a capacidade de rejeição para esse sinal. Uma outra análise utilizou eventos de colisão obtidos recentemente na fase inicial de operação do LHC.
 
-Foram utilizados diversos algoritmos para estimar o modelo não-linear das componentes independentes (NLICA - \textit{Nonlinear Independent Component Analysis}).
+Foram aplicados diversos algoritmos para estimar o modelo não-linear das componentes independentes (NLICA - \textit{Nonlinear Independent Component Analysis}).
 Visando explorar adequadamente as características do detector, o modo de executar as tarefas de extração de características e classificação foi variado entre as abordagens segmentada (onde o processamento é feito a nível de cada camada do calorímetro) e não-segmentada (quando os sinais em anéis, gerados a partir de todas as camadas, são concatenados em um único vetor).
 
-Entre os diversos modelos existentes para a a estimação da NLICA, neste trabalho foram utilizados os modelos sem restrição estrutural (através dos mapas auto-organizáveis) e o modelo pós não-linear (que restrige os mapeamentos não-lineares possíveis a uma mistura linear seguida de funções não-lineares aplicadas a cada componente desta mistura). A ICA Local, que é um modelo diretamente ligado ao da NLICA também foi utilizada. Para cada modelo utilizado foi realizado um estudo comparativo de desempenho com o Neural Ringer quando operando diretamente sobre os sinais em anéis. 
+Entre os diversos modelos existentes para a a estimação da NLICA, neste trabalho foram utilizados os modelos sem restrição estrutural (através dos mapas auto-organizáveis) e o modelo pós não-linear (que restrige os mapeamentos não-lineares possíveis a uma mistura linear seguida de funções não-lineares aplicadas a cada componente desta mistura). A ICA Local, que é um modelo diretamente ligado ao da NLICA também foi utilizada. Para cada modelo proposto foi realizado um estudo comparativo de desempenho com o Neural Ringer quando este opera diretamente sobre os sinais em anéis. 
 
-
-
-... o que foi feito?
+Considerando o sistema de classificação neural, foi proposta a utilização de classificadores especilistas na informação de cada camada do calorímetro. Diversos modos de combinar a informação deste conjunto de classificadores foram testados. Deste modo verificou-se que há redundância de informação entre as diversas camadas do calorímetro. Pode-se, então, obter o mesmo desempenho de discriminação utilizando-se apenas uma parcela das informações disponíveis e, assim, contribuir para a redução do tempo de processamento.
 
 \section{Conteúdo do trabalho}
 
@@ -278,15 +276,18 @@ de \textit{trigger online} em experimentos de física de altas
 energias e ,mais especificamente, no detector ATLAS serão apresentadas 
 no Capítulo 3.
 
-No Capítulo 5, serão mostrados os fundamentos teóricos das técnicas
+É descrito, no Capítulo 4, o processo de seleção de elétrons utilizando informações de calorimetria no 
+detector ATLAS. No Capítulo 5, serão mostrados os fundamentos teóricos das técnicas
 de extração de características e teste de hipótese que serão
 utilizadas para a otimização do sistema de filtragem do ATLAS.
 
-Os resultados obtidos serão apresentadas no Capítulo~6. As
+A metodologia utilizada no desenvolvimento deste trabalho é descrita no Capítulo 6. Os conjuntos de dados
+
+Os resultados obtidos serão apresentadas no Capítulo~8. As
 conclusões e os futuros trabalhos são os tópicos abordados no
-Capítulo~7.
+Capítulo~9.
 
 Nos Apêndices A e B são fornecidas as bases matemáticas para uma
 melhor compreensão das técnicas estatística de processamento de
 sinais descritas no Capítulo~3. Finalmente, no Apêndice C serão listadas
-as publicações produzidas durante este trabalho.
+as publicações produzidas com os resultados obtidos neste trabalho.

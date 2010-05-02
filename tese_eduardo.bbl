@@ -6,20 +6,6 @@
   {L}arge {H}adron {C}ollider}, {\em Journal of Instrumentation\/}, v.~3, n.
   S08003, pp.~1--407, 2008.
 
-\bibitem{TDR1:ATLAS:1999}
-\MakeUppercase{ ATLAS-Collaboration}, {\em ATLAS Detector and Physics
-  Performance Technical Design Report, Volume 1\/}, Tech. rep., CERN, Genebra,
-  Suiça, Maio 1999.
-
-\bibitem{article:HLT1:2003}
-\MakeUppercase{ Hauser, R.}, \enquote{The ATLAS High Level Trigger System}.
-\newblock In: {\em Proceedings of the U.S. Atlas Computing Meeting\/}, v.~1,
-  pp. 1--5, Upton, EUA, 2003.
-
-\bibitem{TDR:ATLAS:1998}
-\MakeUppercase{ ATLAS-Collaboration}, {\em First-Level Trigger Technical Design
-  Report\/}, Tech. rep., CERN, Genebra, Suiça, Junho 1998.
-
 \bibitem{article:LHC:2008}
 \MakeUppercase{ Evans, L., Bryant, P.}, \enquote{{LHC} Machine}, {\em Journal
   of Instrumentation\/}, v.~3, n. S08001, pp.~1--158, 2008.
@@ -189,6 +175,11 @@
 \MakeUppercase{ Pontecorvo, L.}, \enquote{The {ATLAS} muon spectrometer}, {\em
   The European Physical Journal C - Particles and Fields\/}, v.~34, n.~1, 2004.
 
+\bibitem{TDR1:ATLAS:1999}
+\MakeUppercase{ ATLAS-Collaboration}, {\em ATLAS Detector and Physics
+  Performance Technical Design Report, Volume 1\/}, Tech. rep., CERN, Genebra,
+  Suiça, Maio 1999.
+
 \bibitem{article:tilecal:2006}
 \MakeUppercase{ Adragna{, et al.}, P.}, \enquote{The {ATLAS} Hadronic Tile
   Calorimeter: From Construction Toward Physics}, {\em IEEE Transactions on
@@ -215,6 +206,11 @@
 \MakeUppercase{ ATLAS-Collaboration}, {\em ATLAS Detector and Physics
   Performance Technical Design Report, Volume 2\/}, Tech. rep., CERN, Genebra,
   Suiça, Maio 1999.
+
+\bibitem{article:HLT1:2003}
+\MakeUppercase{ Hauser, R.}, \enquote{The ATLAS High Level Trigger System}.
+\newblock In: {\em Proceedings of the U.S. Atlas Computing Meeting\/}, v.~1,
+  pp. 1--5, Upton, EUA, 2003.
 
 \bibitem{article:trigger:watz}
 \MakeUppercase{ Watts, G.}, \enquote{Review of Triggering}.
@@ -320,18 +316,6 @@
   Instruments and Metohds in Physics Research A\/}, v.~581, n.~1, pp.~816--820,
   2007.
 
-\bibitem{article:crystal:1992}
-\MakeUppercase{ Aker, E.}, \enquote{The Crystal Barrel Spectrometer at LEAR},
-  {\em Nuclear Instruments and Methods in Physics Research A\/}, v.~321, n.~6,
-  pp.~69--108, 1992.
-
-\bibitem{article:crystalnn:1993}
-\MakeUppercase{ Degener, T.}, \enquote{A Feed Forward Neural Network for
-  Recognition of Fluctuations in Electromagnetic Showers}.
-\newblock In: {\em Proceedings of the International Workshop on Software
-  Engineering, Artificial Intelligence and Expert Systems for High Energy and
-  Nuclear Physics\/}, v.~1, n.~1, pp. 1--11, Oberammergan, Alemanha, 1993.
-
 \bibitem{article:hegra:1995}
 \MakeUppercase{ Westerhoff, S., Meyer, H.}, \enquote{Neural nets as a tool for
   separating gamma and hadron induced Air Showers}.
@@ -382,6 +366,10 @@
   maximum likelihood 1912-1922}, {\em Statistical Science\/}, v.~12, n.~3,
   pp.~162--176, 1997.
 
+\bibitem{TDR:ATLAS:1998}
+\MakeUppercase{ ATLAS-Collaboration}, {\em First-Level Trigger Technical Design
+  Report\/}, Tech. rep., CERN, Genebra, Suiça, Junho 1998.
+
 \bibitem{book:montecarlo:2004}
 \MakeUppercase{ Robert, C., Casella, G.}, {\em Monte Carlo Statistical
   Methods\/}.
@@ -398,6 +386,20 @@
   Provided By the Hadronic Calorimeter of ATLAS Detector}, {\em Nuclear
   Instruments and Methods in Physics Research - A\/}, v.~570, n.~1,
   pp.~117--125, 2007.
+
+\bibitem{article:atlasl2:2004}
+\MakeUppercase{ dos Anjos, A., Abolins, M., Armstrong, S.}, \enquote{The Second
+  Level Trigger of the {ATLAS} Experiment at {CERN} {LHC}}, {\em IEEE
+  Transactions on Nuclear Science\/}, v.~51, n.~3, pp.~909--914, 2004.
+
+\bibitem{livro:gigaeth:1999}
+\MakeUppercase{ Lane, W.~G., Cunningham, D.}, {\em Gigabit Ethernet
+  Networking\/}.
+\newblock Sams: Nova York, Estados Unidos, 1999.
+
+\bibitem{livro:c:2003}
+\MakeUppercase{ Shildt, H.}, {\em C++: The Complete Reference\/}.
+\newblock McGraw-Hill: Nova York, Estados Unidos, 2003.
 
 \bibitem{article:imphlttrigeer:2006}
 \MakeUppercase{ Schiavi, C.}, \enquote{Implementation and Performance of the

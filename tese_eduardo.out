@@ -25,7 +25,9 @@
 \BOOKMARK [1][-]{section.4.3}{Filtragem de el\351trons no L2 - Algoritmo T2Calo}{chapter.4}
 \BOOKMARK [1][-]{section.4.4}{Neural Ringer - Alternativa para Filtragem de El\351trons no L2}{chapter.4}
 \BOOKMARK [2][-]{subsection.4.4.1}{Extra\347\343o de Caracter\355sticas - Anelamento}{section.4.4}
-\BOOKMARK [2][-]{subsection.4.4.2}{Teste de Hip\363teses - Classificador Neural}{section.4.4}
+\BOOKMARK [2][-]{subsection.4.4.2}{Normaliza\347\343o}{section.4.4}
+\BOOKMARK [2][-]{subsection.4.4.3}{Teste de Hip\363teses - Classificador Neural}{section.4.4}
+\BOOKMARK [2][-]{subsection.4.4.4}{Tempo de Execu\347\343o}{section.4.4}
 \BOOKMARK [1][-]{section.4.5}{Extens\365es ao Neural Ringer}{chapter.4}
 \BOOKMARK [2][-]{subsection.4.5.1}{Pr\351-processamento linear}{section.4.5}
 \BOOKMARK [2][-]{subsection.4.5.2}{Pr\351-processamento n\343o-linear}{section.4.5}

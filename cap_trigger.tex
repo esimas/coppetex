@@ -82,7 +82,7 @@ a respeito das redes neurais artificiais (e sua utilização como classificador su
 Apêndice \ref{apend_clas}.
 
 Em geral, nas aplicações de filtragem \textit{online} são utilizados classificadores neurais na arquitetura 
-Perceptron de Múltiplas Camadas com treinamento supervisionado \cite{haykin:nn:2008}. A escolha de redes neurais 
+Perceptron de Múltiplas Camadas com treinamento supervisionado~\cite{haykin:nn:2008}. A escolha de redes neurais 
 para aplicações 
 em sistemas de \textit{trigger} é motivada pelo fato do problema ser essencialmente de reconhecimento de 
 padrões (identificação das assinaturas de interesse). Uma outra característica particular é que as 
@@ -120,15 +120,13 @@ foram implementadas em \textit{hardware} dedicado~\cite{article:nnphys:1995}. Ou
 neural implementadas em \textit{hardware} podem ser encontradas em 
 \cite{article:spencer:1989,article:denbynnh:2003,article:nnhad:2007}.
 
-Exemplos mostram também a aplicação de redes neurais para a análise
-de chuveiros de partículas gerados nos calorímetros. A colaboração
-do \textit{Crystal Barrel}, detector do experimento LEAR do CERN
-\cite{article:crystal:1992}, conseguiu a identificação de fótons e
-píons \cite{article:crystalnn:1993}. No experimento HEGRA
-\cite{article:hegra:1995} (localizado na ilha La Palma, Espanha),
-conseguiu-se a separação entre fótons e hádrons com um classificador
-neural supervisionado. ... o trigger de
-neutrinos do experimento CHOOZ \cite{article:denby:1999},
+No experimento HEGRA (\textit{High-Energy Gamma Ray Astronomy}) \cite{article:hegra:1995}, composto por um conjunto
+de detectores instalados a 2000 metros de altitude, na ilha La Palma, Espanha, uma rede neural foi utilizada para
+separar eventos de raios cósmicos carregados eletricamente ($\gamma$-induzidos) do ruído de fundo composto por
+chuveiros induzidos por hadrons (que é 100 vezes mais frequente que a assinatura de interesse). O classificador neural
+foi alimentado por medições de um conjunto de 221 cintiladores, que possibilitam a reconstrução da direção da partícula
+primária. Diversas topologias de classificadores neurais foram testadas e foi atingida uma rejeição de 92$\%$ do 
+ruído de fundo para aceitação de 60$\%$ da física de interesse.
 
 Um \textit{trigger} de segundo nível baseado em redes neurais e
 informação de calorimetria foi proposto para o detector ATLAS do acelerador LHC em
@@ -156,8 +154,13 @@ respectivamente, no acelerador Tevatron do Fermilab~\cite{article:mlhep:2009} e 
 Pierre Auger~\cite{article:riggi:2007}. A massa de top-quarks é extremamente alta se comparado às demais partículas 
 elementares (aproximadamente 40 vezes maior que o segundo quark mais pesado). O motivo para tal característica ainda 
 não está completamente esclarecido na teoria, portanto a medição precisa da massa destes eventos (que são relativamente 
-raros) é muito importante. Com o uso da rede neural, foi obtida a medição mais precisa da massa (até a publicação 
-do trabalho) de top-quarks para a assinatura utilizada. 
+raros) é muito importante. Com o uso da rede neural em~\cite{article:mlhep:2009}, foi obtida a medição mais precisa da 
+massa de top-quarks (até a publicação do referido trabalho) para a assinatura utilizada. Em eventos de raios cósmicos, 
+a estimação da massa (que é realizada de modo indireto a partir de parâmetros da cascata desenvolvida na atmosfera)
+ é importante na determinação da origem e da natureza dos raios cósmicos primários. No trabalho~\cite{article:riggi:2007}, 
+eventos simulados com energia variando entre 10$^18$ e 10$^19$ eV foram utilizados para treinamento e teste da rede neural 
+(arquiterura MLP). A rede foi alimentada a partir de parâmetros estimados dos eventos e obteve eficiência da ordem de 
+99$\%$.
 
 Um exemplo recente de aplicação de rede neural para análise \textit{offline} pode 
 ser encontrado em~\cite{article:nngamma:2009}. Neste trabalho, uma rede \textit{Perceptron} 
@@ -223,7 +226,8 @@ características dos três níveis de filtragem de eventos no ATLAS.
 
 \begin{figure}[h!] \centering
 \includegraphics[width=13cm]{cap2_trigger}
-\caption{Diagrama em blocos do sistema de filtragem e aquisição de
+\caption[Diagrama em blocos do sistema de filtragem e aquisição de
+dados do ATLAS.]{Diagrama em blocos do sistema de filtragem e aquisição de
 dados do ATLAS, extraído de \cite{TDR1:ATLAS:1999}.} \label{trigger}
 \end{figure}
 
@@ -303,11 +307,11 @@ nível deve ser tomada até $2,5\mu s$ após o cruzamento de feixes
 
 O L1 identifica as assinaturas básicas de interesse e, para tornar
 mais rápida a tomada de decisão, a granularidade dos subsistemas do
-detector é menos fina \cite{TDR:ATLAS:1998}. Considerando o sistema de
+detector é menos fina~\cite{TDR:ATLAS:1998}. Considerando o sistema de
 calorímetros, que possui mais de 100.000 células detectoras, o L1
 utiliza apenas 7000 torres de soma analógicas (as torres são obtidas
 somando-se a energia de células dentro de regiões de 0,1$\times$0,1
-em $\Delta\eta \times \Delta\phi$) \cite{article:laradd:2007}. 
+em $\Delta\eta \times \Delta\phi$)~\cite{article:laradd:2007}. 
 
 A tomada de decisão quanto à aceitação ou rejeição de eventos no
 nível 1 é feita pelo processador central de \textit{trigger}
@@ -315,7 +319,7 @@ nível 1 é feita pelo processador central de \textit{trigger}
 informações disponíveis nos calorímetros, para a detecção de 
 partículas eletromagnéticas e hadrônicas, e nos sub-detectores RPC 
 (\textit{Resistive Plate Chamber}) e TGC (\textit{Thin Gap Chambers}) para a detecção de múons,
-conforme mostrado na Figura \ref{lvl1}. O filtro dos calorímetros é 
+conforme mostrado na Figura~\ref{lvl1}. O filtro dos calorímetros é 
 dividido em três sub-sistemas. O pré-processador digitaliza os sinais 
 medidos e envia as informações para os processadores de regiões (CP - 
 \textit{Cluster Processor}) e de 
@@ -355,12 +359,13 @@ estiver operando em alta luminosidade (L=10$^{34}$cm$^{-2}s{-1}$).
 Pode-se perceber que a taxa total desta simulação é da ordem de 40 kHz,
 aproximadamente 2 vezes menor que a freqüência de saída esperada
 para o nível 1 na operação do LHC. Isso se deve às
-incertezas inerentes aos eventos simulados
-\cite{TDR:ATLAS:1998}.
+incertezas inerentes aos eventos simulados~\cite{TDR:ATLAS:1998}.
 
 \begin{table}
 \centering
-\caption{Freqüência esperada para os principais canais de
+\caption[Freqüência esperada para os principais canais de
+\textit{trigger} no primeiro nível de filtragem do ATLAS
+(L=10$^{34}$cm$^{-2}s{-1}$).]{Freqüência esperada para os principais canais de
 \textit{trigger} no primeiro nível de filtragem do ATLAS
 (L=10$^{34}$cm$^{-2}s{-1}$) , extraída de \cite{TDR:ATLAS:1998}.}\vspace{.3cm}
 \begin{tabular}{c c}
@@ -406,9 +411,16 @@ identificados no HLT são candidatos a múons, elétrons, fótons,
 taus, jatos, $E_T^{miss}$ e física dos hádrons b. As informações
 necessárias para a decisão do alto nível dependem do tipo de
 região de interesse fornecida pelo L1, cada uma tendo suas
-próprias características de processamento \cite{TDR:ATLAS:2003}.
+próprias características de processamento~\cite{TDR:ATLAS:2003}.
 
-O segundo nível opera guiado pelas informações da RoI fornecidas pelo L1. Conforme mostrado na Figura~\ref{fig_l2}, após um evento ser aceito pelo L1, as informações da RoI são descarregadas pelos \textit{drivers} de saída e armazenadas nos ROBs (\textit{Read-Out Buffers}) enquanto aguardam a decisão de nível 2 \cite{TDR:ATLAS:2003}. Com o uso das RoIs, apenas $\approx$2\% da informação do detector é necessária para produzir a decisão do L2, reduzindo consideravelmente a taxa de transmissão na rede de dados do L2 \cite{article:triggerint:2008}. Os algoritmos de seleção de eventos operam nas unidades de processamento do L2 (L2PU - \textit{Level 2 processing units}). O supervisor de nível 2 (L2SV - \textit{Level 2 supervisor}) indica a L2PU que ficará responsável por um determinado evento. As principais
+O segundo nível opera guiado pelas informações da RoI fornecidas pelo L1. Conforme mostrado na Figura~\ref{fig_l2}, 
+após um evento ser aceito pelo L1, as informações da RoI são descarregadas pelos \textit{drivers} de saída e 
+armazenadas nos ROBs (\textit{Read-Out Buffers}) enquanto aguardam a decisão de nível 2~\cite{TDR:ATLAS:2003}. 
+Com o uso das RoIs, apenas $\approx$2\% da informação do detector é necessária para produzir a decisão do L2, 
+reduzindo consideravelmente a taxa de transmissão na rede de dados~\cite{article:triggerint:2008}. 
+Os algoritmos de seleção de eventos operam nas unidades de processamento do L2 (L2PU - \textit{Level 2 
+processing units}). O supervisor de nível 2 (L2SV - \textit{Level 2 supervisor}) indica a L2PU que ficará 
+responsável por um determinado evento. As principais
 características desejadas para os algoritmos de filtragem no L2 são listadas a seguir~\cite{TDR:ATLAS:2003}:
 \begin{itemize}
   \item alta eficiência ($>$ 95\%) por RoI selecionada no L1;
@@ -419,7 +431,20 @@ características desejadas para os algoritmos de filtragem no L2 são listadas a s
   \item robustez em relação à luminosidade, ruído de medição, imperfeições de ali\-nha\-men\-to e calibração.
 \end{itemize}
 
-Quando um evento é aceito pelo L2, o construtor de eventos (EB - \textit{Event Builder}) coleta nos ROBs toda a informação do evento e a disponibiliza ao Filtro de Eventos (EF - \textit{Event Filter}) para a última etapa da filtragem \textit{online}. O evento completo é armazenado nas Fazendas de Entrada do Filtro de Eventos (EF \textit{Sub-Farm Input} -SFI)~\cite{article:trigconf:2009}. O EF reduz a taxa de eventos a 200 Hz tendo disponível entre 1 e 2 segundos para a tomada de decisão. Os algoritmos do EF analisam todo o evento (não se restringem apenas à RoI como no L2) e operam de modo semelhante à análise \textit{offline} \cite{article:triggerint:2008}. Quando o evento é aceito pelo EF, é enviado às Fazendas de Saída (SFO - \textit{Sub-Farm Output}) e, então, armazenado em mídia permanente.
+Quando um evento é aceito pelo L2, o construtor de eventos (EB - \textit{Event Builder}) coleta nos ROBs toda a 
+informação do evento e a disponibiliza ao Filtro de Eventos (EF - \textit{Event Filter}) para a última etapa da 
+filtragem \textit{online}. O evento completo é armazenado nas Fazendas de Entrada do Filtro de Eventos 
+(EF \textit{Sub-Farm Input} -SFI)~\cite{article:trigconf:2009}. O EF reduz a taxa de eventos a 200 Hz tendo 
+disponível entre 1 e 2 segundos para a tomada de decisão. Os algoritmos do EF analisam todo o evento (não se 
+restringem apenas à RoI como no L2) e operam de modo semelhante à análise 
+\textit{offline}~\cite{article:triggerint:2008}. Quando o evento é aceito pelo EF, é enviado às Fazendas de Saída 
+(SFO - \textit{Sub-Farm Output}) e, então, armazenado em mídia permanente.
+
+O HLT foi desenvolvido utilizando, sempre que possível, tecnologias padronizadas (disponíveis comercialmente)~\cite{article:atlasl2:2004}.
+Todos os processadores utilizados são de uso geral (semelhantes aos utilizados em computadores pessoais) e praticamente
+toda a comunicação é feita através de redes \textit{Gigabit Ethernet}~\cite{livro:gigaeth:1999}. As aplicações estão sendo desenvolvidas utilizando
+C++~\cite{livro:c:2003}. Estas escolhas foram feitas considerando-se padronização, velocidade, confiabilidade e facilidade na 
+reposição de equipamentos.
 
 Mais informações sobre os componentes dos sistemas de filtragem podem ser
 encontradas em \cite{TDR:ATLAS:1998}, \cite{TDR:ATLAS:2003},
@@ -453,6 +478,9 @@ rotinas de filtragem alternativas que forneçam maior eficiência de
 discriminação da física de interesse e, ao mesmo tempo, maior
 rejeição do ruído de fundo.
 
-Neste contexto, se encaixa este trabalho, que visa propor uma otimização ao Neural Ringer \cite{tese:andre:2006,tese:torres:2010} que é um discriminator alternativo para o canal elétron/jato e apresenta desempenho superior ao T2Calo (discriminador oficial do ATLAS) e tempo de processamento dentro da janela permitida ao L2 ($\approx$10 ms).
+Neste contexto, se encaixa este trabalho, que visa propor uma otimização ao Neural Ringer 
+\cite{tese:andre:2006,tese:torres:2010} que é um discriminator alternativo para o canal elétron/jato e 
+apresenta desempenho superior ao T2Calo (discriminador oficial do ATLAS) e tempo de processamento dentro 
+da janela permitida ao L2 ($\approx$10 ms).
 
 

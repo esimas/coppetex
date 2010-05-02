@@ -77,38 +77,37 @@ You're missing a field name---line 4403 of file edsimas.bib
  :   %year =         {2006},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Unbalanced braces---line 4883 of file edsimas.bib
+Unbalanced braces---line 4915 of file edsimas.bib
  : 
  : }
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Unbalanced braces---line 5291 of file edsimas.bib
+Unbalanced braces---line 5323 of file edsimas.bib
  : 
  : }
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 5461 of file edsimas.bib
+I was expecting a `,' or a `}'---line 5493 of file edsimas.bib
  :   
  :   volume =       "2"
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 5613 of file edsimas.bib
+I was expecting a `,' or a `}'---line 5645 of file edsimas.bib
  :   
  :   volume =       {51},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 5673 of file edsimas.bib
+I was expecting a `,' or a `}'---line 5705 of file edsimas.bib
  :   
  :   month =        {Aug},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 5857 of file edsimas.bib
+You're missing a field name---line 5889 of file edsimas.bib
  : 
  : %  AUTHOR =       {S. Bellini},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--empty pages in seixas:pcd:1995
-Warning--there's a number but no series in article:crystalnn:1993
 Warning--there's a number but no series in article:hegra:1995
 Warning--can't use both author and editor fields in article:moura:sonarbook
 Warning--empty booktitle in article:moura:sonarbook
@@ -133,45 +132,45 @@ Warning--can't use both author and editor fields in article:lan:2006
 Warning--empty booktitle in article:lan:2006
 Warning--there's a number but no series in article:lucas:som
 Warning--there's a number but no series in article:fernandez:2005
-You've used 182 entries,
+You've used 183 entries,
             2438 wiz_defined-function locations,
-            1582 strings with 32333 characters,
-and the built_in function-call counts, 43153 in all, are:
-= -- 3462
-> -- 1083
-< -- 174
-+ -- 525
-- -- 343
+            1582 strings with 32225 characters,
+and the built_in function-call counts, 43226 in all, are:
+= -- 3459
+> -- 1093
+< -- 171
++ -- 530
+- -- 347
 * -- 4088
-:= -- 5765
-add.period$ -- 400
-call.type$ -- 182
+:= -- 5780
+add.period$ -- 401
+call.type$ -- 183
 change.case$ -- 21
 chr.to.int$ -- 45
 cite$ -- 198
-duplicate$ -- 2544
-empty$ -- 4886
-format.name$ -- 343
-if$ -- 9859
+duplicate$ -- 2547
+empty$ -- 4906
+format.name$ -- 347
+if$ -- 9873
 int.to.chr$ -- 0
-int.to.str$ -- 182
-missing$ -- 200
-newline$ -- 629
-num.names$ -- 183
-pop$ -- 610
+int.to.str$ -- 183
+missing$ -- 203
+newline$ -- 633
+num.names$ -- 184
+pop$ -- 625
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 961
+skip$ -- 957
 stack$ -- 0
-substring$ -- 2929
-swap$ -- 1064
-text.length$ -- 159
+substring$ -- 2916
+swap$ -- 1058
+text.length$ -- 156
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 16
-while$ -- 355
-width$ -- 185
-write$ -- 1761
+warning$ -- 15
+while$ -- 354
+width$ -- 186
+write$ -- 1766
 (There were 26 error messages)

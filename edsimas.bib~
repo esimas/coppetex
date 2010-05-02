@@ -215,8 +215,6 @@ detector},
   pages =        {1965-1973},
 }
 
-
-
 @ARTICLE{article:ica:noisecan,
   AUTHOR =       {H. M. Park and S. H. Oh and S. Y. Lee},
   TITLE =        {Adaptive noise cancelling based on independent component analysis},
@@ -226,8 +224,6 @@ detector},
   number =       {15},
   pages =        {832-833},
 }
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Revisão NN + ICA + PCA em Física %%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -610,9 +606,6 @@ detector},
   number =       {1},
   pages =        {61-68},
 }
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  TRIGGER NOVOS  %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2348,6 +2341,14 @@ Large Hadron Collider at CERN},
   volume =       {51},
   number =       {3},
   pages =        {909-914},
+}
+
+@BOOK{livro:c:2003,
+  AUTHOR =       {H. Shildt},
+  TITLE =        {C++: The Complete Reference},
+  PUBLISHER =    {McGraw-Hill},
+  YEAR =         {2003},
+  address =      {Nova York, Estados Unidos},
 }
 
 %%%%%%%%%%%%%%%%%%MESTRADO%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

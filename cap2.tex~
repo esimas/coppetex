@@ -632,7 +632,8 @@ captura os detalhes do final do chuveiro eletromagnético.
 \begin{figure}[h]
 \centering
 \includegraphics[width=13cm]{cap2_caloem}
-\caption{Granularidade e profundidade das camadas do calorímetro
+\caption[Granularidade e profundidade das camadas do calorímetro
+eletromagnético.]{Granularidade e profundidade das camadas do calorímetro
 eletromagnético, extraído de \cite{article:ATLAS:2008}.}
 \label{calo_cell}
 \end{figure}
@@ -717,7 +718,7 @@ na Tabela \ref{tab_fisica}.
 
 \begin{table}[h!]
 \centering
-\caption{Principais objetos de interesse no ATLAS, extraída de
+\caption[Principais objetos de interesse no ATLAS.]{Principais objetos de interesse no ATLAS, extraída de
 \cite{article:HLT1:2003}.}\vspace{.3cm}
 \begin{tabular}{c c }
   \hline
@@ -733,7 +734,7 @@ na Tabela \ref{tab_fisica}.
 \end{tabular}
 \label{tab_fisica}
 \end{table}
-%, extraída de \cite{article:HLT1:2003}
+%, extraída de \cite{article:HLT1:2003}book:montecarlo:2004
 
 A identificação \textit{online} destes objetos dentro de um universo
 enorme de informações é realizada pelo sistema de filtragem

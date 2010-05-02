@@ -18,6 +18,8 @@ partícula e nem sempre são capazes de produzir alta eficiência de discriminação.
 
 \section{Desempenho esperado dos calorímetros}
 
+Devido a limitações 
+
 A precisão nas medições dos calorímetros do ATLAS varia com a energia e a posição de interação. A grande quantidade 
 de material instalado entre o ponto de colisão e o sistema de calorímetros provoca severas perdas na medição da 
 energia de elétrons, conforme mostrado na Figura \ref{cap3_fig_enloss}. Um outro fator que pode provocar medição 
@@ -27,7 +29,7 @@ Devido a características construtivas do detector, na região de transição entre 
 
 \begin{figure}[h!] \centering
 \includegraphics[width=9cm]{cap3_enperdida}
-\caption{Energia perdida por elétrons antes do calorímetro, adaptado de~\cite{article:ATLAS:2008}.} \label{cap3_fig_enloss}
+\caption[Energia perdida por elétrons antes do calorímetro.]{Energia perdida por elétrons antes do calorímetro, adaptado de~\cite{article:ATLAS:2008}.} \label{cap3_fig_enloss}
 \end{figure}
 
 Numa tentativa de corrigir as medições de energia, fatores de ponderação dependentes de $\eta$ são utilizados na 
@@ -59,7 +61,7 @@ são mostrados na Figura \ref{cap3_enres}. Percebe-se que a precisão diminui para
  \vspace{.3cm}
   \centerline{(b)}\medskip
  \end{minipage}
-\caption{Erro relativo do calorímetro na medição da energia de elétrons para diferentes valores de (a) energia e (b)~$\eta$, adaptado de~\cite{article:ATLAS:2008}.} \label{cap3_enres}
+\caption[Erro relativo do calorímetro na medição da energia de elétrons para diferentes valores de (a) energia e (b)~$\eta$.]{Erro relativo do calorímetro na medição da energia de elétrons para diferentes valores de (a) energia e (b)~$\eta$, adaptado de~\cite{article:ATLAS:2008}.} \label{cap3_enres}
 \end{figure}
 
 \section{Filtragem de elétrons no L1}
@@ -139,43 +141,41 @@ da energia em uma janela de $3 \times 7$ em ($\eta , \phi$).
 
 Para a seleção dos objetos eletromagnéticos, o T2Calo estima os parâmetros descritos a seguir:
 \begin{itemize}
-  \item $R_{\eta}^{shape}=E_{37}/E_{77}$, onde $E_{nm}$ é a energia
-  depositada numa janela de $n \times m$ em torno de ($\eta_1 ,
-  \phi_1$);
+  \item Razão de Forma: $R_{shape}=E_{3 \times 7}/E_{7 \times 7}$, onde $E_{n \times m}$ é a energia
+  depositada numa janela de $n \times m$ células em torno de ($\eta_1 ,
+  \phi_1$) na segunda camada eletromagnética;
 
-  \item $R_{\eta}^{strip}=(E_{1st}-E_{2nd})/(E_{1st}+E_{2nd})$ é
-  obtida em uma janela de $\Delta \eta \times \Delta \phi=0,125 \times
-  0,2$, onde $E_{1st}$ e $E_{2nd}$ são o máximo e o segundo maior
-  valor de energia encontrados depois de somar em $\phi$ para cada posição
-  $\eta$;
+  \item Razão de Energia: $E_{ratio}=(E_{1st}-E_{2nd})/(E_{1st}+E_{2nd})$, onde $E_{1st}$ e $E_{2nd}$ são o máximo e o 
+segundo maior valor de energia encontrados na primeira camada eletromagnética numa janela de 
+$\Delta \eta \times \Delta \phi=0,125 \times 0,2$ em torno do centro da RoI;
 
-  \item A energia total $E$ depositada no calorímetro
-  eletromagnético é calculada em uma janela de $3 \times 7$ células
-  em torno de ($\eta_1 ,   \phi_1$);
+  \item A energia eletromagnética total: $E_{EM}$ é calculada a partir da soma 
+da energia concentrada em janelas de $3 \times 7$ células
+  em torno de ($\eta_1 ,\phi_1$) nas três camadas eletromagnéticas;
 
-  \item A energia que passa para o calorímetro hadrônico $E^{had}$ é
-  calculada em uma janela de $\Delta \eta \times \Delta \phi=0,2 \times
-  0,2$ em torno do novo centro da RoI calculado pelo T2Calo.
+  \item A energia hadrônica total: $E^{HAD}$ é
+  calculada a partir da soma da energia concentrada em janelas de $\Delta \eta \times \Delta \phi=0,2 \times
+  0,2$ em torno do centro da RoI nas três camadas hadrônicas.
 
 \end{itemize}
 
 Considerando que o perfil de deposição de energia dos elétrons é,
 em geral, mais concentrado ao redor do ponto de máximo e que,
 também não espera-se deposição de uma quantidade significativa de
-energia nas camadas hadrônicas por elétrons, percebe-se que, o
-T2Calo opera através de cortes lineares utilizando informações da
-física de interesse.
+energia nas camadas hadrônicas por elétrons, o
+T2Calo opera através de cortes lineares nos parâmetros estimados acima. Por exemplo, analisando os parâmetros
+$R_{shape}$, $E_{ratio}$ e $E_{EM}$ os eventos são aprovados caso os valores calculados sejam maiores que um 
+patamar de corte pré-estabelecido. Para $E^{HAD}$, acontece o inverso, e um candidato a elétron é selecionado 
+se o valor calculado para este parâmetro for menor que o patamar.
 
-Embora estas duas características (concentração em torno do centro da RoI e vazamento hadrônico) 
-sejam bastante úteis na identificação de elétrons, uma análise um pouco mais detalhada revela que, 
-pelo fato dos jatos apresentarem uma grande flutuação em suas características, o uso apenas destes 
+Embora a concentração em torno do centro da RoI e o vazamento hadrônico 
+sejam características bastante úteis na identificação de elétrons, uma análise um pouco 
+mais detalhada revela que, pelo fato dos jatos apresentarem uma grande flutuação em suas características, o uso apenas destes 
 parâmetros pode não produzir o desempenho de discriminação desejado. Na Figura \ref{cap3_anwigmans}, 
-considerando a razão $\frac{E_{HAD}}{E_{EM}}$ (num conjunto de eventos simulados), percebe-se que há 
-uma razoável superposição entre elétrons e jatos, principalmente em baixa energia. Comportamento 
+considerando a razão $\frac{E_{HAD}}{E_{EM}}$ (num conjunto de eventos simulados para o L2 do ATLAS), percebe-se que há 
+uma razoável superposição entre elétrons e jatos, essa limitação aumenta em baixa energia. Comportamento 
 semelhante é verificado na Figura \ref{cap3_anperfil} onde elétrons e jatos são comparados a partir 
-da razão $\frac{E_{P}}{E_{C}}$, sendo $E_{P}$ e $E_{C}$, respectivamente, a energia na periferia e no 
-centro da RoI (a célula mais energética e as imediatamente adjacentes a ela foram considerados como 
-centro da RoI no cálculo de $E_{C}$, a energia depositada no restante da RoI foi somada para produzir $E_{P}$).
+da razão $\frac{E_{3 \times 7}}{E_{7 \times 7}}$.
 
 \begin{figure}[h!]
 \begin{minipage}[b]{.48\linewidth}
@@ -211,28 +211,31 @@ centro da RoI no cálculo de $E_{C}$, a energia depositada no restante da RoI foi
 \caption{Distribuição de elétrons e jatos quanto à razão $\frac{E_{P}}{E_{C}}$ para energia (a) menor que 20 GeV e (b) maior que 60 GeV.} \label{cap3_anperfil}
 \end{figure}
 
-Num ambiente complexo como o que é gerado a cada colisão do LHC,
+Num ambiente complexo, como o que é gerado a cada colisão do LHC,
 onde o nível de ruído de fundo é extremamente alto e os eventos de
-interesse são raros, qualquer melhora na eficiência dos algoritmos
-de filtragem significa menor quantidade de eventos não relevantes
-armazenados mídia permanente, facilitando a análise
+interesse são raros, a busca por algoritmos de filtragem mais eficientes é muito importante. 
+Aumentar o desempenho de discriminação significa menor quantidade de eventos não relevantes
+armazenados mídia permanente, economizando recursos e facilitando a análise
 \textit{offline}.
 
-Técnicas de extração de características que fazem
-uso combinado da física de interesse e do processamento estatístico de sinais em conjunto com classificadores 
-capazes de produzir cortes não-lineares no espaço de busca foram propostas como uma alternativa ao T2Calo para
-a discriminação elétron/jato no L2. Estes discriminadores, que apresentam elevada eficiência de discriminação,
- serão descritos na próxima seção.
+A seguir, serão descritos discriminadores alternativos, propostos para o canal elétron/jato no L2 do ATLAS, que 
+fazem uso da física de interesse em conjunto com o processamento estatístico de sinais. Combinando 
+a isso a aplicação de classificadores neurais, que são
+capazes de produzir cortes não-lineares no espaço de busca, possibilitou elevada eficiência de discriminação
+se comparado ao T2Calo.
+
 
 \section{Neural Ringer - Alternativa para Filtragem de Elétrons no L2}
 \label{sec_ringer}
-Um discriminador alternativo (Neural Ringer) foi proposto em \cite{article:seixas:1996} para o canal 
-elétron/jato no segundo nível de filtragem do ATLAS. Conforme ilustrado na Figura \ref{fig_ringerdiag}, 
+Um discriminador alternativo foi proposto inicialmente em~\cite{article:seixas:1996} para o canal 
+elétron/jato no segundo nível de filtragem do ATLAS. Conforme ilustrado na Figura~\ref{fig_ringerdiag}, 
 o processo de extração de características compreende um arranjo topológico dos sinais medidos no calorímetro 
 (com a construção de anéis a partir do perfil de deposição de energia), e o teste de hipóteses é realizado 
-por um classificador neural supervisionado (arquitetura Perceptron de Múltiplas Camadas) \cite{haykin:nn:2008}.
+por um classificador neural supervisionado (arquitetura Perceptron de Múltiplas Camadas)~\cite{haykin:nn:2008}, 
+este discriminador ficou conhecido como \textit{Neural Ringer}.
 
-\begin{figure} \centering
+\begin{figure}[b] 
+\centering
 \includegraphics[width=11cm]{cap3_ringerdiag}
 \caption{Fluxo de processamento do \textit{Neural Ringer}.} \label{fig_ringerdiag}
 \end{figure}
@@ -243,15 +246,15 @@ Os sinais do perfil de deposição de energia utilizados para
 discriminação elétron/jato são medidos nas sete camadas dos
 calorímetros do ATLAS. Considerando a granularidade de cada camada,
 uma Região de Interesse (RoI) típica (de tamanho 0,4$ \times 0,4$ em
-$\eta \times \phi$) é descrita por aproximadamente 1000 células \cite{tese:andre:2006}. Visando compactar
-os sinais dos calorímetros e ao mesmo tempo manter a interpretação física do perfil
+$\eta \times \phi$) é descrita por aproximadamente 1000 células~\cite{tese:andre:2006}. Visando compactar
+os sinais dos calorímetros e, ao mesmo tempo, manter a interpretação física do perfil
 de deposição de energia, as células sensoras de cada camada são agrupadas em anéis concêntricos de 
 deposição de energia.
 
 Considerando um conjunto de células de uma RoI em uma certa camada
-do calorímetro, conforme ilustrado na Figura \ref{fig_aneis}, a
+do calorímetro, conforme ilustrado na Figura~\ref{fig_aneis}, a
 célula mais energética de cada camada é considerada como o primeiro
-anel. Em seguida as células ao redor do primeiro anel definem o
+anel. Em seguida, as células ao redor do primeiro anel (imediatamente adjacentes) definem o
 segundo anel e assim sucessivamente. A energia amostrada pelas
 células pertencentes a um dado anel são somadas produzindo o sinal
 de energia em anéis. É interessante notar que, devido à diferença de
@@ -262,9 +265,9 @@ fixo de anéis por camada, porém, dependendo da posição do centro da RoI, esta po
 não estar completa (as células sensoras que compõem os anéis podem não existir caso a 
 partícula interaja próximo a uma extremidade ou descontinuidade do calorímetro), neste caso, 
 assume-se igual a zero as leituras das células que faltam. Outra característica a ser observada 
-é que, em algumas camadas, as células não são quadradas (por exemplo, a EM1 é composta de 
-células que são semelhantes a ranhuras), neste caso, falar em anéis é uma abstração 
-(pois ao final do processo descrito acima não existem realmente anéis de células sensoras). 
+é que, em algumas camadas, as células não são quadradas (conforme ilustrado na Figura \ref{fig_ancam}),
+ neste caso, falar em anéis é uma abstração 
+(pois ao final do processo descrito acima podem não existir realmente anéis de células sensoras). 
 A Figura \ref{fig_sig3d} mostra os sinais medidos na segunda camada eletromagnética do calorímetro,
 respectivamente, para um elétron e um jato e os sinais dos anéis gerados.
 
@@ -356,21 +359,26 @@ de cada anel pela energia total do evento:
  r_i=\frac{r_i}{\sum_{i=1}^{100}r_i}
 \end{equation}
 
-A formatação em anéis produz uma compactação por um fator de 7 vezes
-(de 700 células para 100 anéis), mantendo a interpretação física do
-perfil de deposição de energia, tornando o sinal independente do
-ponto de colisão no detector e reduzindo a influência do ruído de
-cada célula.
+\subsection{Normalização}
+
+Os sinais em anéis são normalizados fazendo-se...
 
 \subsection{Teste de Hipóteses - Classificador Neural}
 
-Para o processo de discriminação (teste de hipóteses) o Neural Ringer utiliza um classificador neural supervisonado 
+Para o processo de discriminação propriamente dito (teste de hipóteses), o Neural Ringer utiliza um classificador neural supervisonado 
 na arquitetura Perceptron de Múltiplas Camadas (MLP \textit{Multi-Layer Perceptron})~\cite{haykin:nn:2008}. Os 
 classificadores neurais são capazes de produzir superfícies não-lineares de separação, aumentando a eficiência 
 de discriminação quando comparados aos classificadores lineares. Devido a sua estrutura paralelamente distribuída, 
 é capaz de responder rapidamente quando um padrão de entrada é aplicado. Considerando as características expostas 
 (alta eficiência e processamento rápido) os classificadores neurais são adequados ao ambiente do segundo nível de 
 filtragem \textit{online} do ATLAS.
+
+\subsection{Tempo de Execução}
+
+Um aspecto crucial dos algoritmos para o sistema filtragem online é o tempo de execução. No caso do 
+\textit{Neural Ringer}, que é um algoritmo para o segundo nível de filtragem, a janela de tempo máxima permitida é
+de 40 ms. Uma análise detalhada do tempo de processamento requerido pelo \textit{Neural Ringer} foi realizada no 
+trabalho \cite{tese:torres:2010}. ...
 
 \section{Extensões ao Neural Ringer}
 
