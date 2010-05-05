@@ -18,14 +18,10 @@ partícula e nem sempre são capazes de produzir alta eficiência de discriminação.
 
 \section{Desempenho esperado dos calorímetros}
 
-Devido a limitações 
-
-A precisão nas medições dos calorímetros do ATLAS varia com a energia e a posição de interação. A grande quantidade 
-de material instalado entre o ponto de colisão e o sistema de calorímetros provoca severas perdas na medição da 
-energia de elétrons, conforme mostrado na Figura \ref{cap3_fig_enloss}. Um outro fator que pode provocar medição 
-incorreta no calorímetro eletromagnético é o vazamento de energia além da terceira camada eletromagnética. 
-Devido a características construtivas do detector, na região de transição entre o barril e a tampa do calorímetro 
-(entre $\eta=1.37$ e $\eta=1.52$, conhecido como \textit{crack}), a resolução da energia é bastante degradada.
+Devido a limitações construtivas, a precisão nas medições dos calorímetros do ATLAS varia com a 
+energia e a posição de interação. Uma característica particular do ATLAS é a grande quantidade 
+de material instalado entre o ponto de colisão e o sistema de calorímetros, que provoca severas perdas na medição da 
+energia de elétrons, conforme mostrado na Figura \ref{cap3_fig_enloss}. 
 
 \begin{figure}[h!] \centering
 \includegraphics[width=9cm]{cap3_enperdida}
@@ -37,13 +33,16 @@ estimativa da energia total do evento~\cite{article:ATLAS:2008}:
 \begin{equation}
  E=s(\eta)[c(\eta)+w_0(\eta).E_{PS}+E_{EM1}+E_{EM2}+w_3(\eta).E_{EM3}]
 \end{equation}
-sendo $s$ um fator global de correção, $c$ uma tendência (ou bias), $w_0$ corrige a energia perdida antes do 
+sendo $s$ um fator global de correção, $c$ uma tendência (ou \textit{bias}), $w_0$ corrige a energia perdida antes do 
 calorímetro e $w_3$ corrige o vazamento longitudinal de energia, os termos $E_{PS}$, $E_{EM1}$, $E_{EM2}$ e $E_{EM3}$ 
 representam a energia medida em cada camada do calorímetro eletromagnético (\textit{presampler}, primeira, segunda e 
 terceira camadas eletromagnéticas).
 
 Os erros relativos ($\frac{\sigma_E}{E}$) esperados em função da energia e de $\eta$ para assinaturas de elétrons 
-são mostrados na Figura \ref{cap3_enres}. Percebe-se que a precisão diminui para baixa energia e próximo ao 
+são mostrados na Figura \ref{cap3_enres}. Devido a características construtivas do detector, na 
+região de transição entre o barril e a tampa do calorímetro 
+(entre $\eta=1.37$ e $\eta=1.52$, conhecido como \textit{crack}), a resolução da energia é bastante 
+degradada. Percebe-se que a precisão diminui para baixa energia e próximo ao 
 \textit{crack} ($\eta \approx 1.5$). Sempre que o erro de medição aumenta, a caracterização das partículas 
 é prejudicada, provocando queda de desempenho dos algoritmos de filtragem de elétrons.
 
@@ -63,6 +62,20 @@ são mostrados na Figura \ref{cap3_enres}. Percebe-se que a precisão diminui para
  \end{minipage}
 \caption[Erro relativo do calorímetro na medição da energia de elétrons para diferentes valores de (a) energia e (b)~$\eta$.]{Erro relativo do calorímetro na medição da energia de elétrons para diferentes valores de (a) energia e (b)~$\eta$, adaptado de~\cite{article:ATLAS:2008}.} \label{cap3_enres}
 \end{figure}
+
+Um outro fator que pode provocar medição incorreta nos calorímetros é o vazamento de energia de elétrons além da 
+terceira camada eletromagnética. O calorímetro eletromagnético foi projetado para conter todo o chuveiro 
+eletromagnético, porém, eventos que insidem na região do crack, por encontrarem menor quantidade de material para 
+interagirem, podem alcançar o calorímetro hadrônico. Conforme ilustrado na Figura \ref{fig_envazahad}, a energia de 
+elétrons é quase totalmente concentrada no calorímetro eletromagnético, porém, quando a partícula interage próximo 
+ao \textit{crack}, uma parcela significativa de energia chega ao calorímetro hadrônico. 
+Essa limitação pode provocar problemas para o sistema de filtragem, como será descrito a seguir.
+
+\begin{figure} \centering
+\includegraphics[width=9cm]{capt_ensec}
+\caption{Energia normalizada média depositada nas secções eletromagnética e hadrônica em função de $\eta$ para elétrons.} \label{fig_envazahad}
+\end{figure}
+
 
 \section{Filtragem de elétrons no L1}
 
@@ -153,7 +166,7 @@ $\Delta \eta \times \Delta \phi=0,125 \times 0,2$ em torno do centro da RoI;
 da energia concentrada em janelas de $3 \times 7$ células
   em torno de ($\eta_1 ,\phi_1$) nas três camadas eletromagnéticas;
 
-  \item A energia hadrônica total: $E^{HAD}$ é
+  \item A energia hadrônica total: $E_{HAD}$ é
   calculada a partir da soma da energia concentrada em janelas de $\Delta \eta \times \Delta \phi=0,2 \times
   0,2$ em torno do centro da RoI nas três camadas hadrônicas.
 
@@ -164,8 +177,8 @@ em geral, mais concentrado ao redor do ponto de máximo e que,
 também não espera-se deposição de uma quantidade significativa de
 energia nas camadas hadrônicas por elétrons, o
 T2Calo opera através de cortes lineares nos parâmetros estimados acima. Por exemplo, analisando os parâmetros
-$R_{shape}$, $E_{ratio}$ e $E_{EM}$ os eventos são aprovados caso os valores calculados sejam maiores que um 
-patamar de corte pré-estabelecido. Para $E^{HAD}$, acontece o inverso, e um candidato a elétron é selecionado 
+$R_{shape}$, $E_{ratio}$ e $E_{EM}$, os eventos são aprovados caso os valores calculados sejam maiores que um 
+patamar de corte pré-estabelecido. Para $E_{HAD}$, acontece o inverso, e um candidato a elétron é selecionado 
 se o valor calculado para este parâmetro for menor que o patamar.
 
 Embora a concentração em torno do centro da RoI e o vazamento hadrônico 
@@ -191,24 +204,24 @@ da razão $\frac{E_{3 \times 7}}{E_{7 \times 7}}$.
  \vspace{.3cm}
   \centerline{(b)}\medskip
  \end{minipage}
-\caption{Distribuição de elétrons e jatos quanto à razão $\frac{E_{HAD}}{E_{EM}}$ para energia (a) menor que 20 GeV e (b) maior que 60 GeV.} \label{cap3_anwigmans}
+\caption{Distribuição de elétrons e jatos quanto à razão $\frac{E_{HAD}}{E_{EM}}$ para eventos com energia total (a) menor que 20 GeV e (b) maior que 60 GeV.} \label{cap3_anwigmans}
 \end{figure}
 
 \begin{figure}[h!]
 \begin{minipage}[b]{.48\linewidth}
   \centering
- \centerline{\epsfig{file=cap3_EpEc20,width=8cm}}
+ \centerline{\epsfig{file=cap3_E3E720,width=8cm}}
  \vspace{.3cm}
   \centerline{(a)}\medskip
 \end{minipage}
 \hfill
 \begin{minipage}[b]{.48\linewidth}
   \centering
- \centerline{\epsfig{file=cap3_EpEc60,width=8cm}}
+ \centerline{\epsfig{file=cap3_E3E760,width=8cm}}
  \vspace{.3cm}
   \centerline{(b)}\medskip
  \end{minipage}
-\caption{Distribuição de elétrons e jatos quanto à razão $\frac{E_{P}}{E_{C}}$ para energia (a) menor que 20 GeV e (b) maior que 60 GeV.} \label{cap3_anperfil}
+\caption{Distribuição de elétrons e jatos quanto à razão$\frac{E_{3 \times 7}}{E_{7 \times 7}}$ para eventos com energia total (a) menor que 20 GeV e (b) maior que 60 GeV.} \label{cap3_anperfil}
 \end{figure}
 
 Num ambiente complexo, como o que é gerado a cada colisão do LHC,
@@ -290,6 +303,13 @@ respectivamente, para um elétron e um jato e os sinais dos anéis gerados.
 \label{tab_aneis}
 \end{table}
 
+\begin{figure}[th]
+\centering
+\includegraphics[width=13cm]{cap3_rescalo}
+\caption{Diagrama do processo de construção dos anéis.}
+\label{fig_aneis}
+\end{figure}
+
 \begin{figure}[h!]
 \begin{minipage}[b]{.48\linewidth}
   \centering
@@ -361,6 +381,8 @@ de cada anel pela energia total do evento:
 
 \subsection{Normalização}
 
+Os sinais em anéis são normalizados fazendo-se...
+
 \subsection{Teste de Hipóteses - Classificador Neural}
 
 Para o processo de discriminação propriamente dito (teste de hipóteses), o Neural Ringer utiliza um classificador neural supervisonado 
@@ -374,8 +396,9 @@ filtragem \textit{online} do ATLAS.
 \subsection{Tempo de Execução}
 
 Um aspecto crucial dos algoritmos para o sistema filtragem online é o tempo de execução. No caso do 
-\textit{Neural Ringer}, que é um algoritmo para o segundo nível de filtragem, a janela de tempo máxima permitira é
-de 40 ms.
+\textit{Neural Ringer}, que é um algoritmo para o segundo nível de filtragem, a janela de tempo máxima permitida é
+de 40 ms. Uma análise detalhada do tempo de processamento requerido pelo \textit{Neural Ringer} foi realizada no 
+trabalho \cite{tese:torres:2010}. ...
 
 \section{Extensões ao Neural Ringer}
 
