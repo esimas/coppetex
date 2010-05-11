@@ -1,19 +1,33 @@
 \chapter{Técnicas Utilizadas para Extração de Características}
 
-Neste capítulo, serão mostrados os fundamentos teóricos das técnicas de aprendizado estatístico utilizadas neste trabalho para extração de
-características na filtragem de segundo nível do ATLAS como uma extensão do discriminador Neural Ringer. Entre as técnicas de extração de características abordadas estão a análise de componentes independentes, em seus modelos não-linear e linear (NLICA e ICA), e para compactação, a análise de componentes principais (PCA) e os componentes principais de discriminação (PCD). Entre as técnicas citadas, maior destaque será dado a aquelas que exploram informações estatísticas de ordem superior (HOS - \textit{Higher-Order Statistics}), ou seja NLICA, ICA e PCD. Na Seção \ref{aplic} serão mostradas aplicações dos métodos listados acima em problemas de física de altas energias (HEP - \textit{High-Energy Physics}), juntamente com uma revisão bibliográfica das aplicações de redes neurais em HEP.
+Neste capítulo, serão mostrados os fundamentos teóricos das técnicas de aprendizado estatístico utilizadas neste 
+trabalho para extração de características na filtragem de segundo nível do ATLAS como uma extensão do discriminador 
+Neural Ringer. Entre as técnicas de extração de características abordadas estão a análise de componentes 
+independentes, em seus modelos não-linear e linear (NLICA e ICA), e para compactação, a análise de componentes 
+principais (PCA) e os componentes principais de discriminação (PCD). Entre as técnicas citadas, maior destaque 
+será dado a aquelas que exploram informações estatísticas de ordem superior (HOS - \textit{Higher-Order Statistics}), 
+ou seja NLICA, ICA e PCD. Na Seção \ref{aplic} serão mostradas aplicações dos métodos listados acima em problemas de 
+física de altas energias (HEP - \textit{High-Energy Physics}), juntamente com uma revisão bibliográfica das 
+aplicações de redes neurais em HEP.
 
 
 \section{Análise de Componentes Independentes}
 
-Em muitos problemas de processamento de sinais multi-dimensionais deseja-se encontrar uma transformação que, de algum modo, torne a estrutura essencial dos dados mais acessível~\cite{book:oja:2001}. Em geral, não há muita informação disponível, e a busca pela nova representação dos sinais é feita através de aprendizado não-supervisionado. Entre as técnicas lineares que buscam, através de premissas distintas, por uma nova representação do conjunto de sinais pode-se mencionar a Análise de Componentes Principais (PCA - \textit{Principal Component Analysis})~\cite{book:pca:2002}, a Análise de Fatores (\textit{Factor Analysis})~\cite{book:factor:1967} e a Análise de Componentes Independentes (ICA - \textit{Independent Component Analysis})~\cite{book:oja:2001}. 
+Em muitos problemas de processamento de sinais multi-dimensionais deseja-se encontrar uma transformação que, de 
+algum modo, torne a estrutura essencial dos dados mais acessível~\cite{book:oja:2001}. Em geral, não há muita 
+informação disponível, e a busca pela nova representação dos sinais é feita através de aprendizado não-supervisionado. Entre as técnicas lineares que buscam, através de premissas distintas, por uma nova representação do conjunto de sinais pode-se mencionar a Análise de Componentes Principais (PCA - \textit{Principal Component Analysis})~\cite{book:pca:2002}, a Análise de Fatores (\textit{Factor Analysis})~\cite{book:factor:1967} e a Análise de Componentes Independentes (ICA - \textit{Independent Component Analysis})~\cite{book:oja:2001}. 
 
-Entre as técnicas listadas acimas, a análise de componentes independentes (ICA - \textit{Independent Component Analysis}) busca por uma transformação onde os componentes na saída são estatisticamente independentes. A ICA vêm sendo aplicada na solução de diversos problemas na área de processamento de sinais como cancelamento de ruído~\cite{article:ica:noisecan}, sonar passivo~\cite{article:moura:sonarbook}, telecomunicações~\cite{article:icateleco:2007}, reconhecimento facial~\cite{article:icaface:2007} e biomédica~\cite{article:icabio:2007}. 
+Entre as técnicas listadas acimas, a análise de componentes independentes (ICA - \textit{Independent Component Analysis}) busca por uma transformação onde os componentes na saída são estatisticamente independentes. A ICA vêm 
+sendo aplicada na solução de diversos problemas na área de processamento de sinais como cancelamento de 
+ruído~\cite{article:ica:noisecan}, sonar passivo~\cite{article:moura:sonarbook}, 
+telecomunicações~\cite{article:icateleco:2007}, reconhecimento facial~\cite{article:icaface:2007} e 
+biomédica~\cite{article:icabio:2007}. 
 
 \begin{itemize}
 \item \textbf{Independência Estatística}: Considerando duas variáveis
 aleatórias (VAs) $y_1$ e $y_2$, se elas são independentes, então o
-conhecimento de uma não traz nenhuma informação a respeito da outra. Matematicamente, $y_1$ e $y_2$ são independentes estatisticamente se e somente se \cite{Book:Papoulis:1991}:
+conhecimento de uma não traz nenhuma informação a respeito da outra. Matematicamente, $y_1$ e $y_2$ são 
+independentes estatisticamente se e somente se \cite{Book:Papoulis:1991}:
 \begin{equation}\label{indep1}
     p_{y1,y2}(y_1,y_2)=p_{y1}(y_1)p_{y2}(y_2),
 \end{equation}
@@ -159,7 +173,8 @@ Separation}) semelhantes ao \textit{cocktail-party problem}, porém,
 mais recentemente, surgiram outras aplicações interessantes, como
 extração de características, separação de fontes em telecomunicações
 e redução de ruído em imagens
-\cite{book:oja:2001,article:hyvarinen:2000}. Atualmente, ICA é aplicada com sucesso tanto para separação de sinais como para
+\cite{book:oja:2001,article:hyvarinen:2000}. Atualmente, ICA é aplicada com sucesso tanto para separação de 
+sinais como para
 extração de características.
 
 \section{ICA não-linear}
@@ -587,7 +602,8 @@ proxi\-midade entre dois vetores; nesse caso, o neurônio vencedor é
 aquele que minimiza $i(\mathbf{x})=\| \mathbf{x}(n)-\mathbf{w_j}
 \|$.
 
-Uma outra forma de operar um mapa auto-organizável é utilizar as projeções dos sinais de entrada no mapa de características, ou seja as saídas $u_j$ de cada neurônio j que pode ser calculada por:
+Uma outra forma de operar um mapa auto-organizável é utilizar as projeções dos sinais de entrada no mapa de 
+características, ou seja as saídas $u_j$ de cada neurônio j que pode ser calculada por:
 \begin{equation}\label{som_out}
  u_j=\mathbf{x}^T\mathbf{w_j}
 \end{equation}
@@ -600,7 +616,8 @@ melhor representem o conjunto de sinais.
 
 \section{Técnicas de Pré-Processamento - Compactação}
 
-No processamento de sinais multi-dimensionais, é comum a utilização de técnicas de processamento de sinais que visam a redução da dimensionalidade do problema...
+No processamento de sinais multi-dimensionais, é comum a utilização de técnicas de processamento de sinais 
+que visam a redução da dimensionalidade do problema...
 
 \subsection{Análise de Componentes Principais}
 
@@ -615,7 +632,9 @@ exploradas informações da estatística de segunda ordem.
 
 A análise de
 componentes principais é bastante usada para compactação de
-informação. Como a PCA projeta os sinais em componentes ordenados por energia, uma métrica geralmente utilizada para reduzir a dimensão dos dados consiste na seleção apenas dos componentes de maior energia, de modo que o sinal recuperado a
+informação. Como a PCA projeta os sinais em componentes ordenados por energia, uma métrica geralmente 
+utilizada para reduzir a dimensão dos dados consiste na seleção apenas dos componentes de maior energia, 
+de modo que o sinal recuperado a
 partir da informação compactada tenha pequeno erro médio quadrático
 se comparado ao original. A seguir serão desenvolvidos, de forma
 resumida, os fundamentos matemáticos da PCA.
@@ -690,34 +709,122 @@ das componentes principais, através de redes neurais
 
 \subsection{Componentes Principais de Discriminação}
 
-Considerando um problema de classificação de padrões, o uso da PCA para compactação pode ser prejudicial, pois, os componentes menos energéticos (que são eliminados após a PCA) podem carregar informações discriminantes. Neste caso, pode-se utilizar técnicas de compactação mais adequadas. As componentes principais de discriminação (PCD - \textit{Principal Discriminanting Components})~\cite{seixas:pcd:1995,seixas:pcd:1999} são obtidas a partir da projeção dos sinais de entrada em um conjunto compacto que carrega toda a informação importante para discriminação entre as classes.
+Considerando um problema de classificação de padrões, o uso da PCA para compactação pode ser prejudicial, 
+pois, os componentes menos energéticos (que são eliminados após a PCA) podem carregar informações discriminantes. 
+Neste caso, pode-se utilizar técnicas de compactação mais adequadas. As componentes principais de discriminação 
+(PCD - \textit{Principal Discriminanting Components})~\cite{seixas:pcd:1995,seixas:pcd:1999} são obtidas a partir 
+da projeção dos sinais de entrada em um conjunto compacto que carrega toda a informação importante para 
+discriminação entre as classes.
 
-Conforme proposto em \cite{}, para um problema de classificação, o objetivo da PCD é obter uma projeção linear dos sinais de entrada $\mathbf{x}=[x_1,...,x_N]^T$ nos componentes $\mathbf{z}=[z_1,...,z_K]^T$ (com $K<N$) que maximizam a discriminação entre as classes (ou seja, $z_i$ são os componentes principais de discriminação). 
+Conforme proposto em \cite{}, para um problema de classificação, o objetivo da PCD é obter uma projeção linear 
+dos sinais de entrada $\mathbf{x}=[x_1,...,x_N]^T$ nos componentes $\mathbf{z}=[z_1,...,z_K]^T$ (com $K<N$) que 
+maximizam a discriminação entre as classes (ou seja, $z_i$ são os componentes principais de discriminação). 
 
-Considerando um problema de discriminação onde existem apenas duas classes possíveis, os PCD podem ser estimados a partir de uma rede neural (de arquitetura MLP - \textit{Multi-Layer Perceptron})~\cite{haykin:nn:2008} com uma camada oculta e um neurônio de saída, treinada para obter máxima discriminação entre as classes. Conforme indicado na Figura~\ref{fig_pcd}-a, uma rede neural com um neurônio na camada oculta é capaz de estimar o primeiro PCD, que é obtido a partir da projeção das entradas na direção dos pesos sinápticos do neurônio oculto:
+Considerando um problema de discriminação onde existem apenas duas classes possíveis, os PCD podem ser estimados a 
+partir de uma rede neural (de arquitetura MLP - \textit{Multi-Layer Perceptron})~\cite{haykin:nn:2008} com uma 
+camada oculta e um neurônio de saída, treinada para obter máxima discriminação entre as classes. Conforme indicado 
+na Figura~\ref{fig_pcd}-a, uma rede neural com um neurônio na camada oculta é capaz de estimar o primeiro PCD, 
+que é obtido a partir da projeção das entradas na direção dos pesos sinápticos do neurônio oculto:
 \begin{equation}
  z_1=[b_{1,1},b_{1,2},...,b_{1,N}]\times[x_1,...,x_N]^T + b_{0,1},
 \end{equation}
-onde $b_{0,1}$ é o \textit{bias} do neurônio. Adicionando-se mais neurônios ocultos consegue-se estimar os demais PCD (conforme ilustrado na Figura~\ref{fig_pcd}-b). No processo de estimação, estatística de ordem elevada é acessada a partir da utilização de funções de ativação não-lineares. O treinamento da rede neural pode ser feito com o congelamento dos pesos da camada de entrada correspondentes aos componentes já estimados, ou seja, na estimação do $l$-ésimo componente, os pesos $b_{i,j}$, com $i<l$ e $j=1,...,N$ não são ajustados. Os demais pesos da rede são ajustados a cada novo componente estimado.
+onde $b_{0,1}$ é o \textit{bias} do neurônio. Adicionando-se mais neurônios ocultos consegue-se estimar os 
+demais PCD (conforme ilustrado na Figura~\ref{fig_pcd}-b). No processo de estimação, estatística de ordem 
+elevada é acessada a partir da utilização de funções de ativação não-lineares. O treinamento da rede neural 
+pode ser feito com o congelamento dos pesos da camada de entrada correspondentes aos componentes já estimados, 
+ou seja, na estimação do $l$-ésimo componente, os pesos $b_{i,j}$, com $i<l$ e $j=1,...,N$ não são ajustados. 
+Os demais pesos da rede são ajustados a cada novo componente estimado.
 
-Outros modelos que, de modo semelhante aos PCD, utilizam redes neurais para extrair características discriminantes de um conjunto de sinais foram propostos na literatura em \cite{article:nnfex1:1996,article:nnfex2:1996,article:nnfex:1999}.
+Outros modelos que, de modo semelhante aos PCD, utilizam redes neurais para extrair características 
+discriminantes de um conjunto de sinais foram propostos na literatura em 
+\cite{article:nnfex1:1996,article:nnfex2:1996,article:nnfex:1999}.
 
 \section{Aplicações}
 \label{aplic}
 
-... mostrar aplicações de ICA e NLICA (fazer uma revisão, ver os tutoriais) ...
+Nessa Seção serão descritas, de modo resumido, algumas aplicações da análise de componentes independentes, nos seus 
+modelos linear e não-linear (respectivamente ICA e NLICA), para a extração de características.
 
-A seguir serão descritas algumas aplicações de técnicas de aprendizado estatístico em Física 
-de Alta Energia (HEP - \textit{High-Energy Physics}) e áreas correlatas. 
+No trabalho \cite{ica:clas:2004}, ICA foi utilizada como pré-processamento para problemas de classificação em nove bases 
+de dados diferentes (obtidas no repositório de bases de dados para aprendizado de máquina da Universidade da 
+Califórnia - Irvine, CA, Estados Unidos \cite{rep:uci:1998}). Entre os problemas testados, estão a classificação 
+de vinhos a partir de 
+características físicas e químicas, a identificação da existência de câncer em amostras de tecido 
+da mama, a identificação isolada de vogais independente do locutor e previsão de sobrevida de pacientes que sofreram ataque cardíaco a partir do resultado do eletrocardiograma.
+A transformação da ICA foi estimada através do algoritmo JADE~\cite{article:Cardoso:1993}. Utilizando-se classificadores neurais (MLP), a eficiência 
+foi comparada para sinais sem pré-processamento, sinais branqueados e sinais após ICA. Em alguns casos (como na 
+identificação de vogais) o uso da ICA produziu uma redução do erro de identificação (24,13$\%$ sem pré-processamento, 
+21,05$\%$ após o branqueamento e 20,77$\%$ após a ICA). Em outros casos, porém, a aplicação da ICA tornou mais difícil 
+o problema de classificação (como no caso da identificação do cancer de mama, onde, sem pré-processamento, o erro foi 
+de 2,55$\%$ e após a ICA aumentou para 2,63$\%$). Analisando-se todos os resultados conclui-se que, nem sempre a 
+aplicação da ICA contribui para um aumento na eficiência, esse fato é intensificado em problemas onde o modelo da 
+mistura linear não se aplica (pois possivelmente existem não-linearidades envolvidas). O uso da ICA parece tornar 
+mais suave a curva de erro de treinamento das redes neurais, contribuindo para a diminuição 
+da quantidade de mínimos locais e, consequentemente, da probabilidade do treinamento ficar estacionado num desses 
+mínimos.
+
+Em \cite{article:icabreast:2005}, ICA foi novamente utilizada para detecção do cancer de mama a partir de imagens digitalizadas de 
+mamografias. Nesse trabalho, os componentes independentes foram estimados através do algoritmo 
+FastICA~\cite{article:fastica:1999} e classificadores neurais (MLP) foram utilizados para produzir a decisão. 
+As amostras disponíveis pertenciam a três classes distintas (normais, com alterações 
+benignas e com alterações malignas). A ICA foi estimada a partir de pequenas janelas nas mamografias onde as classes de 
+interesse eram mais facilmente identificadas. Foram obtidas eficiências de identificação da ordem de 99,9$\%$ para 
+as amostras normais, 86,8$\%$ e 91,1$\%$ respectivamente para amostras com alterações benignas e malignas.
+
+Microarranjos de DNA foram pré-processados por ICA em \cite{article:icamicroa:2006} para a classificação através de máquinas de vetor de 
+suporte (SVM - \textit{Support Vector Machines}) \cite{haykin:nn:2008}. Os microarranjos de DNA são fragmentos 
+genômicos que representam segmentos gênicos em particular. Nesse trabalho, o algoritmo FastICA foi utilizado para 
+extrair características dos microarranjos (de quatro bases de dados distintas) com o objetivo de identificar a 
+presença de diferentes tipos de tumores (de colo de útero, leucemia, de fígado e do sistema nervoso). As eficiências 
+de identificação obtidas para os quatro tipos foram, respectivamente, 90$\%$, 100$\%$, 74$\%$ e 76$\%$. Uma outra 
+aplicação de ICA no mesmo problema pode ser encontrada em \cite{article:icamicroa:2009}.
+
+Ainda na área biomédica, no trabalho \cite{article:icaglauc:2005}, a ICA foi utilizada como pré-processamento para um mapeamento 
+não-supervisonado de características oculares, com o objetivo de identificar a presença de glaucoma. A partir de 
+padrões de um exame conhecido como \textit{standard automated perimetry} (SAP), aplicou-se a ICA e o agrupamento 
+(não-supervisonado) foi realizado sobre os componentes independentes estimados. Através dessa 
+abordagem, 98,4$\%$ das assinaturas de olhos com padrão óptico normal foram corretamente classificadas e, 
+considerando-se os olhos com glaucoma, o acerto foi de 68,6$\%$.
+
+A análise de componentes independentes foi utilizada em \cite{article:icaeels:2005} para a análise de sinais de espectometria eletrônica 
+de perda de energia (EELS - \textit{Electron Energy Loss Spectroscopy}). A EELS \cite{book:EELS:1996} pode ser empregada para medições 
+precisas de espessura (com resolução da ordem de 0.1~nm), pressão e análise de composição química. A ICA, através do 
+algoritmo SOBI \cite{article:Cardoso:1997}, foi foi utilizada como ferramenta complementar de análise dos espectros eletrônicos 
+produzidos. O uso da ICA posssibilitou a análise simultânea de dois espectros misturados e eliminou escolhas 
+subjetivas durante a análise (que sem o uso da ICA precisam ser feitas pelo usuário).
+
+O modelo não-linear da ICA também é utilizado em problemas de extração de características, por exemplo, o trabalho 
+\cite{} ilusta a aplicação da NLICA num problema de classificação de sinais de eletroencefalograma (EEG). O objetivo é a 
+separação das diferentes atividades cerebrais independentes, porém como não há garantia que o processo de combinação é 
+linear, utilizou-se o modelo da NLICA numa tentativa de modelar dinâmicas cerebrais não-lineares. O modelo pós não-linear 
+(PNL) foi empregado para estimar os componentes independentes. A informação mútua foi utilizada como medida da 
+independência e um algoritmo genético \cite{} buscou sua minimização. Múltiplos classificadores lineares (cada um 
+treinado com um dos componentes estimados) foram utilizados para identificar os sinais provenientes do movimento da 
+mão. Uma combinação das saídas dos múltiplos classificadores foi utilizada para produzir a decisão final. A eficiência 
+de identificação a partir dos sinais medidos (sem pré-processamento) foi de 73,84$\%$, aumentando para 74,61$\%$ e 
+77,95$\%$ quando utilizados, respectivamente, pré-processamento por ICA e NLICA.
+
+A NLICA foi utilizada no trabalho \cite{} visando à extração de características de séries temporais de ações para a 
+previsão do índice diário de uma bolsa de valores. Para formar o vetor N-dimensional de entrada para a NLICA, foram 
+utilizados a série com os valores de fechamento diário da bolsa e N-1 versões atrasadas desta série. O algoritmo MISEP 
+(...) \cite{} foi 
+utilizado para estimar os componentes independentes. Um modelo de regressão por vetor de suporte (\textit{Support 
+Vector Regression}) foi utilizado para prever o comportamento da bolsa. Os resultados obtidos com a NLICA foram 
+comparados com pré-processamento por ICA e PCA e as eficiências obtidas foram, respectivamente, 80$\%$, 75$\%$ e 79$\%$. 
+Também neste exemplo, o modelo da NLICA mostrou-se mais eficiente para evidenciar as características discriminantes do 
+problema em questão.
+
+Em Física de Altas Energias (HEP - \textit{High-Energy Physics}) também são encontradas algumas aplicações de PCA e ICA 
+para extração de características. Alguns desses trabalhos serão descritos brevemente na próxima seção. Para a NLICA, 
+talvez por ser uma técnica ainda menos difundida (em comparação com PCA e ICA), não foram encontradas aplicações na 
+área de HEP. 
 
 \subsection{Física de Altas Energias e Áreas Correlatas}
 
-Mais recentemente, a partir do final da década de 1990, os métodos
+A partir do final da década de 1990, os métodos
 de aprendizado estatístico multi-variável como PCA, ICA e SOM vêm
 sendo aplicados com sucesso em problemas na área de física de alta
-energia. Nestes algoritmos, o aprendizado é feito de modo
-não-supervisionado, e as características estimadas não dependem de
-conhecimento prévio a respeito dos sinais utilizados.
+energia. 
 
 Um dos primeiros trabalhos neste tópico \cite{article:lang:som}, foi
 publicado em 1998 e utiliza mapas auto-organizáveis (SOM) para a

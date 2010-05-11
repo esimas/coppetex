@@ -88,7 +88,7 @@
 \MakeUppercase{ Ellis, R.~K., Stirling, W.~J., Webber, B.~R.}, {\em QCD and
   Collider Physics\/}.
 \newblock {\em Cambridge Monographs on Particle Physics, Nuclear Physics and
-  Cosmology\/}, Cambrige University Press: Cambridge-Reino Unido, 2003.
+  Cosmology\/}, Cambrige University Press: Cambridge, Reino Unido, 2003.
 
 \bibitem{article:LHC:2002}
 \MakeUppercase{ Price, M.}, \enquote{The {LHC} project}, {\em Nuclear
@@ -693,6 +693,64 @@
 \newblock In: {\em Proceedings of the International Joint Conference on Neural
   Networks\/}, v.~4, pp. 2494--2497, Washington-DC, Estados Unidos, 1999.
 
+\bibitem{ica:clas:2004}
+\MakeUppercase{ Poblador, V.~S., Moreno, E.~M., Casals, J.~S.}, \enquote{{ICA}
+  as a Preprocessing Technique for Classification}.
+\newblock In: {\em Ind. Comp. Analysis And Signal Separation, 5th Int.
+  Conf.\/}, {\em LNCS\/}, pp. 1165--1172, Springer: Charleston, Estados Unidos,
+  Setembro 2004.
+
+\bibitem{rep:uci:1998}
+
+
+\bibitem{article:Cardoso:1993}
+\MakeUppercase{ Cardoso, J.-F., Souloumiac, A.}, \enquote{Blind Beamforming for
+  Non-gaussian Signals}, {\em IEE Proceedings-F\/}, v.~140, n.~6, pp.~362--370,
+  Novembro 1993.
+
+\bibitem{article:icabreast:2005}
+\MakeUppercase{ Caballero, R.~G., Orellana, C. J.~G., Macías, M.~M.,
+  \MakeLowercase{et~al.}}, \enquote{Independent Component Analysis Applied to
+  Breast Cancer Detection on Digitized Mammograms}, {\em International Congress
+  Series\/}, v.~1281, n.~1, pp.~1052--1057, 2005.
+
+\bibitem{article:fastica:1999}
+\MakeUppercase{ Hyvarinen, A.}, \enquote{Fast and Robust Fixed-Point Algorithms
+  for Independent Component Analysis}, {\em IEEE Transactions on Neural
+  Networks\/}, v.~10, n.~3, pp.~626--634, 1999.
+
+\bibitem{article:icamicroa:2006}
+\MakeUppercase{ Zheng, C.~H., Huang, D.~S., Shang, L.}, \enquote{Feature
+  Selection in Independent Component Subspace for Microarray Data
+  Classification}, {\em Neurocomputing\/}, v.~69, n.~1, pp.~2407--2410, 2006.
+
+\bibitem{article:icamicroa:2009}
+\MakeUppercase{ Apolloni, B., Bassis, S., Brega, A.}, \enquote{Feature
+  Selection via Boolean Independent Component Analysis}, {\em Information
+  Sciences\/}, v.~179, pp.~3815--3831, 2009.
+
+\bibitem{article:icaglauc:2005}
+\MakeUppercase{ Goldbaum, M.~H.}, \enquote{Unsupervised Learning with
+  Independent Component Analysis can Identify Patterns of Glaucomatous Visual
+  Field Defects}, {\em Transactions of the American Ophthalmology Society\/},
+  v.~103, n.~1, pp.~270--280, 2005.
+
+\bibitem{article:icaeels:2005}
+\MakeUppercase{ Bonnet, N., Nuzillard, D.}, \enquote{Independent Component
+  Analysis, a New Possibility for Analysing Series of Electron Energy Loss
+  Spectra}, {\em Ultramicroscopy\/}, v.~102, n.~1, pp.~327--337, 2005.
+
+\bibitem{book:EELS:1996}
+\MakeUppercase{ Egerton, R.~F.}, {\em Electron Energy Loss Spectroscopy in the
+  Electron Microscope\/}.
+\newblock Plenum: Nova York, Estados Unidos, 1996.
+
+\bibitem{article:Cardoso:1997}
+\MakeUppercase{ Belouchrani, A., Merain, K.~A., Cardoso, J.~F.,
+  \MakeLowercase{et~al.}}, \enquote{A Blind Source Separation Technique based
+  on Second Order Statistics}, {\em IEEE Transactions on Signal Processing\/},
+  v.~45, n.~2, pp.~434--444, 1997.
+
 \bibitem{article:lang:som}
 \MakeUppercase{ Lang, M.~J.}, \enquote{Application of {Kohonen} network
   classifier in {TeV} gamma-ray astronomy}, {\em Journal of Physics G: Nuclear
@@ -849,16 +907,6 @@
   with On-Line Learning for Blind Identification and Blind Separation of
   Sources}, {\em IEEE Transactions on Circuits and Systems-I: Fundamental
   Theory and Applications\/}, v.~43, n.~11, Novembro 1996.
-
-\bibitem{article:Cardoso:1993}
-\MakeUppercase{ Cardoso, J.-F., Souloumiac, A.}, \enquote{Blind Beamforming for
-  Non-gaussian Signals}, {\em IEE Proceedings-F\/}, v.~140, n.~6, pp.~362--370,
-  Novembro 1993.
-
-\bibitem{article:fastica:1999}
-\MakeUppercase{ Hyvarinen, A.}, \enquote{Fast and Robust Fixed-Point Algorithms
-  for Independent Component Analysis}, {\em IEEE Transactions on Neural
-  Networks\/}, v.~10, n.~3, pp.~626--634, 1999.
 
 \bibitem{Book:Luenberger:1984}
 \MakeUppercase{ Luenberger, D.~G.}, {\em Linear and Nonlinear Programming\/}.

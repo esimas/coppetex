@@ -2,19 +2,15 @@
 
 Neste capítulo serão apresentados os resultados obtidos através das técnicas propostas. Para isso serão utilizados quatro conjuntos de sinais distintos, dois de dados simulados, com diferentes cortes de nível 1 e outros dois com sinais medidos no detector.
 
-\section{Resultados - Dados simulados / corte L1 do tipo E10 \textit{loose}}
+\section{Resultados - Dados simulados}
 
 No trabalho \cite{article:simas:2008:eusipco}
 foi proposto um critério para a escolha do número de agrupamentos em
 um problema ``cego" de processamento de sinais.
 
-\section{Resultados - Dados simulados / corte L1 do tipo E15i}
 
+\section{Resultados - Dados experimentais}
 
-\section{Resultados - Dados experimentais / raios cósmicos}
-
-
-\section{Resultados - Dados experimentais / colisões do LHC}
 
 
 \section{Estudo a Respeito do Tempo de Processamento dos Algoritmos}
