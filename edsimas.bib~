@@ -1033,6 +1033,36 @@ Existence and Uniqueness results},
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+@ARTICLE{article:misep:2004,
+  AUTHOR =       {Luis B. Almeida},
+  TITLE =        {Linear and Nonlinear ICA based on Mutual Information},
+  JOURNAL =      {The Journal of Machine Learning Research},
+  YEAR =         {2004},
+  volume =       {4},
+  number =       {7},
+  pages =        {1297-1318},
+}
+
+@INPROCEEDINGS{article:acoesnlica:2009,
+  AUTHOR =       {C. J. Lu and C. R. Fan and C. C. Chiu},
+  TITLE =        {Forecasting Stock Price Using Nonlinear Independent Component Analysis and Support Vector Machine},
+  BOOKTITLE =    {Proceedings of the International Conference on Industrial Engineering and},
+  YEAR =         {2009},
+  volume =       {1},
+  pages =        {361-364},
+  address =      {Taipei, Taiwan},
+}
+
+@INPROCEEDINGS{article:eegnlica:2009,
+  AUTHOR =       {Farid Oveisi},
+  TITLE =        {EEG Signal Classification Using Nonlinear Independent Component Analysis},
+  BOOKTITLE =    {Proceedings of the International Conference on Acoustics, Speech and Signal Processing},
+  YEAR =         {2009},
+  volume =       {1},
+  pages =        {361-364},
+  address =      {Taipei, Taiwan},
+}
+
 @ARTICLE{article:icabreast:2005,
   AUTHOR =       {R. G. Caballero and C. J. G. Orellana and M. M. Macías and H. M. G. Velasco F. J. L. Aligué},
   TITLE =        {Independent Component Analysis Applied to Breast Cancer Detection on Digitized Mammograms},
@@ -1064,8 +1094,8 @@ Existence and Uniqueness results},
 }
 
 @ARTICLE{article:icamicroa:2009,
-  AUTHOR =       {C. H. Zheng and D. S. Huang and L. Shang},
-  TITLE =        {Feature Selection in Independent Component Subspace for Microarray Data Classification},
+  AUTHOR =       {B. Apolloni and S. Bassis and A. Brega},
+  TITLE =        {Feature Selection via Boolean Independent Component Analysis},
   JOURNAL =      {Information Sciences},
   YEAR =         {2009},
   volume =       {179},

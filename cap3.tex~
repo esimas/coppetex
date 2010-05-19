@@ -479,7 +479,7 @@ de características discriminantes. A seguir estes trabalhos serão descritos resu
 
 Embora a construção dos anéis já seja responsável por uma considerável redução de dimensão (por um fator de 10 vezes), 
 no trabalho \cite{tese:herman:2006} foi realizado um estudo detalhado a respeito da utilização da Análise de 
-Componentes Principais (PCA - \textit{Principal Component Analysis})~\cite{} para compactação. A PCA foi aplicada aos 
+Componentes Principais (PCA - \textit{Principal Component Analysis})~\cite{book:pca:2002} para compactação. A PCA foi aplicada aos 
 sinais em anéis e o classificador neural treinado a partir dos componentes principais estimados. Com a PCA, 
 foi alcançado um fator de redução de aproximadamente 4 vezes, mantendo desempenho semelhante ao Neural Ringer 
 tradicional. Visando explorar toda a granularidade e segmentação disponível aos calorímetros do ATLAS, 
@@ -487,8 +487,8 @@ foi proposta a realização do processo de compactação de modo segmentado (a nível
 
 No trabalho \cite{tese:torres:2010}, foi utilizada uma técnica de compactação mais adequada a problemas de 
 classificação, a PCD (\textit{Principal Components for Discrimination}, ou em português Componentes Principais 
-de Discriminação)~\cite{}.  Foi realizado também um estudo referente à aplicação da Análise de Componentes Independentes 
-(ICA \textit{Independent Component Analysis})~\cite{} como uma etapa adicional de pré-processamento, aparecendo logo 
+de Discriminação)~\cite{seixas:pcd:1995}.  Foi realizado também um estudo referente à aplicação da Análise de Componentes Independentes 
+(ICA \textit{Independent Component Analysis})~\cite{book:oja:2001} como uma etapa adicional de pré-processamento, aparecendo logo 
 após a compactação. Os resultados mostraram que a combinação de ICA e PCD foi capaz de melhorar o desempenho 
 em relação ao Neural Ringer, sem modificar significativamente o tempo de processamento necessário para a tomada 
 de decisão.

@@ -476,6 +476,9 @@ conclusões foram:
     problemas com mínimos locais da função custo).
 \end{itemize}
 
+\subsubsection{O algoritmo MISEP}
+
+Descrever o algoritmo...
 
 \subsection{ICA Local}
 
@@ -617,7 +620,7 @@ melhor representem o conjunto de sinais.
 \section{Técnicas de Pré-Processamento - Compactação}
 
 No processamento de sinais multi-dimensionais, é comum a utilização de técnicas de processamento de sinais 
-que visam a redução da dimensionalidade do problema...
+que visam a redução da dimensionalidade do problema. O objetivo é projetar os sinais N-dimensionais observados em 
 
 \subsection{Análise de Componentes Principais}
 
@@ -716,7 +719,7 @@ Neste caso, pode-se utilizar técnicas de compactação mais adequadas. As componen
 da projeção dos sinais de entrada em um conjunto compacto que carrega toda a informação importante para 
 discriminação entre as classes.
 
-Conforme proposto em \cite{}, para um problema de classificação, o objetivo da PCD é obter uma projeção linear 
+Conforme proposto em \cite{seixas:pcd:1995}, para um problema de classificação, o objetivo da PCD é obter uma projeção linear 
 dos sinais de entrada $\mathbf{x}=[x_1,...,x_N]^T$ nos componentes $\mathbf{z}=[z_1,...,z_K]^T$ (com $K<N$) que 
 maximizam a discriminação entre as classes (ou seja, $z_i$ são os componentes principais de discriminação). 
 
@@ -794,20 +797,20 @@ produzidos. O uso da ICA posssibilitou a análise simultânea de dois espectros mi
 subjetivas durante a análise (que sem o uso da ICA precisam ser feitas pelo usuário).
 
 O modelo não-linear da ICA também é utilizado em problemas de extração de características, por exemplo, o trabalho 
-\cite{} ilusta a aplicação da NLICA num problema de classificação de sinais de eletroencefalograma (EEG). O objetivo é a 
+\cite{article:eegnlica:2009} ilusta a aplicação da NLICA num problema de classificação de sinais de eletroencefalograma (EEG). O objetivo é a 
 separação das diferentes atividades cerebrais independentes, porém como não há garantia que o processo de combinação é 
 linear, utilizou-se o modelo da NLICA numa tentativa de modelar dinâmicas cerebrais não-lineares. O modelo pós não-linear 
 (PNL) foi empregado para estimar os componentes independentes. A informação mútua foi utilizada como medida da 
-independência e um algoritmo genético \cite{} buscou sua minimização. Múltiplos classificadores lineares (cada um 
+independência e um algoritmo genético \cite{Book:Goldberg:1989} buscou sua minimização. Múltiplos classificadores lineares (cada um 
 treinado com um dos componentes estimados) foram utilizados para identificar os sinais provenientes do movimento da 
 mão. Uma combinação das saídas dos múltiplos classificadores foi utilizada para produzir a decisão final. A eficiência 
 de identificação a partir dos sinais medidos (sem pré-processamento) foi de 73,84$\%$, aumentando para 74,61$\%$ e 
 77,95$\%$ quando utilizados, respectivamente, pré-processamento por ICA e NLICA.
 
-A NLICA foi utilizada no trabalho \cite{} visando à extração de características de séries temporais de ações para a 
+A NLICA foi utilizada no trabalho \cite{article:acoesnlica:2009} visando à extração de características de séries temporais de ações para a 
 previsão do índice diário de uma bolsa de valores. Para formar o vetor N-dimensional de entrada para a NLICA, foram 
-utilizados a série com os valores de fechamento diário da bolsa e N-1 versões atrasadas desta série. O algoritmo MISEP 
-(...) \cite{} foi 
+utilizados a série com os valores de fechamento diário da bolsa e N-1 versões atrasadas desta série. O algoritmo MISEP
+~\cite{article:misep:2004} foi 
 utilizado para estimar os componentes independentes. Um modelo de regressão por vetor de suporte (\textit{Support 
 Vector Regression}) foi utilizado para prever o comportamento da bolsa. Os resultados obtidos com a NLICA foram 
 comparados com pré-processamento por ICA e PCA e as eficiências obtidas foram, respectivamente, 80$\%$, 75$\%$ e 79$\%$. 

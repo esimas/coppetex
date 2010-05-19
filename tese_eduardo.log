@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.12.21)  11 MAY 2010 16:55
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.12.21)  14 MAY 2010 20:23
 entering extended mode
  %&-line parsing enabled.
 **tese_eduardo.tex
@@ -464,7 +464,7 @@ a-gem \OT1/cmr/m/it/12 on-line \OT1/cmr/m/n/12 do
 Cap\'{\i }tulo 2.
 [8
 
-] <./figuras/cap2_sm.pdf, id=744, 275.0275pt x 311.1625pt>
+] <./figuras/cap2_sm.pdf, id=747, 275.0275pt x 311.1625pt>
 File: ./figuras/cap2_sm.pdf Graphic file (type pdf)
 
 <use ./figuras/cap2_sm.pdf>
@@ -472,23 +472,23 @@ File: ./figuras/cap2_sm.pdf Graphic file (type pdf)
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [9] [10 <./figuras/cap2_sm.pdf>] [11] [12]
-<./figuras/cap2_lhc_map2.pdf, id=808, 974.77774pt x 618.05305pt>
+<./figuras/cap2_lhc_map2.pdf, id=811, 974.77774pt x 618.05305pt>
 File: ./figuras/cap2_lhc_map2.pdf Graphic file (type pdf)
 
 <use ./figuras/cap2_lhc_map2.pdf> [13] [14 <./figuras/cap2_lhc_map2.pdf>]
-<./figuras/cap2_atlas_diag.pdf, id=842, 872.25874pt x 736.7525pt>
+<./figuras/cap2_atlas_diag.pdf, id=845, 872.25874pt x 736.7525pt>
 File: ./figuras/cap2_atlas_diag.pdf Graphic file (type pdf)
 
 <use ./figuras/cap2_atlas_diag.pdf> [15 <./figuras/cap2_atlas_diag.pdf>]
-<./figuras/cap2_coord.pdf, id=881, 290.08376pt x 284.06125pt>
+<./figuras/cap2_coord.pdf, id=884, 290.08376pt x 284.06125pt>
 File: ./figuras/cap2_coord.pdf Graphic file (type pdf)
 
 <use ./figuras/cap2_coord.pdf> [16 <./figuras/cap2_coord.pdf>]
-<./figuras/cap2_atlas_corte1.pdf, id=899, 588.97212pt x 678.59822pt>
+<./figuras/cap2_atlas_corte1.pdf, id=902, 588.97212pt x 678.59822pt>
 File: ./figuras/cap2_atlas_corte1.pdf Graphic file (type pdf)
 
 <use ./figuras/cap2_atlas_corte1.pdf>
-<./figuras/cap2_atlas_corte2.pdf, id=901, 391.2254pt x 266.0333pt>
+<./figuras/cap2_atlas_corte2.pdf, id=904, 391.2254pt x 266.0333pt>
 File: ./figuras/cap2_atlas_corte2.pdf Graphic file (type pdf)
 
 <use ./figuras/cap2_atlas_corte2.pdf>
@@ -509,11 +509,11 @@ Underfull \hbox (badness 1253) in paragraph at lines 539--547
 o-lume de ma-te-rial
  []
 
-<./figuras/cap2_calo.pdf, id=964, 659.46375pt x 416.55624pt>
+<./figuras/cap2_calo.pdf, id=967, 659.46375pt x 416.55624pt>
 File: ./figuras/cap2_calo.pdf Graphic file (type pdf)
 
 <use ./figuras/cap2_calo.pdf> [22 <./figuras/cap2_calo.pdf>]
-<./figuras/cap2_caloem.pdf, id=980, 657.07886pt x 606.63435pt>
+<./figuras/cap2_caloem.pdf, id=983, 657.07886pt x 606.63435pt>
 File: ./figuras/cap2_caloem.pdf Graphic file (type pdf)
 
 <use ./figuras/cap2_caloem.pdf> [23 <./figuras/cap2_caloem.pdf>] [24] [25])
@@ -521,7 +521,7 @@ File: ./figuras/cap2_caloem.pdf Graphic file (type pdf)
 Cap\'{\i }tulo 3.
 [28
 
-] <./figuras/capt_trigdiag.pdf, id=1045, 514.54887pt x 468.75851pt>
+] <./figuras/capt_trigdiag.pdf, id=1048, 514.54887pt x 468.75851pt>
 File: ./figuras/capt_trigdiag.pdf Graphic file (type pdf)
 
 <use ./figuras/capt_trigdiag.pdf>
@@ -533,7 +533,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 pdfTeX warning: /usr/bin/pdflatex (file ./figuras/capt_trigdiag.pdf): PDF inclu
 sion: Page Group detected which pdfTeX can't handle. Ignoring it.
 >] [31] [32] [33] [34]
-<./figuras/cap2_trigger.pdf, id=1144, 816.04875pt x 734.745pt>
+<./figuras/cap2_trigger.pdf, id=1147, 816.04875pt x 734.745pt>
 File: ./figuras/cap2_trigger.pdf Graphic file (type pdf)
 
 <use ./figuras/cap2_trigger.pdf> [35 <./figuras/cap2_trigger.pdf>]
@@ -541,11 +541,11 @@ Overfull \hbox (23.40712pt too wide) in paragraph at lines 263--273
  [][] 
  []
 
-[36] [37] <./figuras/cap2_nivel1.pdf, id=1227, 556.0775pt x 430.60875pt>
+[36] [37] <./figuras/cap2_nivel1.pdf, id=1230, 556.0775pt x 430.60875pt>
 File: ./figuras/cap2_nivel1.pdf Graphic file (type pdf)
 
 <use ./figuras/cap2_nivel1.pdf> [38 <./figuras/cap2_nivel1.pdf>] [39] [40]
-<./figuras/cap2_nivel2.pdf, id=1271, 568.1225pt x 863.225pt>
+<./figuras/cap2_nivel2.pdf, id=1274, 568.1225pt x 863.225pt>
 File: ./figuras/cap2_nivel2.pdf Graphic file (type pdf)
 
 <use ./figuras/cap2_nivel2.pdf> [41 <./figuras/cap2_nivel2.pdf>]) (./cap3.tex
@@ -553,19 +553,19 @@ File: ./figuras/cap2_nivel2.pdf Graphic file (type pdf)
 Cap\'{\i }tulo 4.
 [43
 
-] <./figuras/cap3_enperdida.pdf, id=1325, 683.52968pt x 454.57831pt>
+] <./figuras/cap3_enperdida.pdf, id=1328, 683.52968pt x 454.57831pt>
 File: ./figuras/cap3_enperdida.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_enperdida.pdf>
-<./figuras/capt_ensec.pdf, id=1328, 427.5975pt x 313.17pt>
+<./figuras/capt_ensec.pdf, id=1331, 427.5975pt x 313.17pt>
 File: ./figuras/capt_ensec.pdf Graphic file (type pdf)
 
 <use ./figuras/capt_ensec.pdf> [44 <./figuras/cap3_enperdida.pdf>]
-<./figuras/cap3_enres.pdf, id=1337, 704.6325pt x 458.33633pt>
+<./figuras/cap3_enres.pdf, id=1340, 704.6325pt x 458.33633pt>
 File: ./figuras/cap3_enres.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_enres.pdf>
-<./figuras/cap3_etares.pdf, id=1338, 691.04573pt x 459.92628pt>
+<./figuras/cap3_etares.pdf, id=1341, 691.04573pt x 459.92628pt>
 File: ./figuras/cap3_etares.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_etares.pdf>
@@ -573,28 +573,28 @@ File: ./figuras/cap3_etares.pdf Graphic file (type pdf)
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [45 <./figuras/capt_ensec.pdf>]
-<./figuras/cap2_trigger_tower.pdf, id=1354, 455.2441pt x 284.52759pt>
+<./figuras/cap2_trigger_tower.pdf, id=1357, 455.2441pt x 284.52759pt>
 File: ./figuras/cap2_trigger_tower.pdf Graphic file (type pdf)
 
 <use ./figuras/cap2_trigger_tower.pdf> [46 <./figuras/cap3_enres.pdf> <./figura
 s/cap3_etares.pdf> <./figuras/cap2_trigger_tower.pdf>]
-<./figuras/cap1_esquema.pdf, id=1372, 569.05505pt x 227.62209pt>
+<./figuras/cap1_esquema.pdf, id=1375, 569.05505pt x 227.62209pt>
 File: ./figuras/cap1_esquema.pdf Graphic file (type pdf)
 
 <use ./figuras/cap1_esquema.pdf> [47] [48 <./figuras/cap1_esquema.pdf>]
-<./figuras/cap3_Ehad_em20.pdf, id=1414, 501.875pt x 342.27875pt>
+<./figuras/cap3_Ehad_em20.pdf, id=1417, 501.875pt x 342.27875pt>
 File: ./figuras/cap3_Ehad_em20.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_Ehad_em20.pdf>
-<./figuras/cap3_Ehad_em60.pdf, id=1415, 523.9575pt x 342.27875pt>
+<./figuras/cap3_Ehad_em60.pdf, id=1418, 523.9575pt x 342.27875pt>
 File: ./figuras/cap3_Ehad_em60.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_Ehad_em60.pdf>
-<./figuras/cap3_E3E720.pdf, id=1416, 420.57124pt x 316.18124pt>
+<./figuras/cap3_E3E720.pdf, id=1419, 420.57124pt x 316.18124pt>
 File: ./figuras/cap3_E3E720.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_E3E720.pdf>
-<./figuras/cap3_E3E760.pdf, id=1417, 420.57124pt x 316.18124pt>
+<./figuras/cap3_E3E760.pdf, id=1420, 420.57124pt x 316.18124pt>
 File: ./figuras/cap3_E3E760.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_E3E760.pdf>
@@ -602,35 +602,35 @@ File: ./figuras/cap3_E3E760.pdf Graphic file (type pdf)
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [49 <./figuras/cap3_Ehad_em20.pdf> <./figuras/cap3_Ehad_em60.pdf>]
-<./figuras/cap3_ringerdiag.pdf, id=1436, 581.52394pt x 50.01546pt>
+<./figuras/cap3_ringerdiag.pdf, id=1439, 581.52394pt x 50.01546pt>
 File: ./figuras/cap3_ringerdiag.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_ringerdiag.pdf> [50 <./figuras/cap3_E3E720.pdf> <./figuras/
 cap3_E3E760.pdf>]
-<./figuras/cap3_aneis.pdf, id=1454, 455.2441pt x 341.43309pt>
+<./figuras/cap3_aneis.pdf, id=1457, 455.2441pt x 341.43309pt>
 File: ./figuras/cap3_aneis.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_aneis.pdf>
-<./figuras/cap3_rescalo.pdf, id=1455, 851.34058pt x 891.23363pt>
+<./figuras/cap3_rescalo.pdf, id=1458, 851.34058pt x 891.23363pt>
 File: ./figuras/cap3_rescalo.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_rescalo.pdf>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./figuras/cap3_ele_e2_3d.pdf, id=1458, 400.49625pt x 301.125pt>
+<./figuras/cap3_ele_e2_3d.pdf, id=1461, 400.49625pt x 301.125pt>
 File: ./figuras/cap3_ele_e2_3d.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_ele_e2_3d.pdf>
-<./figuras/cap3_jet_e2_3d.pdf, id=1459, 465.74pt x 373.395pt>
+<./figuras/cap3_jet_e2_3d.pdf, id=1462, 465.74pt x 373.395pt>
 File: ./figuras/cap3_jet_e2_3d.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_jet_e2_3d.pdf>
-<./figuras/cap3_eaneis_e2.pdf, id=1460, 420.57124pt x 316.18124pt>
+<./figuras/cap3_eaneis_e2.pdf, id=1463, 420.57124pt x 316.18124pt>
 File: ./figuras/cap3_eaneis_e2.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_eaneis_e2.pdf>
-<./figuras/cap3_janeis_e2.pdf, id=1461, 420.57124pt x 316.18124pt>
+<./figuras/cap3_janeis_e2.pdf, id=1464, 420.57124pt x 316.18124pt>
 File: ./figuras/cap3_janeis_e2.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_janeis_e2.pdf>
@@ -641,15 +641,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 315--334
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./figuras/cap3_ele_tip.pdf, id=1462, 420.57124pt x 316.18124pt>
+<./figuras/cap3_ele_tip.pdf, id=1465, 420.57124pt x 316.18124pt>
 File: ./figuras/cap3_ele_tip.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_ele_tip.pdf>
-<./figuras/cap3_jet_tip.pdf, id=1463, 420.57124pt x 316.18124pt>
+<./figuras/cap3_jet_tip.pdf, id=1466, 420.57124pt x 316.18124pt>
 File: ./figuras/cap3_jet_tip.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_jet_tip.pdf>
-<./figuras/cap3_jet_ele.pdf, id=1464, 420.57124pt x 325.215pt>
+<./figuras/cap3_jet_ele.pdf, id=1467, 420.57124pt x 325.215pt>
 File: ./figuras/cap3_jet_ele.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_jet_ele.pdf>
@@ -664,7 +664,7 @@ lusion: Page Group detected which pdfTeX can't handle. Ignoring it.
 cap3_ele_e2_3d.pdf> <./figuras/cap3_jet_e2_3d.pdf> <./figuras/cap3_eaneis_e2.pd
 f> <./figuras/cap3_janeis_e2.pdf>] [54 <./figuras/cap3_ele_tip.pdf> <./figuras/
 cap3_jet_tip.pdf> <./figuras/cap3_jet_ele.pdf>] [55] [56]
-<./figuras/cap3_ringerext.pdf, id=1568, 799.93999pt x 50.24481pt>
+<./figuras/cap3_ringerext.pdf, id=1571, 799.93999pt x 50.24481pt>
 File: ./figuras/cap3_ringerext.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_ringerext.pdf> [57 <./figuras/cap3_ringerext.pdf
@@ -676,19 +676,19 @@ Cap\'{\i }tulo 5.
 [59
 
 ] [60] [61]
-<./figuras/cap3_cocktail.pdf, id=1640, 498.86375pt x 287.0725pt>
+<./figuras/cap3_cocktail.pdf, id=1648, 498.86375pt x 287.0725pt>
 File: ./figuras/cap3_cocktail.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_cocktail.pdf>
-<./figuras/cap3_fontes.pdf, id=1645, 518.93875pt x 414.54875pt>
+<./figuras/cap3_fontes.pdf, id=1653, 518.93875pt x 414.54875pt>
 File: ./figuras/cap3_fontes.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_fontes.pdf>
-<./figuras/cap3_mix.pdf, id=1646, 518.93875pt x 404.51125pt>
+<./figuras/cap3_mix.pdf, id=1654, 518.93875pt x 404.51125pt>
 File: ./figuras/cap3_mix.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_mix.pdf>
-<./figuras/cap3_rec.pdf, id=1647, 518.93875pt x 414.54875pt>
+<./figuras/cap3_rec.pdf, id=1655, 518.93875pt x 414.54875pt>
 File: ./figuras/cap3_rec.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_rec.pdf>
@@ -697,59 +697,59 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [62 <./figuras/cap3_cocktail.pdf>] [63 <./figuras/cap3_fontes.pdf> <./figuras/c
 ap3_mix.pdf> <./figuras/cap3_rec.pdf>] [64]
-<./figuras/cap3_pnl.pdf, id=1703, 355.65942pt x 113.811pt>
+<./figuras/cap3_pnl.pdf, id=1710, 355.65942pt x 113.811pt>
 File: ./figuras/cap3_pnl.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_pnl.pdf> [65]
-<./figuras/cap3_pnll.pdf, id=1718, 256.0748pt x 85.35829pt>
+<./figuras/cap3_pnll.pdf, id=1725, 256.0748pt x 85.35829pt>
 File: ./figuras/cap3_pnll.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_pnll.pdf> [66 <./figuras/cap3_pnl.pdf> <./figuras/cap3_pnll
-.pdf>] <./figuras/cap3_mononl.pdf, id=1770, 398.3386pt x 170.7165pt>
+.pdf>] <./figuras/cap3_mononl.pdf, id=1777, 398.3386pt x 170.7165pt>
 File: ./figuras/cap3_mononl.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_mononl.pdf> [67 <./figuras/cap3_mononl.pdf>]
-<./figuras/cap3_som_nlica.pdf, id=1800, 256.0748pt x 170.7165pt>
+<./figuras/cap3_som_nlica.pdf, id=1807, 256.0748pt x 170.7165pt>
 File: ./figuras/cap3_som_nlica.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_som_nlica.pdf> [68 <./figuras/cap3_som_nlica.pdf>] [69]
-<./figuras/cap3_local.pdf, id=1840, 284.52759pt x 142.2638pt>
+<./figuras/cap3_local.pdf, id=1847, 284.52759pt x 142.2638pt>
 File: ./figuras/cap3_local.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_local.pdf> [70] [71 <./figuras/cap3_local.pdf>]
-<./figuras/cap3_som.pdf, id=1892, 285.065pt x 165.61874pt>
+<./figuras/cap3_som.pdf, id=1899, 285.065pt x 165.61874pt>
 File: ./figuras/cap3_som.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_som.pdf> [72 <./figuras/cap3_som.pdf>]
-Underfull \hbox (badness 5091) in paragraph at lines 617--617
+Underfull \hbox (badness 5091) in paragraph at lines 620--620
 []\OT1/cmr/bx/n/17.28 T^^Secnicas de Pr^^Se-Processamento - Com-
  []
 
 [73] [74] [75]
 
-LaTeX Warning: Reference `fig_pcd' on page 76 undefined on input line 726.
+LaTeX Warning: Reference `fig_pcd' on page 76 undefined on input line 729.
 
 
-LaTeX Warning: Reference `fig_pcd' on page 76 undefined on input line 732.
+LaTeX Warning: Reference `fig_pcd' on page 76 undefined on input line 735.
 
 [76] [77] [78] [79] [80]) (./cap5.tex [81]
 Cap\'{\i }tulo 6.
-<./figuras/cap3_fex_glob.pdf, id=2033, 597.50786pt x 284.52759pt>
+<./figuras/cap3_fex_glob.pdf, id=2050, 597.50786pt x 284.52759pt>
 File: ./figuras/cap3_fex_glob.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_fex_glob.pdf> [82
 
 ]
-<./figuras/cap3_fex_seg.pdf, id=2040, 483.69688pt x 284.52759pt>
+<./figuras/cap3_fex_seg.pdf, id=2057, 483.69688pt x 284.52759pt>
 File: ./figuras/cap3_fex_seg.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_fex_seg.pdf> [83 <./figuras/cap3_fex_glob.pdf> <./figuras/c
 ap3_fex_seg.pdf>]
-<./figuras/cap3_clas_glo.pdf, id=2116, 369.8858pt x 85.35829pt>
+<./figuras/cap3_clas_glo.pdf, id=2133, 369.8858pt x 85.35829pt>
 File: ./figuras/cap3_clas_glo.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_clas_glo.pdf>
-<./figuras/cap3_clas_seg.pdf, id=2118, 519.26277pt x 284.52759pt>
+<./figuras/cap3_clas_seg.pdf, id=2135, 519.26277pt x 284.52759pt>
 File: ./figuras/cap3_clas_seg.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_clas_seg.pdf> [84 <./figuras/cap3_clas_glo.pdf> <./figuras/
@@ -757,66 +757,87 @@ cap3_clas_seg.pdf>]) (./cap_dados.tex [85]
 Cap\'{\i }tulo 7.
 [86
 
-] <./figuras/cap4n_e10_ele_et.pdf, id=2180, 427.5975pt x 295.1025pt>
+] <./figuras/cap4n_e10_ele_et.pdf, id=2197, 427.5975pt x 295.1025pt>
 File: ./figuras/cap4n_e10_ele_et.pdf Graphic file (type pdf)
 
 <use ./figuras/cap4n_e10_ele_et.pdf>
-<./figuras/cap4n_e10_jat_et.pdf, id=2181, 427.5975pt x 295.1025pt>
+<./figuras/cap4n_e10_jat_et.pdf, id=2198, 427.5975pt x 295.1025pt>
 File: ./figuras/cap4n_e10_jat_et.pdf Graphic file (type pdf)
 
 <use ./figuras/cap4n_e10_jat_et.pdf>
-<./figuras/cap4n_e10_ele_eta.pdf, id=2182, 427.5975pt x 295.1025pt>
+<./figuras/cap4n_e10_ele_eta.pdf, id=2199, 427.5975pt x 295.1025pt>
 File: ./figuras/cap4n_e10_ele_eta.pdf Graphic file (type pdf)
 
 <use ./figuras/cap4n_e10_ele_eta.pdf>
-<./figuras/cap4n_e10_jat_eta.pdf, id=2183, 427.5975pt x 295.1025pt>
+<./figuras/cap4n_e10_jat_eta.pdf, id=2200, 427.5975pt x 295.1025pt>
 File: ./figuras/cap4n_e10_jat_eta.pdf Graphic file (type pdf)
 
 <use ./figuras/cap4n_e10_jat_eta.pdf>
-<./figuras/cap4n_e10_ele_phi.pdf, id=2184, 427.5975pt x 295.1025pt>
+<./figuras/cap4n_e10_ele_phi.pdf, id=2201, 427.5975pt x 295.1025pt>
 File: ./figuras/cap4n_e10_ele_phi.pdf Graphic file (type pdf)
 
 <use ./figuras/cap4n_e10_ele_phi.pdf>
-<./figuras/cap4n_e10_jat_phi.pdf, id=2185, 427.5975pt x 295.1025pt>
+<./figuras/cap4n_e10_jat_phi.pdf, id=2202, 427.5975pt x 295.1025pt>
 File: ./figuras/cap4n_e10_jat_phi.pdf Graphic file (type pdf)
 
 <use ./figuras/cap4n_e10_jat_phi.pdf>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./figuras/cap4n_e15_ele_et.pdf, id=2186, 427.5975pt x 289.08pt>
+<./figuras/cap4n_e15_ele_et.pdf, id=2203, 427.5975pt x 289.08pt>
 File: ./figuras/cap4n_e15_ele_et.pdf Graphic file (type pdf)
 
 <use ./figuras/cap4n_e15_ele_et.pdf>
-<./figuras/cap4n_e15_jat_et.pdf, id=2187, 418.56375pt x 300.12125pt>
+<./figuras/cap4n_e15_jat_et.pdf, id=2204, 418.56375pt x 300.12125pt>
 File: ./figuras/cap4n_e15_jat_et.pdf Graphic file (type pdf)
 
 <use ./figuras/cap4n_e15_jat_et.pdf>
-<./figuras/cap4n_e15_ele_eta.pdf, id=2188, 417.56pt x 294.09875pt>
+<./figuras/cap4n_e15_ele_eta.pdf, id=2205, 417.56pt x 294.09875pt>
 File: ./figuras/cap4n_e15_ele_eta.pdf Graphic file (type pdf)
 
 <use ./figuras/cap4n_e15_ele_eta.pdf>
-<./figuras/cap4n_e15_jat_eta.pdf, id=2189, 418.56375pt x 296.10625pt>
+<./figuras/cap4n_e15_jat_eta.pdf, id=2206, 418.56375pt x 296.10625pt>
 File: ./figuras/cap4n_e15_jat_eta.pdf Graphic file (type pdf)
 
 <use ./figuras/cap4n_e15_jat_eta.pdf>
-<./figuras/cap4n_e15_ele_phi.pdf, id=2190, 418.56375pt x 298.11375pt>
+<./figuras/cap4n_e15_ele_phi.pdf, id=2207, 418.56375pt x 298.11375pt>
 File: ./figuras/cap4n_e15_ele_phi.pdf Graphic file (type pdf)
 
 <use ./figuras/cap4n_e15_ele_phi.pdf>
-<./figuras/cap4n_e15_jat_phi.pdf, id=2191, 418.56375pt x 294.09875pt>
+<./figuras/cap4n_e15_jat_phi.pdf, id=2208, 418.56375pt x 294.09875pt>
 File: ./figuras/cap4n_e15_jat_phi.pdf Graphic file (type pdf)
 
-<use ./figuras/cap4n_e15_jat_phi.pdf>
+<use ./figuras/cap4n_e15_jat_phi.pdf> [87]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[87] [88 <./figuras/cap4n_e10_ele_et.pdf> <./figuras/cap4n_e10_jat_et.pdf> <./f
-iguras/cap4n_e10_ele_eta.pdf> <./figuras/cap4n_e10_jat_eta.pdf> <./figuras/cap4
-n_e10_ele_phi.pdf> <./figuras/cap4n_e10_jat_phi.pdf>]) (./cap6.tex [89 <./figur
-as/cap4n_e15_ele_et.pdf> <./figuras/cap4n_e15_jat_et.pdf> <./figuras/cap4n_e15_
-ele_eta.pdf> <./figuras/cap4n_e15_jat_eta.pdf> <./figuras/cap4n_e15_ele_phi.pdf
-> <./figuras/cap4n_e15_jat_phi.pdf>] [90]
+<./figuras/evento_medioE10_ele.pdf, id=2214, 420.57124pt x 316.18124pt>
+File: ./figuras/evento_medioE10_ele.pdf Graphic file (type pdf)
+
+<use ./figuras/evento_medioE10_ele.pdf>
+<./figuras/evento_medioE10_jat.pdf, id=2215, 420.57124pt x 316.18124pt>
+File: ./figuras/evento_medioE10_jat.pdf Graphic file (type pdf)
+
+<use ./figuras/evento_medioE10_jat.pdf>
+<./figuras/evento_medioE15_ele.pdf, id=2216, 420.57124pt x 316.18124pt>
+File: ./figuras/evento_medioE15_ele.pdf Graphic file (type pdf)
+
+<use ./figuras/evento_medioE15_ele.pdf>
+<./figuras/evento_medioE15_jat.pdf, id=2217, 420.57124pt x 316.18124pt>
+File: ./figuras/evento_medioE15_jat.pdf Graphic file (type pdf)
+
+<use ./figuras/evento_medioE15_jat.pdf>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[88 <./figuras/cap4n_e10_ele_et.pdf> <./figuras/cap4n_e10_jat_et.pdf> <./figura
+s/cap4n_e10_ele_eta.pdf> <./figuras/cap4n_e10_jat_eta.pdf> <./figuras/cap4n_e10
+_ele_phi.pdf> <./figuras/cap4n_e10_jat_phi.pdf>]) (./cap6.tex [89 <./figuras/ca
+p4n_e15_ele_et.pdf> <./figuras/cap4n_e15_jat_et.pdf> <./figuras/cap4n_e15_ele_e
+ta.pdf> <./figuras/cap4n_e15_jat_eta.pdf> <./figuras/cap4n_e15_ele_phi.pdf> <./
+figuras/cap4n_e15_jat_phi.pdf>] [90 <./figuras/evento_medioE10_ele.pdf> <./figu
+ras/evento_medioE10_jat.pdf> <./figuras/evento_medioE15_ele.pdf> <./figuras/eve
+nto_medioE15_jat.pdf>]
 Cap\'{\i }tulo 8.
 ) (./conclusoes.tex [91
 
@@ -885,11 +906,11 @@ em:
 Ap\^endice A.
 [114
 
-] [115] <./figuras/cap3_somclass.pdf, id=2433, 504.88625pt x 165.61874pt>
+] [115] <./figuras/cap3_somclass.pdf, id=2473, 504.88625pt x 165.61874pt>
 File: ./figuras/cap3_somclass.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_somclass.pdf>
-<./figuras/cap3_pca.pdf, id=2434, 138.5175pt x 94.3525pt>
+<./figuras/cap3_pca.pdf, id=2474, 138.5175pt x 94.3525pt>
 File: ./figuras/cap3_pca.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_pca.pdf> [116 <./figuras/cap3_somclass.pdf>] [117 <./figura
@@ -903,13 +924,13 @@ Underfull \hbox (badness 1762) in paragraph at lines 338--342
 
 LaTeX Warning: Reference `cap_fex' on page 127 undefined on input line 651.
 
-[127] <./figuras/cap3_pnljutten.pdf, id=2599, 347.12366pt x 237.5805pt>
+[127] <./figuras/cap3_pnljutten.pdf, id=2639, 347.12366pt x 237.5805pt>
 File: ./figuras/cap3_pnljutten.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_pnljutten.pdf>) (./appendclas.tex [128 <./figuras/cap3_pnlj
 utten.pdf>] [129]
 Ap\^endice B.
-<./figuras/cap3_transicao.pdf, id=2630, 446.66875pt x 145.54375pt>
+<./figuras/cap3_transicao.pdf, id=2670, 446.66875pt x 145.54375pt>
 File: ./figuras/cap3_transicao.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_transicao.pdf> [130
@@ -920,11 +941,11 @@ LaTeX Font Info:    Try loading font information for U+euf on input line 68.
 (/usr/share/texmf-texlive/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2002/01/19 v2.2g AMS font definitions
 ) [131]
-<./figuras/cap3_fcas.pdf, id=2654, 254.9525pt x 113.42375pt>
+<./figuras/cap3_fcas.pdf, id=2694, 254.9525pt x 113.42375pt>
 File: ./figuras/cap3_fcas.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_fcas.pdf> [132] [133 <./figuras/cap3_fcas.pdf>] [134]
-<./figuras/cap3_class.pdf, id=2698, 269.005pt x 305.14pt>
+<./figuras/cap3_class.pdf, id=2738, 269.005pt x 305.14pt>
 File: ./figuras/cap3_class.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_class.pdf> [135 <./figuras/cap3_class.pdf>])
@@ -1065,10 +1086,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6316 strings out of 94074
- 89613 string characters out of 1165152
- 153810 words of memory out of 1500000
- 8755 multiletter control sequences out of 10000+50000
+ 6344 strings out of 94074
+ 90475 string characters out of 1165152
+ 153944 words of memory out of 1500000
+ 8774 multiletter control sequences out of 10000+50000
  17594 words of font info for 61 fonts, out of 1200000 for 2000
  645 hyphenation exceptions out of 8191
  32i,14n,36p,1178b,419s stack positions out of 5000i,500n,6000p,200000b,5000s
@@ -1091,9 +1112,9 @@ sky/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti12.pfb><
 exlive/fonts/type1/public/cmex/fmex8.pfb></usr/share/texmf-texlive/fonts/type1/
 bluesky/ams/msam10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/ams/msbm10
 .pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on tese_eduardo.pdf (163 pages, 4370654 bytes).
+Output written on tese_eduardo.pdf (163 pages, 4403373 bytes).
 PDF statistics:
- 2982 PDF objects out of 2984 (max. 8388607)
- 625 named destinations out of 1000 (max. 131072)
- 1055 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3022 PDF objects out of 3580 (max. 8388607)
+ 630 named destinations out of 1000 (max. 131072)
+ 1075 words of extra memory for PDF output out of 10000 (max. 10000000)
 

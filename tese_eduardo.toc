@@ -44,6 +44,7 @@
 \contentsline {subsection}{\numberline {5.2.4}Algoritmos sem restri\c c\~oes estruturais}{67}{subsection.5.2.4}
 \contentsline {subsubsection}{NLICA a partir de Mapas Auto-Organiz\'aveis}{67}{section*.9}
 \contentsline {subsubsection}{NLICA a partir de Infer\^encia Bayesiana}{69}{section*.10}
+\contentsline {subsubsection}{O algoritmo MISEP}{70}{section*.11}
 \contentsline {subsection}{\numberline {5.2.5}ICA Local}{70}{subsection.5.2.5}
 \contentsline {section}{\numberline {5.3}Mapas auto-organiz\'aveis}{71}{section.5.3}
 \contentsline {section}{\numberline {5.4}T\'ecnicas de Pr\'e-Processamento - Compacta\c c\~ao}{73}{section.5.4}
@@ -53,11 +54,11 @@
 \contentsline {subsection}{\numberline {5.5.1}F\IeC {\'\i }sica de Altas Energias e \'Areas Correlatas}{79}{subsection.5.5.1}
 \contentsline {chapter}{\numberline {6}Metodologia Proposta}{82}{chapter.6}
 \contentsline {section}{\numberline {6.1}Sistemas de Classifica\c c\~ao Propostos para a Sele\c c\~ao de El\'etrons no Segundo-N\IeC {\'\i }vel de Filtragem do ATLAS}{82}{section.6.1}
-\contentsline {subsubsection}{Caracter\IeC {\'\i }sticas Globais}{82}{section*.11}
-\contentsline {subsubsection}{Caracter\IeC {\'\i }sticas Segmentadas}{83}{section*.12}
+\contentsline {subsubsection}{Caracter\IeC {\'\i }sticas Globais}{82}{section*.12}
+\contentsline {subsubsection}{Caracter\IeC {\'\i }sticas Segmentadas}{83}{section*.13}
 \contentsline {subsection}{\numberline {6.1.1}Classificadores Neurais Supervisionados}{83}{subsection.6.1.1}
-\contentsline {subsubsection}{Classificador Global}{84}{section*.13}
-\contentsline {subsubsection}{Classificadores Segmentados}{84}{section*.14}
+\contentsline {subsubsection}{Classificador Global}{84}{section*.14}
+\contentsline {subsubsection}{Classificadores Segmentados}{84}{section*.15}
 \contentsline {subsection}{\numberline {6.1.2}Combina\c c\~ao de M\'ultiplos Classificadores}{85}{subsection.6.1.2}
 \contentsline {chapter}{\numberline {7}Descri\c c\~ao dos dados utilizados}{86}{chapter.7}
 \contentsline {section}{\numberline {7.1}Sinais simulados - Corte E10 \textit {loose}}{87}{section.7.1}
@@ -70,7 +71,7 @@
 \contentsline {section}{\numberline {8.3}Estudo a Respeito do Tempo de Processamento dos Algoritmos}{91}{section.8.3}
 \contentsline {subsection}{\numberline {8.3.1}Rotinas comuns a todos os algoritmos}{92}{subsection.8.3.1}
 \contentsline {chapter}{\numberline {9}Conclus\~oes}{93}{chapter.9}
-\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{94}{chapter*.15}
+\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{94}{chapter*.16}
 \contentsline {chapter}{\numberline {A}Aspectos Te\'oricos das T\'ecnicas de Extra\c c\~ao de Caracter\IeC {\'\i }sticas}{114}{appendix.A}
 \contentsline {section}{\numberline {A.1}Mapas auto-organiz\'aveis}{114}{section.A.1}
 \contentsline {subsection}{\numberline {A.1.1}Quantiza\c c\~ao vetorial por aprendizado}{114}{subsection.A.1.1}
@@ -79,16 +80,16 @@
 \contentsline {subsection}{\numberline {A.2.1}Redu\c c\~ao de dimens\~ao}{116}{subsection.A.2.1}
 \contentsline {section}{\numberline {A.3}An\'alise de Componentes Independentes}{117}{section.A.3}
 \contentsline {subsection}{\numberline {A.3.1}Princ\IeC {\'\i }pios de estima\c c\~ao das componentes independentes}{117}{subsection.A.3.1}
-\contentsline {subsubsection}{Maximiza\c c\~ao da n\~ao-Gaussianidade}{118}{section*.16}
-\contentsline {subsubsection}{Minimiza\c c\~ao da informa\c c\~ao m\'utua}{119}{section*.17}
-\contentsline {subsubsection}{ICA atrav\'es da descorrela\c c\~ao n\~ao linear}{120}{section*.18}
+\contentsline {subsubsection}{Maximiza\c c\~ao da n\~ao-Gaussianidade}{118}{section*.17}
+\contentsline {subsubsection}{Minimiza\c c\~ao da informa\c c\~ao m\'utua}{119}{section*.18}
+\contentsline {subsubsection}{ICA atrav\'es da descorrela\c c\~ao n\~ao linear}{120}{section*.19}
 \contentsline {subsection}{\numberline {A.3.2}Pr\'e-processamento dos sinais para ICA}{121}{subsection.A.3.2}
 \contentsline {subsection}{\numberline {A.3.3}Principais algoritmos para ICA}{121}{subsection.A.3.3}
-\contentsline {subsubsection}{Algoritmo FastICA}{122}{section*.19}
-\contentsline {subsubsection}{Algoritmo JADE}{123}{section*.20}
-\contentsline {subsubsection}{Algoritmo Multiplicativo com Itera\c c\~ao de Newton}{124}{section*.21}
+\contentsline {subsubsection}{Algoritmo FastICA}{122}{section*.20}
+\contentsline {subsubsection}{Algoritmo JADE}{123}{section*.21}
+\contentsline {subsubsection}{Algoritmo Multiplicativo com Itera\c c\~ao de Newton}{124}{section*.22}
 \contentsline {subsection}{\numberline {A.3.4}Extens\~oes ao modelo b\'asico de ICA}{125}{subsection.A.3.4}
-\contentsline {subsubsection}{ICA para sinais ruidosos}{126}{section*.22}
+\contentsline {subsubsection}{ICA para sinais ruidosos}{126}{section*.23}
 \contentsline {section}{\numberline {A.4}ICA n\~ao-linear}{127}{section.A.4}
 \contentsline {subsection}{\numberline {A.4.1}Algoritmo Taleb-Jutten para o modelo PNL}{128}{subsection.A.4.1}
 \contentsline {chapter}{\numberline {B}Conceitos fundamentais em classifica\c c\~ao de sinais}{130}{appendix.B}

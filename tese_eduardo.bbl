@@ -424,6 +424,12 @@
   um ambiente com alta taxa de eventos e fina segmentação\/}, Ph.D. Thesis,
   Universidade Federal do Rio de Janeiro, 2006.
 
+\bibitem{article:simas:2007:lnlm}
+\MakeUppercase{ {Simas Filho}, E., Seixas, J.~M., Caloba, L.~P.},
+  \enquote{Nonlinear Independent Component Analysis, Theoretical Review and
+  Applications}, {\em Learning and Nonlinear Models\/}, v.~5, n.~2,
+  pp.~99--120, 2007.
+
 \bibitem{book:factor:1967}
 \MakeUppercase{ Harman, H.~H.}, {\em Modern Factor Analysis\/}.
 \newblock 2nd ed.
@@ -472,12 +478,6 @@
 \MakeUppercase{ Hyvarinen, A., Oja, E.}, \enquote{Independent Component
   Analysis: Algorithms and Applications}, {\em Neural Networks\/}, v.~13, n.
   4-5, pp.~411--430, 2000.
-
-\bibitem{article:simas:2007:lnlm}
-\MakeUppercase{ {Simas Filho}, E., Seixas, J.~M., Caloba, L.~P.},
-  \enquote{Nonlinear Independent Component Analysis, Theoretical Review and
-  Applications}, {\em Learning and Nonlinear Models\/}, v.~5, n.~2,
-  pp.~99--120, 2007.
 
 \bibitem{jutten:nlica:2003}
 \MakeUppercase{ Jutten, C., Karhunen, J.}, \enquote{Advances in Nonlinear Blind
@@ -751,6 +751,30 @@
   on Second Order Statistics}, {\em IEEE Transactions on Signal Processing\/},
   v.~45, n.~2, pp.~434--444, 1997.
 
+\bibitem{article:eegnlica:2009}
+\MakeUppercase{ Oveisi, F.}, \enquote{EEG Signal Classification Using Nonlinear
+  Independent Component Analysis}.
+\newblock In: {\em Proceedings of the International Conference on Acoustics,
+  Speech and Signal Processing\/}, v.~1, pp. 361--364, Taipei, Taiwan, 2009.
+
+\bibitem{Book:Goldberg:1989}
+\MakeUppercase{ Goldberg, D.~E.}, {\em Genetic Algorithms in Search,
+  Optimization and Machine Learning\/}.
+\newblock Addison-Wesley: Boston, Estados Unidos, 1989.
+
+\bibitem{article:acoesnlica:2009}
+\MakeUppercase{ Lu, C.~J., Fan, C.~R., Chiu, C.~C.}, \enquote{Forecasting Stock
+  Price Using Nonlinear Independent Component Analysis and Support Vector
+  Machine}.
+\newblock In: {\em Proceedings of the International Conference on Industrial
+  Engineering and Engineering Management\/}, v.~1, pp. 2370--2374, Hong Kong,
+  2009.
+
+\bibitem{article:misep:2004}
+\MakeUppercase{ Almeida, L.~B.}, \enquote{Linear and Nonlinear ICA based on
+  Mutual Information}, {\em The Journal of Machine Learning Research\/}, v.~4,
+  n.~7, pp.~1297--1318, 2004.
+
 \bibitem{article:lang:som}
 \MakeUppercase{ Lang, M.~J.}, \enquote{Application of {Kohonen} network
   classifier in {TeV} gamma-ray astronomy}, {\em Journal of Physics G: Nuclear
@@ -975,11 +999,6 @@
 \newblock In: {\em Proceedings of the Sixth International Conference on
   Intelligent Systems Design and Applications\/}, v.~1, pp. 441--445, Jinan,
   China, 2006.
-
-\bibitem{Book:Goldberg:1989}
-\MakeUppercase{ Goldberg, D.~E.}, {\em Genetic Algorithms in Search,
-  Optimization and Machine Learning\/}.
-\newblock Addison-Wesley: Boston, Estados Unidos, 1989.
 
 \bibitem{article:tan:20000}
 \MakeUppercase{ Tan, Y., Wang, J.}, \enquote{Nonlinear blind separation using
