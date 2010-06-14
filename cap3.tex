@@ -16,67 +16,6 @@ Tradicionalmente,a identificação de elétrons é realizada analisando-se o formato
 vazamento para as camadas hadrônicas \cite{article:egtrigeer:2006}. Estes parâmetros variam com a energia da 
 partícula e nem sempre são capazes de produzir alta eficiência de discriminação.
 
-\section{Desempenho esperado dos calorímetros}
-
-Devido a limitações construtivas, a precisão nas medições dos calorímetros do ATLAS varia com a 
-energia e a posição de interação. Uma característica particular do ATLAS é a grande quantidade 
-de material instalado entre o ponto de colisão e o sistema de calorímetros, fato que provoca medição incorreta da 
-energia de elétrons, conforme mostrado na Figura \ref{cap3_fig_enloss}. Conforme comentado anteriormente no Capítulo 
-\ref{cap_atlas}, uma fina camada detectora (chamada Pré-Amostrador ou \textit{Pre-Sampler}) foi instalada imediatamente 
-antes da primeira camada do calorímetro eletromagnético numa tentativa de estimar a energia perdida pelas partículas 
-antes de chegarem ao calorímetro.
-
-\begin{figure}[h!] \centering
-\includegraphics[width=9cm]{cap3_enperdida}
-\caption[Energia perdida por elétrons antes do calorímetro.]{Energia perdida por elétrons antes do calorímetro, adaptado de~\cite{article:ATLAS:2008}.} \label{cap3_fig_enloss}
-\end{figure}
-
-Um outro fator que pode provocar medição incorreta nos calorímetros é o vazamento de energia de elétrons além da 
-terceira camada eletromagnética. O calorímetro eletromagnético foi projetado para conter todo o chuveiro 
-eletromagnético, porém, principalmente os eventos que insidem na região de transição entre o barril e o 
-barril extendido, por encontrarem menor quantidade de material para 
-interagirem, podem alcançar o calorímetro hadrônico. Essa região é conhecida como \textit{crack}, fica localizada próximo a $\eta=1.5$ 
-e apresenta um número reduzido de células detectoras. Conforme ilustrado na Figura \ref{fig_envazahad}, a energia de 
-elétrons é quase totalmente concentrada no calorímetro eletromagnético, porém, quando a partícula interage próximo 
-ao \textit{crack}, uma parcela significativa de energia chega ao calorímetro hadrônico. 
-
-
-\begin{figure} \centering
-\includegraphics[width=9cm]{capt_ensec}
-\caption{Energia normalizada média depositada nas secções eletromagnética e hadrônica em função de $\eta$ para elétrons.} \label{fig_envazahad}
-\end{figure}
-
-Numa tentativa de corrigir as medições de energia, fatores de ponderação dependentes de $\eta$ são utilizados na 
-estimativa da energia total do evento~\cite{article:ATLAS:2008}:
-\begin{equation}
- E=s(\eta)[c(\eta)+w_0(\eta).E_{PS}+E_{EM1}+E_{EM2}+w_3(\eta).E_{EM3}]
-\end{equation}
-sendo $s$ um fator global de correção, $c$ uma tendência (ou \textit{bias}), $w_0$ corrige a energia perdida antes do 
-calorímetro e $w_3$ corrige o vazamento longitudinal de energia, os termos $E_{PS}$, $E_{EM1}$, $E_{EM2}$ e $E_{EM3}$ 
-representam a energia medida em cada camada do calorímetro eletromagnético (\textit{presampler}, primeira, segunda e 
-terceira camadas eletromagnéticas).
-
-Os erros relativos ($\frac{\sigma_E}{E}$) esperados em função da energia e de $\eta$ para assinaturas de elétrons 
-são mostrados na Figura \ref{cap3_enres}. Percebe-se que a precisão diminui para baixas energias e próximo ao 
-\textit{crack} ($\eta \approx 1.5$). Sempre que o erro de medição aumenta, a caracterização das partículas 
-é prejudicada, provocando queda de desempenho dos algoritmos de filtragem de elétrons.
-
-\begin{figure}[h!]
-\begin{minipage}[b]{.48\linewidth}
-  \centering
- \centerline{\epsfig{file=cap3_enres,width=8cm}}
- \vspace{.3cm}
-  \centerline{(a)}\medskip
-\end{minipage}
-\hfill
-\begin{minipage}[b]{.48\linewidth}
-  \centering
- \centerline{\epsfig{file=cap3_etares,width=8cm}}
- \vspace{.3cm}
-  \centerline{(b)}\medskip
- \end{minipage}
-\caption[Erro relativo do calorímetro na medição da energia de elétrons para diferentes valores de (a) energia e (b)~$\eta$.]{Erro relativo do calorímetro na medição da energia de elétrons para diferentes valores de (a) energia e (b)~$\eta$, adaptado de~\cite{article:ATLAS:2008}.} \label{cap3_enres}
-\end{figure}
 
 \section{Filtragem de elétrons no L1}
 

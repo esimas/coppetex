@@ -24,15 +24,15 @@ $kurt(.)$ \> Curtose\\
 $m$ \> Massa\\
 $p_T$ \> Momento transverso\\
 $p_x(x)$ \> Função de densidade de probabilidade\\
-$\eta$ \> Pseudo-rapidez\\
-$\theta$ \> Ângulo polar no sistema de coordenadas do ATLAS\\
+$\eta$ \> Pseudo-rapidez (sistema de coordenadas do ATLAS)\\
+$\theta$ \> Ângulo polar (sistema de coordenadas do ATLAS)\\
 $\lambda(.)$ \> Razão de semelhança\\
-$\phi$ \> Ângulo azimutal no sistema de coordenadas do ATLAS\\
+$\phi$ \> Ângulo azimutal (sistema de coordenadas do ATLAS)\\
 $e^-/j$ \> Elétron/Jato\\
 $\mathbf{s}$ \> Vetor das fontes independentes\\
 $\mathbf{x}$ \> Vetor dos sinais observados (medidos)\\
-$\mathbf{y}$ \> Vetor com os sinais observados (medidos)\\
-$\mathbf{z}$ \> Vetor com os sinais observados (medidos)\\
+$\mathbf{y}$ \> Vetor dos componentes independentes estimados\\
+$\mathbf{z}$ \> Vetor dos sinais branqueados\\
 
 %$x(t)$ \> Sinal de informação contínuo, no domínio do tempo\\
 %$j$ \> $\sqrt{-1}$\\
@@ -60,22 +60,24 @@ $\mathbf{z}$ \> Vetor com os sinais observados (medidos)\\
 %$\textbf{F}(\textbf{x})$ \> Matriz das segundas derivadas de
 %$f(x)$ (Hessiana)\\
 
-
 \end{tabbing}
 
-\newpage
+%\newpage
 
 \section*{Abreviaturas}
 
 No caso de algumas abreviaturas internacionalmente conhecidas,
-optou-se por manter as mesmas em ingl\a^es.
+optou-se por mantê-las em inglês.
 
 \begin{tabbing}{ll}
 \hspace*{2cm}\= \kill
 
 ALICE \> Detector do LHC\\
 ATLAS \> \textit{A Toroidal LHC AparattuS}\\
+BOOSTER \> Experimento do laboratório Fermilab\\
 CERN \> Centro Europeu Para Pesquisa Nuclear\\
+CHOOZ \> Experimento de Física de Alta Energia\\
+CMB \> \textit{Cosmic Microwave Background}\\
 CMS \> Detector do LHC\\
 CP \> \textit{Charge parity}\\
 CPLD \> \textit{Complex Programmable Logic Device}\\
@@ -90,19 +92,31 @@ Fermilab \> \textit{Fermi National Accelerator Laboratory}\\
 %FFT \> \textit{Fast Fourier transform algorithm}\\
 %FT \>  \textit{Fourier transform}\\
 GTM \> \textit{Generative topographic mapping}\\
-HLT \> \textit{High Level Trigger} \\
+H1 \> Detector do acelerador HERA\\
+HLT \> \textit{High Level Trigger}\\
+HEP \> \textit{High-Energy Physics}\\
+HERA \> Experimento do laboratório DESY\\
+HEGRA \> Experimento de astrofísica de alta energia\\
 IC \> Componentes independentes\\
 ICA \> \textit{Independent components analysis}\\
 JADE \> \textit{Joint Approximate Diagonalization of
 Eigen-matrices}\\
+LEAR \> Experimento do CERN (desativado)\\
+LEP \> Experimento do CERN (desativado)\\
 LHC \> \textit{Large Hadron Collider}\\
 LVL1 \> Primeiro nível de filtragem do ATLAS\\
 LVL2 \> Segundo nível de filtragem do ATLAS\\
 LVQ \> Quantização vetorial por aprendizado\\
 MLP \> Perceptron de múltiplas camadas\\
+NLICA \> \textit{Non-linear independent component analysis}\\
+NLPCA \> \textit{Non-linear principal component analysis}\\
+PC \> Computador pessoal\\
 PCA \> \textit{Principal components analysis}\\
+PNL \> \textit{Post Nonlinear}\\
+
 %PSD \> \textit{Power espectral density}\\
 %RLS \> \textit{Recursive least square algorithm}\\
+OGLE \> Telescópio instalado no Chile\\
 QV \> Quantização vetorial\\
 RNA \> Rede Neural Artificial\\
 ROC \> \textit{Receiver operating characteristic}\\

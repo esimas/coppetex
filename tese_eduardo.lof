@@ -6,32 +6,32 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Diagrama do Modelo Padr\~ao, mostrando as part\IeC {\'\i }culas elementares incluindo o, ainda n\~ao confirmado, b\'oson de Higgs.}}{10}{figure.2.1}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Mapa de localiza\c c\~ao dos detectores do LHC.}}{14}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagrama esquem\'atico do ATLAS.}}{15}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Eixo de coordenadas do ATLAS.}}{16}{figure.2.4}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagrama esquem\'atico do ATLAS.}}{16}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Eixo de coordenadas do ATLAS.}}{17}{figure.2.4}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Cortes (a) transversal e (b) axial do ATLAS.}}{18}{figure.2.5}
 \contentsline {subfigure}{\string \numberline {2.5(a)}{\ignorespaces }}{18}{figure.2.5}
 \contentsline {subfigure}{\string \numberline {2.5(b)}{\ignorespaces }}{18}{figure.2.5}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Disposi\c c\~ao em camadas dos calor\IeC {\'\i }metros do ATLAS.}}{22}{figure.2.6}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Granularidade e profundidade das camadas do calor\IeC {\'\i }metro eletromagn\'etico.}}{23}{figure.2.7}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Disposi\c c\~ao em camadas dos calor\IeC {\'\i }metros do ATLAS.}}{25}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Granularidade e profundidade das camadas do calor\IeC {\'\i }metro eletromagn\'etico.}}{27}{figure.2.7}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Energia perdida por el\'etrons antes do calor\IeC {\'\i }metro.}}{27}{figure.2.8}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Energia normalizada m\'edia depositada nas sec\c c\~oes eletromagn\'etica e hadr\^onica em fun\c c\~ao de $\eta $ para el\'etrons.}}{28}{figure.2.9}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Erro relativo do calor\IeC {\'\i }metro na medi\c c\~ao da energia de el\'etrons para diferentes valores de (a) energia e (b)~$\eta $.}}{29}{figure.2.10}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama em blocos do sistema de filtragem gen\'erico para um experimento de HEP.}}{30}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Diagrama em blocos do sistema de filtragem e aquisi\c c\~ao de dados do ATLAS.}}{35}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagrama em blocos do primeiro n\IeC {\'\i }vel de filtragem.}}{38}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Diagrama em blocos do segundo n\IeC {\'\i }vel de filtragem.}}{41}{figure.3.4}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama em blocos do sistema de filtragem gen\'erico para um experimento de HEP.}}{31}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Diagrama em blocos do sistema de filtragem e aquisi\c c\~ao de dados do ATLAS.}}{37}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagrama em blocos do primeiro n\IeC {\'\i }vel de filtragem.}}{41}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Diagrama em blocos do segundo n\IeC {\'\i }vel de filtragem.}}{44}{figure.3.4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Energia perdida por el\'etrons antes do calor\IeC {\'\i }metro.}}{44}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Energia normalizada m\'edia depositada nas sec\c c\~oes eletromagn\'etica e hadr\^onica em fun\c c\~ao de $\eta $ para el\'etrons.}}{45}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Erro relativo do calor\IeC {\'\i }metro na medi\c c\~ao da energia de el\'etrons para diferentes valores de (a) energia e (b)~$\eta $.}}{46}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Janela deslizante analisada pelo L1 no calor\IeC {\'\i }metro eletromagn\'etico.}}{46}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Processo de identifica\c c\~ao de el\'etrons no L2.}}{48}{figure.4.5}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Distribui\c c\~ao de el\'etrons e jatos quanto \`a raz\~ao $\frac {E_{HAD}}{E_{EM}}$ para eventos com energia total (a) menor que 20 GeV e (b) maior que 60 GeV.}}{49}{figure.4.6}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Distribui\c c\~ao de el\'etrons e jatos quanto \`a raz\~ao$\frac {E_{3 \times 7}}{E_{7 \times 7}}$ para eventos com energia total (a) menor que 20 GeV e (b) maior que 60 GeV.}}{50}{figure.4.7}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Fluxo de processamento do \textit {Neural Ringer}.}}{51}{figure.4.8}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Diagrama do processo de constru\c c\~ao dos an\'eis.}}{52}{figure.4.9}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Exemplo da organiza\c c\~ao das c\'elulas em an\'eis nas diferentes camadas do calor\IeC {\'\i }metro.}}{52}{figure.4.10}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Sinais t\IeC {\'\i }picos medidos na camada EM2 para (a) el\'etron e (b) jato.}}{53}{figure.4.11}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Sinais em an\'eis para (a) el\'etron t\IeC {\'\i }pico, (b) jato t\IeC {\'\i }pico e (c) jato com perfil semelhante ao de el\'etrons.}}{54}{figure.4.12}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Fluxo de processamento das extens\~oes ao \textit {Neural Ringer}.}}{57}{figure.4.13}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Janela deslizante analisada pelo L1 no calor\IeC {\'\i }metro eletromagn\'etico.}}{46}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Processo de identifica\c c\~ao de el\'etrons no L2.}}{47}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Distribui\c c\~ao de el\'etrons e jatos quanto \`a raz\~ao $\frac {E_{HAD}}{E_{EM}}$ para eventos com energia total (a) menor que 20 GeV e (b) maior que 60 GeV.}}{49}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Distribui\c c\~ao de el\'etrons e jatos quanto \`a raz\~ao$\frac {E_{3 \times 7}}{E_{7 \times 7}}$ para eventos com energia total (a) menor que 20 GeV e (b) maior que 60 GeV.}}{50}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Fluxo de processamento do \textit {Neural Ringer}.}}{50}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Diagrama do processo de constru\c c\~ao dos an\'eis.}}{52}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Exemplo da organiza\c c\~ao das c\'elulas em an\'eis nas diferentes camadas do calor\IeC {\'\i }metro.}}{52}{figure.4.7}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Sinais t\IeC {\'\i }picos medidos na camada EM2 para (a) el\'etron e (b) jato.}}{53}{figure.4.8}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Sinais em an\'eis para (a) el\'etron t\IeC {\'\i }pico, (b) jato t\IeC {\'\i }pico e (c) jato com perfil semelhante ao de el\'etrons.}}{54}{figure.4.9}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Fluxo de processamento das extens\~oes ao \textit {Neural Ringer}.}}{57}{figure.4.10}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Diagrama do \textit {cocktail party problem}.}}{62}{figure.5.1}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Sinais (a) fonte, (b) observados e (c) recuperados atrav\'es da ICA.}}{63}{figure.5.2}

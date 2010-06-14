@@ -503,7 +503,7 @@ de extração de características seja mais adequada ao problema.
 
 Os trabalhos desenvolvidos anteriormente utilizam apenas técnicas lineares como PCA, PCD e ICA. Os estudos 
 desenvolvidos durante esse trabalho tiveram o objetivo de investigar a aplicação da versão 
-não-linear da análise de componentes independentes (NLICA)~\cite{} para extração de características no segundo 
+não-linear da análise de componentes independentes (NLICA)~\cite{article:simas:2007:lnlm} para extração de características no segundo 
 nível de filtragem \textit{online} de elétrons do ATLAS. Considerando que existem diversos algoritmos 
 para a estimação da NLICA, neste trabalho foram realizados estudos com alguns destes métodos. Os diversos 
 modelos foram comparados considerando eficiência de discriminação e tempo de processamento necessário para 

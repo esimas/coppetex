@@ -36,6 +36,11 @@
   Purpose pp Experiment at the Large Hadron Collider at CERN\/}, Tech. rep.,
   CERN, Genebra, Suiça, Outubro 1992.
 
+\bibitem{article:seixas:1996}
+\MakeUppercase{ Seixas, J.~M., L.~Calôba, M.~S.}, \enquote{Neural Second-Level
+  trigger system based on calorimetry}, {\em Computer Physics
+  Communications\/}, v.~95, n. 2-3, pp.~143--157, Junho 1996.
+
 \bibitem{tese:andre:2006}
 \MakeUppercase{ dos Anjos, A.~R.}, {\em Sistema de filtragem online aplicada a
   um ambiente com alta taxa de eventos\/}, Ph.D. Thesis, COPPE/UFRJ, Dezembro
@@ -60,6 +65,11 @@
 \bibitem{book:almeida:2006}
 \MakeUppercase{ Almeida, L.~B.}, {\em Nonlinear Source Separation\/}.
 \newblock Morgan and Claypool, 2006.
+
+\bibitem{book:montecarlo:2004}
+\MakeUppercase{ Robert, C., Casella, G.}, {\em Monte Carlo Statistical
+  Methods\/}.
+\newblock Springer-Verlag: Nova York, Estados Unidos, 2004.
 
 \bibitem{Homepage:ATLAS}
 \MakeUppercase{ ATLAS-Collaboration}, \enquote{Experiment Overview}, Disponível
@@ -175,16 +185,6 @@
 \MakeUppercase{ Pontecorvo, L.}, \enquote{The {ATLAS} muon spectrometer}, {\em
   The European Physical Journal C - Particles and Fields\/}, v.~34, n.~1, 2004.
 
-\bibitem{TDR1:ATLAS:1999}
-\MakeUppercase{ ATLAS-Collaboration}, {\em ATLAS Detector and Physics
-  Performance Technical Design Report, Volume 1\/}, Tech. rep., CERN, Genebra,
-  Suiça, Maio 1999.
-
-\bibitem{article:tilecal:2006}
-\MakeUppercase{ Adragna{, et al.}, P.}, \enquote{The {ATLAS} Hadronic Tile
-  Calorimeter: From Construction Toward Physics}, {\em IEEE Transactions on
-  Nuclear Science\/}, v.~53, n.~5, pp.~1275--1281, Junho 2006.
-
 \bibitem{article:trigconf:2009}
 \MakeUppercase{ Padilla, C.}, \enquote{The ATLAS Trigger System}.
 \newblock In: {\em Proceedings of the 16th IEEE-NPSS Real Time Conference\/},
@@ -211,6 +211,16 @@
 \MakeUppercase{ Hauser, R.}, \enquote{The ATLAS High Level Trigger System}.
 \newblock In: {\em Proceedings of the U.S. Atlas Computing Meeting\/}, v.~1,
   pp. 1--5, Upton, EUA, 2003.
+
+\bibitem{TDR1:ATLAS:1999}
+\MakeUppercase{ ATLAS-Collaboration}, {\em ATLAS Detector and Physics
+  Performance Technical Design Report, Volume 1\/}, Tech. rep., CERN, Genebra,
+  Suiça, Maio 1999.
+
+\bibitem{article:tilecal:2006}
+\MakeUppercase{ Adragna{, et al.}, P.}, \enquote{The {ATLAS} Hadronic Tile
+  Calorimeter: From Construction Toward Physics}, {\em IEEE Transactions on
+  Nuclear Science\/}, v.~53, n.~5, pp.~1275--1281, Junho 2006.
 
 \bibitem{article:trigger:watz}
 \MakeUppercase{ Watts, G.}, \enquote{Review of Triggering}.
@@ -322,11 +332,6 @@
 \newblock In: {\em Proceedings of the AIHENP\/}, v.~1, n.~1, pp. 1--8, Pisa,
   Itália, 1995.
 
-\bibitem{article:seixas:1996}
-\MakeUppercase{ Seixas, J.~M., L.~Calôba, M.~S.}, \enquote{Neural Second-Level
-  trigger system based on calorimetry}, {\em Computer Physics
-  Communications\/}, v.~95, n. 2-3, pp.~143--157, Junho 1996.
-
 \bibitem{article:anjos:2006}
 \MakeUppercase{ {dos Anjos}, A., Torres, R., Seixas, J.}, \enquote{Neural
   triggering system operating on high resolution calorimetry information}, {\em
@@ -369,11 +374,6 @@
 \bibitem{TDR:ATLAS:1998}
 \MakeUppercase{ ATLAS-Collaboration}, {\em First-Level Trigger Technical Design
   Report\/}, Tech. rep., CERN, Genebra, Suiça, Junho 1998.
-
-\bibitem{book:montecarlo:2004}
-\MakeUppercase{ Robert, C., Casella, G.}, {\em Monte Carlo Statistical
-  Methods\/}.
-\newblock Springer-Verlag: Nova York, Estados Unidos, 2004.
 
 \bibitem{TDR:ATLAS:2003}
 \MakeUppercase{ ATLAS-Collaboration}, {\em ATLAS High-Level Trigger, Data

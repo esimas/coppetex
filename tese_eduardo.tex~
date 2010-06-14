@@ -81,7 +81,7 @@ Processamento de Sinais (LPS/COPPE/UFRJ)  pela inestimável ajuda na
 condução do trabalho, em especial aos amigos Natanael Nunes de
 Moura, Rodrigo Coura Torres e Danilo Enoque Ferreira.
 
-Aos professores Antônio Cezar de Castro Lima, Luiz Alberto Luz de Almeida, Ana Isabela de Araujo Cunha, Roberto da Costa e Silva e Ademar de Barros Fontes, da Universidade Federal da Bahia, que contribuíram decisivamente para minha formação acadêmica durante a graduação e o mestrado, gostaria de dizer que esse trabalho é a consolidação de tudo que aprendi com vocês.
+%Aos professores Antônio Cezar de Castro Lima, Luiz Alberto Luz de Almeida, Ana Isabela de Araujo Cunha, Roberto da Costa e Silva e Ademar de Barros Fontes, da Universidade Federal da Bahia, que contribuíram decisivamente para minha formação acadêmica durante a graduação e o mestrado, gostaria de dizer que esse trabalho é a consolidação de tudo que aprendi com vocês.
 
 Também gostaria expressar minha gratidão ao Instituto Federal de
 Educação, Ciência e Tecnologia da Bahia, pelo apoio concedido para a finalização deste trabalho, em especial aos professores
@@ -96,23 +96,24 @@ Letícia pelo amor e apoio em todos os momentos.
 
 
   \begin{abstract}
-O ATLAS é o maior detector de partículas do experimento LHC. Nas
-colisões do LHC, uma enorme quantidade de informação é produzida,
+O ATLAS é o maior detector do acelerador de partículas LHC. Nas
+colisões, uma enorme quantidade de informação é produzida,
 porém, apenas uma pequena parcela é importante para a caracterização
-dos fenômenos físicos de inte\-resse, tornando necessário um
-eficiente sistema de filtragem \textit{online} de eventos.
-Informações da energia depositada no sistema de calorímetros
-(medidores de energia) são utilizadas para a identificação das
-partículas. Os elétrons são partículas extremamente importantes para
-o experimento, e, no ambiente do LHC, aparecem mascarados por um
+dos fenômenos físicos de inte\-resse, tornando necessário aos detectores um
+eficiente sistema para detecção (filtragem) \textit{online} de eventos.
+Os elétrons são partículas extremamente importantes para
+o experimento, e aparecem mascarados por um
 intenso ruído de fundo composto de jatos hadrônicos, pois esses
-últimos podem apresentar perfil de deposição de energia
-seme\-lhan\-te ao de elétrons. Neste trabalho, é proposta a
-utilização de métodos de extração de características, como a análise
-de componentes independentes, para otimizar o desempenho do segundo
-nível de filtragem \textit{online} do detector ATLAS. A extração de
-características foi efetuada visando explorar toda a segmentação e
-granularidade disponíveis nos calorímetros. Através da abordagem proposta, foi possível alcançar alta
+últimos podem apresentar perfil de deposição de energia nos calorímetros seme\-lhan\-te ao de elétrons 
+(os calorímetros são medidores de energia com fina segmentação e no ATLAS são divididos em sete camadas, 
+totalizando mais de 100.000 sensores),
+. Neste trabalho, é proposta a
+utilização do modelo não-linear da análise
+de componentes independentes no processo de extração de características, visando
+ otimizar o desempenho do sistema neural de filtragem \textit{online} de elétrons no ATLAS (\textit{Neural Ringer}). 
+Para explorar toda a segmentação e granularidade disponíveis, a extração de
+características foi efetuada a  nível de cada camada do calorímetro. 
+Diversos algoritmos foram utilizados na estimação dos componentes independentes. Através da abordagem proposta, foi possível alcançar alta
 eficiência de discriminação, gerando dados mais limpos para a
 análise \textit{offline}.
   \end{abstract}

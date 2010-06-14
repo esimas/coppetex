@@ -4,33 +4,36 @@
 \BOOKMARK [0][-]{chapter.1}{Introdu\347\343o}{}
 \BOOKMARK [1][-]{section.1.1}{Contexto}{chapter.1}
 \BOOKMARK [1][-]{section.1.2}{Motiva\347\343o}{chapter.1}
-\BOOKMARK [1][-]{section.1.3}{Objetivos}{chapter.1}
-\BOOKMARK [1][-]{section.1.4}{Metodologia}{chapter.1}
-\BOOKMARK [1][-]{section.1.5}{Conte\372do do trabalho}{chapter.1}
+\BOOKMARK [1][-]{section.1.3}{Trabalhos Anteriores}{chapter.1}
+\BOOKMARK [1][-]{section.1.4}{Objetivos}{chapter.1}
+\BOOKMARK [1][-]{section.1.5}{Metodologia}{chapter.1}
+\BOOKMARK [1][-]{section.1.6}{Conte\372do do trabalho}{chapter.1}
 \BOOKMARK [0][-]{chapter.2}{F\355sica de Part\355culas e o detector ATLAS}{}
 \BOOKMARK [1][-]{section.2.1}{Panorama geral da f\355sica de part\355culas elementares}{chapter.2}
 \BOOKMARK [1][-]{section.2.2}{O acelerador LHC}{chapter.2}
 \BOOKMARK [1][-]{section.2.3}{Caracter\355sticas gerais do detector ATLAS}{chapter.2}
-\BOOKMARK [2][-]{subsection.2.3.1}{O sistema de calorimetria do ATLAS}{section.2.3}
-\BOOKMARK [2][-]{subsection.2.3.2}{Principais objetos de interesse no ATLAS}{section.2.3}
-\BOOKMARK [0][-]{chapter.3}{O Sistema de Filtragem do detector ATLAS}{}
+\BOOKMARK [1][-]{section.2.4}{Principais objetos de interesse no ATLAS}{chapter.2}
+\BOOKMARK [1][-]{section.2.5}{O sistema de calorimetria do ATLAS}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.5.1}{Breve introdu\347\343o \340 calorimetria}{section.2.5}
+\BOOKMARK [2][-]{subsection.2.5.2}{Caracter\355sticas dos calorimetros do ATLAS}{section.2.5}
+\BOOKMARK [2][-]{subsection.2.5.3}{Desempenho esperado dos calor\355metros}{section.2.5}
+\BOOKMARK [0][-]{chapter.3}{Filtragem Online no ATLAS}{}
 \BOOKMARK [1][-]{section.3.1}{Introdu\347\343o aos sistemas de filtragem em HEP}{chapter.3}
 \BOOKMARK [2][-]{subsection.3.1.1}{Aplica\347\365es de redes neurais artificiais}{section.3.1}
 \BOOKMARK [1][-]{section.3.2}{O sistema de filtragem online do ATLAS}{chapter.3}
 \BOOKMARK [2][-]{subsection.3.2.1}{Primeiro n\355vel de filtragem}{section.3.2}
 \BOOKMARK [2][-]{subsection.3.2.2}{Filtragem de alto n\355vel}{section.3.2}
 \BOOKMARK [0][-]{chapter.4}{Detec\347\343o de El\351trons a partir de Informa\347\365es de Calorimetria no ATLAS}{}
-\BOOKMARK [1][-]{section.4.1}{Desempenho esperado dos calor\355metros}{chapter.4}
-\BOOKMARK [1][-]{section.4.2}{Filtragem de el\351trons no L1}{chapter.4}
-\BOOKMARK [1][-]{section.4.3}{Filtragem de el\351trons no L2 - Algoritmo T2Calo}{chapter.4}
-\BOOKMARK [1][-]{section.4.4}{Neural Ringer - Alternativa para Filtragem de El\351trons no L2}{chapter.4}
-\BOOKMARK [2][-]{subsection.4.4.1}{Extra\347\343o de Caracter\355sticas - Anelamento}{section.4.4}
-\BOOKMARK [2][-]{subsection.4.4.2}{Normaliza\347\343o}{section.4.4}
-\BOOKMARK [2][-]{subsection.4.4.3}{Teste de Hip\363teses - Classificador Neural}{section.4.4}
-\BOOKMARK [2][-]{subsection.4.4.4}{Tempo de Execu\347\343o}{section.4.4}
-\BOOKMARK [1][-]{section.4.5}{Extens\365es ao Neural Ringer}{chapter.4}
-\BOOKMARK [2][-]{subsection.4.5.1}{Pr\351-processamento linear}{section.4.5}
-\BOOKMARK [2][-]{subsection.4.5.2}{Pr\351-processamento n\343o-linear}{section.4.5}
+\BOOKMARK [1][-]{section.4.1}{Filtragem de el\351trons no L1}{chapter.4}
+\BOOKMARK [1][-]{section.4.2}{Filtragem de el\351trons no L2 - Algoritmo T2Calo}{chapter.4}
+\BOOKMARK [1][-]{section.4.3}{Neural Ringer - Alternativa para Filtragem de El\351trons no L2}{chapter.4}
+\BOOKMARK [2][-]{subsection.4.3.1}{Extra\347\343o de Caracter\355sticas - Anelamento}{section.4.3}
+\BOOKMARK [2][-]{subsection.4.3.2}{Normaliza\347\343o}{section.4.3}
+\BOOKMARK [2][-]{subsection.4.3.3}{Teste de Hip\363teses - Classificador Neural}{section.4.3}
+\BOOKMARK [2][-]{subsection.4.3.4}{Tempo de Execu\347\343o}{section.4.3}
+\BOOKMARK [1][-]{section.4.4}{Extens\365es ao Neural Ringer}{chapter.4}
+\BOOKMARK [2][-]{subsection.4.4.1}{Pr\351-processamento linear}{section.4.4}
+\BOOKMARK [2][-]{subsection.4.4.2}{Pr\351-processamento n\343o-linear}{section.4.4}
 \BOOKMARK [0][-]{chapter.5}{T\351cnicas Utilizadas para Extra\347\343o de Caracter\355sticas}{}
 \BOOKMARK [1][-]{section.5.1}{An\341lise de Componentes Independentes}{chapter.5}
 \BOOKMARK [1][-]{section.5.2}{ICA n\343o-linear}{chapter.5}
