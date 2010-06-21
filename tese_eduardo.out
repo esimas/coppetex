@@ -23,6 +23,7 @@
 \BOOKMARK [1][-]{section.3.2}{O sistema de filtragem online do ATLAS}{chapter.3}
 \BOOKMARK [2][-]{subsection.3.2.1}{Primeiro n\355vel de filtragem}{section.3.2}
 \BOOKMARK [2][-]{subsection.3.2.2}{Filtragem de alto n\355vel}{section.3.2}
+\BOOKMARK [2][-]{subsection.3.2.3}{Plataforma de Software do Sistema de Filtragem}{section.3.2}
 \BOOKMARK [0][-]{chapter.4}{Detec\347\343o de El\351trons a partir de Informa\347\365es de Calorimetria no ATLAS}{}
 \BOOKMARK [1][-]{section.4.1}{Filtragem de el\351trons no L1}{chapter.4}
 \BOOKMARK [1][-]{section.4.2}{Filtragem de el\351trons no L2 - Algoritmo T2Calo}{chapter.4}
@@ -45,9 +46,10 @@
 \BOOKMARK [1][-]{section.5.3}{Mapas auto-organiz\341veis}{chapter.5}
 \BOOKMARK [1][-]{section.5.4}{T\351cnicas de Pr\351-Processamento - Compacta\347\343o}{chapter.5}
 \BOOKMARK [2][-]{subsection.5.4.1}{An\341lise de Componentes Principais}{section.5.4}
-\BOOKMARK [2][-]{subsection.5.4.2}{Componentes Principais de Discrimina\347\343o}{section.5.4}
-\BOOKMARK [1][-]{section.5.5}{Aplica\347\365es}{chapter.5}
-\BOOKMARK [2][-]{subsection.5.5.1}{F\355sica de Altas Energias e \301reas Correlatas}{section.5.5}
+\BOOKMARK [1][-]{section.5.5}{Utilizando Informa\347\343o das Classes na Estima\347\343o dos Componentes Independentes}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.5.1}{Componentes Principais de Discrimina\347\343o}{section.5.5}
+\BOOKMARK [1][-]{section.5.6}{Aplica\347\365es}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.6.1}{F\355sica de Altas Energias e \301reas Correlatas}{section.5.6}
 \BOOKMARK [0][-]{chapter.6}{Metodologia Proposta}{}
 \BOOKMARK [1][-]{section.6.1}{Sistemas de Classifica\347\343o Propostos para a Sele\347\343o de El\351trons no Segundo-N\355vel de Filtragem do ATLAS}{chapter.6}
 \BOOKMARK [2][-]{subsection.6.1.1}{Classificadores Neurais Supervisionados}{section.6.1}

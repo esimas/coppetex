@@ -212,13 +212,15 @@ componentes $y_i$ sejam as fontes independentes que produziram os
 sinais observados $\mathbf{x}$. Então, informações a respeito do
 modelo de mistura ou das fontes devem ser conhecidas a priori. A
 NLICA vem sendo aplicada com sucesso em problemas como processamento
-de sinais de fala \cite{article:rojas:ica:2003} e remoção de ruído
-em imagens \cite{article:allinson:2002}.
+de sinais de fala \cite{article:rojas:ica:2003,article:miyabe:2009}, processamento de 
+imagens~\cite{article:allinson:2002,article:almeida:2008}, predição de séries de ações em bolsas de 
+valores~\cite{article:chi:2009} e processamento de sinais de um \textit{array} de 
+sensores~\cite{article:sensornlica:2007,app:nlica:qui}.
 
 Em geral, o número de parâmetros a serem estimados num modelo de ICA
-não-linear é maior do que no caso linear \cite{}. Os algoritmos de NLICA, se
-comparados com os de ICA, apresentam maior complexidade
-computacional e convergência mais lenta \cite{}. Em problemas de separação
+não-linear é maior do que no caso linear. Os algoritmos de NLICA, se
+comparados aos de ICA, apresentam maior complexidade
+computacional e convergência mais lenta \cite{jutten:nlica:2003}. Em problemas de separação
 cega de fontes, o algoritmo a ser utilizado deve ser esco\-lhi\-do
 utilizando informações a respeito do modelo de mistura. Considerando
 estas limitações, as aplicações de NLICA devem considerar se existem restrições quanto ao aumento do tempo de
@@ -275,7 +277,10 @@ informações a respeito do modelo não-linear que gerou os dados
 observados. Estas informações se configuram em restrições
 estruturais ao mapeamento inverso (que é estimado pelo algoritmo).
 Entre estes modelos, o de misturas \textbf{pós não-lineares} (PNL)
-\cite{article:jutten:1999} é um dos mais utilizados na literatura, com aplicações em ... \cite{}.
+\cite{article:jutten:1999} é um dos mais utilizados na literatura, com aplicações em processamento de 
+fala~\cite{article:rojas:nlica:2004,ica:ap_pnl:2004}, separação de sinais de áudio~\cite{ica:ap_pnl:2007,article:solazzi:pnl:2004}, 
+processamento de imagens \cite{article:pnlimage:2007} and ...
+... (ver algo mais nos proceedings do ICA)... 
 
 No modelo PNL, considera-se que inicialmente ocorre uma combinação
 linear das fontes (como no modelo básico de ICA), e as funções
@@ -369,7 +374,10 @@ métodos que utilizam inferência Bayesiana
 \subsubsection{NLICA a partir de Mapas Auto-Organizáveis}:
 
 Uma das primeiras tentativas bem sucedidas de realizar NLICA
-utilizou mapas auto-organizáveis \cite{article:pajunen:1996}.
+utilizou mapas auto-organizáveis \cite{article:pajunen:1996}. Outras aplicações incluem: 
+... citar aplicações ...
+
+
 Pode-se provar que as coordenadas $y_1$ e $y_2$ do neurônio vencedor
 no mapa (ver Figura \ref{fig_som_nlica}) são independentes e
 aproximadamente uniformemente distribuídas
@@ -412,7 +420,7 @@ Auto-Organizáveis, pois aqui as componentes independentes também são
 assumidas como processos uniformemente distribuídos e o espaço de
 características é formado a partir de uma grade retangular discreta
 m-dimensional. Porém, devido a sua formulação matemática mais
-fundamentada, o GTM pode ser facilmente estendido para variáveis não
+fundamentada, o GTM pode ser estendido para variáveis não
 uniformes. O trabalho \cite{article:pajunen:1997} propõe uma
 modificação à formulação básica onde são introduzidos
 coe\-fi\-cientes de ponderação que permitem a estimação de
@@ -476,9 +484,27 @@ conclusões foram:
     problemas com mínimos locais da função custo).
 \end{itemize}
 
+... Citar aplicações ...
+
 \subsubsection{O algoritmo MISEP}
 
-Descrever o algoritmo...
+O algoritmo MISEP utiliza a minimização da Informação Mútua (ver Apêndice \ref{apend_fex}) como estratégia para 
+busca pelos componentes independentes, e é considerado como uma extensão do método INFOMAX \cite{book:oja:2001}, 
+podendo ser utilizado para estimar tando o modelo linear quanto o não-linear da ICA. Na Figura \ref{fig_misep} 
+pode-se observar um diagrama do MISEP, onde $y_i$ são os componentes independentes 
+estimados e o bloco $\mathbf{F}$, no caso linear, aproxima a matriz de separação $\mathbf{W}$, e para a NLICA, deve 
+fornecer uma aproximação do mapeamento inverso $G(.)$. As funções não-lineares $\psi_i$ e as variáveis de saída 
+$z_i$ são utilizadas apenas no processo de 
+treinamento. Após a aonvergência do algoritmo, as não-linearidades deveriam ser aproximações da função de 
+probabilidade cumulativa (cdf - \textit{cumulative probability function}) dos componentes independentes. 
+
+Para a aplicação em NLICA, o bloco $\mathbf{F}$ é estimado por uma rede neural (que pode utilizar tanto a arquitetura 
+\textit{perceptron} de múltiplas camadas - MLP como rede de funções de base radial - RBF). Considerando as funções 
+$\psi_i$, como o objetivo é estimar a cdf, as saídas $z_i$ são restritas ao intervalo [0,1] e as $\psi_i$ são limitadas 
+a funções estritamente crescentes.
+
+O MISEP foi aplicado em processamento de sinais de áudio \cite{} e separação de imagens \cite{}. No trabalho \cite{}, 
+foi proposta uma modificação no MISEP para...
 
 \subsection{ICA Local}
 
@@ -529,6 +555,7 @@ mútua \cite{book:cover:1991} é uma importante ferramenta em diversas
 aplicações de processamento de sinais, especialmente na seleção de
 ca\-rac\-terísticas.
 
+... Citar aplicações da Local ICA ...
 
 \section{Mapas auto-organizáveis}
 
@@ -709,6 +736,12 @@ processo de obtenção dos autovetores se torna proibitivamente lento.
 Nesse caso, uma solução é utilizar métodos iterativos de extração
 das componentes principais, através de redes neurais
 \cite{article:oja:pca,tese:joao:2007}.
+
+\section{Utilizando Informação das Classes na Estimação dos Componentes Independentes}
+
+O modelo da ICA/NLICA não foi originalmente desemvolvido para extração de componentes com características 
+discriminantes, então, neste trabalho foram propostas algumas modificações no processo de estimação da NLICA, de modo 
+a utilizar o conhecimento prévio dos rótulos de classe dos dados. Assim, pretende-se...
 
 \subsection{Componentes Principais de Discriminação}
 

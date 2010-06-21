@@ -8,106 +8,106 @@ Repeated entry---line 301 of file edsimas.bib
 I'm skipping whatever remains of this entry
 Warning--I'm ignoring article:fernandez:2005's extra "address" field
 --line 1117 of file edsimas.bib
-You're missing a field name---line 2051 of file edsimas.bib
+You're missing a field name---line 2137 of file edsimas.bib
  : 
  : %  AUTHOR =       {C. Jutten and M. Babaie Zadeh and S. Hosseini},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 2541 of file edsimas.bib
+I was expecting a `,' or a `}'---line 2709 of file edsimas.bib
  :   
  :   pages =        {117-128},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 2565 of file edsimas.bib
+I was expecting a `,' or a `}'---line 2733 of file edsimas.bib
  :   
  :   pages =        {1008-1012},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Repeated entry---line 3131 of file edsimas.bib
+Repeated entry---line 3337 of file edsimas.bib
  : %@article{article:susy:1996
  :                            ,
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 4355 of file edsimas.bib
+I was expecting a `,' or a `}'---line 4561 of file edsimas.bib
  :   
  :   author =       {C. L. Blake and C. J. Merz},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 4461 of file edsimas.bib
+You're missing a field name---line 4667 of file edsimas.bib
  :   
  :   %year =         {2006},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 4475 of file edsimas.bib
+You're missing a field name---line 4681 of file edsimas.bib
  :   
  :   %year =         {2006},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 4489 of file edsimas.bib
+You're missing a field name---line 4695 of file edsimas.bib
  :   
  :   %year =         {2006},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 4503 of file edsimas.bib
+You're missing a field name---line 4709 of file edsimas.bib
  :   
  :   %year =         {2006},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 4519 of file edsimas.bib
+You're missing a field name---line 4725 of file edsimas.bib
  :   
  :   %year =         {2006},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 4533 of file edsimas.bib
+You're missing a field name---line 4739 of file edsimas.bib
  :   
  :   %year =         {2006},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 4549 of file edsimas.bib
+You're missing a field name---line 4755 of file edsimas.bib
  :   
  :   %year =         {2006},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 4563 of file edsimas.bib
+You're missing a field name---line 4769 of file edsimas.bib
  :   
  :   %year =         {2006},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 4579 of file edsimas.bib
+You're missing a field name---line 4785 of file edsimas.bib
  :   
  :   %year =         {2006},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 4609 of file edsimas.bib
+You're missing a field name---line 4815 of file edsimas.bib
  :   
  :   %year =         {2006},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Unbalanced braces---line 5121 of file edsimas.bib
+Unbalanced braces---line 5327 of file edsimas.bib
  : 
  : }
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Unbalanced braces---line 5529 of file edsimas.bib
+Unbalanced braces---line 5735 of file edsimas.bib
  : 
  : }
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 5699 of file edsimas.bib
+I was expecting a `,' or a `}'---line 5905 of file edsimas.bib
  :   
  :   volume =       "2"
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 5851 of file edsimas.bib
+I was expecting a `,' or a `}'---line 6057 of file edsimas.bib
  :   
  :   volume =       {51},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 5911 of file edsimas.bib
+I was expecting a `,' or a `}'---line 6117 of file edsimas.bib
  :   
  :   month =        {Aug},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 6095 of file edsimas.bib
+You're missing a field name---line 6301 of file edsimas.bib
  : 
  : %  AUTHOR =       {S. Bellini},
 (Error may have been on previous line)
@@ -138,45 +138,45 @@ Warning--empty booktitle in article:lan:2006
 Warning--all relevant fields are empty in rep:uci:1998
 Warning--there's a number but no series in article:lucas:som
 Warning--there's a number but no series in article:fernandez:2005
-You've used 195 entries,
+You've used 206 entries,
             2438 wiz_defined-function locations,
-            1644 strings with 34283 characters,
-and the built_in function-call counts, 46402 in all, are:
-= -- 3723
-> -- 1170
-< -- 182
-+ -- 568
-- -- 373
-* -- 4402
-:= -- 6191
-add.period$ -- 427
-call.type$ -- 195
-change.case$ -- 21
+            1702 strings with 36741 characters,
+and the built_in function-call counts, 49934 in all, are:
+= -- 4039
+> -- 1262
+< -- 196
++ -- 612
+- -- 406
+* -- 4713
+:= -- 6649
+add.period$ -- 455
+call.type$ -- 206
+change.case$ -- 22
 chr.to.int$ -- 45
-cite$ -- 211
-duplicate$ -- 2721
-empty$ -- 5258
-format.name$ -- 373
-if$ -- 10599
+cite$ -- 222
+duplicate$ -- 2934
+empty$ -- 5608
+format.name$ -- 406
+if$ -- 11428
 int.to.chr$ -- 0
-int.to.str$ -- 195
-missing$ -- 215
-newline$ -- 673
-num.names$ -- 195
-pop$ -- 656
+int.to.str$ -- 206
+missing$ -- 225
+newline$ -- 713
+num.names$ -- 206
+pop$ -- 689
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1037
+skip$ -- 1153
 stack$ -- 0
-substring$ -- 3197
-swap$ -- 1137
-text.length$ -- 167
+substring$ -- 3482
+swap$ -- 1247
+text.length$ -- 181
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 16
-while$ -- 378
-width$ -- 198
-write$ -- 1878
+while$ -- 406
+width$ -- 209
+write$ -- 1997
 (There were 27 error messages)

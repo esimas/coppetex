@@ -664,6 +664,27 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Nonlinear ICA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+@INPROCEEDINGS{article:chi:2009,
+  AUTHOR =       {Chi-Jie Lu and Jui-Yu Wu and Cheng-Ruei Fan and Chih-Chou Chiu},
+  TITLE =        {Forecasting stock price using Nonlinear independent component analysis and support vector regression},
+  BOOKTITLE =    {Proceedings of the IEEE International Conference on Industrial Engineering and Engineering Management},
+  YEAR =         {2009},
+  volume =       {1},
+  pages =        {2370-2374},
+  address =      {Hong Kong},
+}
+
+
+@INPROCEEDINGS{article:miyabe:2009,
+  AUTHOR =       {S. Miyabe and Biing-Hwang Juang and H. Saruwatari and K. Shikano},
+  TITLE =        {Kernel-based nonlinear independent component analysis for underdetermined blind source separation},
+  BOOKTITLE =    {Proceedings of the IEEE International Conference on Acoustics, Speech and Signal Processing},
+  YEAR =         {2009},
+  volume =       {1},
+  pages =        {1641-1644},
+  address =      {Taipei, Taiwan},
+}
+
 @INPROCEEDINGS{article:kai:2006,
   AUTHOR =       {S. Kai and W. Qi and D. Mingli},
   TITLE =        {Approach to nonlinear blind source separation based on niche genetic algorithm},
@@ -709,6 +730,16 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   series =       {Lecture Notes in Computer Science},
 }
 
+@ARTICLE{article:rojas:nlica:2004,
+  AUTHOR =       {F. Rojas and C. G. Puntonet and Manuel Rodríguez-Álvarez and I. Rojas and Rubén Martín-Clemente},
+  TITLE =        {Blind Source Separation in Post-Nonlinear Mixtures Using Competitive Learning, Simulated Annealing, and a Genetic Algorithm},
+  JOURNAL =      {IEEE Transactions on Systems, Man and Cybernetics-Part C},
+  YEAR =         {2004},
+  volume =       {34},
+  number =       {4},
+  pages =        {407-416},
+}
+
 
 @ARTICLE{article:rojas:ica:2003,
   AUTHOR =       {F. Rojas and C. G. Puntonet and I. Rojas},
@@ -747,6 +778,16 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   PUBLISHER =    {Dover},
   YEAR =         {1985},
   address =      {West Sussex, Reino Unido},
+}
+
+@INPROCEEDINGS{article:pnlimage:2005,
+  AUTHOR =       {P. Gao and W. Woo, and S. S. Dlay},
+  TITLE =        {Post-nonlinear blind image separation algorithm with SOM initialization method},
+  BOOKTITLE =    {Proceedings of the Eighth International Symposium on Signal Processing and Its Applications},
+  YEAR =         {2005},
+  volume =       {1},
+  pages =        {78-81},
+  address =      {Sydney, Australia},
 }
 
 @INPROCEEDINGS{article:gao:nl2005,
@@ -1032,6 +1073,35 @@ Existence and Uniqueness results},
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@ARTICLE{article:gaudi:2006,
+  AUTHOR =       {G. Corti and M. Cattaneo and M. Charpentier},
+  TITLE =        {Software for the LHCb Experiment},
+  JOURNAL =      {IEEE Transactions on Nuclear Science},
+  YEAR =         {2006},
+  volume =       {53},
+  number =       {3},
+  pages =        {1323-1328},
+}
+
+@TECHREPORT{TP:athena:2001,
+  AUTHOR =       {ATLAS-Collaboration},
+  TITLE =        {Athena Developer Guide},
+  INSTITUTION =  {CERN},
+  YEAR =         {2001},
+  month =        {Agosto},
+  address =      {Genebra, Suiça},
+}
+
+@ARTICLE{article:almeida:2008,
+  AUTHOR =       {Mariana S.C. Almeida and Luis B. Almeida},
+  TITLE =        {Wavelet-based separation of nonlinear show-through and bleed-through image mixtures},
+  JOURNAL =      {Neurocomputing},
+  YEAR =         {2008},
+  volume =       {72},
+  number =       {1-3},
+  pages =        {57-70},
+}
+
 
 @ARTICLE{article:misep:2004,
   AUTHOR =       {Luis B. Almeida},
@@ -1043,14 +1113,26 @@ Existence and Uniqueness results},
   pages =        {1297-1318},
 }
 
+
+@INPROCEEDINGS{article:sensornlica:2007,
+  AUTHOR =       {L. T. Duarte and C. Jutten},
+  TITLE =        {A Mutual Information Minimization Approach for a Class of Nonlinear Recurrent Separating Systems},
+  BOOKTITLE =    {Proceedings of the International Workshop on Machine Learning for Signal Processing},
+  YEAR =         {2007},
+  volume =       {1},
+  pages =        {122-127},
+  address =      {Thessaloniki, Greece},
+}
+
+
 @INPROCEEDINGS{article:acoesnlica:2009,
   AUTHOR =       {C. J. Lu and C. R. Fan and C. C. Chiu},
   TITLE =        {Forecasting Stock Price Using Nonlinear Independent Component Analysis and Support Vector Machine},
-  BOOKTITLE =    {Proceedings of the International Conference on Industrial Engineering and},
+  BOOKTITLE =    {Proceedings of the International Conference on Industrial Engineering and Engineering Management},
   YEAR =         {2009},
   volume =       {1},
-  pages =        {361-364},
-  address =      {Taipei, Taiwan},
+  pages =        {2370-2374},
+  address =      {Hong Kong},
 }
 
 @INPROCEEDINGS{article:eegnlica:2009,
@@ -1314,6 +1396,25 @@ Existence and Uniqueness results},
   number =       {1},
   pages =        {134-138},
 }
+
+@inproceedings{ica:ap_pnl:2007,
+  Address = {Cardiff, Wales, Inglaterra},
+  Author = {C. Wei and L.C. Khor and W.L. Woo and S.S. Dlay},
+  Booktitle = {Proceedings of the International Conference on Digital Signal Processing},
+  Month = {Julho},
+  Pages = {551-554},
+  Title = {A Novel Iterative Conditional Maximization Method for Post-Nonlinear Underdetermined Blind Source Separation},
+  Year = {2007}}
+
+@inproceedings{ica:ap_pnl:2004,
+  Address = {Cingapura},
+  Author = {T. V. Nguyen and J. C. Patra and A. Das},
+  Booktitle = {Proceedings of the International Conference on Communications Systems},
+  Month = {Setembro},
+  Pages = {260-264},
+  Title = {A Geometric Approach to Post-Nonlinear Mixture in Blind Source Separation},
+  Year = {2004}}
+
 
 @inproceedings{ica:clas:2004,
   Address = {Charleston, Estados Unidos},

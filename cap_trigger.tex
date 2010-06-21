@@ -361,8 +361,9 @@ onde os eventos aceitos ocorreram, sinalizando assim as
 regiões de inte\-resse (RoI) para análise no L2. O
 nível 1 também fornece outras informações importantes, como o
 critério utilizado para aceitação do evento e a identificação da 
-colisão (cruzamento de feixe) ao qual o evento está associado. O nível 2
-tem acesso a toda a informação da RoI com total precisão e granularidade.
+colisão (cruzamento de feixe) ao qual o evento está associado. O sistema de filtragem do 
+L1 é implementado utilizando hardware dedicado (através de FPGAs) conforme 
+detalhado em \cite{artigo:L1:implem}.
 
 \begin{figure} \centering
 \includegraphics[width=13cm]{cap2_nivel1}
@@ -373,8 +374,9 @@ tem acesso a toda a informação da RoI com total precisão e granularidade.
 
 Na Tabela \ref{tab_lvl1} são mostradas as freqüências dos
 principais canais de filtragem esperadas na saída do L1 quando o LHC
-estiver operando em alta luminosidade (L=10$^{34}$cm$^{-2}s{-1}$).
-Pode-se perceber que a taxa total desta simulação é da ordem de 40 kHz,
+estiver operando em alta luminosidade (L=10$^{34}$cm$^{-2}s{-1}$). Os principais objetos de \textit{trigger} a serem
+identificados são candidatos a múons, elétrons/fótons (regiões eletromagnéticas), 
+taus, jatos, e $E_T^{miss}$. Pode-se perceber que a taxa total desta simulação é da ordem de 40 kHz,
 aproximadamente 2 vezes menor que a freqüência de saída esperada
 para o nível 1 na operação do LHC~\cite{TDR:ATLAS:1998}.
 
@@ -419,25 +421,26 @@ eventos de 3,5 kHz para 200 Hz. Os eventos que forem aceitos pelos
 três níveis de filtragem serão armazenados em mídia permanente para
 futura análise \textit{offline}. O tempo para a tomada de decisão no
 filtro de eventos é de alguns segundos. O HLT é implementado em
-\textit{software} e opera em um conjunto de PCs ($\approx$2800) em paralelo \cite{article:triggerint:2008}. Considerando os efeitos conjuntos do segundo nível e do filtro de
+\textit{software} e opera em um conjunto de PCs ($\approx$2800) operando em 
+paralelo~\cite{article:triggerint:2008}. Considerando os efeitos conjuntos do segundo nível e do filtro de
 eventos, a filtragem de alto nível deve reduzir em aproximadamente
 500 vezes a taxa de eventos.
 
-Os principais objetos de \textit{trigger} a serem
-identificados no HLT são candidatos a múons, elétrons, fótons,
-taus, jatos, $E_T^{miss}$ e física dos hádrons b. As informações
-necessárias para a decisão do alto nível dependem do tipo de
-região de interesse fornecida pelo L1, cada uma tendo suas
-próprias características de processamento~\cite{TDR:ATLAS:2003}.
-
 O segundo nível opera guiado pelas informações da RoI fornecidas pelo L1. Conforme mostrado na Figura~\ref{fig_l2}, 
-após um evento ser aceito pelo L1, as informações da RoI são descarregadas pelos \textit{drivers} de saída e 
-armazenadas nos ROBs (\textit{Read-Out Buffers}) enquanto aguardam a decisão de nível 2~\cite{TDR:ATLAS:2003}. 
-Com o uso das RoIs, apenas $\approx$2\% da informação do detector é necessária para produzir a decisão do L2, 
+após um evento ser aceito pelo L1, as informações (fragmentos) da RoI geradas por diferentes detectores são 
+descarregadas no construtor de RoI (RoIB - \textit{RoI Builder}). Com o uso das RoIs, apenas $\approx$2\% da 
+informação do detector é necessária para produzir a decisão do L2, 
 reduzindo consideravelmente a taxa de transmissão na rede de dados~\cite{article:triggerint:2008}. 
-Os algoritmos de seleção de eventos operam nas unidades de processamento do L2 (L2PU - \textit{Level 2 
-processing units}). O supervisor de nível 2 (L2SV - \textit{Level 2 supervisor}) indica a L2PU que ficará 
-responsável por um determinado evento. As principais
+O RoIB agrupa os fragmentos e transmite o registro 
+produzido para um supervisor do segundo nível (L2SV - \textit{Level 2 supervisor}), que atribuirá a RoI recebida a 
+uma unidade de processamento do L2 (L2PU - \textit{Level 2 processing units}). A L2PU executa os algoritmos 
+de seleção do segundo nível, que utilizam plena granularidade dos detectores e produzem a decisão (aceite ou rejeição) 
+do L2. Enquanto a decisão do segundo nível é aguardada, todas as informações dos eventos aceitos pelo L1 são armazenadas 
+nos ROBs (\textit{Read-Out Buffers}). Quando a decisão do L2 é produzida, o L2PU informa ao L2SV, que em caso de 
+aceite, envia as informações do evento completo (que estavam armazenadas temporariamente nos ROBs), através da rede 
+do L2, para o Filtro de Eventos (EF). Quando o evento é rejeitado, as informações referentes a ele são descartadas.
+
+As principais
 características desejadas para os algoritmos de filtragem no L2 são listadas a seguir~\cite{TDR:ATLAS:2003}:
 \begin{itemize}
   \item alta eficiência ($>$ 95\%) por RoI selecionada no L1;
@@ -452,10 +455,10 @@ Quando um evento é aceito pelo L2, o construtor de eventos (EB - \textit{Event B
 informação do evento e a disponibiliza ao Filtro de Eventos (EF - \textit{Event Filter}) para a última etapa da 
 filtragem \textit{online}. O evento completo é armazenado nas Fazendas de Entrada do Filtro de Eventos 
 (EF \textit{Sub-Farm Input} -SFI)~\cite{article:trigconf:2009}. O EF reduz a taxa de eventos a 200 Hz tendo 
-disponível entre 1 e 2 segundos para a tomada de decisão. Os algoritmos do EF analisam todo o evento (não se 
+disponível até 4 segundos para a tomada de decisão. Os algoritmos do EF analisam todo o evento (não se 
 restringem apenas à RoI como no L2) e operam de modo semelhante à análise 
-\textit{offline}~\cite{article:triggerint:2008}. Quando o evento é aceito pelo EF, é enviado às Fazendas de Saída 
-(SFO - \textit{Sub-Farm Output}) e, então, armazenado em mídia permanente.
+\textit{offline}~\cite{article:triggerint:2008}. Quando o evento é aceito pelo EF, todas as informações 
+referentes a ele sao armazenadas (gravadas) em mídia permanente.
 
 O HLT foi desenvolvido utilizando, sempre que possível, tecnologias padronizadas (disponíveis comercialmente)~\cite{article:atlasl2:2004}.
 Todos os processadores utilizados são de uso geral (semelhantes aos utilizados em computadores pessoais) e praticamente
@@ -503,4 +506,32 @@ da janela permitida ao L2 ($\approx$40 ms).
 No próximo capítulo será descrito o processo de identificação de elétrons a partir de informações de calorimetria. 
 Considerando o L2 do ATLAS, serão descritos os discriminadores T2Calo e \textit{Neural Ringer}.
 
+\subsection{Plataforma de \textit{Software} do Sistema de Filtragem}
 
+A colaboração do ATLAS desenvolveu um conjunto de softwares e ferramentas de controle (conhecidos como Athena) \cite{TP:athena:2001}
+que permitem aos membros da colaboração, independente de sua localização geográfica, acesso e análise dos dados 
+gerados no detector.
+
+O Athena, em sua estrutura modular, dispõe de rotinas para:
+\begin{itemize}
+ \item Simulação (incorporando algoritimos como o Pythia, que simula a colisão dos feixes de prótons e o Geant, que 
+simula a interação das partículas com a matéria e o comportamento dos detectores);
+ \item Filtragem (\textit{Trigger});
+ \item Reconstrução do evento;
+ \item Análise da física.
+\end{itemize}
+
+O núcleo (\textit{kernel}) do Athena é baseado no projeto Gaudi \cite{article:gaudi:2006}, desenvolvido originalmente para o detector 
+LHCb e posteriormente adaptado para as necessidades do ATLAS. O Athena, na verdade, define uma estrutura (\textit{framework}) 
+de controle comum para todos os aplicativos e análises necessárias para a colaboração do ATLAS.
+
+Entre os principais benefícios do uso de uma estrutura comum pode-se mencionar:
+\begin{itemize}
+ \item Os desenvolvedores compartilham a mesma estrutura, onde podem inserir os seus próprios códigos, de acordo com 
+sua necessidade específica;
+ \item A comunicação e compatibilidade entre os diversos componentes é mais facilmente garantida;
+ \item Facilidade para re-uso de código, poupando tempo no desenvolvimento de rotinas mais complexas.
+\end{itemize}
+
+O Athena está sendo utilizado no desenvolvimento e teste de algoritmos tanto para seleção de eventos (filtragem 
+\textit{online}), como para reconstrução e análise da física (modo \textit{offline}).

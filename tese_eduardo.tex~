@@ -1,4 +1,4 @@
-%%
+\delta%%
 %% This is file `example.tex',
 %% generated with the docstrip utility.
 %%
@@ -106,8 +106,7 @@ o experimento, e aparecem mascarados por um
 intenso ruído de fundo composto de jatos hadrônicos, pois esses
 últimos podem apresentar perfil de deposição de energia nos calorímetros seme\-lhan\-te ao de elétrons 
 (os calorímetros são medidores de energia com fina segmentação e no ATLAS são divididos em sete camadas, 
-totalizando mais de 100.000 sensores),
-. Neste trabalho, é proposta a
+totalizando mais de 100.000 sensores). Neste trabalho, é proposta a
 utilização do modelo não-linear da análise
 de componentes independentes no processo de extração de características, visando
  otimizar o desempenho do sistema neural de filtragem \textit{online} de elétrons no ATLAS (\textit{Neural Ringer}). 
