@@ -490,7 +490,7 @@ conclusões foram:
 
 O algoritmo MISEP utiliza a minimização da Informação Mútua (ver Apêndice \ref{apend_fex}) como estratégia para 
 busca pelos componentes independentes, e é considerado como uma extensão do método INFOMAX \cite{book:oja:2001}, 
-podendo ser utilizado para estimar tando o modelo linear quanto o não-linear da ICA. Na Figura \ref{fig_misep} 
+podendo ser utilizado para estimar tanto o modelo linear quanto o não-linear da ICA. Na Figura \ref{fig_misep} 
 pode-se observar um diagrama do MISEP, onde $y_i$ são os componentes independentes 
 estimados e o bloco $\mathbf{F}$, no caso linear, aproxima a matriz de separação $\mathbf{W}$, e para a NLICA, deve 
 fornecer uma aproximação do mapeamento inverso $G(.)$. As funções não-lineares $\psi_i$ e as variáveis de saída 
@@ -499,9 +499,12 @@ treinamento. Após a aonvergência do algoritmo, as não-linearidades deveriam ser 
 probabilidade cumulativa (cdf - \textit{cumulative probability function}) dos componentes independentes. 
 
 Para a aplicação em NLICA, o bloco $\mathbf{F}$ é estimado por uma rede neural (que pode utilizar tanto a arquitetura 
-\textit{perceptron} de múltiplas camadas - MLP como rede de funções de base radial - RBF). Considerando as funções 
-$\psi_i$, como o objetivo é estimar a cdf, as saídas $z_i$ são restritas ao intervalo [0,1] e as $\psi_i$ são limitadas 
-a funções estritamente crescentes.
+\textit{perceptron} de múltiplas camadas - MLP como rede de funções de base radial - RBF). Como o objetivo é estimar 
+a cdf, as saídas $z_i$ são restritas ao intervalo [0,1] e as $\psi_i$ são limitadas 
+a funções estritamente crescentes. Para estimação iterativa de cada função $\psi_i$ é utilizada uma redes neurais MLP com 
+uma camada oculta (de neurônios sigmoidais) e uma camada de saída (linear). Estas redes tem uma entrada ($y_i$) e uma 
+saída ($z_i$). O treinamento do modelo MISEP é feito a partir da maximização da entropia das saídas $z_i$, mais 
+detalhes podem ser encontrados em \cite{}
 
 O MISEP foi aplicado em processamento de sinais de áudio \cite{} e separação de imagens \cite{}. No trabalho \cite{}, 
 foi proposta uma modificação no MISEP para...
@@ -774,6 +777,14 @@ Os demais pesos da rede são ajustados a cada novo componente estimado.
 Outros modelos que, de modo semelhante aos PCD, utilizam redes neurais para extrair características 
 discriminantes de um conjunto de sinais foram propostos na literatura em 
 \cite{article:nnfex1:1996,article:nnfex2:1996,article:nnfex:1999}.
+
+\subsection{Utilizando os Rótulos de Classe como Sinais de Entrada}
+
+No trabalho \cite{} foi proposta a utilização dos rótulos de classes como entrada para ...
+
+\subsection{Algoritmo PNL modificado}
+
+... descrever o algoritmo proposto no artigo Neurocomputing ...
 
 \section{Aplicações}
 \label{aplic}

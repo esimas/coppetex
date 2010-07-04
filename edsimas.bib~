@@ -780,15 +780,17 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   address =      {West Sussex, Reino Unido},
 }
 
-@INPROCEEDINGS{article:pnlimage:2005,
-  AUTHOR =       {P. Gao and W. Woo, and S. S. Dlay},
+@INPROCEEDINGS{article:pnlimage:2007,
+  AUTHOR =       {J. Wang and M. Wang and Y. Fang},
   TITLE =        {Post-nonlinear blind image separation algorithm with SOM initialization method},
-  BOOKTITLE =    {Proceedings of the Eighth International Symposium on Signal Processing and Its Applications},
-  YEAR =         {2005},
+  BOOKTITLE =    {Proceedings of the IET Conference on Wireless, Mobile and Sensor Networks},
+  YEAR =         {2007},
   volume =       {1},
-  pages =        {78-81},
-  address =      {Sydney, Australia},
+  pages =        {978-982},
+  address =      {Xangai, China},
 }
+
+
 
 @INPROCEEDINGS{article:gao:nl2005,
   AUTHOR =       {P. Gao and W. Woo, and S. S. Dlay},
@@ -1073,6 +1075,17 @@ Existence and Uniqueness results},
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+@BOOK{book:cosmic:2002,
+  AUTHOR =       {Reinhard Schlickeiser},
+  TITLE =        {Electron Energy Loss Spectroscopy in the Electron Microscope},
+  PUBLISHER =    {Springer},
+  YEAR =         {2002},
+  address =      {Nova York, Estados Unidos},
+}
+
+
 @ARTICLE{article:gaudi:2006,
   AUTHOR =       {G. Corti and M. Cattaneo and M. Charpentier},
   TITLE =        {Software for the LHCb Experiment},

@@ -243,7 +243,7 @@ de características talvez seja mais indicado para o problema.
 O principal objetivo do presente trabalho é avaliar o desempenho obtido pelo discriminador \textit{Neural Ringer}
 quando os sinais em anéis são pré-processados por métodos de extração de características baseados
 no modelo não-linear da análise de componentes independentes (NLICA - \textit{Nonlinear Independent 
-Component Analysis}) \cite{book:almeida:2006}. 
+Component Analysis})~\cite{book:almeida:2006}. 
 
 Neste contexto, foram utilizados diversos modelos e algoritmos de estimação da NLICA e seus resultados 
 comparados em termos da eficiência de discriminação e do tempo de processamento. Foi proposta também a 
