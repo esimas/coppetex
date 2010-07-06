@@ -7,12 +7,12 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Diagrama do Modelo Padr\~ao, mostrando as part\IeC {\'\i }culas elementares incluindo o, ainda n\~ao confirmado, b\'oson de Higgs.}}{10}{figure.2.1}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Mapa de localiza\c c\~ao dos detectores do LHC.}}{14}{figure.2.2}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Diagrama esquem\'atico do ATLAS.}}{16}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Eixo de coordenadas do ATLAS.}}{17}{figure.2.4}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Eixo de coordenadas do ATLAS.}}{16}{figure.2.4}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Cortes (a) transversal e (b) axial do ATLAS.}}{18}{figure.2.5}
 \contentsline {subfigure}{\string \numberline {2.5(a)}{\ignorespaces }}{18}{figure.2.5}
 \contentsline {subfigure}{\string \numberline {2.5(b)}{\ignorespaces }}{18}{figure.2.5}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Disposi\c c\~ao em camadas dos calor\IeC {\'\i }metros do ATLAS.}}{25}{figure.2.6}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Granularidade e profundidade das camadas do calor\IeC {\'\i }metro eletromagn\'etico.}}{27}{figure.2.7}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Disposi\c c\~ao em camadas dos calor\IeC {\'\i }metros do ATLAS.}}{24}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Granularidade e profundidade das camadas do calor\IeC {\'\i }metro eletromagn\'etico.}}{26}{figure.2.7}
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Energia perdida por el\'etrons antes do calor\IeC {\'\i }metro.}}{27}{figure.2.8}
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Energia normalizada m\'edia depositada nas sec\c c\~oes eletromagn\'etica e hadr\^onica em fun\c c\~ao de $\eta $ para el\'etrons.}}{28}{figure.2.9}
 \contentsline {figure}{\numberline {2.10}{\ignorespaces Erro relativo do calor\IeC {\'\i }metro na medi\c c\~ao da energia de el\'etrons para diferentes valores de (a) energia e (b)~$\eta $.}}{29}{figure.2.10}
@@ -39,25 +39,27 @@
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Diagrama do modelo PNL-L.}}{70}{figure.5.4}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Diagrama do modelo da Mono n\~ao-linearidade.}}{70}{figure.5.5}
 \contentsline {figure}{\numberline {5.6}{\ignorespaces NLICA a partir de SOM.}}{71}{figure.5.6}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Diagrama do modelo da ICA local.}}{75}{figure.5.7}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Diagrama de um mapa auto-organiz\'avel}}{76}{figure.5.8}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Diagrama do algoritmo MISEP.}}{74}{figure.5.7}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Diagrama do modelo da ICA local.}}{75}{figure.5.8}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Modelos neurais para estimar (a) a primeira e (b) a k-\'esima PCD.}}{77}{figure.5.9}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Processo de extra\c c\~ao de caracter\IeC {\'\i }sticas globais.}}{87}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Processo de extra\c c\~ao de caracter\IeC {\'\i }sticas segmentadas.}}{87}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Decis\~ao utilizando classificador global.}}{88}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Decis\~ao utilizando classificadores segmentados.}}{88}{figure.6.4}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Processo de extra\c c\~ao de caracter\IeC {\'\i }sticas globais.}}{84}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Processo de extra\c c\~ao de caracter\IeC {\'\i }sticas segmentadas.}}{84}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Decis\~ao utilizando classificador global.}}{85}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Decis\~ao utilizando classificadores segmentados.}}{85}{figure.6.4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Distribui\c c\~ao em energia, $\eta $ e $\phi $ das assinaturas de el\'etrons (esquerda) e jatos (direita) aprovadas pelo corte de primeiro n\IeC {\'\i }vel E10-\textit {loose}.}}{92}{figure.7.1}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Distribui\c c\~ao em energia, $\eta $ e $\phi $ das assinaturas de el\'etrons (esquerda) e jatos (direita) aprovadas pelo corte de primeiro n\IeC {\'\i }vel E15i.}}{93}{figure.7.2}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Sinais em an\'eis (m\'edia e desvio padr\~ao) para el\'etrons (esquerda) e jatos (direita) que chegam ao L2 no corte E10.}}{94}{figure.7.3}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Distribui\c c\~ao em energia, $\eta $ e $\phi $ das assinaturas de el\'etrons (esquerda) e jatos (direita) aprovadas pelo corte de primeiro n\IeC {\'\i }vel E10-\textit {loose}.}}{89}{figure.7.1}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Distribui\c c\~ao em energia, $\eta $ e $\phi $ das assinaturas de el\'etrons (esquerda) e jatos (direita) aprovadas pelo corte de primeiro n\IeC {\'\i }vel E15i.}}{90}{figure.7.2}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Sinais em an\'eis (m\'edia e desvio padr\~ao) para el\'etrons (esquerda) e jatos (direita) que chegam ao L2 no corte E10.}}{91}{figure.7.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Diagrama da classifica\c c\~ao a partir do mapa de caracter\IeC {\'\i }sticas}}{122}{figure.A.1}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Compress\~ao e recupera\c c\~ao do sinal $\mathbf {x}$ utilizando a transforma\c c\~ao por PCA.}}{123}{figure.A.2}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Diagrama do algoritmo de Taleb-Jutten para o modelo PNL.}}{134}{figure.A.3}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Diagrama de um mapa auto-organiz\'avel}}{118}{figure.A.1}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Diagrama da classifica\c c\~ao a partir do mapa de caracter\IeC {\'\i }sticas}}{122}{figure.A.2}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Compress\~ao e recupera\c c\~ao do sinal $\mathbf {x}$ utilizando a transforma\c c\~ao por PCA.}}{124}{figure.A.3}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Diagrama do algoritmo de Taleb-Jutten para o modelo PNL.}}{136}{figure.A.4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Esquem\'atico do problema de classifica\c c\~ao bin\'ario.}}{136}{figure.B.1}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Diagrama em blocos de um filtro casado.}}{139}{figure.B.2}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Exemplo de uma rede neural utilizada para separa\c c\~ao dos sinais de entrada em 3 classes.}}{141}{figure.B.3}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Esquem\'atico do problema de classifica\c c\~ao bin\'ario.}}{137}{figure.B.1}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Diagrama em blocos de um filtro casado.}}{140}{figure.B.2}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Exemplo de uma rede neural utilizada para separa\c c\~ao dos sinais de entrada em 3 classes.}}{142}{figure.B.3}
 \addvspace {10\p@ }

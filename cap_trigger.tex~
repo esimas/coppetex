@@ -30,7 +30,7 @@ de decisão. Como os níveis são hierárquicos (sequenciais), uma vez que o evento 
 ele não está mais disponível para análise nos níveis posteriores \cite{article:trigger:watz}.
 
 \begin{figure}[h!] \centering
-\includegraphics[width=11cm]{capt_trigdiag}
+\includegraphics[width=5cm]{capt_trigdiag}
 \caption{Diagrama em blocos do sistema de filtragem genérico para um experimento de HEP.} \label{fig_gentrigdiag}
 \end{figure}
 
@@ -361,8 +361,9 @@ onde os eventos aceitos ocorreram, sinalizando assim as
 regiões de inte\-resse (RoI) para análise no L2. O
 nível 1 também fornece outras informações importantes, como o
 critério utilizado para aceitação do evento e a identificação da 
-colisão (cruzamento de feixe) ao qual o evento está associado. O nível 2
-tem acesso a toda a informação da RoI com total precisão e granularidade.
+colisão (cruzamento de feixe) ao qual o evento está associado. O sistema de filtragem do 
+L1 é implementado utilizando hardware dedicado (através de FPGAs) conforme 
+detalhado em \cite{artigo:L1:implem}.
 
 \begin{figure} \centering
 \includegraphics[width=13cm]{cap2_nivel1}
@@ -373,13 +374,9 @@ tem acesso a toda a informação da RoI com total precisão e granularidade.
 
 Na Tabela \ref{tab_lvl1} são mostradas as freqüências dos
 principais canais de filtragem esperadas na saída do L1 quando o LHC
-estiver operando em alta luminosidade (L=10$^{34}$cm$^{-2}s{-1}$).
-
-Os principais objetos de \textit{trigger} a serem
+estiver operando em alta luminosidade (L=10$^{34}$cm$^{-2}s{-1}$). Os principais objetos de \textit{trigger} a serem
 identificados são candidatos a múons, elétrons/fótons (regiões eletromagnéticas), 
-taus, jatos, e $E_T^{miss}$.
-
-Pode-se perceber que a taxa total desta simulação é da ordem de 40 kHz,
+taus, jatos, e $E_T^{miss}$. Pode-se perceber que a taxa total desta simulação é da ordem de 40 kHz,
 aproximadamente 2 vezes menor que a freqüência de saída esperada
 para o nível 1 na operação do LHC~\cite{TDR:ATLAS:1998}.
 

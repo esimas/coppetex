@@ -1,4 +1,4 @@
-\chapter{Técnicas Utilizadas para Extração de Características}
+\chapter{Análise de Componentes Independentes}
 
 Neste capítulo, serão mostrados os fundamentos teóricos das técnicas de aprendizado estatístico utilizadas neste 
 trabalho para extração de características na filtragem de segundo nível do ATLAS como uma extensão do discriminador 
@@ -11,7 +11,7 @@ física de altas energias (HEP - \textit{High-Energy Physics}), juntamente com um
 aplicações de redes neurais em HEP.
 
 
-\section{Análise de Componentes Independentes}
+\section{Modelo linear da ICA}
 
 Em muitos problemas de processamento de sinais multi-dimensionais deseja-se encontrar uma transformação que, de 
 algum modo, torne a estrutura essencial dos dados mais acessível~\cite{book:oja:2001}. Em geral, não há muita 
@@ -269,18 +269,22 @@ características a seguir \cite{article:hyvarinen:1999}:
 \end{itemize}
 
 
-\subsection{Misturas Pós Não-Lineares}
+\subsection{Modelos con restrições estruturais}
 
 Um caso especial da ICA não-linear são os métodos de estimação que
 incluem no algoritmo de estimação dos componentes independentes
 informações a respeito do modelo não-linear que gerou os dados
 observados. Estas informações se configuram em restrições
 estruturais ao mapeamento inverso (que é estimado pelo algoritmo).
-Entre estes modelos, o de misturas \textbf{pós não-lineares} (PNL)
-\cite{article:jutten:1999} é um dos mais utilizados na literatura, com aplicações em processamento de 
-fala~\cite{article:rojas:nlica:2004,ica:ap_pnl:2004}, separação de sinais de áudio~\cite{ica:ap_pnl:2007,article:solazzi:pnl:2004}, 
-processamento de imagens \cite{article:pnlimage:2007} and ...
-... (ver algo mais nos proceedings do ICA)... 
+Entre estes modelos mais utilizados pode-se destacar o de misturas \textbf{pós não-lineares} (PNL) e o 
+Pós Não-linear Linear (PNL-L), que serão descritos a seguir.
+
+\subsubsection{Misturas Pós Não-Lineares}
+
+O modelo de misturas pós não-lineares~\cite{article:jutten:1999} é um dos mais utilizados na literatura, 
+com aplicações em processamento de 
+fala~\cite{article:rojas:nlica:2004,ica:ap_pnl:2004}, separação de sinais de áudio~\cite{ica:ap_pnl:2007,article:solazzi:pnl:2004} 
+e processamento de imagens \cite{article:pnlimage:2007}.
 
 No modelo PNL, considera-se que inicialmente ocorre uma combinação
 linear das fontes (como no modelo básico de ICA), e as funções
@@ -307,11 +311,13 @@ tornam semelhantes às do caso linear. A modelagem através da equação
 como, por exemplo, a modelagem da distorção de sensores num meio de
 propagação linear.
 
+Diversos algoritmos foram propostos na literatura para estimação do modelo PNL ...
+
 Detalhes de alguns algoritmos para estimação dos componentes
 independentes em misturas PNL são fornecidos no Apêndice
 \ref{apend_fex}.
 
-\subsection{Outros modelos de misturas com restrições estruturais}
+\subsubsection{Outros modelos de misturas com restrições estruturais}
 
 Alguns modelos com restrições estruturais diferentes do PNL foram
 propostos na literatura. No trabalho
@@ -347,8 +353,8 @@ partir de:
 Este modelo é dito mais geral que o PNL pois as funções não-lineares
 podem ser aplicadas a mais de um componente (as funções $f_i$ podem
 ser funções não-lineares de mais de uma variável). Este modelo é
-chamado de mistura de mono não-linearidade (ver Figura
-\ref{fig_mnlin}). A generalidade deste modelo é derivada da teoria
+chamado de mistura de mono não-linearidade (ver Figura~\ref{fig_mnlin}). 
+A generalidade deste modelo é derivada da teoria
 da análise funcional (\textit{functional analysis})
 \cite{book:function:1984} e foi mostrado em
 \cite{article:gao:nl2005} que esta arquitetura pode representar
@@ -367,17 +373,13 @@ Se nenhuma restrição ao modelo de mistura é imposta, não há garantia
 que os componentes independentes estimados estejam relacionados com
 as fontes (ver Seção \ref{seq_uni}). 
 Entre os métodos de NLICA sem restrições estruturais, pode-se
-destacar o uso de mapas auto-organizáveis~\cite{article:pajunen:1996} e os
-métodos que utilizam inferência Bayesiana
-\cite{article:lappalainen:2000}.
+destacar o uso de mapas auto-organizáveis e os
+métodos que utilizam inferência Bayesiana.
 
-\subsubsection{NLICA a partir de Mapas Auto-Organizáveis}:
+\subsubsection{NLICA a partir de Mapas Auto-Organizáveis}
 
 Uma das primeiras tentativas bem sucedidas de realizar NLICA
-utilizou mapas auto-organizáveis \cite{article:pajunen:1996}. Outras aplicações incluem: 
-... citar aplicações ...
-
-
+utilizou mapas auto-organizáveis \cite{article:pajunen:1996}. 
 Pode-se provar que as coordenadas $y_1$ e $y_2$ do neurônio vencedor
 no mapa (ver Figura \ref{fig_som_nlica}) são independentes e
 aproximadamente uniformemente distribuídas
@@ -409,7 +411,11 @@ pode ser estimado pela expressão:
 \end{equation}
 onde $N$ é o número de componentes a serem estimados (que é
 considerado igual ao número de sinais observados) e $Q_L$ é o número
-de níveis de quantização desejado \cite{article:simas:2007:lnlm}.
+de níveis de quantização desejado~\cite{article:simas:2007:lnlm}.
+
+Diversas aplicações do SOM para estimação da NLICA podem ser encontradas na literatura, entre elas pode-se citar os 
+trabalhos \cite{article:pnlimage:2007} e \cite{article:allinson:2002}, onde o objetivos eram, respectivamente, 
+separação e remoção de ruído em imagens.
 
 Com uma formulação alternativa aos SOM, o Mapeamento Topográfico
 Generativo (GTM - \textit{Generative Topographic Mapping}) foi
@@ -431,11 +437,10 @@ Maximization} \cite{article:hyvarinen:2000}. O treinamento do GMT
 envolve dois passos, a avaliação da probabilidade a
 \textit{posteriori} e a adaptação dos parâmetros do modelo.
 
-\subsubsection{NLICA a partir de Inferência Bayesiana}:
+\subsubsection{NLICA a partir de Inferência Bayesiana}
 
 Nos métodos baseados em inferência Bayesiana, considera-se que os
-sinais observados são gerados a partir de
-\cite{article:lappalainen:2000}:
+sinais observados são gerados a partir de~\cite{article:lappalainen:2000}:
 \begin{equation}
     \mathbf{x}=f(\mathbf{s}) + \mathbf{n}
 \end{equation}
@@ -447,9 +452,9 @@ de distribuição Gaussiana. Pode-se provar que, dado um número suficiente de
 Gaussianas, virtualmente qualquer distribuição de probabilidade pode
 ser modelada com uma certa precisão~\cite{article:lappalainen:2000}. Uma variação deste método foi
 aplicada em \cite{article:lappalainen:bay1999} para o modelo linear
-da ICA. Em grande parte dos algoritmos Bayesianos para NLICA~\cite{}, redes
+da ICA. Em grande parte dos algoritmos Bayesianos para NLICA, redes
 neurais tipo MLP de duas camadas são treinadas para aproximar o
-mapeamento não linear:
+mapeamento não linear~\cite{jutten:nlica:2003}:
 \begin{equation}
     f(\mathbf{s})=\mathbf{B}\Phi(\mathbf{As}+\mathbf{a})+\mathbf{b}
 \end{equation}
@@ -484,30 +489,40 @@ conclusões foram:
     problemas com mínimos locais da função custo).
 \end{itemize}
 
-... Citar aplicações ...
+No trabalho \cite{app:nlica:qui} um algoritmo Bayesiano de NLICA foi utilizado com sucesso para a separação de sinais 
+medidos em um conjunto de sensores químicos. Em ...
 
 \subsubsection{O algoritmo MISEP}
 
-O algoritmo MISEP utiliza a minimização da Informação Mútua (ver Apêndice \ref{apend_fex}) como estratégia para 
+O algoritmo MISEP \cite{article:misep:2004} utiliza a minimização da Informação Mútua (ver Apêndice \ref{apend_fex}) como estratégia para 
 busca pelos componentes independentes, e é considerado como uma extensão do método INFOMAX \cite{book:oja:2001}, 
 podendo ser utilizado para estimar tanto o modelo linear quanto o não-linear da ICA. Na Figura \ref{fig_misep} 
-pode-se observar um diagrama do MISEP, onde $y_i$ são os componentes independentes 
-estimados e o bloco $\mathbf{F}$, no caso linear, aproxima a matriz de separação $\mathbf{W}$, e para a NLICA, deve 
-fornecer uma aproximação do mapeamento inverso $G(.)$. As funções não-lineares $\psi_i$ e as variáveis de saída 
+pode-se observar um diagrama do MISEP (para duas entradas e duas saídas), onde $x_i$ e $y_i$ são respectivamente os 
+sinais observados e os componentes independentes estimados, o bloco $\mathbf{G(.)}$, no caso linear, aproxima a matriz de separação $\mathbf{W}$, e para a NLICA, deve 
+fornecer uma aproximação do mapeamento não-linear inverso. As funções não-lineares $\psi_i$ e as variáveis de saída 
 $z_i$ são utilizadas apenas no processo de 
-treinamento. Após a aonvergência do algoritmo, as não-linearidades deveriam ser aproximações da função de 
+treinamento. Após a convergência do algoritmo, as não-linearidades devem ser aproximações da função de 
 probabilidade cumulativa (cdf - \textit{cumulative probability function}) dos componentes independentes. 
 
-Para a aplicação em NLICA, o bloco $\mathbf{F}$ é estimado por uma rede neural (que pode utilizar tanto a arquitetura 
+\begin{figure}[th]
+\centering
+\includegraphics[width=7cm]{cap4_misep}
+\caption{Diagrama do algoritmo MISEP.} \label{fig_misep}
+\end{figure}
+
+Para a aplicação em NLICA, o bloco $\mathbf{G}$ é estimado por uma rede neural (que pode utilizar tanto a arquitetura 
 \textit{perceptron} de múltiplas camadas - MLP como rede de funções de base radial - RBF). Como o objetivo é estimar 
 a cdf, as saídas $z_i$ são restritas ao intervalo [0,1] e as $\psi_i$ são limitadas 
 a funções estritamente crescentes. Para estimação iterativa de cada função $\psi_i$ é utilizada uma redes neurais MLP com 
 uma camada oculta (de neurônios sigmoidais) e uma camada de saída (linear). Estas redes tem uma entrada ($y_i$) e uma 
-saída ($z_i$). O treinamento do modelo MISEP é feito a partir da maximização da entropia das saídas $z_i$, mais 
-detalhes podem ser encontrados em \cite{}
+saída ($z_i$). O treinamento do modelo MISEP é feito a partir da maximização da entropia das saídas $z_i$, o que 
+acaba produzindo a minimização da informação mútua dos componentes $y_i$, mais 
+detalhes podem ser encontrados em~\cite{article:misep:2004}
 
-O MISEP foi aplicado em processamento de sinais de áudio \cite{} e separação de imagens \cite{}. No trabalho \cite{}, 
-foi proposta uma modificação no MISEP para...
+O MISEP foi aplicado em processamento de sinais de áudio~\cite{article:misep:2004} e separação de imagens \cite{article:Almeida05}. 
+Foram propostas também, modificações ao algoritmo MISEP visando otimizar a estimação dos componentes independentes 
+quando as misturas seguem os modelos pós não-linear (PNL)~\cite{article:misep:pnl} e pós não-linear-linear (PNL-L)~\cite{article:misep:pnll}.
+
 
 \subsection{ICA Local}
 
@@ -523,7 +538,7 @@ Figura \ref{fig_local}). Os sinais pertencentes ao k-ésimo
 subconjunto apresentam características semelhantes. Este
 procedimento leva ao modelo da ICA local.
 
-\begin{figure}[th]
+\begin{figure}[t!]
 \centering
 \includegraphics[width=8.5cm]{cap3_local}
 \caption{Diagrama do modelo da ICA local.} \label{fig_local}
@@ -558,241 +573,13 @@ mútua \cite{book:cover:1991} é uma importante ferramenta em diversas
 aplicações de processamento de sinais, especialmente na seleção de
 ca\-rac\-terísticas.
 
-... Citar aplicações da Local ICA ...
-
-\section{Mapas auto-organizáveis}
-
-O mapa auto-organizável (SOM - \textit{Self Organizing Map}) é uma
-rede neural com treinamento não-supervisionado, baseado na
-aprendizagem competitiva, que é capaz de realizar uma organização
-topológica das entradas. O SOM foi proposto por Teuvo Kohonen em
-1982 \cite{book:kohonen:2001}, sendo capaz de realizar um
-mapeamento não-linear dos sinais de um espaço de entrada contínuo de
-dimensão $k$ para um espaço de características discreto que, em
-geral, é bidimensional. Cada neurônio da grade está diretamente
-conectado a todos os nós de entrada. Na Figura \ref{soms} pode-se
-visualizar o diagrama de um mapa auto-organizável bi-dimensional.
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=6cm]{cap3_som}
-\caption{Diagrama de um mapa auto-organizável} \label{soms}
-\end{figure}
-
-O mapa auto-organizável compacta a informação e preserva relações
-topológicas ou métricas do conjunto de sinais. Os SOM estão ligados
-à ICA por conseguirem extrair informações ocultas dos sinais de
-forma não supervisionada \cite{article:foo:2006}. Uma apro\-xi\-mação
-das componentes independentes não-lineares pode ser obtida
-utilizando mapas auto-organizáveis \cite{book:oja:2001}.
-
-Três processos estão envolvidos na formação do mapa auto-organizado:
-a \textbf{competição}, onde, para cada vetor de entrada, há apenas um
-neurônio vencedor; a \textbf{cooperação}, quando o neurônio vencedor
-determina uma vizinhança topológica de neurônios excitados; e a
-\textbf{adaptação}, que procede ao ajuste dos pesos sinápticos para
-reforçar a resposta do neurônio vencedor, e de seus vizinhos, ao
-padrão de entrada.
-
-A atualização do vetor de pesos $w_j$ do neurônio j é feita através da equação:
-\begin{equation}\label{pesos_som}
-    w_j(n+1)=w_j(n)+\eta (n) h_{ij}(n)(x(n)-w_j(n)),
-\end{equation}
-\\
-sendo $\eta (n)$ a taxa de aprendizagem, um tipo de função de
-vizinhança $h_{ij}(n)$ usualmente utilizada é definida por:
-\begin{equation}\label{neigbor}
-h_{ij}(n)=\exp(-d_{ij}^2/2\sigma^2(n))
-\end{equation}
-\\
-onde $d_{ij}$ é a distância do neurônio j para o neurônio vencedor i
-e $\sigma(n)$ é a largura da função vizinhança na n-ésima iteração.
-
-O mapa de características possui algumas propriedades, listadas a
-seguir \cite{haykin:nn:2008}:
-
-\begin{enumerate}
-  \item é formado pelo conjunto de
-vetores de pesos sinápticos $w_i$ no espaço de saída discreto e
-fornece uma boa aproximação para o espaço de entrada;
-
-  \item é ordenado de modo
-topológico. Padrões de entrada semelhantes são mapeados para regiões
-adjacentes no mapa de características;
-
-  \item regiões do espaço de entrada que possuem alta
-probabilidade de ocorrência são mapeadas para domínios maiores do
-espaço de saída;
-
-\end{enumerate}
-
-No mapa de características, o neurônio que apresentar maior saída é
-consi\-derado o vencedor, ou seja a saída do SOM é do tipo ``vencedor
-leva tudo" (WTA - \textit{winner takes all}). O neurônio ativado é
-escolhido a partir de sua semelhança com a entrada apresentada. É
-comum a utilização da distância euclidiana como métrica da
-proxi\-midade entre dois vetores; nesse caso, o neurônio vencedor é
-aquele que minimiza $i(\mathbf{x})=\| \mathbf{x}(n)-\mathbf{w_j}
-\|$.
-
-Uma outra forma de operar um mapa auto-organizável é utilizar as projeções dos sinais de entrada no mapa de 
-características, ou seja as saídas $u_j$ de cada neurônio j que pode ser calculada por:
-\begin{equation}\label{som_out}
- u_j=\mathbf{x}^T\mathbf{w_j}
-\end{equation}
-O vetor $\mathbf{u}=[u_1,...,u_K]^T$ pode ser considerado como a projeção de $\mathbf{x}$ no mapa de características.
-
-Os mapas auto-organizáveis pertencem à classe de algoritmos de
-codificação vetorial, sendo capazes de encontrar, de forma
-otimizada, um número fixo de vetores ou palavras de código que
-melhor representem o conjunto de sinais.
-
-\section{Técnicas de Pré-Processamento - Compactação}
-
-No processamento de sinais multi-dimensionais, é comum a utilização de técnicas de processamento de sinais 
-que visam a redução da dimensionalidade do problema. O objetivo é projetar os sinais N-dimensionais observados em 
-
-\subsection{Análise de Componentes Principais}
-
-A análise de componentes principais (PCA - \textit{Principal
-Component Analysis}) é uma técnica estatística de processamento de
-sinais diretamente ligada à transformação de \textit{Karhunen-Loève}
-\cite{book:pca:2002}. O objetivo da PCA é encontrar uma
-transformação linear onde os sinais projetados sejam
-não-correlacionados e grande parcela da energia (variância) esteja
-concentrada num pequeno número de componentes. Para isso, são
-exploradas informações da estatística de segunda ordem. 
-
-A análise de
-componentes principais é bastante usada para compactação de
-informação. Como a PCA projeta os sinais em componentes ordenados por energia, uma métrica geralmente 
-utilizada para reduzir a dimensão dos dados consiste na seleção apenas dos componentes de maior energia, 
-de modo que o sinal recuperado a
-partir da informação compactada tenha pequeno erro médio quadrático
-se comparado ao original. A seguir serão desenvolvidos, de forma
-resumida, os fundamentos matemáticos da PCA.
-
-Considerando-se um vetor $\mathbf{x}=[x_1,...,x_N]^T$ aleatório com $N$ elementos,
-assume-se que ele tenha média zero:
-
-\begin{equation}\label{Xm}
-    \mathcal{E}\{\mathbf{x}\}=0
-\end{equation}
-\\
-onde $\mathcal{E}\{.\}$ é o operador esperança. Se $\mathbf{x}$ tem
-média não nula faz-se $\mathbf{x}\leftarrow
-\mathbf{x}-\mathcal{E}\{\mathbf{x}\}$.
-
-A projeção $z_i$ de $\mathbf{x}$ na direção de $\mathbf{v}_i$ pode
-ser expressa por:
-
-\begin{equation}\label{proj1}
-    z_i=\mathbf{v}_i^T\mathbf{x}=\sum_{k=1}^N v_{ki}x_k
-\end{equation}
-\\
-Na transformação por PCA, os componentes $z_i$ ($i=1,...,N$) devem
-ser ortogonais e ordenados (de modo decrescente) pela variância das
-projeções, sendo, então, $z_1$ a projeção de máxima variância. Para
-tornar a variância independente da norma de $\mathbf{v}_i$, faz-se:
-
-\begin{equation}\label{normaw}
-    \mathbf{v}_i \leftarrow \frac{\mathbf{v}_i}{\| \mathbf{v}_i \|}
-\end{equation}
-\\
-Fazendo-se com que $||\mathbf{v}_i||=1$, torna-se a variância função apenas da direção
-das projeções. 
-%A ortogonalidade garante a não-correlação entre as
-%componentes.
-
-Como $\mathcal{E}\{\mathbf{x}\}=0$, então $\mathcal{E}\{z_i\}=0$,
-logo a variância da projeção $z_i$ é calculada por
-$\mathcal{E}\{z_i^2\}$. Seguindo a definição da PCA, $z_1$ tem
-máxima variância; logo, $\mathbf{v}_1$ pode ser encontrado pela maximização
-de \cite{book:oja:2001}:
-
-\begin{equation}\label{w1pca}
-    J_1^{PCA}(\mathbf{v}_1)=\mathcal{E}\{z_i^2\}=\mathcal{E}\{(\mathbf{v}_1^T\mathbf{x})^2\}
-    =\mathbf{v}_1^T\mathcal{E}\{\mathbf{x}\mathbf{x}^T\}\mathbf{v}_1=
-    \mathbf{v}_1^T \mathbf{C}_x\mathbf{v}_1,
-\end{equation}
-\\
-onde $\mathbf{C}_x$ é a matriz de covariância de $\mathbf{x}$.
-
-A solução para o problema de maximização da equação (\ref{w1pca}) pode
-ser encontrada na álgebra linear, em função dos autovetores
-$\mathbf{e}_1,\mathbf{e}_2,...,\mathbf{e}_N$ da matriz
-$\mathbf{C}_x$. A ordem dos autovetores é tal que os autovalores
-associados satisfazem $d_1>d_2>...>d_N$. Desta forma, tem-se:
-
-\begin{equation}\label{pca1}
-    \begin{array}{ccc}
-      \mathbf{v}_i= \mathbf{e}_i,& & 1\leq i \leq N
-    \end{array}
-\end{equation}
-
-Percebe-se que a PCA de $\mathbf{x}$ e a decomposição por
-autovalores da matriz $\mathbf{C}_x$ (de dimensão $N\times N$) são
-equivalentes. Limitações computacionais na extração das componentes
-principais utilizando as equações (\ref{proj1}) e (\ref{pca1})
-aparecem quando a dimensão $N$ do vetor $\mathbf{x}$ aumenta, pois o
-processo de obtenção dos autovetores se torna proibitivamente lento.
-Nesse caso, uma solução é utilizar métodos iterativos de extração
-das componentes principais, através de redes neurais
-\cite{article:oja:pca,tese:joao:2007}.
-
-\section{Utilizando Informação das Classes na Estimação dos Componentes Independentes}
-
-O modelo da ICA/NLICA não foi originalmente desemvolvido para extração de componentes com características 
-discriminantes, então, neste trabalho foram propostas algumas modificações no processo de estimação da NLICA, de modo 
-a utilizar o conhecimento prévio dos rótulos de classe dos dados. Assim, pretende-se...
-
-\subsection{Componentes Principais de Discriminação}
-
-Considerando um problema de classificação de padrões, o uso da PCA para compactação pode ser prejudicial, 
-pois, os componentes menos energéticos (que são eliminados após a PCA) podem carregar informações discriminantes. 
-Neste caso, pode-se utilizar técnicas de compactação mais adequadas. As componentes principais de discriminação 
-(PCD - \textit{Principal Discriminanting Components})~\cite{seixas:pcd:1995,seixas:pcd:1999} são obtidas a partir 
-da projeção dos sinais de entrada em um conjunto compacto que carrega toda a informação importante para 
-discriminação entre as classes.
-
-Conforme proposto em \cite{seixas:pcd:1995}, para um problema de classificação, o objetivo da PCD é obter uma projeção linear 
-dos sinais de entrada $\mathbf{x}=[x_1,...,x_N]^T$ nos componentes $\mathbf{z}=[z_1,...,z_K]^T$ (com $K<N$) que 
-maximizam a discriminação entre as classes (ou seja, $z_i$ são os componentes principais de discriminação). 
-
-Considerando um problema de discriminação onde existem apenas duas classes possíveis, os PCD podem ser estimados a 
-partir de uma rede neural (de arquitetura MLP - \textit{Multi-Layer Perceptron})~\cite{haykin:nn:2008} com uma 
-camada oculta e um neurônio de saída, treinada para obter máxima discriminação entre as classes. Conforme indicado 
-na Figura~\ref{fig_pcd}-a, uma rede neural com um neurônio na camada oculta é capaz de estimar o primeiro PCD, 
-que é obtido a partir da projeção das entradas na direção dos pesos sinápticos do neurônio oculto:
-\begin{equation}
- z_1=[b_{1,1},b_{1,2},...,b_{1,N}]\times[x_1,...,x_N]^T + b_{0,1},
-\end{equation}
-onde $b_{0,1}$ é o \textit{bias} do neurônio. Adicionando-se mais neurônios ocultos consegue-se estimar os 
-demais PCD (conforme ilustrado na Figura~\ref{fig_pcd}-b). No processo de estimação, estatística de ordem 
-elevada é acessada a partir da utilização de funções de ativação não-lineares. O treinamento da rede neural 
-pode ser feito com o congelamento dos pesos da camada de entrada correspondentes aos componentes já estimados, 
-ou seja, na estimação do $l$-ésimo componente, os pesos $b_{i,j}$, com $i<l$ e $j=1,...,N$ não são ajustados. 
-Os demais pesos da rede são ajustados a cada novo componente estimado.
-
-Outros modelos que, de modo semelhante aos PCD, utilizam redes neurais para extrair características 
-discriminantes de um conjunto de sinais foram propostos na literatura em 
-\cite{article:nnfex1:1996,article:nnfex2:1996,article:nnfex:1999}.
-
-\subsection{Utilizando os Rótulos de Classe como Sinais de Entrada}
-
-No trabalho \cite{} foi proposta a utilização dos rótulos de classes como entrada para ...
-
-\subsection{Algoritmo PNL modificado}
-
-... descrever o algoritmo proposto no artigo Neurocomputing ...
-
-\section{Aplicações}
+\section{Aplicações de ICA e NLICA para extração de características}
 \label{aplic}
 
 Nessa Seção serão descritas, de modo resumido, algumas aplicações da análise de componentes independentes, nos seus 
 modelos linear e não-linear (respectivamente ICA e NLICA), para a extração de características.
 
-No trabalho \cite{ica:clas:2004}, ICA foi utilizada como pré-processamento para problemas de classificação em nove bases 
+No trabalho \cite{article:ica_clas:2004}, ICA foi utilizada como pré-processamento para problemas de classificação em nove bases 
 de dados diferentes (obtidas no repositório de bases de dados para aprendizado de máquina da Universidade da 
 Califórnia - Irvine, CA, Estados Unidos \cite{rep:uci:1998}). Entre os problemas testados, estão a classificação 
 de vinhos a partir de 
@@ -866,7 +653,7 @@ para extração de características. Alguns desses trabalhos serão descritos brevem
 talvez por ser uma técnica ainda menos difundida (em comparação com PCA e ICA), não foram encontradas aplicações na 
 área de HEP. 
 
-\subsection{Física de Altas Energias e Áreas Correlatas}
+\section{Aplicações em Física de Altas Energias e Áreas Correlatas}
 
 A partir do final da década de 1990, os métodos
 de aprendizado estatístico multi-variável como PCA, ICA e SOM vêm
@@ -936,6 +723,69 @@ problemas de extração de ca\-rac\-te\-rísticas, remoção de ruído,
 agrupamento não-supervisionado (\textit{clustering}) e visualização vêm
 sendo resolvidos com a aplicação das técnicas estatísticas de
 processamento não-supervisionado de sinais.
+
+
+\section{Utilizando Informação das Classes na Estimação dos Componentes Independentes}
+
+Considerando um problema de classificação, o modelo da ICA/NLICA não foi originalmente desenvolvido para extração de 
+características discriminantes e, conforme mostrado em \cite{article:ica_clas:2004}, não há como garantir que a 
+estimação dos componentes independentes seja útil neste contexto. Os benefícios alcançados pela aplicação da ICA como 
+pré-processamento dependem da base de dados utilizada. 
+
+Neste trabalho foram utilizadas algumas modificações no processo de estimação da NLICA, de modo 
+a utilizar o conhecimento prévio dos rótulos de classe dos dados. Assim, pretende-se obter componentes independentes 
+com características discriminantes, contribuindo para o aumento da eficiência de classificação.
+
+... descrever brevemente os tópicos abaixo ...
+ 
+
+\subsection{Componentes Principais de Discriminação}
+
+Considerando um problema de classificação de padrões, o uso da PCA para compactação pode ser prejudicial, 
+pois, os componentes menos energéticos (que são eliminados após a PCA) podem carregar informações discriminantes. 
+Neste caso, pode-se utilizar técnicas de compactação mais adequadas. As componentes principais de discriminação 
+(PCD - \textit{Principal Discriminanting Components})~\cite{seixas:pcd:1995,seixas:pcd:1999} são obtidas a partir 
+da projeção dos sinais de entrada em um conjunto compacto que carrega toda a informação importante para 
+discriminação entre as classes.
+
+Conforme proposto em \cite{seixas:pcd:1995}, para um problema de classificação, o objetivo da PCD é obter uma projeção linear 
+dos sinais de entrada $\mathbf{x}=[x_1,...,x_N]^T$ nos componentes $\mathbf{z}=[z_1,...,z_K]^T$ (com $K<N$) que 
+maximizam a discriminação entre as classes (ou seja, $z_i$ são os componentes principais de discriminação). 
+
+Considerando um problema de discriminação onde existem apenas duas classes possíveis, os PCD podem ser estimados a 
+partir de uma rede neural (de arquitetura MLP - \textit{Multi-Layer Perceptron})~\cite{haykin:nn:2008} com uma 
+camada oculta e um neurônio de saída, treinada para obter máxima discriminação entre as classes. Conforme indicado 
+na Figura~\ref{fig_pcd}-a, uma rede neural com um neurônio na camada oculta é capaz de estimar o primeiro PCD, 
+que é obtido a partir da projeção das entradas na direção dos pesos sinápticos do neurônio oculto:
+\begin{equation}
+ z_1=[b_{1,1},b_{1,2},...,b_{1,N}]\times[x_1,...,x_N]^T + b_{0,1},
+\end{equation}
+onde $b_{0,1}$ é o \textit{bias} do neurônio. Adicionando-se mais neurônios ocultos consegue-se estimar os 
+demais PCD (conforme ilustrado na Figura~\ref{fig_pcd}-b). No processo de estimação, estatística de ordem 
+elevada é acessada a partir da utilização de funções de ativação não-lineares. O treinamento da rede neural 
+pode ser feito com o congelamento dos pesos da camada de entrada correspondentes aos componentes já estimados, 
+ou seja, na estimação do $l$-ésimo componente, os pesos $b_{i,j}$, com $i<l$ e $j=1,...,N$ não são ajustados. 
+Os demais pesos da rede são ajustados a cada novo componente estimado.
+
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=9.5cm]{cap4_pcd}
+\caption{Modelos neurais para estimar (a) a primeira e (b) a k-ésima PCD.} \label{fig_pcd}
+\end{figure}
+
+Outros modelos que, de modo semelhante aos PCD, utilizam redes neurais para extrair características 
+discriminantes de um conjunto de sinais foram propostos na literatura em 
+\cite{article:nnfex1:1996,article:nnfex2:1996,article:nnfex:1999}.
+
+\subsection{Utilizando os rótulos de classe como sinais de entrada}
+
+No trabalho \cite{article:icaClasp:2003} foi proposta a utilização dos rótulos de classes como entrada para ...
+
+\subsection{Proposta de algoritmo para estimação de componentes independentes e discriminantes}
+
+... descrever o algoritmo proposto no artigo Neurocomputing ...
+
 
 
 

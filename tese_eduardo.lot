@@ -7,10 +7,10 @@
 \contentsline {table}{\numberline {2.1}{\ignorespaces Intensidade relativa (em compara\c c\~ao com a intera\c c\~ao forte) dos diversos tipos de intera\c c\~ao.}}{10}{table.2.1}
 \contentsline {table}{\numberline {2.2}{\ignorespaces Exemplos de valores da massa (em energia equivalente) de algumas part\IeC {\'\i }culas.}}{12}{table.2.2}
 \contentsline {table}{\numberline {2.3}{\ignorespaces Principais objetos de interesse no ATLAS.}}{20}{table.2.3}
-\contentsline {table}{\numberline {2.4}{\ignorespaces Regi\~ao de cobertura em $\eta $, granularidade e n\'umero de canais de leitura das camadas dos calor\IeC {\'\i }metros.}}{26}{table.2.4}
+\contentsline {table}{\numberline {2.4}{\ignorespaces Regi\~ao de cobertura em $\eta $, granularidade e n\'umero de canais de leitura das camadas dos calor\IeC {\'\i }metros.}}{25}{table.2.4}
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {3.1}{\ignorespaces Principais caracter\IeC {\'\i }sticas do sistema de \textit {trigger} do ATLAS, onde $Te$ e $Ts$ s\~ao, respectivamente, as taxas de eventos na entrada e na sa\IeC {\'\i }da e $Cr=Te/Ts$ \'e o coeficiente de redu\c c\~ao de eventos.}}{39}{table.3.1}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Freq\"u\^encia esperada para os principais canais de \textit {trigger} no primeiro n\IeC {\'\i }vel de filtragem do ATLAS (L=10$^{34}$cm$^{-2}s{-1}$).}}{42}{table.3.2}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Freq\"u\^encia esperada para os principais canais de \textit {trigger} no primeiro n\IeC {\'\i }vel de filtragem do ATLAS (L=10$^{34}$cm$^{-2}s{-1}$).}}{41}{table.3.2}
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {4.1}{\ignorespaces N\'umero de an\'eis formados para cada camada do calor\IeC {\'\i }metro do ATLAS.}}{54}{table.4.1}
 \contentsline {table}{\numberline {4.2}{\ignorespaces Tempo gasto nas diversas etapas necess\'arias para a execu\c c\~ao \textit {online} do \textit {Neural Ringer}.}}{59}{table.4.2}

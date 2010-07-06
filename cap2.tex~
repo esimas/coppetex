@@ -350,7 +350,7 @@ $z$ (ângulo de saída das partículas após a
 colisão)~\cite{LI:ATLAS:1992}:
 
 \begin{figure}[b!] \centering
-\includegraphics[width=6cm]{cap2_coord}
+\includegraphics[width=12cm]{cap2_coord}
 \caption{Eixo de coordenadas do ATLAS.} \label{atlas_coord}
 \end{figure}
 
@@ -730,7 +730,7 @@ eletromagnético, extraído de \cite{article:ATLAS:2008}.}
 Calorímetros são construídos utilizando estruturas modulares. Os
 cabos de transmissão de sinais e alimentação passam por espaços
 existentes entre os módulos (conhecidos como \textit{cracks}). No ATLAS, na região
-de $|\eta|\approx 1,5$ (interconexão entre barril e barril-extendido)
+onde $|\eta|\approx 1,5$ (interconexão entre barril e barril-extendido)
 existe uma descontinuidade nos calorímetros para passagem de cabos de alimentação e dados do detector
 de trajetória e do barril do calorímetro eletromagnético
 \cite{article:ATLAS:2008}. Nesta faixa, há menor quantidade de

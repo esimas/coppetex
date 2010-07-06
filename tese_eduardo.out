@@ -35,21 +35,19 @@
 \BOOKMARK [1][-]{section.4.4}{Extens\365es ao Neural Ringer}{chapter.4}
 \BOOKMARK [2][-]{subsection.4.4.1}{Pr\351-processamento linear}{section.4.4}
 \BOOKMARK [2][-]{subsection.4.4.2}{Pr\351-processamento n\343o-linear}{section.4.4}
-\BOOKMARK [0][-]{chapter.5}{T\351cnicas Utilizadas para Extra\347\343o de Caracter\355sticas}{}
-\BOOKMARK [1][-]{section.5.1}{An\341lise de Componentes Independentes}{chapter.5}
+\BOOKMARK [0][-]{chapter.5}{An\341lise de Componentes Independentes}{}
+\BOOKMARK [1][-]{section.5.1}{Modelo linear da ICA}{chapter.5}
 \BOOKMARK [1][-]{section.5.2}{ICA n\343o-linear}{chapter.5}
 \BOOKMARK [2][-]{subsection.5.2.1}{Unicidade da Solu\347\343o em NLICA}{section.5.2}
-\BOOKMARK [2][-]{subsection.5.2.2}{Misturas P\363s N\343o-Lineares}{section.5.2}
-\BOOKMARK [2][-]{subsection.5.2.3}{Outros modelos de misturas com restri\347\365es estruturais}{section.5.2}
-\BOOKMARK [2][-]{subsection.5.2.4}{Algoritmos sem restri\347\365es estruturais}{section.5.2}
-\BOOKMARK [2][-]{subsection.5.2.5}{ICA Local}{section.5.2}
-\BOOKMARK [1][-]{section.5.3}{Mapas auto-organiz\341veis}{chapter.5}
-\BOOKMARK [1][-]{section.5.4}{T\351cnicas de Pr\351-Processamento - Compacta\347\343o}{chapter.5}
-\BOOKMARK [2][-]{subsection.5.4.1}{An\341lise de Componentes Principais}{section.5.4}
-\BOOKMARK [1][-]{section.5.5}{Utilizando Informa\347\343o das Classes na Estima\347\343o dos Componentes Independentes}{chapter.5}
-\BOOKMARK [2][-]{subsection.5.5.1}{Componentes Principais de Discrimina\347\343o}{section.5.5}
-\BOOKMARK [1][-]{section.5.6}{Aplica\347\365es}{chapter.5}
-\BOOKMARK [2][-]{subsection.5.6.1}{F\355sica de Altas Energias e \301reas Correlatas}{section.5.6}
+\BOOKMARK [2][-]{subsection.5.2.2}{Modelos con restri\347\365es estruturais}{section.5.2}
+\BOOKMARK [2][-]{subsection.5.2.3}{Algoritmos sem restri\347\365es estruturais}{section.5.2}
+\BOOKMARK [2][-]{subsection.5.2.4}{ICA Local}{section.5.2}
+\BOOKMARK [1][-]{section.5.3}{Utilizando Informa\347\343o das Classes na Estima\347\343o dos Componentes Independentes}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.3.1}{Componentes Principais de Discrimina\347\343o}{section.5.3}
+\BOOKMARK [2][-]{subsection.5.3.2}{Utilizando os r\363tulos de classe como sinais de entrada}{section.5.3}
+\BOOKMARK [2][-]{subsection.5.3.3}{Proposta de algoritmo para estima\347\343o de componentes independentes e discriminantes}{section.5.3}
+\BOOKMARK [1][-]{section.5.4}{Aplica\347\365es}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.4.1}{F\355sica de Altas Energias e \301reas Correlatas}{section.5.4}
 \BOOKMARK [0][-]{chapter.6}{Metodologia Proposta}{}
 \BOOKMARK [1][-]{section.6.1}{Sistemas de Classifica\347\343o Propostos para a Sele\347\343o de El\351trons no Segundo-N\355vel de Filtragem do ATLAS}{chapter.6}
 \BOOKMARK [2][-]{subsection.6.1.1}{Classificadores Neurais Supervisionados}{section.6.1}
@@ -57,28 +55,30 @@
 \BOOKMARK [0][-]{chapter.7}{Descri\347\343o dos dados utilizados}{}
 \BOOKMARK [1][-]{section.7.1}{Sinais simulados - Corte E10 loose}{chapter.7}
 \BOOKMARK [1][-]{section.7.2}{Sinais simulados - Corte E15i}{chapter.7}
-\BOOKMARK [1][-]{section.7.3}{Sinais Medidos no ATLAS - Raios C\363smicos}{chapter.7}
-\BOOKMARK [1][-]{section.7.4}{Sinais Medidos no ATLAS - Colis\365es do LHC}{chapter.7}
+\BOOKMARK [1][-]{section.7.3}{Sinais Experimentais - Raios C\363smicos}{chapter.7}
+\BOOKMARK [1][-]{section.7.4}{Sinais Experimentais - Colis\365es do LHC}{chapter.7}
 \BOOKMARK [0][-]{chapter.8}{Resultados}{}
 \BOOKMARK [1][-]{section.8.1}{Resultados - Dados simulados}{chapter.8}
 \BOOKMARK [1][-]{section.8.2}{Resultados - Dados experimentais}{chapter.8}
 \BOOKMARK [1][-]{section.8.3}{Estudo a Respeito do Tempo de Processamento dos Algoritmos}{chapter.8}
 \BOOKMARK [2][-]{subsection.8.3.1}{Rotinas comuns a todos os algoritmos}{section.8.3}
 \BOOKMARK [0][-]{chapter.9}{Conclus\365es}{}
-\BOOKMARK [0][-]{chapter*.16}{Refer\352ncias Bibliogr\341ficas}{}
+\BOOKMARK [0][-]{chapter*.18}{Refer\352ncias Bibliogr\341ficas}{}
 \BOOKMARK [0][-]{appendix.A}{Aspectos Te\363ricos das T\351cnicas de Extra\347\343o de Caracter\355sticas}{}
 \BOOKMARK [1][-]{section.A.1}{Mapas auto-organiz\341veis}{appendix.A}
 \BOOKMARK [2][-]{subsection.A.1.1}{Quantiza\347\343o vetorial por aprendizado}{section.A.1}
 \BOOKMARK [2][-]{subsection.A.1.2}{Classifica\347\343o a partir do mapa de caracter\355sticas}{section.A.1}
 \BOOKMARK [1][-]{section.A.2}{An\341lise de Componentes Principais}{appendix.A}
-\BOOKMARK [2][-]{subsection.A.2.1}{Redu\347\343o de dimens\343o}{section.A.2}
-\BOOKMARK [1][-]{section.A.3}{An\341lise de Componentes Independentes}{appendix.A}
-\BOOKMARK [2][-]{subsection.A.3.1}{Princ\355pios de estima\347\343o das componentes independentes}{section.A.3}
-\BOOKMARK [2][-]{subsection.A.3.2}{Pr\351-processamento dos sinais para ICA}{section.A.3}
-\BOOKMARK [2][-]{subsection.A.3.3}{Principais algoritmos para ICA}{section.A.3}
-\BOOKMARK [2][-]{subsection.A.3.4}{Extens\365es ao modelo b\341sico de ICA}{section.A.3}
-\BOOKMARK [1][-]{section.A.4}{ICA n\343o-linear}{appendix.A}
-\BOOKMARK [2][-]{subsection.A.4.1}{Algoritmo Taleb-Jutten para o modelo PNL}{section.A.4}
+\BOOKMARK [1][-]{section.A.3}{T\351cnicas de Pr\351-Processamento - Compacta\347\343o}{appendix.A}
+\BOOKMARK [2][-]{subsection.A.3.1}{An\341lise de Componentes Principais}{section.A.3}
+\BOOKMARK [2][-]{subsection.A.3.2}{Redu\347\343o de dimens\343o}{section.A.3}
+\BOOKMARK [1][-]{section.A.4}{An\341lise de Componentes Independentes}{appendix.A}
+\BOOKMARK [2][-]{subsection.A.4.1}{Princ\355pios de estima\347\343o dos componentes independentes}{section.A.4}
+\BOOKMARK [2][-]{subsection.A.4.2}{Pr\351-processamento dos sinais para ICA}{section.A.4}
+\BOOKMARK [2][-]{subsection.A.4.3}{Principais algoritmos para ICA}{section.A.4}
+\BOOKMARK [2][-]{subsection.A.4.4}{Extens\365es ao modelo b\341sico de ICA}{section.A.4}
+\BOOKMARK [1][-]{section.A.5}{ICA n\343o-linear}{appendix.A}
+\BOOKMARK [2][-]{subsection.A.5.1}{Algoritmo Taleb-Jutten para o modelo PNL}{section.A.5}
 \BOOKMARK [0][-]{appendix.B}{Conceitos fundamentais em classifica\347\343o de sinais}{}
 \BOOKMARK [1][-]{section.B.1}{Teste de Hip\363teses}{appendix.B}
 \BOOKMARK [1][-]{section.B.2}{Crit\351rio de Bayes}{appendix.B}

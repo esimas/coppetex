@@ -612,11 +612,6 @@
 \newblock In: {\em Proceedings of the International Conference on Neural
   Information Processing\/}, v.~1, pp. 1207--1210, Hong Kong, Setembro 1996.
 
-\bibitem{article:lappalainen:2000}
-\MakeUppercase{ Lappalainen, H., Honkela, A.}, \enquote{Advances in Independent
-  Component Analysis}, chap. Bayesian nonlinear independent component analysis
-  by multi-layer perceptrons, pp. 93--121, Springer, 2000.
-
 \bibitem{article:bishop:1998}
 \MakeUppercase{ Bishop, C.~M., Svensen, M., Willians, C. K.~I.}, \enquote{GTM:
   The generative topographic mapping}, {\em Neural Computation\/}, v.~10,
@@ -627,6 +622,11 @@
   approach to nonlinear blind source separation}.
 \newblock In: {\em Proceedings of the International Conference on Artificial
   Neural Networks\/}, v.~1, pp. 541--546, Lausanne, Suiça, 1997.
+
+\bibitem{article:lappalainen:2000}
+\MakeUppercase{ Lappalainen, H., Honkela, A.}, \enquote{Advances in Independent
+  Component Analysis}, chap. Bayesian nonlinear independent component analysis
+  by multi-layer perceptrons, pp. 93--121, Springer, 2000.
 
 \bibitem{article:lappalainen:bay1999}
 \MakeUppercase{ Lappalainen, H.}, \enquote{Ensemble learning for independent
@@ -666,6 +666,26 @@
   mixtures}.
 \newblock In: {\em Proceedings of the IEEE International Joint Conference on
   Neural Networks\/}, v.~3, pp. 2181--2186, Budapest, Hungria, Julho 2004.
+
+\bibitem{article:misep:2004}
+\MakeUppercase{ Almeida, L.~B.}, \enquote{Linear and Nonlinear ICA based on
+  Mutual Information}, {\em The Journal of Machine Learning Research\/}, v.~4,
+  n.~7, pp.~1297--1318, 2004.
+
+\bibitem{article:Almeida05}
+\MakeUppercase{ Almeida, L.~B., Hyvärinen, A.}, \enquote{Separating a real-life
+  nonlinear image mixture}, {\em Journal of Machine Learning Research\/}, v.~6,
+  pp.~1199--1229, 2005.
+
+\bibitem{article:misep:pnl}
+\MakeUppercase{ Zheng, C.-H., Huang, D.-S., Li, K., \MakeLowercase{et~al.}},
+  \enquote{MISEP Method for Postnonlinear Blind Source Separation}, {\em Neural
+  Compututation\/}, v.~19, n.~9, pp.~2557--2578, 2007.
+
+\bibitem{article:misep:pnll}
+\MakeUppercase{ Sun, Z.-L.}, \enquote{An extension of {MISEP} for
+  post-nonlinear-linear mixture separation}, {\em IEEE Transactions on Circuits
+  and Systems\/}, v.~56, n.~8, pp.~654--658, 2009.
 
 \bibitem{karhunen:local:1999}
 \MakeUppercase{ Karhunen, J., Malaroiu, S.}, \enquote{Local independent
@@ -726,26 +746,6 @@
 \MakeUppercase{ Cover, T.~M., Thomas, J.~A.}, {\em Elements of Information
   Theory\/}.
 \newblock Wiley: Nova York, Estados Unidos, 1991.
-
-\bibitem{book:kohonen:2001}
-\MakeUppercase{ Kohonen, T.}, {\em Self Organizing Maps\/}.
-\newblock 3rd ed.
-\newblock Springer: Berlin, Alemanha, 2001.
-
-\bibitem{article:foo:2006}
-\MakeUppercase{ Base, A.~M., Gruber, P., Theisa, F., \MakeLowercase{et~al.}},
-  \enquote{Blind source separation based on self-organizing neural network},
-  {\em Engineering Applications of Artificial Intelligence\/}, v.~19, n.~3,
-  pp.~305--311, 2006.
-
-\bibitem{article:oja:pca}
-\MakeUppercase{ Oja, E.}, \enquote{Neural Networks, Principal Components, and
-  Subspaces}, {\em International Journal of Neural Systems\/}, v.~1, n.~1,
-  pp.~61--68, 1989.
-
-\bibitem{tese:joao:2007}
-\MakeUppercase{ de~Oliveira~e Souza~Filho, J.~B.}, {\em Classificação Neural de
-  Sinais Passivos\/}, Ph.D. Thesis, COPPE/UFRJ, Julho 2007.
 
 \bibitem{seixas:pcd:1999}
 \MakeUppercase{ Caner, E.~S., Seixas, J.}, \enquote{Neural Discriminating
@@ -847,11 +847,6 @@
   Engineering and Engineering Management\/}, v.~1, pp. 2370--2374, Hong Kong,
   2009.
 
-\bibitem{article:misep:2004}
-\MakeUppercase{ Almeida, L.~B.}, \enquote{Linear and Nonlinear ICA based on
-  Mutual Information}, {\em The Journal of Machine Learning Research\/}, v.~4,
-  n.~7, pp.~1297--1318, 2004.
-
 \bibitem{article:lang:som}
 \MakeUppercase{ Lang, M.~J.}, \enquote{Application of {Kohonen} network
   classifier in {TeV} gamma-ray astronomy}, {\em Journal of Physics G: Nuclear
@@ -943,12 +938,27 @@
   Algorithms\/}.
 \newblock Wiley: Nova York, Estados Unidos, 2004.
 
+\bibitem{book:cosmic:2002}
+\MakeUppercase{ Schlickeiser, R.}, {\em Cosmic Ray Astrophysics\/}.
+\newblock Springer: Nova York, Estados Unidos, 2002.
+
 \bibitem{article:simas:2008:eusipco}
 \MakeUppercase{ {Simas Filho}, E.~F., Seixas, J.~M., Caloba, L.~P.},
   \enquote{Segmented self-organized feature extraction for online filtering in
   a high event rate detector}.
 \newblock In: {\em Proceedings of the European Conference on Signal
   Processing\/}, v.~1, pp. 1--5, Lausanne, Suiça, Agosto 2008.
+
+\bibitem{book:kohonen:2001}
+\MakeUppercase{ Kohonen, T.}, {\em Self Organizing Maps\/}.
+\newblock 3rd ed.
+\newblock Springer: Berlin, Alemanha, 2001.
+
+\bibitem{article:foo:2006}
+\MakeUppercase{ Base, A.~M., Gruber, P., Theisa, F., \MakeLowercase{et~al.}},
+  \enquote{Blind source separation based on self-organizing neural network},
+  {\em Engineering Applications of Artificial Intelligence\/}, v.~19, n.~3,
+  pp.~305--311, 2006.
 
 \bibitem{article:gersho:1982}
 \MakeUppercase{ Gersho, A.}, \enquote{On the Structure of Vector Quantizers},
@@ -974,6 +984,15 @@
 \MakeUppercase{ Freeman, J.~A., Skapura, D.~M.}, {\em Neural Networks
   Algorithms, Applications, and Programming Techniques\/}.
 \newblock Addison Wesley, 1991.
+
+\bibitem{article:oja:pca}
+\MakeUppercase{ Oja, E.}, \enquote{Neural Networks, Principal Components, and
+  Subspaces}, {\em International Journal of Neural Systems\/}, v.~1, n.~1,
+  pp.~61--68, 1989.
+
+\bibitem{tese:joao:2007}
+\MakeUppercase{ de~Oliveira~e Souza~Filho, J.~B.}, {\em Classificação Neural de
+  Sinais Passivos\/}, Ph.D. Thesis, COPPE/UFRJ, Julho 2007.
 
 \bibitem{book:peebles:2001}
 \MakeUppercase{ {PEEBLES Jr.}, P.~Z.}, {\em Probability, Random Variables and

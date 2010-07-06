@@ -730,6 +730,19 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   series =       {Lecture Notes in Computer Science},
 }
 
+
+@INBOOK{article:ica_clas:2004,
+  AUTHOR =       {V. Sanchez-Poblador and Enric Monte-Moreno and Jordi Solé-Casals},
+  editor =       {C.G. Puntonet and A. Prieto},
+  TITLE =        {Independent Component Analysis and Blind Signal Separation},
+  CHAPTER =      {ICA as a Preprocessing Technique for Classification},
+  pages =        {1165-1172},
+  PUBLISHER =    {Springer},
+  YEAR =         {2004},
+  volume =       {3195},
+  series =       {Lecture Notes in Computer Science},
+}
+
 @ARTICLE{article:rojas:nlica:2004,
   AUTHOR =       {F. Rojas and C. G. Puntonet and Manuel Rodríguez-Álvarez and I. Rojas and Rubén Martín-Clemente},
   TITLE =        {Blind Source Separation in Post-Nonlinear Mixtures Using Competitive Learning, Simulated Annealing, and a Genetic Algorithm},
@@ -749,6 +762,12 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   volume =       {2687},
   pages =        {679-686},
 }
+
+       EEE TRANSACTIONS ON KNOWLEDGE AND DATA ENGINEERING, VOL. 15, NO. 6, NOVEMBER/DECEMBER 2003
+ Feature Extraction Based on ICA
+for Binary Classification Problems
+  Nojun Kwak, Member, IEEE, and Chong-Ho Choi, Member, IEEE
+1374 1388
 
 @ARTICLE{article:solazzi:pnl:2004,
   AUTHOR =       {M. Solazzi and A. Uncini},
@@ -789,7 +808,6 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   pages =        {978-982},
   address =      {Xangai, China},
 }
-
 
 
 @INPROCEEDINGS{article:gao:nl2005,
@@ -1064,6 +1082,14 @@ Existence and Uniqueness results},
   volume =       {217-229},
 }
 
+@ARTICLE{article:Almeida05,
+    author = {Luís B. Almeida and Aapo Hyvärinen},
+    title = {Separating a real-life nonlinear image mixture},
+    journal = {Journal of Machine Learning Research},
+    year = {2005},
+    volume = {6},
+    pages = {1199--1229}
+}
 
 %@ARTICLE{article:jutten:2004,
 %  AUTHOR =       {C. Jutten and M. Babaie Zadeh and S. Hosseini},
@@ -1079,7 +1105,7 @@ Existence and Uniqueness results},
 
 @BOOK{book:cosmic:2002,
   AUTHOR =       {Reinhard Schlickeiser},
-  TITLE =        {Electron Energy Loss Spectroscopy in the Electron Microscope},
+  TITLE =        {Cosmic Ray Astrophysics},
   PUBLISHER =    {Springer},
   YEAR =         {2002},
   address =      {Nova York, Estados Unidos},
@@ -1114,6 +1140,31 @@ Existence and Uniqueness results},
   number =       {1-3},
   pages =        {57-70},
 }
+
+
+
+@article{article:misep:pnll,
+ author = {Zhan-Li Sun},
+ title = {An extension of {MISEP} for post-nonlinear-linear mixture separation},
+ journal = {IEEE Transactions on Circuits and Systems},
+ volume = {56},
+ number = {8},
+ year = {2009},
+ pages = {654--658},
+ publisher = {IEEE Press},
+ }
+
+
+@article{article:misep:pnl,
+ author = {Chun-Hou Zheng and De-Shuang Huang and Kang Li and George Irwin and Zhan-Li Sun},
+ title = {MISEP Method for Postnonlinear Blind Source Separation},
+ journal = {Neural Compututation},
+ volume = {19},
+ number = {9},
+ year = {2007},
+ pages = {2557--2578},
+ publisher = {MIT Press},
+ }
 
 
 @ARTICLE{article:misep:2004,

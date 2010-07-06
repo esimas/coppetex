@@ -7,6 +7,91 @@ trabalho.
 
 \section{Mapas auto-organizáveis}
 
+O mapa auto-organizável (SOM - \textit{Self Organizing Map}) é uma
+rede neural com treinamento não-supervisionado, baseado na
+aprendizagem competitiva, que é capaz de realizar uma organização
+topológica das entradas. O SOM foi proposto por Teuvo Kohonen em
+1982 \cite{book:kohonen:2001}, sendo capaz de realizar um
+mapeamento não-linear dos sinais de um espaço de entrada contínuo de
+dimensão $k$ para um espaço de características discreto que, em
+geral, é bidimensional. Cada neurônio da grade está diretamente
+conectado a todos os nós de entrada. Na Figura \ref{soms} pode-se
+visualizar o diagrama de um mapa auto-organizável bi-dimensional.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=6cm]{cap3_som}
+\caption{Diagrama de um mapa auto-organizável} \label{soms}
+\end{figure}
+
+O mapa auto-organizável compacta a informação e preserva relações
+topológicas ou métricas do conjunto de sinais. Os SOM estão ligados
+à ICA por conseguirem extrair informações ocultas dos sinais de
+forma não supervisionada \cite{article:foo:2006}. Uma apro\-xi\-mação
+das componentes independentes não-lineares pode ser obtida
+utilizando mapas auto-organizáveis \cite{book:oja:2001}.
+
+Três processos estão envolvidos na formação do mapa auto-organizado:
+a \textbf{competição}, onde, para cada vetor de entrada, há apenas um
+neurônio vencedor; a \textbf{cooperação}, quando o neurônio vencedor
+determina uma vizinhança topológica de neurônios excitados; e a
+\textbf{adaptação}, que procede ao ajuste dos pesos sinápticos para
+reforçar a resposta do neurônio vencedor, e de seus vizinhos, ao
+padrão de entrada.
+
+A atualização do vetor de pesos $w_j$ do neurônio j é feita através da equação:
+\begin{equation}\label{pesos_som}
+    w_j(n+1)=w_j(n)+\eta (n) h_{ij}(n)(x(n)-w_j(n)),
+\end{equation}
+\\
+sendo $\eta (n)$ a taxa de aprendizagem, um tipo de função de
+vizinhança $h_{ij}(n)$ usualmente utilizada é definida por:
+\begin{equation}\label{neigbor}
+h_{ij}(n)=\exp(-d_{ij}^2/2\sigma^2(n))
+\end{equation}
+\\
+onde $d_{ij}$ é a distância do neurônio j para o neurônio vencedor i
+e $\sigma(n)$ é a largura da função vizinhança na n-ésima iteração.
+
+O mapa de características possui algumas propriedades, listadas a
+seguir \cite{haykin:nn:2008}:
+
+\begin{enumerate}
+  \item é formado pelo conjunto de
+vetores de pesos sinápticos $w_i$ no espaço de saída discreto e
+fornece uma boa aproximação para o espaço de entrada;
+
+  \item é ordenado de modo
+topológico. Padrões de entrada semelhantes são mapeados para regiões
+adjacentes no mapa de características;
+
+  \item regiões do espaço de entrada que possuem alta
+probabilidade de ocorrência são mapeadas para domínios maiores do
+espaço de saída;
+
+\end{enumerate}
+
+No mapa de características, o neurônio que apresentar maior saída é
+consi\-derado o vencedor, ou seja a saída do SOM é do tipo ``vencedor
+leva tudo" (WTA - \textit{winner takes all}). O neurônio ativado é
+escolhido a partir de sua semelhança com a entrada apresentada. É
+comum a utilização da distância euclidiana como métrica da
+proxi\-midade entre dois vetores; nesse caso, o neurônio vencedor é
+aquele que minimiza $i(\mathbf{x})=\| \mathbf{x}(n)-\mathbf{w_j}
+\|$.
+
+Uma outra forma de operar um mapa auto-organizável é utilizar as projeções dos sinais de entrada no mapa de 
+características, ou seja as saídas $u_j$ de cada neurônio j que pode ser calculada por:
+\begin{equation}\label{som_out}
+ u_j=\mathbf{x}^T\mathbf{w_j}
+\end{equation}
+O vetor $\mathbf{u}=[u_1,...,u_K]^T$ pode ser considerado como a projeção de $\mathbf{x}$ no mapa de características.
+
+Os mapas auto-organizáveis pertencem à classe de algoritmos de
+codificação vetorial, sendo capazes de encontrar, de forma
+otimizada, um número fixo de vetores ou palavras de código que
+melhor representem o conjunto de sinais.
+
 \subsection{Quantização vetorial por aprendizado}
 
 A quantização vetorial (VQ - \textit{Vector Quantization}) é uma
@@ -112,6 +197,100 @@ características} \label{som_class}
 
 \section{Análise de Componentes Principais}
 
+\section{Técnicas de Pré-Processamento - Compactação}
+
+No processamento de sinais multi-dimensionais, é comum a utilização de técnicas de processamento de sinais 
+que visam a redução da dimensionalidade do problema. O objetivo é projetar os sinais N-dimensionais observados em 
+
+\subsection{Análise de Componentes Principais}
+
+A análise de componentes principais (PCA - \textit{Principal
+Component Analysis}) é uma técnica estatística de processamento de
+sinais diretamente ligada à transformação de \textit{Karhunen-Loève}
+\cite{book:pca:2002}. O objetivo da PCA é encontrar uma
+transformação linear onde os sinais projetados sejam
+não-correlacionados e grande parcela da energia (variância) esteja
+concentrada num pequeno número de componentes. Para isso, são
+exploradas informações da estatística de segunda ordem. 
+
+A análise de
+componentes principais é bastante usada para compactação de
+informação. Como a PCA projeta os sinais em componentes ordenados por energia, uma métrica geralmente 
+utilizada para reduzir a dimensão dos dados consiste na seleção apenas dos componentes de maior energia, 
+de modo que o sinal recuperado a
+partir da informação compactada tenha pequeno erro médio quadrático
+se comparado ao original. A seguir serão desenvolvidos, de forma
+resumida, os fundamentos matemáticos da PCA.
+
+Considerando-se um vetor $\mathbf{x}=[x_1,...,x_N]^T$ aleatório com $N$ elementos,
+assume-se que ele tenha média zero:
+
+\begin{equation}\label{Xm}
+    \mathcal{E}\{\mathbf{x}\}=0
+\end{equation}
+\\
+onde $\mathcal{E}\{.\}$ é o operador esperança. Se $\mathbf{x}$ tem
+média não nula faz-se $\mathbf{x}\leftarrow
+\mathbf{x}-\mathcal{E}\{\mathbf{x}\}$.
+
+A projeção $z_i$ de $\mathbf{x}$ na direção de $\mathbf{v}_i$ pode
+ser expressa por:
+
+\begin{equation}\label{proj1}
+    z_i=\mathbf{v}_i^T\mathbf{x}=\sum_{k=1}^N v_{ki}x_k
+\end{equation}
+\\
+Na transformação por PCA, os componentes $z_i$ ($i=1,...,N$) devem
+ser ortogonais e ordenados (de modo decrescente) pela variância das
+projeções, sendo, então, $z_1$ a projeção de máxima variância. Para
+tornar a variância independente da norma de $\mathbf{v}_i$, faz-se:
+
+\begin{equation}\label{normaw}
+    \mathbf{v}_i \leftarrow \frac{\mathbf{v}_i}{\| \mathbf{v}_i \|}
+\end{equation}
+\\
+Fazendo-se com que $||\mathbf{v}_i||=1$, torna-se a variância função apenas da direção
+das projeções. 
+%A ortogonalidade garante a não-correlação entre as
+%componentes.
+
+Como $\mathcal{E}\{\mathbf{x}\}=0$, então $\mathcal{E}\{z_i\}=0$,
+logo a variância da projeção $z_i$ é calculada por
+$\mathcal{E}\{z_i^2\}$. Seguindo a definição da PCA, $z_1$ tem
+máxima variância; logo, $\mathbf{v}_1$ pode ser encontrado pela maximização
+de \cite{book:oja:2001}:
+
+\begin{equation}\label{w1pca}
+    J_1^{PCA}(\mathbf{v}_1)=\mathcal{E}\{z_i^2\}=\mathcal{E}\{(\mathbf{v}_1^T\mathbf{x})^2\}
+    =\mathbf{v}_1^T\mathcal{E}\{\mathbf{x}\mathbf{x}^T\}\mathbf{v}_1=
+    \mathbf{v}_1^T \mathbf{C}_x\mathbf{v}_1,
+\end{equation}
+\\
+onde $\mathbf{C}_x$ é a matriz de covariância de $\mathbf{x}$.
+
+A solução para o problema de maximização da equação (\ref{w1pca}) pode
+ser encontrada na álgebra linear, em função dos autovetores
+$\mathbf{e}_1,\mathbf{e}_2,...,\mathbf{e}_N$ da matriz
+$\mathbf{C}_x$. A ordem dos autovetores é tal que os autovalores
+associados satisfazem $d_1>d_2>...>d_N$. Desta forma, tem-se:
+
+\begin{equation}\label{pca1}
+    \begin{array}{ccc}
+      \mathbf{v}_i= \mathbf{e}_i,& & 1\leq i \leq N
+    \end{array}
+\end{equation}
+
+Percebe-se que a PCA de $\mathbf{x}$ e a decomposição por
+autovalores da matriz $\mathbf{C}_x$ (de dimensão $N\times N$) são
+equivalentes. Limitações computacionais na extração das componentes
+principais utilizando as equações (\ref{proj1}) e (\ref{pca1})
+aparecem quando a dimensão $N$ do vetor $\mathbf{x}$ aumenta, pois o
+processo de obtenção dos autovetores se torna proibitivamente lento.
+Nesse caso, uma solução é utilizar métodos iterativos de extração
+das componentes principais, através de redes neurais
+\cite{article:oja:pca,tese:joao:2007}.
+
+
 \subsection{Redução de dimensão}
 
 \begin{figure}[tbph]
@@ -150,7 +329,7 @@ computacional e conseqüentemente o tempo de processamento.
 
 \section{Análise de Componentes Independentes}
 
-\subsection{Princípios de estimação das componentes independentes}
+\subsection{Princípios de estimação dos componentes independentes}
 
 No modelo básico da ICA (ver equação (\ref{icamatrix}))assume-se que
 a matriz $\mathbf{A}$ é quadrada e não são considerados os atrasos
