@@ -380,8 +380,8 @@ processamento realizado por essa última rotina.
 As diversas etapas necessárias para a execução do \textit{Neural Ringer} são listadas a seguir:
 
 \begin{enumerate}
- \item Inicialmente, é 
-necessário selecionar as informações necessárias, o que é feito na etapa de seleção de região (\textit{Region Selector}) 
+ \item Inicialmente, são selecionadas as informações necessárias, o que é feito na etapa de seleção de região 
+(\textit{Region Selector}) 
 do T2Calo, que solicita os fragmentos da RoI desejada. Essa etapa, por envolver um intenso fluxo de informação entre o 
 pipeline de memória e o segundo nível de filtragem, corresponde a 40.7 $\%$ do tempo total 
 (em média 0,4927 $\pm$ 0,0787 ms).
@@ -420,7 +420,7 @@ juntamente com o tempo requerido por cada uma delas (em valores absolutos e tamb
     Pré-processamento (anelamento) - \textit{Ringer} &  0,0986 $\pm$ 0,0165 & 8,2\\ \hline
     Normalização & 0.0026 $\pm$ 0,0015 & 0,2 \\ \hline
     Classificação Neural & 0,0387  $\pm$ 0,0018 & 3,2\\ \hline
-    Total & 1,2352 $\pm$ 0,1288 & 100\\  
+    Total & 1,2109 $\pm$ 0,1288 & 100\\  
 \hline
 \end{tabular}
 \label{tab_ringtime}
@@ -433,22 +433,70 @@ uma eficiência de discriminação muito superior do \textit{Ringer}, conforme será
 \section{Extensões ao Neural Ringer}
 
 Com eficiência mais alta que o algoritmo padrão (T2Calo) e tempo de processamento dentro da janela aceita para o 
-L2, o discriminador Neural Ringer mostrou-se uma opção bastante interessante para o problema da filtragem 
-\textit{online} de elétrons no ATLAS. Trabalhos vêm sendo desenvolvidos com o objetivo de melhorar a eficiência 
+L2, o discriminador \textit{Neural Ringer} mostrou-se uma opção bastante interessante para o problema da filtragem 
+\textit{online} de elétrons no ATLAS. Em sistemas neurais de classificação, sabe-se que o uso de uma 
+etapa de pré-processamento adequada pode ser decisiva para o aumento da eficiência de discriminação~\cite{book:nnforpr:1995}.
+Neste contexto, trabalhos vêm sendo desenvolvidos com o objetivo de melhorar a eficiência 
 do Neural Ringer com a adição de uma etapa de pré-processamento ao classificador neural 
 (ver Figura \ref{fig_ringerext}), na qual, os sinais em anéis são mapeados em um conjunto (em geral mais compacto) 
-de características discriminantes. A seguir estes trabalhos serão descritos resumidamente.
+de características discriminantes. A seguir, serão descritos a importância da etapa de pré-processamento em 
+classificadores neurais (em um caso genérico) e os trabalhos desenvolvidos neste sentido 
+no contexto do projeto \textit{Neural Ringer}.
 
 \begin{figure} \centering
 \includegraphics[width=15cm]{cap3_ringerext}
 \caption{Fluxo de processamento das extensões ao \textit{Neural Ringer}.} \label{fig_ringerext}
 \end{figure}
 
+\subsection{Importância do pré-processamento para classificadores neurais}
 
-\subsection{Pré-processamento linear}
+Embora as redes neurais possam essencialmente realizar quaisquer mapeamentos não-lineares, pode-se observar que, o uso 
+direto dos dados brutos como entradas geralmente produz um desempenho pior do que quando algum pré-processamento é 
+aplicado~\cite{book:nnforpr:1995}.
 
-Embora a construção dos anéis já seja responsável por uma considerável redução de dimensão (por um fator de 10 vezes), 
-no trabalho \cite{tese:herman:2006,article:herman:2006} foi realizado um estudo detalhado a respeito da utilização da Análise de 
+Da teoria da informação, considerando duas variáveis $\mathbf{x}$ e $c$ (respectivamente o conjunto de características 
+e os rótulos de classes), para qualquer transformação determinística $T(\cdot)$, a informação mútua ($I$) entre $T(\mathbf{x})$ 
+e $c$ tem como limite superior a informação mútua entre $\mathbf{x}$ e $c$~\cite{book:cover:1991}:
+\begin{equation}\label{eqinfoclas}
+ I(T(\mathbf{x});c) \leq I(\mathbf{x};c).
+\end{equation}
+Ou seja, nenhuma transformação é capaz de acrescentar informação, ao conjunto de características $\mathbf{x}$, a 
+respeito das classes $c$.
+
+Considerando o resultado da Equação \ref{eqinfoclas}, o que justifica o melhor desempenho dos classificadores após a 
+etapa de pré-processamento, uma vez que ela não é capaz de adicionar informação a respeito do problema?
+
+Como os sistemas neurais de classificação são obtidos a partir de um processo iterativo de ajuste de pesos, 
+um pré-processamento eficiente, ou seja, capaz de revelar características 
+discriminantes que estavam inicialmente ocultas nos dados brutos, pode se tornar decisivo para a obtenção de um 
+classificador com melhor desempenho.
+
+É importante notar que, todas as informações utilizadas para a discriminação estão presentes nos dados brutos. O 
+pré-processamento, que neste contexto é conhecido como extração de características, é responsável apenas por uma 
+transformação que torna as características discriminantes mais evidentes.
+
+Um outro aspecto a ser analizado é a chamada ``maldição da dimensionalidade" (do inglês \textit{curse of 
+dimensionality})~\cite{book:nnforpr:1995}.
+A utilização de um número elevado de entradas para o sistema classificador acaba dificultando o processo de 
+treinamento. Isso se deve ao fato de que quanto maior a 
+dimensão dos dados de entrada, 
+maior a complexidade da rede neural (e consequentemente maior o número de parâmetros a serem ajustados), requerendo 
+também maior informação estatística (exemplos de treinamento) para o treino adequado do classificador. 
+
+A solução adotada, na maioria dos casos, é pré-processar os sinais com uma transformação que reduza a 
+dimensionalidade do problema. Pois, entre os atributos disponíveis, alguns podem apresentar informações 
+redundantes ou até mesmo irrelevantes para o processo de classificação, dificultando o processo de treinamento 
+dos classificadores. Porém, é preciso escolher adequadamente a informação a ser descartada para minimizar 
+a chance da perda de características relevantes para a discriminação das classes.
+
+Resumindo, a transformação ótima deve, entre outras coisas, mapear os atributos disponíveis em um número reduzido de 
+características, eliminar a redundância e manter toda a informação discriminante para o problema.
+
+\subsection{\textit{Neural Ringer} - pré-processamento linear}
+
+Voltando para o contexto do discriminador \textit{Neural Ringer}, embora a construção dos anéis já seja responsável 
+por uma considerável redução de dimensão (por um fator de 10 vezes), 
+no trabalho \cite{article:herman:2006} foi realizado um estudo detalhado a respeito da utilização da Análise de 
 Componentes Principais (PCA - \textit{Principal Component Analysis})~\cite{book:pca:2002} para compactação. A PCA foi aplicada aos 
 sinais em anéis e o classificador neural treinado a partir dos componentes principais estimados. Com a PCA, 
 foi alcançado um fator de redução de aproximadamente 4 vezes, mantendo desempenho semelhante ao Neural Ringer 
@@ -460,10 +508,10 @@ classificação, as Componentes Principais de Discriminação (PCD - \textit{Princip
 ~\cite{seixas:pcd:1995}.  Foi realizado também um estudo referente à aplicação da Análise de Componentes Independentes 
 (ICA \textit{Independent Component Analysis})~\cite{book:oja:2001} como uma etapa adicional de pré-processamento, aparecendo logo 
 após a compactação. Os resultados mostraram que a combinação de ICA e PCD foi capaz de melhorar o desempenho 
-em relação ao Neural Ringer, sem modificar significativamente o tempo de processamento necessário para a tomada 
+em relação ao Neural Ringer tradicional, sem modificar significativamente o tempo de processamento necessário para a tomada 
 de decisão.
 
-\subsection{Pré-processamento não-linear}
+\subsection{\textit{Neural Ringer} - pré-processamento não-linear}
 
 Conforme descrito no Capítulo 2, os calorímetros, embora projetados para serem detectores lineares na 
 identificação de elétrons, na prática, seu comportamento pode apresentar características não-lineares, 
@@ -472,9 +520,8 @@ de sensores, atenuação da luz (em calorímetros cintilantes), etc. Então, é possí
 de extração de características seja mais adequada ao problema.
 
 Os estudos desenvolvidos durante esse trabalho tiveram o objetivo de investigar a aplicação da versão 
-não-linear da análise de componentes independentes (NLICA)~\cite{article:simas:2007:lnlm,book:almeida:2006} 
-para extração de características no segundo 
-nível de filtragem \textit{online} de elétrons do ATLAS. 
+não-linear da análise de componentes independentes (NLICA)~\cite{book:almeida:2006,article:simas:2007:lnlm} 
+para extração de características, como uma etapa de pré-processamento ao \textit{Neural Ringer}. 
 
 Considerando que existem diversos algoritmos 
 para a estimação da NLICA, neste trabalho foram realizados estudos com alguns destes métodos. Os diferentes 

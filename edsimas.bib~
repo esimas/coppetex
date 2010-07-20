@@ -1,6 +1,16 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PESSOAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+@article{article:simas:neucom2010,
+  Author = {E. F. {Simas Filho} and J. M. Seixas and L. P. Caloba},
+  Journal = {Neurocomputing},
+  Title = {Modified Post-Nonlinear ICA Model for Online Neural Discrimination},
+  Volume = {0},
+  number = {0},
+  Pages = {0},
+  Year = {2010}}
+
+
 @inproceedings{simas:ica09:fisica,
   Address = {Paraty, Brasil},
   Author = {E. F. {Simas Filho} and J. M. Seixas and L. P. Caloba},
@@ -763,11 +773,18 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   pages =        {679-686},
 }
 
-       EEE TRANSACTIONS ON KNOWLEDGE AND DATA ENGINEERING, VOL. 15, NO. 6, NOVEMBER/DECEMBER 2003
- Feature Extraction Based on ICA
-for Binary Classification Problems
-  Nojun Kwak, Member, IEEE, and Chong-Ho Choi, Member, IEEE
-1374 1388
+
+@ARTICLE{article:icaClasp:2003,
+  AUTHOR =       {Nojun Kwak, Member and Chong-Ho Choi},
+  TITLE =        {Feature Extraction Based on ICA for Binary Classification Problems},
+  JOURNAL =      {IEEE Transactions on Knowledge and Data Engineering},
+  YEAR =         {2003},
+  volume =       {15},
+  number =       {6},
+  pages =        {1374-1388},
+}
+
+
 
 @ARTICLE{article:solazzi:pnl:2004,
   AUTHOR =       {M. Solazzi and A. Uncini},
@@ -1101,6 +1118,53 @@ Existence and Uniqueness results},
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@BOOK{book:haupt:2004,
+  AUTHOR =       {R. L. Haupt and S. E. Haupt},
+  TITLE =        {Practical Genetic Algorithms},
+  PUBLISHER =    {Wiley-Interscience},
+  YEAR =         {2004},
+  address =      {Nova York, Estados Unidos},
+}
+
+@INBOOK{article:icafexI:2001,
+  AUTHOR =       {N. Kwak and C. H. Choi and J. Y. Choi},
+  editor =       {G. Dorffner and H. Bischof and K. Hornik},
+  TITLE =        {Lecture Notes In Computer Science (ICANN)},
+  CHAPTER =      {Feature Extraction Using ICA},
+  PUBLISHER =    {Springer},
+  YEAR =         {2001},
+  volume =       {2130},
+  pages =        {568-573},
+}
+
+@ARTICLE{article:icafexII:2002,
+  AUTHOR =       {Shotaro Akaho},
+  TITLE =        {Conditionally Independent Component Analysis for Supervised Feature Extraction},
+  JOURNAL =      {Neurocomputimg},
+  YEAR =         {2002},
+  volume =       {49},
+  number =       {1},
+  pages =        {568-573},
+}
+
+@ARTICLE{article:cross:2006,
+  AUTHOR =       {P. Georgieva and A. Ralescu and D. Ralescu},
+  TITLE =        {Cross-cumulants measure for independence},
+  JOURNAL =      {Journal of Statistical Planning and Inference},
+  YEAR =         {2006},
+  volume =       {137},
+  number =       {1},
+  pages =        {1085-1098},
+}
+
+@BOOK{book:nnforpr:1995,
+  AUTHOR =       {Christopher M. Bishop},
+  TITLE =        {Neural Networks for Pattern Recognition},
+  PUBLISHER =    {Clarendon Press},
+  YEAR =         {1995},
+  address =      {Gloucestershire, Reino Unido},
+}
 
 
 @BOOK{book:cosmic:2002,
@@ -2232,8 +2296,8 @@ Joint Likelihood},
   AUTHOR =       {T. M. Cover and J. A. Thomas},
   TITLE =        {Elements of Information Theory},
   PUBLISHER =    {Wiley},
-  YEAR =         {1991},
-  address =      {Nova York, Estados Unidos},
+  YEAR =         {2006},
+  address =      {Nova Jersey, Estados Unidos},
 }
 
 @ARTICLE{article:hyvarinen:2000,

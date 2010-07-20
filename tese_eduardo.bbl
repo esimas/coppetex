@@ -428,10 +428,15 @@
   and Photon Selection for the ATLAS Experiment at the LHC}, {\em IEEE
   Transactions on Nuclear Science\/}, v.~53, n.~5, pp.~2839--2843, 2006.
 
-\bibitem{tese:herman:2006}
-\MakeUppercase{ Junior, H. P.~L.}, {\em Monitoração online e distribuída para
-  um ambiente com alta taxa de eventos e fina segmentação\/}, Ph.D. Thesis,
-  Universidade Federal do Rio de Janeiro, 2006.
+\bibitem{book:nnforpr:1995}
+\MakeUppercase{ Bishop, C.~M.}, {\em Neural Networks for Pattern
+  Recognition\/}.
+\newblock Clarendon Press: Gloucestershire, Reino Unido, 1995.
+
+\bibitem{book:cover:1991}
+\MakeUppercase{ Cover, T.~M., Thomas, J.~A.}, {\em Elements of Information
+  Theory\/}.
+\newblock Wiley: Nova Jersey, Estados Unidos, 2006.
 
 \bibitem{article:herman:2006}
 \MakeUppercase{ {Lima Jr}., H., Seixas, J.}, \enquote{A segmented principal
@@ -590,6 +595,18 @@
 \newblock In: {\em Proceedings of the IET Conference on Wireless, Mobile and
   Sensor Networks\/}, v.~1, pp. 978--982, Xangai, China, 2007.
 
+\bibitem{article:kai:2006}
+\MakeUppercase{ Kai, S., Qi, W., Mingli, D.}, \enquote{Approach to nonlinear
+  blind source separation based on niche genetic algorithm}.
+\newblock In: {\em Proceedings of the Sixth International Conference on
+  Intelligent Systems Design and Applications\/}, v.~1, pp. 441--445, Jinan,
+  China, 2006.
+
+\bibitem{article:nlica_ga:2001}
+\MakeUppercase{ Tan, Y., Wang, J.}, \enquote{Nonlinear Blind Source Separation
+  using Higher Order Statistics and a Genetic Algorithm}, {\em IEEE
+  Transactions on Evolutionary Computation\/}, v.~5, n.~6, pp.~600--612, 2001.
+
 \bibitem{article:woo:nl2005}
 \MakeUppercase{ Woo, W.~L., Dlay, S.~S.}, \enquote{Nonlinear blind source
   separation using a hybrid RBF-FMLP network}, {\em IEE Proceedings on Vision,
@@ -742,40 +759,11 @@
   Ranking, pp. 823--830, {\em Lecture Notes in Computer Science\/}, Springer,
   2006.
 
-\bibitem{book:cover:1991}
-\MakeUppercase{ Cover, T.~M., Thomas, J.~A.}, {\em Elements of Information
-  Theory\/}.
-\newblock Wiley: Nova York, Estados Unidos, 1991.
-
-\bibitem{seixas:pcd:1999}
-\MakeUppercase{ Caner, E.~S., Seixas, J.}, \enquote{Neural Discriminating
-  Analysis on Pre-processed Data}.
-\newblock In: {\em Proceedings of the 6th IEEE International Conference on
-  Electronics, Circuits and Systems (ICECS)\/}, pp. 415--418, Pafos, Cyprus,
-  Setembro 1999.
-
-\bibitem{article:nnfex1:1996}
-\MakeUppercase{ Lu, H., Setiono, R., Liu, H.}, \enquote{Effective Data Mining
-  Using Neural Networks}, {\em IEEE Transactions on Knowledge and Data
-  Engineering\/}, v.~8, n.~6, pp.~957--961, 1996.
-
-\bibitem{article:nnfex2:1996}
-\MakeUppercase{ Steppe, J.~M., ans S.~K.~Rogers, K. W. B.~J.},
-  \enquote{Integrated Feature Architecture Selection}, {\em IEEE Transactions
-  on Neural Networks\/}, v.~7, n.~4, pp.~1007--1014, 1996.
-
-\bibitem{article:nnfex:1999}
-\MakeUppercase{ McGarry, K.~J., Wermter, S., MacIntyre, J.}, \enquote{Knowledge
-  Extraction from Radial Basis Functions Networks and Multi-Layer Perceptrons}.
-\newblock In: {\em Proceedings of the International Joint Conference on Neural
-  Networks\/}, v.~4, pp. 2494--2497, Washington-DC, Estados Unidos, 1999.
-
-\bibitem{ica:clas:2004}
-\MakeUppercase{ Poblador, V.~S., Moreno, E.~M., Casals, J.~S.}, \enquote{{ICA}
-  as a Preprocessing Technique for Classification}.
-\newblock In: {\em Ind. Comp. Analysis And Signal Separation, 5th Int.
-  Conf.\/}, {\em LNCS\/}, pp. 1165--1172, Springer: Charleston, Estados Unidos,
-  Setembro 2004.
+\bibitem{article:ica_clas:2004}
+\MakeUppercase{ Sanchez-Poblador, V., Monte-Moreno, E., Solé-Casals, J.},
+  \enquote{Independent Component Analysis and Blind Signal Separation}, v.
+  3195, chap. ICA as a Preprocessing Technique for Classification, pp.
+  1165--1172, {\em Lecture Notes in Computer Science\/}, Springer, 2004.
 
 \bibitem{rep:uci:1998}
 
@@ -933,6 +921,69 @@
   Signal Separation in {CMB} maps}, {\em Astronomy and Astrophysics Journal\/},
   v.~802, pp.~1--12, Fevereiro 2008.
 
+\bibitem{article:icaClasp:2003}
+\MakeUppercase{ Nojun~Kwak, M., Choi, C.-H.}, \enquote{Feature Extraction Based
+  on ICA for Binary Classification Problems}, {\em IEEE Transactions on
+  Knowledge and Data Engineering\/}, v.~15, n.~6, pp.~1374--1388, 2003.
+
+\bibitem{seixas:pcd:1999}
+\MakeUppercase{ Caner, E.~S., Seixas, J.}, \enquote{Neural Discriminating
+  Analysis on Pre-processed Data}.
+\newblock In: {\em Proceedings of the 6th IEEE International Conference on
+  Electronics, Circuits and Systems (ICECS)\/}, pp. 415--418, Pafos, Cyprus,
+  Setembro 1999.
+
+\bibitem{article:nnfex1:1996}
+\MakeUppercase{ Lu, H., Setiono, R., Liu, H.}, \enquote{Effective Data Mining
+  Using Neural Networks}, {\em IEEE Transactions on Knowledge and Data
+  Engineering\/}, v.~8, n.~6, pp.~957--961, 1996.
+
+\bibitem{article:nnfex2:1996}
+\MakeUppercase{ Steppe, J.~M., ans S.~K.~Rogers, K. W. B.~J.},
+  \enquote{Integrated Feature Architecture Selection}, {\em IEEE Transactions
+  on Neural Networks\/}, v.~7, n.~4, pp.~1007--1014, 1996.
+
+\bibitem{article:nnfex:1999}
+\MakeUppercase{ McGarry, K.~J., Wermter, S., MacIntyre, J.}, \enquote{Knowledge
+  Extraction from Radial Basis Functions Networks and Multi-Layer Perceptrons}.
+\newblock In: {\em Proceedings of the International Joint Conference on Neural
+  Networks\/}, v.~4, pp. 2494--2497, Washington-DC, Estados Unidos, 1999.
+
+\bibitem{article:icafexI:2001}
+\MakeUppercase{ Kwak, N., Choi, C.~H., Choi, J.~Y.}, \enquote{Lecture Notes In
+  Computer Science (ICANN)}, v. 2130, chap. Feature Extraction Using ICA, pp.
+  568--573, Springer, 2001.
+
+\bibitem{article:icafexII:2002}
+\MakeUppercase{ Akaho, S.}, \enquote{Conditionally Independent Component
+  Analysis for Supervised Feature Extraction}, {\em Neurocomputimg\/}, v.~49,
+  n.~1, pp.~139--150, 2002.
+
+\bibitem{article:simas:neucom2010}
+\MakeUppercase{ {Simas Filho}, E.~F., Seixas, J.~M., Caloba, L.~P.},
+  \enquote{Modified Post-Nonlinear ICA Model for Online Neural Discrimination},
+  {\em Neurocomputing\/}, v.~0, n.~0, pp.~0, 2010.
+
+\bibitem{book:haupt:2004}
+\MakeUppercase{ Haupt, R.~L., Haupt, S.~E.}, {\em Practical Genetic
+  Algorithms\/}.
+\newblock Wiley-Interscience: Nova York, Estados Unidos, 2004.
+
+\bibitem{article:cross:2006}
+\MakeUppercase{ Georgieva, P., Ralescu, A., Ralescu, D.},
+  \enquote{Cross-cumulants measure for independence}, {\em Journal of
+  Statistical Planning and Inference\/}, v.~137, n.~1, pp.~1085--1098, 2006.
+
+\bibitem{article:rprop:1993}
+\MakeUppercase{ Riedmiller, M., Braun, H.}, \enquote{A direct adaptive method
+  for faster backpropagation learning, the {RPROP} algorithm}, {\em Proc. of
+  Int. Conf. on Neural Networks\/}, pp.~586--591, 1993.
+
+\bibitem{book:vantrees1:2001}
+\MakeUppercase{ Trees, H. L.~V.}, {\em Detection, Estimation, and Modulation
+  Theory, Part I\/}.
+\newblock Wiley: Nova York, Estados Unidos, 2001.
+
 \bibitem{kuncheva:comb:2004}
 \MakeUppercase{ Kuncheva, L.}, {\em Combining Pattern Classifiers, Methods and
   Algorithms\/}.
@@ -1078,28 +1129,11 @@
 \newblock In: {\em IEEE International Conference on Acoustics, Speech, and
   Signal Processing\/}, v.~2, pp. 1681--1684, Orlando, Estados Unidos, 2002.
 
-\bibitem{article:nlica_ga:2001}
-\MakeUppercase{ Tan, Y., Wang, J.}, \enquote{Nonlinear Blind Source Separation
-  using Higher Order Statistics and a Genetic Algorithm}, {\em IEEE
-  Transactions on Evolutionary Computation\/}, v.~5, n.~6, pp.~600--612, 2001.
-
-\bibitem{article:kai:2006}
-\MakeUppercase{ Kai, S., Qi, W., Mingli, D.}, \enquote{Approach to nonlinear
-  blind source separation based on niche genetic algorithm}.
-\newblock In: {\em Proceedings of the Sixth International Conference on
-  Intelligent Systems Design and Applications\/}, v.~1, pp. 441--445, Jinan,
-  China, 2006.
-
 \bibitem{article:tan:20000}
 \MakeUppercase{ Tan, Y., Wang, J.}, \enquote{Nonlinear blind separation using
   an {RBF} network model}.
 \newblock In: {\em Proceedings of the IEEE International Symposium on Circuits
   and Systems\/}, v.~3, pp. 634--637, Genebra, Suiça, 2000.
-
-\bibitem{book:vantrees1:2001}
-\MakeUppercase{ Trees, H. L.~V.}, {\em Detection, Estimation, and Modulation
-  Theory, Part I\/}.
-\newblock Wiley: Nova York, Estados Unidos, 2001.
 
 \bibitem{book:shanmugan:1988}
 \MakeUppercase{ Shanmugan, K.~S., Breipohl, A.~M.}, {\em Random Signals,

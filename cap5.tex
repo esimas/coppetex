@@ -3,18 +3,70 @@
 \section{Sistemas de Classificação Propostos para a Seleção de Elétrons no Segundo-Nível de Filtragem do ATLAS}
 
 Os sistemas de filtragem propostos neste trabalho são divididos em
-duas etapas distintas. Inicialmente os sinais medidos são
-pré-processados para que suas características discriminantes se
+duas etapas distintas. Inicialmente, os sinais medidos são
+pré-processados (utilizando modelos de ICA/NLICA) para que suas características discriminantes se
 tornem mais acessíveis. As características extraídas são utilizadas
-como entrada para os classificadores propriamente ditos. Nesta Seção
-serão descritos os sistemas de filtragem utilizados.
+como entrada para os classificadores propriamente ditos (classificadores neurais supervisionados na arquitetura MLP). 
+Nesta Seção, serão descritos os sistemas de filtragem e o procedimento de treinamento utilizados.
 
-Os métodos de extração de características propostos neste trabalho
-(SOM, PCA, ICA e NLICA) operam sempre sobre os sinais em anéis para
-a extração de características discriminantes e assim aumentar a
-eficiência dos classificadores. A estimação das características
+Os métodos de extração de características utilizados neste trabalho operam sobre os sinais dos calorímetros do 
+ATLAS formatados em anéis (conforme descrito no Capítulo \ref{cap_atlasEtrig}). O propósito é aumentar a eficiência 
+de discriminação de elétrons do \textit{Neural Ringer} (discriminador de elétrons alternativo do segundo nível de 
+filtragem online do ATLAS).
+
+Considerando que cada assinatura é descrita por 100 anéis, gerados em sete camadas do calorímetro, e que, cada camada 
+apresenta diferentes características físicas (quantidade e tipo de sensores)
+
+ A estimação das características
 discriminantes dos anéis pode ser realizada de duas formas distintas
 conforme descrito a seguir.
+
+\section{Especificações dos Classificadores Neurais Utilizados}
+
+Neste trabalho, foram utilizados classificadores neurais supervisionados na arquitetura Perceptron de Múltiplas 
+camadas (MLP - \textit{Multi-Layer Perceptron}) \cite{haykin:nn:2008}. Foram utilizadas redes com uma camada oculta 
+e um neurônio na camada de saída. Todos os neurônios utilizam funções de ativação tipo tangente hiperbólica. Em 
+trabalhos anteriores \cite{tese:andre:2006,tese:torres:2010}, bons resultados de classificação foram obtidos com 
+redes de 10 neurônios na camada oculta, desta forma, decidiu-se utilizar o mesmo número de neurônios 
+para esta camada.
+
+Para o treinamento dos classificadores segmentados foi utilizado o algoritmo RPROP (\textit{Resilient Back-propagation})
+\cite{article:rprop:1993}. 
+
+O treinamento dos discriminadores foi realizado a partir de um processo de validação cruzada. Os sinais disponíveis 
+para cada classe foram, inicialmente, divididos de modo aleatório em 12 grupos (com aproximadamente a mesma quantidade de 
+eventos). A seguir, para cada processo de treinamento, 
+sorteava-se 4 grupos distintos (em cada classe) para compor os conjuntos de treino, validação e teste. O número de neurônios na 
+camada escondida dos classificadores neurais foi escolhido, a partir de testes exaustivos, visando maximizar a 
+eficiência de discriminação.
+
+Para o treinamento dos classificadores segmentados foi utilizado o
+algoritmo RPROP (\textit{Resilient Back-propagation})
+\cite{article:rprop:1993}. Foram utilizadas redes MLP com uma camada
+escondida, um neurônio de saída e função de ativação tangente
+hiperbólica. O número de neurônios da camada escondida foi obtido
+após testes exaustivos com várias configurações.
+
+Explicar a validação cruzada e o modo de parada do algoritmo (falar do RPROP)
+
+
+Modo de treinamento (validação cruzada ... ver torres)
+
+\section{Parâmetros de Avaliação do Desempenho} 
+
+Para avaliar o desempenho de discriminação são utilizados a curva
+ROC (Receiver Operating Characteristic) \cite{book:vantrees1:2001},
+que mostra como as probabilidades de detecção e falso alarme
+(respectivamente PD e PF) variam com o patamar de decisão, e o
+índice SP \cite{article:anjos:2006}, que é definido por:
+\begin{equation}\label{sp}
+    SP= \frac{(Ef_e + Ef_j)\times \sqrt{(Ef_e \times Ef_j)}}{2}
+\end{equation}
+onde $Ef_e$ e $Ef_j$ são as eficiências obtidas, respectivamente,
+para elétrons e jatos.
+
+
+(SP, ROC, definir  e comentar)
 
 \subsubsection{Características Globais}
 

@@ -1,134 +1,186 @@
 \chapter{Metodologia Proposta}
 
-\section{Sistemas de ClassificaÃ§Ã£o Utilizados na Filtragem de Segundo-NÃ­vel do ATLAS}
+\section{Sistemas de Classificação Propostos para a Seleção de Elétrons no Segundo-Nível de Filtragem do ATLAS}
 
-Os sistemas de filtragem propostos neste trabalho sÃ£o divididos em
-duas etapas distintas. Inicialmente os sinais medidos sÃ£o
-prÃ©-processados para que suas caracterÃ­sticas discriminantes se
-tornem mais acessÃ­veis. As caracterÃ­sticas extraÃ­das sÃ£o utilizadas
-como entrada para os classificadores propriamente ditos. Nesta SeÃ§Ã£o
-serÃ£o descritos os sistemas de filtragem utilizados.
+Os sistemas de filtragem propostos neste trabalho são divididos em
+duas etapas distintas. Inicialmente, os sinais medidos são
+pré-processados (utilizando modelos de ICA/NLICA) para que suas características discriminantes se
+tornem mais acessíveis. As características extraídas são utilizadas
+como entrada para os classificadores propriamente ditos (classificadores neurais supervisionados na arquitetura MLP). 
+Nesta Seção, serão descritos os sistemas de filtragem e o procedimento de treinamento utilizados.
 
-Os mÃ©todos de extraÃ§Ã£o de caracterÃ­sticas propostos neste trabalho
-(SOM, PCA, ICA e NLICA) operam sempre sobre os sinais em anÃ©is para
-a extraÃ§Ã£o de caracterÃ­sticas discriminantes e assim aumentar a
-eficiÃªncia dos classificadores. A estimaÃ§Ã£o das caracterÃ­sticas
-discriminantes dos anÃ©is pode ser realizada de duas formas distintas
+Os métodos de extração de características utilizados neste trabalho operam sobre os sinais dos calorímetros do 
+ATLAS formatados em anéis (conforme descrito no Capítulo \ref{cap_atlasEtrig}). O propósito é aumentar a eficiência 
+de discriminação de elétrons do \textit{Neural Ringer} (discriminador de elétrons alternativo do segundo nível de 
+filtragem online do ATLAS).
+
+Considerando que cada assinatura é descrita por 100 anéis, gerados em sete camadas do calorímetro, e que, cada camada 
+apresenta diferentes características físicas (quantidade e tipo de sensores)
+
+ A estimação das características
+discriminantes dos anéis pode ser realizada de duas formas distintas
 conforme descrito a seguir.
 
-\subsubsection{CaracterÃ­sticas Globais}
+\section{Especificações dos Classificadores Neurais Utilizados}
 
-Os sinais em anÃ©is produzidos em todas as camadas do calorÃ­metro
-podem ser justapostos em um Ãºnico vetor de caracterÃ­sticas (de 100
-componentes). Este vetor Ã© entÃ£o utilizado como entrada para os
-algoritmos de aprendizado estatÃ­stico, este procedimento Ã© ilustrado
+Neste trabalho, foram utilizados classificadores neurais supervisionados na arquitetura Perceptron de Múltiplas 
+camadas (MLP - \textit{Multi-Layer Perceptron}) \cite{haykin:nn:2008}. Foram utilizadas redes com uma camada oculta 
+e um neurônio na camada de saída. Todos os neurônios utilizam funções de ativação tipo tangente hiperbólica. Em 
+trabalhos anteriores \cite{tese:andre:2006,tese:torres:2010}, bons resultados de classificação foram obtidos com 
+redes de 10 neurônios na camada oculta, desta forma, decidiu-se utilizar inicialmente o mesmo número de neurônios 
+para esta camada.
+
+Para o treinamento dos classificadores segmentados foi utilizado o algoritmo RPROP (\textit{Resilient Back-propagation})
+\cite{article:rprop:1993}. 
+
+O treinamento dos discriminadores foi realizado a partir de um processo de validação cruzada. Os sinais disponíveis 
+para cada classe foram, inicialmente, divididos de modo aleatório em 12 grupos (com aproximadamente a mesma quantidade de 
+eventos). A seguir, para cada processo de treinamento, 
+sorteava-se 4 grupos distintos (em cada classe) para compor os conjuntos de treino, validação e teste. O número de neurônios na 
+camada escondida dos classificadores neurais foi escolhido, a partir de testes exaustivos, visando maximizar a 
+eficiência de discriminação.
+
+Para o treinamento dos classificadores segmentados foi utilizado o
+algoritmo RPROP (\textit{Resilient Back-propagation})
+\cite{article:rprop:1993}. Foram utilizadas redes MLP com uma camada
+escondida, um neurônio de saída e função de ativação tangente
+hiperbólica. O número de neurônios da camada escondida foi obtido
+após testes exaustivos com várias configurações.
+
+Explicar a validação cruzada e o modo de parada do algoritmo (falar do RPROP)
+
+
+Modo de treinamento (validação cruzada ... ver torres)
+
+\section{Parâmetros de Avaliação do Desempenho} 
+
+Para avaliar o desempenho de discriminação são utilizados a curva
+ROC (Receiver Operating Characteristic) \cite{book:vantrees1:2001},
+que mostra como as probabilidades de detecção e falso alarme
+(respectivamente PD e PF) variam com o patamar de decisão, e o
+índice SP \cite{article:anjos:2006}, que é definido por:
+\begin{equation}\label{sp}
+    SP= \frac{(Ef_e + Ef_j)\times \sqrt{(Ef_e \times Ef_j)}}{2}
+\end{equation}
+onde $Ef_e$ e $Ef_j$ são as eficiências obtidas, respectivamente,
+para elétrons e jatos.
+
+
+(SP, ROC, definir  e comentar)
+
+\subsubsection{Características Globais}
+
+Os sinais em anéis produzidos em todas as camadas do calorímetro
+podem ser justapostos em um único vetor de características (de 100
+componentes). Este vetor é então utilizado como entrada para os
+algoritmos de aprendizado estatístico, este procedimento é ilustrado
 na Figura \ref{fig_fexg}
 
 \begin{figure}[th]
 \centering
 \includegraphics[width=13cm]{cap3_fex_glob}
-\caption{Processo de extraÃ§Ã£o de caracterÃ­sticas globais.}
+\caption{Processo de extração de características globais.}
 \label{fig_fexg}
 \end{figure}
 
-\subsubsection{CaracterÃ­sticas Segmentadas}
+\subsubsection{Características Segmentadas}
 
-Alternativamente, as caracterÃ­sticas discriminantes podem ser
-estimadas separadamente para os anÃ©is produzidos em cada camada do
-calorÃ­metro. Este procedimento, em geral, produz resultados de mais
-fÃ¡cil interpretaÃ§Ã£o fÃ­sica pois sabe-se que cada camada do
-calorÃ­metro possui caracterÃ­sticas distintas como o tipo e a
-granularidade das cÃ©lulas detectoras. A Figura \ref{fig_fexs}
+Alternativamente, as características discriminantes podem ser
+estimadas separadamente para os anéis produzidos em cada camada do
+calorímetro. Este procedimento, em geral, produz resultados de mais
+fácil interpretação física pois sabe-se que cada camada do
+calorímetro possui características distintas como o tipo e a
+granularidade das células detectoras. A Figura \ref{fig_fexs}
 ilustra este procedimento.
 
 \begin{figure}[th]
 \centering
 \includegraphics[width=11cm]{cap3_fex_seg}
-\caption{Processo de extraÃ§Ã£o de caracterÃ­sticas segmentadas.}
+\caption{Processo de extração de características segmentadas.}
 \label{fig_fexs}
 \end{figure}
 
 \subsection{Classificadores Neurais Supervisionados}
 
 Neste trabalho foram utilizados classificadores neurais tipo
-perceptrons de mÃºltiplas camadas (MLP). Mais detalhes sobre
-classificaÃ§Ã£o de sinais e a implementaÃ§Ã£o de classificadores neurais
-supervisionados podem ser encontrados no ApÃªndice \ref{apend_clas}.
-Os classificadores, assim como os algoritmos de extraÃ§Ã£o de
-caracterÃ­sticas, podem ser aplicados de modo global e de modo
+perceptrons de múltiplas camadas (MLP). Mais detalhes sobre
+classificação de sinais e a implementação de classificadores neurais
+supervisionados podem ser encontrados no Apêndice \ref{apend_clas}.
+Os classificadores, assim como os algoritmos de extração de
+características, podem ser aplicados de modo global e de modo
 segmentado.
 
 \subsubsection{Classificador Global}
 
-O classificador global opera sobre um conjunto de caracterÃ­sticas
-discriminantes globais, produzindo a decisÃ£o elÃ©tron/jato. A Figura
-\ref{fig_clasg} ilustra a operaÃ§Ã£o do classificador global.
+O classificador global opera sobre um conjunto de características
+discriminantes globais, produzindo a decisão elétron/jato. A Figura
+\ref{fig_clasg} ilustra a operação do classificador global.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=8cm]{cap3_clas_glo}
-\caption{DecisÃ£o utilizando classificador global.} \label{fig_clasg}
+\caption{Decisão utilizando classificador global.} \label{fig_clasg}
 \end{figure}
 
 \subsubsection{Classificadores Segmentados}
 
-Considerando o sistema de calorÃ­metros do detector ATLAS, a
-informaÃ§Ã£o disponÃ­vel estÃ¡ segmentada em diversas camadas com
-caracterÃ­sticas fÃ­sicas e granularidade diferentes. Para melhor
-explorar as caracterÃ­sticas do detector, estÃ¡ sendo proposto o uso
+Considerando o sistema de calorímetros do detector ATLAS, a
+informação disponível está segmentada em diversas camadas com
+características físicas e granularidade diferentes. Para melhor
+explorar as características do detector, está sendo proposto o uso
 de um conjunto de classificadores neurais, cada um especialista na
-informaÃ§Ã£o de uma camada do calorÃ­metro (ver Figura
+informação de uma camada do calorímetro (ver Figura
 \ref{fig_classeg}).
 
 \begin{figure}[th]
 \centering
 \includegraphics[width=10.6cm]{cap3_clas_seg}
-\caption{DecisÃ£o utilizando classificadores segmentados.}
+\caption{Decisão utilizando classificadores segmentados.}
 \label{fig_classeg}
 \end{figure}
 
-Um problema que surge na utilizaÃ§Ã£o de mÃºltiplos classificadores
-segmentados Ã© como combinar suas saÃ­das para produzir da decisÃ£o
-final. Neste contexto, pode-se utilizar as informaÃ§Ãµes de dois
-modos, atravÃ©s dos rÃ³tulos de classe atribuÃ­dos por cada
-classificador ou utilizando-se a saÃ­da contÃ­nua (que no caso dos
+Um problema que surge na utilização de múltiplos classificadores
+segmentados é como combinar suas saídas para produzir da decisão
+final. Neste contexto, pode-se utilizar as informações de dois
+modos, através dos rótulos de classe atribuídos por cada
+classificador ou utilizando-se a saída contínua (que no caso dos
 classificadores utilizados varia de -1 a 1).
 
-\subsection{CombinaÃ§Ã£o de MÃºltiplos Classificadores}
+\subsection{Combinação de Múltiplos Classificadores}
 
-Quando estÃ£o disponÃ­veis informaÃ§Ãµes de mÃºl\-ti\-plos
-classificadores, surge o problema de como combinÃ¡-las de forma
-Ã³tima. A depender do tipo de saÃ­da escolhida para os
-classificadores, sendo va\-riÃ¡\-veis contÃ­nuas (com excursÃ£o de -1 a
-1) ou va\-riÃ¡\-veis discretas (rÃ³tulos de classe), a combinaÃ§Ã£o pode
-ser realizada atravÃ©s de estratÃ©gias distintas
+Quando estão disponíveis informações de múl\-ti\-plos
+classificadores, surge o problema de como combiná-las de forma
+ótima. A depender do tipo de saída escolhida para os
+classificadores, sendo va\-riá\-veis contínuas (com excursão de -1 a
+1) ou va\-riá\-veis discretas (rótulos de classe), a combinação pode
+ser realizada através de estratégias distintas
 \cite{kuncheva:comb:2004}.
 
-Considerando K classificadores com saÃ­das contÃ­nuas $u_k$, uma forma
-usualmente utilizada para combinaÃ§Ã£o Ã© a mÃ©dia das saÃ­das:
+Considerando K classificadores com saídas contínuas $u_k$, uma forma
+usualmente utilizada para combinação é a média das saídas:
 \begin{equation}\label{med}
     \mu (\mathbf{x}) = \sum_{k=1}^K u_k (\mathbf{x})
 \end{equation}
 
-Considerando que os mÃºltiplos classificadores apre\-sentam
-eficiÃªncia diferente, pode-se dar aos mais eficientes maior poder de
-decisÃ£o com o uso de fatores de ponderaÃ§Ã£o $\alpha_k$:
+Considerando que os múltiplos classificadores apre\-sentam
+eficiência diferente, pode-se dar aos mais eficientes maior poder de
+decisão com o uso de fatores de ponderação $\alpha_k$:
 \begin{equation}\label{medpon}
     \mu (\mathbf{x}) = \sum_{k=1}^K \alpha_k u_k (\mathbf{x})
 \end{equation}
 
-Outra forma para a combinaÃ§Ã£o de classificadores de saÃ­das contÃ­nuas
-$u_k$ Ã© o cÃ¡lculo da mÃ©dia geomÃ©trica:
+Outra forma para a combinação de classificadores de saídas contínuas
+$u_k$ é o cálculo da média geométrica:
 \begin{equation}\label{medgeo}
     \mu (\mathbf{x}) = \sqrt[K]{\prod_{k=1}^K u_k
     (\mathbf{x})}
 \end{equation}
 
-Alternativamente, considerando que a saÃ­da dos mÃºltiplos
-classificadores Ã© o rÃ³tulo de classe associado ao vetor de entrada
-$\mathbf{x}$, um mÃ©todo muito utilizado para combinaÃ§Ã£o das
-informaÃ§Ãµes Ã© a votaÃ§Ã£o da maioria \cite{kuncheva:comb:2004}. Neste
-caso, tambÃ©m podem ser utilizados fatores de ponde\-raÃ§Ã£o, caso as
-eficiÃªncias dos classificadores sejam diferentes. Deste modo, o voto
-de um classificador mais eficiente tem mais influÃªncia na decisÃ£o
+Alternativamente, considerando que a saída dos múltiplos
+classificadores é o rótulo de classe associado ao vetor de entrada
+$\mathbf{x}$, um método muito utilizado para combinação das
+informações é a votação da maioria \cite{kuncheva:comb:2004}. Neste
+caso, também podem ser utilizados fatores de ponde\-ração, caso as
+eficiências dos classificadores sejam diferentes. Deste modo, o voto
+de um classificador mais eficiente tem mais influência na decisão
 final.

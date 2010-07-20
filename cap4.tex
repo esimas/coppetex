@@ -311,11 +311,15 @@ tornam semelhantes às do caso linear. A modelagem através da equação
 como, por exemplo, a modelagem da distorção de sensores num meio de
 propagação linear.
 
-Diversos algoritmos foram propostos na literatura para estimação do modelo PNL ...
-
-Detalhes de alguns algoritmos para estimação dos componentes
-independentes em misturas PNL são fornecidos no Apêndice
-\ref{apend_fex}.
+Diversos algoritmos foram propostos na literatura para estimação do modelo PNL. Um dos primeiros 
+trabalhos~~\cite{article:jutten:1999}, utiliza redes neurais para estimar cada função não-linear $g_i$ e 
+o ajuste dos pesos é feito a partir da minimização da informação mútua usando o método do gradiente
+(mais detalhes a respeito deste algoritmo podem ser encontrados no Apêndice \ref{apend_fex}). Na 
+estimação do modelo PNL usando um algoritmo do tipo gradiente descendente (que realiza uma busca local), o grande número de parâmetros e as 
+características não-lineares do problema contribuem para a convergência em mínimos locais. Visando minimizar este 
+problema, foram propostos algoritmos de estimação do modelo PNL usando métodos de otimização global como 
+algoritmos genéticos~\cite{article:kai:2006,article:nlica_ga:2001}, recozimento simulado (\textit{Simulated Annealing}) e 
+aprendizado competitivo (\textit{Competitive Learning})~\cite{article:rojas:nlica:2004}. 
 
 \subsubsection{Outros modelos de misturas com restrições estruturais}
 
@@ -490,7 +494,7 @@ conclusões foram:
 \end{itemize}
 
 No trabalho \cite{app:nlica:qui} um algoritmo Bayesiano de NLICA foi utilizado com sucesso para a separação de sinais 
-medidos em um conjunto de sensores químicos. Em ...
+medidos em um conjunto de sensores químicos.
 
 \subsubsection{O algoritmo MISEP}
 
@@ -727,19 +731,35 @@ processamento não-supervisionado de sinais.
 
 \section{Utilizando Informação das Classes na Estimação dos Componentes Independentes}
 
-Considerando um problema de classificação, o modelo da ICA/NLICA não foi originalmente desenvolvido para extração de 
-características discriminantes e, conforme mostrado em \cite{article:ica_clas:2004}, não há como garantir que a 
+Conforme visto anteriormente, a ICA surgiu como uma alternativa para a extração de caracteristicas, pois é capaz de 
+transformar os atributos em um conjunto de componentes 
+estatisticamente independentes, eliminando a redundância entre eles. Porém, quando há a necessidade de redução de 
+dimensão (compactação), no contexto da ICA, o método mais utilizado é a PCA (Análise de Componentes Principais, ver 
+mais detalhes no Apêndice \ref{apend_fex}). A PCA não é adequada a um problema de 
+extração de caracteristicas, pois um componente de baixa energia (que seria eliminado após a compactação) pode 
+apresentar grande importância para a discriminação das classes.
+
+Um outro problema é que o modelo da ICA/NLICA não foi originalmente desenvolvido para extração de 
+características discriminantes e, conforme mostrado em~\cite{article:ica_clas:2004}, não há como garantir que a 
 estimação dos componentes independentes seja útil neste contexto. Os benefícios alcançados pela aplicação da ICA como 
-pré-processamento dependem da base de dados utilizada. 
+pré-processamento dependem de características da base de dados utilizada.
 
-Neste trabalho foram utilizadas algumas modificações no processo de estimação da NLICA, de modo 
-a utilizar o conhecimento prévio dos rótulos de classe dos dados. Assim, pretende-se obter componentes independentes 
-com características discriminantes, contribuindo para o aumento da eficiência de classificação.
+Visando minimizar as limitações da ICA indicadas acima, foram utilizadas neste trabalho algumas modificações para 
+incluir informação das classes no procedimento de estimação dos componentes independentes.
+ 
+Um modo alternativo à PCA para realizar a compactação incluindo a informação das classes é através de redes neurais de treinamento 
+supervisionado. Considerando uma rede de duas camadas, as saídas da camada escondida (que geralmente tem um número 
+de neurônios menor que o número de entradas) podem ser interpretadas como um conjunto compacto de características 
+discriminantes. Essa abordagem foi tratada em \cite{seixas:pcd:1995} e será descrita mais detalhadamente na 
+Seção~\ref{sec_pcd}.
 
-... descrever brevemente os tópicos abaixo ...
+Um procedimento simples, proposto em \cite{article:icaClasp:2003}, é a inclusão dos rótulos de classe como atributos 
+de entrada para os algoritmos de estimação dos componentes independentes (ver Seção~\ref{sec_icafex1}) . 
+Alternativamente, um método para estimação de componentes independentes e discriminantes foi desenvolvido no 
+contexto desta tese e será mostrado na Seção \ref{sec_icafex2}.
  
 
-\subsection{Componentes Principais de Discriminação}
+\subsection{Componentes Principais de Discriminação}\label{sec_pcd}
 
 Considerando um problema de classificação de padrões, o uso da PCA para compactação pode ser prejudicial, 
 pois, os componentes menos energéticos (que são eliminados após a PCA) podem carregar informações discriminantes. 
@@ -767,7 +787,6 @@ pode ser feito com o congelamento dos pesos da camada de entrada correspondentes
 ou seja, na estimação do $l$-ésimo componente, os pesos $b_{i,j}$, com $i<l$ e $j=1,...,N$ não são ajustados. 
 Os demais pesos da rede são ajustados a cada novo componente estimado.
 
-
 \begin{figure}[t!]
 \centering
 \includegraphics[width=9.5cm]{cap4_pcd}
@@ -778,14 +797,139 @@ Outros modelos que, de modo semelhante aos PCD, utilizam redes neurais para extr
 discriminantes de um conjunto de sinais foram propostos na literatura em 
 \cite{article:nnfex1:1996,article:nnfex2:1996,article:nnfex:1999}.
 
-\subsection{Utilizando os rótulos de classe como sinais de entrada}
 
-No trabalho \cite{article:icaClasp:2003} foi proposta a utilização dos rótulos de classes como entrada para ...
+\subsection{Utilizando os rótulos de classe como sinais de entrada para os algoritmos de ICA}\label{sec_icafex1}
 
-\subsection{Proposta de algoritmo para estimação de componentes independentes e discriminantes}
+No trabalho \cite{article:icaClasp:2003} foi proposta a utilização dos rótulos de classes como entrada para os 
+algoritmos de estimação dos componentes independentes. Conforme mostrado na Figura \ref{fig_icaFex1}, num 
+problema de classificação binária (com apenas duas classes), para cada exemplo de entrada é associado um novo 
+atributo $c$ com valor igual a 1 (para a classe 1) e -1 (para a classe 2). O bloco G pode ser utilizado para 
+estimar os modelos linear ou não-linear da ICA, a depender do algoritmo de treinamento utilizado.
 
-... descrever o algoritmo proposto no artigo Neurocomputing ...
+O parâmetro $c$ é adicionado ao vetor de atributos original $\mathbf{x}=[x_1,x_2,...,x_N]$, 
+gerando $\mathbf{x}_C=[x_1,x_2,...,x_N,c]$. Para treinamento dos algoritmos de ICA utiliza-se como entrada o vetor 
+$\mathbf{x}_C$. 
 
+Como num cenário prático de operação do sistema classificador os rótulos de classe não estarão disponíveis, a
+informação das classes deve ser removida dos componentes estimados. Isso pode ser feito removendo-se as conexões 
+da entrada $c$ ao modelo, ou substituindo $c$ por um vetor de zeros.
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=15cm]{ICA_Fex}
+\caption{Diagramas de (a) treinamento e (b) operação dos algoritimos de ICA/NLICA utilizando informação das classes.} 
+\label{fig_model_mpnl}
+\end{figure}
 
+Em um trabalho semelhante \cite{article:icafexI:2001}, o mesmo procedimento de treinamento foi adotado, porém o 
+modelo da ICA utilizado é linear e quadrado (mesmo número de entradas e saídas, não havendo portanto redução de dimensão). 
+Após a estimação dos componentes, aqueles que tem pesos de baixa amplitude são eliminados, produzindo um conjunto 
+mais compacto de caracteristicas discriminantes. 
 
+Um outro modo de utilizar a informação das classes no processo de estimação dos componentes independentes foi proposto 
+em \cite{article:icafexII:2002}. Neste caso, conforme ilustrado na Figura \ref{fig_icafex2}, os componentes estimados 
+na saída devem ser independentes e apresentar máxima informação mútua com os rótulos de classe $c$. A função custo a 
+ser maximizada (este trabalho restrige-se ao modelo linear da ICA) é definida como:
+\begin{equation}
+ L(\mathbf{W})= - \log|\det \mathbf{W}| + \sum_{i=1}^d H(z_i) - \sum_{i=1}^d I(z_i,y)
+\end{equation}
+onde ...
+
+\subsection{Proposta de algoritmo para estimação de componentes independentes e discriminantes}\label{sec_icafex2}
+
+No desenvolvimento desta tese, foi proposto um método alternativo para estimação de componentes independentes 
+e discriminantes. No trabalho~\cite{article:simas:neucom2010}, foi derivado um algoritmo de treinamento 
+para um modelo pós não-linear (PNL) modificado. Este método será descrito a seguir e, em sequencia, será mostrado como 
+ele pode ser extendido para um modelo geral (sem restrições estruturais) da NLICA.
+
+Conforme ilustrado na Figura \ref{fig_model_mpnl}, um bloco de compactação foi adicionado ao modelo PNL, com o 
+objetivo de transformar o conjunto de N atributos em K componentes (com N$<$K). Assim, a arquitetura proposta 
+é adequada para o caso sobre-determinado (quando existem mais sinais observados do que fontes).
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=9cm]{mod_pnl}
+\caption{Modelo Pós Não-linear modificado.} \label{fig_model_mpnl}
+\end{figure}
+
+O modelo PNL modificado pode ser estimado a partir de dois procedimentos distintos. Uma abordagem possível é 
+executar a estimação do bloco de compactação de modo independente do modelo PNL. Neste caso, a compactação se 
+configura numa etapa de pré-processamento para a NLICA e pode ser executada, por exemplo através da transformação 
+PCD.
+
+De modo alternativo, o modelo PNL modificado pode ser estimado através do procedimento mostrado na 
+Figura~ \ref{fig_tr_mpnl}, que combina informação de duas funções custo diferentes $c_1(\mathbf{\hat{s}})$, 
+que mede a independência estatística entre os componentes estimados $\mathbf{\hat{s}}$, e $c_2(\mathbf{y})$, que 
+avalia a eficiência de discriminação produzida a partir de um discriminante linear (DL)~\cite{book:duda:2000}, 
+onde $\mathbf{y}$ é a saída do classificador.
+
+Considerando um bloco de compactação linear, os componentes indpendentes estimados são descritos por:
+\begin{equation}\label{hole_model}
+\hat{s}_i=\sum_{j=1}^K b_{ij} g_j(z_j) \hspace{35pt} i=1,...,K
+\end{equation}
+onde  $\mathbf{z}=\mathbf{D}\mathbf{x}$, $\mathbf{D}$ é uma matriz retangular (K$\times$N) de compactação e os 
+$b_{ij}$ são elementos da matriz quadrada $\mathbf{B}$ (K$\times$K) .
+
+\begin{figure}
+\centering
+\includegraphics[width=9cm]{treina_mpnl}
+\caption{Procedimento de treinamento para o modelo pós não-linear modificado.}
+\label{fig_tr_mpnl}
+\end{figure}
+
+A estimação das não-linearidades $g_i(.)$ é feita de modo semelhante ao proposto no trabalho~\cite{article:jutten:1999}. 
+Cada função é aproximada por:
+\begin{equation}\label{gi}
+    g_i (z_i)=  \sum _{h=1}^{N_H} \beta_{hi} \tanh (\omega_{hi} z_i -
+    \eta_{hi}) \hspace{35pt} i=1,...,K
+\end{equation}
+onde $\beta_{hi}$, $\omega_{hi}$ e $\eta_{hi}$ são parâmetros a serem determinados. Um algoritmo genético~\cite{book:haupt:2004} 
+foi utilizado para estimar o conjunto de parâmetros $\mathbf{D}$, $\mathbf{B}$, $\beta_{hi}$, $\omega_{hi}$ e 
+$\eta_{hi}$ que maximiza a função custo definida por:
+\begin{equation}\label{eqcf}
+    c(\mathbf{\hat{s}},\mathbf{y}) = \frac{\alpha_1}{c_1(\mathbf{\hat{s}})+\alpha_3}+ \alpha_2 \, c_2(\mathbf{y})
+\end{equation}
+sendo $\alpha_1$, $\alpha_2$ e $\alpha_3$ constantes a serem previamente escolhidas. É importante 
+observar que o propósito de $\alpha_3$ é limitar o primeiro termo da Equação~\ref{eqcf} quando 
+$c_1(\mathbf{\hat{s}})\rightarrow 0$. Valores adequados para as três constantes serão indicados a seguir. 
+O número de componentes independentes a serem estimados (K) precisa ser escolhido a priori. Na prática, se K for 
+desconhecido, pode-se utilizar um procedimento semelhante ao descrito na Seção~\ref{sec_pcd} para a escolha do 
+número de componentes principais de discriminação.
+
+A função custo que avalia a independência estatística ($c_1(\mathbf{\hat{s}})$) utiliza uma medida do cumulante de 
+quarta ordem, semelhante à proposta no algoritmo JADE para a ICA~\cite{article:Cardoso:1993}:
+\begin{equation}\label{c1-1}
+    c_1(\mathbf{\hat{s}})= \sum_{\substack{i,j=1\\ i<j}}^K \,\,\, \sum_{l,m=1}^K
+    \mathbf{cum}\{s_i, s_j, s_l, s_m \}^2
+\end{equation}
+sendo $\mathbf{cum}\{s_i, s_j, s_l, s_m \}$ o cumulante de quarta ordem~\cite{book:oja:2001}:
+\begin{align}\label{cum}
+      \mathbf{cum}\{s_i, s_j, s_l, s_m \}=&E\{s_i, s_j, s_l, s_m \}-E\{s_i, s_j\} E\{s_l, s_m
+    \} \nonumber \\
+     &- E\{s_i, s_l\} E\{s_j, s_m \} - E\{s_i, s_m \} E\{s_j, s_l \}
+\end{align}
+
+Um modo para calcular a medida da independência baseada no cumulante de quarta ordem foi proposta 
+em~\cite{article:cross:2006}, e foi utilizada neste trabalho para estimar $c_1(\mathbf{\hat{s}})$. 
+É interessante notar que $c_1(\mathbf{\hat{s}})$ é uma sempre não-negativa e zero para sinais independentes, então, 
+maximizar a independência entre os componentes $\mathbf{\hat{s}}$ implica em minimizar $c_1(\mathbf{\hat{s}})$.
+
+A função custo que avalia a eficiência de discriminação é o índice soma-produto (SP) normalizado, que para um 
+problema de classificação em M classes é descrito por:
+\begin{equation}\label{eq_sp}
+    c_2 (\mathbf{y})=\displaystyle{\frac{\sum_{i=1}^M Ef_i}{M}}\times
+    \sqrt[M]{\prod_{i=1}^M
+    Ef_i}
+\end{equation}
+onde $Ef_i$ é a eficiência de discriminação obtida para a classe $i$. A função definida na Equação~\ref{eq_sp} varia 
+no intervalo [0,1] e alcança o máximo quando $Ef_i=1$ para $i=1,...,M$ (eficiência total). Uma característica de 
+$c_2(\mathbf{y})$ é sua sensibilidade a degradação da eficiência de qualquer classe.
+
+Considerando que $c_1(\mathbf{\hat{s}}) \geq 0$ e $0\leq c_2(\mathbf{y})\leq 1$, as constantes $\alpha_i$, 
+na Equação~\ref{eqcf} são escolhidas para produzir $0 \leq c(\mathbf{\hat{s}},\mathbf{y}) \leq 1$. Usando por exemplo, 
+$\alpha_1=\alpha_3 /2$, $\alpha_2=0.5$ e $\alpha_3=0.001$, o mesmo fator de ponderação é dado para os termos de
+ambos, $c_1$ e $c_2$.
+
+A rotina utilizada para a otimização de $c(\mathbf{\hat{s}},\mathbf{y})$ é um algoritmo genético simples, conforme 
+mostrado em~\cite{Book:Goldberg:1989}, ao qual foram adicionados, elitismo, \textit{crossover} uniforme e genocídio 
+periódico. Mais detalhes a respeito são mostrados no Apêndice~\ref{apend_GA}. 
