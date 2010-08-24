@@ -81,36 +81,40 @@ Processamento de Sinais (LPS/COPPE/UFRJ)  pela inestimável ajuda na
 condução do trabalho, em especial aos amigos Natanael Nunes de
 Moura, Rodrigo Coura Torres e Danilo Enoque Ferreira.
 
-Também gostaria de agradecer ao apoio do Instituto Federal de
-Educação, Ciência e Tecnologia da Bahia, em especial aos professores
+%Aos professores Antônio Cezar de Castro Lima, Luiz Alberto Luz de Almeida, Ana Isabela de Araujo Cunha, Roberto da Costa e Silva e Ademar de Barros Fontes, da Universidade Federal da Bahia, que contribuíram decisivamente para minha formação acadêmica durante a graduação e o mestrado, gostaria de dizer que esse trabalho é a consolidação de tudo que aprendi com vocês.
+
+Também gostaria expressar minha gratidão ao Instituto Federal de
+Educação, Ciência e Tecnologia da Bahia, pelo apoio concedido para a finalização deste trabalho, em especial aos professores
 e funcionários do Campus Simões Filho.
 
-Finalmente preciso agradecer à minha família e meus amigos por
+Finalmente preciso agradecer à minha família (especialmente a meus pais e avós) e meus amigos (do Roger) por
 suportarem minha ausência durante este período e por me incentivarem
-sempre a continuar. Em especial a minha esposa Cléa e minha filha
+sempre a continuar. Não poderia deixar de agradecer aos amigos Frederico Wegelin, pela companhia e apoio durante o tempo em que morei no Rio de Janeiro, e Edson Pinto Santana, pelo constante incentivo (mesmo que à distância).
+
+Em especial, dedico esse trabalho a minha esposa Cléa e minha filha
 Letícia pelo amor e apoio em todos os momentos.
 
 
   \begin{abstract}
-O ATLAS é o maior detector de partículas do experimento LHC. Nas
-colisões do LHC, uma enorme quantidade de informação é produzida,
+O ATLAS é o maior detector do acelerador de partículas LHC. Nas
+colisões, uma enorme quantidade de informação é produzida,
 porém, apenas uma pequena parcela é importante para a caracterização
-dos fenômenos físicos de interesse, tornando necessário um eficiente
-sistema de filtragem de eventos. Os elétrons são partículas
-extremamente importantes para o experimento, pois assinaturas
-interessantes, como o bóson de Higgs, podem apresentar decaimento em
-elétrons. Informações da energia depositada pela partícula no
-sistema de calorímetros (medidores de energia) são utilizadas para a
-identificação de elétrons. No ambiente do LHC, os elétrons aparecem
-mascarados por um intenso ruído de fundo composto de jatos
-hadrônicos pois esses últimos podem apresentar perfil de deposição
-de energia seme\-lhan\-te ao de elétrons. Neste trabalho, é proposta
-a utilização de métodos de extração de características, como a
-análise de componentes independentes, para otimizar o desempenho do
-segundo nível de filtragem \textit{online} do detector ATLAS. A
-partir da utilização das técnicas propostas neste trabalho foi
-possível alcançar alta eficiência de discriminação, gerando dados
-mais limpos para a análise \textit{offline}.
+dos fenômenos físicos de inte\-resse, tornando necessário aos detectores um
+eficiente sistema para detecção (filtragem) \textit{online} de eventos.
+Os elétrons são partículas extremamente importantes para
+o experimento, e aparecem mascarados por um
+intenso ruído de fundo composto de jatos hadrônicos, pois esses
+últimos podem apresentar perfil de deposição de energia nos calorímetros seme\-lhan\-te ao de elétrons
+(os calorímetros são medidores de energia com fina segmentação e no ATLAS são divididos em sete camadas,
+totalizando mais de 100.000 sensores). Neste trabalho, é proposta a
+utilização do modelo não-linear da análise
+de componentes independentes no processo de extração de características, visando
+ otimizar o desempenho do sistema neural de filtragem \textit{online} de elétrons no ATLAS (\textit{Neural Ringer}).
+Para explorar toda a segmentação e granularidade disponíveis, a extração de
+características foi efetuada a  nível de cada camada do calorímetro.
+Diversos algoritmos foram utilizados na estimação dos componentes independentes. Através da abordagem proposta, foi possível alcançar alta
+eficiência de discriminação, gerando dados mais limpos para a
+análise \textit{offline}.
   \end{abstract}
 
   \begin{foreignabstract}
@@ -134,7 +138,9 @@ Here goes the abstract ...
     \input{cap3}
     \input{cap4}
     \input{cap5}
+    \input{cap_dados}
     \input{cap6}
+    \input{conclusoes}
 %  \chapter{Resultados e Discussões}
 %  \chapter{Conclusões}
 
@@ -146,6 +152,8 @@ Here goes the abstract ...
   \appendix
  \input{appendfex}
  \input{appendclas}
+ \input{appendpub}
+ \input{apendgen}
 \end{document}
 %%
 %%

@@ -722,6 +722,16 @@
   \enquote{Engineering Applications of the Self-Organizing Map}, {\em
   Proceedings of the IEEE\/}, v.~84, n.~10, pp.~1358--1384, Outubro 1996.
 
+\bibitem{article:cluster1:1999}
+\MakeUppercase{ Kothari, R., Pitts, D.}, \enquote{On finding the number of
+  clusters}, {\em Pattern Recognition Letters\/}, v.~20, n.~1, pp.~405--416,
+  1999.
+
+\bibitem{article:cluster2:1998}
+\MakeUppercase{ Takasu, A.}, \enquote{Lecture Notes In Computer Science}, v.
+  1532, chap. On the Number of Clusters in Cluster Analysis, pp. 62--63,
+  Springer, 1998.
+
 \bibitem{karhunen:local:2000}
 \MakeUppercase{ Karhunen, J., Malaroiu, S., Ilmoniemi, M.}, \enquote{Local
   linear independent component analysis based on clustering}, {\em
@@ -956,8 +966,13 @@
 
 \bibitem{article:icafexII:2002}
 \MakeUppercase{ Akaho, S.}, \enquote{Conditionally Independent Component
-  Analysis for Supervised Feature Extraction}, {\em Neurocomputimg\/}, v.~49,
+  Analysis for Supervised Feature Extraction}, {\em Neurocomputing\/}, v.~49,
   n.~1, pp.~139--150, 2002.
+
+\bibitem{article:icafexIII:2005}
+\MakeUppercase{ Kotani, M., Ozawa, S.}, \enquote{Feature Extraction Using
+  Independent Components of Each Category}, {\em Neural Processing Letters\/},
+  v.~22, n.~1, pp.~113--124, 2005.
 
 \bibitem{article:simas:neucom2010}
 \MakeUppercase{ {Simas Filho}, E.~F., Seixas, J.~M., Caloba, L.~P.},
@@ -974,15 +989,15 @@
   \enquote{Cross-cumulants measure for independence}, {\em Journal of
   Statistical Planning and Inference\/}, v.~137, n.~1, pp.~1085--1098, 2006.
 
-\bibitem{article:rprop:1993}
-\MakeUppercase{ Riedmiller, M., Braun, H.}, \enquote{A direct adaptive method
-  for faster backpropagation learning, the {RPROP} algorithm}, {\em Proc. of
-  Int. Conf. on Neural Networks\/}, pp.~586--591, 1993.
-
 \bibitem{book:vantrees1:2001}
 \MakeUppercase{ Trees, H. L.~V.}, {\em Detection, Estimation, and Modulation
   Theory, Part I\/}.
 \newblock Wiley: Nova York, Estados Unidos, 2001.
+
+\bibitem{article:rprop:1993}
+\MakeUppercase{ Riedmiller, M., Braun, H.}, \enquote{A direct adaptive method
+  for faster backpropagation learning, the {RPROP} algorithm}, {\em Proc. of
+  Int. Conf. on Neural Networks\/}, pp.~586--591, 1993.
 
 \bibitem{kuncheva:comb:2004}
 \MakeUppercase{ Kuncheva, L.}, {\em Combining Pattern Classifiers, Methods and
@@ -1170,5 +1185,32 @@
 \bibitem{book:wasserman:1989}
 \MakeUppercase{ Wasserman, P.}, {\em Neural Computing, Theory and Practice\/}.
 \newblock Van Nostrand Reinhold: Nova York, Estados Unidos, 1989.
+
+\bibitem{Article:Whitley:2002}
+\MakeUppercase{ Whitley, D.}, \enquote{An Overview of Evolutionary Algorithms:
+  Practical Issues and Common Pitfalls}, {\em Colorado Advanced Software
+  Institute Press\/}, 2002.
+
+\bibitem{Article:Holland:1975}
+\MakeUppercase{ Holland, J.}, \enquote{Adaptation in Natural and Artificial
+  Systems}, {\em University of Michigan Press\/}, 1975.
+
+\bibitem{Book:Mitchell:1996}
+\MakeUppercase{ Mitchel, M.}, {\em An Introduction to Genetic Algorithms\/}.
+\newblock The MIT Press, 1996.
+
+\bibitem{Article:Ackley:1987}
+\MakeUppercase{ Ackley, D.}, \enquote{A Connectionist Machine for Genetic
+  Hillclibimg}, {\em Kluwer Academic Publishers\/}, 1987.
+
+\bibitem{Article:Syswerda:1989}
+\MakeUppercase{ Syswerda, G.}, \enquote{Uniform Crossover in Genetic
+  Algorithms}, {\em Proceedings of the 3rd International Conference on Genetic
+  Algorithms\/}, pp.~2--9, 1989.
+
+\bibitem{Article:Tanomaru:1995}
+\MakeUppercase{ Tanomaru, J.}, \enquote{Motivação, Fundamentos e Aplicações de
+  Algoritmos Genéticos}, {\em II Congresso Brasileiro de Redes Neurais, III
+  Escola de Redes Neurais\/}, 1995.
 
 \end{thebibliography}

@@ -1,32 +1,46 @@
 \chapter{Detecção de Elétrons a partir de Informações de Calorimetria no ATLAS}
 \label{cap_atlasEtrig}
 
-Neste capítulo serão descritos os principais aspectos do processo de filtragem \textit{online} de elétrons no 
-detector ATLAS. O conhecimento adequado da energia de elétrons em uma larga faixa (de alguns GeV a 
-poucos TeV) é necessário para a busca 
-pela partícula de Higgs no decaimento H$\rightarrow$ZZ*$\rightarrow$4e (conforme previsto no Modelo Padrão) e 
-para medições precisas de fenômenos não descritos pelo Modelo Padrão. A detecção de elétrons é também muito 
-importante para os processos de calibração e alinhamento do detector durante a fase inicial de operação. Com 
-a análise de eventos conhecidos (como por exemplo o decaimento Z$\rightarrow$ee) pode-se gerar informações 
-valiosas para o melhor conhecimento das características do detector \cite{article:imphlttrigeer:2006}. A 
-discriminação destas partículas é baseada, principalmente, nas informações do sistema de calorímetros. Considerando informações 
-do perfil de deposição de energia medido nos calorímetros, os elétrons podem ser confundidos com jatos hadrônicos 
-(que neste caso representam ruído de fundo para o experimento). No LHC, a geração de jatos será bastante intensa 
-(por exemplo, para energia de 40 GeV a relação de produção elétron/jato é da ordem de 
-10$^{-5}$~\cite{article:ATLAS:2008}) o que tornará difícil a identificação da física de interesse. 
-Tradicionalmente,a identificação de elétrons é realizada analisando-se o formato transversal do chuveiro e o 
-vazamento para as camadas hadrônicas \cite{article:egtrigeer:2006}. Estes parâmetros variam com a energia da 
-partícula e nem sempre são capazes de produzir a eficiência de discriminação desejada.
+Neste capítulo serão descritos os principais aspectos do processo
+de filtragem \textit{online} de elétrons no detector ATLAS. O
+conhecimento adequado da energia de elétrons em uma larga faixa
+(de alguns GeV a poucos TeV) é necessário para a busca pela
+partícula de Higgs no decaimento H$\rightarrow$ZZ*$\rightarrow$4e
+(conforme previsto no Modelo Padrão) e para medições precisas de
+fenômenos não descritos pelo Modelo Padrão. A detecção de elétrons
+é também muito importante para os processos de calibração e
+alinhamento do detector durante a fase inicial de operação. Com a
+análise de eventos conhecidos (como por exemplo o decaimento
+Z$\rightarrow$ee) pode-se gerar informações valiosas para o melhor
+conhecimento das características do detector
+\cite{article:imphlttrigeer:2006}. A discriminação destas
+partículas é baseada, principalmente, nas informações do sistema
+de calorímetros. Considerando informações do perfil de deposição
+de energia medido nos calorímetros, os elétrons podem ser
+confundidos com jatos hadrônicos (que neste caso representam ruído
+de fundo para o experimento). No LHC, a geração de jatos será
+bastante intensa (por exemplo, para energia de 40 GeV a relação de
+produção elétron/jato é da ordem de
+10$^{-5}$~\cite{article:ATLAS:2008}) o que tornará difícil a
+identificação da física de interesse. Tradicionalmente,a
+identificação de elétrons é realizada analisando-se o formato
+transversal do chuveiro e o vazamento para as camadas hadrônicas
+\cite{article:egtrigeer:2006}. Estes parâmetros variam com a
+energia da partícula e nem sempre são capazes de produzir a
+eficiência de discriminação desejada.
 
 
 \section{Filtragem de elétrons no L1}
 
-O primeiro nível de filtragem opera com granularidade reduzida para tornar mais rápido o processo de decisão. Então, 
-no L1, as células dos calorímetros são somadas para formar sinais conhecidos
-como torres de \textit{trigger} (TT). O tamanho das torres de \textit{trigger} é
-diferente para as camadas eletromagnéticas e hadrônicas. No calorímetro eletromagnético, cada TT cobre uma área de 0,1
-$\times$ 0,1 no plano $\eta \times \phi$ (ver Figura \ref{lvl1tt}), já no calorímetro
-hadrônico, cada TT representa uma região de 0,2 $\times$ 0,2 no plano $\eta \times \phi$.  
+O primeiro nível de filtragem opera com granularidade reduzida
+para tornar mais rápido o processo de decisão. Então, no L1, as
+células dos calorímetros são somadas para formar sinais conhecidos
+como torres de \textit{trigger} (TT). O tamanho das torres de
+\textit{trigger} é diferente para as camadas eletromagnéticas e
+hadrônicas. No calorímetro eletromagnético, cada TT cobre uma área
+de 0,1 $\times$ 0,1 no plano $\eta \times \phi$ (ver Figura
+\ref{lvl1tt}), já no calorímetro hadrônico, cada TT representa uma
+região de 0,2 $\times$ 0,2 no plano $\eta \times \phi$.
 
 \begin{figure} \centering
 \includegraphics[width=9cm]{cap2_trigger_tower}
@@ -37,21 +51,20 @@ eletromagnético.} \label{lvl1tt}
 A filtragem de elétrons no L1 é baseada em cortes lineares nos
 parâmetros do perfil de deposição de energia medido nos
 calorímetros. A definição dos critérios de seleção leva em conta o
-conhecimento das características típicas do perfil de objetos eletromagnéticos (elétrons e fótons), que
-geralmente apresentam:
+conhecimento das características típicas do perfil de objetos
+eletromagnéticos (elétrons e fótons), que geralmente apresentam:
 \begin{itemize}
   \item concentração ao redor do ponto de colisão (centro da RoI);
   \item alta concentração de energia na seção eletromagnética;
   \item baixa concentração de energia na seção hadrônica.
 \end{itemize}
 
-A partir da análise
-de uma janela deslizante, cobrindo uma região de 4 $\times$ 4 TT (16
-no total), alguns critérios podem ser utilizados pelo L1 para
-definir um possível candidato a elétron:
+A partir da análise de uma janela deslizante, cobrindo uma região
+de 4 $\times$ 4 TT (16 no total), alguns critérios podem ser
+utilizados pelo L1 para definir um possível candidato a elétron:
 \begin{enumerate}
   \item Os valores de energia das TTs da região central (de 2 $\times$ 2 TT)
-  são somados dois a dois e utiliza-se o maior valor encontrado, que deve exceder um patamar de energia 
+  são somados dois a dois e utiliza-se o maior valor encontrado, que deve exceder um patamar de energia
 eletromagnética;
   \item O nível de energia na periferia (fora da região central de 2 $\times$ 2
   TT) é calculado para verificar o isolamento em energia do objeto
@@ -62,14 +75,19 @@ eletromagnética;
 Os patamares de seleção do nível 1 podem ser ajustados e os
 critérios combinados, a depender das características da física de
 interesse que se deseja estudar num dado momento de operação do
-detector. 
+detector.
 
-Neste trabalho, para análise dos algoritmos do L2, foram utilizados sinais simulados do canal elétron/jato aprovados 
-em dois cortes de primeiro nível diferentes. No primeiro conjunto, foi realizado apenas um corte em energia num 
-patamar igual a 10 GeV, esse corte é conhecido como E10 (ou E10-\textit{loose}, para indicar que não houve isolamento). 
-No segundo conjunto, o corte em energia utilizou um patamar igual a 15 GeV, e foram realizados também cortes por 
-isolamento (em energia e hadrônico), produzindo os sinais do conjunto E15i (onde o sufixo i indica a utilização 
-de cortes por isolamento). Mais detalhes a respeito das características dos conjuntos simulados E10 e E15i serão 
+Neste trabalho, para análise dos algoritmos do L2, foram
+utilizados sinais simulados do canal elétron/jato aprovados em
+dois cortes de primeiro nível diferentes. No primeiro conjunto,
+foi realizado apenas um corte em energia num patamar igual a 10
+GeV, esse corte é conhecido como E10 (ou E10-\textit{loose}, para
+indicar que não houve isolamento). No segundo conjunto, o corte em
+energia utilizou um patamar igual a 15 GeV, e foram realizados
+também cortes por isolamento (em energia e hadrônico), produzindo
+os sinais do conjunto E15i (onde o sufixo i indica a utilização de
+cortes por isolamento). Mais detalhes a respeito das
+características dos conjuntos simulados E10 e E15i serão
 fornecidos no Capítulo \ref{cap_cados}.
 
 
@@ -78,42 +96,52 @@ fornecidos no Capítulo \ref{cap_cados}.
 
 \section{Filtragem de elétrons no L2 - Algoritmo T2Calo}
 
-O processo de discriminação de elétrons no segundo-nível de filtragem \textit{online} do ATLAS, conforme ilustrado 
-na Figura \ref{fig_esqL2}, pode ser dividido em duas etapas distintas. Inicialmente é executada a extração de 
-características (onde parâmetros discriminantes são estimados a partir dos dados brutos medidos nos calorímetros) e, 
-em seguida, o teste de hipóteses 
-(onde a discriminação propriamente dita é realizada a partir das características estimadas).
+O processo de discriminação de elétrons no segundo-nível de
+filtragem \textit{online} do ATLAS, conforme ilustrado na Figura
+\ref{fig_esqL2}, pode ser dividido em duas etapas distintas.
+Inicialmente é executada a extração de características (onde
+parâmetros discriminantes são estimados a partir dos dados brutos
+medidos nos calorímetros) e, em seguida, o teste de hipóteses
+(onde a discriminação propriamente dita é realizada a partir das
+características estimadas).
 
 \begin{figure} \centering
 \includegraphics[width=13cm]{cap1_esquema}
-\caption{Processo de identificação de elétrons no L2.} \label{fig_esqL2}
+\caption{Processo de identificação de elétrons no L2.}
+\label{fig_esqL2}
 \end{figure}
 
 O \textbf{T2Calo} \cite{TDR:ATLAS:2003} é o algoritmo padrão para
-extração de características e teste de hipóteses adotado para o canal elétron/jato no
-segundo nível de filtragem do ATLAS. Esse algoritmo utiliza
-informações de calorimetria, sendo capaz de separar objetos
-eletromagnéticos isolados de jatos hadrô\-nicos, utilizando
-parâmetros que estimam a forma dos chuveiros de deposição de
-energia. O T2Calo opera de modo semelhante ao algoritmo de filtragem do L1, porém 
-agora, ao invés de usar as torres de \textit{trigger}, toda a granularidade dos calorímetros está disponível.
+extração de características e teste de hipóteses adotado para o
+canal elétron/jato no segundo nível de filtragem do ATLAS. Esse
+algoritmo utiliza informações de calorimetria, sendo capaz de
+separar objetos eletromagnéticos isolados de jatos hadrô\-nicos,
+utilizando parâmetros que estimam a forma dos chuveiros de
+deposição de energia. O T2Calo opera de modo semelhante ao
+algoritmo de filtragem do L1, porém agora, ao invés de usar as
+torres de \textit{trigger}, toda a granularidade dos calorímetros
+está disponível.
 
-O primeiro passo do T2Calo é refinar a posição do centro da RoI fornecida pelo
-L1, encontrando a célula de maior energia (célula mais quente) na segunda camada do
-calorímetro eletromagnético ($\eta_1 , \phi_1$). Essa posição será
-posteriormente refinada pelo cálculo da posição da média ponderada
-da energia em uma janela de $3 \times 7$ células em ($\eta , \phi$). 
+O primeiro passo do T2Calo é refinar a posição do centro da RoI
+fornecida pelo L1, encontrando a célula de maior energia (célula
+mais quente) na segunda camada do calorímetro eletromagnético
+($\eta_1 , \phi_1$). Essa posição será posteriormente refinada
+pelo cálculo da posição da média ponderada da energia em uma
+janela de $3 \times 7$ células em ($\eta , \phi$).
 
-Para a seleção dos objetos eletromagnéticos, o T2Calo estima os parâmetros descritos a seguir:
+Para a seleção dos objetos eletromagnéticos, o T2Calo estima os
+parâmetros descritos a seguir:
 \begin{itemize}
   \item Razão de Forma: $R_{shape}=E_{3 \times 7}/E_{7 \times 7}$, onde $E_{n \times m}$ é a energia
   depositada numa janela de $n \times m$ células em torno de ($\eta_1 , \phi_1$) na segunda camada eletromagnética;
 
-  \item Razão de Energia: $E_{ratio}=(E_{1st}-E_{2nd})/(E_{1st}+E_{2nd})$, onde $E_{1st}$ e $E_{2nd}$ são o máximo e o 
-segundo maior valor de energia encontrados na primeira camada eletromagnética numa janela de 
-$\Delta \eta \times \Delta \phi=0,125 \times 0,2$ em torno do centro da RoI ($\eta_1 , \phi_1$);
+  \item Razão de Energia: $E_{ratio}=(E_{1st}-E_{2nd})/(E_{1st}+E_{2nd})$, onde $E_{1st}$ e $E_{2nd}$ são o máximo e o
+segundo maior valor de energia encontrados na primeira camada
+eletromagnética numa janela de $\Delta \eta \times \Delta
+\phi=0,125 \times 0,2$ em torno do centro da RoI ($\eta_1 ,
+\phi_1$);
 
-  \item A energia eletromagnética total: $E_{EM}$ é calculada a partir da soma 
+  \item A energia eletromagnética total: $E_{EM}$ é calculada a partir da soma
 da energia concentrada em janelas de $3 \times 7$ células
   em torno de ($\eta_1 ,\phi_1$) nas três camadas eletromagnéticas;
 
@@ -126,19 +154,27 @@ da energia concentrada em janelas de $3 \times 7$ células
 Considerando que o perfil de deposição de energia dos elétrons é,
 em geral, mais concentrado ao redor do ponto de máximo e que,
 também não se espera deposição de uma quantidade significativa de
-energia nas camadas hadrônicas por elétrons, o
-T2Calo opera através de cortes lineares nos parâmetros estimados acima. Por exemplo, analisando os parâmetros
-$R_{shape}$, $E_{ratio}$ e $E_{EM}$, os eventos são aprovados caso os valores calculados sejam maiores que um 
-patamar de corte pré-estabelecido. Para $E_{HAD}$ acontece o inverso, e um candidato a elétron é selecionado 
-se o valor calculado para este parâmetro for menor que o patamar.
+energia nas camadas hadrônicas por elétrons, o T2Calo opera
+através de cortes lineares nos parâmetros estimados acima. Por
+exemplo, analisando os parâmetros $R_{shape}$, $E_{ratio}$ e
+$E_{EM}$, os eventos são aprovados caso os valores calculados
+sejam maiores que um patamar de corte pré-estabelecido. Para
+$E_{HAD}$ acontece o inverso, e um candidato a elétron é
+selecionado se o valor calculado para este parâmetro for menor que
+o patamar.
 
-Embora a concentração em torno do centro da RoI e o vazamento hadrônico 
-sejam características bastante úteis na identificação de elétrons, uma análise um pouco 
-mais detalhada revela que, pelo fato dos jatos apresentarem uma grande flutuação em suas características, o uso apenas destes 
-parâmetros pode não produzir o desempenho de discriminação desejado. Na Figura \ref{cap3_anwigmans}, 
-considerando a razão $\frac{E_{HAD}}{E_{EM}}$ (num conjunto de eventos simulados para o L2 do ATLAS), percebe-se que há 
-uma razoável superposição entre elétrons e jatos, essa limitação aumenta em baixa energia. Comportamento 
-semelhante é verificado na Figura \ref{cap3_anperfil} onde elétrons e jatos são comparados a partir 
+Embora a concentração em torno do centro da RoI e o vazamento
+hadrônico sejam características bastante úteis na identificação de
+elétrons, uma análise um pouco mais detalhada revela que, pelo
+fato dos jatos apresentarem uma grande flutuação em suas
+características, o uso apenas destes parâmetros pode não produzir
+o desempenho de discriminação desejado. Na Figura
+\ref{cap3_anwigmans}, considerando a razão
+$\frac{E_{HAD}}{E_{EM}}$ (num conjunto de eventos simulados para o
+L2 do ATLAS), percebe-se que há uma razoável superposição entre
+elétrons e jatos, essa limitação aumenta em baixa energia.
+Comportamento semelhante é verificado na Figura
+\ref{cap3_anperfil} onde elétrons e jatos são comparados a partir
 da razão $\frac{E_{3 \times 7}}{E_{7 \times 7}}$.
 
 \begin{figure}[h!]
@@ -155,7 +191,9 @@ da razão $\frac{E_{3 \times 7}}{E_{7 \times 7}}$.
  \vspace{.3cm}
   \centerline{(b)}\medskip
  \end{minipage}
-\caption{Distribuição de elétrons e jatos quanto à razão $\frac{E_{HAD}}{E_{EM}}$ para eventos com energia total (a) menor que 20 GeV e (b) maior que 60 GeV.} \label{cap3_anwigmans}
+\caption{Distribuição de elétrons e jatos quanto à razão
+$\frac{E_{HAD}}{E_{EM}}$ para eventos com energia total (a) menor
+que 20 GeV e (b) maior que 60 GeV.} \label{cap3_anwigmans}
 \end{figure}
 
 \begin{figure}[h!]
@@ -172,71 +210,90 @@ da razão $\frac{E_{3 \times 7}}{E_{7 \times 7}}$.
  \vspace{.3cm}
   \centerline{(b)}\medskip
  \end{minipage}
-\caption{Distribuição de elétrons e jatos quanto à razão$\frac{E_{3 \times 7}}{E_{7 \times 7}}$ para eventos com energia total (a) menor que 20 GeV e (b) maior que 60 GeV.} \label{cap3_anperfil}
+\caption{Distribuição de elétrons e jatos quanto à
+razão$\frac{E_{3 \times 7}}{E_{7 \times 7}}$ para eventos com
+energia total (a) menor que 20 GeV e (b) maior que 60 GeV.}
+\label{cap3_anperfil}
 \end{figure}
 
 Num ambiente complexo, como o que é gerado a cada colisão do LHC,
 onde o nível de ruído de fundo é extremamente alto e os eventos de
-interesse são raros, a busca por algoritmos de filtragem mais eficientes é muito importante. 
-Aumentar o desempenho de discriminação significa menor quantidade de eventos não relevantes
-armazenados mídia permanente, economizando recursos e facilitando a análise
-\textit{offline}.
+interesse são raros, a busca por algoritmos de filtragem mais
+eficientes é muito importante. Aumentar o desempenho de
+discriminação significa menor quantidade de eventos não relevantes
+armazenados mídia permanente, economizando recursos e facilitando
+a análise \textit{offline}.
 
-A seguir será descrito o \textit{Neural Ringer}, que é um discriminador alternativo para o canal elétron/jato no 
-L2 do ATLAS. Utilizando informação da física de interesse para o processo de extração de características e um 
-classificador neural supervisionado para o teste de hipóteses, o \textit{Neural Ringer} apresenta eficiência 
-superior ao T2Calo e tempo de execução dentro da janela permitida para o L2.
+A seguir será descrito o \textit{Neural Ringer}, que é um
+discriminador alternativo para o canal elétron/jato no L2 do
+ATLAS. Utilizando informação da física de interesse para o
+processo de extração de características e um classificador neural
+supervisionado para o teste de hipóteses, o \textit{Neural Ringer}
+apresenta eficiência superior ao T2Calo e tempo de execução dentro
+da janela permitida para o L2.
 
 
 \section{Neural Ringer - Alternativa para Filtragem de Elétrons no L2}
-\label{sec_ringer}
-Um discriminador alternativo foi proposto inicialmente em~\cite{article:seixas:1996} para o canal 
-elétron/jato no segundo nível de filtragem do ATLAS. Conforme ilustrado na Figura~\ref{fig_ringerdiag}, 
-o processo de extração de características compreende um arranjo topológico dos sinais medidos no calorímetro 
-(com a construção de anéis a partir do perfil de deposição de energia), e o teste de hipóteses é realizado 
-por um classificador neural supervisionado (arquitetura Perceptron de Múltiplas Camadas)~\cite{haykin:nn:2008}, 
+\label{sec_ringer} Um discriminador alternativo foi proposto
+inicialmente em~\cite{article:seixas:1996} para o canal
+elétron/jato no segundo nível de filtragem do ATLAS. Conforme
+ilustrado na Figura~\ref{fig_ringerdiag}, o processo de extração
+de características compreende um arranjo topológico dos sinais
+medidos no calorímetro (com a construção de anéis a partir do
+perfil de deposição de energia), e o teste de hipóteses é
+realizado por um classificador neural supervisionado (arquitetura
+\textit{Perceptron} de Múltiplas Camadas)~\cite{haykin:nn:2008},
 este discriminador ficou conhecido como \textit{Neural Ringer}.
 
-\begin{figure}[t] 
+\begin{figure}[t]
 \centering
 \includegraphics[width=11cm]{cap3_ringerdiag}
-\caption{Fluxo de processamento do \textit{Neural Ringer}.} \label{fig_ringerdiag}
+\caption{Fluxo de processamento do \textit{Neural Ringer}.}
+\label{fig_ringerdiag}
 \end{figure}
 
 \subsection{Extração de Características - Anelamento} \label{sec_anelamento}
 
 Os sinais do perfil de deposição de energia utilizados para
 discriminação elétron/jato são medidos nas sete camadas dos
-calorímetros do ATLAS. Considerando a granularidade de cada camada,
-uma Região de Interesse (RoI) típica (de tamanho 0,4$ \times 0,4$ em
-$\eta \times \phi$) é descrita por aproximadamente 1000 células~\cite{tese:andre:2006}. 
+calorímetros do ATLAS. Considerando a granularidade de cada
+camada, uma Região de Interesse (RoI) típica (de tamanho 0,4$
+\times 0,4$ em $\eta \times \phi$) é descrita por aproximadamente
+1000 células~\cite{tese:andre:2006}.
 
-Visando compactar
-os sinais dos calorímetros e, ao mesmo tempo, manter a interpretação física do perfil
-de deposição de energia, as células sensoras de cada camada são agrupadas em anéis concêntricos de 
-deposição de energia. Conforme ilustrado na Figura~\ref{fig_aneis}, o procedimento de geração dos sinais em 
-anéis é executado em cada camada do calorímetro e envolve os passos a seguir:
+Visando compactar os sinais dos calorímetros e, ao mesmo tempo,
+manter a interpretação física do perfil de deposição de energia,
+as células sensoras de cada camada são agrupadas em anéis
+concêntricos de deposição de energia. Conforme ilustrado na
+Figura~\ref{fig_aneis}, o procedimento de geração dos sinais em
+anéis é executado em cada camada do calorímetro e envolve os
+passos a seguir:
 \begin{enumerate}
  \item A célula mais energética da camada é considerada como o primeiro anel;
  \item As células ao redor do primeiro anel (imediatamente adjacentes) definem o
-segundo anel e assim sucessivamente (até cobrir toda a janela da RoI);
+segundo anel e assim sucessivamente (até cobrir toda a janela da
+RoI);
  \item A energia amostrada pelas
 células pertencentes a um dado anel são somadas produzindo o sinal
 de energia em anéis;
  \item Os sinais em anéis são normalizados.
 \end{enumerate}
 
-É interessante notar que, devido à diferença de
-granularidade entre as camadas do calorímetro, um número diferente
-de anéis é gerado para cada camada. A Tabela \ref{tab_aneis} mostra
-a distribuição dos anéis por camada. No processo de formatação é considerado um número 
-fixo de anéis por camada, porém, dependendo da posição do centro da RoI, esta pode 
-não estar completa (as células sensoras que compõem os anéis podem não existir caso a 
-partícula interaja próximo a uma extremidade ou descontinuidade do calorímetro), neste caso, 
-assume-se igual a zero as leituras das células que faltam. Outra característica a ser observada 
-é que, em algumas camadas, as células não são quadradas (conforme ilustrado na Figura \ref{fig_ancam}),
- neste caso, falar em anéis é uma abstração 
-(pois ao final do processo descrito acima podem não existir realmente anéis de células sensoras). 
+É interessante notar que, devido à diferença de granularidade
+entre as camadas do calorímetro, um número diferente de anéis é
+gerado para cada camada. A Tabela \ref{tab_aneis} mostra a
+distribuição dos anéis por camada. No processo de formatação é
+considerado um número fixo de anéis por camada, porém, dependendo
+da posição do centro da RoI, esta pode não estar completa (as
+células sensoras que compõem os anéis podem não existir caso a
+partícula interaja próximo a uma extremidade ou descontinuidade do
+calorímetro), neste caso, assume-se igual a zero as leituras das
+células que faltam. Outra característica a ser observada é que, em
+algumas camadas, as células não são quadradas (conforme ilustrado
+na Figura \ref{fig_ancam}),
+ neste caso, falar em anéis é uma abstração
+(pois ao final do processo descrito acima podem não existir
+realmente anéis de células sensoras).
 
 \begin{figure}[th]
 \centering
@@ -246,7 +303,8 @@ assume-se igual a zero as leituras das células que faltam. Outra característica 
 \end{figure}
 
 \begin{table}[th]
-\centering \caption{Número de anéis formados para cada camada do calorímetro do ATLAS.}\vspace{0.2cm} \footnotesize
+\centering \caption{Número de anéis formados para cada camada do
+calorímetro do ATLAS.}\vspace{0.2cm} \footnotesize
 \begin{tabular}{c | c c c c c c c | c}
     \hline
      \textbf{Camada} & \textbf{PS} & \textbf{E1} & \textbf{E2} & \textbf{E3} & \textbf{H0} & \textbf{H1} & \textbf{H0} & \textbf{Total} \\
@@ -260,9 +318,10 @@ assume-se igual a zero as leituras das células que faltam. Outra característica 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=9cm]{cap3_rescalo}
-\caption[Exemplo da organização das células em anéis nas diferentes camadas do calorímetro.]{Exemplo da 
-organização das células em anéis nas diferentes camadas do calorímetro, adaptado de \cite{tese:torres:2010}.}
-\label{fig_ancam}
+\caption[Exemplo da organização das células em anéis nas
+diferentes camadas do calorímetro.]{Exemplo da organização das
+células em anéis nas diferentes camadas do calorímetro, adaptado
+de \cite{tese:torres:2010}.} \label{fig_ancam}
 \end{figure}
 
 \begin{figure}[h!]
@@ -284,8 +343,9 @@ organização das células em anéis nas diferentes camadas do calorímetro, adaptado
   \centering
  \centerline{\epsfig{file=cap3_janeis_e2,width=5cm}}
 \end{minipage}
-\linebreak \caption{Sinais típicos medidos na camada EM2 (acima) e os respectivos sinais em anéis (abaixo), 
-respectivamente para um elétron (esquerda) e um jato (direita).} \label{fig_sig3d}
+\linebreak \caption{Sinais típicos medidos na camada EM2 (acima) e
+os respectivos sinais em anéis (abaixo), respectivamente para um
+elétron (esquerda) e um jato (direita).} \label{fig_sig3d}
 \end{figure}
 
 \begin{figure}[h!]
@@ -309,21 +369,28 @@ respectivamente para um elétron (esquerda) e um jato (direita).} \label{fig_sig3
   \vspace{.3cm}
   \centerline{(c)}\medskip
 \end{minipage}
-\caption{Sinais em anéis para (a) elétron típico, (b) jato típico e
-(c) jato com perfil semelhante ao de elétrons.} \label{fig_sig_anel}
+\caption{Sinais em anéis para (a) elétron típico, (b) jato típico
+e (c) jato com perfil semelhante ao de elétrons.}
+\label{fig_sig_anel}
 \end{figure}
 
-A Figura \ref{fig_sig3d} mostra, para a segunda camada eletromagnética, os sinais medidos para um elétron e 
-um jato típicos e seus respectivos sinais em anéis. A Figura \ref{fig_sig_anel} mostra sinais em anéis, 
-respectivamente, para um elétron típico, um jato típico e 
-um jato com perfil semelhante ao de elétrons. Percebe-se que o perfil de deposição medido para elétrons 
-apresenta pouco espalhamento (é contido em uma pequena região) e é concentrado nas camadas eletromagnéticas. 
-Os jatos apresentam uma maior variação em suas características físicas. Essas partículas tipicamente 
-depositam uma considerável quantidade de energia nas camadas hadrônicas e possuem perfil de deposição com 
-pouca concentração espacial (ver Figura \ref{fig_sig_anel}-b). Entretanto, alguns jatos (como o mostrado na 
-Figura \ref{fig_sig_anel}-c) podem apresentar perfil de deposição de energia semelhante ao de elétrons. 
-Esse último tipo de assinatura hadrônica representa a maioria dos jatos aprovados como elétrons pelo L1, 
-compondo um ruído de fundo de difícil identificação. 
+A Figura \ref{fig_sig3d} mostra, para a segunda camada
+eletromagnética, os sinais medidos para um elétron e um jato
+típicos e seus respectivos sinais em anéis. A Figura
+\ref{fig_sig_anel} mostra sinais em anéis, respectivamente, para
+um elétron típico, um jato típico e um jato com perfil semelhante
+ao de elétrons. Percebe-se que o perfil de deposição medido para
+elétrons apresenta pouco espalhamento (é contido em uma pequena
+região) e é concentrado nas camadas eletromagnéticas. Os jatos
+apresentam uma maior variação em suas características físicas.
+Essas partículas tipicamente depositam uma considerável quantidade
+de energia nas camadas hadrônicas e possuem perfil de deposição
+com pouca concentração espacial (ver Figura \ref{fig_sig_anel}-b).
+Entretanto, alguns jatos (como o mostrado na Figura
+\ref{fig_sig_anel}-c) podem apresentar perfil de deposição de
+energia semelhante ao de elétrons. Esse último tipo de assinatura
+hadrônica representa a maioria dos jatos aprovados como elétrons
+pelo L1, compondo um ruído de fundo de difícil identificação.
 
 %\begin{figure}[th]
 %\begin{center}
@@ -336,81 +403,113 @@ compondo um ruído de fundo de difícil identificação.
 \subsection{Normalização}
 
 Antes da utilização nos sistemas de classificação (teste de
-hipótese) os sinais em anéis precisam ser normalizados. No trabalho \cite{tese:torres:2010}, foram testadas 
-diferentes formas de normalização dos sinais em anéis como:
+hipótese) os sinais em anéis precisam ser normalizados. No
+trabalho \cite{tese:torres:2010}, foram testadas diferentes formas
+de normalização dos sinais em anéis como:
 \begin{itemize}
  \item \textbf{Energia total}: dividindo-se a energia de cada anel ($Ea_i$) pela energia total do evento:
     \begin{equation}
     Ea^N_i=\frac{Ea_i}{\sum_{i=1}^{100}Ea_i}.
     \end{equation}
  \item \textbf{Energia da camada}: dividindo-se a energia de cada anel pela soma da energia da camada a qual ele pertence;
- \item \textbf{Energia da seção do calorímetro}: dividindo-se a energia de cada anel pela soma da energia na seção do 
-calorímetro (eletromagnética ou hadrônica) que contém o referido anel.
-  \item \textbf{Sequencial}: esse procedimento de normalização visa amplificar as diferenças no perfil lateral dos chuveiros 
-produzidos. A energia do anel i da camada c ($Ea_{ic}$) é normalizada através de:
+ \item \textbf{Energia da seção do calorímetro}: dividindo-se a energia de cada anel pela soma da energia na seção do
+calorímetro (eletromagnética ou hadrônica) que contém o referido
+anel.
+  \item \textbf{Sequencial}: esse procedimento de normalização visa amplificar as diferenças no perfil lateral dos chuveiros
+produzidos. A energia do anel i da camada c ($Ea_{ic}$) é
+normalizada através de:
 \begin{equation}
  Ea^N_{ic}=\frac{Ea_{ic}}{Ec -\displaystyle\sum_{j=1}^{i-1}Ea_{ic}}
 \end{equation}
 onde $Ec$ é a energia total da camada c.
 \end{itemize}
 
-Após um estudo comparativo, concluiu-se que a normalização por energia total atendia um compromisso entre 
-rapidez de execução e eficiência de discriminação, sendo assim, este procedimento foi adotado em todos os 
-resultados a serem mostrados nessa tese.
+Após um estudo comparativo, concluiu-se que a normalização por
+energia total atendia um compromisso entre rapidez de execução e
+eficiência de discriminação, sendo assim, este procedimento foi
+adotado em todos os resultados a serem mostrados nessa tese.
 
 \subsection{Teste de Hipóteses - Classificador Neural}
 
-Para o processo de discriminação propriamente dito (teste de hipóteses), o Neural Ringer utiliza um classificador neural supervisonado 
-na arquitetura Perceptron de Múltiplas Camadas (MLP \textit{Multi-Layer Perceptron})~\cite{haykin:nn:2008}. Os 
-classificadores neurais são capazes de produzir superfícies não-lineares de separação, contribuindo, em geral, para 
-aumento na eficiência 
-de discriminação quando comparados aos discriminadores lineares. Devido a sua estrutura paralelamente distribuída, 
-uma rede neural é capaz de responder rapidamente quando um padrão de entrada é aplicado. Considerando as características expostas 
-(alta eficiência e processamento veloz), os classificadores neurais se tornam uma opção interessante 
-ao ambiente do segundo nível de filtragem \textit{online} do ATLAS. Mais detalhes a respeito dos classificadores 
-neurais na arquitetura MLP podem ser encontrados no Apêndice~\ref{apend_clas}.
+Para o processo de discriminação propriamente dito (teste de
+hipóteses), o Neural Ringer utiliza um classificador neural
+supervisionado na arquitetura \textit{Perceptron} de Múltiplas
+Camadas (MLP \textit{Multi-Layer
+Perceptron})~\cite{haykin:nn:2008}. Os classificadores neurais são
+capazes de produzir superfícies não-lineares de separação,
+contribuindo, em geral, para aumento na eficiência de
+discriminação quando comparados aos discriminadores lineares.
+Devido a sua estrutura paralelamente distribuída, uma rede neural
+é capaz de responder rapidamente quando um padrão de entrada é
+aplicado. Considerando as características expostas (alta
+eficiência e processamento veloz), os classificadores neurais se
+tornam uma opção interessante ao ambiente do segundo nível de
+filtragem \textit{online} do ATLAS. Mais detalhes a respeito dos
+classificadores neurais na arquitetura MLP podem ser encontrados
+no Apêndice~\ref{apend_clas}.
 
 \subsection{Tempo de Execução}
 
-Um aspecto crucial nos algoritmos para o sistema de filtragem \textit{online} é o tempo de execução. No caso do 
-\textit{Neural Ringer}, que é um algoritmo para o segundo nível de filtragem, a janela de tempo máxima permitida é
-de 40 ms. Uma análise detalhada do tempo de processamento requerido pelo \textit{Neural Ringer} foi realizada no 
-trabalho~\cite{tese:torres:2010}. O algoritmo foi incorporado como uma sub-rotina do T2Calo, aproveitando parte do 
+Um aspecto crucial nos algoritmos para o sistema de filtragem
+\textit{online} é o tempo de execução. No caso do \textit{Neural
+Ringer}, que é um algoritmo para o segundo nível de filtragem, a
+janela de tempo máxima permitida é de 40 ms. Uma análise detalhada
+do tempo de processamento requerido pelo \textit{Neural Ringer}
+foi realizada no trabalho~\cite{tese:torres:2010}. O algoritmo foi
+incorporado como uma sub-rotina do T2Calo, aproveitando parte do
 processamento realizado por essa última rotina.
 
-As diversas etapas necessárias para a execução do \textit{Neural Ringer} são listadas a seguir:
+As diversas etapas necessárias para a execução do \textit{Neural
+Ringer} são listadas a seguir:
 
 \begin{enumerate}
- \item Inicialmente, são selecionadas as informações necessárias, o que é feito na etapa de seleção de região 
-(\textit{Region Selector}) 
-do T2Calo, que solicita os fragmentos da RoI desejada. Essa etapa, por envolver um intenso fluxo de informação entre o 
-pipeline de memória e o segundo nível de filtragem, corresponde a 40.7 $\%$ do tempo total 
-(em média 0,4927 $\pm$ 0,0787 ms).
+ \item Inicialmente, são selecionadas as informações necessárias, o que é feito na etapa de seleção de região
+(\textit{Region Selector}) do T2Calo, que solicita os fragmentos
+da RoI desejada. Essa etapa, por envolver um intenso fluxo de
+informação entre o pipeline de memória e o segundo nível de
+filtragem, corresponde a 40.7 $\%$ do tempo total (em média 0,4927
+$\pm$ 0,0787 ms).
 
-\item A seguir, o T2Calo realiza um pré-processamento nos sinais onde são calculadas as suas 4 variáveis de decisão e os 
-valores refinados de $E_T$, $\eta$ e $\phi$. Este passo de processamento equivale a 11.6 $\%$ do tempo total de 
-execução (0,1408 $\pm$ 0,0148 ms). A partir daqui é iniciada a sequencia de rotinas específicas do \textit{Neural Ringer}.
+\item A seguir, o T2Calo realiza um pré-processamento nos sinais
+onde são calculadas as suas 4 variáveis de decisão e os valores
+refinados de $E_T$, $\eta$ e $\phi$. Este passo de processamento
+equivale a 11.6 $\%$ do tempo total de execução (0,1408 $\pm$
+0,0148 ms). A partir daqui é iniciada a sequencia de rotinas
+específicas do \textit{Neural Ringer}.
 
-\item Apenas parte da informação necessária para o \textit{Neural Ringer} é utilizada pelo T2Calo, então, o restante precisa 
-agora ser solicitado neste momento pelo \textit{Region Selector} do \textit{Neural Ringer}. Um novo fluxo de informação 
-é estabelecido entre o L2 e as memórias de armazenamento temporário, consumindo cerca de 36 $\%$ do tempo total 
-( 0,4375 $\pm$ 0,0996 ms).
+\item Apenas parte da informação necessária para o \textit{Neural
+Ringer} é utilizada pelo T2Calo, então, o restante precisa agora
+ser solicitado neste momento pelo \textit{Region Selector} do
+\textit{Neural Ringer}. Um novo fluxo de informação é estabelecido
+entre o L2 e as memórias de armazenamento temporário, consumindo
+cerca de 36 $\%$ do tempo total ( 0,4375 $\pm$ 0,0996 ms).
 
-\item Na etapa de pré-processamento do \textit{Neural Ringer}, as informações da RoI são utilizadas na construção dos anéis 
-para cada camada do calorímetro (conforme procedimento descrito na Seção \ref{sec_anelamento}). O tempo gasto nesta etapa 
-corresponde a aproximadamente 8$\%$ do total (0,0986 $\pm$ 0,0165 ms). Finalmente, a classificação dos sinais em anéis 
-pela rede neural requer aproximadamente 3$\%$ do tempo total (0,0387  $\pm$ 0,0018 ms).
+\item Na etapa de pré-processamento do \textit{Neural Ringer}, as
+informações da RoI são utilizadas na construção dos anéis para
+cada camada do calorímetro (conforme procedimento descrito na
+Seção \ref{sec_anelamento}). O tempo gasto nesta etapa corresponde
+a aproximadamente 8$\%$ do total (0,0986 $\pm$ 0,0165 ms).
+Finalmente, a classificação dos sinais em anéis pela rede neural
+requer aproximadamente 3$\%$ do tempo total (0,0387  $\pm$ 0,0018
+ms).
 \end{enumerate}
 
-Contabilizando todas as etapas de processamento chega-se a um tempo total de 1,2352 $\pm$ 0,1288 ms. Somando-se a isso 
-a análise do perfil da trajetória da partícula medido no detector de traço (a identificação de elétrons no L2 pode 
-envolver a análise de sinais de dois sub-detectores, os calorimetros e os detectores de traço), chega-se a 
-8,04$\pm$2,04 ms, valor que ainda está muito abaixo do tempo máximo exigido para o nível 2, que é de 40 ms. 
-Na Tabela \ref{tab_ringtime}, são mostradas as diversas etapas necessárias para a execução do \textit{Neural Ringer}, 
-juntamente com o tempo requerido por cada uma delas (em valores absolutos e também percentuais). 
+Contabilizando todas as etapas de processamento chega-se a um
+tempo total de 1,2352 $\pm$ 0,1288 ms. Somando-se a isso a análise
+do perfil da trajetória da partícula medido no detector de traço
+(a identificação de elétrons no L2 pode envolver a análise de
+sinais de dois sub-detectores, os calorímetros e os detectores de
+traço), chega-se a 8,04$\pm$2,04 ms, valor que ainda está muito
+abaixo do tempo máximo exigido para o nível 2, que é de 40 ms. Na
+Tabela \ref{tab_ringtime}, são mostradas as diversas etapas
+necessárias para a execução do \textit{Neural Ringer}, juntamente
+com o tempo requerido por cada uma delas (em valores absolutos e
+também percentuais).
 
 \begin{table}[h!]
-\centering \caption{Tempo gasto nas diversas etapas necessárias para a execução \textit{online} do \textit{Neural Ringer}.}\vspace{0.2cm} \footnotesize
+\centering \caption{Tempo gasto nas diversas etapas necessárias
+para a execução \textit{online} do \textit{Neural
+Ringer}.}\vspace{0.2cm} \footnotesize
 \begin{tabular}{c|c|c}
     \hline
      \textbf{Etapas} & \textbf{Tempo} (ms) &  $\%$ \textbf{do Total} \\
@@ -421,110 +520,160 @@ juntamente com o tempo requerido por cada uma delas (em valores absolutos e tamb
     Pré-processamento (anelamento) - \textit{Ringer} &  0,0986 $\pm$ 0,0165 & 8,2\\ \hline
     Normalização & 0.0026 $\pm$ 0,0015 & 0,2 \\ \hline
     Classificação Neural & 0,0387  $\pm$ 0,0018 & 3,2\\ \hline
-    Total & 1,2109 $\pm$ 0,1288 & 100\\  
+    Total & 1,2109 $\pm$ 0,1288 & 100\\
 \hline
 \end{tabular}
 \label{tab_ringtime}
 \end{table}
 
-Embora o \textit{Neural Ringer} tenha, em comparação ao T2Calo, produzido um aumento no tempo de execução da ordem de 
-91$\%$ (de 0,6469 $\pm$ 0,0802 ms para 1,2352 $\pm$ 0.1288 ms, ou seja um aumento de 0,5883 ms), isso é compensado por 
-uma eficiência de discriminação muito superior do \textit{Ringer}, conforme será mostrado no Capítulo \ref{cap_resul}.
+Embora o \textit{Neural Ringer} tenha, em comparação ao T2Calo,
+produzido um aumento no tempo de execução da ordem de 91$\%$ (de
+0,6469 $\pm$ 0,0802 ms para 1,2352 $\pm$ 0.1288 ms, ou seja um
+aumento de 0,5883 ms), isso é compensado por uma eficiência de
+discriminação muito superior do \textit{Ringer}, conforme será
+mostrado no Capítulo \ref{cap_resul}.
 
 \section{Extensões ao Neural Ringer}
 
-Com eficiência mais alta que o algoritmo padrão (T2Calo) e tempo de processamento dentro da janela aceita para o 
-L2, o discriminador \textit{Neural Ringer} mostrou-se uma opção bastante interessante para o problema da filtragem 
-\textit{online} de elétrons no ATLAS. Em sistemas neurais de classificação, sabe-se que o uso de uma 
-etapa de pré-processamento adequada pode ser decisiva para o aumento da eficiência de discriminação~\cite{book:nnforpr:1995}.
-Neste contexto, trabalhos vêm sendo desenvolvidos com o objetivo de melhorar a eficiência 
-do Neural Ringer com a adição de uma etapa de pré-processamento ao classificador neural 
-(ver Figura \ref{fig_ringerext}), na qual, os sinais em anéis são mapeados em um conjunto (em geral mais compacto) 
-de características discriminantes. A seguir, serão descritos a importância da etapa de pré-processamento em 
-classificadores neurais (em um caso genérico) e os trabalhos desenvolvidos neste sentido 
-no contexto do projeto \textit{Neural Ringer}.
+Com eficiência mais alta que o algoritmo padrão (T2Calo) e tempo
+de processamento dentro da janela aceita para o L2, o
+discriminador \textit{Neural Ringer} mostrou-se uma opção bastante
+interessante para o problema da filtragem \textit{online} de
+elétrons no ATLAS. Em sistemas neurais de classificação, sabe-se
+que o uso de uma etapa de pré-processamento adequada pode ser
+decisiva para o aumento da eficiência de
+discriminação~\cite{book:nnforpr:1995}. Neste contexto, trabalhos
+vêm sendo desenvolvidos com o objetivo de melhorar a eficiência do
+Neural Ringer com a adição de uma etapa de pré-processamento ao
+classificador neural (ver Figura \ref{fig_ringerext}), na qual, os
+sinais em anéis são mapeados em um conjunto (em geral mais
+compacto) de características discriminantes. A seguir, serão
+descritos a importância da etapa de pré-processamento em
+classificadores neurais (em um caso genérico) e os trabalhos
+desenvolvidos neste sentido no contexto do projeto \textit{Neural
+Ringer}.
 
 \begin{figure} \centering
 \includegraphics[width=15cm]{cap3_ringerext}
-\caption{Fluxo de processamento das extensões ao \textit{Neural Ringer}.} \label{fig_ringerext}
+\caption{Fluxo de processamento das extensões ao \textit{Neural
+Ringer}.} \label{fig_ringerext}
 \end{figure}
 
 \subsection{Importância do pré-processamento para classificadores neurais}
 
-Embora as redes neurais possam essencialmente realizar quaisquer mapeamentos não-lineares, pode-se observar que, o uso 
-direto dos dados brutos como entradas geralmente produz um desempenho pior do que quando algum pré-processamento é 
+Embora as redes neurais possam essencialmente realizar quaisquer
+mapeamentos não-lineares, pode-se observar que, o uso direto dos
+dados brutos como entradas geralmente produz um desempenho pior do
+que quando algum pré-processamento é
 aplicado~\cite{book:nnforpr:1995}.
 
-Da teoria da informação, considerando duas variáveis $\mathbf{x}$ e $c$ (respectivamente o conjunto de características 
-e os rótulos de classes), para qualquer transformação determinística $T(\cdot)$, a informação mútua ($I$) entre $T(\mathbf{x})$ 
-e $c$ tem como limite superior a informação mútua entre $\mathbf{x}$ e $c$~\cite{book:cover:1991}:
+Da teoria da informação, considerando duas variáveis $\mathbf{x}$
+e $c$ (respectivamente o conjunto de características e os rótulos
+de classes), para qualquer transformação determinística
+$T(\cdot)$, a informação mútua ($I$) entre $T(\mathbf{x})$ e $c$
+tem como limite superior a informação mútua entre $\mathbf{x}$ e
+$c$~\cite{book:cover:1991}:
 \begin{equation}\label{eqinfoclas}
  I(T(\mathbf{x});c) \leq I(\mathbf{x};c).
 \end{equation}
-Ou seja, nenhuma transformação é capaz de acrescentar informação, ao conjunto de características $\mathbf{x}$, a 
-respeito das classes $c$.
+Ou seja, nenhuma transformação é capaz de acrescentar informação,
+ao conjunto de características $\mathbf{x}$, a respeito das
+classes $c$.
 
-Considerando o resultado da Equação \ref{eqinfoclas}, o que justifica o melhor desempenho dos classificadores após a 
-etapa de pré-processamento, uma vez que ela não é capaz de adicionar informação a respeito do problema?
+Considerando o resultado da Equação \ref{eqinfoclas}, o que
+justifica o melhor desempenho dos classificadores após a etapa de
+pré-processamento, uma vez que ela não é capaz de adicionar
+informação a respeito do problema?
 
-Como os sistemas neurais de classificação são obtidos a partir de um processo iterativo de ajuste de pesos, 
-um pré-processamento eficiente, ou seja, capaz de revelar características 
-discriminantes que estavam inicialmente ocultas nos dados brutos, pode se tornar decisivo para a obtenção de um 
-classificador com melhor desempenho.
+Como os sistemas neurais de classificação são obtidos a partir de
+um processo iterativo de ajuste de pesos, um pré-processamento
+eficiente, ou seja, capaz de revelar características
+discriminantes que estavam inicialmente ocultas nos dados brutos,
+pode se tornar decisivo para a obtenção de um classificador com
+melhor desempenho.
 
-É importante notar que, todas as informações utilizadas para a discriminação estão presentes nos dados brutos. O 
-pré-processamento, que neste contexto é conhecido como extração de características, é responsável apenas por uma 
-transformação que torna as características discriminantes mais evidentes.
+É importante notar que, todas as informações utilizadas para a
+discriminação estão presentes nos dados brutos. O
+pré-processamento, que neste contexto é conhecido como extração de
+características, é responsável apenas por uma transformação que
+torna as características discriminantes mais evidentes.
 
-Um outro aspecto a ser analizado é a chamada ``maldição da dimensionalidade" (do inglês \textit{curse of 
-dimensionality})~\cite{book:nnforpr:1995}.
-A utilização de um número elevado de entradas para o sistema classificador acaba dificultando o processo de 
-treinamento. Isso se deve ao fato de que quanto maior a 
-dimensão dos dados de entrada, 
-maior a complexidade da rede neural (e consequentemente maior o número de parâmetros a serem ajustados), requerendo 
-também maior informação estatística (exemplos de treinamento) para o treino adequado do classificador. 
+Um outro aspecto a ser analisado é a chamada ``maldição da
+dimensionalidade" (do inglês \textit{curse of
+dimensionality})~\cite{book:nnforpr:1995}. A utilização de um
+número elevado de entradas para o sistema classificador acaba
+dificultando o processo de treinamento. Isso se deve ao fato de
+que quanto maior a dimensão dos dados de entrada, maior a
+complexidade da rede neural (e consequentemente maior o número de
+parâmetros a serem ajustados), requerendo também maior informação
+estatística (exemplos de treinamento) para o treino adequado do
+classificador.
 
-A solução adotada, na maioria dos casos, é pré-processar os sinais com uma transformação que reduza a 
-dimensionalidade do problema. Pois, entre os atributos disponíveis, alguns podem apresentar informações 
-redundantes ou até mesmo irrelevantes para o processo de classificação, dificultando o processo de treinamento 
-dos classificadores. Porém, é preciso escolher adequadamente a informação a ser descartada para minimizar 
-a chance da perda de características relevantes para a discriminação das classes.
+A solução adotada, na maioria dos casos, é pré-processar os sinais
+com uma transformação que reduza a dimensionalidade do problema.
+Pois, entre os atributos disponíveis, alguns podem apresentar
+informações redundantes ou até mesmo irrelevantes para o processo
+de classificação, dificultando o processo de treinamento dos
+classificadores. Porém, é preciso escolher adequadamente a
+informação a ser descartada para minimizar a chance da perda de
+características relevantes para a discriminação das classes.
 
-Resumindo, a transformação ótima deve, entre outras coisas, mapear os atributos disponíveis em um número reduzido de 
-características, eliminar a redundância e manter toda a informação discriminante para o problema.
+Resumindo, a transformação ótima deve, entre outras coisas, mapear
+os atributos disponíveis em um número reduzido de características,
+eliminar a redundância e manter toda a informação discriminante
+para o problema.
 
 \subsection{\textit{Neural Ringer} - pré-processamento linear}
 
-Voltando para o contexto do discriminador \textit{Neural Ringer}, embora a construção dos anéis já seja responsável 
-por uma considerável redução de dimensão (por um fator de 10 vezes), 
-no trabalho \cite{article:herman:2006} foi realizado um estudo detalhado a respeito da utilização da Análise de 
-Componentes Principais (PCA - \textit{Principal Component Analysis})~\cite{book:pca:2002} para compactação. A PCA foi aplicada aos 
-sinais em anéis e o classificador neural treinado a partir dos componentes principais estimados. Com a PCA, 
-foi alcançado um fator de redução de aproximadamente 4 vezes, mantendo desempenho semelhante ao Neural Ringer 
-tradicional. Visando explorar toda a granularidade e segmentação disponível aos calorímetros do ATLAS, 
-foi proposta a realização do processo de compactação de modo segmentado (a nível de cada camada do calorímetro).
+Voltando para o contexto do discriminador \textit{Neural Ringer},
+embora a construção dos anéis já seja responsável por uma
+considerável redução de dimensão (por um fator de 10 vezes), no
+trabalho \cite{article:herman:2006} foi realizado um estudo
+detalhado a respeito da utilização da Análise de Componentes
+Principais (PCA - \textit{Principal Component
+Analysis})~\cite{book:pca:2002} para compactação. A PCA foi
+aplicada aos sinais em anéis e o classificador neural treinado a
+partir dos componentes principais estimados. Com a PCA, foi
+alcançado um fator de redução de aproximadamente 4 vezes, mantendo
+desempenho semelhante ao Neural Ringer tradicional. Visando
+explorar toda a granularidade e segmentação disponível aos
+calorímetros do ATLAS, foi proposta a realização do processo de
+compactação de modo segmentado (a nível de cada camada do
+calorímetro).
 
-No trabalho \cite{tese:torres:2010}, foi utilizada uma técnica de compactação mais adequada a problemas de 
-classificação, as Componentes Principais de Discriminação (PCD - \textit{Principal Components for Discrimination})
-~\cite{seixas:pcd:1995}.  Foi realizado também um estudo referente à aplicação da Análise de Componentes Independentes 
-(ICA \textit{Independent Component Analysis})~\cite{book:oja:2001} como uma etapa adicional de pré-processamento, aparecendo logo 
-após a compactação. Os resultados mostraram que a combinação de ICA e PCD foi capaz de melhorar o desempenho 
-em relação ao Neural Ringer tradicional, sem modificar significativamente o tempo de processamento necessário para a tomada 
-de decisão.
+No trabalho \cite{tese:torres:2010}, foi utilizada uma técnica de
+compactação mais adequada a problemas de classificação, as
+Componentes Principais de Discriminação (PCD - \textit{Principal
+Components for Discrimination}) ~\cite{seixas:pcd:1995}.  Foi
+realizado também um estudo referente à aplicação da Análise de
+Componentes Independentes (ICA \textit{Independent Component
+Analysis})~\cite{book:oja:2001} como uma etapa adicional de
+pré-processamento, aparecendo logo após a compactação. Os
+resultados mostraram que a combinação de ICA e PCD foi capaz de
+melhorar o desempenho em relação ao Neural Ringer tradicional, sem
+modificar significativamente o tempo de processamento necessário
+para a tomada de decisão.
 
 \subsection{\textit{Neural Ringer} - pré-processamento não-linear}
 
-Conforme descrito no Capítulo 2, os calorímetros, embora projetados para serem detectores lineares na 
-identificação de elétrons, na prática, seu comportamento pode apresentar características não-lineares, 
-devido a fenômenos como saturação 
-de sensores, atenuação da luz (em calorímetros cintilantes), etc. Então, é possível que uma técnica não-linear 
-de extração de características seja mais adequada ao problema.
+Conforme descrito no Capítulo 2, os calorímetros, embora
+projetados para serem detectores lineares na identificação de
+elétrons, na prática, seu comportamento pode apresentar
+características não-lineares, devido a fenômenos como saturação de
+sensores, atenuação da luz (em calorímetros cintilantes), etc.
+Então, é possível que uma técnica não-linear de extração de
+características seja mais adequada ao problema.
 
-Os estudos desenvolvidos durante esse trabalho tiveram o objetivo de investigar a aplicação da versão 
-não-linear da análise de componentes independentes (NLICA)~\cite{book:almeida:2006,article:simas:2007:lnlm} 
-para extração de características, como uma etapa de pré-processamento ao \textit{Neural Ringer}. 
+Os estudos desenvolvidos durante esse trabalho tiveram o objetivo
+de investigar a aplicação da versão não-linear da análise de
+componentes independentes
+(NLICA)~\cite{book:almeida:2006,article:simas:2007:lnlm} para
+extração de características, como uma etapa de pré-processamento
+ao \textit{Neural Ringer}.
 
-Considerando que existem diversos algoritmos 
-para a estimação da NLICA, neste trabalho foram realizados estudos com alguns destes métodos. Os diferentes 
-modelos foram comparados, considerando eficiência de discriminação e tempo de processamento necessário para 
-produzir a decisão. Os resultados obtidos serão mostrados no Capítulo \ref{cap_resul}.
+Considerando que existem diversos algoritmos para a estimação da
+NLICA, neste trabalho foram realizados estudos com alguns destes
+métodos. Os diferentes modelos foram comparados, considerando
+eficiência de discriminação e tempo de processamento necessário
+para produzir a decisão. Os resultados obtidos serão mostrados no
+Capítulo \ref{cap_resul}.

@@ -1,913 +1,242 @@
-\chapter{Aprendizado estatístico na filtragem de segundo nível do ATLAS}
+\chapter{Detecção de Elétrons a partir de Informações de Calorimetria no ATLAS}
+\label{cap_atlasEtrig}
 
-Neste capítulo serão mostrados os fundamentos teóricos de algumas
-técnicas de aprendizado estatístico utilizadas para extração de
-características e classificação na filtragem de segundo nível do ATLAS. A partir da estatística
-de segunda ordem, a análise de componentes principais (PCA -
-\textit{Principal Component Analysis}) é capaz de realizar uma
-transformação na qual os
-componentes na nova base são ortogonais e ordenadas por energia (variância). A
-análise de componentes independentes (ICA - \textit{Independent
-Component Analysis}) utiliza estatística de ordem superior para
-encontrar direções onde os sinais projetados são independentes
-estatisticamente. A ICA transforma os sinais, sem supervisão
-externa, tornando sua estrutura essencial mais acessível
-\cite{book:oja:2001}. Os mapas auto-organizáveis (SOM -
-\textit{Self-Organizing Map}) também são muito utilizados para
-extração de características e agrupamento. O SOM é um tipo de rede
-neural de treinamento não-supervisionado capaz de produzir um espaço
-de características onde sinais semelhantes são mapeados em regiões
-adjacentes deste espaço. As redes neurais de treinamento supervisionado são bastante utilizadas para classificação pois sua habilidade de produzir hiperplanos não-lineares de separação em geral produz melhores resultados que os classificadores lineares. Na Seção
-\ref{aplic} serão mostradas aplicações de técnicas de aprendizado
-estatístico em Física de Partículas. Na Seção \ref{extr_carac} e os
-aspectos teóricos das técnicas utilizadas serão discutidos, e em 3.3 os sistemas de classificação propostos serão descritos.
-
-\section{Aplicações em Física de Altas Energias e Áreas Correlatas}
-\label{aplic}
-
-Nesta Seção serão descritas algumas aplicações de técnicas de aprendizado estatístico em Física de Alta Energia (HEP - \textit{High-Energy Physics}).
-
-\subsection{Aplicações de classificadores neurais}
-
-As redes neurais de treinamento supervisionado vêm sendo utilizadas
-para classificação de eventos em sistemas de \textit{trigger} de
-detectores de partículas em física de alta energia desde o início da década de 1990. O primeiro
-\textit{trigger} baseado em redes neurais foi projetado e testado no
-FermiLab para a identificação da trajetória de múons
-\cite{article:lindsey:1992}. O \textit{trigger} neural não foi
-implementado no experimento mas operou em paralelo com o algoritmo
-oficial, obtendo uma resolução 40 vezes melhor.
-
-O primeiro sistema de \textit{trigger} neural operando em um
-experimento de HEP \cite{article:denby:1999} foi implementado no
-segundo nível de filtragem do detector H1 (um dos detectores do
-acelerador HERA, que operou no laboratório DESY na Alemanha)~\cite{article:hera:2008}. No H1, o segundo nível de filtragem foi
-baseado em redes neurais, um classificador neural foi treinado para
-cada canal de filtragem existente no experimento. As redes neurais
-foram implementadas em hardware dedicado para minimizar o tempo de
-resposta~\cite{article:nnphys:1995}.
-
-Exemplos mostram também a aplicação de redes neurais para a análise
-de chuveiros de partículas gerados nos calorímetros. A colaboração do \textit{Crystal Barrel},
-detector do experimento LEAR do CERN \cite{article:crystal:1992},
-conseguiu a identificação de fótons e píons
-\cite{article:crystalnn:1993}. No experimento HEGRA
-\cite{article:hegra:1995} (localizado na ilha La Palma, Espanha),
-conseguiu-se a separação entre fótons e hádrons com um classificador
-neural supervisionado. A colaboração do H1 consegui discriminar
-elétrons de píons utilizando os perfis dos calorímetros
-eletromagnéticos e hadrônicos \cite{article:denby:1999}. Um
-\textit{trigger} de segundo nível baseado em redes neurais e informação de calorimetria foi
-proposto para o LHC em \cite{seixas:pcd:1995}. No último trabalho,
-informações do perfil de deposição de energia nos calorímetros foram
-utilizados para produzir a identificação de elétrons. Outros exemplos da aplicação de redes neurais para classificação de sinais de calorimetria pode ser encontrados em \cite{article:nnphys:1995}.
-
-Outras aplicações de redes neurais em HEP também são comuns, entre
-as quais pode-se destacar a identificação do sabor de quarks no
-experimento LEP do CERN~\cite{article:proriol:1995}, o trigger de
-neutrinos do experimento CHOOZ \cite{article:denby:1999}, a
-discriminação gamma-hadron a partir de chuveiros de partículas
-gerados por raios cósmicos \cite{article:bussino:2005}, a medição da
-massa de top-quarks no acelerador Tevatron do Fermilab
-\cite{article:mlhep:2009}, a identificação da massa de eventos de
-raios cósmicos, no Observatório Pierre Auger
-\cite{article:riggi:2007}.
-
-Mesmo com todos os exemplos de aplicações bem suscedidas de redes
-neurais, o seu uso está longe de ser uma unanimidade entre a
-comunidade de HEP. Uma ca\-rac\-terística particular do campo de
-aplicação é que há uma busca pelo entendimento de novos fenômenos,
-que são representados (nos dados simulados, que em geral são
-utilizados no treinamento dos classificadores) por modelos teóricos
-aproximados, que nem sempre estão corretos. Um experimento
-pode concluir que um modelo teórico existente está incompleto ou até
-mesmo errado. O uso de redes neurais é justificado pela facilidade
-de operação em alta dimensão (inúmeras variáveis são utilizadas no
-processo de identificação da física de interesse), porém, a
-dependência dos modelos teóricos é mais difícil de ser verificada ou
-corrigida nos classificadores não-lineares (em comparação com os
-cortes lineares mais usualmente utilizados em HEP)
-\cite{article:denby:1999}. Essa característica particular da HEP
-talvez tenha produzido uma resistência maior ao uso de redes neurais
-em comparação a outros campos da ciência. No caso da aplicação no
-detector H1, toda a colaboração do experimento precisou se convencer
-que as redes não eram uma caixa preta misteriosa e um esforço
-conjunto foi feito no sentido de entender como as redes funcionam e
-como podem ser ajustadas de modo ótimo para cada problema
-\cite{article:nnphys:1995}. De um modo geral, o uso de redes neurais
-está consolidado e bem aceito como ferramenta importante na análise
-offline, porém, no trigger online a situação ainda é ambígua, com
-grupos a favor e outros contra \cite{article:denby:1999}.
+Neste capítulo serão descritos os principais aspectos do processo de filtragem \textit{online} de elétrons no 
+detector ATLAS. O conhecimento adequado da energia de elétrons em uma larga faixa (de alguns GeV a 
+poucos TeV) é necessário para a busca 
+pela partícula de Higgs no decaimento H$\rightarrow$ZZ*$\rightarrow$4e (conforme previsto no Modelo Padrão) e 
+para medições precisas de fenômenos não descritos pelo Modelo Padrão. A detecção de elétrons é também muito 
+importante para os processos de calibração e alinhamento do detector durante a fase inicial de operação. Com 
+a análise de eventos conhecidos (como por exemplo o decaimento Z$\rightarrow$ee) pode-se gerar informações 
+valiosas para o melhor conhecimento das características do detector \cite{article:imphlttrigeer:2006}. A 
+discriminação destas partículas é baseada, principalmente, nas informações do sistema de calorímetros. Considerando informações 
+do perfil de deposição de energia medido nos calorímetros, os elétrons podem ser confundidos com jatos hadrônicos 
+(que neste caso representam ruído de fundo para o experimento). No LHC, a geração de jatos será bastante intensa 
+(por exemplo, para energia de 40 GeV a relação de produção elétron/jato é da ordem de 
+10$^{-5}$~\cite{article:ATLAS:2008}) o que tornará difícil a identificação da física de interesse. 
+Tradicionalmente,a identificação de elétrons é realizada analisando-se o formato transversal do chuveiro e o 
+vazamento para as camadas hadrônicas \cite{article:egtrigeer:2006}. Estes parâmetros variam com a energia da 
+partícula e nem sempre são capazes de produzir a eficiência de discriminação desejada.
 
 
-\subsection{Aplicações de técnicas estatísticas de extração de ca\-rac\-terísticas}
+\section{Filtragem de elétrons no L1}
 
-Mais recentemente, a partir do final da década de 1990, os métodos
-de aprendizado estatístico multi-variável como PCA, ICA e SOM vêm
-sendo aplicados com sucesso em problemas na área de física de alta
-energia. Nestes algoritmos, o aprendizado é feito de modo
-não-supervisionado, e as características estimadas não dependem de
-conhecimento prévio a respeito dos sinais utilizados.
+O primeiro nível de filtragem opera com granularidade reduzida para tornar mais rápido o processo de decisão. Então, 
+no L1, as células dos calorímetros são somadas para formar sinais conhecidos
+como torres de \textit{trigger} (TT). O tamanho das torres de \textit{trigger} é
+diferente para as camadas eletromagnéticas e hadrônicas. No calorímetro eletromagnético, cada TT cobre uma área de 0,1
+$\times$ 0,1 no plano $\eta \times \phi$ (ver Figura \ref{lvl1tt}), já no calorímetro
+hadrônico, cada TT representa uma região de 0,2 $\times$ 0,2 no plano $\eta \times \phi$.  
 
-Um dos primeiros trabalhos neste tópico \cite{article:lang:som}, foi
-publicado em 1998 e utiliza mapas auto-organizáveis (SOM) para a
-classificação de eventos de raios gama em astronomia de alta
-energia. Em~\cite{article:som:had:1999}, mapas SOM foram aplicados
-para a separação de bósons W do ruído de fundo composto por jatos
-hadrônicos. No trabalho~\cite{article:lange:som}, o ruído de fundo
-gerado na aceleração do feixe de partículas foi rejeitado a partir de mapas auto-organizáveis
-modificados. Redes SOM também foram utilizadas com sucesso para
-análise, classificação e monitoramento de sinais do telescópio OGLE
-(no Chile)~\cite{article:lucas:som} e para a identificação de
-prováveis assinaturas de bósons de Higgs~\cite{article:aatos:som}.
-
-A análise de componentes principais (PCA) é um técnica de
-descorrelação e compactação bastante utilizada em diversas áreas do
-conhecimento. Em física de alta energia, PCA foi aplicada para a
-seleção de variáveis de entrada de um discriminador neural no
-trabalho \cite{article:proriol:pca}. Em \cite{article:wolter:multi},
-são apresentadas diversas aplicações em HEP onde é utilizada a PCA
-para extração de características e compactação. No trabalho
-\cite{article:akras:pca}, sinais ópticos de nebulosas planetárias
-são processados por PCA com o objetivo de extrair informações a
-respeito de suas características morfológicas. Numa outra aplicação
-em astrofísica, PCA é utilizada, em conjunto com ICA, para a remoção
-do ruído de fundo e de outras fontes de interferência, permitindo
-melhor visualização de dados de ventos e tempestades solares
-\cite{article:cadavid:pcaica}. O trabalho
-\cite{article:herman:2006} utiliza a PCA, de forma segmentada, para
-compactação de sinais de calorimetria do ATLAS, em seguida
-classificadores neurais realizam a decisão elétron/jato, conseguindo
-boa eficiência de classificação.
-
-A análise de componentes independentes (ICA) tem aplicação mais
-recente em HEP, sendo que um dos primeiros trabalhos foi publicado
-em 2005 e descreve a elimi\-na\-ção de ruído na análise de sinais do
-feixe de partículas do experimento BOOSTER do Fermilab
-\cite{article:booster:ica}. Neste trabalho também é realizada uma
-comparação com um sistema semelhante baseado em PCA e a ICA
-apresenta resultados melhores. No trabalho
-\cite{article:fernandez:2005}, ICA é utilizada para análise de dados
-multi-variados em experimentos de física atômica e nuclear. A
-aplicação de ICA proporcionou redução do ruído de fundo, permitindo
-melhor visualização do sinal de interesse. ICA também foi aplicado
-com sucesso para separação de sinais em astrofísica de alta energia
-conforme detalhado a seguir. Em \cite{article:costagli:ica}, ICA foi aplicada para
-a separação de imagens de fontes sobrepostas adquiridas pelo
-satélite Planck da Agência Espacial Européia; no trabalho
-\cite{article:igual:ica} utiliza-se a análise de componentes
-independentes, em substituição aos filtros casados, para a
-decomposição de sinais astrofísicos simulados compostos pela combinação de
-moléculas elementares em estado congelado. Ainda na área de
-astrofísica, nos trabalhos
-\cite{article:cardoso:2005,article:vio:ica} ICA foi aplicado para a
-caracterização da radiação cósmica de fundo em microondas (CMB -
-\textit{Cosmic Microwave Background}). A CMB é uma forma de energia eletromagnética que preenche todo o universo e foi inicialmente observada em 1965. A CMB é visualizada apenas por
-rádio-telescópios.
-
-A partir destes exemplos, percebe-se que, apesar da aplicação mais
-recente em física de alta energia e áreas correlatas, diversos
-problemas de extração de ca\-rac\-te\-rísticas, remoção de ruído,
-agrupamento não-supervisionado (\textit{clustering}) e visualização vêm
-sendo resolvidos com a aplicação das técnicas estatísticas de
-processamento não-supervisionado de sinais.
-
-
-\section{Técnicas de Extração de Características Utilizadas neste Trabalho}
-\label{extr_carac}
-
-A seguir serão descritos, de modo resumido, as técnicas de extração de
-características utilizadas neste trabalho para a maximização da
-eficiência do canal elétron/jato do segundo nível de filtragem do
-detector ATLAS. Mais detalhes teóricos a respeito dos métodos podem
-ser encontrados no Apêndice \ref{apend_fex}.
-
-\subsection{Mapas auto-organizáveis}
-
-O mapa auto-organizável (SOM - \textit{Self Organizing Map}) é uma
-rede neural com treinamento não-supervisionado, baseado na
-aprendizagem competitiva, que é capaz de realizar uma organização
-topológica das entradas. O SOM foi proposto por Teuvo Kohonen em
-1982 \cite{book:kohonen:2001}, sendo capaz de realizar um
-mapeamento não-linear dos sinais de um espaço de entrada contínuo de
-dimensão $k$ para um espaço de características discreto que, em
-geral, é bidimensional. Cada neurônio da grade está diretamente
-conectado a todos os nós de entrada. Na Figura \ref{soms} pode-se
-visualizar o diagrama de um mapa auto-organizável bi-dimensional.
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=6cm]{cap3_som}
-\caption{Diagrama de um mapa auto-organizável} \label{soms}
+\begin{figure} \centering
+\includegraphics[width=9cm]{cap2_trigger_tower}
+\caption{Janela deslizante analisada pelo L1 no calorímetro
+eletromagnético.} \label{lvl1tt}
 \end{figure}
 
-O mapa auto-organizável compacta informação e preserva relações
-topológicas ou métricas do conjunto de sinais. Os SOM estão ligadas
-à ICA por conseguirem extrair informações ocultas dos sinais de
-forma não supervisionada \cite{article:foo:2006}. Uma apro\-xi\-mação
-das componentes independentes não-lineares pode ser obtida
-utilizando mapas auto-organizáveis \cite{book:oja:2001}.
-
-Três processos estão envolvidos na formação do mapa auto-organizado:
-a \textbf{competição}, onde para cada vetor de entrada há apenas um
-neurônio vencedor; a \textbf{cooperação}, quando o neurônio vencedor
-determina uma vizinhança topológica de neurônios excitados; e a
-\textbf{adaptação}, que procede ao ajuste dos pesos sinápticos para
-reforçar a resposta do neurônio vencedor, e de seus vizinhos, ao
-padrão de entrada.
-
-A atualização do vetor de pesos $w_j$ do neurônio j é feita através da equação:
-\begin{equation}\label{pesos_som}
-    w_j(n+1)=w_j(n)+\eta (n) h_{ij}(n)(x(n)-w_j(n)),
-\end{equation}
-\\
-sendo $\eta (n)$ a taxa de aprendizagem, a função de
-vizinhança $h_{ij}(n)$ pode ser definida por:
-\begin{equation}\label{neigbor}
-h_{ij}(n)=\exp(-d_{ij}^2/2\sigma^2(n))
-\end{equation}
-\\
-onde $d_{ij}$ é a distância do neurônio j para o neurônio vencedor i
-e $\sigma(n)$ é a largura da função vizinhança na n-ésima iteração.
-
-O mapa de características possui algumas propriedades, listadas a
-seguir \cite{haykin:nn:2008}:
-
-\begin{enumerate}
-  \item é formado pelo conjunto de
-vetores de pesos sinápticos $w_i$ no espaço de saída discreto e
-fornece uma boa aproximação para o espaço de entrada;
-
-  \item é ordenado de modo
-topológico. Padrões de entrada semelhantes são mapeados para regiões
-adjacentes no mapa de características;
-
-  \item regiões do espaço de entrada que possuem alta
-probabilidade de ocorrência são mapeadas para domínios maiores do
-espaço de saída;
-
-  \item fornece
-uma aproximação discreta das curvas principais, podendo ser visto
-como uma generalização não-linear da análise de componentes
-principais.
-\end{enumerate}
-
-No mapa de características o neurônio que apresentar maior saída é
-consi\-derado o vencedor, ou seja a saída do SOM é do tipo ``vencedor
-leva tudo" (WTA - \textit{winner takes all}). O neurônio ativado é
-escolhido a partir de sua semelhança com a entrada apresentada. É
-comum a utilização da distância euclidiana como métrica da
-proxi\-midade entre dois vetores; nesse caso, o neurônio vencedor é
-aquele que minimiza $i(\mathbf{x})=\| \mathbf{x}(n)-\mathbf{w_j}
-\|$.
-
-Uma outra forma de operar um mapa auto-organizável é utilizar as projeções dos sinais de entrada no mapa de características, ou seja as saídas $u_j$ de cada neurônio j que pode ser calculada por:
-\begin{equation}\label{som_out}
- u_j=\mathbf{x}^T\mathbf{w_j}
-\end{equation}
-O vetor $\mathbf{u}=[u_1,...,u_K]^T$ pode ser considerado como a projeção de $\mathbf{x}$ no mapa de características.
-
-Os mapas auto-organizáveis pertencem à classe de algoritmos de
-codificação vetorial, sendo capazes de encontrar de forma
-otimizada um número fixo de vetores ou palavras de código que
-melhor representem o conjunto de sinais.
-
-
-\subsection{Análise de Componentes Principais}
-
-A análise de componentes principais (PCA - \textit{Principal
-Component Analysis}) é uma técnica estatística de processamento de
-sinais diretamente ligada à transformação de
-\textit{Karhunen-Loève} \cite{book:pca:2002}. O objetivo da PCA é encontrar uma
-transformação linear onde os sinais projetados sejam não-correlacionados e grande parcela da energia (variância).
-esteja concentrada num pequeno número de componentes. Para isso, são exploradas informações da estatística de segunda ordem. A análise de componentes principais é bastante usada para compactação de
-informação. Para reduzir a dimensão dos dados, seleciona-se apenas os componentes de maior energia, de modo
-que o sinal recuperado a partir da informação compactada tenha
-pequeno erro médio quadrático se comparado ao original. A seguir serão desenvolvidos, de
-forma resumida, os fundamentos matemáticos da PCA.
-
-Considerando-se um vetor $\mathbf{x}=[x_1,...,X_N]^T$ aleatório com $N$ elementos,
-assume-se que ele tenha média zero:
-
-\begin{equation}\label{Xm}
-    \mathcal{E}\{\mathbf{x}\}=0
-\end{equation}
-\\
-onde $\mathcal{E}\{.\}$ é o operador esperança. Se $\mathbf{x}$ tem
-média não nula faz-se $\mathbf{x}\leftarrow
-\mathbf{x}-\mathcal{E}\{\mathbf{x}\}$.
-
-A projeção $z_i$ de $\mathbf{x}$ na direção de $\mathbf{v}_i$ pode
-ser expressa por:
-
-\begin{equation}\label{proj1}
-    z_i=\mathbf{v}_i^T\mathbf{x}=\sum_{k=1}^N v_{ki}x_k
-\end{equation}
-\\
-Na transformação por PCA, as componentes $z_i$ ($i=1,...,N$) devem
-ser ortogonais e ordenadas (de modo decrescente) pela variância das
-projeções, sendo, então, $z_1$ a projeção de máxima variância. Para
-tornar a variância independente da norma de $\mathbf{v}_i$, faz-se:
-
-\begin{equation}\label{normaw}
-    \mathbf{v}_i \leftarrow \frac{\mathbf{v}_i}{\| \mathbf{v}_i \|}
-\end{equation}
-\\
-Fazendo-se com que $||\mathbf{v}_i||=1$, torna-se a variância função apenas da direção
-das projeções. A ortogonalidade garante a não-correlação entre as
-componentes.
-
-Como $\mathcal{E}\{\mathbf{x}\}=0$, então $\mathcal{E}\{z_i\}=0$,
-logo a variância da projeção $z_i$ é calculada por
-$\mathcal{E}\{z_i^2\}$. Seguindo a definição da PCA, $z_1$ tem
-máxima variância; logo, $\mathbf{v}_1$ é encontrado pela maximização
-de \cite{book:oja:2001}:
-
-\begin{equation}\label{w1pca}
-    J_1^{PCA}(\mathbf{v}_1)=\mathcal{E}\{z_i^2\}=\mathcal{E}\{(\mathbf{v}_1^T\mathbf{x})^2\}
-    =\mathbf{v}_1^T\mathcal{E}\{\mathbf{x}\mathbf{x}^T\}\mathbf{v}_1=
-    \mathbf{v}_1^T \mathbf{C}_x\mathbf{v}_1,
-\end{equation}
-\\
-onde $\mathbf{C}_x$ é a matriz de covariância de $\mathbf{x}$.
-
-A solução para o problema de maximização da equação (\ref{w1pca}) pode
-ser encontrada na álgebra linear em função dos autovetores
-$\mathbf{e}_1,\mathbf{e}_2,...,\mathbf{e}_N$ da matriz
-$\mathbf{C}_x$. A ordem dos autovetores é tal que os autovalores
-associados satisfazem $d_1>d_2>...>d_N$. Desta forma, tem-se:
-
-\begin{equation}\label{pca1}
-    \begin{array}{ccc}
-      \mathbf{v}_i= \mathbf{e}_i,& & 1\leq i \leq N
-    \end{array}
-\end{equation}
-
-Percebe-se que a PCA de $\mathbf{x}$ e a decomposição por
-autovalores da matriz $\mathbf{C}_x$ (de dimensão $N\times N$) são
-equivalentes. Limitações computacionais na extração das componentes
-principais utilizando as equações (\ref{proj1}) e (\ref{pca1})
-aparecem quando a dimensão $N$ do vetor $\mathbf{x}$ aumenta, pois o
-processo de obtenção dos autovetores se torna proibitivamente lento.
-Nesse caso, uma solução é utilizar métodos iterativos de extração
-das componentes principais através de redes neurais
-\cite{article:oja:pca}.
-
-
-\subsection{Análise de Componentes Independentes}
-
-Diferente da PCA, que busca as direções ortogonais de máxima
-variância, a análise de componentes independentes (ICA -
-\textit{Independent Component Analysis}) é uma transformação onde as
-componentes na saída são estatisticamente independentes.
-
+A filtragem de elétrons no L1 é baseada em cortes lineares nos
+parâmetros do perfil de deposição de energia medido nos
+calorímetros. A definição dos critérios de seleção leva em conta o
+conhecimento das características típicas do perfil de objetos eletromagnéticos (elétrons e fótons), que
+geralmente apresentam:
 \begin{itemize}
-\item \textbf{Independência Estatística}: Considerando duas variáveis
-aleatórias (VAs) $x$ e $y$, se elas são independentes, então o
-conhecimento de uma não traz nenhuma informação a respeito da outra.
-Um sinal musical e um ruído sonoro originado de uma máquina elétrica
-são exemplos de variáveis independentes.
+  \item concentração ao redor do ponto de colisão (centro da RoI);
+  \item alta concentração de energia na seção eletromagnética;
+  \item baixa concentração de energia na seção hadrônica.
+\end{itemize}
 
-Matematicamente, $y_1$ e $y_2$ são independentes estatisticamente se e
-somente se \cite{Book:Papoulis:1991}:
-\begin{equation}\label{indep1}
-    p_{y1,y2}(y_1,y_2)=p_{y1}(y_1)p_{y2}(y_2),
-\end{equation}
-\\
-onde $p_{y1,y2}(y_1,y_2)$, $p_{y1}(y_1)$ e $p_{y2}(y_2)$ são
-respectivamente as funções de densidade de probabilidade (pdf -
-\textit{probability density function}) conjunta e marginais de $y_1$
-e $y_2$. O conceito de independência envolve o conhecimento de toda
-a estatística dos dados, sendo assim muito mais abrangente que a
-não-correlação (utilizada pela PCA), que somente utiliza estatística
-de segunda ordem (variância).
+A partir da análise
+de uma janela deslizante, cobrindo uma região de 4 $\times$ 4 TT (16
+no total), alguns critérios podem ser utilizados pelo L1 para
+definir um possível candidato a elétron:
+\begin{enumerate}
+  \item Os valores de energia das TTs da região central (de 2 $\times$ 2 TT)
+  são somados dois a dois e utiliza-se o maior valor encontrado, que deve exceder um patamar de energia 
+eletromagnética;
+  \item O nível de energia na periferia (fora da região central de 2 $\times$ 2
+  TT) é calculado para verificar o isolamento em energia do objeto
+  em questão;
+  \item A energia depositada nas camadas hadrônicas é somada para verificar o
+  vazamento de energia fora do calorímetro eletromagnético (isolamento hadrônico).
+\end{enumerate}
+Os patamares de seleção do nível 1 podem ser ajustados e os
+critérios combinados, a depender das características da física de
+interesse que se deseja estudar num dado momento de operação do
+detector. 
 
-Pode-se obter uma expressão equivalente à equação (\ref{indep1}) se, para todas as
-funções $g(y_1)$ e $h(y_2)$ absolutamente integráveis em $y_1$ e $y_2$, vale
-a igualdade:
-\begin{equation}\label{indep2}
-    \mathcal{E}\{g(y_1)h(y_2)\}=\mathcal{E}\{g(y_1)\}\mathcal{E}\{h(y_2)\}
-\end{equation}
-\\
-Para evitar a estimação das funções de densidade de probabilidade,
-pode-se utilizar a equação (\ref{indep2}). A definição de
-independência pode ser facilmente estendida para mais de duas
-variáveis aleatórias. Percebe-se da equação (\ref{indep2}) que a
-independência é um princípio mais restritivo que a não-correlação
-(quando $g(x)=x$ e $h(y)=y$). No Apêndice \ref{apend_fex} serão
-detalhados os princípios matemáticos mais utilizados para a
-estimação das componentes independentes.
+Neste trabalho, para análise dos algoritmos do L2, foram utilizados sinais simulados do canal elétron/jato aprovados 
+em dois cortes de primeiro nível diferentes. No primeiro conjunto, foi realizado apenas um corte em energia num 
+patamar igual a 10 GeV, esse corte é conhecido como E10 (ou E10-\textit{loose}, para indicar que não houve isolamento). 
+No segundo conjunto, o corte em energia utilizou um patamar igual a 15 GeV, e foram realizados também cortes por 
+isolamento (em energia e hadrônico), produzindo os sinais do conjunto E15i (onde o sufixo i indica a utilização 
+de cortes por isolamento). Mais detalhes a respeito das características dos conjuntos simulados E10 e E15i serão 
+fornecidos no Capítulo \ref{cap_cados}.
+
+
+
+
+
+\section{Filtragem de elétrons no L2 - Algoritmo T2Calo}
+
+O processo de discriminação de elétrons no segundo-nível de filtragem \textit{online} do ATLAS, conforme ilustrado 
+na Figura \ref{fig_esqL2}, pode ser dividido em duas etapas distintas. Inicialmente é executada a extração de 
+características (onde parâmetros discriminantes são estimados a partir dos dados brutos medidos nos calorímetros) e, 
+em seguida, o teste de hipóteses 
+(onde a discriminação propriamente dita é realizada a partir das características estimadas).
+
+\begin{figure} \centering
+\includegraphics[width=13cm]{cap1_esquema}
+\caption{Processo de identificação de elétrons no L2.} \label{fig_esqL2}
+\end{figure}
+
+O \textbf{T2Calo} \cite{TDR:ATLAS:2003} é o algoritmo padrão para
+extração de características e teste de hipóteses adotado para o canal elétron/jato no
+segundo nível de filtragem do ATLAS. Esse algoritmo utiliza
+informações de calorimetria, sendo capaz de separar objetos
+eletromagnéticos isolados de jatos hadrô\-nicos, utilizando
+parâmetros que estimam a forma dos chuveiros de deposição de
+energia. O T2Calo opera de modo semelhante ao algoritmo de filtragem do L1, porém 
+agora, ao invés de usar as torres de \textit{trigger}, toda a granularidade dos calorímetros está disponível.
+
+O primeiro passo do T2Calo é refinar a posição do centro da RoI fornecida pelo
+L1, encontrando a célula de maior energia (célula mais quente) na segunda camada do
+calorímetro eletromagnético ($\eta_1 , \phi_1$). Essa posição será
+posteriormente refinada pelo cálculo da posição da média ponderada
+da energia em uma janela de $3 \times 7$ células em ($\eta , \phi$). 
+
+Para a seleção dos objetos eletromagnéticos, o T2Calo estima os parâmetros descritos a seguir:
+\begin{itemize}
+  \item Razão de Forma: $R_{shape}=E_{3 \times 7}/E_{7 \times 7}$, onde $E_{n \times m}$ é a energia
+  depositada numa janela de $n \times m$ células em torno de ($\eta_1 , \phi_1$) na segunda camada eletromagnética;
+
+  \item Razão de Energia: $E_{ratio}=(E_{1st}-E_{2nd})/(E_{1st}+E_{2nd})$, onde $E_{1st}$ e $E_{2nd}$ são o máximo e o 
+segundo maior valor de energia encontrados na primeira camada eletromagnética numa janela de 
+$\Delta \eta \times \Delta \phi=0,125 \times 0,2$ em torno do centro da RoI ($\eta_1 , \phi_1$);
+
+  \item A energia eletromagnética total: $E_{EM}$ é calculada a partir da soma 
+da energia concentrada em janelas de $3 \times 7$ células
+  em torno de ($\eta_1 ,\phi_1$) nas três camadas eletromagnéticas;
+
+  \item A energia hadrônica total: $E_{HAD}$ é
+  calculada a partir da soma da energia concentrada em janelas de $\Delta \eta \times \Delta \phi=0,2 \times
+  0,2$ em torno do centro da RoI nas três camadas hadrônicas.
 
 \end{itemize}
 
-Na ICA, considera-se que um sinal multi-dimensional
-$\mathbf{x}(t)=[x_1(t),...,x_N(t)]^T$ observado (ou medido) é gerado
-a partir da combinação linear das fontes independentes
-$\mathbf{s}(t)=[s_1(t),...,s_N(t)]^T$. Na forma matricial e
-suprimindo-se o índice temporal t, pode-se escrever
-\cite{book:amari:2002}:
-\begin{equation}\label{icamatrix}
-\mathbf{x}=\mathbf{As},
-\end{equation}
-\\
-onde $\mathbf{A}$ (N$\times$N) é a matriz de mistura.
+Considerando que o perfil de deposição de energia dos elétrons é,
+em geral, mais concentrado ao redor do ponto de máximo e que,
+também não se espera deposição de uma quantidade significativa de
+energia nas camadas hadrônicas por elétrons, o
+T2Calo opera através de cortes lineares nos parâmetros estimados acima. Por exemplo, analisando os parâmetros
+$R_{shape}$, $E_{ratio}$ e $E_{EM}$, os eventos são aprovados caso os valores calculados sejam maiores que um 
+patamar de corte pré-estabelecido. Para $E_{HAD}$ acontece o inverso, e um candidato a elétron é selecionado 
+se o valor calculado para este parâmetro for menor que o patamar.
 
-O objetivo final da ICA é encontrar uma aproximação $\mathbf{y}$ das
-fontes independentes ou da transformação linear $\mathbf{A}$
-utilizando apenas os sinais observados $\mathbf{x}$. O vetor
-$\mathbf{y}$ é definido por:
-\begin{equation}\label{ica_inv}
- \mathbf{y}=\mathbf{Wx}
-\end{equation}
-sendo $\mathbf{w}$ a matriz de separação.
-
-Um problema clássico que pode ser solucionado usando-se ICA é conhecido
-como \textit{cocktail-party problem}, e está formulado de forma
-simplificada omitindo atrasos temporais e outros fenômenos físicos
-como a existência de múltiplas reflexões, nas equações (\ref{cpp}) e
-(\ref{ccp2}) (ver Figura \ref{cocktail}). Considerando que numa sala
-existem duas pessoas falando simultaneamente e dois microfones em
-diferentes posições, os sinais gravados $x_1(t)$ e $x_2(t)$ são uma
-soma ponderada das fontes $s_1(t)$ e $s_2(t)$:
-\begin{eqnarray}\label{cpp}
-% \nonumber to remove numbering (before each equation)
-  x_1(t)=a_{11}s_1(t)+a_{12}s_2(t) \\
-  \label{ccp2} x_2(t)=a_{21}s_1(t)+a_{22}s_2(t);
-\end{eqnarray}
-\\
-os coeficientes $a_{ij}$ dependem das distâncias dos microfones às
-pessoas, e podem ser considerados como os elementos da matriz de mistura $\mathbf{A}$ do
-modelo da equação \ref{icamatrix}, onde:
-
-\begin{equation}\label{matrizA}
-    \mathbf{A}=\left(
-                 \begin{array}{cc}
-                   a_{11} &a_{12} \\
-                   a_{21} & a_{22} \\
-                 \end{array}
-               \right).
-\end{equation}
-\\
-Se os fatores $a_{ij}$ são conhecidos, o problema é facilmente
-resolvido a partir de:
-\begin{equation}\label{icamatrix2}
-\mathbf{s}=\mathbf{Wx},
-\end{equation}
-\\
-onde $\mathbf{W=A}^{-1}$. Na prática, tanto as fontes $s_i$ como os
-$a_{ij}$ devem ser obtidos apenas dos sinais misturados $x_i$.
-
-\begin{figure}[th]
-\centering
-\includegraphics[width=9cm]{cap3_cocktail}
-\caption{Diagrama do \textit{cocktail party problem}.}
-\label{cocktail}
-\end{figure}
-
-Em um exemplo de aplicação de ICA, a Figura \ref{sinais}-a mostra as
-fontes $s_1(t)$ e $s_2(t)$, que foram misturadas linearmente gerando
-os sinais $x_1(t)$ e $x_2(t)$ da Figura \ref{sinais}-b. Após a
-aplicação de um algoritmo para extração das componentes
-independentes (FastICA \cite{article:hyvarinen:2000}), foram obtidas
-as curvas da Figura \ref{sinais}-c. Percebe-se que os sinais
-recuperados são cópias dos originais, a menos de fatores
-multiplicativos. Esta é uma das limitações inerentes do modelo da
-ICA, não há como garantir o fator de escala (que pode ser positivo
-ou negativo) ou a ordem de extração das componentes.
+Embora a concentração em torno do centro da RoI e o vazamento hadrônico 
+sejam características bastante úteis na identificação de elétrons, uma análise um pouco 
+mais detalhada revela que, pelo fato dos jatos apresentarem uma grande flutuação em suas características, o uso apenas destes 
+parâmetros pode não produzir o desempenho de discriminação desejado. Na Figura \ref{cap3_anwigmans}, 
+considerando a razão $\frac{E_{HAD}}{E_{EM}}$ (num conjunto de eventos simulados para o L2 do ATLAS), percebe-se que há 
+uma razoável superposição entre elétrons e jatos, essa limitação aumenta em baixa energia. Comportamento 
+semelhante é verificado na Figura \ref{cap3_anperfil} onde elétrons e jatos são comparados a partir 
+da razão $\frac{E_{3 \times 7}}{E_{7 \times 7}}$.
 
 \begin{figure}[h!]
 \begin{minipage}[b]{.48\linewidth}
   \centering
- \centerline{\epsfig{file=cap3_fontes,width=7.5cm}}
-  \vspace{.3cm}
+ \centerline{\epsfig{file=cap3_Ehad_em20,width=8cm}}
+ \vspace{.3cm}
   \centerline{(a)}\medskip
 \end{minipage}
 \hfill
-\begin{minipage}[b]{0.48\linewidth}
+\begin{minipage}[b]{.48\linewidth}
   \centering
- \centerline{\epsfig{file=cap3_mix,width=7.5cm}}
-  \vspace{.3cm}
+ \centerline{\epsfig{file=cap3_Ehad_em60,width=8cm}}
+ \vspace{.3cm}
   \centerline{(b)}\medskip
-\end{minipage}
-\hfill \linebreak
-\begin{minipage}[b]{0.98\linewidth}
+ \end{minipage}
+\caption{Distribuição de elétrons e jatos quanto à razão $\frac{E_{HAD}}{E_{EM}}$ para eventos com energia total (a) menor que 20 GeV e (b) maior que 60 GeV.} \label{cap3_anwigmans}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{minipage}[b]{.48\linewidth}
   \centering
- \centerline{\epsfig{file=cap3_rec,width=7.5cm}}
-  \vspace{.3cm}
-  \centerline{(c)}\medskip
+ \centerline{\epsfig{file=cap3_E3E720,width=8cm}}
+ \vspace{.3cm}
+  \centerline{(a)}\medskip
 \end{minipage}
-\caption{Sinais (a) fonte, (b) observados e (c) recuperados através
-da ICA.} \label{sinais}
+\hfill
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap3_E3E760,width=8cm}}
+ \vspace{.3cm}
+  \centerline{(b)}\medskip
+ \end{minipage}
+\caption{Distribuição de elétrons e jatos quanto à razão$\frac{E_{3 \times 7}}{E_{7 \times 7}}$ para eventos com energia total (a) menor que 20 GeV e (b) maior que 60 GeV.} \label{cap3_anperfil}
 \end{figure}
 
-%\begin{figure}[t!]
-%\begin{center}
-%\subfigure[]{\label{fontes}\epsfig{file=cap3_fontes,width=7.5cm,clip=}}
-%\subfigure[]{\label{misturas}\epsfig{file=cap3_mix,width=7.5cm,clip=}}
-%\subfigure[]{\label{recuperados}\epsfig{file=cap3_rec,width=7.4cm,clip=}}
-%\end{center}
-%\caption{Sinais (a) fonte, (b) observados e (c) recuperados através
-%da ICA.}
-%\end{figure}
+Num ambiente complexo, como o que é gerado a cada colisão do LHC,
+onde o nível de ruído de fundo é extremamente alto e os eventos de
+interesse são raros, a busca por algoritmos de filtragem mais eficientes é muito importante. 
+Aumentar o desempenho de discriminação significa menor quantidade de eventos não relevantes
+armazenados mídia permanente, economizando recursos e facilitando a análise
+\textit{offline}.
 
-As técnicas de ICA foram desenvolvidas inicialmente para solucionar
-pro\-blemas de separação cega de sinais (BSS - \textit{Blind Signal
-Separation}) semelhantes ao \textit{cocktail-party problem}, porém
-mais recentemente surgiram outras aplicações interessantes, como
-extração de características, separação de fontes em telecomunicações
-e redução de ruído em imagens
-\cite{book:oja:2001,article:hyvarinen:2000}. Atualmente a ICA tem
-sido aplicada com sucesso tanto para separação de sinais como para
-extração de características.
-
-\subsection{ICA não-linear}
-
-Em muitos problemas práticos o modelo básico da ICA, onde os sinais
-observados são considerados combinações lineares e instantâneas das
-fontes, não representa corretamente o cenário real. Os calorímetros
-do ATLAS são um exemplo de ambiente onde os sinais podem ser
-modificados por fenômenos não-lineares (os calorímetros são
-projetados para serem detectores lineares, porém, por restrições na
-construção dos sensores e montagem do detector, é razoável esperar
-que os sinais, na prática, sejam modificados por fenômenos
-não-lineares de natureza desconhecida, como por exemplo saturação de
-sensores, distorções na conversão dos sinais ópticos para elétricos
-e na propagação dos sinais).
-
-A equação (\ref{nlica}) apresenta um modelo geral para as misturas
-não-lineares:
-\begin{equation}\label{nlica}
-    \mathbf{x}=\mathbf{F}(\mathbf{s}),
-\end{equation}
-\\
-onde $\mathbf{F}$ é um mapeamento não-linear de $\mathbb{R}^N
-\rightarrow \mathbb{R}^N$
-
-vetor de $m$ funções de mistura não lineares desconhecidas,
-$\mathbf{x}$ e $\mathbf{s}$ são respectivamente os sinais observados
-e as fontes. A ICA não-linear consiste em encontrar o mapeamento
-$\mathbf{G}$: $\mathbb{R}^N \rightarrow \mathbb{R}^N$ tal que as
-componentes de $\mathbf{y}$ sejam estatisticamente independentes:
-\begin{equation}\label{nlica2}
-    \mathbf{y}=\mathbf{G}(\mathbf{x}).
-\end{equation}
-
-Uma característica da NLICA é que o problema apresenta múltiplas
-soluções~\cite{jutten:nlica:2003}. Se $\mathbf{y_1}$ e
-$\mathbf{y_2}$ são variáveis aleatórias independentes, é facil
-provar que $f(\mathbf{y_1})$ e $g(\mathbf{y_2})$ (onde $f(.)$ e
-$g(.)$ são funções diferenciáveis) são também independentes \cite{}.
-Fica claro que, sem o uso de alguma restrição, infinitos mapeamentos
-inversos $G$ satisfazem a condição de independência entre os sinais
-estimados $y_i$, i=1,...,N, em uma dada aplicação. Se o objetivo do
-problema for realizar a separação cega das fontes (BSS -
-\textit{Blind Signal Separation}), neste caso, deseja-se que as
-componentes $y_i$ sejam as fontes independentes que produziram os
-sinais observados $\mathbf{x}$, então, informações a respeito do
-modelo de mistura ou das fontes devem ser conhecidas a priori. A
-NLICA vêm sendo aplicada com sucesso em problemas como processamento
-de sinais de fala \cite{article:rojas:ica:2003} e remoção de ruído
-em imagens \cite{article:allinson:2002}.
-
-Em geral, o número de parâmetros a serem estimados num modelo de ICA
-não-linear é maior que no caso linear. Os algoritmos de NLICA, se
-comparados com os de ICA, apresentam maior complexidade
-computacional e convergência mais lenta. Em problemas de separação
-cega de fontes o algoritmo a ser utilizado deve ser esco\-lhi\-do
-utilizando informações a respeito do modelo de mistura. Considerando
-estas limitações, o uso da NLICA em substituição ao modelo linear
-somente é justificado se a precisão na estimação das componentes
-aumenta e a aplicação não apresenta restrição ao aumento do tempo de
-processamento.
-
-Entre os algoritmos de NLICA propostos na literatura, uma classe de
-métodos impõe restrições estruturais ao modelo de mistura, neste
-caso, pode-se garantir que as componentes estimadas são iguais às
-fontes (a menos por indeterminações de fator multiplicativo e ordem
-de estimação dos sinais, assim como no modelo linear). Uma solução
-de implementação mais direta é o uso de mapas auto-organizáveis para
-estimar o mapeamento não-li\-near, neste caso não há restrição de
-modelo. Outro método diretamente relacionado com a NLICA, chamado de
-ICA Local, propõe uma etapa de agrupamento dos sinais em conjuntos
-de características semelhantes, que deve ser realizada antes da ICA.
-O agrupamento produz um mapeamento não-linear dos dados e a ICA
-(linear) estima as componentes independentes. Mais informações a
-respeito dos diversos algoritmos e modelos de NLICA serão fornecidas
-nas próximas seções.
-
-\subsubsection{Unicidade da Solução em NLICA} \label{seq_uni}
-
-No caso não-linear, a independência estatística não é suficiente
-para garantir a sepa\-ração das fontes. Se duas variáveis aleatórias
-$y_1$ e $y_2$ são independentes, então
-$p_{y1,y2}(y_1,y_2)=p_{y1}(y_1)p_{y2}(y_2)$, para funções
-diferenciáveis $f$ e $g$, pode-se provar
-que~\cite{article:jutten:1999}:
-\begin{equation}\label{uniq}
-    p_{f(y_1),g(y_2)}(y_1,y_2)=p_{f(y_1)}(y_1)p_{g(y_2)}(y_2),
-\end{equation}
-e então as variáveis $f(y_1)$ e $g(y_2)$ são também independentes.
-Esta indeterminação, diferente do fator de escala e da ordem de
-estimação das componentes (que são inerentes a ICA linear), não são
-aceitáveis em um problema de separação de fontes.
-
-Estudos teóricos indicaram que a unicidade da solução da NLICA pode
-ser conseguida se o problema apresentar pelo menos uma das
-características a seguir \cite{article:hyvarinen:1999}:
-
-\begin{itemize}
-    \item O número de componentes é igual a dois. Deste modo os sinais podem ser considerados como uma variável complexa.
-    \item As pdf das componentes independentes são limitadas a valores conhecidos.
-    \item A função de mistura $\mathbf{F}$ preserva o zero ($\mathbf{F}(0)=0$) e é um mapeamento unívoco que preserva localmente a ortogonalidade das coordenadas.
-    \item O modelo de mistura é conhecido a priori e utilizado como informação para o algoritmo de estimação das componentes independentes.
-\end{itemize}
+A seguir será descrito o \textit{Neural Ringer}, que é um discriminador alternativo para o canal elétron/jato no 
+L2 do ATLAS. Utilizando informação da física de interesse para o processo de extração de características e um 
+classificador neural supervisionado para o teste de hipóteses, o \textit{Neural Ringer} apresenta eficiência 
+superior ao T2Calo e tempo de execução dentro da janela permitida para o L2.
 
 
-\subsubsection{Misturas Pós Não-Lineares}
+\section{Neural Ringer - Alternativa para Filtragem de Elétrons no L2}
+\label{sec_ringer}
+Um discriminador alternativo foi proposto inicialmente em~\cite{article:seixas:1996} para o canal 
+elétron/jato no segundo nível de filtragem do ATLAS. Conforme ilustrado na Figura~\ref{fig_ringerdiag}, 
+o processo de extração de características compreende um arranjo topológico dos sinais medidos no calorímetro 
+(com a construção de anéis a partir do perfil de deposição de energia), e o teste de hipóteses é realizado 
+por um classificador neural supervisionado (arquitetura Perceptron de Múltiplas Camadas)~\cite{haykin:nn:2008}, 
+este discriminador ficou conhecido como \textit{Neural Ringer}.
 
-Um caso especial da ICA não-linear são os métodos de estimação que
-incluem no algoritmo de estimação das componentes independentes
-informações a respeito do modelo não-linear que gerou os dados
-observados. Estas informações se configuram em restrições
-estruturais ao mapeamento inverso (que é estimado pelo algoritmo).
-Entre estes modelos, o de misturas \textbf{pós não-lineares} (PNL)
-\cite{article:jutten:1999} é um dos mais utilizados na literatura.
-
-No modelo PNL, considera-se que inicialmente ocorre uma combinação
-linear das fontes (como no modelo básico de ICA), e as funções
-não-lineares $f_i$ são aplicadas antes da observação dos sinais
-$x_i$:
-\begin{equation}\label{pnlin}
-    x_i=f_i\Big(\sum_{j=1}^n a_{ij}s_j \Big).
-\end{equation}
-É importante notar que as não-linearidades são aplicadas
-individualmente a cada componente da mistura linear (não são
-permitidas linearidades cruzadas). A Figura~\ref{fig_pnl} ilustra o
-modelo de misturas PNL.
-
-\begin{figure}[th]
+\begin{figure}[t] 
 \centering
-\includegraphics[width=10cm]{cap3_pnl}
-\caption{Diagrama do modelo de mistura PNL.} \label{fig_pnl}
+\includegraphics[width=11cm]{cap3_ringerdiag}
+\caption{Fluxo de processamento do \textit{Neural Ringer}.} \label{fig_ringerdiag}
 \end{figure}
 
-A consideração de que as misturas são pós não-lineares permite uma
-grande simplificação do problema, e as indeterminações existentes se
-tornam semelhantes às do caso linear. A modelagem através da equação
-(\ref{pnlin}) satisfaz grande parte dos fenômenos não-lineares,
-como, por exemplo, a modelagem da distorção de sensores num meio de
-propagação linear.
-
-Detalhes de alguns algoritmos para estimação das componentes
-independentes em misturas PNL são fornecidos no Apêndice
-\ref{apend_fex}.
-
-\subsubsection{Outros modelos de misturas com restrições estruturais}
-
-Alguns modelos com restrições estruturais diferentes do PNL foram
-propostos na literatura. No trabalho
-\cite{article:solazzi:pnl:2004}, o modelo de mistura é definido por:
-\begin{equation}\label{eq_pnll}
-    \mathbf{x}=\mathbf{A_2}f(\mathbf{A_1}\mathbf{s}),
-\end{equation}
-sendo $\mathbf{A_1}$ e $\mathbf{A_2}$ matrizes quadradas e
-$f=[f_1,f_2,...,f_N]^T$ são funções não-lineares aplicados a cada
-componente (assim como o modelo PNL, este também não permite
-não-linearidades aplicadas a mais de um componente). O modelo
-definido na Equação \ref{eq_pnll} e ilustrado também na Figura
-\ref{fig_pnll} é chamado Pós Não-linear Linear (PNL-L). O bloco
-linear $\mathbf{A_2}$ é executado após a aplicação das funções
-não-lineares, produzindo um modelo mais geral que o PNL. Nos
-trabalhos \cite{article:woo:nl2005,article:gao:nl2005} são propostos
-algoritmos baseados em redes neurais para a estimação do modelo
-PNL-L.
-
-\begin{figure}[th]
-\centering
-\includegraphics[width=7cm]{cap3_pnll}
-\caption{Diagrama do modelo PNL-L.} \label{fig_pnll}
-\end{figure}
-
-Em \cite{article:gao:nl2005}, um modelo estrutural chamado mono
-não-linearidade (ver Figura \ref{fig_mnlin}) foi proposto para o
-problema da NLICA. Neste modelo os sinais observados são gerados a
-partir de:
-\begin{equation}\label{eq_mnlin}
-    \mathbf{x}=f^{-1}(\mathbf{A}f(\mathbf{s})).
-\end{equation}
-Este modelo é dito mais geral que o PNL pois as funções não-lineares
-podem ser aplicadas a mais de uma componente (as funções $f_i$ podem
-ser funções não-lineares de mais de uma variável). Este modelo é
-chamado de mistura de mono não-linearidade (ver Figura
-\ref{fig_mnlin}). A generalidade deste modelo é derivada da teoria
-da análise funcional (\textit{functional analysis})
-\cite{book:function:1984} e foi mostrado em
-\cite{article:gao:nl2005} que esta arquitetura pode representar
-qualquer mistura com duas camadas de não-linearidades.
-
-\begin{figure}[th]
-\centering
-\includegraphics[width=8.5cm]{cap3_mononl}
-\caption{Diagrama do modelo da Mono não-linearidade.}
-\label{fig_mnlin}
-\end{figure}
-
-\subsubsection{Algoritmos sem restrições estruturais}
-
-Se nenhuma restrição ao modelo de mistura é imposta não há garantia
-que os componentes independentes estimados estejam relacionadas com
-as fontes (ver Seção \ref{seq_uni}). Então, esta classe de
-algoritmos de NLICA não é capaz de realizar a separação de fontes, a
-menos quando as premissas da unicidade das soluções sejam atendidas.
-Entre os métodos de NLICA sem restrições estruturais, pode-se
-destacar o uso de mapas auto-organizáveis, que foi um dos primeiros
-algoritmos utilizados para NLICA \cite{article:pajunen:1996}, e os
-métodos que utilizam inferência Bayesiana
-\cite{article:lappalainen:2000}.
-
-\textbf{NLICA a partir de Mapas Auto-Organizáveis}:
-
-Uma das primeiras tentativas bem suscedidas de realizar NLICA
-utilizou mapas auto-organizáveis \cite{article:pajunen:1996}.
-Pode-se provar que as coordenadas $y_1$ e $y_2$ do neurônio vencedor
-no mapa (ver Figura \ref{fig_som_nlica}) são independentes e
-aproximadamente uniformemente distribuídas
-\cite{article:pajunen:1996}. Para estimar a NLICA, o SOM é treinado
-usando como entradas os sinais observados, e as coordenadas do
-neurônio vencedor correspondem a uma aproximação das componentes
-independentes.
-
-\begin{figure}[th]
-\centering
-\includegraphics[width=8cm]{cap3_som_nlica}
-\caption{NLICA a partir de SOM.} \label{fig_som_nlica}
-\end{figure}
-
-Entre as desvantagens do método pode-se destacar:
-
-\begin{itemize}
-    \item O mapeamento é discreto (existe um número limitado de neurônios no mapa),
-    então algum tipo de regularização é necessária para produzir componentes contínuos.
-    Esse problema pode ser minimizado aumentando-se o número de neurônios do mapa.
-    \item Os componentes a serem estimados devem ter pdf sub-gaussiana (quanto mais próxima da distribuição uniforme, melhor).
-    \item O custo computacional aumenta rapidamente com o número de componentes independentes a serem estimados.
-\end{itemize}
-
-Para avaliar o custo computacional, o número de parâmetros Np do SOM
-pode ser estimado pela expressão:
-\begin{equation}
-    Np=N \times (Q_L)^N
-\end{equation}
-onde $N$ é o número de componentes a serem estimados (que é
-considerado igual ao número de sinais observados) e $Q_L$ é o número
-de níveis de quantização desejado.
-
-Com uma formulação alternativa aos SOM, o Mapeamento Topográfico
-Generativo (GTM - \textit{Generative Topographic Mapping}) foi
-introduzido em \cite{article:bishop:1998}, e apresenta princípios
-estatísticos mais fundamentados que o mapa SOM. O método GTM básico
-tem poucas vantagens práticas em relação aos Mapas
-Auto-Organizáveis, pois aqui as componentes independentes também são
-assumidas como processos uniformemente distribuídos e o espaço de
-características é formado a partir de uma grade retangular discreta
-m-dimensional. Porém, devido a sua formulação matemática mais
-fundamentada, o GTM pode ser facilmente estendido para variáveis não
-uniformes. O trabalho \cite{article:pajunen:1997} propõe uma
-modificação à formulação básica onde são introduzidos
-coe\-fi\-cientes de ponderação que permitem a estimação de
-componentes independentes com qualquer tipo de distribuição. Os
-componentes são modelados como misturas de sinais Gaussianos e os
-parâmetros são estimados usando o algoritmo \textit{Expectation
-Maximization} \cite{article:hyvarinen:2000}. O treinamento do GMT
-envolve dois passos, a avaliação da probabilidade a
-\textit{posteriori} e a adaptação dos parâmetros do modelo.
-
-\textbf{NLICA a partir de Inferência Bayesiana}:
-
-Nos métodos baseados em inferência Bayesiana, considera-se que os
-sinais observados são gerados a partir de
-\cite{article:lappalainen:2000}:
-\begin{equation}
-    \mathbf{x}=f(\mathbf{s}) + \mathbf{n}
-\end{equation}
-onde $\mathbf{n}$ é definido como ruído Gaussiano independente dos
-componentes a serem estimados.
-
-Os componentes independentes são modelados como misturas de sinais
-de distribuição Gaussiana. Pode-se provar que
-\cite{article:lappalainen:2000} dado um número suficiente de
-Gaussianas, virtualmente qualquer distribuição de probabilidade pode
-ser modelada com uma certa precisão. Uma variação deste método foi
-aplicada em \cite{article:lappalainen:bay1999} para o modelo linear
-da ICA. Em grande parte dos algoritmos Bayesianos para NLICA, redes
-neurais tipo MLP de duas camadas são treinadas para aproximar o
-mapeamento não linear:
-\begin{equation}
-    f(\mathbf{s})=\mathbf{B}\Phi(\mathbf{As}+\mathbf{a})+\mathbf{b}
-\end{equation}
-
-Em um método de estimação Bayesiano, probabilidades a
-\textit{posteriori} são associadas a cada modelo não-linear que
-possivelmente teria gerado os dados observados. Verificar uma
-quantidade tão grande de modelos não é possível na prática, então os
-métodos Bayesianos para NLICA utilizam uma técnica chamada de
-``aprendizagem amostral" (EL - \textit{ensemble learning})
-\cite{aricle:minskin:2000}. Na EL, somente o conjunto mais provável
-de modelos é testado utilizando uma aproximação paramétrica que é
-ajustada à probabilidade a \textit{posteriori}
-\cite{article:valpola:2000ica}.
-
-Métodos Bayesianos de NLICA foram propostos
-em~\cite{article:honkela:2004ica} e \cite{article:honkela:2007}. No
-trabalho \cite{article:ilin:2004ie} foram realizados testes
-experimentais para comparar o desempenho dos mode\-los Bayesiano e
-PNL na estimação dos componentes independentes, as principais
-conclusões foram:
-\begin{itemize}
-    \item os algoritmos PNL apresentam desempenho superior quando as misturas
-     seguem o modelo PNL clássico (não-linearidades inversíveis e mesmo número de componentes independentes e
-     sinais observados);
-    \item o desempenho de ambos os métodos pode ser melhorada a partir da
-    exploração da informação de mais misturas que componentes independentes;
-    \item a principal vantagem do método Bayesiano é que mapeamentos mais
-    genéricos podem ser produzidos (uma vez que não há restrições estruturais).
-    Estes métodos geralmente apresentam maior custo computacional e necessitam
-    de várias inicializações para obter uma solução ótima (podem apresentar
-    problemas com mínimos locais da função custo).
-\end{itemize}
-
-
-\subsubsection{Local ICA}
-
-Se o modelo da ICA for utilizado para extração de características
-(ao invés de sepa\-ração de fontes), uma melhor descrição dos dados
-pode ser obtida se forem exploradas características locais.
-Considerando um conjunto de sinais multi-dimensionais com
-estatística variável, o modelo da ICA linear pode não ser capaz de
-revelar a estrutura fundamental dos dados. Neste caso, é mais
-razoável realizar a extração de características (estimação das
-componentes independentes) a partir de k subconjuntos dos dados (ver
-Figura \ref{fig_local}). Os sinais pertencentes ao k-ésimo
-subconjunto apresentam características semelhantes. Este
-procedimento leva ao modelo da ICA local.
-
-\begin{figure}[th]
-\centering
-\includegraphics[width=8.5cm]{cap3_local}
-\caption{Diagrama do modelo da ICA local.} \label{fig_local}
-\end{figure}
-
-Conforme proposto em \cite{karhunen:local:1999}, um conjunto de
-dados de alta dimensão pode ser separado em sub-conjuntos, através
-de algum algoritmo de agrupamento como o k-means
-\cite{book:duda:2000} ou SOM \cite{article:som:oja:1996}, e
-componentes independentes lineares são então estimadas de cada
-subconjunto. Determinar o número ideal de agrupamentos em um
-conjunto de dados não é uma tarefa simples e geralmente requer
-informação a priori. No trabalho \cite{article:simas:2008:eusipco}
-foi proposto um critério para a escolha do número de agrupamentos em
-um problema ``cego" de processamento de sinais.
-
-Na ICA Local, o agrupamento é responsável por uma representação
-não-linear dos dados, enquanto modelos de ICA linear aplicados a
-cada sub-conjunto (\textit{cluster}) descrevem as características
-locais dos dados. A ICA local pode ser considerada como um
-compromisso entre os modelos linear e não-linear da ICA
-\cite{jutten:nlica:2003}. O objetivo é obter uma melhor
-representação dos dados (se comparado com o modelo linear da ICA),
-evitando os problemas computacionais do modelo não-linear
-\cite{karhunen:local:2000}. Em diferentes abordagens, os
-agrupamentos podem ser montados com superposição, usando por exemplo
-fronteiras \textit{fuzzy}
-\cite{article:honda:2000,article:honda:2006}, ou sem superposição
-\cite{karhunen:local:2000,aricle:palmieri:2000}.
-
-Nos trabalhos \cite{article:lan:2005,article:lan:2006} a ICA Local
-foi aplicada para a estimação da informação mútua. A informação
-mútua \cite{book:cover:1991} é uma importante ferramenta em diversas
-aplicações de processamento de sinais, especialmente na seleção de
-ca\-rac\-terísticas.
-
-\section{Sistemas de Classificação Utilizados na Filtragem de Segundo-Nível do ATLAS}
-
-Os sistemas de filtragem propostos neste trabalho são divididos em
-duas etapas distintas. Inicialmente os sinais medidos são
-pré-processados para que suas características discriminantes se
-tornem mais acessíveis. As características extraídas são utilizadas
-como entrada para os classificadores propriamente ditos. Nesta Seção
-serão descritos os sistemas de filtragem utilizados.
-
-\subsection{Pré-processamento - Extração de Características}
+\subsection{Extração de Características - Anelamento} \label{sec_anelamento}
 
 Os sinais do perfil de deposição de energia utilizados para
 discriminação elétron/jato são medidos nas sete camadas dos
 calorímetros do ATLAS. Considerando a granularidade de cada camada,
 uma Região de Interesse (RoI) típica (de tamanho 0,4$ \times 0,4$ em
-$\eta \times \phi$) é descrita por aproximadamente 700 células. Um
-procedimento foi proposto em \cite{tese:andre:2006} para compactar
-os sinais dos calorímetros mantendo a interpretação física do perfil
-de deposição de energia. As células sensoras de cada camada são
-formatadas em anéis concêntricos de deposição de energia.
+$\eta \times \phi$) é descrita por aproximadamente 1000 células~\cite{tese:andre:2006}. 
+
+Visando compactar
+os sinais dos calorímetros e, ao mesmo tempo, manter a interpretação física do perfil
+de deposição de energia, as células sensoras de cada camada são agrupadas em anéis concêntricos de 
+deposição de energia. Conforme ilustrado na Figura~\ref{fig_aneis}, o procedimento de geração dos sinais em 
+anéis é executado em cada camada do calorímetro e envolve os passos a seguir:
+\begin{enumerate}
+ \item A célula mais energética da camada é considerada como o primeiro anel;
+ \item As células ao redor do primeiro anel (imediatamente adjacentes) definem o
+segundo anel e assim sucessivamente (até cobrir toda a janela da RoI);
+ \item A energia amostrada pelas
+células pertencentes a um dado anel são somadas produzindo o sinal
+de energia em anéis;
+ \item Os sinais em anéis são normalizados.
+\end{enumerate}
+
+É interessante notar que, devido à diferença de
+granularidade entre as camadas do calorímetro, um número diferente
+de anéis é gerado para cada camada. A Tabela \ref{tab_aneis} mostra
+a distribuição dos anéis por camada. No processo de formatação é considerado um número 
+fixo de anéis por camada, porém, dependendo da posição do centro da RoI, esta pode 
+não estar completa (as células sensoras que compõem os anéis podem não existir caso a 
+partícula interaja próximo a uma extremidade ou descontinuidade do calorímetro), neste caso, 
+assume-se igual a zero as leituras das células que faltam. Outra característica a ser observada 
+é que, em algumas camadas, as células não são quadradas (conforme ilustrado na Figura \ref{fig_ancam}),
+ neste caso, falar em anéis é uma abstração 
+(pois ao final do processo descrito acima podem não existir realmente anéis de células sensoras). 
 
 \begin{figure}[th]
 \centering
@@ -916,59 +245,8 @@ formatadas em anéis concêntricos de deposição de energia.
 \label{fig_aneis}
 \end{figure}
 
-Considerando um conjunto de células de uma RoI em uma certa camada
-do calorímetro, conforme ilustrado na Figura \ref{fig_aneis}, a
-célula mais energética de cada camada é considerada como o primeiro
-anel. Em seguida as células ao redor do primeiro anel definem o
-segundo anel e assim sucessivamente. A energia amostrada pelas
-células pertencentes a um dado anel são somadas produzindo o sinal
-de energia em anéis. É interessante notar que, devido à diferença de
-granularidade entre as camadas do calorímetro, um número diferente
-de anéis é gerado para cada camada. A Tabela \ref{tab_aneis} mostra
-a distribuição dos anéis por camada. As Figuras \ref{fig_calo_ele} e
-\ref{fig_calo_jet} mostram os sinais medidos na segunda camada
-eletromagnética do calorímetro respectivamente para um elétron e um
-jato.
-
-As Figuras \ref{fig_elet}, \ref{fig_jett} e \ref{fig_jete} mostram
-sinais em anéis respectivamente para um elétron típico, um jato
-típico e um jato com perfil semelhante ao de elétrons. Percebe-se
-que o perfil de deposição medido para elétrons apresenta pouco
-espalhamento (é contido em uma pequena região) e é quase totalmente
-concentrado nas camadas eletromagnéticas. Os jatos tipicamente
-apresentam maior energia hadrônica e deposição em uma maior área do
-calorímetro. Alguns jatos (como o mostrado na Figura \ref{fig_jete})
-podem apresentar perfil de deposição de energia semelhante ao de
-elétrons, representando um ruído de fundo de difícil identificação.
-
-\begin{figure}[th]
-\begin{center}
-\subfigure[]{\label{fig_calo_ele}\epsfig{file=cap3_ele_e2_3d,width=7.5cm,clip=}}
-\subfigure[]{\label{fig_calo_jet}\epsfig{file=cap3_jet_e2_3d,width=7.5cm,clip=}}
-\end{center}
-\caption{Sinais (a) fonte, (b) observados.}
-\end{figure}
-
-\begin{figure}[th]
-\begin{center}
-\subfigure[]{\label{fig_elet}\epsfig{file=cap3_ele_tip,width=7.5cm,clip=}}
-\subfigure[]{\label{fig_jett}\epsfig{file=cap3_jet_tip,width=7.5cm,clip=}}
-\subfigure[]{\label{fig_jete}\epsfig{file=cap3_jet_ele,width=7.4cm,clip=}}
-\end{center}
-\caption{Sinais (a) fonte, (b) observados e (c) recuperados através
-da ICA.}
-\end{figure}
-
-Antes da utilização nos sistemas de classificação (teste de
-hipótese) os sinais em anéis são normalizados dividindo-se a energia
-de cada anel pela energia total do evento:
-\begin{equation}
- r_i=\frac{r_i}{\sum_{i=1}^{100}r_i}
-\end{equation}
-
 \begin{table}[th]
-\centering \caption{Número de anéis formados para cada camada do
-calorímetro do ATLAS.}\vspace{0.2cm} \footnotesize
+\centering \caption{Número de anéis formados para cada camada do calorímetro do ATLAS.}\vspace{0.2cm} \footnotesize
 \begin{tabular}{c | c c c c c c c | c}
     \hline
      \textbf{Camada} & \textbf{PS} & \textbf{E1} & \textbf{E2} & \textbf{E3} & \textbf{H0} & \textbf{H1} & \textbf{H0} & \textbf{Total} \\
@@ -979,132 +257,274 @@ calorímetro do ATLAS.}\vspace{0.2cm} \footnotesize
 \label{tab_aneis}
 \end{table}
 
-A formatação em anéis produz uma compactação por um fator de 7 vezes
-(de 700 células para 100 anéis), mantendo a interpretação física do
-perfil de deposição de energia, tornando o sinal independente do
-ponto de colisão no detector e reduzindo a influência do ruído de
-cada célula.
-
-Os métodos de extração de características propostos neste trabalho
-(SOM, PCA, ICA e NLICA) operam sempre sobre os sinais em anéis para
-a extração de características discriminantes e assim aumentar a
-eficiência dos classificadores. A estimação das características
-discriminantes dos anéis pode ser realizada de duas formas distintas
-conforme descrito a seguir.
-
-\subsubsection{Características Globais}
-
-Os sinais em anéis produzidos em todas as camadas do calorímetro
-podem ser justapostos em um único vetor de características (de 100
-componentes). Este vetor é então utilizado como entrada para os
-algoritmos de aprendizado estatístico, este procedimento é ilustrado
-na Figura \ref{fig_fexg}
-
-\begin{figure}[th]
-\centering
-\includegraphics[width=13cm]{cap3_fex_glob}
-\caption{Processo de extração de características globais.}
-\label{fig_fexg}
-\end{figure}
-
-\subsubsection{Características Segmentadas}
-
-Alternativamente, as características discriminantes podem ser
-estimadas separadamente para os anéis produzidos em cada camada do
-calorímetro. Este procedimento, em geral, produz resultados de mais
-fácil interpretação física pois sabe-se que cada camada do
-calorímetro possui características distintas como o tipo e a
-granularidade das células detectoras. A Figura \ref{fig_fexs}
-ilustra este procedimento.
-
-\begin{figure}[th]
-\centering
-\includegraphics[width=11cm]{cap3_fex_seg}
-\caption{Processo de extração de características segmentadas.}
-\label{fig_fexs}
-\end{figure}
-
-\subsection{Classificadores Neurais Supervisionados}
-
-Neste trabalho foram utilizados classificadores neurais tipo
-perceptrons de múltiplas camadas (MLP). Mais detalhes sobre
-classificação de sinais e a implementação de classificadores neurais
-supervisionados podem ser encontrados no Apêndice \ref{apend_clas}.
-Os classificadores, assim como os algoritmos de extração de
-características, podem ser aplicados de modo global e de modo
-segmentado.
-
-\subsubsection{Classificador Global}
-
-O classificador global opera sobre um conjunto de características
-discriminantes globais, produzindo a decisão elétron/jato. A Figura
-\ref{fig_clasg} ilustra a operação do classificador global.
-
 \begin{figure}[h!]
 \centering
-\includegraphics[width=8cm]{cap3_clas_glo}
-\caption{Decisão utilizando classificador global.} \label{fig_clasg}
+\includegraphics[width=9cm]{cap3_rescalo}
+\caption[Exemplo da organização das células em anéis nas diferentes camadas do calorímetro.]{Exemplo da 
+organização das células em anéis nas diferentes camadas do calorímetro, adaptado de \cite{tese:torres:2010}.}
+\label{fig_ancam}
 \end{figure}
 
-\subsubsection{Classificadores Segmentados}
-
-Considerando o sistema de calorímetros do detector ATLAS, a
-informação disponível está segmentada em diversas camadas com
-características físicas e granularidade diferentes. Para melhor
-explorar as características do detector, está sendo proposto o uso
-de um conjunto de classificadores neurais, cada um especialista na
-informação de uma camada do calorímetro (ver Figura
-\ref{fig_classeg}).
-
-\begin{figure}[th]
-\centering
-\includegraphics[width=10.6cm]{cap3_clas_seg}
-\caption{Decisão utilizando classificadores segmentados.}
-\label{fig_classeg}
+\begin{figure}[h!]
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap3_ele_e2_3d,width=7.5cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap3_jet_e2_3d,width=7.5cm}}
+\end{minipage}
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap3_eaneis_e2,width=5cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap3_janeis_e2,width=5cm}}
+\end{minipage}
+\linebreak \caption{Sinais típicos medidos na camada EM2 (acima) e os respectivos sinais em anéis (abaixo), 
+respectivamente para um elétron (esquerda) e um jato (direita).} \label{fig_sig3d}
 \end{figure}
 
-Um problema que surge na utilização de múltiplos classificadores
-segmentados é como combinar suas saídas para produzir da decisão
-final. Neste contexto, pode-se utilizar as informações de dois
-modos, através dos rótulos de classe atribuídos por cada
-classificador ou utilizando-se a saída contínua (que no caso dos
-classificadores utilizados varia de -1 a 1).
+\begin{figure}[h!]
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap3_ele_tip,width=7.5cm}}
+  \vspace{.3cm}
+  \centerline{(a)}\medskip
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap3_jet_tip,width=7.5cm}}
+  \vspace{.3cm}
+  \centerline{(b)}\medskip
+\end{minipage}
+\hfill \linebreak
+\begin{minipage}[b]{0.98\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap3_jet_ele,width=7.5cm}}
+  \vspace{.3cm}
+  \centerline{(c)}\medskip
+\end{minipage}
+\caption{Sinais em anéis para (a) elétron típico, (b) jato típico e
+(c) jato com perfil semelhante ao de elétrons.} \label{fig_sig_anel}
+\end{figure}
 
-\subsection{Combinação de Múltiplos Classificadores}
+A Figura \ref{fig_sig3d} mostra, para a segunda camada eletromagnética, os sinais medidos para um elétron e 
+um jato típicos e seus respectivos sinais em anéis. A Figura \ref{fig_sig_anel} mostra sinais em anéis, 
+respectivamente, para um elétron típico, um jato típico e 
+um jato com perfil semelhante ao de elétrons. Percebe-se que o perfil de deposição medido para elétrons 
+apresenta pouco espalhamento (é contido em uma pequena região) e é concentrado nas camadas eletromagnéticas. 
+Os jatos apresentam uma maior variação em suas características físicas. Essas partículas tipicamente 
+depositam uma considerável quantidade de energia nas camadas hadrônicas e possuem perfil de deposição com 
+pouca concentração espacial (ver Figura \ref{fig_sig_anel}-b). Entretanto, alguns jatos (como o mostrado na 
+Figura \ref{fig_sig_anel}-c) podem apresentar perfil de deposição de energia semelhante ao de elétrons. 
+Esse último tipo de assinatura hadrônica representa a maioria dos jatos aprovados como elétrons pelo L1, 
+compondo um ruído de fundo de difícil identificação. 
 
-Quando estão disponíveis informações de múl\-ti\-plos
-classificadores, surge o problema de como combiná-las de forma
-ótima. A depender do tipo de saída escolhida para os
-classificadores, sendo va\-riá\-veis contínuas (com excursão de -1 a
-1) ou va\-riá\-veis discretas (rótulos de classe), a combinação pode
-ser realizada através de estratégias distintas
-\cite{kuncheva:comb:2004}.
+%\begin{figure}[th]
+%\begin{center}
+%\subfigure[]{\label{fig_calo_ele}\epsfig{file=cap3_ele_e2_3d,width=7.5cm,clip=}}
+%\subfigure[]{\label{fig_calo_jet}\epsfig{file=cap3_jet_e2_3d,width=7.5cm,clip=}}
+%\end{center}
+%\caption{Sinais {medidos na camada EM2 para (a) elétron e (b) jato.}
+%\end{figure}
 
-Considerando K classificadores com saídas contínuas $u_k$, uma forma
-usualmente utilizada para combinação é a média das saídas:
-\begin{equation}\label{med}
-    \mu (\mathbf{x}) = \sum_{k=1}^K u_k (\mathbf{x})
+\subsection{Normalização}
+
+Antes da utilização nos sistemas de classificação (teste de
+hipótese) os sinais em anéis precisam ser normalizados. No trabalho \cite{tese:torres:2010}, foram testadas 
+diferentes formas de normalização dos sinais em anéis como:
+\begin{itemize}
+ \item \textbf{Energia total}: dividindo-se a energia de cada anel ($Ea_i$) pela energia total do evento:
+    \begin{equation}
+    Ea^N_i=\frac{Ea_i}{\sum_{i=1}^{100}Ea_i}.
+    \end{equation}
+ \item \textbf{Energia da camada}: dividindo-se a energia de cada anel pela soma da energia da camada a qual ele pertence;
+ \item \textbf{Energia da seção do calorímetro}: dividindo-se a energia de cada anel pela soma da energia na seção do 
+calorímetro (eletromagnética ou hadrônica) que contém o referido anel.
+  \item \textbf{Sequencial}: esse procedimento de normalização visa amplificar as diferenças no perfil lateral dos chuveiros 
+produzidos. A energia do anel i da camada c ($Ea_{ic}$) é normalizada através de:
+\begin{equation}
+ Ea^N_{ic}=\frac{Ea_{ic}}{Ec -\displaystyle\sum_{j=1}^{i-1}Ea_{ic}}
 \end{equation}
+onde $Ec$ é a energia total da camada c.
+\end{itemize}
 
-Considerando que os múltiplos classificadores apre\-sentam
-eficiência diferente, pode-se dar aos mais eficientes maior poder de
-decisão com o uso de fatores de ponderação $\alpha_k$:
-\begin{equation}\label{medpon}
-    \mu (\mathbf{x}) = \sum_{k=1}^K \alpha_k u_k (\mathbf{x})
+Após um estudo comparativo, concluiu-se que a normalização por energia total atendia um compromisso entre 
+rapidez de execução e eficiência de discriminação, sendo assim, este procedimento foi adotado em todos os 
+resultados a serem mostrados nessa tese.
+
+\subsection{Teste de Hipóteses - Classificador Neural}
+
+Para o processo de discriminação propriamente dito (teste de hipóteses), o Neural Ringer utiliza um classificador neural supervisonado 
+na arquitetura Perceptron de Múltiplas Camadas (MLP \textit{Multi-Layer Perceptron})~\cite{haykin:nn:2008}. Os 
+classificadores neurais são capazes de produzir superfícies não-lineares de separação, contribuindo, em geral, para 
+aumento na eficiência 
+de discriminação quando comparados aos discriminadores lineares. Devido a sua estrutura paralelamente distribuída, 
+uma rede neural é capaz de responder rapidamente quando um padrão de entrada é aplicado. Considerando as características expostas 
+(alta eficiência e processamento veloz), os classificadores neurais se tornam uma opção interessante 
+ao ambiente do segundo nível de filtragem \textit{online} do ATLAS. Mais detalhes a respeito dos classificadores 
+neurais na arquitetura MLP podem ser encontrados no Apêndice~\ref{apend_clas}.
+
+\subsection{Tempo de Execução}
+
+Um aspecto crucial nos algoritmos para o sistema de filtragem \textit{online} é o tempo de execução. No caso do 
+\textit{Neural Ringer}, que é um algoritmo para o segundo nível de filtragem, a janela de tempo máxima permitida é
+de 40 ms. Uma análise detalhada do tempo de processamento requerido pelo \textit{Neural Ringer} foi realizada no 
+trabalho~\cite{tese:torres:2010}. O algoritmo foi incorporado como uma sub-rotina do T2Calo, aproveitando parte do 
+processamento realizado por essa última rotina.
+
+As diversas etapas necessárias para a execução do \textit{Neural Ringer} são listadas a seguir:
+
+\begin{enumerate}
+ \item Inicialmente, são selecionadas as informações necessárias, o que é feito na etapa de seleção de região 
+(\textit{Region Selector}) 
+do T2Calo, que solicita os fragmentos da RoI desejada. Essa etapa, por envolver um intenso fluxo de informação entre o 
+pipeline de memória e o segundo nível de filtragem, corresponde a 40.7 $\%$ do tempo total 
+(em média 0,4927 $\pm$ 0,0787 ms).
+
+\item A seguir, o T2Calo realiza um pré-processamento nos sinais onde são calculadas as suas 4 variáveis de decisão e os 
+valores refinados de $E_T$, $\eta$ e $\phi$. Este passo de processamento equivale a 11.6 $\%$ do tempo total de 
+execução (0,1408 $\pm$ 0,0148 ms). A partir daqui é iniciada a sequencia de rotinas específicas do \textit{Neural Ringer}.
+
+\item Apenas parte da informação necessária para o \textit{Neural Ringer} é utilizada pelo T2Calo, então, o restante precisa 
+agora ser solicitado neste momento pelo \textit{Region Selector} do \textit{Neural Ringer}. Um novo fluxo de informação 
+é estabelecido entre o L2 e as memórias de armazenamento temporário, consumindo cerca de 36 $\%$ do tempo total 
+( 0,4375 $\pm$ 0,0996 ms).
+
+\item Na etapa de pré-processamento do \textit{Neural Ringer}, as informações da RoI são utilizadas na construção dos anéis 
+para cada camada do calorímetro (conforme procedimento descrito na Seção \ref{sec_anelamento}). O tempo gasto nesta etapa 
+corresponde a aproximadamente 8$\%$ do total (0,0986 $\pm$ 0,0165 ms). Finalmente, a classificação dos sinais em anéis 
+pela rede neural requer aproximadamente 3$\%$ do tempo total (0,0387  $\pm$ 0,0018 ms).
+\end{enumerate}
+
+Contabilizando todas as etapas de processamento chega-se a um tempo total de 1,2352 $\pm$ 0,1288 ms. Somando-se a isso 
+a análise do perfil da trajetória da partícula medido no detector de traço (a identificação de elétrons no L2 pode 
+envolver a análise de sinais de dois sub-detectores, os calorimetros e os detectores de traço), chega-se a 
+8,04$\pm$2,04 ms, valor que ainda está muito abaixo do tempo máximo exigido para o nível 2, que é de 40 ms. 
+Na Tabela \ref{tab_ringtime}, são mostradas as diversas etapas necessárias para a execução do \textit{Neural Ringer}, 
+juntamente com o tempo requerido por cada uma delas (em valores absolutos e também percentuais). 
+
+\begin{table}[h!]
+\centering \caption{Tempo gasto nas diversas etapas necessárias para a execução \textit{online} do \textit{Neural Ringer}.}\vspace{0.2cm} \footnotesize
+\begin{tabular}{c|c|c}
+    \hline
+     \textbf{Etapas} & \textbf{Tempo} (ms) &  $\%$ \textbf{do Total} \\
+\hline
+    \textit{Region Selector} - T2Calo & 0,4927 $\pm$ 0,0787 & 40,7 \\ \hline
+    Pré-processamento - T2Calo & 0,1408 $\pm$ 0,0148 & 11,6 \\ \hline
+    \textit{Region Selector - Ringer} & 0,4375 $\pm$ 0,0996 & 36,1\\ \hline
+    Pré-processamento (anelamento) - \textit{Ringer} &  0,0986 $\pm$ 0,0165 & 8,2\\ \hline
+    Normalização & 0.0026 $\pm$ 0,0015 & 0,2 \\ \hline
+    Classificação Neural & 0,0387  $\pm$ 0,0018 & 3,2\\ \hline
+    Total & 1,2109 $\pm$ 0,1288 & 100\\  
+\hline
+\end{tabular}
+\label{tab_ringtime}
+\end{table}
+
+Embora o \textit{Neural Ringer} tenha, em comparação ao T2Calo, produzido um aumento no tempo de execução da ordem de 
+91$\%$ (de 0,6469 $\pm$ 0,0802 ms para 1,2352 $\pm$ 0.1288 ms, ou seja um aumento de 0,5883 ms), isso é compensado por 
+uma eficiência de discriminação muito superior do \textit{Ringer}, conforme será mostrado no Capítulo \ref{cap_resul}.
+
+\section{Extensões ao Neural Ringer}
+
+Com eficiência mais alta que o algoritmo padrão (T2Calo) e tempo de processamento dentro da janela aceita para o 
+L2, o discriminador \textit{Neural Ringer} mostrou-se uma opção bastante interessante para o problema da filtragem 
+\textit{online} de elétrons no ATLAS. Em sistemas neurais de classificação, sabe-se que o uso de uma 
+etapa de pré-processamento adequada pode ser decisiva para o aumento da eficiência de discriminação~\cite{book:nnforpr:1995}.
+Neste contexto, trabalhos vêm sendo desenvolvidos com o objetivo de melhorar a eficiência 
+do Neural Ringer com a adição de uma etapa de pré-processamento ao classificador neural 
+(ver Figura \ref{fig_ringerext}), na qual, os sinais em anéis são mapeados em um conjunto (em geral mais compacto) 
+de características discriminantes. A seguir, serão descritos a importância da etapa de pré-processamento em 
+classificadores neurais (em um caso genérico) e os trabalhos desenvolvidos neste sentido 
+no contexto do projeto \textit{Neural Ringer}.
+
+\begin{figure} \centering
+\includegraphics[width=15cm]{cap3_ringerext}
+\caption{Fluxo de processamento das extensões ao \textit{Neural Ringer}.} \label{fig_ringerext}
+\end{figure}
+
+\subsection{Importância do pré-processamento para classificadores neurais}
+
+Embora as redes neurais possam essencialmente realizar quaisquer mapeamentos não-lineares, pode-se observar que, o uso 
+direto dos dados brutos como entradas geralmente produz um desempenho pior do que quando algum pré-processamento é 
+aplicado~\cite{book:nnforpr:1995}.
+
+Da teoria da informação, considerando duas variáveis $\mathbf{x}$ e $c$ (respectivamente o conjunto de características 
+e os rótulos de classes), para qualquer transformação determinística $T(\cdot)$, a informação mútua ($I$) entre $T(\mathbf{x})$ 
+e $c$ tem como limite superior a informação mútua entre $\mathbf{x}$ e $c$~\cite{book:cover:1991}:
+\begin{equation}\label{eqinfoclas}
+ I(T(\mathbf{x});c) \leq I(\mathbf{x};c).
 \end{equation}
+Ou seja, nenhuma transformação é capaz de acrescentar informação, ao conjunto de características $\mathbf{x}$, a 
+respeito das classes $c$.
 
-Outra forma para a combinação de classificadores de saídas contínuas
-$u_k$ é o cálculo da média geométrica:
-\begin{equation}\label{medgeo}
-    \mu (\mathbf{x}) = \sqrt[K]{\prod_{k=1}^K u_k
-    (\mathbf{x})}
-\end{equation}
+Considerando o resultado da Equação \ref{eqinfoclas}, o que justifica o melhor desempenho dos classificadores após a 
+etapa de pré-processamento, uma vez que ela não é capaz de adicionar informação a respeito do problema?
 
-Alternativamente, considerando que a saída dos múltiplos
-classificadores é o rótulo de classe associado ao vetor de entrada
-$\mathbf{x}$, um método muito utilizado para combinação das
-informações é a votação da maioria \cite{kuncheva:comb:2004}. Neste
-caso, também podem ser utilizados fatores de ponde\-ração, caso as
-eficiências dos classificadores sejam diferentes. Deste modo, o voto
-de um classificador mais eficiente tem mais influência na decisão
-final.
+Como os sistemas neurais de classificação são obtidos a partir de um processo iterativo de ajuste de pesos, 
+um pré-processamento eficiente, ou seja, capaz de revelar características 
+discriminantes que estavam inicialmente ocultas nos dados brutos, pode se tornar decisivo para a obtenção de um 
+classificador com melhor desempenho.
+
+É importante notar que, todas as informações utilizadas para a discriminação estão presentes nos dados brutos. O 
+pré-processamento, que neste contexto é conhecido como extração de características, é responsável apenas por uma 
+transformação que torna as características discriminantes mais evidentes.
+
+Um outro aspecto a ser analizado é a chamada ``maldição da dimensionalidade" (do inglês \textit{curse of 
+dimensionality})~\cite{book:nnforpr:1995}.
+A utilização de um número elevado de entradas para o sistema classificador acaba dificultando o processo de 
+treinamento. Isso se deve ao fato de que quanto maior a 
+dimensão dos dados de entrada, 
+maior a complexidade da rede neural (e consequentemente maior o número de parâmetros a serem ajustados), requerendo 
+também maior informação estatística (exemplos de treinamento) para o treino adequado do classificador. 
+
+A solução adotada, na maioria dos casos, é pré-processar os sinais com uma transformação que reduza a 
+dimensionalidade do problema. Pois, entre os atributos disponíveis, alguns podem apresentar informações 
+redundantes ou até mesmo irrelevantes para o processo de classificação, dificultando o processo de treinamento 
+dos classificadores. Porém, é preciso escolher adequadamente a informação a ser descartada para minimizar 
+a chance da perda de características relevantes para a discriminação das classes.
+
+Resumindo, a transformação ótima deve, entre outras coisas, mapear os atributos disponíveis em um número reduzido de 
+características, eliminar a redundância e manter toda a informação discriminante para o problema.
+
+\subsection{\textit{Neural Ringer} - pré-processamento linear}
+
+Voltando para o contexto do discriminador \textit{Neural Ringer}, embora a construção dos anéis já seja responsável 
+por uma considerável redução de dimensão (por um fator de 10 vezes), 
+no trabalho \cite{article:herman:2006} foi realizado um estudo detalhado a respeito da utilização da Análise de 
+Componentes Principais (PCA - \textit{Principal Component Analysis})~\cite{book:pca:2002} para compactação. A PCA foi aplicada aos 
+sinais em anéis e o classificador neural treinado a partir dos componentes principais estimados. Com a PCA, 
+foi alcançado um fator de redução de aproximadamente 4 vezes, mantendo desempenho semelhante ao Neural Ringer 
+tradicional. Visando explorar toda a granularidade e segmentação disponível aos calorímetros do ATLAS, 
+foi proposta a realização do processo de compactação de modo segmentado (a nível de cada camada do calorímetro).
+
+No trabalho \cite{tese:torres:2010}, foi utilizada uma técnica de compactação mais adequada a problemas de 
+classificação, as Componentes Principais de Discriminação (PCD - \textit{Principal Components for Discrimination})
+~\cite{seixas:pcd:1995}.  Foi realizado também um estudo referente à aplicação da Análise de Componentes Independentes 
+(ICA \textit{Independent Component Analysis})~\cite{book:oja:2001} como uma etapa adicional de pré-processamento, aparecendo logo 
+após a compactação. Os resultados mostraram que a combinação de ICA e PCD foi capaz de melhorar o desempenho 
+em relação ao Neural Ringer tradicional, sem modificar significativamente o tempo de processamento necessário para a tomada 
+de decisão.
+
+\subsection{\textit{Neural Ringer} - pré-processamento não-linear}
+
+Conforme descrito no Capítulo 2, os calorímetros, embora projetados para serem detectores lineares na 
+identificação de elétrons, na prática, seu comportamento pode apresentar características não-lineares, 
+devido a fenômenos como saturação 
+de sensores, atenuação da luz (em calorímetros cintilantes), etc. Então, é possível que uma técnica não-linear 
+de extração de características seja mais adequada ao problema.
+
+Os estudos desenvolvidos durante esse trabalho tiveram o objetivo de investigar a aplicação da versão 
+não-linear da análise de componentes independentes (NLICA)~\cite{book:almeida:2006,article:simas:2007:lnlm} 
+para extração de características, como uma etapa de pré-processamento ao \textit{Neural Ringer}. 
+
+Considerando que existem diversos algoritmos 
+para a estimação da NLICA, neste trabalho foram realizados estudos com alguns destes métodos. Os diferentes 
+modelos foram comparados, considerando eficiência de discriminação e tempo de processamento necessário para 
+produzir a decisão. Os resultados obtidos serão mostrados no Capítulo \ref{cap_resul}.
