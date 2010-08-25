@@ -113,7 +113,7 @@ NLPCA \> \textit{Non-linear principal component analysis}\\
 PC \> Computador pessoal\\
 PCA \> \textit{Principal components analysis}\\
 PNL \> \textit{Post Nonlinear}\\
-
+PCD \> \textit{Principal Components for Discrimination}\\
 %PSD \> \textit{Power espectral density}\\
 %RLS \> \textit{Recursive least square algorithm}\\
 OGLE \> Telescópio instalado no Chile\\
@@ -129,7 +129,7 @@ SM \> Modelo Padrão de interação entre as partículas elementares
 SOM \> Mapa auto-organizável\\
 SP \> Figura de mérito de desempenho de classificação\\
 SUSY \> Supersimetria\\
-T2Calo \> Algoritmo de discriminação do HLT do ATLAS\\
+T2Calo \> Algoritmo de discriminação de elétrons no L2 do ATLAS\\
 TOTEM \> Experimento do LHC\\
 %WWS \> \textit{Wide sense stationary} \\
 
