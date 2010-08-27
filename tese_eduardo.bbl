@@ -629,6 +629,18 @@
 \newblock In: {\em Proceedings of the International Conference on Neural
   Information Processing\/}, v.~1, pp. 1207--1210, Hong Kong, Setembro 1996.
 
+\bibitem{article:wang:somnlica:2007}
+\MakeUppercase{ Wang, J., Wang, M. Y.~F.}, \enquote{Post-nonlinear blind image
+  separation algorithm with SOM initialization method}.
+\newblock In: {\em Proceedings of the IET Conference on Wireless, Mobile and
+  Sensor Networks\/}, v.~1, pp. 978--982, Xangai, China, 2007.
+
+\bibitem{article:som:vizual:2003}
+\MakeUppercase{ Yin, H.}, \enquote{Intelligent Data Engineering and Automated
+  Learning}, v. 2690, chap. Nonlinear Multidimensional Data Projection and
+  Visualisation, pp. 377--388, {\em Lecture Notes in Computer Science\/},
+  Springer, 2003.
+
 \bibitem{article:bishop:1998}
 \MakeUppercase{ Bishop, C.~M., Svensen, M., Willians, C. K.~I.}, \enquote{GTM:
   The generative topographic mapping}, {\em Neural Computation\/}, v.~10,
@@ -769,6 +781,12 @@
   Ranking, pp. 823--830, {\em Lecture Notes in Computer Science\/}, Springer,
   2006.
 
+\bibitem{article:icaloc:noise:2004}
+\MakeUppercase{ Gruber, P., Theis, F., Stadlthanner, K.,
+  \MakeLowercase{et~al.}}, \enquote{Denoising using local ICA and kernel-PCA}.
+\newblock In: {\em Neural Networks, 2004. Proceedings. 2004 IEEE International
+  Joint Conference on\/}, July 2004.
+
 \bibitem{article:ica_clas:2004}
 \MakeUppercase{ Sanchez-Poblador, V., Monte-Moreno, E., Solé-Casals, J.},
   \enquote{Independent Component Analysis and Blind Signal Separation}, v.
@@ -776,7 +794,10 @@
   1165--1172, {\em Lecture Notes in Computer Science\/}, Springer, 2004.
 
 \bibitem{rep:uci:1998}
-
+\MakeUppercase{ Blake, C.~L., Merz, C.~J.}, \enquote{UCI Repository of Machine
+  Learning Databases}, Disponível em:
+  $<$http://www.ics.uci.edu/~mlearn/MLRepository.html/$>$. Acesso em: 09 de
+  maio de 2010.
 
 \bibitem{article:Cardoso:1993}
 \MakeUppercase{ Cardoso, J.-F., Souloumiac, A.}, \enquote{Blind Beamforming for
@@ -858,7 +879,7 @@
 
 \bibitem{article:lange:som}
 \MakeUppercase{ Lange, J.~S.}, \enquote{Transputer self-organizing map
-  algorithm for beam background rejection at the BELLE silicaaon vertex
+  algorithm for beam background rejection at the BELLE silicon vertex
   detector}, {\em Nuclear Instruments and Methods in Physics Research A\/},
   v.~420, n.~1, pp.~288--309, 1999.
 
@@ -1007,6 +1028,10 @@
 \bibitem{book:cosmic:2002}
 \MakeUppercase{ Schlickeiser, R.}, {\em Cosmic Ray Astrophysics\/}.
 \newblock Springer: Nova York, Estados Unidos, 2002.
+
+\bibitem{book:cosmicos:1990}
+\MakeUppercase{ Gaisser, T.~K.}, {\em Cosmic Rays and Particle Physics\/}.
+\newblock Cambridge University Press: Cambridge, Reino Unido, 1990.
 
 \bibitem{book:kohonen:2001}
 \MakeUppercase{ Kohonen, T.}, {\em Self Organizing Maps\/}.

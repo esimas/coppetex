@@ -406,13 +406,9 @@ partir de:
 \end{equation}
 Este modelo (chamado de mistura de mono
 não-linearidade e ilustrado na Figura~\ref{fig_mnlin}) é dito mais geral que o PNL, pois as funções
-não-lineares podem ser aplicadas a mais de um componente (as
-funções $f_i$ podem ser funções não-lineares de mais de uma
-variável). A análise deste
-modelo a partir da teoria da análise funcional
-(\textit{functional analysis})~
-\cite{book:function:1984}, mostra 
-que esta arquitetura pode representar qualquer mistura com duas camadas de não-linearidades~\cite{article:gao:nl2005}.
+não-lineares ($f_i$) podem ser aplicadas a mais de um componente. A análise deste
+modelo, a partir da teoria da análise funcional (\textit{functional analysis})~\cite{book:function:1984}, mostra 
+que pode representar qualquer mistura com duas camadas de não-linearidades~\cite{article:gao:nl2005}.
 
 \begin{figure}[th]
 \centering
@@ -432,15 +428,16 @@ inferência Bayesiana.
 
 \subsubsection{NLICA a partir de Mapas Auto-Organizáveis}
 
-Uma das primeiras tentativas bem sucedidas de realizar NLICA
-utilizou mapas auto-organizáveis \cite{article:pajunen:1996}.
+Uma das primeiras tentativas bem sucedidas de estimar o modelo da NLICA
+foi realizada através de mapas auto-organizáveis (SOM - \textit{Self-Organizing Maps})~\cite{article:pajunen:1996}.
 Pode-se provar que as coordenadas $y_1$ e $y_2$ do neurônio
 vencedor no mapa (ver Figura \ref{fig_som_nlica}) são
 independentes e aproximadamente uniformemente distribuídas
 \cite{article:pajunen:1996}. Para estimar a NLICA, o SOM é
 treinado usando como entradas os sinais observados, e as
-coordenadas do neurônio vencedor correspondem a uma aproximação
-dos componentes independentes.
+coordenadas do neurônio vencedor correspondem a uma aproximação discreta
+dos componentes independentes (o número de níveis possíveis sinal estimado é igual ao número de 
+neurônios utilizados para representá-lo).
 
 \begin{figure}[th]
 \centering
@@ -454,26 +451,28 @@ Entre as desvantagens do método pode-se destacar
 \begin{itemize}
     \item O mapeamento é discreto (existe um número limitado de neurônios no mapa),
     então, algum tipo de regularização é necessária para produzir componentes contínuos.
-    Esse problema pode ser minimizado aumentando-se o número de neurônios do mapa.
-    \item Os componentes a serem estimados devem ter pdf sub-gaussiana (quanto mais próxima da distribuição uniforme, melhor).
+    Esse problema pode ser minimizado aumentando-se o número de neurônios do mapa 
+(porém, isto aumenta o custo computacional para estimação do mapa).
+    \item Os componentes a serem estimados devem ter pdf (função densidade de probabilidade) sub-gaussiana 
+(quanto mais próxima da distribuição uniforme, melhor).
     \item O custo computacional para treinamento dos mapas aumenta rapidamente com o número de componentes independentes a serem estimados.
 \end{itemize}
 
-Para avaliar o custo computacional, o número de parâmetros Np do
-SOM pode ser estimado pela expressão:
-\begin{equation}
-    Np=N \times (Q_L)^N
-\end{equation}
-onde $N$ é o número de componentes a serem estimados (que é
-considerado igual ao número de sinais observados) e $Q_L$ é o
-número de níveis de quantização
-desejado~\cite{article:simas:2007:lnlm}.
+%Para avaliar o custo computacional, o número de parâmetros Np do
+%SOM pode ser estimado pela expressão:
+%\begin{equation}
+%    Np=N \times (Q_L)^N
+%\end{equation}
+%onde $N$ é o número de componentes a serem estimados (que é
+%considerado igual ao número de sinais observados) e $Q_L$ é o
+%número de níveis de quantização\cite{article:pnlimage:2007}
+%desejado~\cite{article:simas:2007:lnlm}.
 
 Diversas aplicações do SOM para estimação da NLICA podem ser
 encontradas na literatura, entre elas pode-se citar os trabalhos
-\cite{article:pnlimage:2007} e \cite{article:allinson:2002}, onde
-o objetivos eram, respectivamente, separação e remoção de ruído em
-imagens.
+ e \cite{article:wang:somnlica:2007,article:allinson:2002,article:som:vizual:2003}, onde
+o objetivos eram, respectivamente, separação de imagens sobrepostas,remoção de ruído e 
+visualização de dados multidimensionais.
 
 Com uma formulação alternativa aos SOM, o Mapeamento Topográfico
 Generativo (GTM - \textit{Generative Topographic Mapping}) foi
@@ -483,17 +482,21 @@ básico tem poucas vantagens práticas em relação aos Mapas
 Auto-Organizáveis, pois aqui as componentes independentes também
 são assumidas como processos uniformemente distribuídos e o espaço
 de características é formado a partir de uma grade retangular
-discreta m-dimensional. Porém, devido a sua formulação matemática
-mais fundamentada, o GTM pode ser estendido para variáveis não
-uniformes. O trabalho \cite{article:pajunen:1997} propõe uma
+discreta m-dimensional. Porém, devido a sua formulação matemática, 
+o GTM pode ser estendido para variáveis não
+uniformes. 
+
+O trabalho \cite{article:pajunen:1997} propõe uma
 modificação à formulação básica onde são introduzidos
 coe\-fi\-cientes de ponderação que permitem a estimação de
 componentes independentes com qualquer tipo de distribuição. Os
 componentes são modelados como misturas de sinais Gaussianos e os
 parâmetros são estimados usando o algoritmo \textit{Expectation
-Maximization} \cite{article:hyvarinen:2000}. O treinamento do GMT
+Maximization} \cite{article:hyvarinen:2000}. O treinamento do GTM
 envolve dois passos, a avaliação da probabilidade a
-\textit{posteriori} e a adaptação dos parâmetros do modelo.
+\textit{posteriori} e a adaptação dos parâmetros do modelo, neste sentido, o processo é semelhante ao 
+utilizado pela abordagem da inferência Bayesiana, que será mostrada com mais detalhes a seguir. 
+Não foram encontradas muitas aplicações do GTM na estimação da NLICA.
 
 \subsubsection{NLICA a partir de Inferência Bayesiana}
 
@@ -506,21 +509,20 @@ de~\cite{article:lappalainen:2000}:
 onde $\mathbf{n}$ é definido como ruído Gaussiano independente dos
 componentes a serem estimados.
 
-Os componentes independentes são modelados como misturas de sinais
-de distribuição Gaussiana. Pode-se provar que, dado um número
-suficiente de Gaussianas, virtualmente qualquer distribuição de
-probabilidade pode ser modelada com uma certa
-precisão~\cite{article:lappalainen:2000}. Uma variação deste
+Neste contexto, os componentes independentes são modelados como misturas de sinais
+de distribuição Gaussiana.Pode-se provar que, dado um número
+suficiente de Gaussianas, qualquer distribuição de
+probabilidade pode ser aproximada~\cite{article:lappalainen:2000}. Uma variação deste
 método foi aplicada em \cite{article:lappalainen:bay1999} para o
-modelo linear da ICA. Em grande parte dos algoritmos Bayesianos
+mo\-de\-lo linear da ICA. Em grande parte dos algoritmos Bayesianos
 para NLICA, redes neurais tipo MLP de duas camadas são treinadas
-para aproximar o mapeamento não linear~\cite{jutten:nlica:2003}:
+para aproximar o mapeamento não-linear, neste caso, têm-se que~\cite{jutten:nlica:2003}:
 \begin{equation}
     f(\mathbf{s})=\mathbf{B}\Phi(\mathbf{As}+\mathbf{a})+\mathbf{b}
 \end{equation}
 
 Em um método de estimação Bayesiano, probabilidades a
-\textit{posteriori} são associadas a cada modelo não-linear que,
+\textit{posteriori} são asso\-cia\-das a cada modelo não-linear que,
 possivelmente, teria gerado os dados observados. Verificar uma
 quantidade tão grande de modelos não é possível na prática; então,
 os métodos Bayesianos para NLICA utilizam uma técnica chamada de
@@ -534,7 +536,7 @@ Métodos Bayesianos de NLICA foram propostos
 em~\cite{article:honkela:2004ica} e \cite{article:honkela:2007}.
 No trabalho~\cite{article:ilin:2004ie} foram realizados testes
 experimentais para comparar o desempenho dos mode\-los Bayesiano e
-PNL na estimação dos componentes independentes, as principais
+pós não-linear (PNL) na estimação dos componentes independentes, as principais
 conclusões foram:
 \begin{itemize}
     \item os algoritmos PNL apresentam desempenho superior quando as misturas
@@ -557,7 +559,7 @@ conjunto de sensores químicos.
 
 O algoritmo MISEP \cite{article:misep:2004} utiliza a minimização
 da Informação Mútua (ver Apêndice \ref{apend_fex}) como estratégia
-para busca pelos componentes independentes, e é considerado como
+para busca pelos componentes independentes. Esta rotina é considerada como
 uma extensão do método INFOMAX \cite{book:oja:2001}, podendo ser
 utilizado para estimar tanto o modelo linear quanto o não-linear
 da ICA. Na Figura \ref{fig_misep} pode-se observar um diagrama do
@@ -578,13 +580,14 @@ function}) dos componentes independentes.
 \caption{Diagrama do algoritmo MISEP.} \label{fig_misep}
 \end{figure}
 
-Para a aplicação em NLICA, o bloco $\mathbf{G}$ é estimado por uma
+Para a aplicação em NLICA, o bloco $\mathbf{G}(.)$ é estimado por uma
 rede neural (que pode utilizar tanto a arquitetura
 \textit{perceptron} de múltiplas camadas - MLP como rede de
-funções de base radial - RBF). Como o objetivo é estimar a cdf, as
+funções de base radial - RBF). Como o objetivo é estimar a função de 
+probabilidade cumulativa (cdf - \textit{cumulative distribuction function}), as
 saídas $z_i$ são restritas ao intervalo [0,1] e as $\psi_i$ são
 limitadas a funções estritamente crescentes. Para estimação
-iterativa de cada função $\psi_i$ é utilizada uma redes neurais
+iterativa de cada função $\psi_i$, são utilizadas redes neurais
 MLP com uma camada oculta (de neurônios sigmoidais) e uma camada
 de saída (linear). Estas redes tem uma entrada ($y_i$) e uma saída
 ($z_i$). O treinamento do modelo MISEP é feito a partir da
@@ -603,33 +606,28 @@ independentes quando as misturas seguem os modelos pós não-linear
 
 \subsection{ICA Local}
 
-Se o modelo da ICA for utilizado para extração de características
-(ao invés de sepa\-ração de fontes), uma melhor descrição dos
-dados pode ser obtida se forem exploradas características locais.
-Considerando um conjunto de sinais multi-dimensionais com
-estatística variável, o modelo da ICA linear pode não ser capaz de
-revelar a estrutura fundamental dos dados. Neste caso, é mais
-razoável realizar a extração de características (estimação das
-componentes independentes) a partir de k subconjuntos dos dados
-(ver Figura \ref{fig_local}). Os sinais pertencentes ao k-ésimo
-subconjunto apresentam características semelhantes. Este
-procedimento leva ao modelo da ICA local.
+Considerando um problema onde o conjunto de sinais multidimensionais apresenta grande 
+variação em suas características estatísticas, o modelo linear da ICA pode não ser capaz de representar 
+adequadamente os dados. Neste contexto, pode ser mais interessante tratar o conjunto de sinais de modo local, ou 
+seja, em subconjuntos onde os elementos tem características semelhantes.
 
-\begin{figure}[t!]
-\centering
-\includegraphics[width=8.5cm]{cap3_local}
-\caption{Diagrama do modelo da ICA local.} \label{fig_local}
-\end{figure}
-
-Conforme proposto em \cite{karhunen:local:1999}, um conjunto de
-dados de alta dimensão pode ser separado em sub-conjuntos, através
+A ICA Local realiza a estimação dos componentes independentes a partir de k subconjuntos dos dados
+(ver Figura \ref{fig_local}). Conforme proposto em \cite{karhunen:local:1999}, um conjunto de
+dados de alta dimensão pode ser separado em sub-conjuntos (onde os elementos 
+apresentam características semelhantes), através
 de algum algoritmo de agrupamento como o \textit{k-means}
 \cite{book:duda:2000} ou SOM \cite{article:som:oja:1996}, e
-componentes independentes lineares são então estimadas de cada
+modelos da ICA linear são então estimados para cada
 subconjunto. Caso não exista informação a priori a respeito do
 número de agrupamentos, metodologias foram propostas nos
 trabalhos~\cite{article:cluster1:1999,article:cluster2:1998} para
 sua estimação.
+
+\begin{figure}[bh]
+\centering
+\includegraphics[width=8.5cm]{cap3_local}
+\caption{Diagrama do modelo da ICA local.} \label{fig_local}
+\end{figure}
 
 Na ICA Local, o agrupamento é responsável por uma representação
 não-linear dos dados, enquanto modelos de ICA linear aplicados a
@@ -660,9 +658,9 @@ sinal/ruído da ordem de 10 dB.
 \section{Aplicações de ICA e NLICA para extração de características}
 \label{aplic}
 
-Nessa Seção serão descritas, de modo resumido, algumas aplicações
+Nessa Seção, serão resumidamente descritas algumas aplicações
 da análise de componentes independentes, nos seus modelos linear e
-não-linear (respectivamente ICA e NLICA), para a extração de
+não-linear (respectivamente ICA e NLICA), em problemas de extração de
 características.
 
 No trabalho \cite{article:ica_clas:2004}, ICA foi utilizada como

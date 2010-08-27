@@ -478,7 +478,7 @@ detector},
 
 @ARTICLE{article:lange:som,
   AUTHOR =       {J. S. Lange},
-  TITLE =        {Transputer self-organizing map algorithm for beam background rejection at the BELLE silicaaon vertex detector},
+  TITLE =        {Transputer self-organizing map algorithm for beam background rejection at the BELLE silicon vertex detector},
   JOURNAL =      {Nuclear Instruments and Methods in Physics Research A},
   YEAR =         {1999},
   volume =       {420},
@@ -673,6 +673,28 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Nonlinear ICA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@INPROCEEDINGS{article:wang:somnlica:2007,
+  AUTHOR =       {Junhua Wang and Mingxiang  Yong Fang Wang},
+  TITLE =        {Post-nonlinear blind image separation algorithm with SOM initialization method},
+  BOOKTITLE =    {Proceedings of the IET Conference on Wireless, Mobile and Sensor Networks},
+  YEAR =         {2007},
+  volume =       {1},
+  pages =        {978-982},
+  address =      {Xangai, China},
+}
+
+@INBOOK{article:som:vizual:2003,
+  AUTHOR =       {Hujun Yin},
+  TITLE =        {Intelligent Data Engineering and Automated Learning},
+  CHAPTER =      {Nonlinear Multidimensional Data Projection and Visualisation},
+  pages =        {377-388},
+  PUBLISHER =    {Springer},
+  YEAR =         {2003},
+  volume =       {2690},
+  series =       {Lecture Notes in Computer Science},
+}
+
 
 @INPROCEEDINGS{article:chi:2009,
   AUTHOR =       {Chi-Jie Lu and Jui-Yu Wu and Cheng-Ruei Fan and Chih-Chou Chiu},
@@ -1119,7 +1141,7 @@ Existence and Uniqueness results},
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-INPROCEEDINGS{article:icaloc:noise:2004,
+@INPROCEEDINGS{article:icaloc:noise:2004,
 author={Gruber, P. and Theis, F.J. and Stadlthanner, K. and Lang, E.W. and Tome, A.M. and Teixeira, A.R.},
 booktitle={Neural Networks, 2004. Proceedings. 2004 IEEE International Joint Conference on},
 title={Denoising using local ICA and kernel-PCA},
@@ -2471,7 +2493,7 @@ Joint Likelihood},
   YEAR =         {2005},
 }
 
-@MISC{rep:uci:1998
+@MISC{rep:uci:1998,
   author =       {C. L. Blake and C. J. Merz},
   title =        {UCI Repository of Machine Learning Databases},
   howpublished = {Disponível em: $<$http://www.ics.uci.edu/~mlearn/MLRepository.html/$>$. Acesso em: 09 de maio de 2010},
@@ -2492,6 +2514,14 @@ Joint Likelihood},
   PUBLISHER =    {Wiley},
   YEAR =         {2001},
   address =      {Nova York, Estados Unidos},
+}
+
+@BOOK{book:cosmicos:1990,
+  AUTHOR =       {T. K. Gaisser},
+  TITLE =        {Cosmic Rays and Particle Physics},
+  PUBLISHER =    {Cambridge University Press},
+  YEAR =         {1990},
+  address =      {Cambridge, Reino Unido},
 }
 
 @BOOK{book:montecarlo:2004,
@@ -2598,7 +2628,7 @@ Joint Likelihood},
 @MISC{Homepage:ATLAS,
   author =       {ATLAS-Collaboration},
   title =        {Experiment Overview},
-  howpublished = {Disponível em :$<$http://www.atlas.ch/$>$. Acesso em: 20 de março de 2007},
+  howpublished = {Disponível em :$<$http://www.atlas.ch/$>$. Acesso em: 27 de agosto de 2010},
   %year =         {2006},
 }
 

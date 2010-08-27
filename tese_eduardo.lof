@@ -52,25 +52,25 @@
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Decis\~ao utilizando classificador global.}}{94}{figure.6.3}
 \contentsline {figure}{\numberline {6.4}{\ignorespaces Decis\~ao utilizando classificadores segmentados.}}{95}{figure.6.4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Distribui\c c\~ao em energia, $\eta $ e $\phi $ das assinaturas de el\'etrons (esquerda) e jatos (direita) aprovadas pelos cortes de primeiro n\IeC {\'\i }vel tipo E10 e E15i.}}{99}{figure.7.1}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Sinais em an\'eis (m\'edia e desvio padr\~ao) para el\'etrons (esquerda) e jatos (direita) que chegam ao L2 no corte E10.}}{100}{figure.7.2}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Sinais em an\'eis (m\'edia e desvio padr\~ao) para el\'etrons (esquerda) e jatos (direita) que chegam ao L2 no corte E15.}}{100}{figure.7.3}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Distribui\c c\~ao em energia, $\eta $ e $\phi $ das assinaturas de el\'etrons (esquerda) e jatos (direita) aprovadas pelos cortes de primeiro n\IeC {\'\i }vel tipo E10 e E15i.}}{100}{figure.7.1}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Sinais em an\'eis (m\'edia e desvio padr\~ao) para el\'etrons (esquerda) e jatos (direita) que chegam ao L2 no corte E10.}}{101}{figure.7.2}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Sinais em an\'eis (m\'edia e desvio padr\~ao) para el\'etrons (esquerda) e jatos (direita) que chegam ao L2 no corte E15.}}{101}{figure.7.3}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Visualiza\c c\~ao de um evento do LHC (7 GeV) onde foram produzidos um el\'etron e tr\^es jatos.}}{102}{figure.8.1}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Visualiza\c c\~ao de um evento do LHC (7 GeV) onde foram produzidos dois m\'uons a partir do decaimento de um b\'oson Z.}}{103}{figure.8.2}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Sinais em an\'eis (m\'edia e desvio padr\~ao) para el\'etrons (esquerda) e jatos (direita) que chegam ao L2 no corte E15.}}{104}{figure.8.3}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Visualiza\c c\~ao de um evento do LHC (7 GeV) onde foram produzidos um el\'etron e tr\^es jatos.}}{103}{figure.8.1}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Visualiza\c c\~ao de um evento do LHC (7 GeV) onde foram produzidos dois m\'uons a partir do decaimento de um b\'oson Z.}}{104}{figure.8.2}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Sinais em an\'eis (m\'edia e desvio padr\~ao) para el\'etrons (esquerda) e jatos (direita) que chegam ao L2 no corte E15.}}{106}{figure.8.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Diagrama de um mapa auto-organiz\'avel}}{129}{figure.A.1}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Diagrama da classifica\c c\~ao a partir do mapa de caracter\IeC {\'\i }sticas}}{133}{figure.A.2}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Compress\~ao e recupera\c c\~ao do sinal $\mathbf {x}$ utilizando a transforma\c c\~ao por PCA.}}{135}{figure.A.3}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Diagrama do algoritmo de Taleb-Jutten para o modelo PNL.}}{147}{figure.A.4}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Diagrama de um mapa auto-organiz\'avel}}{132}{figure.A.1}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Diagrama da classifica\c c\~ao a partir do mapa de caracter\IeC {\'\i }sticas}}{136}{figure.A.2}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Compress\~ao e recupera\c c\~ao do sinal $\mathbf {x}$ utilizando a transforma\c c\~ao por PCA.}}{138}{figure.A.3}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Diagrama do algoritmo de Taleb-Jutten para o modelo PNL.}}{150}{figure.A.4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Esquem\'atico do problema de classifica\c c\~ao bin\'ario.}}{148}{figure.B.1}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Diagrama em blocos de um filtro casado.}}{151}{figure.B.2}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Exemplo de uma rede neural utilizada para separa\c c\~ao dos sinais de entrada em 3 classes.}}{153}{figure.B.3}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Esquem\'atico do problema de classifica\c c\~ao bin\'ario.}}{151}{figure.B.1}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Diagrama em blocos de um filtro casado.}}{154}{figure.B.2}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Exemplo de uma rede neural utilizada para separa\c c\~ao dos sinais de entrada em 3 classes.}}{156}{figure.B.3}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Exemplo de um cromossomo bin\'ario}}{157}{figure.C.1}
-\contentsline {figure}{\numberline {C.2}{\ignorespaces (a) Recombina\c c\~ao em ponto \'unico e (b) recombina\c c\~ao uniforme.}}{159}{figure.C.2}
-\contentsline {figure}{\numberline {C.3}{\ignorespaces Fluxo de um Algoritmo Gen\'etico}}{161}{figure.C.3}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Exemplo de um cromossomo bin\'ario}}{160}{figure.C.1}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces (a) Recombina\c c\~ao em ponto \'unico e (b) recombina\c c\~ao uniforme.}}{162}{figure.C.2}
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Fluxo de um Algoritmo Gen\'etico}}{164}{figure.C.3}
 \addvspace {10\p@ }
