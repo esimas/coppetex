@@ -1,7 +1,7 @@
 This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: tese_eduardo.aux
 The style file: coppe-unsrt.bst
-Reallocated field_info (elt_size=4) to 10221 items from 5000.
+Reallocated field_info (elt_size=4) to 10198 items from 5000.
 Database file #1: edsimas.bib
 Repeated entry---line 321 of file edsimas.bib
  : %@article{Article:Simasimtc:2005
@@ -146,45 +146,45 @@ Warning--there's a number but no series in article:lucas:som
 Warning--there's a number but no series in article:fernandez:2005
 Warning--can't use both author and editor fields in article:icafexI:2001
 Warning--empty booktitle in article:icafexI:2001
-You've used 226 entries,
+You've used 225 entries,
             2438 wiz_defined-function locations,
-            1810 strings with 39534 characters,
-and the built_in function-call counts, 54389 in all, are:
-= -- 4381
-> -- 1373
-< -- 212
-+ -- 667
-- -- 441
-* -- 5147
-:= -- 7244
-add.period$ -- 495
-call.type$ -- 226
+            1806 strings with 39294 characters,
+and the built_in function-call counts, 54099 in all, are:
+= -- 4357
+> -- 1365
+< -- 210
++ -- 663
+- -- 438
+* -- 5121
+:= -- 7205
+add.period$ -- 492
+call.type$ -- 225
 change.case$ -- 22
 chr.to.int$ -- 45
-cite$ -- 248
-duplicate$ -- 3189
-empty$ -- 6147
-format.name$ -- 441
-if$ -- 12432
+cite$ -- 247
+duplicate$ -- 3169
+empty$ -- 6118
+format.name$ -- 438
+if$ -- 12364
 int.to.chr$ -- 0
-int.to.str$ -- 226
-missing$ -- 253
-newline$ -- 776
-num.names$ -- 226
-pop$ -- 764
+int.to.str$ -- 225
+missing$ -- 252
+newline$ -- 772
+num.names$ -- 225
+pop$ -- 760
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1239
+skip$ -- 1231
 stack$ -- 0
-substring$ -- 3784
-swap$ -- 1343
-text.length$ -- 197
+substring$ -- 3771
+swap$ -- 1334
+text.length$ -- 195
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 22
-while$ -- 444
-width$ -- 229
-write$ -- 2175
+while$ -- 441
+width$ -- 228
+write$ -- 2163
 (There were 27 error messages)

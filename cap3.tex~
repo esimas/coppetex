@@ -268,6 +268,14 @@ concêntricos de deposição de energia. Conforme ilustrado na
 Figura~\ref{fig_aneis}, o procedimento de geração dos sinais em
 anéis é executado em cada camada do calorímetro e envolve os
 passos a seguir:
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=13cm]{cons_aneis}
+\caption{Diagrama do processo de construção dos anéis.}
+\label{fig_aneis}
+\end{figure}
+
 \begin{enumerate}
  \item Seleção das regiões de interesse (0,4$\times$0,4 em $\eta \times \phi$ ao redor da célula mais energética);
  \item A célula mais energética da camada é considerada como o primeiro anel (e consequentemente o ``centro" da RoI);
@@ -283,7 +291,7 @@ de energia em anéis;
 
 É interessante notar que, devido à diferença de granularidade
 entre as camadas do calorímetro, um número diferente de anéis é
-gerado para cada uma delas. A Tabela \ref{tab_aneis} mostra a
+gerado para cada uma delas. A tabela no final da Figura~\ref{fig_aneis} mostra a
 distribuição dos anéis por camada. No processo de formatação é
 considerado um número fixo de anéis por camada, porém, dependendo
 da posição do centro da RoI, esta pode não estar completa (as
@@ -296,34 +304,27 @@ algumas camadas, as células não são quadradas,
 (pois ao final do processo descrito acima podem não existir
 realmente anéis de células sensoras).
 
-\begin{figure}[th]
-\centering
-\includegraphics[width=6.5cm]{cap3_aneis}
-\caption{Diagrama do processo de construção dos anéis.}
-\label{fig_aneis}
-\end{figure}
+%\begin{table}[h!]
+%\centering \caption{Número de anéis formados para cada camada do
+%calorímetro do ATLAS.}\vspace{0.2cm} \footnotesize
+%\begin{tabular}{c | c c c c c c c | c}
+%    \hline
+%     \textbf{Camada} & \textbf{PS} & \textbf{E1} & \textbf{E2} & \textbf{E3} & \textbf{H0} & \textbf{H1} & \textbf{H0} & \textbf{Total} \\
+%\hline
+%    \textbf{Anéis} & 8 & 64 & 8 & 8 & 4 & 4 & 4 & 100 \\
+%\hline
+%\end{tabular}
+%\label{tab_aneis}
+%\end{table}
 
-\begin{table}[th]
-\centering \caption{Número de anéis formados para cada camada do
-calorímetro do ATLAS.}\vspace{0.2cm} \footnotesize
-\begin{tabular}{c | c c c c c c c | c}
-    \hline
-     \textbf{Camada} & \textbf{PS} & \textbf{E1} & \textbf{E2} & \textbf{E3} & \textbf{H0} & \textbf{H1} & \textbf{H0} & \textbf{Total} \\
-\hline
-    \textbf{Anéis} & 8 & 64 & 8 & 8 & 4 & 4 & 4 & 100 \\
-\hline
-\end{tabular}
-\label{tab_aneis}
-\end{table}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=9cm]{cap3_rescalo}
-\caption[Exemplo da organização das células em anéis nas
-diferentes camadas do calorímetro.]{Exemplo da organização das
-células em anéis nas diferentes camadas do calorímetro, adaptado
-de \cite{tese:torres:2010}.} \label{fig_ancam}
-\end{figure}
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=9cm]{cap3_rescalo}
+%\caption[Exemplo da organização das células em anéis nas
+%diferentes camadas do calorímetro.]{Exemplo da organização das
+%células em anéis nas diferentes camadas do calorímetro, adaptado
+%de \cite{tese:torres:2010}.} \label{fig_ancam}
+%\end{figure}
 
 \begin{figure}[h!]
 \begin{minipage}[b]{.48\linewidth}
@@ -375,18 +376,18 @@ e (c) jato com perfil semelhante ao de elétrons.}
 \label{fig_sig_anel}
 \end{figure}
 
-A Figura \ref{fig_sig3d} mostra, para a segunda camada
-eletromagnética, os sinais medidos para um elétron e um jato
-típicos e os respectivos sinais em anéis. A Figura
-\ref{fig_sig_anel} mostra sinais em anéis, respectivamente, para
+São mostrados na Figura \ref{fig_sig3d}, considerando a segunda camada
+eletromagnética (E2), os sinais medidos para um elétron e um jato
+típicos e os respectivos sinais em anéis gerados para esta camada. A Figura
+\ref{fig_sig_anel} mostra sinais em anéis (após concatenação de todas as camadas e normalização), respectivamente, para
 um elétron típico, um jato típico e um jato com perfil semelhante
-ao de elétrons. Percebe-se que o perfil de deposição medido para
+ao de elétrons. Percebe-se que, o perfil de deposição medido para
 elétrons típicos apresenta pouco espalhamento (é contido em uma pequena
 região) e é concentrado nas camadas eletromagnéticas. Os jatos
 apresentam uma maior variação em suas características físicas.
 Essas partículas tipicamente depositam uma considerável quantidade
 de energia nas camadas hadrônicas e possuem perfil de deposição
-com pouca concentração espacial (ver Figura \ref{fig_sig_anel}-b).
+com pouca concentração espacial, ou seja, mais espalhados (ver Figura \ref{fig_sig_anel}-b).
 Entretanto, alguns jatos (como o mostrado na Figura
 \ref{fig_sig_anel}-c) podem apresentar perfil de deposição de
 energia semelhante ao de elétrons. Esse último tipo de assinatura
@@ -678,8 +679,8 @@ componentes independentes
 extração de características, como uma etapa de pré-processamento
 ao \textit{Neural Ringer}.
 
-Considerando que existem diversos algoritmos para a estimação da
-NLICA, neste trabalho foram realizados estudos com alguns destes
+Considerando que existem diversos algoritmos para a NLICA, 
+neste trabalho foram realizados estudos com alguns destes
 métodos. Os diferentes modelos foram comparados, considerando
 eficiência de discriminação e tempo de processamento necessário
 para produzir a decisão. No próximo capítulo serão mostrados os fundamentos teóricos da 

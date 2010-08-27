@@ -73,7 +73,7 @@
 
 \bibitem{Homepage:ATLAS}
 \MakeUppercase{ ATLAS-Collaboration}, \enquote{Experiment Overview}, Disponível
-  em :$<$http://www.atlas.ch/$>$. Acesso em: 20 de março de 2007.
+  em :$<$http://www.atlas.ch/$>$. Acesso em: 27 de agosto de 2010.
 
 \bibitem{book:fernow:1986}
 \MakeUppercase{ Fernow, R.~C.}, {\em Introduction to Experimental Particle
@@ -1007,13 +1007,6 @@
 \bibitem{book:cosmic:2002}
 \MakeUppercase{ Schlickeiser, R.}, {\em Cosmic Ray Astrophysics\/}.
 \newblock Springer: Nova York, Estados Unidos, 2002.
-
-\bibitem{article:simas:2008:eusipco}
-\MakeUppercase{ {Simas Filho}, E.~F., Seixas, J.~M., Caloba, L.~P.},
-  \enquote{Segmented self-organized feature extraction for online filtering in
-  a high event rate detector}.
-\newblock In: {\em Proceedings of the European Conference on Signal
-  Processing\/}, v.~1, pp. 1--5, Lausanne, Suiça, Agosto 2008.
 
 \bibitem{book:kohonen:2001}
 \MakeUppercase{ Kohonen, T.}, {\em Self Organizing Maps\/}.

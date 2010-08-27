@@ -89,7 +89,7 @@ e funcionários do Campus Simões Filho.
 
 Finalmente preciso agradecer à minha família (especialmente a meus pais e avós) e meus amigos (do Roger) por
 suportarem minha ausência durante este período e por me incentivarem
-sempre a continuar. Não poderia deixar de agradecer aos amigos Frederico Wegelin, pela companhia e apoio durante o tempo em que morei no Rio de Janeiro, e Edson Pinto Santana, pelo constante incentivo (mesmo que à distância). 
+sempre a continuar. Não poderia deixar de agradecer aos amigos Frederico Wegelin, pela companhia e apoio durante o tempo em que morei no Rio de Janeiro, e Edson Pinto Santana, pelo constante incentivo (mesmo que à distância).
 
 Em especial, dedico esse trabalho a minha esposa Cléa e minha filha
 Letícia pelo amor e apoio em todos os momentos.
@@ -104,14 +104,14 @@ eficiente sistema para detecção (filtragem) \textit{online} de eventos.
 Os elétrons são partículas extremamente importantes para
 o experimento, e aparecem mascarados por um
 intenso ruído de fundo composto de jatos hadrônicos, pois esses
-últimos podem apresentar perfil de deposição de energia nos calorímetros seme\-lhan\-te ao de elétrons 
-(os calorímetros são medidores de energia com fina segmentação e no ATLAS são divididos em sete camadas, 
+últimos podem apresentar perfil de deposição de energia nos calorímetros seme\-lhan\-te ao de elétrons
+(os calorímetros são medidores de energia com fina segmentação e no ATLAS são divididos em sete camadas,
 totalizando mais de 100.000 sensores). Neste trabalho, é proposta a
 utilização do modelo não-linear da análise
 de componentes independentes no processo de extração de características, visando
- otimizar o desempenho do sistema neural de filtragem \textit{online} de elétrons no ATLAS (\textit{Neural Ringer}). 
+ otimizar o desempenho do sistema neural de filtragem \textit{online} de elétrons no ATLAS (\textit{Neural Ringer}).
 Para explorar toda a segmentação e granularidade disponíveis, a extração de
-características foi efetuada a  nível de cada camada do calorímetro. 
+características foi efetuada a  nível de cada camada do calorímetro.
 Diversos algoritmos foram utilizados na estimação dos componentes independentes. Através da abordagem proposta, foi possível alcançar alta
 eficiência de discriminação, gerando dados mais limpos para a
 análise \textit{offline}.
@@ -152,6 +152,7 @@ Here goes the abstract ...
   \appendix
  \input{appendfex}
  \input{appendclas}
+ \input{apendgen}
  \input{appendpub}
 \end{document}
 %%
