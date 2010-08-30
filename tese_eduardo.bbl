@@ -783,7 +783,7 @@
 
 \bibitem{article:icaloc:noise:2004}
 \MakeUppercase{ Gruber, P., Theis, F., Stadlthanner, K.,
-  \MakeLowercase{et~al.}}, \enquote{Denoising using local ICA and kernel-PCA}.
+  \MakeLowercase{et~al.}}, \enquote{Denoising using Local ICA and kernel-PCA}.
 \newblock In: {\em Neural Networks, 2004. Proceedings. 2004 IEEE International
   Joint Conference on\/}, July 2004.
 
@@ -901,6 +901,11 @@
   data}, {\em Nuclear Instruments and Methods in Physics Research A\/}, v.~361,
   n.~1, pp.~581--585, 1995.
 
+\bibitem{book:stats:2003}
+\MakeUppercase{ Montgomery, D.~C., Runger, G.~C.}, {\em Estatística Aplicada e
+  Probabilidade para Engenheiros\/}.
+\newblock LTC: Rio de Janeiro, Brasil, 2003.
+
 \bibitem{article:wolter:multi}
 \MakeUppercase{ Wolter, M.}, \enquote{Multivariate Analysis Methods in
   Physics}, {\em Physics of Particles and Nuclei\/}, v.~38, n.~2, pp.~255--268,
@@ -985,11 +990,6 @@
   Computer Science (ICANN)}, v. 2130, chap. Feature Extraction Using ICA, pp.
   568--573, Springer, 2001.
 
-\bibitem{article:icafexII:2002}
-\MakeUppercase{ Akaho, S.}, \enquote{Conditionally Independent Component
-  Analysis for Supervised Feature Extraction}, {\em Neurocomputing\/}, v.~49,
-  n.~1, pp.~139--150, 2002.
-
 \bibitem{article:icafexIII:2005}
 \MakeUppercase{ Kotani, M., Ozawa, S.}, \enquote{Feature Extraction Using
   Independent Components of Each Category}, {\em Neural Processing Letters\/},
@@ -1000,15 +1000,15 @@
   \enquote{Modified Post-Nonlinear ICA Model for Online Neural Discrimination},
   {\em Neurocomputing\/}, v.~0, n.~0, pp.~0, 2010.
 
-\bibitem{book:haupt:2004}
-\MakeUppercase{ Haupt, R.~L., Haupt, S.~E.}, {\em Practical Genetic
-  Algorithms\/}.
-\newblock Wiley-Interscience: Nova York, Estados Unidos, 2004.
-
 \bibitem{article:cross:2006}
 \MakeUppercase{ Georgieva, P., Ralescu, A., Ralescu, D.},
   \enquote{Cross-cumulants measure for independence}, {\em Journal of
   Statistical Planning and Inference\/}, v.~137, n.~1, pp.~1085--1098, 2006.
+
+\bibitem{book:haupt:2004}
+\MakeUppercase{ Haupt, R.~L., Haupt, S.~E.}, {\em Practical Genetic
+  Algorithms\/}.
+\newblock Wiley-Interscience: Nova York, Estados Unidos, 2004.
 
 \bibitem{book:vantrees1:2001}
 \MakeUppercase{ Trees, H. L.~V.}, {\em Detection, Estimation, and Modulation

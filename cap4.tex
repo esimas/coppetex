@@ -632,7 +632,7 @@ sua estimação.
 Na ICA Local, o agrupamento é responsável por uma representação
 não-linear dos dados, enquanto modelos de ICA linear aplicados a
 cada sub-conjunto (\textit{cluster}) descrevem as características
-locais dos dados. A ICA local pode ser considerada como um
+locais. A ICA local pode ser considerada como um
 compromisso entre os modelos linear e não-linear da ICA
 \cite{jutten:nlica:2003}. O objetivo é obter uma melhor
 representação dos dados (se comparado com o modelo linear da ICA),
@@ -704,12 +704,12 @@ malignas). A ICA foi estimada a partir de pequenas janelas nas
 mamografias onde as classes de interesse eram mais facilmente
 identificadas. Foram obtidas eficiências de identificação da ordem
 de 99,9$\%$ para as amostras normais, 86,8$\%$ e 91,1$\%$
-respectivamente para amostras com alterações benignas e malignas.
+res\-pec\-tiva\-mente para amostras com alterações benignas e malignas.
 
 Microarranjos de DNA foram pré-processados por ICA em
 \cite{article:icamicroa:2006} para a classificação através de
 máquinas de vetor de suporte (SVM - \textit{Support Vector
-Machines}) \cite{haykin:nn:2008}. Os microarranjos de DNA são
+Machines})~\cite{haykin:nn:2008}. Os microarranjos de DNA são
 fragmentos genômicos que representam segmentos gênicos em
 particular. Nesse trabalho, o algoritmo FastICA foi utilizado para
 extrair características dos microarranjos (de quatro bases de
@@ -717,7 +717,9 @@ dados distintas) com o objetivo de identificar a presença de
 diferentes tipos de tumores (de colo de útero, leucemia, de fígado
 e do sistema nervoso). As eficiências de identificação obtidas
 para os quatro tipos foram, respectivamente, 90$\%$, 100$\%$,
-74$\%$ e 76$\%$. Uma outra aplicação de ICA no mesmo problema pode
+74$\%$ e 76$\%$ com pré-processamento por ICA, 86\%, 94\%, 74\% e 72\% com 
+pré-processamento por PCA e 90\%, 94\%, 70\% e 69\% sem pré-processamento. 
+Uma outra aplicação de ICA no mesmo problema pode
 ser encontrada em \cite{article:icamicroa:2009}.
 
 Ainda na área biomédica, no trabalho \cite{article:icaglauc:2005},
@@ -731,7 +733,7 @@ dessa abordagem, 98,4$\%$ das assinaturas de olhos com padrão
 óptico normal foram corretamente classificadas e, considerando-se
 os olhos com glaucoma, o acerto foi de 68,6$\%$.
 
-A análise de componentes independentes foi utilizada em
+A ICA foi utilizada em
 \cite{article:icaeels:2005} para a análise de sinais de
 espectometria eletrônica de perda de energia (EELS -
 \textit{Electron Energy Loss Spectroscopy}). A EELS
@@ -739,9 +741,9 @@ espectometria eletrônica de perda de energia (EELS -
 espessura (com resolução da ordem de 0.1~nm), pressão e análise de
 composição química. A ICA, através do algoritmo SOBI
 \cite{article:Cardoso:1997}, foi foi utilizada como ferramenta
-complementar de análise dos espectros eletrônicos produzidos. O
-uso da ICA possibilitou a análise simultânea de dois espectros
-misturados e eliminou escolhas subjetivas durante a análise (que
+complementar de análise dos espectros eletrônicos produzidos. Com o
+uso da ICA, foi possível a análise simultânea de dois espectros
+misturados e eliminadas as escolhas subjetivas durante a análise (que
 sem o uso da ICA precisam ser feitas pelo usuário).
 
 O modelo não-linear da ICA também é utilizado em problemas de
@@ -773,8 +775,7 @@ N-1 versões atrasadas desta série. O algoritmo MISEP
 ~\cite{article:misep:2004} foi utilizado para estimar os
 componentes independentes. Um modelo de regressão por vetor de
 suporte (\textit{Support Vector Regression}) foi utilizado para
-prever o comportamento da bolsa. Os resultados obtidos com a NLICA
-foram comparados com pré-processamento por ICA e PCA e as
+prever o comportamento da bolsa. Comparando a NLICA com pré-processamento por ICA e PCA, as
 eficiências obtidas foram, respectivamente, 80$\%$, 75$\%$ e
 79$\%$. Também neste exemplo, o modelo da NLICA mostrou-se mais
 eficiente para evidenciar as características discriminantes do
@@ -785,76 +786,130 @@ também são encontradas algumas aplicações de PCA e ICA para
 extração de características. Alguns desses trabalhos serão
 descritos brevemente na próxima seção. Para a NLICA, talvez por
 ser uma técnica ainda menos difundida (em comparação com PCA e
-ICA), não foram encontradas aplicações na área de HEP.
+ICA), não foram encontradas, até este momento, aplicações na área de HEP.
 
 \section{Aplicações em Física de Altas Energias e Áreas Correlatas}
 
 A partir do final da década de 1990, os métodos de aprendizado
-estatístico multi-variável como PCA, ICA e SOM vêm sendo aplicados
+estatístico multi-variável vêm sendo aplicados
 com sucesso em problemas na área de física de alta energia.
 
 Um dos primeiros trabalhos neste tópico \cite{article:lang:som},
 foi publicado em 1998 e utiliza mapas auto-organizáveis (SOM) para
 a classificação de eventos de raios gama em astronomia de alta
-energia. Em~\cite{article:som:had:1999}, mapas SOM foram aplicados
+energia. O SOM foi utilizado para otimizar a sensibilidade de um telescópio IATC (\textit{Imaging Atmosferic Cherenkov Technique}
+\footnote{Método através do qual raios gama de alta energia são detectados por 
+telescópios na superfície terrestre. Ao entrarem na atmosfera, os raios gama 
+interagem com a atmosfera e geram um chuveiro de partículas carregadas (conhecido 
+como \textit{Extensive Air Showers}). Devido a sua alta energia, as partículas carregadas 
+produzem discargas luminosas (ou radiação de \textit{Cherenkov}) de curta duração que são 
+captadas pelos telescópios IACT.}). Com o uso do SOM, foi possível aumentar a sensibilidade 
+da técnica em aproximadamente 14\%.
+
+Em~\cite{article:som:had:1999}, mapas SOM foram aplicados
 para a separação de bósons W do ruído de fundo composto por jatos
-hadrônicos. No trabalho~\cite{article:lange:som}, o ruído de fundo
-gerado na aceleração do feixe de partículas foi rejeitado a partir
-de mapas auto-organizáveis modificados. Redes SOM também foram
-utilizadas com sucesso para análise, classificação e monitoramento
-de sinais do telescópio OGLE (no Chile)~\cite{article:lucas:som} e
-para a identificação de prováveis assinaturas de bósons de
-Higgs~\cite{article:aatos:som}.
+hadrônicos no experimento DELPHI do acelerador LEP no CERN. As entradas para o SOM foram, 
+inicialmente, 90 variáveis físicas que descrevem cada evento (como momento, energia total, 
+presença de agrupamentos de energia, etc). Com o sistema proposto, foi obtida uma probabilidade de 
+detecção de 77,8\% para um falso-alarme de apenas 1,3\%. O trabalho contemplou 
+também um estudo sobre a relevância das variávies de entrada e ao final, 
+utilizando-se apenas as 16 variáveis mais relevantes obteve-se desempenho semelhante.
+
+No trabalho~\cite{article:lange:som}, o ruído de fundo
+gerado na aceleração do feixe de partículas do acelerador KEK-B foi rejeitado a partir
+de mapas auto-organizáveis modificados. O ruído de fundo resulta das colisões dos feixes de 
+elétrons com moléculas de gás residual presentes no tubo de vácuo do acelerador. Se o vácuo 
+fosse perfeito esse problema não aconteceria, mas em condições normais de operação o ruído é função linear 
+da concentração do gás residual. Comparado com um classificador linear, o método baseado no SOM rejeitou 
+75\% do ruído de fundo e classificou 
+corretamente 97\% do sinal de interesse, enquanto que o classificador linear obteve respectivamente 68\% e 96\%.
+
+Redes SOM também foram utilizadas com sucesso para análise, classificação e monitoramento
+de sinais do telescópio OGLE (no Chile)~\cite{article:lucas:som}. Nesta aplicação foi realizado o mapeamento 
+de medições fotométricas de anomalias como supernovas\footnote{Corpos celestes originados após a explosão de 
+estrelas} e microlentes gravitacionais (\textit{gratitational 
+microlens})\footnote{Fenômeno relacionado com a curvatura da trajetória da luz ao passar perto de objetos massivos.}. 
+Os mapas foram treinados a partir de 8000 espectros e os valores aproximados de parâmetros como temperatura e 
+gravidade na superfície são obtidos diretamente do mapa a partir do neurônio vencedor.
+
+Num outro trabalho, mapas auto-organizáveis foram utilizados para a identificação de prováveis assinaturas 
+de bósons de Higgs MSSM (\textit{Minimal Supersymmetric Standard Model}) neutros e pesados~\cite{article:aatos:som}. 
+Os mapas foram treinados a partir das mesmas variáveis dos algoritmos tradicionalmente utilizados para o problema, 
+com uma base de dados composta de 80.000 eventos (igualmente divididos para treino e teste). Ao final, foi obtida 
+eficiência de 73\%, contra apenas 35\% dos algoritmos tradicionais.
 
 A análise de componentes principais (PCA) é um técnica de
 descorrelação e compactação bastante utilizada em diversas áreas
-do conhecimento. Em física de alta energia, PCA foi aplicada para
+do conhecimento. Em física de altas energias, PCA foi aplicada para
 a seleção de variáveis de entrada de um discriminador neural no
-trabalho \cite{article:proriol:pca}. Em
-\cite{article:wolter:multi}, são apresentadas diversas aplicações
-em HEP onde é utilizada a PCA para extração de características e
-compactação. No trabalho \cite{article:akras:pca}, sinais ópticos
+trabalho~\cite{article:proriol:pca}. Foram utilizados eventos de altas energias do acelerador 
+LEP (e$^{+}$e$^{-} \rightarrow$quark+antiquark$\rightarrow$hadrons). O objetivo é determinar o sabor dos 
+quarks (b, c ou leve). Das 150 variáveis iniciais, após a transformação por PCA foram retidas as 20 
+mais energéticas e utilizadas para alimentar um classificador neural supervisionado. A mesma metodologia foi 
+aplicada para outros métodos de seleção de varáveis como o teste F~\cite{book:stats:2003} e métodos de 
+poda de rede neural~\cite{haykin:nn:2008}. A PCA apresentou uma das melhores eficiências entre os 
+métodos lineares, classificando corretamente 73\% das assinaturas.
+
+Em~\cite{article:wolter:multi}, são apresentadas diversas aplicações
+em HEP onde a PCA é utilizada para extração de características e
+compactação. No trabalho~\cite{article:akras:pca}, sinais ópticos
 de nebulosas planetárias são processados por PCA com o objetivo de
 extrair informações a respeito de suas características
 morfológicas. Numa outra aplicação em astrofísica, PCA é
 utilizada, em conjunto com ICA, para a remoção do ruído de fundo e
 de outras fontes de interferência, permitindo melhor visualização
 de dados de ventos e tempestades solares
-\cite{article:cadavid:pcaica}. O trabalho
+\cite{article:cadavid:pcaica}. 
+
+O trabalho
 \cite{article:herman:2006} utiliza a PCA, de forma segmentada,
 para compactação de sinais de calorimetria do ATLAS, em seguida
 classificadores neurais realizam a decisão elétron/jato,
-conseguindo boa eficiência de classificação.
+conseguindo eficiência de classificação superior ao algoritmo tradicional utilizado 
+para o problema.
 
 A análise de componentes independentes (ICA) tem aplicação mais
 recente em HEP, sendo que um dos primeiros trabalhos foi publicado
-em 2005 e descreve a elimi\-na\-ção de ruído na análise de sinais
+em 2005 e descreve a redu\-ção de ruído na análise de sinais
 do feixe de partículas do experimento BOOSTER do Fermilab
 \cite{article:booster:ica}. Neste trabalho também é realizada uma
-comparação com um sistema semelhante baseado em PCA e a ICA
+comparação com um sistema semelhante baseado em PCA, e a ICA
 apresenta resultados melhores. No trabalho
 \cite{article:fernandez:2005}, ICA é utilizada para análise de
 dados multi-variados em experimentos de física atômica e nuclear.
 A aplicação de ICA proporcionou redução do ruído de fundo,
-permitindo melhor visualização do sinal de interesse. ICA também
-foi aplicado com sucesso para separação de sinais em astrofísica
+permitindo melhor visualização do sinal de interesse. 
+
+ICA também foi aplicado com sucesso para separação de sinais em astrofísica
 de alta energia conforme detalhado a seguir. Em
 \cite{article:costagli:ica}, ICA foi aplicada para a separação de
 imagens de fontes sobrepostas adquiridas pelo satélite Planck da
-Agência Espacial Européia; no trabalho \cite{article:igual:ica}
+Agência Espacial Européia. O objetivo é analisar as informações (mapas de radiação) gerados pelo satélite, que são compostas da 
+superposição de diversas fontes astrofísicas independentes. Neste trabalho foi desenvolvido um algoritmo
+eficiente para a estimação dos componentes independentes em ambientes não-estacionários e ruidosos. 
+A partir deste método, foi obtida uma relação sinal/ruído da ordem de 20~dB, enquanto que aplicando diretamente 
+um algoritmo de ICA (FastICA), relação foi aproximadamente 2~dB.
+
+No trabalho \cite{article:igual:ica},
 utiliza-se a análise de componentes independentes, em substituição
 aos filtros casados, para a decomposição de sinais astrofísicos
 simulados compostos pela combinação de moléculas elementares em
-estado congelado. Ainda na área de astrofísica, nos trabalhos
+estado congelado (\textit{astrophysical ice mixtures}). Com a técnica proposta 
+foi possível separar os espectros infra-vermelhos provenientes de moléculas de 
+água, gás carbônico e monóxido de carbono.
+
+Ainda na área de astrofísica, nos trabalhos
 \cite{article:cardoso:2005,article:vio:ica} ICA foi aplicado para
 a caracterização da radiação cósmica de fundo em microondas (CMB -
 \textit{Cosmic Microwave Background}). A CMB é uma forma de
 energia eletromagnética que preenche todo o universo e foi
 inicialmente observada em 1965. A CMB é visualizada apenas por
-rádio-telescópios.
+rádio-telescópios. A ICA mostrou-se bastante eficiente para redução da contaminação do 
+sinal de interesse pelo ruído de fundo, com desempenho semelhante à técnica tradicionalmente 
+utilizada para o problema.
 
 A partir destes exemplos, percebe-se que, apesar da aplicação mais
-recente em física de alta energia e áreas correlatas, diversos
+recente em física de altas energias e áreas correlatas, diversos
 problemas de extração de ca\-rac\-te\-rísticas, remoção de ruído,
 agrupamento não-supervisionado (\textit{clustering}) e
 visualização vêm sendo resolvidos com a aplicação das técnicas
@@ -863,32 +918,23 @@ estatísticas de processamento não-supervisionado de sinais.
 
 \section{Utilizando Informação das Classes na Estimação dos Componentes Independentes}
 
-Conforme visto anteriormente, a ICA surgiu como uma alternativa
-para a extração de características, pois é capaz de transformar os
-atributos em um conjunto de componentes estatisticamente
-independentes, eliminando a redundância entre eles. Porém, quando
-há a necessidade de redução de dimensão (compactação), no contexto
-da ICA, o método mais utilizado é a PCA (Análise de Componentes
-Principais, ver mais detalhes no Apêndice \ref{apend_fex}). A PCA
-não é adequada a um problema de extração de caracteristicas, pois
-um componente de baixa energia (que seria eliminado após a
-compactação) pode apresentar grande importância para a
-discriminação das classes.
+Embora o modelo da ICA não tenha sido originalmente desenvolvido para extração 
+(o propósito inicial da ICA era realizar a separação de fontes), 
+conforme visto anteriormente em diversas aplicações, a ICA é uma alternativa 
+interessante para esta tarefa, pois é capaz de transformar os
+sinais em um conjunto de componentes estatisticamente
+independentes, eliminando a redundância entre eles. 
 
-Um outro problema é que o modelo da ICA/NLICA não foi
-originalmente desenvolvido para extração de características
-discriminantes e, conforme mostrado
-em~\cite{article:ica_clas:2004}, não há como garantir que a
-estimação dos componentes independentes seja útil neste contexto.
-Os benefícios alcançados pela aplicação da ICA como
-pré-processamento dependem de características da base de dados
-utilizada.
+Quando a ICA é utilizada como pré-processamento para um problema de classificação, o 
+objetivo é obter uma nova representação dos dados, de modo que as características discriminantes 
+estejam mais evidentes. Conforme comentado anteriormente, não há garantia que a transformação por ICA/NLICA 
+seja útil nesta tarefa. Considerando esta limitação, foram propostos na literatura métodos de estimação da ICA adaptados para 
+considerar informação a respeito das classes (transformando a ICA num método supervisionado, ou semi-supervisionado). 
 
-Visando minimizar as limitações da ICA indicadas acima, foram
-utilizadas neste trabalho algumas modificações para incluir
-informação das classes no procedimento de estimação dos
-componentes independentes.
-
+No contexto da ICA, quando há necessidade de redução de dimensão (compactação), o método mais utilizado é 
+a Análise de Componentes Principais (PCA - \textit{Principal Component Analysis}, para mais detalhes a respeito 
+ver o Apêndice~\ref{apend_fex}). A PCA é um método não-supervisionado que tem como objetivo projetar o conjunto 
+de dados em componentes ordenados por energia (variância), não sendo adequado a problemas de classificação.
 Um modo alternativo à PCA para realizar a compactação, incluindo a
 informação das classes, é através do método conhecido como
 Componentes Principais de Discriminação (PCD - \textit{Principal
@@ -896,8 +942,8 @@ Components for Discrimination})~\cite{seixas:pcd:1995}. Essa
 abordagem será descrita mais detalhadamente na
 Seção~\ref{sec_pcd}.
 
-A informação das classes pode ainda ser utilizada no contexto da
-ICA de diferentes modos. Um procedimento simples, proposto
+A informação das classes também pode ser utilizada no contexto da
+ICA de dife\-ren\-tes modos. Um procedimento simples, proposto
 em~\cite{article:icaClasp:2003}, é a inclusão dos rótulos de
 classe como atributos de entrada para os algoritmos de estimação
 dos componentes independentes (ver Seção~\ref{sec_icafex1}). Uma
@@ -918,7 +964,7 @@ de compactação mais adequadas. As componentes principais de
 discriminação (PCD - \textit{Principal Discriminating
 Components})~\cite{seixas:pcd:1995,seixas:pcd:1999} são obtidas a
 partir da projeção dos sinais de entrada em um conjunto compacto
-que carrega toda a informação importante para discriminação entre
+que carrega informação importante para discriminação entre
 as classes.
 
 Conforme proposto em \cite{seixas:pcd:1995}, para um problema de
@@ -933,23 +979,23 @@ classes possíveis, os PCD podem ser estimados a partir de uma rede
 neural (de arquitetura MLP - \textit{Multi-Layer
 Perceptron})~\cite{haykin:nn:2008} com uma camada oculta e um
 neurônio de saída, treinada para obter máxima discriminação entre
-as classes. Conforme indicado na Figura~\ref{fig_pcd}-a, uma rede
+as classes (saídas alvo: +1 para a classe 1 e -1 para a classe 2). 
+Conforme indicado na Figura~\ref{fig_pcd}-a, uma rede
 neural com um neurônio na camada oculta é capaz de estimar o
 primeiro PCD, que é obtido a partir da projeção das entradas na
 direção dos pesos sinápticos do neurônio oculto:
 \begin{equation}
- z_1=[b_{1,1},b_{1,2},...,b_{1,N}]\times[x_1,...,x_N]^T + b_{0,1},
+ z_1=[x_1,...,x_N]^T \times [d_{1,1},d_{1,2},...,d_{1,N}] + b_{1},
 \end{equation}
-onde $b_{0,1}$ é o \textit{bias} do neurônio. Adicionando-se mais
+onde $b_{1}$ é o \textit{bias} do neurônio. Adicionando-se mais
 neurônios ocultos consegue-se estimar os demais PCD (conforme
-ilustrado na Figura~\ref{fig_pcd}-b). No processo de estimação,
-estatística de ordem elevada é acessada a partir da utilização de
-funções de ativação não-lineares. O treinamento da rede neural
+ilustrado na Figura~\ref{fig_pcd}-b). O treinamento da rede neural
 pode ser feito com o congelamento dos pesos da camada de entrada
 correspondentes aos componentes já estimados, ou seja, na
-estimação do $l$-ésimo componente, os pesos $b_{i,j}$, com $i<l$ e
+estimação do $l$-ésimo componente, os pesos $d_{i,j}$, com $i<l$ e
 $j=1,...,N$ não são ajustados. Os demais pesos da rede são
-ajustados a cada novo componente estimado.
+ajustados a cada novo componente estimado. A adição de neurônios 
+continua até a estabilização (num valor máximo) da eficiência de discriminação.
 
 \begin{figure}[t!]
 \centering
@@ -958,10 +1004,37 @@ ajustados a cada novo componente estimado.
 k-ésima PCD.} \label{fig_pcd}
 \end{figure}
 
-Outros modelos que, de modo semelhante aos PCD, utilizam redes
+No processo de estimação, estatística de ordem elevada é acessada a partir da utilização de
+funções de ativação não-lineares. Considerando que K componentes principais foram estimados, têm-se:
+\begin{equation}\label{ica_eq}
+\left[\begin{array}{c}
+z_1\\
+\vdots \\
+z_K
+\end{array}\right]=
+\underbrace{\left[\begin{array}{c c c}
+d_{11} & \dots & d_{1N}\\
+\vdots & \ddots & \vdots\\
+d_{K1} & \dots & d_{KN}
+\end{array}\right]}_{\mathbf{D}} \times 
+\left[\begin{array}{c}
+x_1\\
+\vdots \\
+x_N
+\end{array}\right]
++
+\underbrace{\left[\begin{array}{c}
+b_{1}\\
+\vdots \\
+b_K
+\end{array}\right]}_{\mathbf{b}},
+\end{equation}
+\\
+ou, na forma matricial: $\mathbf{z}=\mathbf{D}\mathbf{x}+\mathbf{b}$.
+
+Outros modelos que, de modo semelhante a PCD, utilizam redes
 neurais para extrair características discriminantes de um conjunto
-de sinais foram propostos na literatura em
-\cite{article:nnfex1:1996,article:nnfex2:1996,article:nnfex:1999}.
+de sinais foram propostos nos trabalhos~\cite{article:nnfex1:1996,article:nnfex2:1996,article:nnfex:1999}.
 
 
 \subsection{Utilizando os rótulos de classe como sinais de entrada para os algoritmos de ICA}\label{sec_icafex1}
@@ -989,7 +1062,7 @@ $\mathbf{x}=[x_1,x_2,...,x_N]$, gerando
 $\mathbf{x}_C=[x_1,x_2,...,x_N,c]$. Para treinamento dos
 algoritmos de ICA utiliza-se como entrada o vetor $\mathbf{x}_C$.
 
-Como num cenário prático de operação do sistema classificador os
+Como, num cenário prático de operação do sistema classificador, os
 rótulos de classe não estarão disponíveis, a informação das
 classes deve ser removida dos componentes estimados. Isso pode ser
 feito removendo-se as conexões da entrada $c$ ao modelo, ou
@@ -1003,34 +1076,33 @@ componentes, aqueles que tem pesos de baixa amplitude são
 eliminados, produzindo um conjunto mais compacto de
 características discriminantes.
 
-Um outro modo de utilizar a informação das classes no processo de
-estimação dos componentes independentes foi proposto em
-\cite{article:icafexII:2002}. Neste caso, conforme ilustrado na
-Figura \ref{fig_icaFex2}, os componentes estimados na saída devem
-ser independentes e apresentar máxima informação mútua com os
-rótulos de classe $c$. A função custo a ser maximizada (este
-trabalho restringe-se ao modelo linear da ICA) é definida como:
-\begin{equation}
- L(\mathbf{W})= - \log|\det \mathbf{W}| + \sum_{i=1}^d H(z_i) - \sum_{i=1}^d I(z_i,c)
-\end{equation}
-onde $\mathbf{W}$ é a matriz da ICA, $z_i$ são os componentes
-independentes estimados e $c$ o vetor de rótulos de classe.
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=10cm]{ICA_Fex2}
-\caption{Modelo da ICA que utiliza a informação das classes em
-conjunto com os componentes estimados na função custo.}
-\label{fig_icaFex2}
-\end{figure}
+%Um outro modo de utilizar a informação das classes no processo de
+%estimação dos componentes independentes foi proposto em
+%\cite{article:icafexII:2002}. Neste caso, conforme ilustrado na
+%Figura \ref{fig_icaFex2}, os componentes estimados na saída devem
+%ser independentes e apresentar máxima informação mútua com os
+%rótulos de classe $c$. A função custo a ser maximizada (este
+%trabalho restringe-se ao modelo linear da ICA) é definida como:
+%\begin{equation}
+% L(\mathbf{W})= - \log|\det \mathbf{W}| + \sum_{i=1}^d H(z_i) - \sum_{i=1}^d I(z_i,c)
+%\end{equation}
+%onde $\mathbf{W}$ é a matriz da ICA, $z_i$ são os componentes
+%independentes estimados e $c$ o vetor de rótulos de classe.
+%
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=10cm]{ICA_Fex2}
+%\caption{Modelo da ICA que utiliza a informação das classes em
+%conjunto com os componentes estimados na função custo.}
+%\label{fig_icaFex2}
+%\end{figure}
 
 \subsection{Componentes Independentes para Cada Classe}\label{sec_icafex12}
 
-Um outro modo de utilizar informação supervisionada é realizar a
-estimação de modelos $G_m$ da ICA utilizando apenas amostras da
-classe $m$. Este procedimento foi proposto em
-\cite{article:icafexIII:2005}, e está ilustrado na Figura
-\ref{fig_icaFex3}. Pode-se observar que as saídas de cada bloco
+Um outro modo de utilizar informação supervisionada no contexto da ICA foi 
+proposto em~\cite{article:icafexIII:2005} e, no caso de um problema de classificação 
+em M classes, consiste em realizar a estimação de M modelos da ICA utilizando, para cada um, apenas amostras da
+classe $m$ (ver Figura \ref{fig_icaFex3}). Pode-se observar que as saídas de cada bloco
 $G_m$ são utilizadas como entradas para um classificador
 especialista na identificação da classe $m$. Ao final do
 processamento, um combinador utiliza as informações dos $m$
@@ -1048,7 +1120,7 @@ No trabalho \cite{article:icafexIII:2005}, este modelo foi capaz
 de produzir alta eficiência no diagnóstico acústico de
 equipamentos industriais. A grande vantagem desta abordagem é que
 pode-se utilizar algoritmos tradicionais de ICA/NLICA, sem a
-necessidade de modificações (o que não ocorre para os métodos
+necessidade de modi\-fica\-ções (o que não ocorre para os métodos
 descritos na seção~\ref{sec_icafex1}). No trabalho descrito acima
 foi utilizado o algoritmo FastICA para estimação dos componentes
 independentes.
@@ -1057,11 +1129,9 @@ independentes.
 
 No desenvolvimento desta tese, foi proposto um método alternativo
 para estimação de componentes independentes e discriminantes. No
-trabalho~\cite{article:simas:neucom2010}, foi derivado um
+trabalho~\cite{article:simas:neucom2010}, foi apresentado um
 algoritmo de treinamento para um modelo pós não-linear (PNL)
-modificado. Este método será descrito a seguir e, em sequencia,
-será mostrado como ele pode ser estendido para um modelo geral
-(sem restrições estruturais) da NLICA.
+modificado. Este método será descrito a seguir.
 
 Conforme ilustrado na Figura \ref{fig_model_mpnl}, um bloco de
 compactação foi adicionado ao modelo PNL, com o objetivo de
@@ -1110,15 +1180,15 @@ modificado.} \label{fig_tr_mpnl}
 \end{figure}
 
 A estimação das não-linearidades $g_i(.)$ é feita de modo
-semelhante ao proposto no trabalho~\cite{article:jutten:1999}.
-Cada função é aproximada por:
+semelhante ao proposto no trabalho~\cite{article:jutten:1999}, assim, cada função é aproximada por:
 \begin{equation}\label{gi}
     g_i (z_i)=  \sum _{h=1}^{N_H} \beta_{hi} \tanh (\omega_{hi} z_i -
     \eta_{hi}) \hspace{35pt} i=1,...,K
 \end{equation}
 onde $\beta_{hi}$, $\omega_{hi}$ e $\eta_{hi}$ são parâmetros a
-serem determinados. Um algoritmo genético~\cite{book:haupt:2004}
-foi utilizado para estimar o conjunto de parâmetros $\mathbf{D}$,
+serem determinados. 
+
+O objetivo do método proposto é estimar o conjunto de parâmetros $\mathbf{D}$,
 $\mathbf{B}$, $\beta_{hi}$, $\omega_{hi}$ e $\eta_{hi}$ que
 maximiza a função custo definida por:
 \begin{equation}\label{eqcf}
@@ -1126,13 +1196,13 @@ maximiza a função custo definida por:
 \end{equation}
 sendo $\alpha_1$, $\alpha_2$ e $\alpha_3$ constantes a serem
 previamente escolhidas. É importante observar que o propósito de
-$\alpha_3$ é limitar o primeiro termo da Equação~\ref{eqcf} quando
+$\alpha_3$ é limitar o primeiro termo da Equação~\ref{eqcf}, quando
 $c_1(\mathbf{\hat{s}})\rightarrow 0$. Valores adequados para as
 três constantes serão indicados a seguir. O número de componentes
 independentes a serem estimados (K) precisa ser escolhido a
 priori. Na prática, se K for desconhecido, pode-se utilizar um
 procedimento semelhante ao descrito na Seção~\ref{sec_pcd} para a
-escolha do número de componentes principais de discriminação.
+escolha do número de componentes principais de discriminação (PCD).
 
 A função custo que avalia a independência estatística
 ($c_1(\mathbf{\hat{s}})$) utiliza uma medida do cumulante de
@@ -1151,8 +1221,8 @@ ordem~\cite{book:oja:2001}:
 \end{align}
 
 Um modo para calcular a medida da independência baseada no
-cumulante de quarta ordem foi proposta
-em~\cite{article:cross:2006}, e foi utilizada neste trabalho para
+cumulante de quarta ordem foi proposto
+em~\cite{article:cross:2006}, e utilizado neste trabalho para
 estimar $c_1(\mathbf{\hat{s}})$. É interessante notar que
 $c_1(\mathbf{\hat{s}})$ é uma sempre não-negativa e zero para
 sinais independentes, então, maximizar a independência entre os
@@ -1161,17 +1231,17 @@ $c_1(\mathbf{\hat{s}})$.
 
 A função custo que avalia a eficiência de discriminação é o índice
 soma-produto (SP) normalizado, que para um problema de
-classificação em M classes é descrito por:
+classificação em M classes é definido por:
 \begin{equation}\label{eq_sp}
-    c_2 (\mathbf{y})=\displaystyle{\frac{\sum_{i=1}^M Ef_i}{M}}\times
+    c_2 (\mathbf{y})=\sqrt{\displaystyle{\frac{\sum_{i=1}^M Ef_i}{M}}\times
     \sqrt[M]{\prod_{i=1}^M
-    Ef_i}
+    Ef_i}}
 \end{equation}
 onde $Ef_i$ é a eficiência de discriminação obtida para a classe
 $i$. A função definida na Equação~\ref{eq_sp} varia no intervalo
 [0,1] e alcança o máximo quando $Ef_i=1$ para $i=1,...,M$
 (eficiência total). Uma característica de $c_2(\mathbf{y})$ é sua
-sensibilidade a degradação da eficiência de qualquer classe.
+sensibilidade a degradação da eficiência para qualquer classe.
 
 Considerando que $c_1(\mathbf{\hat{s}}) \geq 0$ e $0\leq
 c_2(\mathbf{y})\leq 1$, as constantes $\alpha_i$, na
@@ -1180,9 +1250,12 @@ c(\mathbf{\hat{s}},\mathbf{y}) \leq 1$. Usando por exemplo,
 $\alpha_1=\alpha_3 /2$, $\alpha_2=0.5$ e $\alpha_3=0.001$, o mesmo
 fator de ponderação é dado para os termos de ambos, $c_1$ e $c_2$.
 
-A rotina utilizada para a otimização de
-$c(\mathbf{\hat{s}},\mathbf{y})$ é um algoritmo genético simples,
-conforme mostrado em~\cite{Book:Goldberg:1989}, ao qual foram
+Para a otimização de
+$c(\mathbf{\hat{s}},\mathbf{y})$ foi utilizado um algoritmo genético (AG) simples,
+conforme mostrado em~\cite{Book:Goldberg:1989,book:haupt:2004}, ao qual foram
 adicionados, elitismo, \textit{crossover} uniforme e genocídio
-periódico. Mais detalhes a respeito são mostrados no
+periódico. Os algoritmo genéticos são métodos de busca global capazes de apresentar desempenho 
+satisfatório mesmo em problemas onde a superfície de erro é não-linear e apresenta ótimos locais. Uma outra 
+característica do AG é que não há a necessidade do cálculo do gradiente da função de erro, pois opera 
+diretamente com o resultado da função custo. Mais detalhes a respeito do AG utilizado são mostrados no
 Apêndice~\ref{apend_GA}.

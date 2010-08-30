@@ -1144,7 +1144,7 @@ Existence and Uniqueness results},
 @INPROCEEDINGS{article:icaloc:noise:2004,
 author={Gruber, P. and Theis, F.J. and Stadlthanner, K. and Lang, E.W. and Tome, A.M. and Teixeira, A.R.},
 booktitle={Neural Networks, 2004. Proceedings. 2004 IEEE International Joint Conference on},
-title={Denoising using local ICA and kernel-PCA},
+title={Denoising using Local ICA and kernel-PCA},
 year={2004},
 month={July}
 volume={3},
