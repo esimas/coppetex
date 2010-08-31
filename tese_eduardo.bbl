@@ -1015,15 +1015,15 @@
   Theory, Part I\/}.
 \newblock Wiley: Nova York, Estados Unidos, 2001.
 
-\bibitem{article:rprop:1993}
-\MakeUppercase{ Riedmiller, M., Braun, H.}, \enquote{A direct adaptive method
-  for faster backpropagation learning, the {RPROP} algorithm}, {\em Proc. of
-  Int. Conf. on Neural Networks\/}, pp.~586--591, 1993.
-
 \bibitem{kuncheva:comb:2004}
 \MakeUppercase{ Kuncheva, L.}, {\em Combining Pattern Classifiers, Methods and
   Algorithms\/}.
 \newblock Wiley: Nova York, Estados Unidos, 2004.
+
+\bibitem{article:rprop:1993}
+\MakeUppercase{ Riedmiller, M., Braun, H.}, \enquote{A direct adaptive method
+  for faster backpropagation learning, the {RPROP} algorithm}, {\em Proc. of
+  Int. Conf. on Neural Networks\/}, pp.~586--591, 1993.
 
 \bibitem{book:cosmic:2002}
 \MakeUppercase{ Schlickeiser, R.}, {\em Cosmic Ray Astrophysics\/}.

@@ -53,13 +53,11 @@
 \BOOKMARK [0][-]{chapter.6}{Metodologia Proposta}{}
 \BOOKMARK [1][-]{section.6.1}{Par\342metros de Avalia\347\343o do Desempenho}{chapter.6}
 \BOOKMARK [1][-]{section.6.2}{Extra\347\343o de Caracter\355sticas}{chapter.6}
-\BOOKMARK [2][-]{subsection.6.2.1}{Caracter\355sticas Globais}{section.6.2}
-\BOOKMARK [2][-]{subsection.6.2.2}{Caracter\355sticas Segmentadas}{section.6.2}
-\BOOKMARK [1][-]{section.6.3}{Classificadores Neurais Supervisionados}{chapter.6}
-\BOOKMARK [2][-]{subsection.6.3.1}{Especifica\347\365es dos Classificadores Neurais Utilizados}{section.6.3}
-\BOOKMARK [2][-]{subsection.6.3.2}{Classificador Global}{section.6.3}
-\BOOKMARK [2][-]{subsection.6.3.3}{Classificadores Segmentados}{section.6.3}
-\BOOKMARK [2][-]{subsection.6.3.4}{Combina\347\343o de M\372ltiplos Classificadores}{section.6.3}
+\BOOKMARK [2][-]{subsection.6.2.1}{Algoritmos de Extra\347\343o de Caracter\355sticas Utilizados}{section.6.2}
+\BOOKMARK [1][-]{section.6.3}{Classifica\347\343o}{chapter.6}
+\BOOKMARK [2][-]{subsection.6.3.1}{Combina\347\343o de M\372ltiplos Classificadores}{section.6.3}
+\BOOKMARK [2][-]{subsection.6.3.2}{Especifica\347\365es de Treinamento dos Classificadores Neurais Utilizados}{section.6.3}
+\BOOKMARK [1][-]{section.6.4}{Bases de Dados Utilizadas}{chapter.6}
 \BOOKMARK [0][-]{chapter.7}{Resultados - Dados Simulados}{}
 \BOOKMARK [1][-]{section.7.1}{Caracter\355sticas dos sinais simulados}{chapter.7}
 \BOOKMARK [0][-]{chapter.8}{Resultados - Dados Experimentais}{}
