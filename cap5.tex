@@ -13,7 +13,7 @@ classificadores propriamente ditos (que no escopo deste trabalho são classificad
 supervisionados na arquitetura MLP). 
 
 Considerando que cada camada do calorímetro do ATLAS tem propriedades físicas distintas, neste 
-trabalho os sistemas de discriminação podem operar de dois modos distintos. No modo segmentado, 
+trabalho os sistemas de discriminação podem operar de dois modos. No modo segmentado, 
 os sinais provenientes de cada camada são tratados separadamente, ou seja, o processamento é realizado 
 a nível de cada camada. No modo não-segmentado, os sinais de todas as camadas são concatenados num 
 único vetor, que é utilizado como entrada para os discriminadores. Para os distintos algoritmos de 
@@ -21,8 +21,8 @@ extração de características utilizados, são realizadas comparações entre os modo
 considerando parâmetros como eficiência de discriminação e tempo de processamento.
 
 Este capítulo está organizado conforme descrito a seguir. Inicialmente serão apresentados os parâmetros utilizados 
-para avaliar o desempenho dos diversos classificadores propostos. A seguir serão descritas as propostas para 
-extração de características e ao final serão apresentados os procedimentos de treinamento dos classificadores 
+para avaliar o desempenho dos diversos sistemas classificadores apresentados. A seguir serão descritas as propostas 
+para extração de características e ao final serão apresentados os procedimentos de treinamento dos classificadores 
 neurais utilizados.
 
 \section{Parâmetros de Avaliação do Desempenho}
@@ -92,33 +92,40 @@ de deteção e falso alarme e do patamar ótimo para cada caso.
 
 Adcionalmente a estes dois parâmetros (curva ROC e máximo SP), serão realizadas comparações de desempenho 
 em termos de algumas variáveis físicas de interesse como energia e posição de interação no detector 
-(considerando as coordenadas $\eta$ e $\phi$).
+(considerando os eixos $\eta$ e $\phi$ do sistema de coordenadas do ATLAS).
 
 \section{Extração de Características}
 
-O modo não-segmentado de extração de características opera sobre os sinais em anéis gerados para todas as 
+Conforme mencionado no início deste capítulo, foram utilizados dois modos distintos para extração de 
+características. O modo não-segmentado opera sobre os sinais em anéis gerados para todas as 
 camadas do calorímetro (não há distinção entre as camadas). Para cada evento, as informações dos 100 anéis 
-são concatenadas em um único vetor de características. Este vetor é então utilizado como entrada para os
-algoritmos de aprendizado estatístico, este procedimento é
-ilustrado na Figura \ref{fig_fexg}
+são concatenadas num único vetor de características. Este vetor é então utilizado como entrada para os
+algoritmos de aprendizado estatístico, este procedimento é ilustrado na Figura~\ref{fig_fexg}.
 
 \begin{figure}[th]
 \centering
 \includegraphics[width=13cm]{cap3_fex_glob}
-\caption{Processo de extração de características globais.}
+\caption{Processo de extração de características no modo não-segmentado.}
 \label{fig_fexg}
 \end{figure}
 
 Alternativamente, as características discriminantes podem ser
-estimadas separadamente para os anéis produzidos em cada camada do
+estimadas separadamente (de modo segmentado) para os anéis produzidos em cada camada do
 calorímetro. Este procedimento, em geral, produz resultados de
-mais fácil interpretação física pois sabe-se que cada camada do
-calorímetro possui características distintas como o tipo e a
+mais fácil interpretação física, pois sabe-se que cada camada do
+calorímetro possui características distintas como o tipo dos sensores e a
 granularidade das células detectoras. A Figura \ref{fig_fexs}
 ilustra este procedimento. 
 
-Uma outra vantagem da abordagem segmentada que será explorada neste 
-trabalho é a possibilidade de redução no tempo de processamento dos 
+\begin{figure}[th]
+\centering
+\includegraphics[width=11cm]{cap3_fex_seg}
+\caption{Processo de extração de características no modo segmentado.}
+\label{fig_fexs}
+\end{figure}
+
+Uma outra vantagem da abordagem segmentada, que será explorada neste 
+trabalho, é a possibilidade de redução no tempo de processamento dos 
 discriminadores. Conforme discutido anteriormente no Capítulo~\ref{cap_atlasEtrig}, 
 grande parte do tempo de processamento do Neural Ringer é dedicado ao processo 
 de seleção de dados e produção dos sinais em anéis. Convém notar que, devido à configuração do 
@@ -130,32 +137,44 @@ pode ocorrer algum tipo de redundância nas informações produzidas nos diversos s
 será realizado um estudo visando identificar as camadas que apresentam informação redundante, e verificar 
 qual a economia obtida no tempo de processamento se as camadas redundantes não forem utilizadas no discriminador.
 
+\subsection{Algoritmos de Extração de Características}\label{sec_fex5}
 
-\begin{figure}[th]
-\centering
-\includegraphics[width=11cm]{cap3_fex_seg}
-\caption{Processo de extração de características segmentadas.}
-\label{fig_fexs}
-\end{figure}
+Este trabalho está focado na utilização do modelo não-linear da análise de 
+componentes independentes (NLICA) para extrair características relevantes do sinais dos 
+calorímetros para a discriminação elétron/jato.
 
-\subsection{Algoritmos de Extração de Características}
+Considerando os diversos algoritmos e modelos existentes para a estimação da NLICA (mostrados no 
+Capítulo~\ref{cap_ica}), no contexto deste trabalho, foram utilizados três configurações:
+\begin{itemize}
+ \item um algoritmo para o modelo sem restrições estruturais, neste caso foram utilizados mapas auto-organizáveis - SOM; 
+ \item algoritmos que estimam o modelo pós não-linear (PNL);
+ \item adicionalmente, foi utilizado o modelo da ICA Local.
+\end{itemize}
 
-... descrever os algos (SOM, PNL e Local), porque das escolhas, falar que foi incluido a informação das classes e 
-etc...
+Foram utilizados também algumas das modificações que incluem informação supervisionada no processo 
+de estimação dos componentes independentes (conforme detalhado na seção~\ref{sec_icasup}). Neste contexto, 
+foram testadas duas possibilidades:
+\begin{itemize}
+ \item utilização dos rótulos de classe como entrada para os algoritmos;
+ \item estimação de modelos diferentes para cada classe.
+\end{itemize}
+
+As configurações listadas acima foram escolhidas com o objetivo de explorar os principais modos de estimação da 
+NLICA (modelos com restrições estruturais ou modelos livres), através de algoritmos com aplicação difundida 
+(PNL e SOM). 
 
 \section{Classificação}
 
-Neste trabalho foram utilizados classificadores neurais tipo
-perceptrons de múltiplas camadas (MLP). Mais detalhes sobre
+Neste trabalho, foram utilizados classificadores neurais tipo
+perceptrons de múltiplas camadas (MLP)~\cite{haykin:nn:2008}. Mais detalhes sobre
 classificação de sinais e a implementação de classificadores
-neurais supervisionados podem ser encontrados no Apêndice
-\ref{apend_clas}. Os classificadores, assim como os algoritmos de
-extração de características, podem ser aplicados de modo global e
-de modo segmentado.
+neurais supervisionados podem ser encontrados no Apêndice~\ref{apend_clas}. 
+Os classificadores, assim como os algoritmos de
+extração de características, podem ser aplicados nos modos não-segmentado e segmentado.
 
-O classificador global opera sobre um conjunto de características
-discriminantes globais, produzindo a decisão elétron/jato. A
-Figura \ref{fig_clasg} ilustra a operação do classificador global.
+De modo semelhante ao descrito na seção~\ref{sec_fex5}, na classificação não-segmentada, as características 
+estimadas (sejam segmentadas ou não-segmentadas) são concatenadas num único vetor, que é usado como entrada 
+para o classificador neural supervisionado (ver Figura~\ref{fig_clasg}).
 
 \begin{figure}[h!]
 \centering
@@ -164,14 +183,18 @@ Figura \ref{fig_clasg} ilustra a operação do classificador global.
 \label{fig_clasg}
 \end{figure}
 
-
-Considerando o sistema de calorímetros do detector ATLAS, a
-informação disponível está segmentada em diversas camadas com
-características físicas e granularidade diferentes. Para melhor
-explorar as características do detector, está sendo proposto o uso
-de um conjunto de classificadores neurais, cada um especialista na
-informação de uma camada do calorímetro (ver Figura
-\ref{fig_classeg}).
+Quando as características são extraídas de modo segmentado (para cada camada), há a 
+possibilidade de realizar o processo de classificação também de modo segmentado, ou seja, 
+treinando classificadores específicos para cada camada. Neste caso, são utilizadas sete 
+redes MLP, cada uma especialista nas informações de uma das camadas do calorímetro (ver 
+Figura~\ref{fig_classeg}).
+%
+%Considerando o sistema de calorímetros do detector ATLAS, a
+%informação disponível está segmentada em diversas camadas com
+%características físicas e granularidade diferentes. Para melhor
+%explorar as características do detector, está sendo proposto o uso
+%de um conjunto de classificadores neurais, cada um especialista na
+%informação de uma camada do calorímetro 
 
 \begin{figure}[th]
 \centering
@@ -181,11 +204,8 @@ informação de uma camada do calorímetro (ver Figura
 \end{figure}
 
 Um problema que surge na utilização de múltiplos classificadores 
-é como combinar suas saídas para produzir da decisão
-final. Neste contexto, pode-se utilizar as informações de dois
-modos, através dos rótulos de classe atribuídos por cada
-classificador ou utilizando-se a saída contínua (que no caso dos
-classificadores utilizados varia de -1 a 1).
+é como combinar suas saídas para produzir a decisão
+final, o modo como este tópico foi tratado neste trabalho será descrito na próxima seção. 
 
 \subsection{Combinação de Múltiplos Classificadores}
 
@@ -223,23 +243,53 @@ caso as eficiências dos classificadores sejam diferentes. Deste
 modo, o voto de um classificador mais eficiente tem mais
 influência na decisão final.
 
-... falar do caso de retirar as camadas de saída e colocar uma outra camada sobre todos os sinais (como o seixas 
-sempre fala) ...
+Considerando que neste trabalho os classificadores são redes MLP, é possível utilizar as saídas 
+das camadas ocultas dos diversos classificadores como entradas para um outro classificador. Conforme ilustrado 
+na Figura~\ref{fig_rede3Cam}, é formada uma rede MLP de 3 camadas de neurônios, porém, a camada de entrada não 
+é totalmente conectada.
 
-\subsection{Especificações de Treinamento dos Classificadores Neurais}
+... Figura ...
+
+\subsubsection{Estudo a Respeito dos Métodos de Combinação de Classificadores}
+
+No trabalho~\cite{artigo:cbrn:2009}, foi realizado um estudo a respeito do desempenho dos métodos de combinação 
+de classificadores. Foram treinados classificadores neurais especialistas na informação de cada camada do calorímetro. 
+Neste estudo não foi utilizado pré-processamento por ICA/NLICA, as redes MLP foram alimentadas diretamente com os 
+sinais em anéis.
+
+As saídas dos classificadores foram combinadas a partir da média (aritimética), média geométrica e votação. Para 
+os três modos de combinação foi realizada a ponderação a partir do índice SP máximo obtido por cada classificador, 
+conforme ilustrado na Tabela~\ref{tabcomb1}. 
+
+Na Figura~\ref{fig_combClas} são ilustrados os resultados (curva ROC) obtidos para os diferentes modos de 
+combinação.
+
+...
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=9cm]{comp_combtese}
+\caption{Curvas ROC para os diferentes modos de combinação dos classificadores segmentados.}
+\label{fig_combClas}
+\end{figure}
+
+
+\section{Especificações de Treinamento}
 
 Neste trabalho, foram utilizados classificadores neurais
 supervisionados na arquitetura Perceptron de Múltiplas camadas
 (MLP - \textit{Multi-Layer Perceptron})~\cite{haykin:nn:2008}.
-Foram utilizadas redes com uma camada oculta e um neurônio na
+Em geral, foram utilizadas redes com uma camada oculta e um neurônio na
 camada de saída. Todos os neurônios utilizam funções de ativação
 tipo tangente hiperbólica. Em trabalhos anteriores~\cite{tese:andre:2006,tese:torres:2010}, bons resultados de
 classificação foram obtidos com redes de 10 neurônios na camada
-oculta, desta forma, decidiu-se utilizar o mesmo número de
-neurônios para esta camada.
+oculta, desta forma, decidiu-se utilizar este número de
+neurônios como referência.
 
-Para o treinamento dos classificadores segmentados foi utilizado o
+Para o treinamento dos classificadores, foi utilizado o
 algoritmo RPROP (\textit{Resilient Back-propagation})~\cite{article:rprop:1993}.
+... falar sobre o porque desta escolha ...
+
 
 O treinamento dos discriminadores foi realizado a partir de um
 processo de validação cruzada. Os sinais disponíveis para cada
@@ -247,22 +297,15 @@ classe foram, inicialmente, divididos de modo aleatório em 12
 grupos (com aproximadamente a mesma quantidade de eventos). A
 seguir, para cada processo de treinamento, sorteava-se 4 grupos
 distintos (em cada classe) para compor os conjuntos de treino,
-validação e teste. O número de neurônios na camada escondida dos
-classificadores neurais foi escolhido, a partir de testes
-exaustivos, visando maximizar a eficiência de discriminação.
+validação e teste. 
 
-Para o treinamento dos classificadores segmentados foi utilizado o
-algoritmo RPROP (\textit{Resilient Back-propagation})
-~\cite{article:rprop:1993}. Foram utilizadas redes MLP com uma
-camada escondida, um neurônio de saída e função de ativação
-tangente hiperbólica. O número de neurônios da camada escondida
-foi obtido após testes exaustivos com várias configurações.
 
 Explicar a validação cruzada e o modo de parada do algoritmo
 (falar do RPROP)
 
-
 Modo de treinamento (validação cruzada ... ver torres)
+
+... falar também do treinamento dos algo de fex...
 
 \section{Bases de Dados}
 

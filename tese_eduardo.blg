@@ -1,7 +1,7 @@
 This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: tese_eduardo.aux
 The style file: coppe-unsrt.bst
-Reallocated field_info (elt_size=4) to 10267 items from 5000.
+Reallocated field_info (elt_size=4) to 10290 items from 5000.
 Database file #1: edsimas.bib
 Repeated entry---line 321 of file edsimas.bib
  : %@article{Article:Simasimtc:2005
@@ -118,6 +118,7 @@ You're missing a field name---line 6763 of file edsimas.bib
  : %  AUTHOR =       {S. Bellini},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "artigo:cbrn:2009"
 Warning--empty pages in seixas:pcd:1995
 Warning--there's a number but no series in article:hegra:1995
 Warning--can't use both author and editor fields in article:moura:sonarbook
@@ -153,7 +154,7 @@ Warning--can't use both author and editor fields in article:icafexI:2001
 Warning--empty booktitle in article:icafexI:2001
 You've used 229 entries,
             2438 wiz_defined-function locations,
-            1821 strings with 39923 characters,
+            1822 strings with 39939 characters,
 and the built_in function-call counts, 55188 in all, are:
 = -- 4445
 > -- 1397

@@ -53,19 +53,27 @@
 \BOOKMARK [0][-]{chapter.6}{Metodologia Proposta}{}
 \BOOKMARK [1][-]{section.6.1}{Par\342metros de Avalia\347\343o do Desempenho}{chapter.6}
 \BOOKMARK [1][-]{section.6.2}{Extra\347\343o de Caracter\355sticas}{chapter.6}
-\BOOKMARK [2][-]{subsection.6.2.1}{Algoritmos de Extra\347\343o de Caracter\355sticas Utilizados}{section.6.2}
+\BOOKMARK [2][-]{subsection.6.2.1}{Algoritmos de Extra\347\343o de Caracter\355sticas}{section.6.2}
 \BOOKMARK [1][-]{section.6.3}{Classifica\347\343o}{chapter.6}
 \BOOKMARK [2][-]{subsection.6.3.1}{Combina\347\343o de M\372ltiplos Classificadores}{section.6.3}
-\BOOKMARK [2][-]{subsection.6.3.2}{Especifica\347\365es de Treinamento dos Classificadores Neurais Utilizados}{section.6.3}
-\BOOKMARK [1][-]{section.6.4}{Bases de Dados Utilizadas}{chapter.6}
+\BOOKMARK [1][-]{section.6.4}{Especifica\347\365es de Treinamento}{chapter.6}
+\BOOKMARK [1][-]{section.6.5}{Bases de Dados}{chapter.6}
 \BOOKMARK [0][-]{chapter.7}{Resultados - Dados Simulados}{}
 \BOOKMARK [1][-]{section.7.1}{Caracter\355sticas dos sinais simulados}{chapter.7}
+\BOOKMARK [1][-]{section.7.2}{Conjunto E10}{chapter.7}
+\BOOKMARK [2][-]{subsection.7.2.1}{Resultados com os descriminadores existentes}{section.7.2}
+\BOOKMARK [2][-]{subsection.7.2.2}{Resultados com pr\351-processamento por NLICA}{section.7.2}
+\BOOKMARK [2][-]{subsection.7.2.3}{Coment\341rios e discuss\343o}{section.7.2}
+\BOOKMARK [1][-]{section.7.3}{Conjunto E15i}{chapter.7}
+\BOOKMARK [2][-]{subsection.7.3.1}{Resultados com os descriminadores existentes}{section.7.3}
+\BOOKMARK [2][-]{subsection.7.3.2}{Resultados com pr\351-processamento por NLICA}{section.7.3}
+\BOOKMARK [2][-]{subsection.7.3.3}{Coment\341rios e discuss\343o}{section.7.3}
 \BOOKMARK [0][-]{chapter.8}{Resultados - Dados Experimentais}{}
 \BOOKMARK [1][-]{section.8.1}{Valida\347\343o com Sinais de R\341ios C\363smicos}{chapter.8}
 \BOOKMARK [2][-]{subsection.8.1.1}{Efici\352ncia dos Sistemas de Classifica\347\343o Propostos na Rejei\347\343o de Raios C\363smicos}{section.8.1}
 \BOOKMARK [1][-]{section.8.2}{Sinais de Colis\365es do LHC}{chapter.8}
 \BOOKMARK [0][-]{chapter.9}{Conclus\365es}{}
-\BOOKMARK [0][-]{chapter*.14}{Refer\352ncias Bibliogr\341ficas}{}
+\BOOKMARK [0][-]{chapter*.21}{Refer\352ncias Bibliogr\341ficas}{}
 \BOOKMARK [0][-]{appendix.A}{Aspectos Te\363ricos das T\351cnicas de Extra\347\343o de Caracter\355sticas}{}
 \BOOKMARK [1][-]{section.A.1}{Mapas auto-organiz\341veis}{appendix.A}
 \BOOKMARK [2][-]{subsection.A.1.1}{Quantiza\347\343o vetorial por aprendizado}{section.A.1}
