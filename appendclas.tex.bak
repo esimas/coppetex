@@ -257,21 +257,21 @@ uma camada.
 %onde após grande agitação das moléculas a energia é perdida de forma
 %lenta e gradual \cite{Article:Finnerty:1994}.
 
-As redes neurais artificiais (RNA) \cite{Book:Haykin:2001} são
-modelos matemáticos que emulam algumas características do cérebro
-humano, sendo capazes de adquirir conhecimento (aprender) e
-generalizar (responder corretamente a estímulos novos). Devido ao
-poder computacional, obtido de sua estrutura paralelamente
-distribuída, e às habilidades de aprender e generalizar, as RNAs vêm
-sendo utilizadas em diversas aplicações como reconhecimento de
-padrões e classificação \cite{Article:Simasimtc:2005}, processamento
-de sinais \cite{Article:Simas:2006}, aproximação de funções
+As redes neurais artificiais (RNA) \cite{haykin:nn:2008} são modelos
+matemáticos que emulam algumas características do cérebro humano,
+sendo capazes de adquirir conhecimento (aprender) e generalizar
+(responder corretamente a estímulos novos). Devido ao poder
+computacional, obtido de sua estrutura paralelamente distribuída, e
+às habilidades de aprender e generalizar, as RNAs vêm sendo
+utilizadas em diversas aplicações como reconhecimento de padrões e
+classificação \cite{Article:Simasimtc:2005}, processamento de sinais
+\cite{Article:Simas:2006}, aproximação de funções
 \cite{Article:Zoppoli:1996}, controle e identificação de sistemas
 \cite{Article:ichikawa:1992}. A seguir serão descritos os
 fundamentos matemáticos das redes neurais e sua aplicação como
 classificadores. Maior ênfase será dada às redes alimentadas adiante
 (\textit{feedforward neural networks}) com treinamento
-supervisionado. Os livros \cite{Book:Haykin:2001} e
+supervisionado. Os livros \cite{haykin:nn:2008} e
 \cite{book:wasserman:1989} fornecem textos mais abrangentes sobre
 assunto.
 

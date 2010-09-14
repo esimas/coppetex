@@ -30,12 +30,12 @@ energia da partícula e nem sempre são capazes de produzir a
 eficiência de discriminação desejada.
 
 
-\section{Filtragem de elétrons no L1}
+\section{Filtragem de Elétrons no L1}
 
-Considerando as características desejadas para o primeiro nível de filtragem (L1), onde a taxa de entrada é 
-da ordem de 10$^6$ eventos por segundo e uma taxa de redução da ordem de 500 vezes é exigida em no máximo 
-25$\mu$s, para tornar mais rápido o processo de decisão, este nível opera com granularidade reduzida no 
-sistema de calorímetros. No L1, as células dos calorímetros são somadas (através de somadores analógicos) 
+Considerando as características desejadas para o primeiro nível de filtragem (L1), onde a taxa de entrada é
+da ordem de 10$^6$ eventos por segundo e uma taxa de redução da ordem de 500 vezes é exigida em no máximo
+25$\mu$s, para tornar mais rápido o processo de decisão, este nível opera com granularidade reduzida no
+sistema de calorímetros. No L1, as células dos calorímetros são somadas (através de somadores analógicos)
 para produzir os sinais conhecidos
 como torres de \textit{trigger} (TT). O tamanho das torres de
 \textit{trigger} é diferente para as camadas eletromagnéticas e
@@ -63,7 +63,7 @@ eletromagnéticos (elétrons e fótons), que geralmente apresentam:
 
 A partir da análise de uma janela deslizante, cobrindo uma região
 de 4 $\times$ 4 TT (16 no total), alguns critérios podem ser
-utilizados pelo L1 (a depender das características desejadas para a física de interesse pode-se variar os 
+utilizados pelo L1 (a depender das características desejadas para a física de interesse pode-se variar os
 patamares de corte) para definir um possível candidato a elétron:
 \begin{enumerate}
   \item Os valores de energia das TTs da região central (de 2 $\times$ 2 TT)
@@ -73,7 +73,7 @@ eletromagnética para o evento ser aceito neste critério;
   TT) é calculado para verificar o isolamento em energia do objeto
   em questão. Para o evento ser aceito a energia periférica deve ser menor que o patamar estabelecido;
   \item A energia depositada nas camadas hadrônicas é somada para verificar o
-  vazamento de energia fora do calorímetro eletromagnético (isolamento hadrônico). 
+  vazamento de energia fora do calorímetro eletromagnético (isolamento hadrônico).
   Para o evento ser aceito a energia hadrônica deve ser menor que o patamar estabelecido.
 \end{enumerate}
 Os patamares de seleção do nível 1 podem ser ajustados e os
@@ -86,7 +86,7 @@ utilizados sinais simulados do canal elétron/jato aprovados em
 dois cortes de primeiro nível diferentes. No primeiro conjunto,
 foi realizado apenas um corte em energia num patamar igual a 10
 GeV, esse corte é conhecido como E10 (ou E10-\textit{loose}, para
-indicar que não houve isolamento). No segundo conjunto, o patamar de corte em energia utilizado foi 
+indicar que não houve isolamento). No segundo conjunto, o patamar de corte em energia utilizado foi
 15 GeV, e foram realizados
 também cortes por isolamento (periférico e hadrônico), produzindo
 os sinais do conjunto E15i (onde o sufixo i indica a utilização de
@@ -95,11 +95,11 @@ características dos conjuntos simulados E10 e E15i serão
 fornecidos no Capítulo \ref{cap_cados}.
 
 
-\section{Filtragem de elétrons no L2 - Algoritmo T2Calo}
+\section{Filtragem de Elétrons no L2 - Algoritmo T2Calo}
 
-Conforme mencionado anteriormente, o segundo nível de filtragem (L2) tem aproximadamente 40 ms para produzir a 
-decisão (aceitação/rejeição) das assinaturas aprovadas pelo L1. O L2 opera apenas sobre a região de interesse 
-(RoI) indicada pelo L1, que no caso da identificação de elétrons envolve os calorímetros e, em alguns casos, 
+Conforme mencionado anteriormente, o segundo nível de filtragem (L2) tem aproximadamente 40 ms para produzir a
+decisão (aceitação/rejeição) das assinaturas aprovadas pelo L1. O L2 opera apenas sobre a região de interesse
+(RoI) indicada pelo L1, que no caso da identificação de elétrons envolve os calorímetros e, em alguns casos,
 o detector de trajetória (\textit{tracking system}).
 
 O processo de discriminação de elétrons no L2 baseado em informações de calorimetria, conforme ilustrado na Figura
@@ -153,7 +153,7 @@ da energia concentrada em janelas de $3 \times 7$ células
 \end{itemize}
 
 Considerando que o perfil de deposição de energia dos elétrons é,
-em geral, mais concentrado ao redor do ponto de máximo e contido na 
+em geral, mais concentrado ao redor do ponto de máximo e contido na
 seção eletromagnética do calorímetro, o T2Calo opera
 através de cortes lineares nos parâmetros estimados acima. Por
 exemplo, analisando os parâmetros $R_{shape}$, $E_{ratio}$ e
@@ -416,8 +416,8 @@ de normalização dos sinais em anéis como:
  \item \textbf{Energia da seção do calorímetro}: dividindo-se a energia de cada anel pela soma da energia na seção do
 calorímetro (eletromagnética ou hadrônica) que contém o referido
 anel.
-  \item \textbf{Sequencial}: esse procedimento de normalização visa amplificar as diferenças no perfil lateral dos chuveiros 
-(realçando a energia distante do centro da RoI, que em alguns casos, pode ser útil para a discriminação). 
+  \item \textbf{Sequencial}: esse procedimento de normalização visa amplificar as diferenças no perfil lateral dos chuveiros
+(realçando a energia distante do centro da RoI, que em alguns casos, pode ser útil para a discriminação).
 A energia do anel i da camada c ($Ea_{ic}$) é normalizada através de:
 \begin{equation}
  E_{Ni}^{\{c\}}=\frac{Ea_{i}^{\{c\}}}{E^{\{c\}} -\displaystyle\sum_{j=1}^{i-1}Ea_{i}^{\{c\}}}
@@ -428,9 +428,9 @@ onde $E^{\{c\}}$ é a energia total da camada c.
 Após um estudo comparativo, concluiu-se que a normalização por
 energia total atendia um compromisso entre rapidez de execução e
 eficiência de discriminação, sendo assim, este procedimento foi
-adotado em todos os resultados simulados a serem mostrados nessa tese. 
-A normalização sequencial produz eficiência semelhante à normalização por energia total e, embora tenha custo 
-computacional um pouco mais elevado, é o procedimento em operação no detector atualmente. Portanto, nos conjuntos 
+adotado em todos os resultados simulados a serem mostrados nessa tese.
+A normalização sequencial produz eficiência semelhante à normalização por energia total e, embora tenha custo
+computacional um pouco mais elevado, é o procedimento em operação no detector atualmente. Portanto, nos conjuntos
 de dados experimentais (medidos no detector) este é o procedimento de normalização utilizado.
 
 \subsection{Teste de Hipóteses - Classificador Neural}
@@ -452,7 +452,7 @@ filtragem \textit{online} do ATLAS. Mais detalhes a respeito dos
 classificadores neurais na arquitetura MLP podem ser encontrados
 no Apêndice~\ref{apend_clas}.
 
-\subsection{Tempo de Execução}
+\subsection{Tempo de Execução}\label{sec_tempoR}
 
 Um aspecto crucial nos algoritmos para o sistema de filtragem
 \textit{online} é o tempo de execução. No caso do \textit{Neural
@@ -475,14 +475,14 @@ filtragem, corresponde a 40.7~$\%$ do tempo total (em média 0,4927
 $\pm$ 0,0787 ms).
 
 \item A seguir, o T2Calo realiza um pré-processamento nos sinais,
-onde são calculadas as suas 4 variáveis de decisão e os valores 
+onde são calculadas as suas 4 variáveis de decisão e os valores
 de $E_T$, $\eta$ e $\phi$ com uma maior precisão que no L1. Este passo de processamento
 equivale a 11.6 $\%$ do tempo total de execução (0,1408 $\pm$
 0,0148 ms). A partir daqui é iniciada a sequencia de rotinas
 específicas do \textit{Neural Ringer}.
 
 \item Apenas parte da informação necessária para o \textit{Neural
-Ringer} é utilizada pelo T2Calo, então, o restante precisa 
+Ringer} é utilizada pelo T2Calo, então, o restante precisa
 ser solicitado neste momento pelo \textit{Region Selector} do
 \textit{Neural Ringer}. Um novo fluxo de informação é estabelecido
 entre o L2 e as memórias de armazenamento temporário, consumindo
@@ -523,7 +523,7 @@ Ringer}.}\vspace{0.2cm} \footnotesize
     \textit{Region Selector - Ringer} & 0,4375 $\pm$ 0,0996 & 36,1\\ \hline
     Pré-processamento (anelamento) - \textit{Ringer} &  0,0986 $\pm$ 0,0165 & 8,2\\ \hline
     Normalização & 0.0026 $\pm$ 0,0015 & 0,2 \\ \hline
-    Classificação Neural & 0,0387  $\pm$ 0,0018 & 3,2\\ \hline
+    Classificação Neural & 0,0387 $\pm$ 0,0018 & 3,2\\ \hline
     Total & 1,2109 $\pm$ 0,1288 & 100\\
 \hline
 \end{tabular}
@@ -537,8 +537,8 @@ aumento de 0,5883 ms), isso é compensado por uma eficiência de
 discriminação muito superior do \textit{Ringer}, conforme será
 mostrado no Capítulo~\ref{cap_resul}.
 
-O excesso de tempo do \textit{Ringer} em relação ao T2Calo é compensado no processamento do Filtro de Eventos, pois, 
-como uma quantidade significativamente menor de ruído de fundo é enviado para o último nível, um menor 
+O excesso de tempo do \textit{Ringer} em relação ao T2Calo é compensado no processamento do Filtro de Eventos, pois,
+como uma quantidade significativamente menor de ruído de fundo é enviado para o último nível, um menor
 tempo será gasto nesta etapa.
 
 \section{Extensões ao Neural Ringer}
@@ -567,7 +567,7 @@ Ringer}.
 Ringer}.} \label{fig_ringerext}
 \end{figure}
 
-\subsection{Importância do pré-processamento para classificadores neurais}
+\subsection{Importância do Pré-Processamento para Classificadores Neurais}
 
 Embora as redes neurais possam, essencialmente, realizar quaisquer
 mapeamentos não-lineares, pode-se observar que, o uso direto dos
@@ -593,7 +593,7 @@ justifica o melhor desempenho dos classificadores após a etapa de
 pré-processamento, uma vez que ela não é capaz de adicionar
 informação a respeito do problema?
 
-A resposta pode ser encontrada considerando-se que, 
+A resposta pode ser encontrada considerando-se que,
 os sistemas neurais de classificação são obtidos a partir de
 um processo iterativo de ajuste de pesos. Então, um pré-processamento
 eficiente, ou seja, capaz de revelar características
@@ -631,7 +631,7 @@ os atributos disponíveis em um número reduzido de características,
 eliminar a redundância e manter toda a informação discriminante
 para o problema.
 
-\subsection{Pré-processamento linear}
+\subsection{Pré-Processamento Linear}
 
 Voltando para o contexto do discriminador \textit{Neural Ringer},
 embora a construção dos anéis já seja responsável por uma
@@ -662,7 +662,7 @@ melhorar o desempenho em relação ao Neural Ringer tradicional, sem
 modificar significativamente o tempo de processamento necessário
 para a tomada de decisão.
 
-\subsection{Pré-processamento não-linear}
+\subsection{Pré-Processamento Não-linear}
 
 Conforme descrito no Capítulo 2, os calorímetros, embora
 projetados para serem detectores lineares na identificação de
@@ -679,10 +679,10 @@ componentes independentes
 extração de características, como uma etapa de pré-processamento
 ao \textit{Neural Ringer}.
 
-Considerando que existem diversos algoritmos para a NLICA, 
+Considerando que existem diversos algoritmos para a NLICA,
 neste trabalho foram realizados estudos com alguns destes
 métodos. Os diferentes modelos foram comparados, considerando
 eficiência de discriminação e tempo de processamento necessário
-para produzir a decisão. No próximo capítulo serão mostrados os fundamentos teóricos da 
-análise de componentes independentes nos seus modelos linear e não-linear, bem como suas aplicações 
+para produzir a decisão. No próximo capítulo serão mostrados os fundamentos teóricos da
+análise de componentes independentes nos seus modelos linear e não-linear, bem como suas aplicações
 em problemas de extração de características.

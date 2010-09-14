@@ -1020,10 +1020,36 @@
   Algorithms\/}.
 \newblock Wiley: Nova York, Estados Unidos, 2004.
 
+\bibitem{simas:cbrn09:fisica}
+\MakeUppercase{ {Simas Filho}, E.~F., Seixas, J.~M., Caloba, L.~P.},
+  \enquote{Combinação de Classificadores Neurais Segmentados com
+  Pré-processamento por Análise de Componentes Independentes para um Sistema
+  Online de Filtragem}.
+\newblock In: {\em Anais do Congresso Brasileiro de Redes Neurais\/}, pp. 1--5,
+  Ouro Preto-MG, Outubro 2009.
+
 \bibitem{article:rprop:1993}
 \MakeUppercase{ Riedmiller, M., Braun, H.}, \enquote{A direct adaptive method
   for faster backpropagation learning, the {RPROP} algorithm}, {\em Proc. of
   Int. Conf. on Neural Networks\/}, pp.~586--591, 1993.
+
+\bibitem{article:widrow:1990}
+\MakeUppercase{ Nguyen, D., Widrow, B.}, \enquote{Improving the Learning Speed
+  of 2-Layer Neural Networks by Choosing Initial Values of the Adaptive
+  Weights}.
+\newblock In: {\em Proceedings of the International Joint Conference on Neural
+  Networks\/}, v.~3, pp. 21--26, São Diego, Estados Unidos, Junho 1990.
+
+\bibitem{chap:intech:icafis}
+\MakeUppercase{ Torres, R.~C., {Simas Filho}, E.~F., Lima, D. E.~F.,
+  \MakeLowercase{et~al.}}, \enquote{Signal Processing}, chap. Segmented Online
+  Neural Filtering based on Independent Components of Pre-Processed
+  Information, pp. 337--358, In-Tech: India, 2010.
+
+\bibitem{book:knoll:2000}
+\MakeUppercase{ Knoll, G.~F.}, {\em Radiation Detection and Measurement\/}.
+\newblock 3rd ed.
+\newblock Wiley: Nova York, Estados Unidos, 2000.
 
 \bibitem{book:cosmic:2002}
 \MakeUppercase{ Schlickeiser, R.}, {\em Cosmic Ray Astrophysics\/}.

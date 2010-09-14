@@ -5,7 +5,7 @@ Neste apêndice serão fornecidos os detalhes da teoria envolvida nos
 diversos métodos de extração de características utilizados neste
 trabalho.
 
-\section{Mapas auto-organizáveis}
+\section{Mapas Auto-Organizáveis}
 
 O mapa auto-organizável (SOM - \textit{Self Organizing Map}) é uma
 rede neural com treinamento não-supervisionado, baseado na
@@ -80,7 +80,7 @@ proxi\-midade entre dois vetores; nesse caso, o neurônio vencedor é
 aquele que minimiza $i(\mathbf{x})=\| \mathbf{x}(n)-\mathbf{w_j}
 \|$.
 
-Uma outra forma de operar um mapa auto-organizável é utilizar as projeções dos sinais de entrada no mapa de 
+Uma outra forma de operar um mapa auto-organizável é utilizar as projeções dos sinais de entrada no mapa de
 características, ou seja as saídas $u_j$ de cada neurônio j que pode ser calculada por:
 \begin{equation}\label{som_out}
  u_j=\mathbf{x}^T\mathbf{w_j}
@@ -92,7 +92,7 @@ codificação vetorial, sendo capazes de encontrar, de forma
 otimizada, um número fixo de vetores ou palavras de código que
 melhor representem o conjunto de sinais.
 
-\subsection{Quantização vetorial por aprendizado}
+\subsection{Quantização Vetorial por Aprendizado}
 
 A quantização vetorial (VQ - \textit{Vector Quantization}) é uma
 técnica de codificação onde um espaço de entrada é mapeado em um
@@ -174,8 +174,8 @@ Alguns exemplos da aplicação da quantização vetorial por aprendizado
 para compressão de sinais e classificação podem ser encontrados em
 \cite{article:kohonenLVQ:1990} e \cite{article:dey:1999}.
 
-\subsection{Classificação a partir do mapa de
-características}\label{mlp_somm}
+\subsection{Classificação a Partir do Mapa de
+Características}\label{mlp_somm}
 
 Considerando um problema de classificação, o mapeamento
 auto-organizável consegue transformar o conjunto de sinais,
@@ -199,8 +199,8 @@ características} \label{som_class}
 
 \section{Técnicas de Pré-Processamento - Compactação}
 
-No processamento de sinais multi-dimensionais, é comum a utilização de técnicas de processamento de sinais 
-que visam a redução da dimensionalidade do problema. O objetivo é projetar os sinais N-dimensionais observados em 
+No processamento de sinais multi-dimensionais, é comum a utilização de técnicas de processamento de sinais
+que visam a redução da dimensionalidade do problema. O objetivo é projetar os sinais N-dimensionais observados em
 
 \subsection{Análise de Componentes Principais}
 
@@ -211,12 +211,12 @@ sinais diretamente ligada à transformação de \textit{Karhunen-Loève}
 transformação linear onde os sinais projetados sejam
 não-correlacionados e grande parcela da energia (variância) esteja
 concentrada num pequeno número de componentes. Para isso, são
-exploradas informações da estatística de segunda ordem. 
+exploradas informações da estatística de segunda ordem.
 
 A análise de
 componentes principais é bastante usada para compactação de
-informação. Como a PCA projeta os sinais em componentes ordenados por energia, uma métrica geralmente 
-utilizada para reduzir a dimensão dos dados consiste na seleção apenas dos componentes de maior energia, 
+informação. Como a PCA projeta os sinais em componentes ordenados por energia, uma métrica geralmente
+utilizada para reduzir a dimensão dos dados consiste na seleção apenas dos componentes de maior energia,
 de modo que o sinal recuperado a
 partir da informação compactada tenha pequeno erro médio quadrático
 se comparado ao original. A seguir serão desenvolvidos, de forma
@@ -250,7 +250,7 @@ tornar a variância independente da norma de $\mathbf{v}_i$, faz-se:
 \end{equation}
 \\
 Fazendo-se com que $||\mathbf{v}_i||=1$, torna-se a variância função apenas da direção
-das projeções. 
+das projeções.
 %A ortogonalidade garante a não-correlação entre as
 %componentes.
 
@@ -291,7 +291,7 @@ das componentes principais, através de redes neurais
 \cite{article:oja:pca,tese:joao:2007}.
 
 
-\subsection{Redução de dimensão}
+\subsection{Redução de Dimensão}
 
 \begin{figure}[tbph]
 \centering
@@ -329,7 +329,7 @@ computacional e conseqüentemente o tempo de processamento.
 
 \section{Análise de Componentes Independentes}
 
-\subsection{Princípios de estimação dos componentes independentes}
+\subsection{Princípios de Estimação dos Componentes Independentes}
 
 No modelo básico da ICA (ver equação (\ref{icamatrix}))assume-se que
 a matriz $\mathbf{A}$ é quadrada e não são considerados os atrasos
@@ -432,7 +432,7 @@ O uso de cumulantes traz de volta o problema da pouca robustez a
 uso das funções não-polinomiais leva ao método da máxima entropia
 \cite{book:oja:2001}.
 
-\subsubsection{Minimização da informação mútua}
+\subsubsection{Minimização da Informação Mútua}
 
 Um outro método de estimação de ICA, também derivado da teoria da
 informação, é obtido pela minimização da informação mútua. A
@@ -458,7 +458,7 @@ transformação inversa da ICA, conforme equação \ref{icamatrix2}, pode
 ser estimada através da minimização da informação mútua dos sinais
 $s_i$ recuperados.
 
-\subsubsection{ICA através da descorrelação não linear}
+\subsubsection{ICA através da Descorrelação Não-Linear}
 
 A igualdade da equação:
 \begin{equation}\label{indep22}
@@ -505,7 +505,7 @@ satisfazem ao modelo da ICA, mostrado na equação (\ref{icamatrix}), a
 NLPCA obtém uma aproximação das componentes independentes.
 
 
-\subsection{Pré-processamento dos sinais para ICA}
+\subsection{Pré-Processamento dos Sinais para ICA}
 
 Em geral, os algoritmos de extração das componentes independentes
 têm seu trabalho simplificado quando os sinais são centralizados, ou
@@ -531,7 +531,7 @@ Em problemas com vetores de entrada de alta dimensão, é importante
 a compactação da informação através de PCA ou Análise de Relevância
 para facilitar o processo de extração das componentes independentes.
 
-\subsection{Principais algoritmos para ICA}
+\subsection{Principais Algoritmos para ICA}
 
 Diversos algoritmos vêm sendo propostos para a extração das
 componentes independentes. Essas rotinas diferem basicamente no
@@ -714,7 +714,7 @@ ruído aumenta, neste caso o método de Akuzawa apresenta melhores
 resultados.
 
 
-\subsection{Extensões ao modelo básico de ICA}
+\subsection{Extensões ao Modelo Básico de ICA}
 
 A análise de componentes independentes em sua formulação básica
 mostrada nas equações (\ref{icamatrix}) e (\ref{icamatrix2}) é
@@ -726,7 +726,7 @@ estará presente nas células absorvedoras de energia, e por
 características de construção do sistema, transformações
 não-lineares dos sinais poderão estar presentes.
 
-\subsubsection{ICA para sinais ruidosos}
+\subsubsection{ICA para Sinais Ruidosos}
 
 Sabe-se que os sinais reais no ambiente do calorímetro do ATLAS
 estarão contaminados por ruído. A formulação básica da ICA, mostrada
@@ -825,7 +825,7 @@ pode-se tentar o uso de técnicas de processamento de sinais como
 adaptativa~\cite{article:jutten:2002}.
 
 
-\section{ICA não-linear}
+\section{ICA Não-Linear}
 
 Conforme mostrado no Capítulo \ref{cap_fex}, o modelo da ICA
 não-linear (NLICA) apresenta uma formulação mais geral que o linear.
@@ -833,7 +833,7 @@ A seguir será mostrado o desenvolvimento teórico de um algoritmo
 para a estimação das componentes independentes no modelo pós
 não-linear.
 
-\subsection{Algoritmo Taleb-Jutten para o modelo PNL}
+\subsection{Algoritmo Taleb-Jutten para o Modelo PNL}
 
 Um dos primeiros algoritmos para o modelo pós não-linear da ICA foi
 proposto por Taleb e Jutten no trabalho \cite{article:jutten:1999}.

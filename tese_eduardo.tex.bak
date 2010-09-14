@@ -54,7 +54,7 @@ Baseada em Calorimetria de Alta Energia e com Fina Segmentação}
   \examiner{Prof.}{Leandro Salazar de Paula}{D.Sc.}
   \examiner{Prof.}{André Ponce de Leon F. de Carvalho}{Ph.D}
   \department{PEE}
-  \date{06}{2010}
+  \date{12}{2010}
 
   \keyword{Análise de Componentes Independentes}
   \keyword{Filtragem Online}
@@ -138,8 +138,8 @@ Here goes the abstract ...
     \input{cap3}
     \input{cap4}
     \input{cap5}
-    \input{cap_dados}
-    \input{cap6}
+    \input{res_sim}
+    \input{res_exp}
     \input{conclusoes}
 %  \chapter{Resultados e Discussões}
 %  \chapter{Conclusões}
@@ -152,8 +152,8 @@ Here goes the abstract ...
   \appendix
  \input{appendfex}
  \input{appendclas}
- \input{appendpub}
  \input{apendgen}
+ \input{appendpub}
 \end{document}
 %%
 %%

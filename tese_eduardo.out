@@ -7,49 +7,49 @@
 \BOOKMARK [1][-]{section.1.3}{Trabalhos Anteriores}{chapter.1}
 \BOOKMARK [1][-]{section.1.4}{Objetivos}{chapter.1}
 \BOOKMARK [1][-]{section.1.5}{Metodologia}{chapter.1}
-\BOOKMARK [1][-]{section.1.6}{Conte\372do do trabalho}{chapter.1}
-\BOOKMARK [0][-]{chapter.2}{F\355sica de Part\355culas e o detector ATLAS}{}
-\BOOKMARK [1][-]{section.2.1}{Panorama geral da f\355sica de part\355culas elementares}{chapter.2}
-\BOOKMARK [1][-]{section.2.2}{O acelerador LHC}{chapter.2}
-\BOOKMARK [1][-]{section.2.3}{Caracter\355sticas gerais do detector ATLAS}{chapter.2}
-\BOOKMARK [1][-]{section.2.4}{Principais objetos de interesse no ATLAS}{chapter.2}
-\BOOKMARK [1][-]{section.2.5}{O sistema de calorimetria do ATLAS}{chapter.2}
-\BOOKMARK [2][-]{subsection.2.5.1}{Breve introdu\347\343o \340 calorimetria}{section.2.5}
-\BOOKMARK [2][-]{subsection.2.5.2}{Caracter\355sticas dos calorimetros do ATLAS}{section.2.5}
-\BOOKMARK [2][-]{subsection.2.5.3}{Desempenho esperado dos calor\355metros}{section.2.5}
+\BOOKMARK [1][-]{section.1.6}{Conte\372do do Trabalho}{chapter.1}
+\BOOKMARK [0][-]{chapter.2}{F\355sica de Part\355culas e o Detector ATLAS}{}
+\BOOKMARK [1][-]{section.2.1}{Panorama Geral da F\355sica de Part\355culas Elementares}{chapter.2}
+\BOOKMARK [1][-]{section.2.2}{O Acelerador LHC}{chapter.2}
+\BOOKMARK [1][-]{section.2.3}{Caracter\355sticas Gerais do Detector ATLAS}{chapter.2}
+\BOOKMARK [1][-]{section.2.4}{Principais Objetos de Interesse no ATLAS}{chapter.2}
+\BOOKMARK [1][-]{section.2.5}{O Sistema de Calorimetria do ATLAS}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.5.1}{Breve Introdu\347\343o \340 Calorimetria}{section.2.5}
+\BOOKMARK [2][-]{subsection.2.5.2}{Caracter\355sticas dos Calorimetros do ATLAS}{section.2.5}
+\BOOKMARK [2][-]{subsection.2.5.3}{Desempenho Esperado dos Calor\355metros}{section.2.5}
 \BOOKMARK [0][-]{chapter.3}{Filtragem Online no ATLAS}{}
-\BOOKMARK [1][-]{section.3.1}{Introdu\347\343o aos sistemas de filtragem em HEP}{chapter.3}
-\BOOKMARK [2][-]{subsection.3.1.1}{Aplica\347\365es de redes neurais artificiais}{section.3.1}
-\BOOKMARK [1][-]{section.3.2}{O sistema de filtragem online do ATLAS}{chapter.3}
-\BOOKMARK [2][-]{subsection.3.2.1}{Primeiro n\355vel de filtragem}{section.3.2}
-\BOOKMARK [2][-]{subsection.3.2.2}{Filtragem de alto n\355vel}{section.3.2}
+\BOOKMARK [1][-]{section.3.1}{Introdu\347\343o aos Sistemas de Filtragem em HEP}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.1.1}{Aplica\347\365es de Redes Neurais Artificiais}{section.3.1}
+\BOOKMARK [1][-]{section.3.2}{O Sistema de Filtragem Online do ATLAS}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.2.1}{Primeiro N\355vel de Filtragem}{section.3.2}
+\BOOKMARK [2][-]{subsection.3.2.2}{Filtragem de Alto N\355vel}{section.3.2}
 \BOOKMARK [2][-]{subsection.3.2.3}{Plataforma de Software do Sistema de Filtragem}{section.3.2}
 \BOOKMARK [0][-]{chapter.4}{Detec\347\343o de El\351trons a partir de Informa\347\365es de Calorimetria no ATLAS}{}
-\BOOKMARK [1][-]{section.4.1}{Filtragem de el\351trons no L1}{chapter.4}
-\BOOKMARK [1][-]{section.4.2}{Filtragem de el\351trons no L2 - Algoritmo T2Calo}{chapter.4}
+\BOOKMARK [1][-]{section.4.1}{Filtragem de El\351trons no L1}{chapter.4}
+\BOOKMARK [1][-]{section.4.2}{Filtragem de El\351trons no L2 - Algoritmo T2Calo}{chapter.4}
 \BOOKMARK [1][-]{section.4.3}{Neural Ringer - Alternativa para Filtragem de El\351trons no L2}{chapter.4}
 \BOOKMARK [2][-]{subsection.4.3.1}{Extra\347\343o de Caracter\355sticas - Anelamento}{section.4.3}
 \BOOKMARK [2][-]{subsection.4.3.2}{Normaliza\347\343o}{section.4.3}
 \BOOKMARK [2][-]{subsection.4.3.3}{Teste de Hip\363teses - Classificador Neural}{section.4.3}
 \BOOKMARK [2][-]{subsection.4.3.4}{Tempo de Execu\347\343o}{section.4.3}
 \BOOKMARK [1][-]{section.4.4}{Extens\365es ao Neural Ringer}{chapter.4}
-\BOOKMARK [2][-]{subsection.4.4.1}{Import\342ncia do pr\351-processamento para classificadores neurais}{section.4.4}
-\BOOKMARK [2][-]{subsection.4.4.2}{Pr\351-processamento linear}{section.4.4}
-\BOOKMARK [2][-]{subsection.4.4.3}{Pr\351-processamento n\343o-linear}{section.4.4}
+\BOOKMARK [2][-]{subsection.4.4.1}{Import\342ncia do Pr\351-Processamento para Classificadores Neurais}{section.4.4}
+\BOOKMARK [2][-]{subsection.4.4.2}{Pr\351-Processamento Linear}{section.4.4}
+\BOOKMARK [2][-]{subsection.4.4.3}{Pr\351-Processamento N\343o-linear}{section.4.4}
 \BOOKMARK [0][-]{chapter.5}{An\341lise de Componentes Independentes}{}
-\BOOKMARK [1][-]{section.5.1}{Modelo linear da ICA}{chapter.5}
-\BOOKMARK [1][-]{section.5.2}{ICA n\343o-linear}{chapter.5}
+\BOOKMARK [1][-]{section.5.1}{Modelo Linear da ICA}{chapter.5}
+\BOOKMARK [1][-]{section.5.2}{ICA N\343o-Linear}{chapter.5}
 \BOOKMARK [2][-]{subsection.5.2.1}{Unicidade da Solu\347\343o em NLICA}{section.5.2}
-\BOOKMARK [2][-]{subsection.5.2.2}{Modelos com restri\347\365es estruturais}{section.5.2}
-\BOOKMARK [2][-]{subsection.5.2.3}{Algoritmos sem restri\347\365es estruturais}{section.5.2}
+\BOOKMARK [2][-]{subsection.5.2.2}{Modelos com Restri\347\365es Estruturais}{section.5.2}
+\BOOKMARK [2][-]{subsection.5.2.3}{Algoritmos sem Restri\347\365es Estruturais}{section.5.2}
 \BOOKMARK [2][-]{subsection.5.2.4}{ICA Local}{section.5.2}
-\BOOKMARK [1][-]{section.5.3}{Aplica\347\365es de ICA e NLICA para extra\347\343o de caracter\355sticas}{chapter.5}
+\BOOKMARK [1][-]{section.5.3}{Aplica\347\365es de ICA e NLICA para Extra\347\343o de Caracter\355sticas}{chapter.5}
 \BOOKMARK [1][-]{section.5.4}{Aplica\347\365es em F\355sica de Altas Energias e \301reas Correlatas}{chapter.5}
 \BOOKMARK [1][-]{section.5.5}{Utilizando Informa\347\343o das Classes na Estima\347\343o dos Componentes Independentes}{chapter.5}
 \BOOKMARK [2][-]{subsection.5.5.1}{Componentes Principais de Discrimina\347\343o}{section.5.5}
-\BOOKMARK [2][-]{subsection.5.5.2}{Utilizando os r\363tulos de classe como sinais de entrada para os algoritmos de ICA}{section.5.5}
+\BOOKMARK [2][-]{subsection.5.5.2}{Utilizando os R\363tulos de Classe como Sinais de Entrada para os Algoritmos de ICA}{section.5.5}
 \BOOKMARK [2][-]{subsection.5.5.3}{Componentes Independentes para Cada Classe}{section.5.5}
-\BOOKMARK [2][-]{subsection.5.5.4}{Proposta de algoritmo para estima\347\343o de componentes independentes e discriminantes}{section.5.5}
+\BOOKMARK [2][-]{subsection.5.5.4}{Proposta de Algoritmo para Estima\347\343o de Componentes Independentes e Discriminantes}{section.5.5}
 \BOOKMARK [0][-]{chapter.6}{Metodologia Proposta}{}
 \BOOKMARK [1][-]{section.6.1}{Par\342metros de Avalia\347\343o do Desempenho}{chapter.6}
 \BOOKMARK [1][-]{section.6.2}{Extra\347\343o de Caracter\355sticas}{chapter.6}
@@ -59,41 +59,47 @@
 \BOOKMARK [1][-]{section.6.4}{Especifica\347\365es de Treinamento}{chapter.6}
 \BOOKMARK [1][-]{section.6.5}{Bases de Dados}{chapter.6}
 \BOOKMARK [0][-]{chapter.7}{Resultados - Dados Simulados}{}
-\BOOKMARK [1][-]{section.7.1}{Caracter\355sticas dos sinais simulados}{chapter.7}
+\BOOKMARK [1][-]{section.7.1}{Caracter\355sticas dos Sinais Simulados}{chapter.7}
 \BOOKMARK [1][-]{section.7.2}{Conjunto E10}{chapter.7}
-\BOOKMARK [2][-]{subsection.7.2.1}{Resultados com os descriminadores existentes}{section.7.2}
-\BOOKMARK [2][-]{subsection.7.2.2}{Resultados com pr\351-processamento por NLICA}{section.7.2}
-\BOOKMARK [2][-]{subsection.7.2.3}{Coment\341rios e discuss\343o}{section.7.2}
+\BOOKMARK [2][-]{subsection.7.2.1}{Resultados com os Discriminadores Existentes}{section.7.2}
+\BOOKMARK [2][-]{subsection.7.2.2}{Resultados com Pr\351-Processamento por NLICA}{section.7.2}
+\BOOKMARK [2][-]{subsection.7.2.3}{Estudo da Relev\342ncia por Camada}{section.7.2}
+\BOOKMARK [2][-]{subsection.7.2.4}{Compara\347\343o com Discriminadores Lineares}{section.7.2}
+\BOOKMARK [2][-]{subsection.7.2.5}{Coment\341rios e Discuss\343o}{section.7.2}
 \BOOKMARK [1][-]{section.7.3}{Conjunto E15i}{chapter.7}
-\BOOKMARK [2][-]{subsection.7.3.1}{Resultados com os descriminadores existentes}{section.7.3}
-\BOOKMARK [2][-]{subsection.7.3.2}{Resultados com pr\351-processamento por NLICA}{section.7.3}
-\BOOKMARK [2][-]{subsection.7.3.3}{Coment\341rios e discuss\343o}{section.7.3}
+\BOOKMARK [2][-]{subsection.7.3.1}{Resultados com os Discriminadores existentes}{section.7.3}
+\BOOKMARK [2][-]{subsection.7.3.2}{Resultados com Pr\351-Processamento por NLICA}{section.7.3}
+\BOOKMARK [2][-]{subsection.7.3.3}{Estudo da Relev\342ncia por Camada}{section.7.3}
+\BOOKMARK [2][-]{subsection.7.3.4}{Compara\347\343o com Discriminadores Lineares}{section.7.3}
+\BOOKMARK [2][-]{subsection.7.3.5}{Coment\341rios e Discuss\343o}{section.7.3}
 \BOOKMARK [0][-]{chapter.8}{Resultados - Dados Experimentais}{}
-\BOOKMARK [1][-]{section.8.1}{Valida\347\343o com Sinais de R\341ios C\363smicos}{chapter.8}
+\BOOKMARK [1][-]{section.8.1}{Valida\347\343o com Sinais de Raios C\363smicos}{chapter.8}
 \BOOKMARK [2][-]{subsection.8.1.1}{Efici\352ncia dos Sistemas de Classifica\347\343o Propostos na Rejei\347\343o de Raios C\363smicos}{section.8.1}
 \BOOKMARK [1][-]{section.8.2}{Sinais de Colis\365es do LHC}{chapter.8}
+\BOOKMARK [1][-]{section.8.3}{Estimativa do custo computacional dos algoritmos propostos}{chapter.8}
+\BOOKMARK [2][-]{subsection.8.3.1}{Abordagens segmentadas}{section.8.3}
 \BOOKMARK [0][-]{chapter.9}{Conclus\365es}{}
-\BOOKMARK [0][-]{chapter*.21}{Refer\352ncias Bibliogr\341ficas}{}
+\BOOKMARK [0][-]{chapter*.23}{Refer\352ncias Bibliogr\341ficas}{}
 \BOOKMARK [0][-]{appendix.A}{Aspectos Te\363ricos das T\351cnicas de Extra\347\343o de Caracter\355sticas}{}
-\BOOKMARK [1][-]{section.A.1}{Mapas auto-organiz\341veis}{appendix.A}
-\BOOKMARK [2][-]{subsection.A.1.1}{Quantiza\347\343o vetorial por aprendizado}{section.A.1}
-\BOOKMARK [2][-]{subsection.A.1.2}{Classifica\347\343o a partir do mapa de caracter\355sticas}{section.A.1}
+\BOOKMARK [1][-]{section.A.1}{Mapas Auto-Organiz\341veis}{appendix.A}
+\BOOKMARK [2][-]{subsection.A.1.1}{Quantiza\347\343o Vetorial por Aprendizado}{section.A.1}
+\BOOKMARK [2][-]{subsection.A.1.2}{Classifica\347\343o a Partir do Mapa de Caracter\355sticas}{section.A.1}
 \BOOKMARK [1][-]{section.A.2}{An\341lise de Componentes Principais}{appendix.A}
 \BOOKMARK [1][-]{section.A.3}{T\351cnicas de Pr\351-Processamento - Compacta\347\343o}{appendix.A}
 \BOOKMARK [2][-]{subsection.A.3.1}{An\341lise de Componentes Principais}{section.A.3}
-\BOOKMARK [2][-]{subsection.A.3.2}{Redu\347\343o de dimens\343o}{section.A.3}
+\BOOKMARK [2][-]{subsection.A.3.2}{Redu\347\343o de Dimens\343o}{section.A.3}
 \BOOKMARK [1][-]{section.A.4}{An\341lise de Componentes Independentes}{appendix.A}
-\BOOKMARK [2][-]{subsection.A.4.1}{Princ\355pios de estima\347\343o dos componentes independentes}{section.A.4}
-\BOOKMARK [2][-]{subsection.A.4.2}{Pr\351-processamento dos sinais para ICA}{section.A.4}
-\BOOKMARK [2][-]{subsection.A.4.3}{Principais algoritmos para ICA}{section.A.4}
-\BOOKMARK [2][-]{subsection.A.4.4}{Extens\365es ao modelo b\341sico de ICA}{section.A.4}
-\BOOKMARK [1][-]{section.A.5}{ICA n\343o-linear}{appendix.A}
-\BOOKMARK [2][-]{subsection.A.5.1}{Algoritmo Taleb-Jutten para o modelo PNL}{section.A.5}
-\BOOKMARK [0][-]{appendix.B}{Conceitos fundamentais em classifica\347\343o de sinais}{}
+\BOOKMARK [2][-]{subsection.A.4.1}{Princ\355pios de Estima\347\343o dos Componentes Independentes}{section.A.4}
+\BOOKMARK [2][-]{subsection.A.4.2}{Pr\351-Processamento dos Sinais para ICA}{section.A.4}
+\BOOKMARK [2][-]{subsection.A.4.3}{Principais Algoritmos para ICA}{section.A.4}
+\BOOKMARK [2][-]{subsection.A.4.4}{Extens\365es ao Modelo B\341sico de ICA}{section.A.4}
+\BOOKMARK [1][-]{section.A.5}{ICA N\343o-Linear}{appendix.A}
+\BOOKMARK [2][-]{subsection.A.5.1}{Algoritmo Taleb-Jutten para o Modelo PNL}{section.A.5}
+\BOOKMARK [0][-]{appendix.B}{Conceitos Fundamentais em Classifica\347\343o de Sinais}{}
 \BOOKMARK [1][-]{section.B.1}{Teste de Hip\363teses}{appendix.B}
 \BOOKMARK [1][-]{section.B.2}{Crit\351rio de Bayes}{appendix.B}
 \BOOKMARK [1][-]{section.B.3}{Filtros Casados}{appendix.B}
-\BOOKMARK [1][-]{section.B.4}{Discriminante linear de Fisher}{appendix.B}
+\BOOKMARK [1][-]{section.B.4}{Discriminante Linear de Fisher}{appendix.B}
 \BOOKMARK [1][-]{section.B.5}{Classificadores Neurais}{appendix.B}
 \BOOKMARK [0][-]{appendix.C}{Algoritmos Gen\351ticos}{}
 \BOOKMARK [1][-]{section.C.1}{Algoritmo Gen\351tico como M\351todo de Otimiza\347\343o}{appendix.C}
