@@ -1,6 +1,28 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PESSOAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% colocar os artigos do cbrn09 da física e o do livro intech ica... linkar as chamadas nos capítulos 5 e res sim
+
+@inproceedings{simas:cbrn09:fisica,
+  Address = {Ouro Preto-MG},
+  Author = {E. F. {Simas Filho} and J. M. Seixas and L. P. Caloba},
+  Booktitle = {Anais do Congresso Brasileiro de Redes Neurais},
+  Month = {Outubro},
+  Pages = {1-5},
+  Title = {Combinação de Classificadores Neurais Segmentados com Pré-processamento por Análise de Componentes Independentes para um Sistema Online de Filtragem},
+  Year = {2009}}
+
+  @inbook{chap:intech:icafis,
+  Address = {India},
+  Author = {R. C. Torres and E. F. {Simas Filho} and D. E. F. Lima and J. M. Seixas},
+  Chapter = {Segmented Online Neural Filtering based on Independent Components of Pre-Processed Information},
+  Editor = {Sebastian Miron},
+  Pages = {337-358},
+  Publisher = {In-Tech},
+  Title = {Signal Processing},
+  Year = {2010}}
+
+
 @article{article:simas:neucom2010,
   Author = {E. F. {Simas Filho} and J. M. Seixas and L. P. Caloba},
   Journal = {Neurocomputing},
@@ -1139,6 +1161,7 @@ Existence and Uniqueness results},
 % }
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 @INPROCEEDINGS{article:icaloc:noise:2004,
@@ -1208,6 +1231,14 @@ author = {E. Cervera and A. P. del Pobil}
   pages =        {113-124},
 }
 
+@BOOK{book:knoll:2000,
+  AUTHOR =       {Glenn F. Knoll},
+  TITLE =        {Radiation Detection and Measurement},
+  PUBLISHER =    {Wiley},
+  YEAR =         {2000},
+  edition =      {3},
+  address =      {Nova York, Estados Unidos},
+}
 
 @BOOK{book:haupt:2004,
   AUTHOR =       {R. L. Haupt and S. E. Haupt},
@@ -1614,6 +1645,16 @@ author = {E. Cervera and A. P. del Pobil}
   number =       {1},
   pages =        {134-138},
 }
+
+@inproceedings{article:widrow:1990,
+  Address = {São Diego, Estados Unidos},
+  Author = {D. Nguyen and B. Widrow},
+  Booktitle = {Proceedings of the International Joint Conference on Neural Networks},
+  Month = {Junho},
+  volume = {3},
+  Pages = {21-26},
+  Title = {Improving the Learning Speed of 2-Layer Neural Networks by Choosing Initial Values of the Adaptive Weights},
+  Year = {1990}}
 
 @inproceedings{ica:ap_pnl:2007,
   Address = {Cardiff, Wales, Inglaterra},
@@ -2477,6 +2518,13 @@ Joint Likelihood},
   address =      {Nova York, Estados Unidos},
 }
 
+@BOOK{book:stats:2003,
+  AUTHOR =       {D. C. Montgomery and G. C. Runger},
+  TITLE =        {Estatística Aplicada e Probabilidade para Engenheiros},
+  PUBLISHER =    {LTC},
+  YEAR =         {2003},
+  address =      {Rio de Janeiro, Brasil},
+}
 
 @BOOK{book:wasserman:1989,
   AUTHOR =       {P. Wasserman},
