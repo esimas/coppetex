@@ -72,65 +72,115 @@ optou-se por mantê-las em inglês.
 \begin{tabbing}{ll}
 \hspace*{2cm}\= \kill
 
+AG \> Algoritmo Genético\\
+ALEPH \> Detector do acelerador LEP\\
 ALICE \> Detector do LHC\\
+ASIC \> \emph{Application specific integrated circuit}\\
 ATLAS \> \textit{A Toroidal LHC AparattuS}\\
 BOOSTER \> Experimento do laboratório Fermilab\\
-CERN \> Centro Europeu Para Pesquisa Nuclear\\
+cdf \> Função de distribuição cumulativa\\
+CERN \> Centro Europeu para Pesquisa Nuclear\\
 CHOOZ \> Experimento de Física de Alta Energia\\
 CMB \> \textit{Cosmic Microwave Background}\\
 CMS \> Detector do LHC\\
 CP \> \textit{Charge parity}\\
 CPLD \> \textit{Complex Programmable Logic Device}\\
+CTP \> \emph{Central Trigger Processor}\\
+D0 \> Detector do Fermilab\\
+DELPHI \> Detector do LEP\\
 DESY \> \textit{Deutsches Elektronen-SynchrotronDie}\\
+DL \> Discriminante Linear\\
+DNA \> ...\\
+DSP \> \emph{Digital signal processing}\\
+E1 \> Primeira camada eletromagnética do calorímetro do ATLAS\\
+E2 \> Segunda camada eletromagnética do calorímetro do ATLAS\\
+E3 \> Terceira camada eletromagnética do calorímetro do ATLAS\\
+EEG \> Eletro-encefalograma\\
+EELS \> Espectropia por perda de energia de elétrons\\
 EF \> Filtro de Eventos (\textit{Event Filter})\\
+EL \> \emph{Emsemble learning}\\
 EM \> Eletromagnético\\
 FastICA \> Algoritmo de extração das componentes independentes\\
+FDL \> Discriminante linear de Fisher\\
 FPGA \> \textit{Field-Programmable Gate Array}\\
 Fermilab \> \textit{Fermi National Accelerator Laboratory}\\
 %DFT \> \textit{Discrete Fourier transform}\\
 %DTFT  \> \textit{Discrete time Fourier transform} \\
 %FFT \> \textit{Fast Fourier transform algorithm}\\
 %FT \>  \textit{Fourier transform}\\
+GEANT \> Simulador de Monte Carlo para colisões de partículas\\
 GTM \> \textit{Generative topographic mapping}\\
-H1 \> Detector do acelerador HERA\\
+H0 \> Primeira camada hadrônica do calorímetro do ATLAS\\
+H1 \> Segunda camada hadrônica do calorímetro do ATLAS\\
+H2 \> Terceira camada hadrônica do calorímetro do ATLAS\\
+HAD \> Hadrônico\\
 HLT \> \textit{High Level Trigger}\\
+HEGRA \> Experimento de astrofísica de alta energia\\
 HEP \> \textit{High-Energy Physics}\\
 HERA \> Experimento do laboratório DESY\\
-HEGRA \> Experimento de astrofísica de alta energia\\
+HERWIG \> Simulador de Monte Carlo para colisões de partículas\\
+IATC \> Técnica de Cherenkov para imageamento atmosférico\\
 IC \> Componentes independentes\\
 ICA \> \textit{Independent components analysis}\\
+INFOMAX \> \emph{Information maximization algorithm}\\
+ISAJET \> Simulador de Monte Carlo para colisões de partículas\\
 JADE \> \textit{Joint Approximate Diagonalization of
 Eigen-matrices}\\
+KEK \> Centro de pesquisas Japonês\\
+JEP \> Processador de jatos e soma de energia\\
 LEAR \> Experimento do CERN (desativado)\\
 LEP \> Experimento do CERN (desativado)\\
 LHC \> \textit{Large Hadron Collider}\\
-LVL1 \> Primeiro nível de filtragem do ATLAS\\
-LVL2 \> Segundo nível de filtragem do ATLAS\\
+LHCb \> Detector do LHC\\
+LHCf \> Detector do LHC\\
+L1 \> Primeiro nível de filtragem do ATLAS\\
+L2 \> Segundo nível de filtragem do ATLAS\\
+L2PU \> Unidade de processamento do L2\\
+L2SV \> Supervisor do L2\\
 LVQ \> Quantização vetorial por aprendizado\\
+MISEP \> Algoritmo para ICA/NLICA\\
 MLP \> Perceptron de múltiplas camadas\\
+MSSM \> \emph{Minimal supersymmetric Standard Model}\\
 NLICA \> \textit{Non-linear independent component analysis}\\
 NLPCA \> \textit{Non-linear principal component analysis}\\
 PC \> Computador pessoal\\
 PCA \> \textit{Principal components analysis}\\
-PNL \> \textit{Post Nonlinear}\\
 PCD \> \textit{Principal Components for Discrimination}\\
+pdf \> Função densidade de probabilidade\\
+PMT \> Foto-multiplicadora\\
+PNL \> \textit{Post Nonlinear model}\\
+PYTHIA \> Simulador de Monte Carlo para colisões de partículas\\
 %PSD \> \textit{Power espectral density}\\
 %RLS \> \textit{Recursive least square algorithm}\\
 OGLE \> Telescópio instalado no Chile\\
-QV \> Quantização vetorial\\
+QCD \> Eletrodinâmica quântica\\
+QED \> Cromodinâmica quântica\\
+QV/VQ \> Quantização vetorial\\
+RBF \> Função de base radial\\
 RNA \> Rede Neural Artificial\\
+ROB \> \emph{Buffers} de saída do sistema de filtragem do ATLAS\\
 ROC \> \textit{Receiver operating characteristic}\\
+ROD \> \emph{Drivers} de saída do sistema de filtragem do ATLAS\\
 RoI \> Região de interesse (\textit{Region of Interest})\\
+RoIB \> \emph{Buffers} de RoI\\
+RPC \> \emph{Resistive Plate Chamber}\\
 RPROP \> \textit{Resilient back-propagation}\\
+SFI \> \emph{Sub-farmer input}\\
 SICA \> \textit{Segmented independent component analysis}\\
+SLAC \> ... \\
 SPCA \> \textit{Segmented principal component analysis}\\
 SM \> Modelo Padrão de interação entre as partículas elementares
 (\textit{Standard Model})\\
+SOBI \> Algoritmo de ICA\\
 SOM \> Mapa auto-organizável\\
 SP \> Figura de mérito de desempenho de classificação\\
 SUSY \> Supersimetria\\
+SVM \> Máquina de vetor de suporte\\
 T2Calo \> Algoritmo de discriminação de elétrons no L2 do ATLAS\\
+TDAQ \> \emph{Trigger and data aquisition}\\
+TGC \> \emph{Thin Gap Chamber}\\
 TOTEM \> Experimento do LHC\\
+TT \> Torre de \textit{trigger}\\
 %WWS \> \textit{Wide sense stationary} \\
 
 
