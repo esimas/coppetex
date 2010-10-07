@@ -43,7 +43,7 @@
 \makeloabbreviations
 
 \begin{document}
-  \title{Análise de Componentes Independentes para uma Filtragem Online
+  \title{Análise Não-Linear de Componentes Independentes para uma Filtragem Online
 Baseada em Calorimetria de Alta Energia e com Fina Segmentação}
   \foreigntitle{Independent Component Analysis for Online Filtering based on High-Energy and Highly Segmented Calorimetry}
   \author{Eduardo Furtado de} {Simas Filho.}
@@ -52,8 +52,9 @@ Baseada em Calorimetria de Alta Energia e com Fina Segmentação}
   \examiner{Prof.}{Luiz Wagner Pereira Biscainho}{D.Sc.}
   \examiner{Prof.}{Marley M. B. Rebuzzi Vellasco}{Ph.D.}
   \examiner{Prof.}{Leandro Salazar de Paula}{D.Sc.}
-  \examiner{Prof.}{André Ponce de Leon F. de Carvalho}{Ph.D}
-  \department{PEE}
+  \examiner{Prof.}{André C. Ponce de Leon F. de Carvalho}{Ph.D}
+  \examiner{Prof.}{Guilherme de Alencar Barreto}{D.Sc.}  
+\department{PEE}
   \date{12}{2010}
 
   \keyword{Análise de Componentes Independentes}
