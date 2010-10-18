@@ -1,6 +1,6 @@
 %comecei a trabalhar na versao final em 15 de junho de 2009
 
-\chapter{Física de Partículas e o detector ATLAS}
+\chapter{Física de Partículas e o Detector ATLAS}
 \label{cap_atlas}
 
 Os experimentos de Física de Partículas Elementares têm como
@@ -21,7 +21,7 @@ projetado para cobrir um ângulo sólido próximo a $4\pi$ ao redor da
 região de colisão.
 
 
-\section{Panorama geral da física de partículas elementares}
+\section{Panorama Geral da Física de Partículas Elementares}
 
 A noção de que a matéria é composta por um conjunto de constituintes
 elementares existe há mais de 2000 anos, desde o tempo dos filósofos
@@ -49,16 +49,17 @@ forças de interação.
 
 As características e propriedades dos processos nucleares dependem
 da ener\-gia envolvida. A unidade de energia mais utilizada, neste
-contexto, é o elétron-volt (eV) e seus múltiplos (MeV, GeV ou TeV).
-O elétron-volt é definido como a energia necessária para aumentar o
-potencial elétrico de um elétron em 1 volt (em unidades do Sistema
-Internacional temos: 1eV$=$1,6$\times
-10^{-19}$J)~\cite{book:martin:2006}. Os fenômenos produzidos quando
-a energia das partículas é menor que $20MeV$ são chamados de física
-a baixas energias. A faixa entre $20MeV$ e $400MeV$ corresponde à
-física a energias intermediárias, e finalmente, fenômenos com
-energia superior a $400MeV$ são estudados na física a altas
-energias~\cite{book:chung:2001}.
+contexto, é o elétron-volt (eV) e seus múltiplos
+(10$^6$ev$\dashrightarrow$MeV, 10$^9$ev$\dashrightarrow$GeV ou
+10$^{12}$ev$\dashrightarrow$TeV). O elétron-volt é definido como a
+energia necessária para aumentar o potencial elétrico de um
+elétron em 1 volt (em unidades do Sistema Internacional temos:
+1eV$=$1,6$\times 10^{-19}$J)~\cite{book:martin:2006}. Os fenômenos
+produzidos quando a energia das partículas é menor que $20MeV$ são
+chamados de física a baixas energias. A faixa entre $20MeV$ e
+$400MeV$ corresponde à física a energias intermediárias, e
+finalmente, fenômenos com energia superior a $400MeV$ são
+estudados na física a altas energias~\cite{book:chung:2001}.
 
 %, extraído de \cite{livro:fisica1:2006}
 
@@ -128,7 +129,7 @@ quando quarks são produzidos, eles se afastam rapidamente uns dos
 outros, e antes que possam ser observados, se convertem em ``jatos"
 de hádrons (ou jatos hadrônicos)~\cite{book:martin:2006}.
 
-Considerando as partículas e formas de interação já verificadas experimentalmente 
+Considerando as partículas e formas de interação já verificadas experimentalmente
 e uma formulação atualmente aceita pela física teórica
 (conhecida como \textit{Gauge Invariance}), todas as partículas
 elementares teriam massa nula. Esta previsão é contrária aos
@@ -144,7 +145,7 @@ de partículas.
 Nas últimas décadas, os experimentos com aceleradores de partículas
 se tornaram gigantescos empreendimentos envolvendo milhares de
 físicos e engenheiros, com contribuição financeira e intelectual de
-dezenas de países. 
+dezenas de países.
 
 As partículas são injetadas na máquina por dispositivos que produzem uma fonte de alta
 intensidade e baixa energia. Os aceleradores usam força eletromagnética para
@@ -228,10 +229,10 @@ Suíça, funciona com base num complexo sistema de colaboração
 internacional, que envolve centenas de instituições de pesquisa em
 centenas de paises \cite{Homepage:CERN}.
 
-\section{O acelerador LHC}
+\section{O Acelerador LHC}
 
-No CERN, foi projetado e construído o experimento LHC (\textit{Large Hadron Collider} ou Grande Colisionador de 
-Hádrons), que iniciou sua operação no final de 2008~\cite{article:LHC:2008,Homepage:lhc}. O LHC pode atingir níveis 
+No CERN, foi projetado e construído o experimento LHC (\textit{Large Hadron Collider} ou Grande Colisionador de
+Hádrons), que iniciou sua operação no final de 2008~\cite{article:LHC:2008,Homepage:lhc}. O LHC pode atingir níveis
 de energia de, aproximadamente, 14 TeV. O percurso do
 acelerador, localizado na fronteira franco-suíça, é aproximadamente
 circular, com 27 Km de comprimento, numa profundidade do solo que
@@ -287,7 +288,7 @@ detectores.
 A seguir, serão descritas, de modo geral, as principais
 características do detector ATLAS.
 
-\section{Características gerais do detector ATLAS}
+\section{Características Gerais do Detector ATLAS}
 
 Os métodos de detecção em física têm como princípio básico promover
 interação entre as partículas em estudo e um material conhecido,
@@ -432,14 +433,14 @@ do ATLAS e a importância da detecção de elétrons para o desempenho
 do experimento.
 
 
-\section{Principais objetos de interesse no ATLAS}
+\section{Principais Objetos de Interesse no ATLAS}
 
 Dentre os eventos gerados nas colisões do LHC, apenas uma pequena
 parte será útil para a caracterização dos processos da ``nova
 física". Com o LHC operando em alta luminosidade podem ocorrer até
 10$^9$ interações por segundo, porém, os eventos de interesse são
-muito raros. Por exemplo a depender de sua massa, a taxa de ocorrência do 
-bóson de Higgs pode variar de 0,01 a 0,1 Hz e eventos de supersimetria são esperados a 
+muito raros. Por exemplo a depender de sua massa, a taxa de ocorrência do
+bóson de Higgs pode variar de 0,01 a 0,1 Hz e eventos de supersimetria são esperados a
 1 Hz~\cite{article:trigconf:2009}
 
 Provar a existência do bóson de Higgs é um dos principais objetivos
@@ -470,8 +471,8 @@ fótons, jatos e os taus, são importantes também para o melhor
 entendimento da supersimetria (SUSY - \emph{supersimetry})
 \cite{livro:fisica1:2006}. Os taus também podem levar aos modelos de
 Higgs estendidos \cite{TDR2:ATLAS:1999}. Outro fenômeno importante é a energia transversa perdida
-($E_T^{miss}$), que geralmente é atribuído a partículas 
-que passaram pelo detector e não foram detectadas. A $E_T^{miss}$ pode ser identificada a partir da violação 
+($E_T^{miss}$), que geralmente é atribuído a partículas
+que passaram pelo detector e não foram detectadas. A $E_T^{miss}$ pode ser identificada a partir da violação
 dos princípios de conservação de energia e momento.
 
 Um resumo com os principais
@@ -511,9 +512,9 @@ jatos será muito frequente nas colisões do LHC, estes formarão um
 intenso ruído de fundo para a identificação de elétrons, tornando a discriminação elétron/jato (e$^-$/j)
 importante para o desempenho do detector.
 
-\section{O sistema de calorimetria do ATLAS}
+\section{O Sistema de Calorimetria do ATLAS}
 
-\subsection{Breve introdução à calorimetria}
+\subsection{Breve Introdução à Calorimetria}
 
 Calorímetros \cite{book:wigmans:2000} representam uma importante
 classe de detectores para medição de energia e posição da partícula.
@@ -547,7 +548,7 @@ sensível às partículas e contribui para produção do sinal. No
 calorímetro amostrador, o material passivo interage com as
 partículas (absorvendo sua energia) e o material ativo produz o sinal~\cite{book:wigmans:2000}.
 
-A depender do tipo de partícula, a interação com o calorímetro ocorre de modo distinto. 
+A depender do tipo de partícula, a interação com o calorímetro ocorre de modo distinto.
 Partículas eletromagnéticas (EM), como elétrons e pósitrons, interagem com a matéria gerando
 um chuveiro de partículas menos energéticas e necessitam de pequena
 quantidade de material para serem totalmente absorvidas. Os múons,
@@ -618,7 +619,7 @@ encontrados foram $0,1/\sqrt{E}$ e $0,4/\sqrt{E}$, respectivamente
 para os calorímetros eletromagnético (de argônio líquido) e
 hadrônico (de telhas cintilantes). A seguir, o sistema de calorímetros do ATLAS será descrito mais detalhadamente.
 
-\subsection{Características dos calorimetros do ATLAS}
+\subsection{Características dos Calorimetros do ATLAS}
 
 O sistema de calorímetros do detector ATLAS
 \cite{article:ATLAS:2008} é sub-dividido em 7 camadas
@@ -657,7 +658,7 @@ tecnologia do argônio líquido.
 \end{figure}
 
 A informação da energia depositada nas camadas do calorímetro, com
-fina segmentação, é muito importante para a caracterização das partículas. 
+fina segmentação, é muito importante para a caracterização das partículas.
 Após um evento ser aceito pelo sistema de filtragem,
 todas as informações relativas a este evento são armazenadas em
 mídia permanente para posterior análise \textit{off-line}. A
@@ -711,7 +712,7 @@ canais de leitura das camadas dos calorímetros.} \vspace{.3cm}
 %, extraída de \cite{article:ATLAS:2008}
 
 Conforme ilustrado na Figura \ref{calo_cell}, percebe-se que a
-primeira camada eletromagnética apresenta mais fina segmentação em $\eta$ 
+primeira camada eletromagnética apresenta mais fina segmentação em $\eta$
 possibilitando medição precisa do ponto de colisão nessa coordenada. A segunda camada
 apresenta células detectoras quadradas e maior profundidade,
 absorvendo maior parcela da energia. A terceira camada, por sua vez,
@@ -739,15 +740,15 @@ obtidas (o que pode representar um problema para o sistema de
 filtragem).
 
 
-\subsection{Desempenho esperado dos calorímetros}
+\subsection{Desempenho Esperado dos Calorímetros}
 
-Devido a limitações construtivas, a precisão nas medições dos calorímetros do ATLAS varia com a 
-energia e a posição de interação. Uma característica particular do ATLAS é a grande quantidade 
-de material instalado entre o ponto de colisão e o sistema de calorímetros, fato que provoca medição incorreta da 
-energia de elétrons, por exemplo, em 119 GeV ~5$\%$ da energia de elétrons é perdida neste material. A Figura 
-\ref{cap3_fig_enloss} ilustra este problema. Uma fina camada detectora (chamada Pré-Amostrador ou 
-\textit{Pre-Sampler} - PS) foi instalada imediatamente 
-antes da primeira camada do calorímetro eletromagnético numa tentativa de estimar a energia perdida pelas partículas 
+Devido a limitações construtivas, a precisão nas medições dos calorímetros do ATLAS varia com a
+energia e a posição de interação. Uma característica particular do ATLAS é a grande quantidade
+de material instalado entre o ponto de colisão e o sistema de calorímetros, fato que provoca medição incorreta da
+energia de elétrons, por exemplo, em 119 GeV ~5$\%$ da energia de elétrons é perdida neste material. A Figura
+\ref{cap3_fig_enloss} ilustra este problema. Uma fina camada detectora (chamada Pré-Amostrador ou
+\textit{Pre-Sampler} - PS) foi instalada imediatamente
+antes da primeira camada do calorímetro eletromagnético numa tentativa de estimar a energia perdida pelas partículas
 antes de chegarem ao calorímetro. Os sinais medidos no PS são ponderados por um fator $\alpha$ e somados aos sinais
 medidos nas outras camadas para compor a energia total do evento~\cite{book:wigmans:2000}:
 \begin{equation}\label{ps}
@@ -759,14 +760,14 @@ E_{tot} = E_{calo} + \alpha E_{ps}.
 \caption[Energia perdida por elétrons antes do calorímetro.]{Energia perdida por elétrons antes do calorímetro, adaptado de~\cite{article:ATLAS:2008}.} \label{cap3_fig_enloss}
 \end{figure}
 
-Um outro fator que pode provocar medição incorreta nos calorímetros é o vazamento de energia de elétrons além da 
-terceira camada eletromagnética. O calorímetro eletromagnético foi projetado para conter todo o chuveiro 
-eletromagnético, porém, principalmente os eventos que insidem na região de transição entre o barril e o 
-barril extendido, por encontrarem menor quantidade de material para 
-interagirem, podem alcançar o calorímetro hadrônico. Essa região é conhecida como \textit{crack}, fica localizada próximo a $\eta=1.5$ 
-e apresenta um número reduzido de células detectoras. Conforme ilustrado na Figura \ref{fig_envazahad}, a energia de 
-elétrons é quase totalmente concentrada no calorímetro eletromagnético, porém, quando a partícula interage próximo 
-ao \textit{crack}, uma parcela significativa de energia chega ao calorímetro hadrônico. 
+Um outro fator que pode provocar medição incorreta nos calorímetros é o vazamento de energia de elétrons além da
+terceira camada eletromagnética. O calorímetro eletromagnético foi projetado para conter todo o chuveiro
+eletromagnético, porém, principalmente os eventos que insidem na região de transição entre o barril e o
+barril extendido, por encontrarem menor quantidade de material para
+interagirem, podem alcançar o calorímetro hadrônico. Essa região é conhecida como \textit{crack}, fica localizada próximo a $\eta=1.5$
+e apresenta um número reduzido de células detectoras. Conforme ilustrado na Figura \ref{fig_envazahad}, a energia de
+elétrons é quase totalmente concentrada no calorímetro eletromagnético, porém, quando a partícula interage próximo
+ao \textit{crack}, uma parcela significativa de energia chega ao calorímetro hadrônico.
 
 
 \begin{figure} \centering
@@ -774,19 +775,19 @@ ao \textit{crack}, uma parcela significativa de energia chega ao calorímetro had
 \caption{Energia normalizada média depositada nas secções eletromagnética e hadrônica em função de $\eta$ para elétrons.} \label{fig_envazahad}
 \end{figure}
 
-Numa tentativa de corrigir as medições de energia, fatores de ponderação dependentes de $\eta$ são utilizados na 
+Numa tentativa de corrigir as medições de energia, fatores de ponderação dependentes de $\eta$ são utilizados na
 estimativa da energia total do evento~\cite{article:ATLAS:2008}:
 \begin{equation}
  E=s(\eta)[c(\eta)+w_0(\eta).E_{PS}+E_{EM1}+E_{EM2}+w_3(\eta).E_{EM3}]
 \end{equation}
-sendo $s$ um fator global de correção, $c$ uma tendência (ou \textit{bias}), $w_0$ corrige a energia perdida antes do 
-calorímetro e $w_3$ corrige o vazamento longitudinal de energia, os termos $E_{PS}$, $E_{EM1}$, $E_{EM2}$ e $E_{EM3}$ 
-representam a energia medida em cada camada do calorímetro eletromagnético (\textit{presampler}, primeira, segunda e 
+sendo $s$ um fator global de correção, $c$ uma tendência (ou \textit{bias}), $w_0$ corrige a energia perdida antes do
+calorímetro e $w_3$ corrige o vazamento longitudinal de energia, os termos $E_{PS}$, $E_{EM1}$, $E_{EM2}$ e $E_{EM3}$
+representam a energia medida em cada camada do calorímetro eletromagnético (\textit{presampler}, primeira, segunda e
 terceira camadas eletromagnéticas).
 
-Os erros relativos ($\frac{\sigma_E}{E}$) esperados em função da energia e de $\eta$ para assinaturas de elétrons 
-são mostrados na Figura \ref{cap3_enres}. Percebe-se que a precisão diminui para baixas energias e próximo ao 
-\textit{crack} ($\eta \approx 1.5$). Sempre que o erro de medição aumenta, a caracterização das partículas 
+Os erros relativos ($\frac{\sigma_E}{E}$) esperados em função da energia e de $\eta$ para assinaturas de elétrons
+são mostrados na Figura \ref{cap3_enres}. Percebe-se que a precisão diminui para baixas energias e próximo ao
+\textit{crack} ($\eta \approx 1.5$). Sempre que o erro de medição aumenta, a caracterização das partículas
 é prejudicada, provocando queda de desempenho dos algoritmos de filtragem de elétrons.
 
 \begin{figure}[t!]
@@ -805,5 +806,3 @@ são mostrados na Figura \ref{cap3_enres}. Percebe-se que a precisão diminui para
  \end{minipage}
 \caption[Erro relativo do calorímetro na medição da energia de elétrons para diferentes valores de (a) energia e (b)~$\eta$.]{Erro relativo do calorímetro na medição da energia de elétrons para diferentes valores de (a) energia e (b)~$\eta$, adaptado de~\cite{article:ATLAS:2008}.} \label{cap3_enres}
 \end{figure}
-
-

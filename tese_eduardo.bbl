@@ -1040,6 +1040,11 @@
 \newblock In: {\em Proceedings of the International Joint Conference on Neural
   Networks\/}, v.~3, pp. 21--26, São Diego, Estados Unidos, Junho 1990.
 
+\bibitem{article:relativeEnt:1989}
+\MakeUppercase{ Joe, H.}, \enquote{Relative Entropy Measures of Multivariate
+  Dependence}, {\em Journal of the American Statistical Association\/}, v.~84,
+  n. 405, pp.~586--591, 1989.
+
 \bibitem{chap:intech:icafis}
 \MakeUppercase{ Torres, R.~C., {Simas Filho}, E.~F., Lima, D. E.~F.,
   \MakeLowercase{et~al.}}, \enquote{Signal Processing}, chap. Segmented Online

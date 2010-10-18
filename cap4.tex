@@ -237,19 +237,20 @@ soluções~\cite{jutten:nlica:2003}. Se $\mathbf{y_1}$ e
 $\mathbf{y_2}$ são variáveis aleatórias independentes, é fácil
 provar que $f(\mathbf{y_1})$ e $g(\mathbf{y_2})$ (onde $f(.)$ e
 $g(.)$ são funções diferenciáveis) são também independentes
-\cite{article:hyvarinen:1999}. Fica claro que, numa dada aplicação, sem o uso de
-restrições adequadas, infinitos mapeamentos inversos $\mathbf{G}$ satisfazem
-a condição de independência entre os sinais estimados $y_i$,
-i=1,...,N. Se o objetivo do problema for
-realizar a separação das fontes de modo não-supervisionado ou cego (do inglês \textit{Blind Signal
-Separation} - BSS), neste caso, deseja-se que os componentes $y_i$ sejam
-aproximações das fontes independentes ($\mathbf{s}$) que produziram os sinais observados
-($\mathbf{x}$). Então, informações a respeito do modelo de mistura
-ou das fontes devem ser conhecidas a priori. A NLICA vem sendo
-aplicada com sucesso em problemas como processamento de sinais de
-fala \cite{article:rojas:ica:2003,article:miyabe:2009},
-processamento de
-imagens~\cite{article:allinson:2002,article:almeida:2008},
+\cite{article:hyvarinen:1999}. Fica claro que, numa dada
+aplicação, sem o uso de restrições adequadas, infinitos
+mapeamentos inversos $\mathbf{G}$ satisfazem a condição de
+independência entre os sinais estimados $y_i$, i=1,...,N. Se o
+objetivo do problema for realizar a separação das fontes de modo
+não-supervisionado ou cego (do inglês \textit{Blind Signal
+Separation} - BSS), neste caso, deseja-se que os componentes $y_i$
+sejam aproximações das fontes independentes ($\mathbf{s}$) que
+produziram os sinais observados ($\mathbf{x}$). Então, informações
+a respeito do modelo de mistura ou das fontes devem ser conhecidas
+a priori. A NLICA vem sendo aplicada com sucesso em problemas como
+processamento de sinais de fala
+\cite{article:rojas:ica:2003,article:miyabe:2009}, processamento
+de imagens~\cite{article:allinson:2002,article:almeida:2008},
 predição de séries de ações em bolsas de
 valores~\cite{article:chi:2009} e processamento de sinais de um
 \textit{array} de
@@ -268,13 +269,14 @@ do modelo de mistura.
 
 Entre os algoritmos de NLICA propostos na literatura, uma classe
 de métodos impõe restrições estruturais ao modelo de mistura.
-Neste caso, pode-se garantir que os componentes estimados são aproximadamente
-iguais às fontes (a menos das indeterminações de fator
-multiplicativo e ordem de estimação dos sinais, assim como ocorre
-no modelo linear). Exitem também alguns métodos (ou algoritmos) que não impõem restrições ao modelo de mistura,
-neste caso, o mapeamento não-linear dos dados observados em componentes independentes não garante a
-separação das fontes.
-Outro método diretamente relacionado com a NLICA, chamado de ICA Local, propõe
+Neste caso, pode-se garantir que os componentes estimados são
+aproximadamente iguais às fontes (a menos das indeterminações de
+fator multiplicativo e ordem de estimação dos sinais, assim como
+ocorre no modelo linear). Existem também alguns métodos (ou
+algoritmos) que não impõem restrições ao modelo de mistura, neste
+caso, o mapeamento não-linear dos dados observados em componentes
+independentes não garante a separação das fontes. Outro método
+diretamente relacionado com a NLICA, chamado de ICA Local, propõe
 uma etapa de agrupamento dos sinais em conjuntos de
 características semelhantes, que deve ser realizada antes da ICA.
 O agrupamento produz um mapeamento não-linear dos dados e a ICA
@@ -429,16 +431,18 @@ inferência Bayesiana.
 
 \subsubsection{NLICA a Partir de Mapas Auto-Organizáveis}
 
-Uma das primeiras tentativas bem sucedidas de estimar o modelo da NLICA
-foi realizada através de mapas auto-organizáveis (SOM - \textit{Self-Organizing Maps})~\cite{article:pajunen:1996}.
+Uma das primeiras tentativas bem-sucedidas de estimar o modelo da
+NLICA foi realizada através de mapas auto-organizáveis (SOM -
+\textit{Self-Organizing Maps})~\cite{article:pajunen:1996}.
 Pode-se provar que as coordenadas $y_1$ e $y_2$ do neurônio
 vencedor no mapa (ver Figura \ref{fig_som_nlica}) são
 independentes e aproximadamente uniformemente distribuídas
 \cite{article:pajunen:1996}. Para estimar a NLICA, o SOM é
 treinado usando como entradas os sinais observados, e as
-coordenadas do neurônio vencedor correspondem a uma aproximação discreta
-dos componentes independentes (o número de níveis possíveis sinal estimado é igual ao número de
-neurônios utilizados para representá-lo).
+coordenadas do neurônio vencedor correspondem a uma aproximação
+discreta dos componentes independentes (o número de níveis
+possíveis sinal estimado é igual ao número de neurônios utilizados
+para representá-lo).
 
 \begin{figure}[th]
 \centering
@@ -472,8 +476,9 @@ Entre as desvantagens do método pode-se destacar
 Diversas aplicações do SOM para estimação da NLICA podem ser
 encontradas na literatura, entre elas pode-se citar os trabalhos
  e \cite{article:wang:somnlica:2007,article:allinson:2002,article:som:vizual:2003}, onde
-o objetivos eram, respectivamente, separação de imagens sobrepostas,remoção de ruído e
-visualização de dados multidimensionais.
+o objetivos eram, respectivamente, separação de imagens
+sobrepostas,remoção de ruído e visualização de dados
+multi-dimensionais.
 
 Com uma formulação alternativa aos SOM, o Mapeamento Topográfico
 Generativo (GTM - \textit{Generative Topographic Mapping}) foi
@@ -581,20 +586,21 @@ function}) dos componentes independentes.
 \caption{Diagrama do algoritmo MISEP.} \label{fig_misep}
 \end{figure}
 
-Para a aplicação em NLICA, o bloco $\mathbf{G}(.)$ é estimado por uma
-rede neural (que pode utilizar tanto a arquitetura
+Para a aplicação em NLICA, o bloco $\mathbf{G}(.)$ é estimado por
+uma rede neural (que pode utilizar tanto a arquitetura
 \textit{perceptron} de múltiplas camadas - MLP como rede de
-funções de base radial - RBF). Como o objetivo é estimar a função de
-probabilidade cumulativa (cdf - \textit{cumulative distribuction function}), as
-saídas $z_i$ são restritas ao intervalo [0,1] e as $\psi_i$ são
-limitadas a funções estritamente crescentes. Para estimação
-iterativa de cada função $\psi_i$, são utilizadas redes neurais
-MLP com uma camada oculta (de neurônios sigmoidais) e uma camada
-de saída (linear). Estas redes tem uma entrada ($y_i$) e uma saída
-($z_i$). O treinamento do modelo MISEP é feito a partir da
-maximização da entropia das saídas $z_i$, o que acaba produzindo a
-minimização da informação mútua dos componentes $y_i$, mais
-detalhes podem ser encontrados em~\cite{article:misep:2004}
+funções de base radial - RBF). Como o objetivo é estimar a função
+de probabilidade cumulativa (cdf - \textit{cumulative distribution
+function}), as saídas $z_i$ são restritas ao intervalo [0,1] e as
+$\psi_i$ são limitadas a funções estritamente crescentes. Para
+estimação iterativa de cada função $\psi_i$, são utilizadas redes
+neurais MLP com uma camada oculta (de neurônios sigmoidais) e uma
+camada de saída (linear). Estas redes tem uma entrada ($y_i$) e
+uma saída ($z_i$). O treinamento do modelo MISEP é feito a partir
+da maximização da entropia das saídas $z_i$, o que acaba
+produzindo a minimização da informação mútua dos componentes
+$y_i$, mais detalhes podem ser encontrados
+em~\cite{article:misep:2004}
 
 O MISEP foi aplicado em processamento de sinais de
 áudio~\cite{article:misep:2004} e separação de imagens
@@ -607,10 +613,13 @@ independentes quando as misturas seguem os modelos pós não-linear
 
 \subsection{ICA Local}
 
-Considerando um problema onde o conjunto de sinais multidimensionais apresenta grande
-variação em suas características estatísticas, o modelo linear da ICA pode não ser capaz de representar
-adequadamente os dados. Neste contexto, pode ser mais interessante tratar o conjunto de sinais de modo local, ou
-seja, em subconjuntos onde os elementos tem características semelhantes.
+Considerando um problema onde o conjunto de sinais
+multi-dimensionais apresenta grande variação em suas
+características estatísticas, o modelo linear da ICA pode não ser
+capaz de representar adequadamente os dados. Neste contexto, pode
+ser mais interessante tratar o conjunto de sinais de modo local,
+ou seja, em subconjuntos onde os elementos tem características
+semelhantes.
 
 A ICA Local realiza a estimação dos componentes independentes a partir de k subconjuntos dos dados
 (ver Figura \ref{fig_local}). Conforme proposto em \cite{karhunen:local:1999}, um conjunto de
@@ -798,23 +807,29 @@ com sucesso em problemas na área de física de alta energia.
 Um dos primeiros trabalhos neste tópico \cite{article:lang:som},
 foi publicado em 1998 e utiliza mapas auto-organizáveis (SOM) para
 a classificação de eventos de raios gama em astronomia de alta
-energia. O SOM foi utilizado para otimizar a sensibilidade de um telescópio IATC (\textit{Imaging Atmosferic Cherenkov Technique}
-\footnote{Método através do qual raios gama de alta energia são detectados por
-telescópios na superfície terrestre. Ao entrarem na atmosfera, os raios gama
-interagem com a atmosfera e geram um chuveiro de partículas carregadas (conhecido
-como \textit{Extensive Air Showers}). Devido a sua alta energia, as partículas carregadas
-produzem discargas luminosas (ou radiação de \textit{Cherenkov}) de curta duração que são
-captadas pelos telescópios IACT.}). Com o uso do SOM, foi possível aumentar a sensibilidade
-da técnica em aproximadamente 14\%.
+energia. O SOM foi utilizado para otimizar a sensibilidade de um
+telescópio IATC (\textit{Imaging Atmosferic Cherenkov Technique}
+\footnote{Método através do qual raios gama de alta energia são
+detectados por telescópios na superfície terrestre. Ao entrarem na
+atmosfera, os raios gama interagem com a atmosfera e geram um
+chuveiro de partículas carregadas (conhecido como
+\textit{Extensive Air Showers}). Devido a sua alta energia, as
+partículas carregadas produzem descargas luminosas (ou radiação de
+\textit{Cherenkov}) de curta duração que são captadas pelos
+telescópios IACT.}). Com o uso do SOM, foi possível aumentar a
+sensibilidade da técnica em aproximadamente 14\%.
 
-Em~\cite{article:som:had:1999}, mapas SOM foram aplicados
-para a separação de bósons W do ruído de fundo composto por jatos
-hadrônicos no experimento DELPHI do acelerador LEP no CERN. As entradas para o SOM foram,
-inicialmente, 90 variáveis físicas que descrevem cada evento (como momento, energia total,
-presença de agrupamentos de energia, etc). Com o sistema proposto, foi obtida uma probabilidade de
-detecção de 77,8\% para um falso-alarme de apenas 1,3\%. O trabalho contemplou
-também um estudo sobre a relevância das variávies de entrada e ao final,
-utilizando-se apenas as 16 variáveis mais relevantes obteve-se desempenho semelhante.
+Em~\cite{article:som:had:1999}, mapas SOM foram aplicados para a
+separação de bósons W do ruído de fundo composto por jatos
+hadrônicos no experimento DELPHI do acelerador LEP no CERN. As
+entradas para o SOM foram, inicialmente, 90 variáveis físicas que
+descrevem cada evento (como momento, energia total, presença de
+agrupamentos de energia, etc). Com o sistema proposto, foi obtida
+uma probabilidade de detecção de 77,8\% para um falso-alarme de
+apenas 1,3\%. O trabalho contemplou também um estudo sobre a
+relevância das variáveis de entrada e ao final, utilizando-se
+apenas as 16 variáveis mais relevantes obteve-se desempenho
+semelhante.
 
 No trabalho~\cite{article:lange:som}, o ruído de fundo
 gerado na aceleração do feixe de partículas do acelerador KEK-B foi rejeitado a partir
@@ -833,11 +848,15 @@ microlens})\footnote{Fenômeno relacionado com a curvatura da trajetória da luz a
 Os mapas foram treinados a partir de 8000 espectros e os valores aproximados de parâmetros como temperatura e
 gravidade na superfície são obtidos diretamente do mapa a partir do neurônio vencedor.
 
-Num outro trabalho, mapas auto-organizáveis foram utilizados para a identificação de prováveis assinaturas
-de bósons de Higgs MSSM (\textit{Minimal Supersymmetric Standard Model}) neutros e pesados~\cite{article:aatos:som}.
-Os mapas foram treinados a partir das mesmas variáveis dos algoritmos tradicionalmente utilizados para o problema,
-com uma base de dados composta de 80.000 eventos (igualmente divididos para treino e teste). Ao final, foi obtida
-eficiência de 73\%, contra apenas 35\% dos algoritmos tradicionais.
+Num outro trabalho, mapas auto-organizáveis foram utilizados para
+a identificação de prováveis assinaturas de bósons de Higgs MSSM
+(\textit{Minimal Supersymmetric Standard Model}) neutros e
+pesados~\cite{article:aatos:som}. Os mapas foram treinados a
+partir das mesmas variáveis dos algoritmos tradicionalmente
+utilizados para o problema, com uma base de dados composta de
+80.000 eventos (igualmente divididos para treino e teste). Ao
+final, foi obtida eficiência de 73\%, contra apenas 35\% dos
+algoritmos tradicionais.
 
 A análise de componentes principais (PCA) é um técnica de
 descorrelação e compactação bastante utilizada em diversas áreas
@@ -909,11 +928,14 @@ rádio-telescópios. A ICA mostrou-se bastante eficiente para redução da contamina
 sinal de interesse pelo ruído de fundo, com desempenho semelhante à técnica tradicionalmente
 utilizada para o problema.
 
-No contexto da filtragem online do detector ATLAS (tema de estudo desta tese), um trabalho
-anterior~\cite{tese:torres:2010}, desenvolvido dentro do mesmo grupo de pesquisa, foi dedicado a estudar os efeitos
-do pré-processamento por PCA e ICA aplicados aos sinais dos calorímetros com o objetivo de otimizar o sistema
-neural de detecção de elétrons. Os resultados obtidos indicam que um pré-processamento adequado pode
-contribir para aumentar a eficiência do discriminador.
+No contexto da filtragem online do detector ATLAS (tema de estudo
+desta tese), um trabalho anterior~\cite{tese:torres:2010},
+desenvolvido dentro do mesmo grupo de pesquisa, foi dedicado a
+estudar os efeitos do pré-processamento por PCA e ICA aplicados
+aos sinais dos calorímetros com o objetivo de otimizar o sistema
+neural de detecção de elétrons. Os resultados obtidos indicam que
+um pré-processamento adequado pode contribuir para aumentar a
+eficiência do discriminador.
 
 A partir destes exemplos, percebe-se que, apesar da aplicação mais
 recente em física de altas energias e áreas correlatas, diversos
@@ -933,17 +955,24 @@ interessante para esta tarefa, pois é capaz de transformar os
 sinais em um conjunto de componentes estatisticamente
 independentes, eliminando a redundância entre eles.
 
-Quando a ICA é utilizada como pré-processamento para um problema de classificação, o
-objetivo é obter uma nova representação dos dados, de modo que as características discriminantes
-estejam mais evidentes. Conforme comentado anteriormente, não há garantia que a transformação por ICA/NLICA
-seja útil nesta tarefa. Considerando esta limitação, foram propostos na literatura métodos de estimação da ICA adaptados para
-considerar informação a respeito das classes (transformando a ICA num método supervisionado, ou semi-supervisionado).
+Quando a ICA é utilizada como pré-processamento para um problema
+de classificação, o objetivo é obter uma nova representação dos
+dados, de modo que as características discriminantes estejam mais
+evidentes. Conforme comentado anteriormente, não há garantia que a
+transformação por ICA/NLICA seja útil nesta tarefa. Considerando
+esta limitação, foram propostos na literatura métodos de estimação
+da ICA adaptados para considerar informação a respeito das classes
+(transformando a ICA num método supervisionado, ou
+semi-supervisionado).
 
-No contexto da ICA, quando há necessidade de redução de dimensão (compactação), o método mais utilizado é
-a Análise de Componentes Principais (PCA - \textit{Principal Component Analysis}, para mais detalhes a respeito
-ver o Apêndice~\ref{apend_fex}). A PCA é um método não-supervisionado que tem como objetivo projetar o conjunto
-de dados em componentes ordenados por energia (variância), não sendo adequado a problemas de classificação.
-Um modo alternativo à PCA para realizar a compactação, incluindo a
+No contexto da ICA, quando há necessidade de redução de dimensão
+(compactação), o método mais utilizado é a Análise de Componentes
+Principais (PCA - \textit{Principal Component Analysis}, para mais
+detalhes a respeito ver o Apêndice~\ref{apend_fex}). A PCA é um
+método não-supervisionado que tem como objetivo projetar o
+conjunto de dados em componentes ordenados por energia
+(variância), não sendo adequado a problemas de classificação. Um
+modo alternativo à PCA para realizar a compactação, incluindo a
 informação das classes, é através do método conhecido como
 Componentes Principais de Discriminação (PCD - \textit{Principal
 Components for Discrimination})~\cite{seixas:pcd:1995}. Essa

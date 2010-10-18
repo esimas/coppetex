@@ -32,17 +32,20 @@ eficiência de discriminação desejada.
 
 \section{Filtragem de Elétrons no L1}
 
-Considerando as características desejadas para o primeiro nível de filtragem (L1), onde a taxa de entrada é
-da ordem de 10$^6$ eventos por segundo e uma taxa de redução da ordem de 500 vezes é exigida em no máximo
-25$\mu$s, para tornar mais rápido o processo de decisão, este nível opera com granularidade reduzida no
-sistema de calorímetros. No L1, as células dos calorímetros são somadas (através de somadores analógicos)
-para produzir os sinais conhecidos
-como torres de \textit{trigger} (TT). O tamanho das torres de
-\textit{trigger} é diferente para as camadas eletromagnéticas e
-hadrônicas. No calorímetro eletromagnético, cada TT cobre uma área
-de 0,1 $\times$ 0,1 no plano $\eta \times \phi$ (ver Figura
-\ref{lvl1tt}), já no calorímetro hadrônico, cada TT representa uma
-região de 0,2 $\times$ 0,2 no plano $\eta \times \phi$.
+Considerando as características desejadas para o primeiro nível de
+filtragem (L1), onde a taxa de entrada é da ordem de 10$^6$
+eventos por segundo e uma taxa de redução da ordem de 500 vezes é
+exigida em no máximo 25$\mu$s, para tornar mais rápido o processo
+de decisão, este nível opera com granularidade reduzida no sistema
+de calorímetros. No L1, as células dos calorímetros são somadas
+(através de somadores analógicos) para produzir os sinais
+conhecidos como torres de \textit{trigger} (TT). O tamanho das
+torres de \textit{trigger} é diferente para as camadas
+eletromagnéticas e hadrônicas. No calorímetro eletromagnético,
+cada TT cobre uma área de 0,1 $\times$ 0,1 no plano $\eta \times
+\phi$ (ver Figura \ref{lvl1tt}), já no calorímetro hadrônico, cada
+TT representa uma região de 0,2 $\times$ 0,2 no plano $\eta \times
+\phi$.
 
 \begin{figure}[b] \centering
 \includegraphics[width=9cm]{cap2_trigger_tower}
@@ -63,8 +66,9 @@ eletromagnéticos (elétrons e fótons), que geralmente apresentam:
 
 A partir da análise de uma janela deslizante, cobrindo uma região
 de 4 $\times$ 4 TT (16 no total), alguns critérios podem ser
-utilizados pelo L1 (a depender das características desejadas para a física de interesse pode-se variar os
-patamares de corte) para definir um possível candidato a elétron:
+utilizados pelo L1 (a depender das características desejadas para
+a física de interesse pode-se variar os patamares de corte) para
+definir um possível candidato a elétron:
 \begin{enumerate}
   \item Os valores de energia das TTs da região central (de 2 $\times$ 2 TT)
   são somados dois a dois e utiliza-se o maior valor encontrado, que deve exceder um patamar de energia
@@ -81,28 +85,31 @@ critérios combinados, a depender das características da física de
 interesse que se deseja estudar num dado momento de operação do
 detector.
 
-Neste trabalho, foram
-utilizados sinais simulados do canal elétron/jato aprovados em
-dois cortes de primeiro nível diferentes. No primeiro conjunto,
-foi realizado apenas um corte em energia num patamar igual a 10
-GeV, esse corte é conhecido como E10 (ou E10-\textit{loose}, para
-indicar que não houve isolamento). No segundo conjunto, o patamar de corte em energia utilizado foi
-15 GeV, e foram realizados
-também cortes por isolamento (periférico e hadrônico), produzindo
-os sinais do conjunto E15i (onde o sufixo i indica a utilização de
-cortes por isolamento). Mais detalhes a respeito das
-características dos conjuntos simulados E10 e E15i serão
-fornecidos no Capítulo \ref{cap_cados}.
+Neste trabalho, foram utilizados sinais simulados do canal
+elétron/jato aprovados em dois cortes de primeiro nível
+diferentes. No primeiro conjunto, foi realizado apenas um corte em
+energia num patamar igual a 10 GeV, esse corte é conhecido como
+E10 (ou E10-\textit{loose}, para indicar que não houve
+isolamento). No segundo conjunto, o patamar de corte em energia
+utilizado foi 15 GeV, e foram realizados também cortes por
+isolamento (periférico e hadrônico), produzindo os sinais do
+conjunto E15i (onde o sufixo i indica a utilização de cortes por
+isolamento). Mais detalhes a respeito das características dos
+conjuntos simulados E10 e E15i serão fornecidos no Capítulo
+\ref{cap_cados}.
 
 
 \section{Filtragem de Elétrons no L2 - Algoritmo T2Calo}
 
-Conforme mencionado anteriormente, o segundo nível de filtragem (L2) tem aproximadamente 40 ms para produzir a
-decisão (aceitação/rejeição) das assinaturas aprovadas pelo L1. O L2 opera apenas sobre a região de interesse
-(RoI) indicada pelo L1, que no caso da identificação de elétrons envolve os calorímetros e, em alguns casos,
-o detector de trajetória (\textit{tracking system}).
+Conforme mencionado anteriormente, o segundo nível de filtragem
+(L2) tem aproximadamente 40 ms para produzir a decisão
+(aceitação/rejeição) das assinaturas aprovadas pelo L1. O L2 opera
+apenas sobre a região de interesse (RoI) indicada pelo L1, que no
+caso da identificação de elétrons envolve os calorímetros e, em
+alguns casos, o detector de trajetória (\textit{tracking system}).
 
-O processo de discriminação de elétrons no L2 baseado em informações de calorimetria, conforme ilustrado na Figura
+O processo de discriminação de elétrons no L2 baseado em
+informações de calorimetria, conforme ilustrado na Figura
 \ref{fig_esqL2}, pode ser dividido em duas etapas distintas.
 Inicialmente é executada a extração de características (onde
 parâmetros discriminantes são estimados a partir dos dados brutos

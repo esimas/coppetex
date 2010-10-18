@@ -19,18 +19,20 @@
 \contentsline {table}{\numberline {6.2}{\ignorespaces Compara\c c\~ao de desempenho para diferentes discriminadores, corte E10.}}{102}{table.6.2}
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {7.1}{\ignorespaces Composi\c c\~ao das bases de dados utilizadas antes e depois do corte de primeiro n\IeC {\'\i }vel.}}{106}{table.7.1}
-\contentsline {table}{\numberline {7.2}{\ignorespaces Compara\c c\~ao de desempenho para diferentes discriminadores, corte E10.}}{109}{table.7.2}
-\contentsline {table}{\numberline {7.3}{\ignorespaces N\'umero de componentes preservados (N) e m\'aximo SP($\times 100$) para diferentes n\IeC {\'\i }veis de reten\c c\~ao de energia.}}{118}{table.7.3}
-\contentsline {table}{\numberline {7.4}{\ignorespaces Number of components estimated from each calorimeter layer for PCA (50\% of energy retention) and PCD.}}{118}{table.7.4}
-\contentsline {table}{\numberline {7.5}{\ignorespaces Performance comparison for different discriminators, including maximum SP ($\times $ 100), PF for PD$=97\%$, false electrons accepted per second and the number of inputs for the neural discriminator.}}{119}{table.7.5}
-\contentsline {table}{\numberline {7.6}{\ignorespaces M\'aximo SP($\times $100) para diferentes estrat\'egias de treinamento dos mapas (aqui o SP \'e calculado considerando a opera\c c\~ao do SOM diretamente como um classificador).}}{127}{table.7.6}
-\contentsline {table}{\numberline {7.7}{\ignorespaces Compara\c c\~ao de desempenho entre diferentes discriminadores considerando o m\'aximo SP e a probabilidade de falso-alarme (PF) para probabilidade de detec\c c\~ao de 97\%.}}{128}{table.7.7}
-\contentsline {table}{\numberline {7.8}{\ignorespaces Compara\c c\~ao entre discriminadores baseados no pr\'e-processamento atrav\'es do modelo PNL.}}{132}{table.7.8}
+\contentsline {table}{\numberline {7.2}{\ignorespaces Compara\c c\~ao de desempenho para diferentes discriminadores, corte E10.}}{111}{table.7.2}
+\contentsline {table}{\numberline {7.3}{\ignorespaces M\'aximo SP($\times $100) para diferentes estrat\'egias de treinamento dos mapas (aqui o SP \'e calculado considerando a opera\c c\~ao do SOM diretamente como um classificador).}}{128}{table.7.3}
+\contentsline {table}{\numberline {7.4}{\ignorespaces N\'umero de componentes preservados (N) e m\'aximo SP($\times 100$) para diferentes n\IeC {\'\i }veis de reten\c c\~ao de energia por PCA.}}{132}{table.7.4}
+\contentsline {table}{\numberline {7.5}{\ignorespaces N\'umero de componentes estimados a partir da \c c\~ao por PCA (50\% de reten\c c\~ao de energia) e PCD.}}{133}{table.7.5}
+\contentsline {table}{\numberline {7.6}{\ignorespaces Performance comparison for different discriminators, including maximum SP ($\times $ 100), PF for PD$=97\%$, false electrons accepted per second and the number of inputs for the neural discriminator.}}{134}{table.7.6}
+\contentsline {table}{\numberline {7.7}{\ignorespaces Compara\c c\~ao dos resultados obtidos para diferentes discriminadores considerando o m\'aximo SP($\times $100), as probabilidades de decis\~ao (PD) e falso-alarme (PF) para o melhor SP e a probabilidade de falso-alarme para PD$=$92,5\%.}}{135}{table.7.7}
+\contentsline {table}{\numberline {7.8}{\ignorespaces M\'aximo SP($\times $100) para diferentes estrat\'egias de treinamento dos mapas (aqui o SP \'e calculado considerando a opera\c c\~ao do SOM diretamente como um classificador).}}{136}{table.7.8}
+\contentsline {table}{\numberline {7.9}{\ignorespaces Compara\c c\~ao de desempenho entre diferentes discriminadores considerando o m\'aximo SP e a probabilidade de falso-alarme (PF) para probabilidade de detec\c c\~ao de 97\%.}}{137}{table.7.9}
+\contentsline {table}{\numberline {7.10}{\ignorespaces Compara\c c\~ao entre discriminadores baseados no pr\'e-processamento atrav\'es do modelo PNL.}}{140}{table.7.10}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {8.1}{\ignorespaces Compara\c c\~ao do desempenho de diferentes discriminadores na rejei\c c\~ao de raios c\'osmicos.}}{139}{table.8.1}
-\contentsline {table}{\numberline {8.2}{\ignorespaces Resolu\c c\~ao relativa ($\frac {\sigma _E}{E}$ em \%) em fun\c c\~ao da energia.}}{143}{table.8.2}
-\contentsline {table}{\numberline {8.3}{\ignorespaces Compara\c c\~ao dos tempos de processamento para diferentes discriminadores.}}{147}{table.8.3}
-\contentsline {table}{\numberline {8.4}{\ignorespaces Compara\c c\~ao de desempenho para diferentes discriminadores, corte E10.}}{149}{table.8.4}
+\contentsline {table}{\numberline {8.1}{\ignorespaces Compara\c c\~ao do desempenho de diferentes discriminadores na rejei\c c\~ao de raios c\'osmicos.}}{147}{table.8.1}
+\contentsline {table}{\numberline {8.2}{\ignorespaces Resolu\c c\~ao relativa ($\frac {\sigma _E}{E}$ em \%) em fun\c c\~ao da energia.}}{151}{table.8.2}
+\contentsline {table}{\numberline {8.3}{\ignorespaces Compara\c c\~ao dos tempos de processamento para diferentes discriminadores.}}{156}{table.8.3}
+\contentsline {table}{\numberline {8.4}{\ignorespaces Compara\c c\~ao de desempenho para diferentes discriminadores, corte E10.}}{157}{table.8.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

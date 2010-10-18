@@ -31,7 +31,7 @@ forma não supervisionada \cite{article:foo:2006}. Uma apro\-xi\-mação
 das componentes independentes não-lineares pode ser obtida
 utilizando mapas auto-organizáveis \cite{book:oja:2001}.
 
-Três processos estão envolvidos na formação do mapa auto-organizado:
+Três processos estão envolvidos na formação do mapa auto-organizável:
 a \textbf{competição}, onde, para cada vetor de entrada, há apenas um
 neurônio vencedor; a \textbf{cooperação}, quando o neurônio vencedor
 determina uma vizinhança topológica de neurônios excitados; e a
@@ -39,9 +39,12 @@ determina uma vizinhança topológica de neurônios excitados; e a
 reforçar a resposta do neurônio vencedor, e de seus vizinhos, ao
 padrão de entrada.
 
-A atualização do vetor de pesos $w_j$ do neurônio j é feita através da equação:
+Considerando vetores de entrada $\mathbf{x}=[x_1,x_2,...,x_k]^T$, como os 
+neurônios são totalmente conectados às entradas, o vetor de pesos sinápticos 
+do neurônio j pode ser definido por: $\mathbf{w}j=[w_{1j},w_{2j},...,w_{kj}]^T$. 
+A atualização do vetor de pesos é feita através da equação:
 \begin{equation}\label{pesos_som}
-    w_j(n+1)=w_j(n)+\eta (n) h_{ij}(n)(x(n)-w_j(n)),
+    \mathbf{w_j(n+1)}=\mathbf{w}_j(n)+\eta (n) h_{ij}(n)(\mathbf{x}(n)-\mathbf{w}_j(n)),
 \end{equation}
 \\
 sendo $\eta (n)$ a taxa de aprendizagem, um tipo de função de
@@ -53,12 +56,14 @@ h_{ij}(n)=\exp(-d_{ij}^2/2\sigma^2(n))
 onde $d_{ij}$ é a distância do neurônio j para o neurônio vencedor i
 e $\sigma(n)$ é a largura da função vizinhança na n-ésima iteração.
 
+... falar de outras funções de vizinhança utilizadas ...
+
 O mapa de características possui algumas propriedades, listadas a
 seguir \cite{haykin:nn:2008}:
 
 \begin{enumerate}
   \item é formado pelo conjunto de
-vetores de pesos sinápticos $w_i$ no espaço de saída discreto e
+vetores de pesos sinápticos $\mathbf{w}_i$ no espaço de saída discreto e
 fornece uma boa aproximação para o espaço de entrada;
 
   \item é ordenado de modo
@@ -69,19 +74,25 @@ adjacentes no mapa de características;
 probabilidade de ocorrência são mapeadas para domínios maiores do
 espaço de saída;
 
+  \item a matriz de pesos sinápticos pode ser defnida por:
+\begin{equation}
+  \mathbf{W}=[\mathbf{w}_1,\mathbf{w}_2,...,\mathbf{w}_P],
+\end{equation}
+onde P é o número de neurônios do mapa.
+
 \end{enumerate}
 
 No mapa de características, o neurônio que apresentar maior saída é
 consi\-derado o vencedor, ou seja a saída do SOM é do tipo ``vencedor
 leva tudo" (WTA - \textit{winner takes all}). O neurônio ativado é
-escolhido a partir de sua semelhança com a entrada apresentada. É
+escolhido a partir de sua semelhança com a entrada $\mathbf{x}_A$ apresentada. É
 comum a utilização da distância euclidiana como métrica da
 proxi\-midade entre dois vetores; nesse caso, o neurônio vencedor é
-aquele que minimiza $i(\mathbf{x})=\| \mathbf{x}(n)-\mathbf{w_j}
+aquele que minimiza $i(\mathbf{x})=\| \mathbf{x}_A-\mathbf{w_j}
 \|$.
 
 Uma outra forma de operar um mapa auto-organizável é utilizar as projeções dos sinais de entrada no mapa de
-características, ou seja as saídas $u_j$ de cada neurônio j que pode ser calculada por:
+características, ou seja as saídas $u_j$ de cada neurônio j que podem ser calculadas por:
 \begin{equation}\label{som_out}
  u_j=\mathbf{x}^T\mathbf{w_j}
 \end{equation}

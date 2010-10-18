@@ -14,7 +14,7 @@ supervisionados na arquitetura MLP).
 
 Considerando que cada camada do calorímetro do ATLAS tem
 propriedades físicas distintas, neste trabalho os sistemas de
-discriminação podem operar de dois modos. No modo segmentado 
+discriminação podem operar de dois modos. No modo segmentado
 o processamento é realizado a nível de cada camada. No modo
 não-segmentado, os sinais de todas as camadas são concatenados num
 único vetor, que é utilizado como entrada para os discriminadores.
@@ -29,13 +29,13 @@ de treinamento dos discriminadores e as bases de dados utilizadas.
 \section{Parâmetros de Avaliação do Desempenho}
 
 No contexto desse trabalho, para avaliar a eficiência dos
-discriminadores são utilizados a curva ROC 
+discriminadores são utilizados a curva ROC
 (\emph{Receiver Operating Characteristic})~\cite{book:vantrees1:2001}, e o índice
 SP (soma-produto)~\cite{tese:andre:2006}.
 
-A curva ROC mostra como as probabilidades de detecção\footnote{Probabilidade de 
+A curva ROC mostra como as probabilidades de detecção\footnote{Probabilidade de
 classificar corretamente os eventos de interesse.} e falso
-alarme\footnote{Probabilidade de classificar o ruído de fundo incorretamente como evento de interesse.} 
+alarme\footnote{Probabilidade de classificar o ruído de fundo incorretamente como evento de interesse.}
 (respectivamente PD e PF) variam com o patamar de decisão.
 A eficiência de um classificador pode ser estimada a partir da
 área sob a curva ROC. Quanto maior a área, mais eficiente é o
@@ -45,7 +45,7 @@ O índice SP é definido por~\cite{article:anjos:2006}:
 %\begin{equation}\label{sp}
 %    SP= \frac{(Ef_e + Ef_j)\times \sqrt{(Ef_e \times Ef_j)}}{2}
 %\end{equation}
-\begin{equation}\label{sp}
+\begin{equation}\label{eq_sp}
     SP=\sqrt{\displaystyle{\frac{Ef_e + Ef_j}{2}}\times
     \sqrt{Ef_e \times Ef_j}}
 \end{equation}
@@ -54,7 +54,7 @@ para elétrons e jatos.
 
 O SP é utilizado como parâmetro para escolher o patamar de decisão
 ``ótimo" para um dado discriminador. Variando-se o patamar de
-decisão em toda sua faixa de excursão (que no caso deste trabalho 
+decisão em toda sua faixa de excursão (que no caso deste trabalho
 varia entre -1 e 1),
 calcula-se os valores do SP correspondentes. O SP máximo indica um
 patamar que apresenta alta eficiência para as duas classes.
@@ -72,8 +72,8 @@ Figura~\ref{roccomp2}, pode-se observar as curvas do patamar de
 decisão (Y) versus o SP para os dois exemplos. Percebe-se que os
 valores máximos do SP, em cada caso, aconteceram para valores
 distintos do patamar. Nas curvas ROC e SP são marcados os pontos
-de máximo SP e indicados os valores de PD, PF e do patamar 
-ótimo para cada caso. É importante 
+de máximo SP e indicados os valores de PD, PF e do patamar
+ótimo para cada caso. É importante
 notar que o SP é sensível a degradação da eficiência de qualquer uma das classes.
 
 \begin{figure}[h!]
@@ -104,18 +104,17 @@ Exemplo 1 à esquerda e Exemplo 2 à direita.}\label{roccomp1}
 classificadores distintos.}\label{roccomp2}
 \end{figure}
 
-Adcionalmente a estes parâmetros,
-serão realizadas comparações de desempenho em termos de algumas
-variáveis físicas de interesse como energia e posição de interação
-no detector (considerando os eixos $\eta$ e $\phi$ do sistema de
-coordenadas do ATLAS).
+Adicionalmente a estes parâmetros, serão realizadas comparações de
+desempenho em termos de algumas variáveis físicas de interesse
+como energia e posição de interação no detector (considerando os
+eixos $\eta$ e $\phi$ do sistema de coordenadas do ATLAS).
 
 \section{Extração de Características}
 
 Relembrando o que foi descrito no Capítulo 4, neste trabalho os sinais
-medidos nos calorímetros são pré-processados, em cada camada, para formação de anéis 
-concêntricos de deposição de energia. Deste modo, considerando uma 
-região de interesse (RoI) de tamanho fixo, são produzidos para as sete 
+medidos nos calorímetros são pré-processados, em cada camada, para formação de anéis
+concêntricos de deposição de energia. Deste modo, considerando uma
+região de interesse (RoI) de tamanho fixo, são produzidos para as sete
 camadas dos calorímetros um total de 100 anéis.
 
 Conforme mencionado no início deste capítulo, foram utilizados
@@ -156,7 +155,7 @@ processamento dos discriminadores. Conforme discutido
 anteriormente no Capítulo~\ref{cap_atlasEtrig}, grande parte do
 tempo de processamento do \emph{Neural Ringer} é dedicado ao processo de
 seleção de dados e produção dos sinais em anéis. Convém notar que,
-devido à configuração do sistema de filtragem, as informações de 
+devido à configuração do sistema de filtragem, as informações de
 cada camada são solicitadas em bloco (ou seja, a transferência dos
 dados envolve sempre toda a informação da RoI numa certa camada).
 
@@ -308,7 +307,7 @@ estudo não foi utilizado pré-processamento por ICA/NLICA, as redes
 MLP foram alimentadas diretamente com os sinais em anéis.
 
 As saídas dos classificadores foram combinadas a partir da média
-(aritimética), média geométrica e votação. Para os três modos de
+(aritmética), média geométrica e votação. Para os três modos de
 combinação foi realizada a ponderação a partir do índice SP máximo
 obtido por cada classificador, conforme ilustrado na
 Tabela~\ref{tab_compSegC}.
@@ -424,7 +423,7 @@ após uma interrupção para reparos (em setembro de 2008 foi
 identificado um vazamento de gás Hélio do sistema de refrigeração
 para o túnel do LHC, comprometendo a segurança do acelerador). Foi
 estabelecido um cronograma para o comissionamento do acelerador,
-que contenpla a gradual elevação na energia dos feixes de prótons.
+que contempla a gradual elevação na energia dos feixes de prótons.
 Ainda em novembro de 2009 o LHC atingiu 1,18~TeV e definiu um novo
 recorde mundial (que até aquele momento era de 0.98~TeV, alcançado
 pelo acelerador Tevatron no Fermilab). No início de 2010 a energia
