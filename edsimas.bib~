@@ -1164,12 +1164,25 @@ Existence and Uniqueness results},
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+@INPROCEEDINGS{article:som:visual:2000,
+author={Johan Himberg},
+booktitle={Proceedings of the Int. Joint Conference on Neural Networks},
+title={A SOM based cluster visualization and its application for false coloring},
+year={2000},
+month={Julho}
+volume={3},
+number={1},
+pages={587-592},
+address={Como, Itália},
+}
+
 @INPROCEEDINGS{article:icaloc:noise:2004,
 author={Gruber, P. and Theis, F.J. and Stadlthanner, K. and Lang, E.W. and Tome, A.M. and Teixeira, A.R.},
-booktitle={Neural Networks, 2004. Proceedings. 2004 IEEE International Joint Conference on},
+booktitle={Proceedings of the IEEE International Joint Conference on Neural Networks},
 title={Denoising using Local ICA and kernel-PCA},
 year={2004},
-month={July}
+month={Julho}
 volume={3},
 number={1},
 pages={2071-2076},
@@ -2081,6 +2094,16 @@ author = {E. Cervera and A. P. del Pobil}
   TITLE =        {A direct adaptive method for faster backpropagation learning, the {RPROP} algorithm},
   JOURNAL =      {Proc. of Int. Conf. on Neural Networks},
   YEAR =         {1993},
+  pages =        {586-591},
+}
+
+@ARTICLE{article:relativeEnt:1989,
+  AUTHOR =       {H. Joe},
+  TITLE =        {Relative Entropy Measures of Multivariate Dependence},
+  JOURNAL =      {Journal of the American Statistical Association},
+  YEAR =         {1989},
+  volume =       {84},
+  number =       {405},
   pages =        {586-591},
 }
 

@@ -246,7 +246,7 @@ como combinar suas saídas para produzir a decisão final, o modo
 como este tópico foi tratado neste trabalho será descrito na
 próxima seção.
 
-\subsection{Combinação de Múltiplos Classificadores}
+\subsection{Combinação de Múltiplos Classificadores}\label{secMultClas}
 
 A depender do tipo de saída escolhida para os classificadores,
 sendo va\-riá\-veis contínuas (com excursão de -1 a 1) ou
@@ -293,53 +293,10 @@ rede MLP de 3 camadas de neurônios, porém, a camada de entrada não
 \begin{figure}[th]
 \centering
 \includegraphics[width=11cm]{rede3cam}
-\caption{Curvas ROC para os diferentes modos de combinação dos
-classificadores segmentados.} \label{fig_rede3Cam}
+\caption{Modelo de rede combinadora para os classificadores segmentados.} \label{fig_rede3Cam}
 \end{figure}
 
-\subsubsection{Estudo a Respeito dos Métodos de Combinação de Classificadores}
-
-No trabalho~\cite{simas:cbrn09:fisica}, foi realizado um estudo a
-respeito do desempenho dos métodos de combinação de
-classificadores. Foram treinados classificadores neurais
-especialistas na informação de cada camada do calorímetro. Neste
-estudo não foi utilizado pré-processamento por ICA/NLICA, as redes
-MLP foram alimentadas diretamente com os sinais em anéis.
-
-As saídas dos classificadores foram combinadas a partir da média
-(aritmética), média geométrica e votação. Para os três modos de
-combinação foi realizada a ponderação a partir do índice SP máximo
-obtido por cada classificador, conforme ilustrado na
-Tabela~\ref{tab_compSegC}.
-
-\begin{table}[h!]
-\centering \caption{Comparação de desempenho dos classificadores
-segmentados.}\vspace{0.2cm} \footnotesize
-\begin{tabular}{c|c c c c c c c}
-    \hline
-     \textbf{Camada} &\textbf{PS} &\textbf{E1} &\textbf{E2} &\textbf{E3} &\textbf{H0} &\textbf{H1} &\textbf{H2}\\
-    \hline
-    \textbf{Max. SP}$\times$100 & 64,9 & 95,1 & 88,8 & 58,7 & 66,7 & 49,6 & 37,8 \\ \hline
-\end{tabular}
-\label{tab_compSegC}
-\end{table}
-
-Na Figura~\ref{fig_combClas} são ilustrados os resultados (curva
-ROC) obtidos para os diferentes modos de combinação. No caso da
-combinação por votação, não é possível traçar a curva ROC, pois as
-saídas dos classificadores são consideradas como variáveis
-discretas (indicando a classe associada a cada assinatura).
-Observa-se que a combinação baseada na média (aritmética)
-apresenta o melhor desempenho. Nos resultados apresentados neste
-trabalho será utilizada a combinação a partir da média ponderada.
-
-\begin{figure}[th]
-\centering
-\includegraphics[width=9cm]{comp_combtese}
-\caption{Curvas ROC para os diferentes modos de combinação dos
-classificadores segmentados.} \label{fig_combClas}
-\end{figure}
-
+%\subsubsection{Estudo a Respeito dos Métodos de Combinação de Classificadores}
 
 \section{Especificações de Treinamento}
 
@@ -418,27 +375,8 @@ ATLAS (e seus diferentes subdetectores). É possível também
 configurar diferentes estratégias de seleção para o primeiro nível
 de filtragem, simulando diversos cenários de operação do detector.
 
-A partir do final de 2009, o LHC entrou novamente em operação,
-após uma interrupção para reparos (em setembro de 2008 foi
-identificado um vazamento de gás Hélio do sistema de refrigeração
-para o túnel do LHC, comprometendo a segurança do acelerador). Foi
-estabelecido um cronograma para o comissionamento do acelerador,
-que contempla a gradual elevação na energia dos feixes de prótons.
-Ainda em novembro de 2009 o LHC atingiu 1,18~TeV e definiu um novo
-recorde mundial (que até aquele momento era de 0.98~TeV, alcançado
-pelo acelerador Tevatron no Fermilab). No início de 2010 a energia
-foi elevada para 3~TeV e atualmente está na faixa de 7~TeV (apenas
-metade da energia de projeto que é de aproximadamente 14~TeV).
-
-Com o início das colisões, foi possível adquirir dados
-experimentais. Uma particularidade destes sinais é que eles tem
-características físicas um pouco diferentes dos sinais simulados,
-pois a faixa de energia é mais baixa. Conforme mostrado
-anteriormente no Capítulo~\ref{cap_atlas}, a resolução dos
-calorímetros aumenta com a energia. Um outro problema que surge em
-baixa energia é que a relação sinal/ruído é mais baixa.
-
-Uma outra classe de sinais utilizada para teste dos
+Com o início das colisões do LHC (a partir do final de 2009), foi possível adquirir dados
+experimentais. Uma outra classe de sinais utilizada para teste dos
 discriminadores propostos são as assinaturas de raios cósmicos.
 Essas partículas, originadas fora da atmosfera terrestre, são
 altamente energéticas e capazes de penetrar na crosta terrestre
