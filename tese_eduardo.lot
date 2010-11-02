@@ -27,15 +27,15 @@
 \contentsline {table}{\numberline {7.8}{\ignorespaces N\'umero de componentes estimados a partir da compacta\c c\~ao por PCA (50\% de reten\c c\~ao de energia) e PCD.}}{138}{table.7.8}
 \contentsline {table}{\numberline {7.9}{\ignorespaces Compara\c c\~ao de desempenho para diferentes discriminadores, corte E10.}}{139}{table.7.9}
 \contentsline {table}{\numberline {7.10}{\ignorespaces Compara\c c\~ao dos resultados obtidos para diferentes discriminadores considerando o m\'aximo SP($\times $100), as probabilidades de decis\~ao (PD) e falso-alarme (PF) para o melhor SP e a probabilidade de falso-alarme para PD$=$92,5\%.}}{147}{table.7.10}
-\contentsline {table}{\numberline {7.11}{\ignorespaces M\'aximo SP($\times $100) para diferentes estrat\'egias de treinamento dos mapas (aqui o SP \'e calculado considerando a opera\c c\~ao do SOM diretamente como um classificador).}}{151}{table.7.11}
-\contentsline {table}{\numberline {7.12}{\ignorespaces Compara\c c\~ao de desempenho entre diferentes discriminadores considerando o m\'aximo SP e a probabilidade de falso-alarme (PF) para probabilidade de detec\c c\~ao de 97\%.}}{152}{table.7.12}
-\contentsline {table}{\numberline {7.13}{\ignorespaces Compara\c c\~ao entre discriminadores baseados no pr\'e-processamento atrav\'es do modelo PNL.}}{155}{table.7.13}
-\contentsline {table}{\numberline {7.14}{\ignorespaces Compara\c c\~ao dos resultados obtidos para diferentes discriminadores considerando o m\'aximo SP($\times $100), as probabilidades de decis\~ao (PD) e falso-alarme (PF) para o melhor SP e a probabilidade de falso-alarme para PD$=$92,5\%.}}{157}{table.7.14}
+\contentsline {table}{\numberline {7.11}{\ignorespaces M\'aximo SP($\times $100) para diferentes estrat\'egias de treinamento dos mapas (aqui o SP \'e calculado considerando a opera\c c\~ao do SOM diretamente como um classificador).}}{152}{table.7.11}
+\contentsline {table}{\numberline {7.12}{\ignorespaces Compara\c c\~ao de desempenho entre diferentes discriminadores considerando o m\'aximo SP e a probabilidade de falso-alarme (PF) para probabilidade de detec\c c\~ao de 97\%.}}{154}{table.7.12}
+\contentsline {table}{\numberline {7.13}{\ignorespaces Compara\c c\~ao entre discriminadores baseados no pr\'e-processamento atrav\'es do modelo PNL.}}{157}{table.7.13}
+\contentsline {table}{\numberline {7.14}{\ignorespaces Compara\c c\~ao dos resultados obtidos para diferentes discriminadores considerando o m\'aximo SP($\times $100), as probabilidades de decis\~ao (PD) e falso-alarme (PF) para o melhor SP e a probabilidade de falso-alarme para PD$=$92,5\%.}}{159}{table.7.14}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {8.1}{\ignorespaces Compara\c c\~ao do desempenho de diferentes discriminadores na rejei\c c\~ao de raios c\'osmicos.}}{162}{table.8.1}
-\contentsline {table}{\numberline {8.2}{\ignorespaces Resolu\c c\~ao relativa ($\frac {\sigma _E}{E}$ em \%) em fun\c c\~ao da energia.}}{166}{table.8.2}
-\contentsline {table}{\numberline {8.3}{\ignorespaces Compara\c c\~ao dos tempos de processamento para diferentes discriminadores.}}{171}{table.8.3}
-\contentsline {table}{\numberline {8.4}{\ignorespaces Compara\c c\~ao de desempenho para diferentes discriminadores, corte E10.}}{172}{table.8.4}
+\contentsline {table}{\numberline {8.1}{\ignorespaces Compara\c c\~ao do desempenho de diferentes discriminadores na rejei\c c\~ao de raios c\'osmicos.}}{164}{table.8.1}
+\contentsline {table}{\numberline {8.2}{\ignorespaces Resolu\c c\~ao relativa ($\frac {\sigma _E}{E}$ em \%) em fun\c c\~ao da energia.}}{168}{table.8.2}
+\contentsline {table}{\numberline {8.3}{\ignorespaces Compara\c c\~ao dos tempos de processamento para diferentes discriminadores.}}{173}{table.8.3}
+\contentsline {table}{\numberline {8.4}{\ignorespaces Compara\c c\~ao de desempenho para diferentes discriminadores, corte E10.}}{174}{table.8.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

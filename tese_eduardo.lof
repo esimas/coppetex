@@ -97,36 +97,39 @@
 \contentsline {figure}{\numberline {7.41}{\ignorespaces Gr\'aficos de disper\c c\~ao entre componentes independentes estimados pelo modelo PNL.}}{146}{figure.7.41}
 \contentsline {figure}{\numberline {7.42}{\ignorespaces Divis\~ao dos eventos de el\'etrons e jatos nos dois agrupamentos.}}{149}{figure.7.42}
 \contentsline {figure}{\numberline {7.43}{\ignorespaces Distribui\c c\~oes em energia e $\eta $ dos eventos nos \emph {clusters} 1 (acima) e 2 (abaixo).}}{150}{figure.7.43}
-\contentsline {figure}{\numberline {7.44}{\ignorespaces Erro quadr\'atico m\'edio (esquerda) e SP (direita) calculados variando-se as dimens\~oes dos mapas, acima para o modo n\~ao-segmentado e abaixo para o segmentado.}}{151}{figure.7.44}
-\contentsline {figure}{\numberline {7.45}{\ignorespaces Curvas ROC para as diversas abordagens do SOM (conjunto E15i).}}{152}{figure.7.45}
-\contentsline {figure}{\numberline {7.46}{\ignorespaces Efici\^encia (acima) e falso-alarme (abaixo) em energia e $\eta $.}}{153}{figure.7.46}
-\contentsline {figure}{\numberline {7.47}{\ignorespaces Distribui\c c\~oes em $\eta $ e energia dos eventos de el\'etrons (esquerda) e jatos (direita) classificados corretamente pelo discriminador SOM+MLP e incorretamente pelo \emph {Neural Ringer}.}}{154}{figure.7.47}
-\contentsline {figure}{\numberline {7.48}{\ignorespaces Eventos m\'edios (e desvio padr\~ao) de el\'etrons (esquerda) e jatos (direita) classificados corretamente pelo discriminador SOM+MLP e incorretamente pelo \emph {Neural Ringer}.}}{154}{figure.7.48}
-\contentsline {figure}{\numberline {7.49}{\ignorespaces Curvas ROC obtidas variando-se o n\'umero de neur\^onios utilizados para estimar as fun\c c\~oes n\~ao-lineares do modelo PNL (conjunto E15i).}}{155}{figure.7.49}
-\contentsline {figure}{\numberline {7.50}{\ignorespaces Efici\^encia (acima) e falso-alarme (abaixo) em energia e $\eta $.}}{156}{figure.7.50}
+\contentsline {figure}{\numberline {7.44}{\ignorespaces Comparativo de efici\^encia a partir das Curvas ROC.}}{151}{figure.7.44}
+\contentsline {figure}{\numberline {7.45}{\ignorespaces Comparativo de efici\^encia (esquerda) e falso-alarme (direita) dos discriminadores \emph {Neural Ringer} e Local ICA+MLP.}}{152}{figure.7.45}
+\contentsline {figure}{\numberline {7.46}{\ignorespaces Comparativo de efici\^encia (esquerda) e falso-alarme (direita) dos discriminadores \emph {Neural Ringer} e Local ICA+MLP.}}{153}{figure.7.46}
+\contentsline {figure}{\numberline {7.47}{\ignorespaces Erro quadr\'atico m\'edio (esquerda) e SP (direita) calculados variando-se as dimens\~oes dos mapas, acima para o modo n\~ao-segmentado e abaixo para o segmentado.}}{153}{figure.7.47}
+\contentsline {figure}{\numberline {7.48}{\ignorespaces Curvas ROC para as diversas abordagens do SOM (conjunto E15i).}}{154}{figure.7.48}
+\contentsline {figure}{\numberline {7.49}{\ignorespaces Efici\^encia (acima) e falso-alarme (abaixo) em energia e $\eta $.}}{155}{figure.7.49}
+\contentsline {figure}{\numberline {7.50}{\ignorespaces Distribui\c c\~oes em $\eta $ e energia dos eventos de el\'etrons (esquerda) e jatos (direita) classificados corretamente pelo discriminador SOM+MLP e incorretamente pelo \emph {Neural Ringer}.}}{155}{figure.7.50}
+\contentsline {figure}{\numberline {7.51}{\ignorespaces Eventos m\'edios (e desvio padr\~ao) de el\'etrons (esquerda) e jatos (direita) classificados corretamente pelo discriminador SOM+MLP e incorretamente pelo \emph {Neural Ringer}.}}{156}{figure.7.51}
+\contentsline {figure}{\numberline {7.52}{\ignorespaces Curvas ROC obtidas variando-se o n\'umero de neur\^onios utilizados para estimar as fun\c c\~oes n\~ao-lineares do modelo PNL (conjunto E15i).}}{157}{figure.7.52}
+\contentsline {figure}{\numberline {7.53}{\ignorespaces Efici\^encia (acima) e falso-alarme (abaixo) em energia e $\eta $.}}{158}{figure.7.53}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Visualiza\c c\~ao de um evento do LHC candidato ao decaimendo de um b\'oson Z em dois el\'etrons (el\'etron e anti-el\'etron).}}{159}{figure.8.1}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Histogramas em energia $\eta $ e $\phi $ dos eventos de raios c\'osmicos.}}{160}{figure.8.2}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Exemplo de evento fantasma em ($\eta ;\phi $)$=$(-0,3;1,6).}}{161}{figure.8.3}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Sa\IeC {\'\i }da dos classificadores neurais (acima) e comparativo de rejei\c c\~ao (abaixo) para eventos de raios c\'osmicos.}}{163}{figure.8.4}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Histogramas em energia $\eta $ e $\phi $ dos eventos de raios c\'osmicos para diferentes discriminadores.}}{164}{figure.8.5}
-\contentsline {figure}{\numberline {8.6}{\ignorespaces Histogramas em energia $\eta $ e $\phi $ dos eventos de colis\~oes do LHC.}}{166}{figure.8.6}
-\contentsline {figure}{\numberline {8.7}{\ignorespaces Comparativo entre os eventos m\'edios para o conjunto simulado-E10 (acima) e os sinais experimentais (abaixo).}}{167}{figure.8.7}
-\contentsline {figure}{\numberline {8.8}{\ignorespaces Sa\IeC {\'\i }das do \emph {Neural Ringer} (treinado para os sinais simulados E10) para os sinais experimentais.}}{168}{figure.8.8}
-\contentsline {figure}{\numberline {8.9}{\ignorespaces M\'aximo SP (m\'edia e desvio padr\~ao) obtidos variando-se o n\'umero de neur\^onios ocultos.}}{169}{figure.8.9}
-\contentsline {figure}{\numberline {8.10}{\ignorespaces Distribui\c c\~ao das sa\IeC {\'\i }das (esquerda) e curva ROC (direita) para o classificador neural de 12 neur\^onios ocultos - sinais experimentais, uma linha vertical tracejada indica o patamar de decis\~ao que produz o m\'aximo SP.}}{170}{figure.8.10}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Visualiza\c c\~ao de um evento do LHC candidato ao decaimendo de um b\'oson Z em dois el\'etrons (el\'etron e anti-el\'etron).}}{161}{figure.8.1}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Histogramas em energia $\eta $ e $\phi $ dos eventos de raios c\'osmicos.}}{162}{figure.8.2}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Exemplo de evento fantasma em ($\eta ;\phi $)$=$(-0,3;1,6).}}{163}{figure.8.3}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Sa\IeC {\'\i }da dos classificadores neurais (acima) e comparativo de rejei\c c\~ao (abaixo) para eventos de raios c\'osmicos.}}{165}{figure.8.4}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Histogramas em energia $\eta $ e $\phi $ dos eventos de raios c\'osmicos para diferentes discriminadores.}}{166}{figure.8.5}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Histogramas em energia $\eta $ e $\phi $ dos eventos de colis\~oes do LHC.}}{168}{figure.8.6}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Comparativo entre os eventos m\'edios para o conjunto simulado-E10 (acima) e os sinais experimentais (abaixo).}}{169}{figure.8.7}
+\contentsline {figure}{\numberline {8.8}{\ignorespaces Sa\IeC {\'\i }das do \emph {Neural Ringer} (treinado para os sinais simulados E10) para os sinais experimentais.}}{170}{figure.8.8}
+\contentsline {figure}{\numberline {8.9}{\ignorespaces M\'aximo SP (m\'edia e desvio padr\~ao) obtidos variando-se o n\'umero de neur\^onios ocultos.}}{171}{figure.8.9}
+\contentsline {figure}{\numberline {8.10}{\ignorespaces Distribui\c c\~ao das sa\IeC {\'\i }das (esquerda) e curva ROC (direita) para o classificador neural de 12 neur\^onios ocultos - sinais experimentais, uma linha vertical tracejada indica o patamar de decis\~ao que produz o m\'aximo SP.}}{172}{figure.8.10}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Diagrama de um mapa auto-organiz\'avel}}{199}{figure.A.1}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Diagrama da classifica\c c\~ao a partir do mapa de caracter\IeC {\'\i }sticas}}{203}{figure.A.2}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Compress\~ao e recupera\c c\~ao do sinal $\mathbf {x}$ utilizando a transforma\c c\~ao por PCA.}}{206}{figure.A.3}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Diagrama do algoritmo de Taleb-Jutten para o modelo PNL.}}{217}{figure.A.4}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Diagrama de um mapa auto-organiz\'avel}}{201}{figure.A.1}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Diagrama da classifica\c c\~ao a partir do mapa de caracter\IeC {\'\i }sticas}}{205}{figure.A.2}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Compress\~ao e recupera\c c\~ao do sinal $\mathbf {x}$ utilizando a transforma\c c\~ao por PCA.}}{208}{figure.A.3}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Diagrama do algoritmo de Taleb-Jutten para o modelo PNL.}}{219}{figure.A.4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Esquem\'atico do problema de classifica\c c\~ao bin\'ario.}}{219}{figure.B.1}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Diagrama em blocos de um filtro casado.}}{222}{figure.B.2}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Exemplo de uma rede neural utilizada para separa\c c\~ao dos sinais de entrada em 3 classes.}}{224}{figure.B.3}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Esquem\'atico do problema de classifica\c c\~ao bin\'ario.}}{221}{figure.B.1}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Diagrama em blocos de um filtro casado.}}{224}{figure.B.2}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Exemplo de uma rede neural utilizada para separa\c c\~ao dos sinais de entrada em 3 classes.}}{226}{figure.B.3}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Exemplo de um cromossomo bin\'ario}}{228}{figure.C.1}
-\contentsline {figure}{\numberline {C.2}{\ignorespaces (a) Recombina\c c\~ao em ponto \'unico e (b) recombina\c c\~ao uniforme.}}{230}{figure.C.2}
-\contentsline {figure}{\numberline {C.3}{\ignorespaces Fluxo de um Algoritmo Gen\'etico}}{232}{figure.C.3}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Exemplo de um cromossomo bin\'ario}}{230}{figure.C.1}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces (a) Recombina\c c\~ao em ponto \'unico e (b) recombina\c c\~ao uniforme.}}{232}{figure.C.2}
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Fluxo de um Algoritmo Gen\'etico}}{234}{figure.C.3}
 \addvspace {10\p@ }
