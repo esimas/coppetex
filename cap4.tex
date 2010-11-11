@@ -983,9 +983,7 @@ A informação das classes também pode ser utilizada no contexto da
 ICA de dife\-ren\-tes modos. Um procedimento simples, proposto
 em~\cite{article:icaClasp:2003}, é a inclusão dos rótulos de
 classe como atributos de entrada para os algoritmos de estimação
-dos componentes independentes (ver Seção~\ref{sec_icafex1}). Uma
-outra abordagem possível é realizar a estimação dos modelos da ICA
-separadamente para amostras de cada classe~\label{sec_icafex12}.
+dos componentes independentes (ver Seção~\ref{sec_icafex1}). 
 Alternativamente, um método para estimação de componentes
 independentes e discriminantes foi desenvolvido no contexto desta
 tese e será mostrado na Seção~\ref{sec_icafex2}.
@@ -1134,33 +1132,33 @@ características discriminantes.
 %\label{fig_icaFex2}
 %\end{figure}
 
-\subsection{Componentes Independentes para Cada Classe}\label{sec_icafex12}
+%\subsection{Componentes Independentes para Cada Classe}\label{sec_icafex12}
+%
+%Um outro modo de utilizar informação supervisionada no contexto da ICA foi
+%proposto em~\cite{article:icafexIII:2005} e, no caso de um problema de classificação
+%em M classes, consiste em realizar a estimação de M modelos da ICA utilizando, para cada um, apenas amostras da
+%classe $m$ (ver Figura \ref{fig_icaFex3}). Pode-se observar que as saídas de cada bloco
+%$G_m$ são utilizadas como entradas para um classificador
+%especialista na identificação da classe $m$. Ao final do
+%processamento, um combinador utiliza as informações dos $m$
+%classificadores para atribuir o rótulo de classe (produzindo a
+%decisão final).
 
-Um outro modo de utilizar informação supervisionada no contexto da ICA foi
-proposto em~\cite{article:icafexIII:2005} e, no caso de um problema de classificação
-em M classes, consiste em realizar a estimação de M modelos da ICA utilizando, para cada um, apenas amostras da
-classe $m$ (ver Figura \ref{fig_icaFex3}). Pode-se observar que as saídas de cada bloco
-$G_m$ são utilizadas como entradas para um classificador
-especialista na identificação da classe $m$. Ao final do
-processamento, um combinador utiliza as informações dos $m$
-classificadores para atribuir o rótulo de classe (produzindo a
-decisão final).
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=10cm]{ICA_Fex3}
+%\caption{Sistema de classificação baseado em modelos da ICA
+%estimados para cada classe.}\label{fig_icaFex3}
+%\end{figure}
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=10cm]{ICA_Fex3}
-\caption{Sistema de classificação baseado em modelos da ICA
-estimados para cada classe.}\label{fig_icaFex3}
-\end{figure}
-
-No trabalho \cite{article:icafexIII:2005}, este modelo foi capaz
-de produzir alta eficiência no diagnóstico acústico de
-equipamentos industriais. A grande vantagem desta abordagem é que
-pode-se utilizar algoritmos tradicionais de ICA/NLICA, sem a
-necessidade de modi\-fica\-ções (o que não ocorre para os métodos
-descritos na seção~\ref{sec_icafex1}). No trabalho descrito acima
-foi utilizado o algoritmo FastICA para estimação dos componentes
-independentes.
+%No trabalho \cite{article:icafexIII:2005}, este modelo foi capaz
+%de produzir alta eficiência no diagnóstico acústico de
+%equipamentos industriais. A grande vantagem desta abordagem é que
+%pode-se utilizar algoritmos tradicionais de ICA/NLICA, sem a
+%necessidade de modi\-fica\-ções (o que não ocorre para os métodos
+%descritos na seção~\ref{sec_icafex1}). No trabalho descrito acima
+%foi utilizado o algoritmo FastICA para estimação dos componentes
+%independentes.
 
 \subsection{Proposta de Algoritmo para Estimação de Componentes Independentes e Discriminantes}\label{sec_icafex2}
 

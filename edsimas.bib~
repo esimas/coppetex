@@ -639,6 +639,19 @@ detector},
   pages =        {61-68},
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  SOM  %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@article{Flexer:2001:som,
+ author = {Arthur Flexer},
+ title = {On the use of self-organizing maps for clustering and visualization},
+ journal = {Intelligent Data Analysis},
+ volume = {5},
+ issue = {5},
+ month = {October},
+ year = {2001},
+ pages = {373-384},
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  TRIGGER NOVOS  %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 @INPROCEEDINGS{article:trigconf:2009,
@@ -1164,6 +1177,17 @@ Existence and Uniqueness results},
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+@INPROCEEDINGS{article:som:visual:1999,
+author={S. Kaski and J. Venna and T.Kohonen},
+booktitle={Proceedings of the International Conference on Neural Information Processing},
+title={Coloring that reveals high-dimensional structures in data},
+year={1999},
+month={novembro}
+volume={2},
+number={1},
+pages={729-734},
+address={Perth, Austrália},
+}
 
 @INPROCEEDINGS{article:som:visual:2000,
 author={Johan Himberg},

@@ -48,8 +48,7 @@
 \BOOKMARK [1][-]{section.5.5}{Utilizando Informa\347\343o das Classes na Estima\347\343o dos Componentes Independentes}{chapter.5}
 \BOOKMARK [2][-]{subsection.5.5.1}{Componentes Principais de Discrimina\347\343o}{section.5.5}
 \BOOKMARK [2][-]{subsection.5.5.2}{Utilizando os R\363tulos de Classe como Sinais de Entrada para os Algoritmos de ICA}{section.5.5}
-\BOOKMARK [2][-]{subsection.5.5.3}{Componentes Independentes para Cada Classe}{section.5.5}
-\BOOKMARK [2][-]{subsection.5.5.4}{Proposta de Algoritmo para Estima\347\343o de Componentes Independentes e Discriminantes}{section.5.5}
+\BOOKMARK [2][-]{subsection.5.5.3}{Proposta de Algoritmo para Estima\347\343o de Componentes Independentes e Discriminantes}{section.5.5}
 \BOOKMARK [0][-]{chapter.6}{Metodologia Proposta}{}
 \BOOKMARK [1][-]{section.6.1}{Par\342metros de Avalia\347\343o do Desempenho}{chapter.6}
 \BOOKMARK [1][-]{section.6.2}{Extra\347\343o de Caracter\355sticas}{chapter.6}
@@ -76,12 +75,15 @@
 \BOOKMARK [1][-]{section.8.1}{Valida\347\343o com Sinais de Raios C\363smicos}{chapter.8}
 \BOOKMARK [2][-]{subsection.8.1.1}{Efici\352ncia dos Sistemas de Classifica\347\343o Propostos na Rejei\347\343o de Raios C\363smicos}{section.8.1}
 \BOOKMARK [1][-]{section.8.2}{Sinais de Colis\365es do LHC}{chapter.8}
-\BOOKMARK [2][-]{subsection.8.2.1}{Resultados - An\351is}{section.8.2}
-\BOOKMARK [2][-]{subsection.8.2.2}{Resultados - ICA}{section.8.2}
-\BOOKMARK [2][-]{subsection.8.2.3}{Resultados - NLICA}{section.8.2}
-\BOOKMARK [1][-]{section.8.3}{Estimativa do custo computacional dos algoritmos propostos}{chapter.8}
-\BOOKMARK [2][-]{subsection.8.3.1}{Abordagens segmentadas}{section.8.3}
+\BOOKMARK [2][-]{subsection.8.2.1}{Crit\351rios de Identifica\347\343o de El\351trons na An\341lise Offline}{section.8.2}
+\BOOKMARK [1][-]{section.8.3}{Run 1}{chapter.8}
+\BOOKMARK [2][-]{subsection.8.3.1}{Resultados - An\351is}{section.8.3}
+\BOOKMARK [2][-]{subsection.8.3.2}{Resultados - ICA}{section.8.3}
+\BOOKMARK [2][-]{subsection.8.3.3}{Resultados - NLICA}{section.8.3}
+\BOOKMARK [1][-]{section.8.4}{Estimativa do custo computacional dos algoritmos propostos}{chapter.8}
+\BOOKMARK [2][-]{subsection.8.4.1}{Abordagens segmentadas}{section.8.4}
 \BOOKMARK [0][-]{chapter.9}{Conclus\365es}{}
+\BOOKMARK [1][-]{section.9.1}{Trabalhos Futuros}{chapter.9}
 \BOOKMARK [0][-]{chapter*.22}{Refer\352ncias Bibliogr\341ficas}{}
 \BOOKMARK [0][-]{appendix.A}{Aspectos Te\363ricos das T\351cnicas de Extra\347\343o de Caracter\355sticas}{}
 \BOOKMARK [1][-]{section.A.1}{Mapas Auto-Organiz\341veis}{appendix.A}
@@ -111,7 +113,7 @@
 \BOOKMARK [2][-]{subsection.C.2.2}{Escalonamento de Aptid\343o}{section.C.2}
 \BOOKMARK [2][-]{subsection.C.2.3}{Implementa\347\343o de um Algoritmo Gen\351tico}{section.C.2}
 \BOOKMARK [2][-]{subsection.C.2.4}{O Algoritmo Gen\351tico Utilizado}{section.C.2}
-\BOOKMARK [0][-]{appendix.D}{Lista de Publica\347\365es}{}
+\BOOKMARK [0][-]{appendix.D}{Produ\347\343o Cient\355fica}{}
 \BOOKMARK [1][-]{section.D.1}{Publica\347\365es em peri\363dicos}{appendix.D}
 \BOOKMARK [1][-]{section.D.2}{Cap\355tulo de Livro}{appendix.D}
 \BOOKMARK [1][-]{section.D.3}{Artigos em Confer\352ncias}{appendix.D}

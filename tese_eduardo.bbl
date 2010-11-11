@@ -194,7 +194,7 @@
 \MakeUppercase{ Drees, J.}, \enquote{Review of final LEP results or a tribute
   to LEP}.
 \newblock In: {\em Proceedings of the International Symposium on Lepton and
-  Photon Interactions at High Energies\/}, pp. 349--373, Roma, It√°lia, Julho
+  Photon Interactions at High Energies\/}, pp. 349--373, Roma, It·lia, Julho
   2001.
 
 \bibitem{book:lhc:2008}
@@ -990,15 +990,10 @@
   Computer Science (ICANN)}, v. 2130, chap. Feature Extraction Using ICA, pp.
   568--573, Springer, 2001.
 
-\bibitem{article:icafexIII:2005}
-\MakeUppercase{ Kotani, M., Ozawa, S.}, \enquote{Feature Extraction Using
-  Independent Components of Each Category}, {\em Neural Processing Letters\/},
-  v.~22, n.~1, pp.~113--124, 2005.
-
 \bibitem{article:simas:neucom2010}
 \MakeUppercase{ {Simas Filho}, E.~F., Seixas, J.~M., Caloba, L.~P.},
   \enquote{Modified Post-Nonlinear ICA Model for Online Neural Discrimination},
-  {\em Neurocomputing\/}, v.~0, n.~0, pp.~0, 2010.
+  {\em Neurocomputing\/}, v.~73, n. 16-18, pp.~2820--2828, 2010.
 
 \bibitem{article:cross:2006}
 \MakeUppercase{ Georgieva, P., Ralescu, A., Ralescu, D.},
@@ -1048,6 +1043,16 @@
 \newblock 3rd ed.
 \newblock Wiley: Nova York, Estados Unidos, 2000.
 
+\bibitem{Flexer:2001:som}
+\MakeUppercase{ Flexer, A.}, \enquote{On the use of self-organizing maps for
+  clustering and visualization}, {\em Intelligent Data Analysis\/}, v.~5,
+  pp.~373--384, October 2001.
+
+\bibitem{book:kohonen:2001}
+\MakeUppercase{ Kohonen, T.}, {\em Self Organizing Maps\/}.
+\newblock 3rd ed.
+\newblock Springer: Berlin, Alemanha, 2001.
+
 \bibitem{article:som:visual:1999}
 \MakeUppercase{ Kaski, S., Venna, J., T.Kohonen}, \enquote{Coloring that
   reveals high-dimensional structures in data}.
@@ -1068,10 +1073,41 @@
 \MakeUppercase{ Gaisser, T.~K.}, {\em Cosmic Rays and Particle Physics\/}.
 \newblock Cambridge University Press: Cambridge, Reino Unido, 1990.
 
-\bibitem{book:kohonen:2001}
-\MakeUppercase{ Kohonen, T.}, {\em Self Organizing Maps\/}.
-\newblock 3rd ed.
-\newblock Springer: Berlin, Alemanha, 2001.
+\bibitem{tese:cern:2009}
+\MakeUppercase{ Flowerdew, M.~J.}, {\em Standard Model Z/gamma to ee production
+  in early data at ATLAS\/}, Ph.D. Thesis, University of Liverpool, Dezembro
+  2009.
+
+\bibitem{article:lhcphysics:2010}
+\MakeUppercase{ Kerschen, N.}, \enquote{Electron performance in the ATLAS
+  experiment}.
+\newblock In: {\em Proceedings of Physics at LHC Conference\/}, pp. 1--5,
+  Hamburg, Alemanha, Junho 2010.
+
+\bibitem{article:lhcphysics2:2010}
+\MakeUppercase{ Kuna, M.}, \enquote{Electron and Photon Reconstruction and
+  Identification with the ATLAS Detector}.
+\newblock In: {\em Proceedings of the Topical Seminar on Innovative Particle
+  and Radiation Detectors\/}, pp. 1--5, Siena, It·lia, Junho 2010.
+
+\bibitem{book:nmf:2009}
+\MakeUppercase{ Cichocki, A., Zdunek, R., Phan, A.~H., \MakeLowercase{et~al.}},
+  {\em Nonnegative Matrix and Tensor Factorizations: Applications to
+  Exploratory Multi-way Data Analysis and Blind Source Separation\/}.
+\newblock Wiley: West Sussex, Reino Unido, 2009.
+
+\bibitem{article:sca:2004}
+\MakeUppercase{ sparse~signal representations, B. I.~R.}, \enquote{A Mutual
+  Information Minimization Approach for a Class of Nonlinear Recurrent
+  Separating Systems}.
+\newblock In: {\em Proceedings of 2004 IEEE International Symposium on Circuits
+  and Systems\/}, v.~5, pp. 684--687, Vancouver, Canad·, 2004.
+
+\bibitem{article:sca:2005}
+\MakeUppercase{ Georgiev, P.~G., Theis, F., Cichocki, A.}, \enquote{Sparse
+  component analysis and blind source separation of underdetermined mixtures},
+  {\em IEEE Transactions on Neural Networks\/}, v.~16, n.~4, pp.~992--996,
+  2005.
 
 \bibitem{article:foo:2006}
 \MakeUppercase{ Base, A.~M., Gruber, P., Theisa, F., \MakeLowercase{et~al.}},

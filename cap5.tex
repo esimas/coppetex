@@ -15,7 +15,7 @@ supervisionados na arquitetura MLP).
 Considerando que cada camada do calorímetro do ATLAS tem
 propriedades físicas distintas, neste trabalho os sistemas de
 discriminação podem operar de dois modos. No modo segmentado
-o processamento é realizado a nível de cada camada. No modo
+o processamento é realizado em cada camada. No modo
 não-segmentado, os sinais de todas as camadas são concatenados num
 único vetor, que é utilizado como entrada para os discriminadores.
 
@@ -105,9 +105,10 @@ classificadores distintos.}\label{roccomp2}
 \end{figure}
 
 Adicionalmente a estes parâmetros, serão realizadas comparações de
-desempenho em termos de algumas variáveis físicas de interesse
-como energia e posição de interação no detector (considerando os
-eixos $\eta$ e $\phi$ do sistema de coordenadas do ATLAS).
+desempenho em termos de algumas variáveis físicas das assinaturas
+de interesse como a energia e a posição de interação no detector
+(considerando os eixos $\eta$ e $\phi$ do sistema de coordenadas
+do ATLAS).
 
 \section{Extração de Características}
 
@@ -144,7 +145,7 @@ não-segmentado.} \label{fig_fexg}
 
 \begin{figure}[th]
 \centering
-\includegraphics[width=11cm]{cap3_fex_seg}
+\includegraphics[width=13cm]{cap3_fex_seg}
 \caption{Processo de extração de características no modo
 segmentado.} \label{fig_fexs}
 \end{figure}
@@ -172,7 +173,7 @@ redundantes forem descartadas.
 Este trabalho está focado na utilização do modelo não-linear da
 análise de componentes independentes (NLICA) para extrair
 características relevantes do sinais dos calorímetros para a
-discriminação elétron/jato.
+discriminação elétron/jato no segundo nível de filtragem do ATLAS.
 
 Considerando os diversos algoritmos e modelos existentes para a
 estimação da NLICA (mostrados no Capítulo~\ref{cap_ica}), no
@@ -189,13 +190,14 @@ independentes (conforme detalhado na seção~\ref{sec_icasup}).
 Neste contexto, foram testadas duas possibilidades:
 \begin{itemize}
  \item utilização dos rótulos de classe como entrada para os algoritmos;
- \item estimação de modelos diferentes para cada classe.
+ \item compactação através da análise de componentes de discriminação (PCD).
 \end{itemize}
 
 As configurações listadas acima foram escolhidas com o objetivo de
-explorar os principais modos de estimação da NLICA (modelos com
-restrições estruturais ou modelos livres), através de algoritmos
-com aplicação difundida (PNL e SOM).
+explorar os principais modos de estimação da NLICA (que
+compreendem os modelos com restrições estruturais e os modelos
+livres), através de algoritmos com aplicação difundida na
+literatura (PNL e SOM).
 
 \section{Classificação}
 
@@ -204,14 +206,13 @@ perceptrons de múltiplas camadas (MLP)~\cite{haykin:nn:2008}. Mais
 detalhes sobre classificação de sinais e a implementação de
 classificadores neurais supervisionados podem ser encontrados no
 Apêndice~\ref{apend_clas}. Os classificadores, assim como os
-algoritmos de extração de características, podem ser aplicados nos
-modos não-segmentado e segmentado.
+algoritmos de extração de características, podem operar nos modos
+não-segmentado e segmentado.
 
 De modo semelhante ao descrito na seção~\ref{sec_fex5}, na
-classificação não-segmentada, as características estimadas (sejam
-segmentadas ou não-segmentadas) são concatenadas num único vetor,
-que é usado como entrada para o classificador neural
-supervisionado (ver Figura~\ref{fig_clasg}).
+classificação não-segmentada, as características estimadas são
+concatenadas num único vetor, que é usado como entrada para o
+classificador neural supervisionado (ver Figura~\ref{fig_clasg}).
 
 \begin{figure}[h!]
 \centering
@@ -223,9 +224,10 @@ supervisionado (ver Figura~\ref{fig_clasg}).
 Quando as características são extraídas de modo segmentado (para
 cada camada), há a possibilidade de realizar o processo de
 classificação também de modo segmentado, ou seja, treinando
-classificadores específicos para cada camada. Neste caso, são
-utilizadas sete redes MLP, cada uma especialista nas informações
-de uma das camadas do calorímetro (ver Figura~\ref{fig_classeg}).
+classificadores especialistas nas características estimadas em
+cada uma das camadas. Neste caso, são utilizadas sete redes MLP,
+(uma para cada camadas do calorímetro), conforme mostrado na
+Figura~\ref{fig_classeg}.
 %
 %Considerando o sistema de calorímetros do detector ATLAS, a
 %informação disponível está segmentada em diversas camadas com
@@ -260,12 +262,15 @@ forma usualmente utilizada para combinação é a média das saídas:
     \mu (\mathbf{x}) = \sum_{k=1}^K u_k (\mathbf{x})
 \end{equation}
 
-Considerando que os múltiplos classificadores apre\-sentam
-eficiência diferente, pode-se dar aos mais eficientes maior poder
-de decisão com o uso de fatores de ponderação $\alpha_k$:
+Considerando que os múltiplos classificadores podem apre\-sentar
+valores de eficiência diferentes, pode-se utilizar fatores de
+ponderação $\alpha_k$, proporcionais à eficiência do discriminador
+k:
 \begin{equation}\label{medpon}
-    \mu (\mathbf{x}) = \sum_{k=1}^K \alpha_k u_k (\mathbf{x})
+    \mu (\mathbf{x}) = \sum_{k=1}^K \alpha_k u_k (\mathbf{x}),
 \end{equation}
+assim, maior importância na combinação é dada aos discriminadores
+mais eficientes
 
 Outra forma para a combinação de classificadores de saídas
 contínuas $u_k$ é o cálculo da média geométrica:
@@ -283,12 +288,23 @@ caso as eficiências dos classificadores sejam diferentes. Deste
 modo, o voto de um classificador mais eficiente tem mais
 influência na decisão final.
 
-Considerando que neste trabalho os classificadores são redes MLP,
-é possível utilizar as saídas das camadas ocultas dos diversos
-classificadores como entradas para um outro classificador.
-Conforme ilustrado na Figura~\ref{fig_rede3Cam}, é formada uma
-rede MLP de 3 camadas de neurônios, porém, a camada de entrada não
-é totalmente conectada.
+Considerando que, neste trabalho os classificadores são redes MLP,
+é possível utilizar as saídas dos neurônios ocultos dos diversos
+classificadores como entradas para um outro classificador
+responsável por combinar a informação obtida de modo segmentado.
+Deste modo, conforme ilustrado na Figura~\ref{fig_rede3Cam}, é
+formada uma rede MLP de 3 camadas de neurônios, porém, a camada de
+entrada não é totalmente conectada. O procedimento de treinamento
+desta rede neural compreende as etapas a seguir:
+\begin{enumerate}
+    \item Treinamento dos classificadores segmentados;
+    \item Com as redes treinadas, calcula-se as saídas dos
+    neurônios ocultos;
+    \item Concatena-se as saídas dos neurônios ocultos dos
+    classificadores segmentados em um único vetor;
+    \item Uma rede neural combinadora (com duas camadas) é
+    treinada a partir deste vetor de características.
+\end{enumerate}
 
 \begin{figure}[th]
 \centering
@@ -300,12 +316,9 @@ rede MLP de 3 camadas de neurônios, porém, a camada de entrada não
 
 \section{Especificações de Treinamento}
 
-Neste trabalho, foram utilizados classificadores neurais
-supervisionados na arquitetura Perceptron de Múltiplas camadas
-(MLP - \textit{Multi-Layer Perceptron})~\cite{haykin:nn:2008}. Em
-geral, foram utilizadas redes com uma camada oculta e um neurônio
-na camada de saída. Todos os neurônios utilizam funções de
-ativação tipo tangente hiperbólica.
+Em geral, foram utilizadas redes com uma camada oculta e um
+neurônio na camada de saída. Todos os neurônios utilizam funções
+de ativação tipo tangente hiperbólica.
 
 Para o treinamento dos classificadores, foi utilizado o algoritmo
 RPROP (\textit{Resilient
@@ -316,7 +329,7 @@ treinamento, são apresentados os pesos sinápticos da configuração
 de melhor desempenho para a figura de mérito utilizada (de acordo
 com o critério \textit{save the best}).
 
-Em um trabalho anterior\cite{tese:torres:2010}, foi realizado um
+Num trabalho anterior\cite{tese:torres:2010}, foi realizado um
 estudo detalhado a respeito dos critérios de treinamento ótimos
 para o problema da seleção de elétrons no L2 do ATLAS considerando
 parâmetros como a figura de mérito para treinamento do
@@ -327,8 +340,8 @@ que também foram adotados como valores de referência neste
 trabalho.
 
 \begin{table}[h!]
-\centering \caption{Comparação de desempenho para diferentes
-discriminadores, corte E10.}\vspace{0.2cm} \footnotesize
+\centering \caption{Parâmetros de treinamento
+utilizados.}\vspace{0.2cm} \footnotesize
 \begin{tabular}{c|c}
     \hline
      \textbf{Parâmetro}&\textbf{Valor} \\
@@ -369,21 +382,49 @@ distintas. Toda fase de projeto e teste dos discriminadores foi
 iniciada antes do LHC entrar em operação, então, para estas
 tarefas foram empregados sinais simulados. A plataforma de
 \textit{software} do sistema de filtragem do ATLAS (ATHENA)
-permite a produção de dados simulados onde são consideradas as
-características das colisões do LHC e a interação com o detector
-ATLAS (e seus diferentes subdetectores). É possível também
-configurar diferentes estratégias de seleção para o primeiro nível
-de filtragem, simulando diversos cenários de operação do detector.
+permite a produção de dados simulados onde,através de algoritmos
+de Monte Carlo, são consideradas as características físicas das
+colisões do LHC e a interação com o detector ATLAS (e seus
+diferentes subdetectores). É possível também configurar diferentes
+estratégias de seleção para o primeiro nível de filtragem,
+simulando diversos cenários de operação do detector.
 
-Com o início das colisões do LHC (a partir do final de 2009), foi possível adquirir dados
-experimentais. Uma outra classe de sinais utilizada para teste dos
-discriminadores propostos são as assinaturas de raios cósmicos.
-Essas partículas, originadas fora da atmosfera terrestre, são
-altamente energéticas e capazes de penetrar na crosta terrestre
-atingindo o ATLAS a 100 metros de profundidade. É necessário
-verificar a robustez dos algoritmos propostos quanto a rejeição
-das assinaturas de raios cósmicos.
+Os dados simulados utilizados são compostos de elétrons isolados
+(\emph{single electrons}) e jatos hadrônicos. Dois cortes
+distintos foram aplicados no primeiro nível. Um deles simula a
+etapa inicial de operação do detector, onde a seleção do L1 é mais
+branda. O outro corte é mais seletivo, se assemelhando aos que
+serão utilizados num estágio mais avançado da operação, onde o
+objetivo é eliminar a maior parte do falso alarme. Mais detalhes a
+respeito dos dois conjuntos simulados utilizados serão
+apresentados no Capitulo~\ref{cap_dadosSim}.
+
+Com o início das colisões do LHC (a partir do final de 2009), foi
+possível adquirir dados experimentais. Um cronograma para a
+operação do acelerador foi fixado, compreendendo um gradual
+aumento da energia e da luminosidade dos feixes de prótons. Os
+sinais experimentais analisados foram obtidos em colisões onde a
+energia total é aproximadamente 7~GeV (3,5~GeV em cada feixe) e a
+luminosidade máxima chegou a aproximadamente
+$10^{32}cm^{-2}s^{-1}$. Comparando com os valores nominais de
+projeto para o LHC (energia igual a 14~GeV e luminosidade de
+$10^{34}cm^{-2}s^{-1}$), percebe-se que ainda há uma considerável
+diferença entre as duas configurações. Sabendo que os sinais
+simulados foram produzidos considerando as condições nominais do
+acelerador, é possível que as características físicas dos sinais
+experimentais (neste estágio de operação) ainda não sejam
+perfeitamente refletidas nos conjuntos simulados.
+
+Outra classe de sinais utilizada para teste dos discriminadores
+propostos são as assinaturas de raios cósmicos. Essas partículas,
+originadas fora da atmosfera terrestre, são altamente energéticas
+e capazes de penetrar na crosta terrestre atingindo o ATLAS a 100
+metros de profundidade e interagindo com os calorímetros. É
+necessário verificar a robustez dos algoritmos propostos quanto a
+rejeição das assinaturas de raios cósmicos, pois eles também podem
+constituir o ruído de fundo na identificação de elétrons.
 
 Nos próximos capítulos serão mostrados os resultados obtidos neste
-trabalho, iniciando com os dados simulados, e em seguida os sinais
-experimentais.
+trabalho aplicando-se a metodologia proposta aos conjuntos de
+sinais apresentados. Inicialmente serão abordados os dados
+simulados, e em sequencia, os sinais experimentais.
