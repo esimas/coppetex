@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.8.26)  10 NOV 2010 22:10
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.8.26)  14 NOV 2010 01:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1413,19 +1413,19 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [139] [140 <./figuras/E10pnl_comp_rocs.pdf>] [141]
-<./figuras/E10segC_compSPbarQueda.pdf, id=3889, 417.56pt x 343.2825pt>
+<./figuras/E10segC_compSPbarQueda.pdf, id=3888, 417.56pt x 343.2825pt>
 File: ./figuras/E10segC_compSPbarQueda.pdf Graphic file (type pdf)
 
 <use ./figuras/E10segC_compSPbarQueda.pdf>
-<./figuras/E10segC_compSpRetirando2.pdf, id=3890, 449.68pt x 339.2675pt>
+<./figuras/E10segC_compSpRetirando2.pdf, id=3889, 449.68pt x 339.2675pt>
 File: ./figuras/E10segC_compSpRetirando2.pdf Graphic file (type pdf)
 
 <use ./figuras/E10segC_compSpRetirando2.pdf>
-<./figuras/E10segC_rocsComp.pdf, id=3891, 507.8975pt x 327.2225pt>
+<./figuras/E10segC_rocsComp.pdf, id=3890, 507.8975pt x 327.2225pt>
 File: ./figuras/E10segC_rocsComp.pdf Graphic file (type pdf)
 
 <use ./figuras/E10segC_rocsComp.pdf>
-<./figuras/E10segC_compSPbar.pdf, id=3892, 302.12875pt x 371.3875pt>
+<./figuras/E10segC_compSPbar.pdf, id=3891, 302.12875pt x 371.3875pt>
 File: ./figuras/E10segC_compSPbar.pdf Graphic file (type pdf)
 
 <use ./figuras/E10segC_compSPbar.pdf> [142 <./figuras/E10segC_compSPbarQueda.pd
@@ -1438,7 +1438,7 @@ File: ./figuras/E10segC_scatterE.pdf Graphic file (type pdf)
 File: ./figuras/E10segC_scatterJ.pdf Graphic file (type pdf)
 
 <use ./figuras/E10segC_scatterJ.pdf>
-Underfull \hbox (badness 10000) in paragraph at lines 1660--1672
+Underfull \hbox (badness 10000) in paragraph at lines 1661--1673
 [][]
  []
 
@@ -1457,15 +1457,16 @@ File: ./figuras/E10segC_compSpCCbar.pdf Graphic file (type pdf)
 
 <use ./figuras/E10segC_compSpCCbar.pdf> [145 <./figuras/E10segCcomp_combtese.pd
 f> <./figuras/E10segC_spNhClasCC.pdf> <./figuras/E10segC_compSpCCbar.pdf>]
-Underfull \hbox (badness 2680) in paragraph at lines 1767--1773
+Underfull \hbox (badness 2680) in paragraph at lines 1768--1774
 \OT1/cmr/m/n/12 Conforme mos-trado nos re-sul-ta-dos ob-ti-dos at^^Se aqui, as 
 t^^Secnicas de pr^^Se-
  []
 
-<./figuras/E10_roc_comp_fisherxnn.pdf, id=3981, 495.8525pt x 358.33875pt>
+[146]
+<./figuras/E10_roc_comp_fisherxnn.pdf, id=3985, 495.8525pt x 358.33875pt>
 File: ./figuras/E10_roc_comp_fisherxnn.pdf Graphic file (type pdf)
 
-<use ./figuras/E10_roc_comp_fisherxnn.pdf> [146]
+<use ./figuras/E10_roc_comp_fisherxnn.pdf>
 <./figuras/E10hist_Anel1E2.pdf, id=3987, 391.4625pt x 265.99374pt>
 File: ./figuras/E10hist_Anel1E2.pdf Graphic file (type pdf)
 
@@ -1481,8 +1482,8 @@ File: ./figuras/E10projICA2d.pdf Graphic file (type pdf)
 <./figuras/E10projSOM2d2.pdf, id=3990, 454.69875pt x 349.305pt>
 File: ./figuras/E10projSOM2d2.pdf Graphic file (type pdf)
 
-<use ./figuras/E10projSOM2d2.pdf> [147 <./figuras/E10_roc_comp_fisherxnn.pdf> <
-./figuras/E10hist_Anel1E2.pdf> <./figuras/E10histPcdE2.pdf>] [148 <./figuras/E1
+<use ./figuras/E10projSOM2d2.pdf> [147 <./figuras/E10_roc_comp_fisherxnn.pdf>]
+[148 <./figuras/E10hist_Anel1E2.pdf> <./figuras/E10histPcdE2.pdf> <./figuras/E1
 0projICA2d.pdf> <./figuras/E10projSOM2d2.pdf>] [149]
 <./figuras/E15local_clusterProbPie.pdf, id=4039, 520.94624pt x 180.675pt>
 File: ./figuras/E15local_clusterProbPie.pdf Graphic file (type pdf)
@@ -1497,7 +1498,7 @@ File: ./figuras/E15local_cluster1Car.pdf Graphic file (type pdf)
 File: ./figuras/E15local_cluster2Car.pdf Graphic file (type pdf)
 
 <use ./figuras/E15local_cluster2Car.pdf>
-Underfull \hbox (badness 10000) in paragraph at lines 1945--1956
+Underfull \hbox (badness 10000) in paragraph at lines 1946--1957
 [][]
  []
 
@@ -1560,7 +1561,7 @@ File: ./figuras/E15som_er_rec_seg.pdf Graphic file (type pdf)
 File: ./figuras/E15som_sp_seg.pdf Graphic file (type pdf)
 
 <use ./figuras/E15som_sp_seg.pdf>
-Underfull \hbox (badness 10000) in paragraph at lines 2105--2121
+Underfull \hbox (badness 10000) in paragraph at lines 2107--2123
 [][]
  []
 
@@ -1834,7 +1835,13 @@ F$\OT1/cmr/m/n/12 0,0045) ms, to-ta-li-zando
 Cap\'{\i }tulo 9.
 [183
 
-] [184]) [185] [186] (./tese_eduardo.bbl [187
+] [184]
+Underfull \hbox (badness 2469) in paragraph at lines 90--99
+[]\OT1/cmr/m/n/12 Considerando o bom de-sem-pe-nho ob-tido com o pr^^Se-process
+amento por
+ []
+
+[185]) [186] (./tese_eduardo.bbl [187
 
 
 ]
@@ -2171,7 +2178,7 @@ onts/cm/cmtt12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/euler/
 eufm10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam10
 .pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb><
 /usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on tese_eduardo.pdf (280 pages, 11536758 bytes).
+Output written on tese_eduardo.pdf (280 pages, 11537996 bytes).
 PDF statistics:
  5661 PDF objects out of 6186 (max. 8388607)
  997 named destinations out of 1000 (max. 500000)

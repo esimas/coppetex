@@ -120,14 +120,14 @@ análise \textit{offline}.
   \begin{foreignabstract}
 ATLAS is the largest detector of the Large Hadron Collider (LHC). A large amount of information is produced 
 in the collisions, but only a small fraction is important for characterizing interesting physics, demanding 
-an efficient online event detection (trigger) system. Electrons are extremally important for the LHC and 
+an efficient online event detection (trigger) system. Electrons are extremelly important for the LHC and 
 are imerse in a huge background noise of hadronic jets, as these last signatures present calorimeter energy 
-deposition profile similar to electrons (calorimeters are highly segmented energy measurement systems and in 
+deposition profile similar to electrons one (calorimeters are highly segmented energy measurement systems and in 
 ATLAS are split into seven layers and more than 100,000 sensing elements). In this work, the nonlinear 
 independent component analysis (NLICA) model is proposed to extract features aiming at the optimization 
 of the ATLAS electron online neural discriminator (Neural Ringer). In order to cope with the full segmentation 
 and granularity available, feature extraction was performed at layer-level. Different algorithms were used 
-for the independent components estimation. Through the proposed approach a higher discrimination efficiency 
+for the independent components estimation. Through the proposed approach, higher discrimination efficiency 
 was achieved, producing cleaner data for offline analysis.
   \end{foreignabstract}
 

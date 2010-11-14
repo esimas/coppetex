@@ -93,7 +93,7 @@
 \contentsline {figure}{\numberline {7.38}{\ignorespaces Curvas ROC obtidas para os diversos m\'etodos de combina\c c\~ao de classificadores.}}{145}{figure.7.38}
 \contentsline {figure}{\numberline {7.39}{\ignorespaces Varia\c c\~ao do m\'aximo SP com o n\'umero de neur\^onios ocultos para a rede combinadora (esquerda) e m\'aximo SP obtido atrav\'es da rede combinadora reirando-se, de modo segmentado, parte da informa\c c\~ao.}}{145}{figure.7.39}
 \contentsline {figure}{\numberline {7.40}{\ignorespaces Curvas ROC para discriminadores lineares (\emph {Fisher}) e n\~ao-lineares (MLP).}}{147}{figure.7.40}
-\contentsline {figure}{\numberline {7.41}{\ignorespaces Histogramas de um sinal em anel da camada E2 (esquerda) e de um dos componentes independentes estimados para a mesma camada (direita).}}{147}{figure.7.41}
+\contentsline {figure}{\numberline {7.41}{\ignorespaces Histogramas de um sinal em anel da camada E2 (esquerda) e de um dos componentes independentes estimados para a mesma camada (direita).}}{148}{figure.7.41}
 \contentsline {figure}{\numberline {7.42}{\ignorespaces Gr\'aficos de dispers\~ao entre componentes independentes estimados por ICA linear (esquerda) e pelo modelo PNL (direita).}}{148}{figure.7.42}
 \contentsline {figure}{\numberline {7.43}{\ignorespaces Divis\~ao dos eventos de el\'etrons e jatos nos dois agrupamentos.}}{150}{figure.7.43}
 \contentsline {figure}{\numberline {7.44}{\ignorespaces Distribui\c c\~oes em energia e $\eta $ dos eventos nos \emph {clusters} 1 (acima) e 2 (abaixo).}}{152}{figure.7.44}
