@@ -27,9 +27,9 @@
   Author = {E. F. {Simas Filho} and J. M. Seixas and L. P. Caloba},
   Journal = {Neurocomputing},
   Title = {Modified Post-Nonlinear ICA Model for Online Neural Discrimination},
-  Volume = {0},
-  number = {0},
-  Pages = {0},
+  Volume = {73},
+  number = {16-18},
+  Pages = {2820-2828},
   Year = {2010}}
 
 
@@ -1177,6 +1177,8 @@ Existence and Uniqueness results},
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
 @INPROCEEDINGS{article:som:visual:1999,
 author={S. Kaski and J. Venna and T.Kohonen},
 booktitle={Proceedings of the International Conference on Neural Information Processing},
@@ -1266,6 +1268,34 @@ author = {E. Cervera and A. P. del Pobil}
   volume =       {22},
   number =       {1},
   pages =        {113-124},
+}
+
+@INPROCEEDINGS{article:sca:2004,
+  AUTHOR =       {Beyond ICA: Robust sparse signal representations},
+  TITLE =        {A Mutual Information Minimization Approach for a Class of Nonlinear Recurrent Separating Systems},
+  BOOKTITLE =    {Proceedings of 2004 IEEE International Symposium on Circuits and Systems},
+  YEAR =         {2004},
+  volume =       {5},
+  pages =        {684-687},
+  address =      {Vancouver, Canad·},
+}
+
+@ARTICLE{article:sca:2005,
+  AUTHOR =       {P. G. Georgiev and F. Theis, and A. Cichocki},
+  TITLE =        {Sparse component analysis and blind source separation of underdetermined mixtures},
+  JOURNAL =      {IEEE Transactions on Neural Networks},
+  YEAR =         {2005},
+  volume =       {16},
+  number =       {4},
+  pages =        {992-996},
+}
+
+@BOOK{book:nmf:2009,
+  AUTHOR =       {Andrzej Cichocki and Rafal Zdunek and Anh Huy Phan and Shun-ichi Amari},
+  TITLE =        {Nonnegative Matrix and Tensor Factorizations: Applications to Exploratory Multi-way Data Analysis and Blind Source Separation},
+  PUBLISHER =    {Wiley},
+  YEAR =         {2009},
+  address =      {West Sussex, Reino Unido},
 }
 
 @BOOK{book:knoll:2000,
@@ -1798,6 +1828,35 @@ author = {E. Cervera and A. P. del Pobil}
 }
 
 
+@PHDTHESIS{tese:cern:2009,
+  AUTHOR =       {Michael James Flowerdew},
+  TITLE =        {Standard Model Z/gamma to ee production in early data at ATLAS},
+  SCHOOL =       {University of Liverpool},
+  YEAR =         {2009},
+  month =        {Dezembro},
+}
+
+@INPROCEEDINGS{article:lhcphysics:2010,
+  AUTHOR =       {Nicolas Kerschen},
+  TITLE =        {Electron performance in the ATLAS experiment},
+  BOOKTITLE =    {Proceedings of Physics at LHC Conference},
+  YEAR =         {2010},
+  pages =        {1-5},
+  month =        {Junho},
+  address =      {Hamburg, Alemanha},
+}
+
+@INPROCEEDINGS{article:lhcphysics2:2010,
+  AUTHOR =       {Marine Kuna},
+  TITLE =        {Electron and Photon Reconstruction and Identification with the ATLAS Detector},
+  BOOKTITLE =    {Proceedings of the Topical Seminar on Innovative Particle and Radiation Detectors},
+  YEAR =         {2010},
+  pages =        {1-5},
+  month =        {Junho},
+  address =      {Siena, It·lia},
+}
+
+
 @BOOK{haykin:nn:2008,
   AUTHOR =       {Simon Haykin},
   TITLE =        {Neural Networks and Learning Machines},
@@ -1936,7 +1995,7 @@ author = {E. Cervera and A. P. del Pobil}
   YEAR =         {2001},
   pages =        {349-373},
   month =        {Julho},
-  address =      {Roma, It√°lia},
+  address =      {Roma, It·lia},
 }
 
 

@@ -1,7 +1,7 @@
 This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: tese_eduardo.aux
 The style file: coppe-unsrt.bst
-Reallocated field_info (elt_size=4) to 10543 items from 5000.
+Reallocated field_info (elt_size=4) to 10566 items from 5000.
 Database file #1: edsimas.bib
 Repeated entry---line 365 of file edsimas.bib
  : %@article{Article:Simasimtc:2005
@@ -98,32 +98,32 @@ You're missing a field name---line 5571 of file edsimas.bib
  :   %year =         {2006},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Unbalanced braces---line 6083 of file edsimas.bib
+Unbalanced braces---line 6101 of file edsimas.bib
  : 
  : }
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Unbalanced braces---line 6491 of file edsimas.bib
+Unbalanced braces---line 6509 of file edsimas.bib
  : 
  : }
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 6661 of file edsimas.bib
+I was expecting a `,' or a `}'---line 6679 of file edsimas.bib
  :   
  :   volume =       "2"
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 6813 of file edsimas.bib
+I was expecting a `,' or a `}'---line 6831 of file edsimas.bib
  :   
  :   volume =       {51},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 6873 of file edsimas.bib
+I was expecting a `,' or a `}'---line 6891 of file edsimas.bib
  :   
  :   month =        {Aug},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 7057 of file edsimas.bib
+You're missing a field name---line 7075 of file edsimas.bib
  : 
  : %  AUTHOR =       {S. Bellini},
 (Error may have been on previous line)
@@ -167,45 +167,45 @@ Warning--empty pages in article:som:visual:1999
 Warning--empty pages in article:som:visual:2000
 Name 2 in "P. G. Georgiev and F. Theis, and A. Cichocki" has a comma at the end for entry article:sca:2005
 while executing---line 2563 of file coppe-unsrt.bst
-You've used 241 entries,
+You've used 242 entries,
             2438 wiz_defined-function locations,
-            1877 strings with 41664 characters,
-and the built_in function-call counts, 58158 in all, are:
-= -- 4684
-> -- 1468
+            1880 strings with 41824 characters,
+and the built_in function-call counts, 58275 in all, are:
+= -- 4692
+> -- 1472
 < -- 224
-+ -- 712
-- -- 471
-* -- 5454
-:= -- 7737
-add.period$ -- 533
-call.type$ -- 241
-change.case$ -- 24
++ -- 714
+- -- 472
+* -- 5465
+:= -- 7758
+add.period$ -- 534
+call.type$ -- 242
+change.case$ -- 25
 chr.to.int$ -- 48
-cite$ -- 268
-duplicate$ -- 3436
-empty$ -- 6581
-format.name$ -- 471
-if$ -- 13320
+cite$ -- 269
+duplicate$ -- 3444
+empty$ -- 6594
+format.name$ -- 472
+if$ -- 13343
 int.to.chr$ -- 0
-int.to.str$ -- 241
+int.to.str$ -- 242
 missing$ -- 273
-newline$ -- 833
-num.names$ -- 242
-pop$ -- 852
+newline$ -- 836
+num.names$ -- 243
+pop$ -- 853
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1335
+skip$ -- 1336
 stack$ -- 0
 substring$ -- 3986
-swap$ -- 1441
+swap$ -- 1443
 text.length$ -- 208
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 27
-while$ -- 474
-width$ -- 244
-write$ -- 2329
+while$ -- 475
+width$ -- 245
+write$ -- 2339
 (There were 31 error messages)

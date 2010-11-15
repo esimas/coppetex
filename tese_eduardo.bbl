@@ -1032,6 +1032,36 @@
   Dependence}, {\em Journal of the American Statistical Association\/}, v.~84,
   n. 405, pp.~586--591, 1989.
 
+\bibitem{book:cosmic:2002}
+\MakeUppercase{ Schlickeiser, R.}, {\em Cosmic Ray Astrophysics\/}.
+\newblock Springer: Nova York, Estados Unidos, 2002.
+
+\bibitem{book:cosmicos:1990}
+\MakeUppercase{ Gaisser, T.~K.}, {\em Cosmic Rays and Particle Physics\/}.
+\newblock Cambridge University Press: Cambridge, Reino Unido, 1990.
+
+\bibitem{ConfNote:ATLAS:2010}
+\MakeUppercase{ ATLAS-Collaboration}, {\em Electron and photon reconstruction
+  and identification in ATLAS: expected performance at high energy and results
+  at 900 GeV\/}, Tech. rep., CERN, Genebra, Suiça, Março 2010.
+
+\bibitem{tese:cern:2009}
+\MakeUppercase{ Flowerdew, M.~J.}, {\em Standard Model Z/gamma to ee production
+  in early data at ATLAS\/}, Ph.D. Thesis, University of Liverpool, Dezembro
+  2009.
+
+\bibitem{article:lhcphysics:2010}
+\MakeUppercase{ Kerschen, N.}, \enquote{Electron performance in the ATLAS
+  experiment}.
+\newblock In: {\em Proceedings of Physics at LHC Conference\/}, pp. 1--5,
+  Hamburg, Alemanha, Junho 2010.
+
+\bibitem{article:lhcphysics2:2010}
+\MakeUppercase{ Kuna, M.}, \enquote{Electron and Photon Reconstruction and
+  Identification with the ATLAS Detector}.
+\newblock In: {\em Proceedings of the Topical Seminar on Innovative Particle
+  and Radiation Detectors\/}, pp. 1--5, Siena, Itália, Junho 2010.
+
 \bibitem{chap:intech:icafis}
 \MakeUppercase{ Torres, R.~C., {Simas Filho}, E.~F., Lima, D. E.~F.,
   \MakeLowercase{et~al.}}, \enquote{Signal Processing}, chap. Segmented Online
@@ -1064,31 +1094,6 @@
   its application for false coloring}.
 \newblock In: {\em Proceedings of the Int. Joint Conference on Neural
   Networks\/}, Julho 2000.
-
-\bibitem{book:cosmic:2002}
-\MakeUppercase{ Schlickeiser, R.}, {\em Cosmic Ray Astrophysics\/}.
-\newblock Springer: Nova York, Estados Unidos, 2002.
-
-\bibitem{book:cosmicos:1990}
-\MakeUppercase{ Gaisser, T.~K.}, {\em Cosmic Rays and Particle Physics\/}.
-\newblock Cambridge University Press: Cambridge, Reino Unido, 1990.
-
-\bibitem{tese:cern:2009}
-\MakeUppercase{ Flowerdew, M.~J.}, {\em Standard Model Z/gamma to ee production
-  in early data at ATLAS\/}, Ph.D. Thesis, University of Liverpool, Dezembro
-  2009.
-
-\bibitem{article:lhcphysics:2010}
-\MakeUppercase{ Kerschen, N.}, \enquote{Electron performance in the ATLAS
-  experiment}.
-\newblock In: {\em Proceedings of Physics at LHC Conference\/}, pp. 1--5,
-  Hamburg, Alemanha, Junho 2010.
-
-\bibitem{article:lhcphysics2:2010}
-\MakeUppercase{ Kuna, M.}, \enquote{Electron and Photon Reconstruction and
-  Identification with the ATLAS Detector}.
-\newblock In: {\em Proceedings of the Topical Seminar on Innovative Particle
-  and Radiation Detectors\/}, pp. 1--5, Siena, Itália, Junho 2010.
 
 \bibitem{book:nmf:2009}
 \MakeUppercase{ Cichocki, A., Zdunek, R., Phan, A.~H., \MakeLowercase{et~al.}},
