@@ -96,7 +96,7 @@ isolamento (periférico e hadrônico), produzindo os sinais do
 conjunto E15i (onde o sufixo i indica a utilização de cortes por
 isolamento). Mais detalhes a respeito das características dos
 conjuntos simulados E10 e E15i serão fornecidos no Capítulo
-\ref{cap_cados}.
+\ref{cap_dadosSim}.
 
 
 \section{Filtragem de Elétrons no L2 - Algoritmo T2Calo}
@@ -515,7 +515,10 @@ abaixo do tempo máximo exigido para o nível 2, que é de 40 ms. Na
 Tabela \ref{tab_ringtime}, são mostradas as diversas etapas
 necessárias para a execução do \textit{Neural Ringer}, juntamente
 com o tempo requerido por cada uma delas (em valores absolutos e
-também percentuais).
+também percentuais). A Figura~\ref{fig_tempos} mostra a proporção 
+entre os tempos gastos considerando todas as etapas de processamento, 
+o que inclui também parte do T2Calo (no gráfico à esquerda) e 
+considerando apenas as etapas específicas do \emph{Ringer} (à direita).
 
 \begin{table}[h!]
 \centering \caption{Tempo gasto nas diversas etapas necessárias
@@ -536,6 +539,21 @@ Ringer}.}\vspace{0.2cm} \footnotesize
 \end{tabular}
 \label{tab_ringtime}
 \end{table}
+
+\begin{figure}[h!]
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=tempos1_pie,width=7.5cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=tempos2_pie,width=7.5cm}}
+\end{minipage}
+\linebreak \caption{Tempos de processamento considerando 
+todas as etapas (esquerda) e somente as etapas específicas do 
+ \emph{Neural Ringer} (direita).} \label{fig_tempos}
+\end{figure}
 
 Embora o \textit{Neural Ringer} tenha, em comparação ao T2Calo,
 produzido um aumento no tempo de execução da ordem de 91$\%$ (de
@@ -653,7 +671,7 @@ alcançado um fator de redução de aproximadamente 4 vezes, mantendo
 desempenho semelhante ao Neural Ringer tradicional. Visando
 explorar toda a granularidade e segmentação disponível aos
 calorímetros do ATLAS, foi proposta a realização do processo de
-compactação de modo segmentado (a nível de cada camada do
+compactação de modo segmentado (em cada camada do
 calorímetro).
 
 No trabalho \cite{tese:torres:2010}, foi utilizada uma técnica de

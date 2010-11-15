@@ -36,39 +36,39 @@
 \contentsline {subsection}{\numberline {4.3.2}Normaliza\c c\~ao}{56}{subsection.4.3.2}
 \contentsline {subsection}{\numberline {4.3.3}Teste de Hip\'oteses - Classificador Neural}{58}{subsection.4.3.3}
 \contentsline {subsection}{\numberline {4.3.4}Tempo de Execu\c c\~ao}{59}{subsection.4.3.4}
-\contentsline {section}{\numberline {4.4}Extens\~oes ao Neural Ringer}{60}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Import\^ancia do Pr\'e-Processamento para Classificadores Neurais}{61}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Pr\'e-Processamento Linear}{62}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Pr\'e-Processamento N\~ao-linear}{63}{subsection.4.4.3}
-\contentsline {chapter}{\numberline {5}An\'alise de Componentes Independentes}{64}{chapter.5}
-\contentsline {section}{\numberline {5.1}Modelo Linear da ICA}{64}{section.5.1}
-\contentsline {section}{\numberline {5.2}ICA N\~ao-Linear}{67}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Unicidade da Solu\c c\~ao em NLICA}{70}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Modelos com Restri\c c\~oes Estruturais}{70}{subsection.5.2.2}
-\contentsline {subsubsection}{Misturas P\'os N\~ao-Lineares}{70}{section*.9}
-\contentsline {subsubsection}{Outros Modelos de Misturas com Restri\c c\~oes Estruturais}{72}{section*.10}
-\contentsline {subsection}{\numberline {5.2.3}Algoritmos sem Restri\c c\~oes Estruturais}{72}{subsection.5.2.3}
-\contentsline {subsubsection}{NLICA a Partir de Mapas Auto-Organiz\'aveis}{73}{section*.11}
-\contentsline {subsubsection}{NLICA a partir de Infer\^encia Bayesiana}{75}{section*.12}
-\contentsline {subsubsection}{O Algoritmo MISEP}{76}{section*.13}
-\contentsline {subsection}{\numberline {5.2.4}ICA Local}{77}{subsection.5.2.4}
-\contentsline {section}{\numberline {5.3}Aplica\c c\~oes de ICA e NLICA para Extra\c c\~ao de Caracter\IeC {\'\i }sticas}{78}{section.5.3}
-\contentsline {section}{\numberline {5.4}Aplica\c c\~oes em F\IeC {\'\i }sica de Altas Energias e \'Areas Correlatas}{81}{section.5.4}
-\contentsline {section}{\numberline {5.5}Utilizando Informa\c c\~ao das Classes na Estima\c c\~ao dos Componentes Independentes}{85}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}Componentes Principais de Discrimina\c c\~ao}{86}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}Utilizando os R\'otulos de Classe como Sinais de Entrada para os Algoritmos de ICA}{87}{subsection.5.5.2}
-\contentsline {subsection}{\numberline {5.5.3}Proposta de Algoritmo para Estima\c c\~ao de Componentes Independentes e Discriminantes}{88}{subsection.5.5.3}
-\contentsline {chapter}{\numberline {6}Metodologia Proposta e Bases de Dados Utilizadas}{92}{chapter.6}
-\contentsline {section}{\numberline {6.1}Par\^ametros de Avalia\c c\~ao do Desempenho}{93}{section.6.1}
-\contentsline {section}{\numberline {6.2}Extra\c c\~ao de Caracter\IeC {\'\i }sticas}{94}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Algoritmos de Extra\c c\~ao de Caracter\IeC {\'\i }sticas}{96}{subsection.6.2.1}
-\contentsline {section}{\numberline {6.3}Classifica\c c\~ao}{97}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Combina\c c\~ao de M\'ultiplos Classificadores}{98}{subsection.6.3.1}
-\contentsline {section}{\numberline {6.4}Especifica\c c\~oes de Treinamento}{99}{section.6.4}
-\contentsline {section}{\numberline {6.5}Bases de Dados}{101}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}Dados Simulados}{102}{subsection.6.5.1}
-\contentsline {subsection}{\numberline {6.5.2}Dados Experimentais}{108}{subsection.6.5.2}
-\contentsline {subsubsection}{Sinais de Raios C\'osmicos}{108}{section*.14}
+\contentsline {section}{\numberline {4.4}Extens\~oes ao Neural Ringer}{61}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Import\^ancia do Pr\'e-Processamento para Classificadores Neurais}{62}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Pr\'e-Processamento Linear}{63}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Pr\'e-Processamento N\~ao-linear}{64}{subsection.4.4.3}
+\contentsline {chapter}{\numberline {5}An\'alise de Componentes Independentes}{65}{chapter.5}
+\contentsline {section}{\numberline {5.1}Modelo Linear da ICA}{65}{section.5.1}
+\contentsline {section}{\numberline {5.2}ICA N\~ao-Linear}{68}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Unicidade da Solu\c c\~ao em NLICA}{71}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Modelos com Restri\c c\~oes Estruturais}{71}{subsection.5.2.2}
+\contentsline {subsubsection}{Misturas P\'os N\~ao-Lineares}{71}{section*.9}
+\contentsline {subsubsection}{Outros Modelos de Misturas com Restri\c c\~oes Estruturais}{73}{section*.10}
+\contentsline {subsection}{\numberline {5.2.3}Algoritmos sem Restri\c c\~oes Estruturais}{73}{subsection.5.2.3}
+\contentsline {subsubsection}{NLICA a Partir de Mapas Auto-Organiz\'aveis}{74}{section*.11}
+\contentsline {subsubsection}{NLICA a partir de Infer\^encia Bayesiana}{76}{section*.12}
+\contentsline {subsubsection}{O Algoritmo MISEP}{77}{section*.13}
+\contentsline {subsection}{\numberline {5.2.4}ICA Local}{78}{subsection.5.2.4}
+\contentsline {section}{\numberline {5.3}Aplica\c c\~oes de ICA e NLICA para Extra\c c\~ao de Caracter\IeC {\'\i }sticas}{79}{section.5.3}
+\contentsline {section}{\numberline {5.4}Aplica\c c\~oes em F\IeC {\'\i }sica de Altas Energias e \'Areas Correlatas}{82}{section.5.4}
+\contentsline {section}{\numberline {5.5}Utilizando Informa\c c\~ao das Classes na Estima\c c\~ao dos Componentes Independentes}{86}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Componentes Principais de Discrimina\c c\~ao}{87}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Utilizando os R\'otulos de Classe como Sinais de Entrada para os Algoritmos de ICA}{88}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}Proposta de Algoritmo para Estima\c c\~ao de Componentes Independentes e Discriminantes}{89}{subsection.5.5.3}
+\contentsline {chapter}{\numberline {6}Metodologia Proposta e Bases de Dados Utilizadas}{93}{chapter.6}
+\contentsline {section}{\numberline {6.1}Par\^ametros de Avalia\c c\~ao do Desempenho}{94}{section.6.1}
+\contentsline {section}{\numberline {6.2}Extra\c c\~ao de Caracter\IeC {\'\i }sticas}{95}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Algoritmos de Extra\c c\~ao de Caracter\IeC {\'\i }sticas}{97}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}Classifica\c c\~ao}{98}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Combina\c c\~ao de M\'ultiplos Classificadores}{99}{subsection.6.3.1}
+\contentsline {section}{\numberline {6.4}Especifica\c c\~oes de Treinamento}{100}{section.6.4}
+\contentsline {section}{\numberline {6.5}Bases de Dados}{102}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Dados Simulados}{103}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {6.5.2}Dados Experimentais}{107}{subsection.6.5.2}
+\contentsline {subsubsection}{Sinais de Raios C\'osmicos}{110}{section*.14}
 \contentsline {subsubsection}{Sinais de Colis\~oes do LHC}{111}{section*.15}
 \contentsline {chapter}{\numberline {7}Resultados - Dados Simulados}{118}{chapter.7}
 \contentsline {section}{\numberline {7.1}Conjunto E10}{119}{section.7.1}

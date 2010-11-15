@@ -421,23 +421,23 @@ simulados, e em sequencia, os sinais experimentais.
 
 \subsection{Dados Simulados}
 
-Os dados simulados utilizados são compostos de elétrons isolados
-(\emph{single electrons}) e jatos hadrônicos. Dois cortes
-distintos foram aplicados no primeiro nível. Um deles simula a
-etapa inicial de operação do detector, onde a seleção do L1 é mais
-branda. O outro corte é mais seletivo, se assemelhando aos que
-serão utilizados num estágio mais avançado da operação, onde o
-objetivo é eliminar a maior parte do falso alarme. Mais detalhes a
-respeito dos dois conjuntos simulados utilizados serão
-apresentados no Capitulo~\ref{cap_dadosSim}.
-
+%Os dados simulados utilizados são compostos de elétrons isolados
+%(\emph{single electrons}) e jatos hadrônicos. Dois cortes
+%distintos foram aplicados no primeiro nível. Um deles simula a
+%etapa inicial de operação do detector, onde a seleção do L1 é mais
+%branda. O outro corte é mais seletivo, se assemelhando aos que
+%serão utilizados num estágio mais avançado da operação, onde o
+%objetivo é eliminar a maior parte do falso alarme. Mais detalhes a
+%respeito dos dois conjuntos simulados utilizados serão
+%apresentados no Capitulo~\ref{cap_dadosSim}.
+%
 %\section{Características dos Sinais Simulados}
 %
 Os eventos simulados utilizados foram produzidos por simulações de
 Monte Carlo pela colaboração do ATLAS, utilizando os simuladores
 \textit{Pythia} (que produz as colisões) e \textit{Geant} (que
 realiza a interação dos eventos com o detector). Os sinais de
-interesse são elétrons isolados distribuídos uniformemente em
+interesse são elétrons isolados distribuídos uniformemente na faixa
 $7<E_T<80$ GeV (onde $E_T$ é a energia transversa). O ruído de
 fundo é constituído de jatos com pelo menos um componente
 eletromagnético com $E_T>17$ GeV.
@@ -485,7 +485,7 @@ quantidade inicial de assinaturas é justificada pelo fato de terem
 sido gerados por versões distintas do \textit{software} do sistema
 de filtragem (Athena).
 
-\begin{table}[t]
+\begin{table}[b]
 \centering \caption{Composição das bases de dados utilizadas antes
 e depois do corte de primeiro nível.}\vspace{.3cm} \footnotesize
 \begin{tabular}{c|c c c| c c c}
@@ -509,17 +509,17 @@ assinaturas com energia mais alta (pois nestas assinaturas os
 cortes por vazamento hadrônico e isolamento em energia são mais
 eficientes). Sendo assim, os jatos E15i tem um ligeiro
 deslocamento em relação a energias mais baixas se comparados aos
-do conjunto E10. A distribuição em $\eta$ e $\phi$ são semelhantes
+do conjunto E10. As distribuições em $\eta$ e $\phi$ são semelhantes
 para os dois conjuntos.
 
-\begin{figure}[h!]
+\begin{figure}[b!]
 \begin{minipage}[b]{.48\linewidth}
-  \centering
+  \centering \footnotesize{Elétrons}
  \centerline{\epsfig{file=compE_e10e15_et,width=7cm}}
 \end{minipage}
 \hfill
 \begin{minipage}[b]{.48\linewidth}
-  \centering
+  \centering \footnotesize{Jatos}
  \centerline{\epsfig{file=compJ_e10e15_et,width=7cm}}
  \end{minipage}
 \hfill \linebreak
@@ -557,14 +557,14 @@ cortes considerando estes parâmetros) do que os jatos E10, sendo
 mais parecidos com os elétrons e portanto representando um ruído
 de fundo de mais difícil identificação.
 
-\begin{figure}[h!]
+\begin{figure}[b!]
 \begin{minipage}[b]{0.48\linewidth}
-  \centering
+  \centering \footnotesize{Elétrons}
  \centerline{\epsfig{file=evento_medioE10_ele,width=8cm}}
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\linewidth}
-  \centering
+  \centering \footnotesize{Jatos}
  \centerline{\epsfig{file=evento_medioE10_jat,width=8cm}}
 \end{minipage}
 \caption{Sinais em anéis (média e desvio padrão) para elétrons
@@ -572,14 +572,14 @@ de fundo de mais difícil identificação.
 E10.}\label{emedE10}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[b!]
 \begin{minipage}[b]{0.48\linewidth}
-  \centering
+  \centering \footnotesize{Elétrons}
  \centerline{\epsfig{file=evento_medioE15_ele,width=8cm}}
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\linewidth}
-  \centering
+  \centering \footnotesize{Jatos}
  \centerline{\epsfig{file=evento_medioE15_jat,width=8cm}}
 \end{minipage}
 \caption{Sinais em anéis (média e desvio padrão) para elétrons
@@ -653,7 +653,8 @@ identificado um vazamento de gás Hélio do sistema de refrigeração
 para o túnel do LHC, comprometendo a segurança do acelerador). Foi
 estabelecido um cronograma para o comissionamento do acelerador,
 que contemplou a gradual elevação na energia e na quantidade de prótons 
-em cada feixe. 
+em cada feixe (o que é diretamente proporcional à luminosidade 
+produzida). 
 
 Ainda em novembro de 2009 o LHC atingiu 1,18~TeV e definiu um novo
 recorde mundial (que até aquele momento era de 0.98~TeV, alcançado
@@ -662,7 +663,7 @@ foi elevada para 3~TeV e atualmente está na faixa de 7~TeV (que embora
 seja 7 vezes maior que a energia do Tevatron, é apenas
 metade da energia de projeto para o LHC que é de aproximadamente 14~TeV).
 
-Na Figura \ref{fig_evZee} pode-se visualizar um evento (colisão)
+Na Figura \ref{fig_evZee}, pode-se visualizar um evento (colisão)
 do LHC onde foram gerados um elétron e um anti-elétron num provável 
 decaimento de um bóson Z. Nos dois ângulos de corte é possível 
 visualizar a sensibilização dos calorímetros a partir da interação com o elétron 
@@ -717,7 +718,7 @@ Z em dois elétrons  (elétron e anti-elétron), extraído de \cite{Homepage:ATLAS}.
 %\label{fig_evMu}
 %\end{figure}
 
-Para avaliar a eficiência dos métodos propostos 
+Para avaliar a eficiência dos métodos propostos, 
 foram utilizados dois tipos de sinais experimentais: assinaturas de 
 raios cósmicos e sinais medidos em colisões do LHC. As principais 
 características destes conjuntos serão mostradas a seguir.
@@ -738,14 +739,14 @@ compostos essencialmente por múons. A energia destas partículas
 pode ser alta, atingindo até $10^{20}$~eV.
 
 Alguns estudos conduzidos no ATLAS estão interessados na análise
-dos raios cósmicos, porém, considerando o canal elétron/jato, os
+dos raios cósmicos, porém, considerando a detecção de elétrons, os
 raios cósmicos constituem uma fonte de ruído de fundo, que deve
 ser eliminada (ou pelo menos atenuada) pelo sistema de filtragem.
 Em momentos quando o LHC está desligado (não havendo portanto
 outra fonte de sinal para os calorímetros), foram coletadas
 diversas assinaturas originadas por raios cósmicos, que serão
 utilizadas para verificar a robustez do sistema de filtragem a
-essa fonte de ruído. O conjunto utilizado é composto de 26.347
+essa fonte de ruído de fundo. O conjunto utilizado é composto de 26.347
 eventos adquiridos durante o ano de 2009.
 
 Na Figura \ref{fig_carcosmic}, pode-se observar a distribuição
@@ -818,15 +819,12 @@ filtragem.
 Em sua fase inicial de operação, o LHC
 irá operar com energias mais baixas do que a nominal (que é de
 aproximadamente 14 TeV). Nos dados mais recentes, a energia máxima
-das colisões está limitada em 7~TeV, 3,5~TeV por cada feixe (que,
-embora represente apenas metade da energia de projeto do LHC, já é
-um valor sete vezes maior que o antigo recorde mundial, que
-pertencia ao acelerador Tevatron do Fermilab desde 2001).
+das colisões está limitada em 7~TeV, 3,5~TeV por cada feixe.
 
 Outra característica importante é a luminosidade (que indica a quantidade 
 de partículas por centímetro quadrado do detector a cada segundo), pois 
 quanto maior a luminosidade, maior a probabilidade de ocorrência 
-de eventos. Na Figura~\ref{fig_lumEc} pode-se observar a variação das 
+de eventos de interesse. Na Figura~\ref{fig_lumEc} pode-se observar a variação das 
 taxas de aceitação de assinaturas eletromagnéticas pelo primeiro nível 
 em função da luminosidade. Fica claro que, as taxas aumentam, de modo 
 aproximadamente linear, com a luminosidade.
@@ -873,16 +871,18 @@ discriminadores propostos, foram utilizadas informações obtidas da reconstrução 
 que indicam a probabilidade de um certo evento ser ou não um
 elétron, conforme descrito a seguir. 
 
+\vspace{0.5cm}
 \textbf{Critérios de Identificação de Elétrons na Análise \emph{Offline}}
+\vspace{0.5cm}
 
 O procedimento padrão para seleção de elétrons através da análise 
 \emph{offline} no ATLAS consiste em uma série de cortes lineares em 
 variáveis capazes de discriminar o sinal de elétrons dos diversos tipos 
 de ruído de fundo~\cite{tese:cern:2009}.
 
-Ao todo são calculadas em torno de 20 variáveis são calculadas a partir das 
-informações dos calorímetros de dos detectores de traço. Estes parâmetros 
-podem ser consideradas individualmente ou combinadas três conjuntos de referência 
+Ao todo, em torno de 20 variáveis são calculadas a partir das 
+informações dos calorímetros e dos detectores de traço. Estes parâmetros 
+podem ser consideradas individualmente ou combinadas em três conjuntos de referência 
 para produzir três tipos de cortes pré-estabelecidos com diferentes graus de 
 rejeição do ruído de fundo~\cite{article:lhcphysics:2010}:
 \begin{itemize}
@@ -905,7 +905,7 @@ Deste modo, é possível obter uma maior eficiência na identificação de elétrons e
 eliminação de fótons.
 \end{itemize}
 
-A eficiência dos critérios de seleção podem variar em função da energia e da posição de 
+A eficiência dos critérios de seleção pode variar em função da energia e da posição de 
 interação no detector. Conforme mostrado na Figura~\ref{fig_perfOff}, pode-se observar 
 que, em troca de uma maior redução na aceitação de falso alarme, o critério \emph{tight} 
 produz menor eficiência na idntificação de elétrons, principalmente em energia menor que 
@@ -931,17 +931,17 @@ seleção \emph{offline} do ATLAS. Na Tabela~\ref{tab_compOffline} são mostradas a
 composições dos conjuntos original (sem nenhum corte) e após cada um dos cortes 
 (para a associação dos tipos de assinaturas foi utilizada a ``verdade'' obtida do simulador).
 Pode-se observar que, a maioria ($\sim$82~\%) das assinaturas aprovadas no corte \emph{loose} são 
-hádrons, $\sim$16~\% são elétrons produzidos a partir da conversão de fótons ou outras 
-partículas durante a interação com o calorímetro e apenas 1,6~\% são elétrons.
+hádrons, $\sim$16~\% são elétrons produzidos a partir da conversão de fótons 
+durante a interação com o detector e apenas 1,6~\% são elétrons.
 Nos critérios \emph{medium} e \emph{tight} a concentração de elétrons é gradualmente 
 aumentada, enquanto que a de partículas hadrônicas vai sendo reduzida, de modo que, 
 48~\% das assinaturas aprovadas no critério \emph{tight} são elétrons e a parcela de 
 jatos hadrônicos foi reduzida a aproximadamente 30~\%.
 
-\begin{table}[h!]
+\begin{table}[b!]
 \centering \caption[Composição das assinaturas em diferentes critérios 
 da análise \emph{offline}.]{Composição das assinaturas em diferentes critérios 
-da análise \emph{offline}, retirado de~\cite{article:lhcphysics:2010}}
+da análise \emph{offline}, retirado de~\cite{article:lhcphysics:2010}.}
 \vspace{0.2cm} \footnotesize
 \begin{tabular}{|c|c|c|c|}
     \cline{2-4} 
@@ -965,6 +965,8 @@ que não passaram no critério \emph{electron loose} do
 \textit{offline} (são eventos com probabilidade muito baixa de
 serem elétrons). 
 
+\pagebreak
+
 \textbf{Run 1}
 
 O primeiro conjunto de sinais experimentais de colisões analisado foi obtido de 
@@ -987,7 +989,7 @@ de $|\eta|\sim 1,5$ (região do \emph{crack}) é bastante reduzida
 (com uma menor quantidade de sensores nesta área do detector 
 os eventos não são caracterizados adequadamente e a probabilidade 
 de aceitação no corte do L1 é menor). Os eventos aprovados no 
-critério~\emph{electron tight} também apresentam baixa concentração 
+critério \emph{electron tight} também apresentam baixa concentração 
 para $|\eta|< 0,5$ (o que pode ser explicado por uma menor eficiência 
 deste critério de seleção nesta região do detector, conforme mostrado 
 anteriormente na Figura~\ref{fig_perfOff}. As distribuições em $\phi$ tem um
@@ -996,54 +998,51 @@ comportamento mais uniforme.
 \begin{figure}[bth]
 \begin{minipage}[b]{0.48\linewidth}
   \centering
- \centerline{\epsfig{file=exp1_et,width=8cm}}
+ \centerline{\epsfig{file=exp1_et,width=7.5cm}}
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\linewidth}
   \centering
- \centerline{\epsfig{file=exp1_eta,width=8cm}}
+ \centerline{\epsfig{file=exp1_eta,width=7.5cm}}
 \end{minipage}
 \hfill \linebreak
 \begin{minipage}[b]{0.98\linewidth}
   \centering
- \centerline{\epsfig{file=exp1_phi,width=8cm}}
+ \centerline{\epsfig{file=exp1_phi,width=7.5cm}}
 \end{minipage}
 \caption{Histogramas em energia $\eta$ e $\phi$ dos eventos de
 colisões do LHC.}\label{fig_carexp}
 \end{figure}
 
-...
-
-
-Um comparativo entre os eventos médios do conjunto simulado (corte
-E10) e dos sinais experimentais é apresentado na
-Figura~\ref{fig_exp_compEvMed}. Como a implementação do
-\emph{Ringer} na plataforma de software do ATLAS utilizava, no
+Na Figura~\ref{fig_exp_compEvMed} são mostrados os eventos médios 
+para as assinaturas aprovadas no critério \emph{electron tight} 
+(``elétrons'') e as reprovadas no critério \emph{electron loose} 
+(``jatos''). Como a implementação do \emph{Ringer} na plataforma 
+de software do ATLAS utilizava, no
 momento da aquisição dos dados, a normalização sequencial, os
 eventos são mostrados neste formato. Pode-se observar que, os
-eventos experimentais de elétrons tem, em média, maior energia
-hadrônica e menor concentração espacial se comparados aos
-simulados. Considerando os jatos, as diferenças são um pouco
-menores, porém, pode-se notar uma menor intensidade de energia
-hadrônica nos sinais experimentais. Deste modo, os sinais
-experimentais das duas classes apresentam maior semelhança, o que
-torna mais difícil sua separação.
+eventos se aproximam das características esperadas para as duas 
+classes (semelhante ao observado nos sinais simulados). Uma 
+particularidade observada nos eventos de ``elétrons'' é uma maior 
+concentração de energia hadrônica se comparados aos sinais 
+experimentais (que pode ser originada de fatores 
+como a maior influência do ruído de medição em sinais de 
+baixa energia e a possível presença de algumas assinaturas 
+hadrônicas no conjunto aprovado no critério \emph{electron tight}).
 
 \begin{figure}[th]
 \begin{minipage}[b]{0.48\linewidth}
   \centering
-  \centerline{\footnotesize ``Elétrons''}\medskip
- \centerline{\epsfig{file=exp1_evE,width=7cm}}
+  \centerline
+ \centerline{\epsfig{file=exp1_evE,width=7.2cm}}
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\linewidth}
   \centering
-  \centerline{\footnotesize ``Jatos''}\medskip
- \centerline{\epsfig{file=exp1_evJ,width=7cm}}
+  \centerline
+ \centerline{\epsfig{file=exp1_evJ,width=7.2cm}}
 \end{minipage}
-\caption{Comparativo entre os eventos médios para o conjunto
-simulado-E10 (acima) e os sinais experimentais
-(abaixo).}\label{fig_exp_compEvMed}
+\caption{Sinais experimentais médios de elétrons e jatos.}\label{fig_exp_compEvMed}
 \end{figure}
 
 

@@ -515,7 +515,10 @@ abaixo do tempo máximo exigido para o nível 2, que é de 40 ms. Na
 Tabela \ref{tab_ringtime}, são mostradas as diversas etapas
 necessárias para a execução do \textit{Neural Ringer}, juntamente
 com o tempo requerido por cada uma delas (em valores absolutos e
-também percentuais).
+também percentuais). A Figura~\ref{fig_tempos} mostra a proporção 
+entre os tempos gastos considerando todas as etapas de processamento, 
+o que inclui também parte do T2Calo (no gráfico à esquerda) e 
+considerando apenas as etapas específicas do \emph{Ringer} (à direita).
 
 \begin{table}[h!]
 \centering \caption{Tempo gasto nas diversas etapas necessárias
@@ -536,6 +539,21 @@ Ringer}.}\vspace{0.2cm} \footnotesize
 \end{tabular}
 \label{tab_ringtime}
 \end{table}
+
+\begin{figure}[h!]
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=tempos1_pie,width=7.5cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=tempos2_pie,width=7.5cm}}
+\end{minipage}
+\linebreak \caption{Tempos de processamento considerando 
+todas as etapas (esquerda) e somente as etapas específicas do 
+ \emph{Neural Ringer} (direita).} \label{fig_tempos}
+\end{figure}
 
 Embora o \textit{Neural Ringer} tenha, em comparação ao T2Calo,
 produzido um aumento no tempo de execução da ordem de 91$\%$ (de
@@ -568,7 +586,7 @@ classificadores neurais (em um caso genérico) e os trabalhos
 desenvolvidos neste sentido no contexto do projeto \textit{Neural
 Ringer}.
 
-\begin{figure} \centering
+\begin{figure}[h] \centering
 \includegraphics[width=15cm]{cap3_ringerext}
 \caption{Fluxo de processamento das extensões ao \textit{Neural
 Ringer}.} \label{fig_ringerext}
