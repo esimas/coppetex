@@ -433,11 +433,12 @@ simulados, e em sequencia, os sinais experimentais.
 %
 %\section{Características dos Sinais Simulados}
 %
+
 Os eventos simulados utilizados foram produzidos por simulações de
-Monte Carlo pela colaboração do ATLAS, utilizando os simuladores
+Monte Carlo~\cite{book:montecarlo:2004} pela colaboração do ATLAS, utilizando os simuladores
 \textit{Pythia} (que produz as colisões) e \textit{Geant} (que
-realiza a interação dos eventos com o detector). Os sinais de
-interesse são elétrons isolados distribuídos uniformemente na faixa
+realiza a interação dos eventos com o detector)~\cite{TDR1:ATLAS:1999}. 
+Os sinais de interesse são elétrons isolados distribuídos uniformemente na faixa
 $7<E_T<80$ GeV (onde $E_T$ é a energia transversa). O ruído de
 fundo é constituído de jatos com pelo menos um componente
 eletromagnético com $E_T>17$ GeV.
@@ -861,7 +862,10 @@ Os eventos utilizados nas análises apresentadas nesta tese foram produzidos
 em \emph{runs} de baixa luminosidade. Como a taxa de produção de eventos foi 
 baixa, foram gravados todas as assinaturas aprovadas pelo primeiro nível 
 (ou seja, a filtragem de alto nível não estava operando). As assinaturas 
-gravadas foram, então, submetidas à análise \emph{offline}.
+gravadas foram, então, submetidas à análise \emph{offline}. A filtragem de primeiro 
+nível realizou um corte na energia total em 2~GeV (L1EM2), gerando assinaturas 
+de segundo nível concentradas em energias maiores que 3~GeV (assinaturas do 
+tipo E3). 
 
 De modo distinto aos sinais simulados (que obtêm do próprio software 
 simulador a certificação do tipo de partícula produzida), nos sinais 
@@ -939,8 +943,8 @@ aumentada, enquanto que a de partículas hadrônicas vai sendo reduzida, de modo q
 jatos hadrônicos foi reduzida a aproximadamente 30~\%.
 
 \begin{table}[b!]
-\centering \caption[Composição das assinaturas em diferentes critérios 
-da análise \emph{offline}.]{Composição das assinaturas em diferentes critérios 
+\centering \caption[Composição das assinaturas de sinais simulados aprovados em diferentes critérios 
+da análise \emph{offline}.]{Composição das assinaturas de sinais simulados aprovados em diferentes critérios 
 da análise \emph{offline}, retirado de~\cite{article:lhcphysics:2010}.}
 \vspace{0.2cm} \footnotesize
 \begin{tabular}{|c|c|c|c|}
@@ -973,9 +977,10 @@ O primeiro conjunto de sinais experimentais de colisões analisado foi obtido de
 uma \emph{run} do dia 25 de maio de 2010. A energia de cada feixe foi de 3,5~GeV 
 (totalizando 7~GeV) e a luminosidade máxima igual a 2,1$\times 10^{29} cm^{-2}s^{-1}$.
 
-Os eventos aprovados no corte EM2 do primeiro nível (e consequentemente salvos em 
-mídia permanente, pois a filtragem de alto nível não estava operando) foram 
-submetidos aos critérios de seleção da análise \emph{offline} e aproximadamente 
+Os eventos aprovados no corte EM2 do primeiro nível (eventos que depositaram mais de 
+2~GeV de energia nos calorímetros), e consequentemente salvos em 
+mídia permanente, pois a filtragem de alto nível não estava operando, foram 
+submetidos aos critérios de seleção da análise \emph{offline}. Aproximadamente 
 9.000 assinaturas foram aceitas pelo \emph{electron tight} (e, então, consideradas 
 nas análises como elétrons). Um total de aproximadamente 2.000.000 de assinaturas 
 foram reprovadas no critério \emph{electron loose} (e, assim, consideradas como 
@@ -997,7 +1002,7 @@ comportamento mais uniforme.
 
 \begin{figure}[bth]
 \begin{minipage}[b]{0.48\linewidth}
-  \centering
+  \centering 
  \centerline{\epsfig{file=exp1_et,width=7.5cm}}
 \end{minipage}
 \hfill
@@ -1032,17 +1037,15 @@ hadrônicas no conjunto aprovado no critério \emph{electron tight}).
 
 \begin{figure}[th]
 \begin{minipage}[b]{0.48\linewidth}
-  \centering
-  \centerline
- \centerline{\epsfig{file=exp1_evE,width=7.2cm}}
+  \centering \footnotesize{Aprovados no \emph{electron tight} - ``Elétrons''}
+  \centerline{\epsfig{file=exp1_evE,width=7.7cm}}
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\linewidth}
-  \centering
-  \centerline
- \centerline{\epsfig{file=exp1_evJ,width=7.2cm}}
+  \centering \footnotesize{Reprovados no \emph{electron loose} - ``Jatos''}
+  \centerline{\epsfig{file=exp1_evJ,width=7.7cm}}
 \end{minipage}
-\caption{Sinais experimentais médios de elétrons e jatos.}\label{fig_exp_compEvMed}
+\caption{Sinais experimentais médios de ``elétrons'' e ``jatos''.}\label{fig_exp_compEvMed}
 \end{figure}
 
 

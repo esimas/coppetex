@@ -586,7 +586,7 @@ classificadores neurais (em um caso genérico) e os trabalhos
 desenvolvidos neste sentido no contexto do projeto \textit{Neural
 Ringer}.
 
-\begin{figure} \centering
+\begin{figure}[h] \centering
 \includegraphics[width=15cm]{cap3_ringerext}
 \caption{Fluxo de processamento das extensões ao \textit{Neural
 Ringer}.} \label{fig_ringerext}
