@@ -1,0 +1,5 @@
+\chapter{Estudo a Respeito do Tempo de Processamento dos Algoritmos}
+
+Neste capítulo será apresentado um estudo a respeito do tempo de processamento exigido pelos algoritmos propostos. Considerando que a aplicação exige uma resposta em no máximo 40 ms, o tempo de processamento é um fator limitante na escolha dos algoritmos de filtragem.
+
+

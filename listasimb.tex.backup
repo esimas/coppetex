@@ -1,0 +1,163 @@
+\chapter{Símbolos e Abreviaturas}
+
+
+\section*{S\'{\i}mbolos}
+
+%   \a In a tabbing environment, the commands \=, \' and \` do not
+%   produce accents as normal. Instead, the commands \a=, \a' and \a`
+%   are used.
+
+\begin{tabbing}
+\hspace*{2.2cm}\=amostra de coluna que vem depois \= \kill
+
+$c$ \> Velocidade da Luz no Vácuo\\
+$E$ \> Energia \\
+$eV$ \> Elétron-Volt \\
+$\mathcal{E}(.)$ \> Operador esperança \\
+$Ef_i$ \> Eficiência de discriminação da classe $i$\\
+$E_T$ \> Energia transversa\\
+$E_T^{miss}$ \> Energia transversa faltante\\
+$H(.)$ \> Entropia\\
+$I(.)$ \> Informação mútua\\
+$J(.)$ \> Negentropia\\
+$kurt(.)$ \> Curtose\\
+$m$ \> Massa\\
+$p_T$ \> Momento transverso\\
+$p_x(x)$ \> Função de densidade de probabilidade\\
+$\eta$ \> Pseudo-rapidez (sistema de coordenadas do ATLAS)\\
+$\theta$ \> Ângulo polar (sistema de coordenadas do ATLAS)\\
+$\lambda(.)$ \> Razão de semelhança\\
+$\phi$ \> Ângulo azimutal (sistema de coordenadas do ATLAS)\\
+$e^-/j$ \> Elétron/Jato\\
+$\mathbf{s}$ \> Vetor das fontes independentes\\
+$\mathbf{x}$ \> Vetor dos sinais observados (medidos)\\
+$\mathbf{y}$ \> Vetor dos componentes independentes estimados\\
+$\mathbf{z}$ \> Vetor dos sinais branqueados\\
+
+%$x(t)$ \> Sinal de informação contínuo, no domínio do tempo\\
+%$j$ \> $\sqrt{-1}$\\
+%$c_k$ \> Coeficientes da série de Fourier\\
+%$x[n]$ \> Sinal de informação discreto\\
+%$X(\omega)$ \> Espectro contínuo de freqüências de $x(t)$\\
+%$X(\Omega)$ \> Espectro contínuo de freqüências de $x[n]$\\
+%$r_{xx}$ \> Auto-correlação de um sinal \\
+%$c_{xx}$ \> Auto-covariância de um sinal\\
+%$r_{xy}$ \> Correlação cruzada\\
+%$P_{xx}$ \> Densidade espectral de potência\\
+%$E(.)$ \> Operador esperança\\
+%$\eta_T$ \> Média temporal\\
+%$\eta$ \> Média ou esperança\\
+%$\rho_{m}$ \> Variância do ruído branco\\
+%$a[k]$ e $b[k]$ \> Parâmetros auto-regressivos do modelo ARMA\\
+%$P_N$ \> Potência média do ruído branco
+%$\Re$ \> Conjunto dos números reais\\
+%$C^{1}$ e $C^{2}$ \> Conjunto das funções diferenciáveis de
+%primeira
+%e segunda ordem\\
+%$f'$ e $f''$ \> Primeira e segunda derivadas da função
+%$f(x)$\\
+%$\nabla f(\textbf{x})$ \> Vetor das derivadas parciais de $f(x)$ (Gradiente)\\
+%$\textbf{F}(\textbf{x})$ \> Matriz das segundas derivadas de
+%$f(x)$ (Hessiana)\\
+
+\end{tabbing}
+
+%\newpage
+
+\section*{Abreviaturas}
+
+No caso de algumas abreviaturas internacionalmente conhecidas,
+optou-se por mantê-las em inglês.
+
+\begin{tabbing}{ll}
+\hspace*{2cm}\= \kill
+
+AG \> Algoritmo Genético\\
+ALEPH \> Detector do acelerador LEP\\
+ALICE \> Detector do LHC\\
+ASIC \> \emph{Application specific integrated circuit}\\
+ATLAS \> \textit{A Toroidal LHC AparattuS}\\
+BOOSTER \> Experimento do laboratório Fermilab\\
+cdf \> Função de distribuição cumulativa\\
+CERN \> Centro Europeu para Pesquisa Nuclear\\
+CHOOZ \> Experimento de Física de Alta Energia\\
+CMB \> \textit{Cosmic Microwave Background}\\
+CMS \> Detector do LHC\\
+CP \> \textit{Charge parity}\\
+CPLD \> \textit{Complex Programmable Logic Device}\\
+CTP \> \emph{Central Trigger Processor}\\
+D0 \> Detector do Fermilab\\
+DELPHI \> Detector do LEP\\
+DESY \> \textit{Deutsches Elektronen-SynchrotronDie}\\
+DL \> Discriminante Linear\\
+DSP \> \emph{Digital signal processing}\\
+EF \> Filtro de Eventos (\textit{Event Filter})\\
+EM \> Eletromagnético\\
+FastICA \> Algoritmo de extração das componentes independentes\\
+FDL \> Discriminante linear de Fisher\\
+FPGA \> \textit{Field-Programmable Gate Array}\\
+Fermilab \> \textit{Fermi National Accelerator Laboratory}\\
+%DFT \> \textit{Discrete Fourier transform}\\
+%DTFT  \> \textit{Discrete time Fourier transform} \\
+%FFT \> \textit{Fast Fourier transform algorithm}\\
+%FT \>  \textit{Fourier transform}\\
+GEANT \> Simulador de Monte Carlo para colisões de partículas\\
+GTM \> \textit{Generative topographic mapping}\\
+H1 \> Detector do acelerador HERA\\
+HAD \> Hadrônico\\
+HLT \> \textit{High Level Trigger}\\
+HEGRA \> Experimento de astrofísica de alta energia\\
+HEP \> \textit{High-Energy Physics}\\
+HERA \> Experimento do laboratório DESY\\
+HERWIG \> Simulador de Monte Carlo para colisões de partículas\\
+IATC \> Técnica de Cherenkov para imageamento atmosférico\\
+IC \> Componentes independentes\\
+ICA \> \textit{Independent components analysis}\\
+INFOMAX \> \emph{Information maximization algorithm}\\
+ISAJET \> Simulador de Monte Carlo para colisões de partículas\\
+JADE \> \textit{Joint Approximate Diagonalization of
+Eigen-matrices}\\
+JEP \> Processador de jatos e soma de energia\\
+LEAR \> Experimento do CERN (desativado)\\
+LEP \> Experimento do CERN (desativado)\\
+LHC \> \textit{Large Hadron Collider}\\
+LHCb \> Detector do LHC\\
+LHCf \> Detector do LHC\\
+L1 \> Primeiro nível de filtragem do ATLAS\\
+L2 \> Segundo nível de filtragem do ATLAS\\
+LVQ \> Quantização vetorial por aprendizado\\
+MLP \> Perceptron de múltiplas camadas\\
+MSSM \> \emph{Minimal supersymmetric Standard Model}\\
+NLICA \> \textit{Non-linear independent component analysis}\\
+NLPCA \> \textit{Non-linear principal component analysis}\\
+pdf \> Função densidade de probabilidade\\
+PC \> Computador pessoal\\
+PCA \> \textit{Principal components analysis}\\
+PCD \> \textit{Principal Components for Discrimination}\\
+PNL \> \textit{Post Nonlinear model}\\
+PYTHIA \> Simulador de Monte Carlo para colisões de partículas\\
+%PSD \> \textit{Power espectral density}\\
+%RLS \> \textit{Recursive least square algorithm}\\
+OGLE \> Telescópio instalado no Chile\\
+QV \> Quantização vetorial\\
+RNA \> Rede Neural Artificial\\
+ROC \> \textit{Receiver operating characteristic}\\
+RoI \> Região de interesse (\textit{Region of Interest})\\
+RPC \> \emph{Resistive Plate Chamber}\\
+RPROP \> \textit{Resilient back-propagation}\\
+SICA \> \textit{Segmented independent component analysis}\\
+SPCA \> \textit{Segmented principal component analysis}\\
+SM \> Modelo Padrão de interação entre as partículas elementares
+(\textit{Standard Model})\\
+SOM \> Mapa auto-organizável\\
+SP \> Figura de mérito de desempenho de classificação\\
+SUSY \> Supersimetria\\
+T2Calo \> Algoritmo de discriminação de elétrons no L2 do ATLAS\\
+TDAQ \> \emph{Trigger and data aquisition}
+TGC \> \emph{Thin Gap Chamber}\\
+TOTEM \> Experimento do LHC\\
+TT \> Torre de \textit{trigger}\\
+%WWS \> \textit{Wide sense stationary} \\
+
+
+\end{tabbing}

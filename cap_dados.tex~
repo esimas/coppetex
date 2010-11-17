@@ -1,0 +1,197 @@
+\chapter{Descrição dos dados utilizados} 
+\label{cap_cados}
+
+Nesta seção serão descritas as principais características das bases
+de dados utilizadas. Os sinais podem ser divididos em duas classes, simulados e experimentais:
+
+\begin{itemize}
+\item \textbf{Sinais Simulados}: Em física de altas energias, o projeto dos detectores e sistemas 
+de filtragem é realizado com o auxílio de de simuladores de colisões. Os simuladores utilizam informações 
+a respeito da física (obtidas em experimentos anteriores e em modelos teóricos) e são capazes de reproduzir 
+as características esperadas nas colisões de um acelerador (que ainda não está operacional). 
+Os sinais simulados foram obtidos a partir de simuladores para colisões próton-próton \cite{TDR1:ATLAS:1999} 
+que utilizam a técnica de Monte Carlo \cite{book:montecarlo:2004}. As simulações consideram as características 
+esperadas nas colisões do LHC e as especificações do ATLAS. Assim como na operação real do detector, é possível 
+aplicar diferentes cortes (formas de seleção) de nível 1 nos dados simulados. Nos dados simulados existe a 
+informação do tipo de partícula correspondente a cada assinatura, permitindo o treinamento supervisionado dos 
+algoritmos de filtragem.
+
+\item \textbf{Sinais Experimentais}: São sinais que foram adquiridos no detector ATLAS, na fase de testes e 
+nas primeiras colisões do LHC, realizadas no final de 2009 e durante o ano de 2010. Nos dados experimentais 
+não está disponível a informação do tipo de partícula correspondente a cada assinatura 
+(exceto no caso dos sinais produzidos por raios cósmicos). Nesse caso, outras estratégias precisam ser utilizadas 
+para avaliar o desempenho dos algoritmos. É comum fazer uma comparação com a identificação obtida no processo 
+de reconstrução \textit{offline}.
+\end{itemize}
+
+\section{Sinais simulados}
+
+Neste trabalho foram utilizados dois conjuntos distintos de dados simulados. Ao primeiro conjunto, foi 
+aplicado um corte de nível 1 do tipo E10 \textit{loose} e ao segundo um corte tipo E15i.
+
+A seleção de nível 1 a partir do Corte E10 \textit{loose} realiza apenas um
+corte linear na energia total do evento, deixando passar somente
+eventos com energia da ordem de 10 GeV ou maior (os eventos de baixa
+energia são eliminados). Este corte é mais utilizado para teste do
+sistema de filtragem no período inicial de operação do detector,
+pois é pouco provável a identificação de assinaturas relevantes, uma
+vez que, uma grande quantidade de eventos de falso-alarme é aprovada
+pelo nível 1. 
+
+Na filtragem E15i, a energia mínima agora é da ordem de 15
+GeV e, adicionalmente, foram efetuados cortes considerando outras
+características do perfil de deposição de energia como
+\begin{itemize}
+  \item corte de vazamento para as camadas hadrônicas - a energia nas camadas
+hadrônicas é calculada e se ela for maior que um valor limite o
+evento é rejeitado pelo L1;
+  \item corte de isolamento em energia - efetuado a partir da relação entre a
+  energia no centro ($\sum E_C$) e na periferia ($\sum E_P$) do perfil de deposição de energia
+  da segunda camada eletromagnética, se $\frac{\sum E_P}{\sum E_C}$ for maior que um limiar pré-estabelecido o evento é rejeitado pelo L1.
+\end{itemize}
+Este corte de nível 1 se aproxima da característica esperada para a
+fase operação do detector.
+
+... Colocar tabela mostrando as quantidades de sinais de cada classe antes e depois do L1 (fatores de rejeição) ...
+
+
+Na Figura \ref{comp_L1} são mostradas as distribuições em energia, $\eta$ (pseudorapidez) e $\phi$ (ângulo azimutal) 
+para elétrons e jatos dos conjuntos aos quais foram aplicados os cortes de L1 tipo E10 e E15i. Percebe-se que...
+
+Nas Figuras \ref{emedE10} e \ref{emedE15} são mostrados os eventos médios (média e desvio padrão de cada 
+anél) para elétrons e jatos após os cortes E10 \textit{loose} e E15i. Pode-se observar que os perfis dos elétrons 
+são semelhantes nos dois casos. Por outro lado, os jatos E15i apresentam uma menor energia hadrônica e menor espalhamento 
+(o que já era esperado, uma vez que foram efetuados cortes considerando estes parâmetros) do que os jatos E10, sendo 
+mais parecidos com os elétrons e portanto representando um ruído de fundo de mais difícil identificação.
+
+... substituir os histogramas e10 e e15i por histogramas combinados tipo root.
+
+\begin{figure}[h!]
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e10_ele_et,width=7cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e10_jat_et,width=7cm}}
+ \end{minipage}
+\hfill \linebreak
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e10_ele_eta,width=7cm}}
+ \end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e10_jat_eta,width=7cm}}
+ \end{minipage}
+\hfill \linebreak
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e10_ele_phi,width=7cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e10_jat_phi,width=7cm}}
+\end{minipage}
+\caption{Distribuição em energia, $\eta$ e $\phi$ das assinaturas de elétrons (esquerda) e jatos (direita) aprovadas pelo corte de primeiro nível E10-\textit{loose}.} \label{fig_e10_dist}
+\end{figure}
+
+%\section{Sinais simulados - Corte E15i}
+
+\begin{figure}[h!]
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e15_ele_et,width=7cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e15_jat_et,width=7cm}}
+ \end{minipage}
+\hfill \linebreak
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e15_ele_eta,width=7cm}}
+ \end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e15_jat_eta,width=7cm}}
+ \end{minipage}
+\hfill \linebreak
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e15_ele_phi,width=7cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cap4n_e15_jat_phi,width=7cm}}
+\end{minipage}
+\caption{Distribuição em energia, $\eta$ e $\phi$ das assinaturas de elétrons (esquerda) e jatos (direita) 
+aprovadas pelo corte de primeiro nível E15i.} \label{fig_e10_dist}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=evento_medioE10_ele,width=8cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=evento_medioE10_jat,width=8cm}}
+\end{minipage}
+\caption{Sinais em anéis (média e desvio padrão) para elétrons (esquerda) e jatos 
+(direita) que chegam ao L2 no corte E10.}\label{emedE10}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=evento_medioE15_ele,width=8cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=evento_medioE15_jat,width=8cm}}
+\end{minipage}
+\caption{Sinais em anéis (média e desvio padrão) para elétrons (esquerda) e jatos 
+(direita) que chegam ao L2 no corte E15.}\label{emedE15}
+\end{figure}
+
+\section{Sinais Experimentais}
+
+Os raios cósmicos \cite{book:cosmic:2002} são partículas originadas no espaço, que se deslocam com velocidade próxima a 
+da luz e, ao penetrarem na atmosfera terrestre, interagem com os átomos que a constituem produzindo uma "cascata" de 
+novas partículas menos energéticas (conhecidas como raios cósmicos secundários). O poder de penetração dos 
+raios cósmicos é alto, podendo atingir o detector ATLAS (instalado a uma profundidade de aproximadamente 
+100 m) e interagir com o material dos calorímetros. A energia destas partículas também pode ser alta, atingindo 
+até $10^{20}$~eV.
+
+Os sinais produzidos no detector pelos raios cósmicos constituem uma fonte de ruído de fundo para o experimento, 
+que deve ser eliminada (ou pelo menos atenuada) pelo sistema de filtragem. Em momentos quando o LHC está desligado 
+(não havendo portanto outra fonte de sinal para os calorímetros), foram coletadas 
+diversas assinaturas originadas por raios cósmicos que serão utilizadas para verificar a robustez do sistema de 
+filtragem a essa fonte de ruído.
+
+%\section{Sinais Experimentais - Colisões do LHC}
+
+Na fase inicial de operação do LHC, sua energia máxima está limitada em 7~TeV (apenas metade da energia para qual 
+o colisionador foi projetado que é de aproximadamente 14 TeV, porém um valor jamais alcançada por outro 
+experimento). Nos dados simulados, utilizados para projeto dos discriminadores, a faixa de energia dos feixes era de 
+14~TeV, desta forma, os resultados obtidos com a aplicação direta dos discriminadores propostos aos dados 
+experimentais disponíveis estão seriamente comprometidos, uma vez que as características das partículas dependem 
+fortemente da energia envolvida.
+
+Nos sinais experimentais não há a caracterização prévia do tipo de partícula (como havia nos sinais simulados). 
+Neste caso, foram utilizadas informações obtidas da reconstrução \textit{offline}, que indicam a probabilidade de 
+um certo evento ser ou não um elétron. Entre os parâmetros calculados pode-se destacar: ... 
+
+
+
+(, gráficos eta, phi e energia, qual o corte de nível 1 ??)
+

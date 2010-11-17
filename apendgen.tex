@@ -1,0 +1,272 @@
+\chapter{Algoritmos Genéticos}
+\label{apend_GA}
+
+\section{Algoritmo Genético como Método de Otimização}
+
+Os Algoritmos Genéticos (AG) pertencem à classe dos Algoritmos
+Evolutivos, que são ferramentas de busca e otimização bastante
+difundidas, utilizando operadores que simulam a evolução dos seres
+vivos para buscar a solução de pro\-blemas
+complexos~\cite{Article:Whitley:2002}.
+
+Comparado com outros métodos de busca e otimização os AG's se
+destacam quando o pro\-blema tratado tem características altamente
+não lineares e o ambiente de busca é multi-modal (existem diversos
+máximos ou mínimos locais na função custo). Por ser um método de
+busca global, o AG tem menor probabilidade de convergir para
+soluções sub-ótimas (máximos/mínimos locais).
+
+Outra vantagem é a facilidade de implementação, pois, em geral, os
+métodos numéricos precisam que a função objetivo $f(x)$ seja
+conhecida e diferenciável, pois se baseiam no cálculo das
+derivadas parciais. Já o AG utiliza apenas a função objetivo.
+
+Idealizados inicialmente por John Holland e seus alunos nos anos
+70 \cite{Article:Holland:1975}, na Universidade de Michigan, os
+Algoritmos Genéticos  são métodos de busca baseados na teoria da
+evolução. O objetivo inicial de Holland era utilizar os mecanismos
+de evolução, adaptação e seleção natural dos seres vivos como
+modelos para sistemas computacionais.
+
+Na natureza os indivíduos apresentam qualidades particulares que
+podem torná-los mais ou menos aptos para sobreviver às
+adversidades do meio ambiente.  A seleção natural e os
+ope\-radores genéticos, como a reprodução e a mutação, podem
+ocasionar o surgimento de exemplares com características mais
+favoráveis, melhorando as chances de sobrevivência da população.
+
+Nos problemas computacionais, traçando um paralelo com a natureza,
+as possíveis soluções são chamadas cromossomos ou indivíduos, cada
+um possuindo características que o fazem me\-lhor ou pior
+candidato à resolução do problema. Os melhores são selecionados
+para reproduzirem-se gerando uma nova geração. Espera-se que a
+cada iteração apareçam indivíduos mais aptos. A mutação, por sua
+vez, introduz aleatoriamente informações não existentes no
+conjunto original, contribuindo para a manutenção da diversidade
+populacional (explorando outras regiões do espaço de busca).
+Algumas características interessantes dos AG's esão listadas a
+seguir:
+\begin{enumerate}
+    \item trabalham com os parâmetros codificados;
+    \item realizam a busca a partir de uma população de soluções
+     candidatas (processamento em paralelo);
+    \item utilizam informações da função objetivo, e não de suas
+    derivadas;
+    \item usam regras probabilísticas e não determinísticas.
+\end{enumerate}
+
+
+\section{Estrutura de um Algoritmo Genético}
+
+Não existe uma definição rigorosa para os Algoritmos Genéticos,
+entretanto, a maioria dos métodos assim denominados tem em comum
+as seguintes características: população composta de cromossomos,
+seleção de acordo com a função de adequabilidade, recombinação e
+mutação para a produzir uma nova geração
+\cite{Book:Mitchell:1996}. A seguir tem-se uma breve descrição dos
+conceitos mais importantes na teoria dos Algoritmos Genéticos.
+\subsection{Conceitos Principais}
+\begin{itemize}
+    \item \textbf{Cromossomo} - Em geral, na teoria dos A.G.'s cada indivíduo é
+    constituído de um único cromossomo, onde cada elemento
+    equivale a um gene. Pode-se utilizar codificação binária simples,
+    códigos de gray, e até codificação decimal. A codificação binária é a mais
+    comum, nela cada gene pode assumir apenas dois
+    valores 0 ou 1. Os cromossomos podem ser vistos como um ponto
+    do espaço de busca das prováveis soluções do problema.
+    \item \textbf{Codificação} - As variáveis a serem otimizadas precisam
+    ser codificadas nos cromossomos. A quantidade de bits
+    destinada a cada variável deve ser escolhida de forma a
+    minimizar o esforço computacional, mas sempre levando em conta
+    a precisão desejada. Na
+    figura \ref{cromossomo} tem-se a representação de um cromossomo
+    binário, onde cada parâmetro é codificado por 4 bits distintos.
+
+    \begin{figure}[h]
+    \centering
+    \includegraphics[scale=1]{capga_cromo}
+    \caption{Exemplo de um cromossomo binário} \label{cromossomo}
+    \end{figure}
+
+    \item \textbf{População} - Conjunto de cromossomos gerado inicialmente de forma aleatória, a po\-pulação é
+     atualizada a cada nova i\-te\-ração do algoritmo, espera-se que a cada
+     geração apareçam indivíduos mais aptos para a solução do problema.
+     Em geral, usam-se po\-pulações de tamanho fixo.
+    \item \textbf{Função Aptidão} (\textit{Fitness Function}) - É na Função Aptidão
+    ($fit(x)$) que são codificadas as informações sobre o sistema a ser otimizado.
+     A cada geração são calculados os valores da Função Aptidão de todos os
+     indivíduos. Esta informação será usada como base do processo de
+     seleção.
+    \item \textbf{Seleção} - Simula o processo de seleção natural, os
+     indivíduos mais aptos, com maior valor da função aptidão, têm mais chances
+     de serem escolhidos para o processo de recombinação.
+    \item \textbf{Recombinação} (\textit{Crossover}) - Promove a troca de informação
+     genética. Os indivíduos são selecionados dois a dois, simulando um processo de
+     reprodução sexuada, e parte do material genético (bits) é
+     trocado. Existem vários modos de proceder esta troca de bits,
+     cada um dá origem a um tipo diferente de recombinação, a seguir
+     temos a descrição dos tipos mais comuns de \textit{crossover}
+     em cromossomos binários:
+
+        \begin{itemize}
+            \item \textit{Single-Point Crossover} - O modo mais simples e comum de
+            recombinação, é escolhido aleatoriamente um ponto no cromossomo
+            e são trocados os bits após este ponto.
+            \item \textit{Multi-Point Crossover} - Semelhante à
+            recombinação de ponto único, pontos aleatórios são
+            escolhidos, e trocados os bits dos segmentos que ficam
+            entre estes pontos.
+            \item \textit{Uniform Crossover} - Alguns pontos são escolhidos de modo
+            randômico e trocados os bits destes pontos. É gerado um cromossomo aleatório,
+             as posições onde o valor do bit é igual a 1 serão trocadas.
+             O \textit{uniform crossover} foi proposto inicialmente em
+            \cite{Article:Ackley:1987} e
+            \cite{Article:Syswerda:1989}. Na figura \ref{crossover} são
+            ilustrados os processos de recombinação de ponto único
+            e uniforme.
+
+        \end{itemize}
+
+    \item \textbf{Mutação} - A mutação é responsável pela manutenção da
+     diversidade genética, inserindo, de modo aleatório, novas
+     informações nos indivíduos. No caso de codificação binária, o bit selecionado
+      tem o seu valor invertido.
+    \item \textbf{Fenótipo} - Em analogia com o termo biológico, o
+    fenótipo de um indivíduo pode ser expresso pelo valor da
+    função aptidão, ou pelos parâmetros decodificados.
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1]{capga_single_cross}
+\newline
+\centerline{(a)}
+\includegraphics[scale=1]{capga_multi_cross}
+\newline
+(b) \caption{(a) Recombinação em ponto único e (b) recombinação
+uniforme.} \label{crossover}
+\end{figure}
+
+A recombinação e a mutação são controlados por parâmetros
+específicos, $p_{rec}$ e $p_{mut}$, res\-pectivamente. Estes
+parâmetros estabelecem a taxa de ocorrência dos processos.
+Exemplo: para $p_{rec}=0.7$, a cada geração, 70\% dos indivíduos
+são selecionados para participarem da recombinação, com
+$p_{mut}=0.001$, a cada geração 0,1\% dos bits sofrerão mutação.
+
+\subsection{Escalonamento de Aptidão}
+
+É importante salientar que problemas com a pressão seletiva (rigor
+com o qual é realizado o processo de seleção) do algoritmo podem
+levar à demora na convergência ou à convergência prematura. A
+última se caracteriza quando o AG concentra a busca em uma pequena
+região do domínio, e acaba apontando para um mínimo local. E a
+convergência lenta, acontece se o algoritmo, embora próximo do
+mínimo global, não consegue atender às condições de parada. Estes
+problemas podem ser minimizados com a adoção de um procedimento
+simples chamado escalonamento de aptidão (\textit{fitness
+scaling}). No início do processo de busca é interessante que a
+pressão seletiva seja pequena, permitindo que o AG explore a maior
+porção possível do espaço de domínio. Após muitas gerações, a
+população já se encontra em um estágio mais avançado, sendo
+conveniente aumentar a pressão seletiva, uma vez que os indivíduos
+tem valores de \textit{fitness} muito próximos, dificultando o
+destaque dos melhores candidatos. O escalonamento linear foi
+proposto por Goldberg em \cite{Book:Goldberg:1989} e o valor da
+função aptidão escalonada ($fit_e$) é dada por:
+
+\begin{equation}\label{fescala}
+    fit_e=afit+b
+\end{equation}
+\\
+os coeficientes $a$ e $b$ são calculados pela rotina
+\verb"fitescala.m", descrita no apêndice B, utilizando valores
+entre 1,2 e 2 para o fator multiplicador $Cm$.
+
+\subsection{Implementação de um Algoritmo Genético}
+
+Um AG com codificação binária pode ser facilmente implementado
+utilizando-se \textit{strings} de bits para designar os
+cromossomos. Os demais operadores podem ser implementados com
+operações de manipulação de bits. A maior parte do processamento
+computacional fica no cálculo da função aptidão, nesta etapa os
+cromossomos devem ser decodificados de valores binários em reais
+para obtenção dos parâmetros $(x_{i})$, e com estes calcula-se os
+valores da função aptidão $(fit(x))$ para cada indivíduo.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=9.5cm]{capga_fluxo_ag}\\
+  \caption{Fluxo de um Algoritmo Genético}\label{fluxoag}
+\end{figure}
+
+Para que a busca com um AG se torne eficiente, é preciso escolher
+corretamente os parâmetros do algoritmo. O tamanho da população, o
+número de bits destinado a cada variável e as taxas de
+recombinação e mutação exercem papel fundamental na velocidade de
+convergência e na globalidade da busca efetuada.
+
+O uso de populações pequenas não permite o mapeamento de todas as
+regiões do espaço de domínio, já populações muito grandes tornam o
+algoritmo muito lento. Baixas taxas de mutação podem fazer a busca
+perder a generalidade, ou seja, ficar concentrada em pequenas
+partes do espaço de busca, valores de $p_{mut}$ muito altos podem
+gerar uma busca aleatória. Na escolha do $p_{rec}$ deve-se
+permitir que uma parte da população permaneça inalterada, sob pena
+de gerar uma nova geração com indivíduos inferiores aos da
+anterior. No algoritmo desenvolvido, após uma série de testes
+práticos, onde diferentes valores destes parâmetros foram
+utilizados, decidiu-se pela utilização de: $p_{mut}=5\% $,
+$p_{rec}=80\% $ e uma população de 150 indivíduos.
+
+\subsection{O Algoritmo Genético Utilizado}
+
+O algoritmo Genético usado é semelhante ao proposto por Goldberg
+em \cite{Book:Goldberg:1989}, com modificações no processo de
+recombinação e a implementação de estratégias elitistas. Diferente
+do \textit{single-point crossover}, proposto por Goldberg, onde é
+escolhido um ponto e trocados os bits que estão depois deste
+ponto, foi utilizada a recombinação ou \textit{crossover}
+uniforme, que é feita escolhendo-se aleatoriamente o número e a
+posição dos bits a serem trocados. O elitismo foi implementado
+garantindo-se que cópias dos melhores indivíduos de cada geração
+estejam presentes na geração seguinte. Utilizou-se também, o
+escalonamento da aptidão, proposto em \cite{Book:Goldberg:1989},
+este procedimento ameniza o problema da convergência prematura do
+algoritmo, regulando a pressão seletiva.
+
+Escolheu-se como função objetivo a expressão do erro quadrático
+médio da equação \ref{prob}. Como o AG foi desenvolvido para
+selecionar os indivíduos com maiores valores da função
+\textit{fitness} ($fit(\textbf{x})$), utilizou-se:
+
+\begin{equation}\label{fitness}
+    fit(\textbf{x})=\frac{1}{\overline{(f(\textbf{x},t)-f_{e}(\textbf{x},t))^2}+\zeta}
+\end{equation}
+\\
+onde a constante $\zeta$ impede que $fit(\textbf{x})$ assuma
+valores muito elevados à medida que o erro diminui.
+
+Para uma boa amostragem do espaço de busca, é interessante usar
+populações grandes, mas, isso eleva muito o tempo de
+processamento. Na impossibilidade de fazer uso de um grande número
+de indivíduos, precisou-se implementar soluções alternativas. Na
+tentativa de corrigir problemas do algoritmo genético empregou-se
+alguns procedimentos:
+
+\begin{description}
+    \item[Elitismo] garante que os melhores
+indivíduos estejam presentes na geração seguinte, sem o risco de
+serem perdidos nos processos de \textit{crossover} e mutação.
+    \item[Recombinação uniforme] para populações pequenas, age de modo mais
+eficiente que a de ponto único, facilitando a exploração das
+diversas regiões do espaço de busca.
+    \item[Genocídio periódico] Também visando
+evitar uma amostragem incompleta e a rápida perda de diversidade
+em populações pequenas, utilizou-se este procedimento de fácil
+implementação \cite{Article:Tanomaru:1995}, que consiste em, a um
+número conveniente de gerações, aumentar o número de indivíduos de
+$N$ para $\kappa \times N$, sendo $\kappa$ um inteiro positivo,  e
+depois, através de uma seleção rigorosa eliminar os $(\kappa -1)N$
+de menor aptidão.
+\end{description}

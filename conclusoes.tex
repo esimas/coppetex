@@ -1,0 +1,111 @@
+\chapter{Conclusões}
+
+A física de partículas ou física de altas energias (HEP-\emph{High-Energy Physics)}) busca estudar as 
+características fundamentais da matéria. Para isso, ao longo dos anos, vêm sendo contruídos 
+experimentos, cada vez mais complexos, que envolvem profissionais de diversas áreas do 
+conhecimento como engenharia, computação, 
+matemática e física nas etapas de projeto, montagem e operação.
+
+O conhecimento adquirido em experimentos de HEP está bastante difundido na sociedade em aplicações 
+como a rede mundial de computadores (WWW-\emph{World-Wide Web}), que foi idealizada inicialmente 
+para troca de informação entre os diversos institutos participantes da colaboração do CERN ao redor do 
+mundo. Na medicina também são diversas as aplicações derivadas dos experimentos de 
+física de partículas, como a rádio-terapia e exames tipo a cintilografia e o PET 
+(\emph{positron emission tomography} ou tomografia por emissão de pósitrons), que produz uma 
+imagem em três dimensões das características funcionais do corpo humano.
+
+O Grande Colisionador Hadrônico (LHC-\emph{Large Hadron Collider}), que produziu suas primeiras colisões no final 
+de 2009, no CERN, iniciou uma nova era de descobertas, estabelecendo recordes em energia e luminosidade. 
+Diversos avanços tecnológicos foram necessários desde o projeto até a conclusão da montagem do LHC e 
+seus diversos detectores. 
+
+Para lidar com a enorme quantidade de informação produzida 
+nas colisões do LHC, os detectores são dotados de um sistema de filtragem (\emph{trigger}) 
+\emph{online}, que deve apresentar, entre outras características:
+\begin{itemize}
+ \item Alta eficiência na detecção da física de interesse;
+ \item Baixa aceitação do ruído de fundo;
+ \item Rapidez na tomada de decisão.
+\end{itemize}
+
+O bom funcionamento do sistema de filtragem é fundamental para o desempenho do 
+detector, porém, atender a todas as demandas inerentes à aplicação é uma tarefa de difícil solução. 
+Em geral, os sistemas de filtragem são divididos em estágios (níveis) sequenciais de 
+seleção, onde o ruído de fundo é gradualmente reduzido. 
+
+No detector ATLAS (o maior detector de propósito geral do LHC), o sistema de filtragem é sub-dividido em 
+três níveis. Este trabalho propõe um algoritmo alternativo para a filtragem de elétrons 
+no segundo nível de \emph{trigger} do ATLAS. Aliando algoritmos de processamento estatístico 
+de sinais (baseados no modelo da análise de componentes independentes-ICA), com a exploração 
+de toda a segmentação presente nos sinais medidos no sistema de calorímetros, foi possível 
+obter um aumento na eficiência de discriminação.
+
+... relembrar que (conforme identificado em outros trabalhos Ringer melhor que T2Calo e 
+ICA melhor que ringer)
+
+Foram aplicados três modos distintos para a estimação da análise não-linear de 
+componentes independentes (NLICA), o modelo pós não-linear (PNL), mapas auto-organizáveis 
+(para estimar um modelo não-linear sem restrições estruturais) e a ICA local. 
+Com os algoritmos utilizados, foi possível obter maior eficiência de discriminação 
+para regiões do detector que apresentam menor número de células sensoras (\emph{cracks} e 
+interconexões dos módulos do calorímetro) e para eventos de menor energia (que apresentam menor relação 
+sinal-interferência).
+
+Comparando os três métodos, observou-se que o pré-processamento por ICA local apresentou 
+maior eficiência (em termos do máximo SP) para os dois conjuntos simulados utilizados 
+(... e para os experimentais??). 
+O uso do pré-procesamento por mapas auto-organizáveis 
+possibilita, além de um discriminador \emph{online} com alta eficiência, a visualização 
+dos eventos em gráficos de duas ou três dimensões que podem ser úteis para a análise \emph{offline}. 
+Foi mostrado também que, o uso da informação das classes na estimação dos componentes independentes 
+produziu, em todos os casos, aumento na eficiência de discriminação em comparação com 
+as versões não-supervisionadas.
+
+Considerando o tempo de processamento, percebeu-se, que a adição do pré-processamento por 
+NLICA não contribui significativamente para o aumento no custo computacional. Na verdade, 
+a maior parte do tempo é gasta para solicitação da informação e formação dos sinais em 
+anéis, sendo que, estas duas etapas são realizadas em bloco, por cada camada do calorímetro. 
+
+Com o objetivo de identificar a redundância da informação entre as diferentes camadas e 
+sua relevância na discriminação elétron/jato, foi realizado o treinamento de discriminadores 
+especialistas na informação de cada segmento do calorímetro. Assim, verificou-se que,
+existe um alto grau de redundância  e a retirada de 5 das 7 camadas influencia 
+pouco na eficiência de discriminação. Por outro lado, com o uso apenas desta parcela 
+da informação (referente apenas às camadas E1 e E2) é possível reduzir o tempo 
+total de processamento em aproximadamente~30~\%.
+
+
+\section{Trabalhos Futuros}
+
+À medida que o conhecimento a respeito do detector e dos fenômenos físicos envolvidos aumenta, 
+os algoritmos de filtragem evoluem continuamente, incorporando novas informações. 
+Recentemente, o discriminador padrão do ATLAS para o canal elétron/jato (T2Calo) foi modificado, 
+e agora opera com patamares de corte variáveis em função de $\eta$. 
+
+Esta estratégia tem como 
+objetivo melhorar a eficiência em áreas como o \emph{crack} e as interconexões entre 
+módulos, pois com a menor quantidade de sensores, as características dos eventos destas regiões são 
+modificadas e os cortes utilizados no restante do detector não produzem bom desempenho de discriminação. 
+
+Considerando o bom desempenho obtido com o pré-processamento por ICA/NLICA, outra opção 
+seria a utilização de algoritmos de extração de características que estão diretamente 
+relacionados com a análise de componentes independentes como a fatorização 
+de matrizes não-negativas (\emph{non-negative matrix factorization})~\cite{book:nmf:2009}
+ou a análise de componentes esparsos (\emph{sparse component analysis})
+~\cite{article:sca:2004,article:sca:2005}. Para o uso da NMF, o procedimento de normalização 
+precisa ser modificado para produzir sempre sinais não-negativos. A aplicação da SCA é mais 
+direta, pois, em cada assinatura, apenas uma pequena parte dos 100 anéis tem considerável 
+nível de energia, caracterizando a esparsidade dos sinais.
+
+Pode-se ainda testar outras arquiteturas de classificadores neurais como as funções 
+de base radial (\emph{radial basis functions}) e máquinas de vetor de suporte 
+(\emph{support vector machine})~\cite{haykin:nn:2008}, visando otimizar o processo de 
+classificação. Sendo que, neste caso, seria 
+necessário um trabalho adicional para a implementação do discriminador no 
+sistema de filtragem do detector.
+
+Embora os discriminadores propostos neste trabalho tenham sido desenvolvidos para o sistema de filtragem 
+\emph{online}, os altos índices de eficiência obtidos indicam que é possível também 
+pensar numa aplicação à filtragem \emph{offline}, especialmente para os discriminadores 
+baseados no pré-processamento por mapas auto-organizáveis, devido às ferramentas de 
+visualização inerentes ao método.
