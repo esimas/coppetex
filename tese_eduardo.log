@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.8.26)  16 NOV 2010 02:12
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.8.26)  16 NOV 2010 16:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -356,12 +356,6 @@ LaTeX Warning: Label `figE15somEffComp' multiply defined.
 
 
 LaTeX Warning: Label `tab_compE10_pnl' multiply defined.
-
-
-LaTeX Warning: Label `fig_expnn5' multiply defined.
-
-
-LaTeX Warning: Label `fig_expnn5' multiply defined.
 
 
 LaTeX Warning: Label `apend_fex' multiply defined.
@@ -1866,63 +1860,62 @@ File: ./figuras/exp1_fisherROC.pdf Graphic file (type pdf)
 
 <use ./figuras/exp1_fisherROC.pdf>
 
-LaTeX Warning: Reference `tabExpRinger' on page 182 undefined on input line 249
+LaTeX Warning: Reference `tabExpRinger' on page 182 undefined on input line 254
 .
 
 <./figuras/expR1ringer_compSPpdpf.pdf, id=4776, 413.545pt x 349.305pt>
 File: ./figuras/expR1ringer_compSPpdpf.pdf Graphic file (type pdf)
 
-<use ./figuras/expR1ringer_compSPpdpf.pdf>
-<./figuras/exp1ringer_t2etCompLoose.pdf, id=4777, 375.4025pt x 313.17pt>
+<use ./figuras/expR1ringer_compSPpdpf.pdf> [182 <./figuras/expR1ringer_nhvarSP.
+pdf>] <./figuras/exp1ringer_t2etCompLoose.pdf, id=4787, 375.4025pt x 313.17pt>
 File: ./figuras/exp1ringer_t2etCompLoose.pdf Graphic file (type pdf)
 
 <use ./figuras/exp1ringer_t2etCompLoose.pdf>
-<./figuras/exp1ringer_t2etCompLooseFA.pdf, id=4778, 375.4025pt x 313.17pt>
+<./figuras/exp1ringer_t2etCompLooseFA.pdf, id=4788, 375.4025pt x 313.17pt>
 File: ./figuras/exp1ringer_t2etCompLooseFA.pdf Graphic file (type pdf)
 
 <use ./figuras/exp1ringer_t2etCompLooseFA.pdf>
-<./figuras/exp1ringer_t2etaCompLoose.pdf, id=4779, 375.4025pt x 312.16624pt>
+<./figuras/exp1ringer_t2etaCompLoose.pdf, id=4789, 375.4025pt x 312.16624pt>
 File: ./figuras/exp1ringer_t2etaCompLoose.pdf Graphic file (type pdf)
 
 <use ./figuras/exp1ringer_t2etaCompLoose.pdf>
-<./figuras/exp1ringer_t2etaCompLooseFA.pdf, id=4780, 375.4025pt x 312.16624pt>
+<./figuras/exp1ringer_t2etaCompLooseFA.pdf, id=4790, 375.4025pt x 312.16624pt>
 File: ./figuras/exp1ringer_t2etaCompLooseFA.pdf Graphic file (type pdf)
 
 <use ./figuras/exp1ringer_t2etaCompLooseFA.pdf>
-<./figuras/exp1ringer_t2etCompMedium.pdf, id=4781, 375.4025pt x 313.17pt>
+<./figuras/exp1ringer_t2etCompMedium.pdf, id=4792, 375.4025pt x 313.17pt>
 File: ./figuras/exp1ringer_t2etCompMedium.pdf Graphic file (type pdf)
 
 <use ./figuras/exp1ringer_t2etCompMedium.pdf>
-<./figuras/exp1ringer_t2etCompMediumFA.pdf, id=4782, 375.4025pt x 313.17pt>
+<./figuras/exp1ringer_t2etCompMediumFA.pdf, id=4793, 375.4025pt x 313.17pt>
 File: ./figuras/exp1ringer_t2etCompMediumFA.pdf Graphic file (type pdf)
 
 <use ./figuras/exp1ringer_t2etCompMediumFA.pdf>
-<./figuras/exp1ringer_t2etaCompMedium.pdf, id=4783, 375.4025pt x 312.16624pt>
+<./figuras/exp1ringer_t2etaCompMedium.pdf, id=4794, 375.4025pt x 312.16624pt>
 File: ./figuras/exp1ringer_t2etaCompMedium.pdf Graphic file (type pdf)
 
 <use ./figuras/exp1ringer_t2etaCompMedium.pdf>
-<./figuras/exp1ringer_t2etaCompMediumFA.pdf, id=4784, 375.4025pt x 312.16624pt>
+<./figuras/exp1ringer_t2etaCompMediumFA.pdf, id=4795, 375.4025pt x 312.16624pt>
 File: ./figuras/exp1ringer_t2etaCompMediumFA.pdf Graphic file (type pdf)
-<use ./figuras/exp1ringer_t2etaCompMediumFA.pdf> [182 <./figuras/expR1ringer_nh
-varSP.pdf>]
-Overfull \hbox (3.76593pt too wide) in paragraph at lines 352--368
+<use ./figuras/exp1ringer_t2etaCompMediumFA.pdf> [183 <./figuras/exp1ringer_out
+s.pdf> <./figuras/exp1_fisherOuts.pdf> <./figuras/exp1_fisherROC.pdf>]
+Overfull \hbox (14.52179pt too wide) in paragraph at lines 364--380
  [][] 
  []
 
-[183 <./figuras/exp1ringer_outs.pdf> <./figuras/exp1_fisherOuts.pdf> <./figuras
-/exp1_fisherROC.pdf>] [184 <./figuras/expR1ringer_compSPpdpf.pdf>] [185 <./figu
-ras/exp1ringer_t2etCompLoose.pdf> <./figuras/exp1ringer_t2etCompLooseFA.pdf> <.
-/figuras/exp1ringer_t2etaCompLoose.pdf> <./figuras/exp1ringer_t2etaCompLooseFA.
-pdf>] [186 <./figuras/exp1ringer_t2etCompMedium.pdf> <./figuras/exp1ringer_t2et
-CompMediumFA.pdf> <./figuras/exp1ringer_t2etaCompMedium.pdf> <./figuras/exp1rin
-ger_t2etaCompMediumFA.pdf>]
-Underfull \hbox (badness 7740) in paragraph at lines 416--419
+[184 <./figuras/expR1ringer_compSPpdpf.pdf>] [185 <./figuras/exp1ringer_t2etCom
+pLoose.pdf> <./figuras/exp1ringer_t2etCompLooseFA.pdf> <./figuras/exp1ringer_t2
+etaCompLoose.pdf> <./figuras/exp1ringer_t2etaCompLooseFA.pdf>] [186 <./figuras/
+exp1ringer_t2etCompMedium.pdf> <./figuras/exp1ringer_t2etCompMediumFA.pdf> <./f
+iguras/exp1ringer_t2etaCompMedium.pdf> <./figuras/exp1ringer_t2etaCompMediumFA.
+pdf>]
+Underfull \hbox (badness 7740) in paragraph at lines 428--431
 \OT1/cmr/m/n/12 O tempo m^^Sedio gasto em cada uma das eta-pas foi res-pec-ti-v
 a-mente
  []
 
 
-Underfull \hbox (badness 1424) in paragraph at lines 416--419
+Underfull \hbox (badness 1424) in paragraph at lines 428--431
 \OT1/cmr/m/n/12 (0,0183$\OMS/cmsy/m/n/12 ^^F$\OT1/cmr/m/n/12 0,0037) ms, (0,047
 4$\OMS/cmsy/m/n/12 ^^F$\OT1/cmr/m/n/12 0,0059) ms e (0,0081$\OMS/cmsy/m/n/12 ^^
 F$\OT1/cmr/m/n/12 0,0045) ms, to-ta-li-zando
@@ -2012,13 +2005,13 @@ high-
 
 [214] [215] [216] [217]) (./appendfex.tex [218]
 Ap\^endice A.
-<./figuras/cap3_som.pdf, id=5088, 285.065pt x 165.61874pt>
+<./figuras/cap3_som.pdf, id=5090, 285.065pt x 165.61874pt>
 File: ./figuras/cap3_som.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_som.pdf> [219
 
  <./figuras/cap3_som.pdf>] [220] [221]
-[222] <./figuras/cap3_somclass.pdf, id=5136, 504.88625pt x 165.61874pt>
+[222] <./figuras/cap3_somclass.pdf, id=5138, 504.88625pt x 165.61874pt>
 File: ./figuras/cap3_somclass.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_somclass.pdf>
@@ -2027,7 +2020,7 @@ Underfull \hbox (badness 3668) in paragraph at lines 211--211
  []
 
 [223 <./figuras/cap3_somclass.pdf>] [224]
-<./figuras/cap3_pca.pdf, id=5160, 138.5175pt x 94.3525pt>
+<./figuras/cap3_pca.pdf, id=5162, 138.5175pt x 94.3525pt>
 File: ./figuras/cap3_pca.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_pca.pdf> [225] [226 <./figuras/cap3_pca.pdf>] [227]
@@ -2049,13 +2042,13 @@ LaTeX Warning: Reference `icamatrix2' on page 234 undefined on input line 731.
 
 LaTeX Warning: Reference `cap_fex' on page 236 undefined on input line 841.
 
-[236] <./figuras/cap3_pnljutten.pdf, id=5319, 347.12366pt x 237.5805pt>
+[236] <./figuras/cap3_pnljutten.pdf, id=5321, 347.12366pt x 237.5805pt>
 File: ./figuras/cap3_pnljutten.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_pnljutten.pdf>) (./appendclas.tex [237 <./figuras/cap3_pnlj
 utten.pdf>] [238]
 Ap\^endice B.
-<./figuras/cap3_transicao.pdf, id=5351, 446.66875pt x 145.54375pt>
+<./figuras/cap3_transicao.pdf, id=5353, 446.66875pt x 145.54375pt>
 File: ./figuras/cap3_transicao.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_transicao.pdf> [239
@@ -2066,11 +2059,11 @@ LaTeX Font Info:    Try loading font information for U+euf on input line 68.
 (/usr/share/texmf-texlive/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2009/06/22 v3.00 Euler Fraktur
 ) [240]
-<./figuras/cap3_fcas.pdf, id=5374, 254.9525pt x 113.42375pt>
+<./figuras/cap3_fcas.pdf, id=5376, 254.9525pt x 113.42375pt>
 File: ./figuras/cap3_fcas.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_fcas.pdf> [241] [242 <./figuras/cap3_fcas.pdf>] [243]
-<./figuras/cap3_class.pdf, id=5415, 269.005pt x 305.14pt>
+<./figuras/cap3_class.pdf, id=5417, 269.005pt x 305.14pt>
 File: ./figuras/cap3_class.pdf Graphic file (type pdf)
 
 <use ./figuras/cap3_class.pdf> [244 <./figuras/cap3_class.pdf>])
@@ -2078,7 +2071,7 @@ File: ./figuras/cap3_class.pdf Graphic file (type pdf)
 Ap\^endice C.
 [246
 
-] [247] <./figuras/capga_cromo.pdf, id=5449, 317.68687pt x 126.97438pt>
+] [247] <./figuras/capga_cromo.pdf, id=5451, 317.68687pt x 126.97438pt>
 File: ./figuras/capga_cromo.pdf Graphic file (type pdf)
 
 <use ./figuras/capga_cromo.pdf>
@@ -2088,11 +2081,11 @@ ge-rado ini-ci-al-mente de forma
  []
 
 [248 <./figuras/capga_cromo.pdf>]
-<./figuras/capga_single_cross.pdf, id=5464, 273.77281pt x 157.33781pt>
+<./figuras/capga_single_cross.pdf, id=5466, 273.77281pt x 157.33781pt>
 File: ./figuras/capga_single_cross.pdf Graphic file (type pdf)
 
 <use ./figuras/capga_single_cross.pdf>
-<./figuras/capga_multi_cross.pdf, id=5465, 314.17375pt x 138.76843pt>
+<./figuras/capga_multi_cross.pdf, id=5467, 314.17375pt x 138.76843pt>
 File: ./figuras/capga_multi_cross.pdf Graphic file (type pdf)
 
 <use ./figuras/capga_multi_cross.pdf>
@@ -2100,7 +2093,7 @@ File: ./figuras/capga_multi_cross.pdf Graphic file (type pdf)
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [249] [250 <./figuras/capga_single_cross.pdf> <./figuras/capga_multi_cross.pdf>
-] <./figuras/capga_fluxo_ag.pdf, id=5491, 320.44719pt x 527.21968pt>
+] <./figuras/capga_fluxo_ag.pdf, id=5493, 320.44719pt x 527.21968pt>
 File: ./figuras/capga_fluxo_ag.pdf Graphic file (type pdf)
 
 <use ./figuras/capga_fluxo_ag.pdf>
@@ -2243,10 +2236,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 9270 strings out of 493848
- 151285 string characters out of 1152823
- 228322 words of memory out of 3000000
- 11071 multiletter control sequences out of 15000+50000
+ 9272 strings out of 493848
+ 151332 string characters out of 1152823
+ 228634 words of memory out of 3000000
+ 11073 multiletter control sequences out of 15000+50000
  18824 words of font info for 65 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  45i,16n,36p,434b,412s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2276,9 +2269,9 @@ onts/cm/cmti8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt
 /usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/s
 hare/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/t
 exmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on tese_eduardo.pdf (288 pages, 12084808 bytes).
+Output written on tese_eduardo.pdf (288 pages, 12086611 bytes).
 PDF statistics:
- 5872 PDF objects out of 6186 (max. 8388607)
+ 5874 PDF objects out of 6186 (max. 8388607)
  1014 named destinations out of 1200 (max. 500000)
  2227 words of extra memory for PDF output out of 10000 (max. 10000000)
 

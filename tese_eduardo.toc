@@ -94,11 +94,11 @@
 \contentsline {section}{\numberline {8.1}Efici\^encia dos Sistemas de Classifica\c c\~ao Propostos na Rejei\c c\~ao de Raios C\'osmicos}{176}{section.8.1}
 \contentsline {section}{\numberline {8.2}Colis\~oes do LHC}{177}{section.8.2}
 \contentsline {subsection}{\numberline {8.2.1}Resultados - An\'eis}{181}{subsection.8.2.1}
-\contentsline {subsection}{\numberline {8.2.2}Resultados - ICA e NLICA}{182}{subsection.8.2.2}
-\contentsline {subsection}{\numberline {8.2.3}Estudo da relev\^ancia por camada}{183}{subsection.8.2.3}
-\contentsline {subsection}{\numberline {8.2.4}Coment\'arios e Discuss\~ao}{184}{subsection.8.2.4}
-\contentsline {section}{\numberline {8.3}Estimativa do custo computacional dos algoritmos propostos}{184}{section.8.3}
-\contentsline {subsection}{\numberline {8.3.1}Abordagens segmentadas}{188}{subsection.8.3.1}
+\contentsline {subsection}{\numberline {8.2.2}Resultados - ICA e NLICA}{183}{subsection.8.2.2}
+\contentsline {subsection}{\numberline {8.2.3}Estudo da relev\^ancia por camada}{184}{subsection.8.2.3}
+\contentsline {subsection}{\numberline {8.2.4}Coment\'arios e Discuss\~ao}{185}{subsection.8.2.4}
+\contentsline {section}{\numberline {8.3}Estimativa do custo computacional dos algoritmos propostos}{185}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}Abordagens segmentadas}{189}{subsection.8.3.1}
 \contentsline {chapter}{\numberline {9}Conclus\~oes}{190}{chapter.9}
 \contentsline {section}{\numberline {9.1}Trabalhos Futuros}{192}{section.9.1}
 \contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{194}{chapter*.24}
