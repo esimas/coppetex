@@ -862,7 +862,10 @@ Os eventos utilizados nas análises apresentadas nesta tese foram produzidos
 em \emph{runs} de baixa luminosidade. Como a taxa de produção de eventos foi 
 baixa, foram gravados todas as assinaturas aprovadas pelo primeiro nível 
 (ou seja, a filtragem de alto nível não estava operando). As assinaturas 
-gravadas foram, então, submetidas à análise \emph{offline}.
+gravadas foram, então, submetidas à análise \emph{offline}. A filtragem de primeiro 
+nível realizou um corte na energia total em 2~GeV (L1EM2), gerando assinaturas 
+de segundo nível concentradas em energias maiores que 3~GeV (assinaturas do 
+tipo E3). 
 
 De modo distinto aos sinais simulados (que obtêm do próprio software 
 simulador a certificação do tipo de partícula produzida), nos sinais 

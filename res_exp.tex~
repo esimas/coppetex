@@ -14,44 +14,58 @@ de 14 TeV).
 
 \section{Eficiência dos Sistemas de Classificação Propostos na Rejeição de Raios Cósmicos}
 
-Para avaliar a eficiência de classificação dos raios cósmicos foi
+Para avaliar a eficiência de classificação dos raios cósmicos, foi
 realizado um estudo comparativo entre diferentes discriminadores.
 Para o T2Calo e o \emph{Neural Ringer} foram utilizadas versões
 destes algoritmos implementadas no sistema de \emph{software} do
 detector (Athena). Considerando os discriminadores baseados em
-componentes independentes (ICA e NLICA), foram empregadas versões
-treinadas para o conjunto de elétrons e jatos com corte E10 (pois
-esse conjunto, comparado ao E15i, apresenta maior estatística em
-eventos de energias mais baixas).
+componentes independentes (ICA e NLICA), foram empregadas as versões 
+de cada modelo de estimação que apresentaram melhor desempenho para 
+o conjunto simulado de assinaturas E15.
 
 A Tabela~\ref{tab_cosmicRes} mostra os resultados obtidos para
 diferentes discriminadores. Pode-se observar que os
 classificadores que utilizam os sinais em anéis apresentam
 desempenho superior ao T2Calo em pelo menos 1,1 ponto percentual.
 Com o pré-processamento por ICA e Local ICA, foi possível melhorar
-ligeiramente a taxa de rejeição obtida pelo \emph{Neural Ringer}.
+ligeiramente a taxa de rejeição obtida pelo \emph{Neural Ringer}. 
+
+Quando a informação segmentada dos sinais em anéis é explorada na 
+classificação através da rede combinadora, é possível aumentar 
+a rejeição dos raios cósmicos em relação ao \emph{Neural Ringer}. 
+Considerando a rede combinadora utilizando apenas as informações 
+das camadas E1 e E2 observa-se que o desempenho diminui um pouco, 
+mas ainda fica superior ao obtido pelo T2Calo.
 
 \begin{table}[h]
 \centering \caption{Comparação do desempenho de diferentes
 discriminadores na rejeição de raios cósmicos.}\vspace{0.2cm}
-\footnotesize
-\begin{tabular}{c| c c c c c c }
+\scriptsize
+\begin{tabular}{c|c|c|c|c|c|c|c|c}
     \hline
-     \textbf{Discriminador} & \textbf{T2Calo} &  \textbf{Ringer} & \textbf{ICA} & \textbf{Local}&  \textbf{SOM} &  \textbf{PNL}\\
+     \textbf{Discriminador} & \textbf{T2Calo} &  \textbf{Ringer} & \textbf{ICA} & \textbf{Local}&  \textbf{SOM} &  \textbf{PNL} & \textbf{R. Comb.} & \textbf{R. Comb.$_{\text{(E1+E2)}}$}\\
      \hline
-    \textbf{Rejeição} (\%) & 98,21 & 99,56  & 99,77 & 99,59 & 99,48 & 99,38\\
+    \textbf{Rejeição} (\%) & 98,21 & 99,56  & 99,77 & 99,59 & 99,48 & 99,38 & 99,70 & 99,03\\
 \hline
 \end{tabular}
 \label{tab_cosmicRes}
 \end{table}
 
 As distribuições dos valores obtidos nas saídas das redes neurais
-para os discriminadores com pré-processamento por ICA, SOM e PNL
-são mostradas na Figura~\ref{figcosmicNNo} (no treinamento foi
+para os discriminadores com pré-processamento por ICA, SOM, PNL e 
+ICA Local são mostradas na Figura~\ref{figcosmicBarC} (no treinamento foi
 utilizada a saída alvo igual a 1 para elétrons). Os patamares de
 corte estão indicados em linhas tracejadas verticais. Percebe-se
-que, para todos os casos houve uma alta concentração perto de -1.
+que, para todos os casos houve uma alta concentração perto de -1, 
+indicando que a maioria das assinaturas de raios cósmicos 
+é facilmente classificada como ruído de fundo.
 
+Ainda na Figura~\ref{figcosmicBarC}, pode-se observar um comparativo 
+de desempenho entre os diferentes discriminadores que utilizam o 
+pré-processamento por ICA/NLICA e o \emph{Neural Ringer} a partir da 
+parcela das assinaturas que eles acertam e erram em conjunto. Nesta 
+análise é possível observar que há uma grande concordância na parcela 
+de assinaturas rejeitadas.
 
 \begin{figure}[p!]
 \begin{minipage}[b]{0.98\linewidth}
@@ -78,39 +92,86 @@ que, para todos os casos houve uma alta concentração perto de -1.
   \centering \footnotesize{Comparativo de rejeição}
  \end{minipage}
 \caption{Saída dos classificadores neurais (acima) e comparativo
-de rejeição (abaixo) para eventos de raios
-cósmicos.}\label{figcosmicBarC}
+de rejeição (abaixo) para eventos de raios cósmicos.}\label{figcosmicBarC}
 \end{figure}
 
-Por fim, são apresentadas as eficiências na rejeição dos raios
-cósmicos em função da energia, $\eta$ e $\phi$ para os diferentes
-discriminadores. Considerando a energia, observa-se que o T2Calo
-apresenta uma flutuação muito maior que os outros discriminadores.
-Comparando os discriminadores neurais, observa-se que o
-pré-processamento por ICA/NLICA produz uma eficiência
-aproximadamente constante, reduzindo a flutuação em relação ao
-\emph{Neural Ringer}. Resultados semelhantes são observados para
-as outras duas grandezas ($\eta$ e $\phi$).
+A Figura~\ref{fig_cosmicErr} mostra o perfil médio dos eventos de raios cósmicos que são 
+aprovados (aceitos incorretamente como elétrons) conjuntamente pelo 
+\emph{Ringer} e pelo discriminador baseado em ICA Local. 
+Pode-se observar que, os eventos aceitos tem, em média, um perfil que se assemelha ao perfil 
+médio de elétrons.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=9.5cm]{bar-cosmicos-aprov}
+\caption{Perfil médio dos eventos de raios cósmicos aprovados pelo discriminador baseado em 
+ICA Local. O perfil médio dos elétrons do conjunto E15 são mostrados para comparação.} \label{fig_cosmicErr}
+\end{figure}
+
+Por fim, são apresentadas na Figura~\ref{figcosmicEF}, as eficiências 
+na rejeição dos raios cósmicos em função da energia e $\eta$ para diferentes
+discriminadores. Observa-se que o T2Calo
+apresenta uma flutuação muito maior que os outros discriminadores 
+(tanto em energia como em $\eta$) e uma 
+tendência para menores valores de rejeição.
+Comparando os discriminadores neurais, observa-se que, o
+pré-processamento por ICA/NLICA produz uma rejeição
+aproximadamente constante (com uma pequena queda na região do 
+\emph{crack}  $|\eta|\sim 1,5$), atingindo resultados bastante semelhantes aos 
+do \emph{Neural Ringer}. 
+
+%\begin{figure}[h!]
+%\begin{minipage}[b]{0.98\linewidth}
+%  \centering
+% \centerline{\epsfig{file=cosmic-comp-ef-et2,width=16cm}}
+%\end{minipage}
+%\hfill
+%\begin{minipage}[b]{0.98\linewidth}
+%  \centering
+% \centerline{\epsfig{file=cosmic-comp-ef-eta2,width=16cm}}
+%\end{minipage}
+%\hfill \linebreak
+%\begin{minipage}[b]{0.98\linewidth}
+%  \centering
+% \centerline{\epsfig{file=cosmic-comp-ef-phi2,width=16cm}}
+%\end{minipage}
+%\caption{Histogramas em energia $\eta$ e $\phi$ dos eventos de
+%raios cósmicos para diferentes
+%discriminadores.}\label{figcosmicEF}
+%\end{figure}
 
 \begin{figure}[h!]
 \begin{minipage}[b]{0.98\linewidth}
   \centering
- \centerline{\epsfig{file=cosmic-comp-ef-et2,width=16cm}}
+  \centerline{\footnotesize{--- ICA $\times$ Ringer $\times$ T2Calo ---}}
+\end{minipage}
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cosmics-comp-ef-etICA,width=8cm}}
 \end{minipage}
 \hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cosmics-comp-ef-etaICA,width=8cm}}
+\end{minipage}
+\hfill 
 \begin{minipage}[b]{0.98\linewidth}
   \centering
- \centerline{\epsfig{file=cosmic-comp-ef-eta2,width=16cm}}
+  \centerline{\footnotesize{--- ICA Local $\times$ Ringer $\times$ T2Calo ---}}
 \end{minipage}
-\hfill \linebreak
-\begin{minipage}[b]{0.98\linewidth}
+\begin{minipage}[b]{0.48\linewidth}
   \centering
- \centerline{\epsfig{file=cosmic-comp-ef-phi2,width=16cm}}
+ \centerline{\epsfig{file=cosmics-comp-ef-etLocal,width=8cm}}
 \end{minipage}
-\caption{Histogramas em energia $\eta$ e $\phi$ dos eventos de
-raios cósmicos para diferentes
-discriminadores.}\label{figcosmicEF}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cosmics-comp-ef-etaLocal,width=8cm}}
+\end{minipage}
+\caption{Comparativo de desempenho em energia e $\eta$ de diferentes discriminadores na 
+rejeição de eventos de raios cósmicos.}\label{figcosmicEF}
 \end{figure}
+
 
 
 \section{Colisões do LHC}
@@ -235,13 +296,13 @@ número de neurônios ocultos.} \label{fig_exp_nh}
 \begin{minipage}[b]{0.48\linewidth}
   \centering
 %  \centerline{\footnotesize Elétrons/Simulados-E10}\medskip
- \centerline{\epsfig{file=exp1ringer_outs,width=8cm}}
+ \centerline{\epsfig{file=exp1ringer_outs,width=6.5cm}}
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\linewidth}
   \centering
 %  \centerline{\footnotesize Jatos/Simulados-E10}\medskip
- \centerline{\epsfig{file=exp1_fisherOuts,width=8cm}}
+ \centerline{\epsfig{file=exp1_fisherOuts,width=6.5cm}}
 \end{minipage}
 \begin{minipage}[b]{0.98\linewidth}
   \centering
@@ -269,74 +330,147 @@ para um falso-alarme igual a 43,2~\% (porém, neste caso o SP caiu para 75,1).
 \caption{SP.} \label{fig_exp_spPDpf}
 \end{figure}
 
-Na Figura~\ref{fig_compRingerT2Loose} é apresentada uma comparação entre a eficiência e  
-o falso-alarme obtidos para o corte T2EM3\_\emph{Loose} e para o \emph{Neural Ringer} ajustado para 
+Na Figura~\ref{fig_compRingerT2} é apresentada uma comparação entre a eficiência e  
+o falso-alarme obtidos para os dois cortes do T2Calo. Para o corte T2EM3\_\emph{Loose}, 
+o \emph{Neural Ringer} ajustado foi para 
 a mesma probabilidade de detecção ($\sim$98~\%). Pode-se verificar que, o \emph{Ringer} 
 é superior para altos valores de $|\eta|$ e próximo a $\eta=0$ e para baixa energia, porém 
 (provavelmente pela baixa estatística de eventos) o discriminador neural apresentou 
 eficiência inferior na região do \emph{crack}. Observando o falso alarme, fica evidente 
 a superioridade do \emph{Ringer} para quase todas as faixas de energia e pseudorapidez ($\eta$).
 
-\begin{figure}[ht]
+Considerando agora o corte T2EM3\_\emph{Medium},
+mostra que, de modo semelhante ao verificado no critério T2EM3\_\emph{Loose}, 
+para uma mesma probabilidade de detecção ($\sim$96~\%), o \emph{Neural Ringer} reduz significativamente 
+o falso alarme de modo aproximadamente uniforme em energia. Analisando as distribuições em 
+$\eta$, observa-se novamente que há uma inversão nas curvas de falso alarme dos dois discriminadores. 
+É interessante notar que, o \emph{Ringer} consegue reduzir bastante a aceitação de falso alarme 
+na região do \emph{crack}.
+
+\begin{figure}[pht]
+\begin{minipage}[b]{0.98\linewidth}
+  \centering
+  \centerline{\footnotesize --- Ringer $\times$ T2EM3\_\emph{Loose} ---}\medskip
+\end{minipage}
 \begin{minipage}[b]{0.48\linewidth}
   \centering
-  \centerline{\footnotesize Eficiência}\medskip
- \centerline{\epsfig{file=exp1ringer_t2etCompLoose,width=8cm}}
+%  \centerline{\footnotesize Eficiência}\medskip
+ \centerline{\epsfig{file=exp1ringer_t2etCompLoose,width=6.5cm}}
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\linewidth}
   \centering
-  \centerline{\footnotesize Falso alarme}\medskip
- \centerline{\epsfig{file=exp1ringer_t2etCompLooseFA,width=8cm}}
+%  \centerline{\footnotesize Falso alarme}\medskip
+ \centerline{\epsfig{file=exp1ringer_t2etCompLooseFA,width=6.5cm}}
 \end{minipage}
 \begin{minipage}[b]{0.48\linewidth}
   \centering
 %  \centerline{\footnotesize Elétrons/Simulados-E10}\medskip
- \centerline{\epsfig{file=exp1ringer_t2etaCompLoose,width=8cm}}
+ \centerline{\epsfig{file=exp1ringer_t2etaCompLoose,width=6.5cm}}
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\linewidth}
   \centering
 %  \centerline{\footnotesize Jatos/Simulados-E10}\medskip
- \centerline{\epsfig{file=exp1ringer_t2etaCompLooseFA,width=8cm}}
+ \centerline{\epsfig{file=exp1ringer_t2etaCompLooseFA,width=6.5cm}}
 \end{minipage}
-\hfill \caption{Distribuição das saídas para os discriminadores neural (esquerda e acima) e 
-de Fisher (direita e acima) e as curvas ROC (abaixo).}\label{fig_compRingerT2Loose}
+\begin{minipage}[b]{0.98\linewidth}
+  \centering
+  \centerline{\footnotesize --- Ringer $\times$ T2EM3\_\emph{Medium} ---}\medskip
+\end{minipage}
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+% \centerline{\footnotesize Eficiência}\medskip
+ \centerline{\epsfig{file=exp1ringer_t2etCompMedium,width=6.5cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+%  \centerline{\footnotesize Falso alarme}\medskip
+ \centerline{\epsfig{file=exp1ringer_t2etCompMediumFA,width=6.5cm}}
+\end{minipage}
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+%  \centerline{\footnotesize Elétrons/Simulados-E10}\medskip
+ \centerline{\epsfig{file=exp1ringer_t2etaCompMedium,width=6.5cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+%  \centerline{\footnotesize Jatos/Simulados-E10}\medskip
+ \centerline{\epsfig{file=exp1ringer_t2etaCompMediumFA,width=6.5cm}}
+\end{minipage}
+\hfill \caption{Comparativo de desempenho entre o \emph{Neural Ringer} e os 
+dois cortes do T2Calo.}\label{fig_compRingerT2}
 \end{figure}
 
-Considerando agora o corte T2EM3\_\emph{Medium}, a Figura~\ref{fig_compRingerT2Medium} 
-mostra ...
+Os perfis médios dos eventos classificados incorretamente pelo \emph{Neural Ringer} 
+(para as duas classes) são mostrados na Figura~\ref{figRingerPerfis} e comparados 
+com os eventos médios de ``elétrons'' e ``jatos''. É possível verificar que, 
+os eventos classificados incorretamente pelo \emph{Ringer} apresentam perfis 
+médios bastante semelhantes com o perfil da outra classe (indicando que uma parte 
+destas assinaturas tenham sido identificadas incorretamente pela análise \emph{offline}). 
 
 \begin{figure}[ht]
 \begin{minipage}[b]{0.48\linewidth}
-  \centering
+  \centering \footnotesize{Elétrons}
 %  \centerline{\footnotesize Elétrons/Simulados-E10}\medskip
- \centerline{\epsfig{file=exp1ringer_t2etCompMedium,width=8cm}}
+ \centerline{\epsfig{file=exp1_evE,width=7.9cm}}
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\linewidth}
-  \centering
+  \centering \footnotesize{Jatos}
 %  \centerline{\footnotesize Jatos/Simulados-E10}\medskip
- \centerline{\epsfig{file=exp1ringer_t2etCompMediumFA,width=8cm}}
+ \centerline{\epsfig{file=exp1_evJ,width=7.9cm}}
 \end{minipage}
 \begin{minipage}[b]{0.48\linewidth}
-  \centering
+\vspace{0.4cm}
+  \centering \footnotesize{Elétrons classificados como jatos}
 %  \centerline{\footnotesize Elétrons/Simulados-E10}\medskip
- \centerline{\epsfig{file=exp1ringer_t2etaCompMedium,width=8cm}}
+ \centerline{\epsfig{file=exp1ringer_evEtipoJ,width=7.9cm}}
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\linewidth}
-  \centering
+  \centering \footnotesize{Jatos classificados como elétrons}
 %  \centerline{\footnotesize Jatos/Simulados-E10}\medskip
- \centerline{\epsfig{file=exp1ringer_t2etaCompMediumFA,width=8cm}}
+ \centerline{\epsfig{file=exp1ringer_evJtipoE,width=7.9cm}}
 \end{minipage}
 \hfill \caption{Distribuição das saídas para os discriminadores neural (esquerda e acima) e 
-de Fisher (direita e acima) e as curvas ROC (abaixo).}\label{fig_compRingerT2Medium}
+de Fisher (direita e acima) e as curvas ROC (abaixo).}\label{figRingerPerfis}
 \end{figure}
 
+Analisando a energia e a posição de interação (em função da coordenada $\eta$) dos 
+eventos classificados incorretamente pelo \emph{Neural Ringer} (ver Figura~\ref{figRingerFailPhis}), 
+observa-se que, 
 
 
-
+\begin{figure}[ht]
+\begin{minipage}[b]{0.48\linewidth}
+  \centering \footnotesize{Elétrons}
+%  \centerline{\footnotesize Elétrons/Simulados-E10}\medskip
+ \centerline{\epsfig{file=exp1ringer_evEtipoJet,width=7cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering \footnotesize{Jatos}
+%  \centerline{\footnotesize Jatos/Simulados-E10}\medskip
+ \centerline{\epsfig{file=exp1ringer_evEtipoJeta,width=7cm}}
+\end{minipage}
+\begin{minipage}[b]{0.48\linewidth}
+\vspace{0.4cm}
+  \centering \footnotesize{Elétrons classificados como jatos}
+%  \centerline{\footnotesize Elétrons/Simulados-E10}\medskip
+ \centerline{\epsfig{file=exp1ringer_evJtipoEet,width=7cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering \footnotesize{Jatos classificados como elétrons}
+%  \centerline{\footnotesize Jatos/Simulados-E10}\medskip
+ \centerline{\epsfig{file=exp1ringer_evJtipoEeta,width=7cm}}
+\end{minipage}
+\hfill \caption{Distribuição das saídas para os discriminadores neural (esquerda e acima) e 
+de Fisher (direita e acima) e as curvas ROC (abaixo).}\label{figRingerFailPhis}
+\end{figure}
 
 \subsection{Resultados - ICA e NLICA}
 
@@ -344,9 +478,51 @@ Considerando os discriminadores baseados em pré-processamento por ICA/NLICA, par
 experimentais, os algoritmos de extração de características foram re-treinados apenas nas 
 configurações que obtiveram melhor desempenho para os sinais simulados (que em geral eram 
 sempre as que utilizam, de algum modo, informação supervisionada para estimas os componentes 
-independentes).
+independentes). Assim, os componentes independentes foram estimados utilizando os 
+modelos/abordages de treinamento a seguir:
+\begin{itemize}
+ \item ICA (linear) com compactação por PCD;
+ \item ICA Local;
+ \item SOM Supervisionado (não-segmentado);
+ \item PNL Modificado (segmentado).
+\end{itemize}
 
-...
+A Figura~\ref{figExp1NlicaRocs} mostra as curvas ROC obtidas a partir dos discriminadores 
+treinados com os componentes independentes.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=9cm]{expR1NLICA_compRoc}
+\caption{SP.} \label{fig_exp_spPDpf}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{minipage}[b]{0.48\linewidth}
+ % \centering \footnotesize{Elétrons}
+%  \centerline{\footnotesize Elétrons/Simulados-E10}\medskip
+ \centerline{\epsfig{file=exp1Local_compRingerICAet,width=7cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+ % \centering \footnotesize{Jatos}
+%  \centerline{\footnotesize Jatos/Simulados-E10}\medskip
+ \centerline{\epsfig{file=exp1Local_compRingerICAetFA,width=7cm}}
+\end{minipage}
+\begin{minipage}[b]{0.48\linewidth}
+\vspace{0.4cm}
+ % \centering \footnotesize{Elétrons classificados como jatos}
+%  \centerline{\footnotesize Elétrons/Simulados-E10}\medskip
+ \centerline{\epsfig{file=exp1Local_compRingerICAeta,width=7cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+ % \centering \footnotesize{Jatos classificados como elétrons}
+%  \centerline{\footnotesize Jatos/Simulados-E10}\medskip
+ \centerline{\epsfig{file=exp1Local_compRingerICAetaFA,width=7cm}}
+\end{minipage}
+\hfill \caption{Comparativo de desempenho entre o \emph{Neural Ringer} e 
+os discriminadores neurais com pré-processamento por ICA (linear) e ICA Local.}\label{figLocalPhis}
+\end{figure}
 
 \subsection{Estudo da relevância por camada}
 
@@ -355,15 +531,43 @@ para realizar o estudo da relevância por camada é treinar classificadores especi
 informação de cada camada do calorímetro, e utilizar uma rede neural combinadora para aproveitar 
 ao máximo toda a segmentação da informação. Assim, para os sinais experimentais, 
 
+\begin{figure}[ht]
+\begin{minipage}[b]{0.48\linewidth}
+ % \centering \footnotesize{Elétrons}
+%  \centerline{\footnotesize Elétrons/Simulados-E10}\medskip
+ \centerline{\epsfig{file=exp1CC_ringerCompEt,width=7cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+ % \centering \footnotesize{Jatos}
+%  \centerline{\footnotesize Jatos/Simulados-E10}\medskip
+ \centerline{\epsfig{file=exp1CC_ringerCompEtFA,width=7cm}}
+\end{minipage}
+\begin{minipage}[b]{0.48\linewidth}
+\vspace{0.4cm}
+ % \centering \footnotesize{Elétrons classificados como jatos}
+%  \centerline{\footnotesize Elétrons/Simulados-E10}\medskip
+ \centerline{\epsfig{file=exp1CC_ringerCompEta,width=7cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+ % \centering \footnotesize{Jatos classificados como elétrons}
+%  \centerline{\footnotesize Jatos/Simulados-E10}\medskip
+ \centerline{\epsfig{file=exp1CC_ringerCompEtaFA,width=7cm}}
+\end{minipage}
+\hfill \caption{Comparativo de desempenho entre o \emph{Neural Ringer} e 
+os discriminadores neurais com pré-processamento por ICA (linear) e ICA Local.}\label{figCombClasPhis}
+\end{figure}
+
 \subsection{Comentários e Discussão}
 
-\begin{table}[t!]\scriptsize
+\begin{table}[t!]
 \centering \caption{Comparação dos resultados obtidos para diferentes discriminadores considerando o
 máximo SP($\times$100), as probabilidades de decisão (PD) e falso-alarme (PF) para o melhor SP e a
-probabilidade de falso-alarme para PD$=$92,5\%.}
+probabilidade de falso-alarme para PD$=$92,5\%.}\vspace{0.2cm} \tiny
 \begin{tabular}{c|c|c|c|c|c|c}
     \hline \hline
-    \textbf{Discriminador} &\textbf{Máx. SP}$\times$100 & \textbf{PD} (\%)  & \textbf{PF} (\%) & \textbf{PF}$_{PD=93\%}$ & \textbf{PF}$_{PD=96\%}$ & \textbf{PF}$_{PD=98\%}$ \\
+    \textbf{Discriminador} &\textbf{SP}$_{\text{Max.}}\times$100 & \textbf{PD} (\%)  & \textbf{PF} (\%) & \textbf{PF}$_{\text{PD=93\%}}$ & \textbf{PF}$_{\text{PD=96\%}}$ & \textbf{PF}$_{\text{PD=98\%}}$ \\
     \hline
    T2EM3\_\emph{loose}  & 63,36 & 98,10 & 64,07 & - & - & 64,07\\ \hline
   T2EM3\_\emph{tight}  & 68,01 & 96,30 & 55,73 & - & 55,73 & - \\ \hline
@@ -371,9 +575,9 @@ probabilidade de falso-alarme para PD$=$92,5\%.}
        ICA & 85,96 $\pm$ 0,24 & 86,36 $\pm$ 0,22 & 14,48 $\pm$ 0,13 &  $\pm$ 0,12 & 41,44 $\pm$&  $\pm$\\ \hline
   SOM Sup. & 86,26 $\pm$ 0,20 & 85,34 $\pm$ 0,29 & 12,81 $\pm$ 0,11 &  $\pm$ 0,17 & 40,65 $\pm$ &  $\pm$\\ \hline
    PNL Mod.& 86,06 $\pm$ 0,18 & 86,10 $\pm$ 0.15 & 13,98 $\pm$ 0,12 &  $\pm$ 0,21 & 39,01 $\pm$ &  $\pm$\\ \hline
-   Local   & 86,67 $\pm$ 0,27 & 87,61 $\pm$ 0.30 & 14,22 $\pm$ 0,17 &  $\pm$ 0,10 & 42,02 $\pm$ &  $\pm$\\ \hline
-Rede Comb. & 86,80 $\pm$ 0,23 & 89,44 $\pm$ 0.18 & 15,80 $\pm$ 0,10 &  $\pm$ 0,09 & 33,76 $\pm$ &  $\pm$\\ \hline
-R.Comb. E1+E2 & 86,26 $\pm$ 0,21 & 87,50 $\pm$ 0,17 & 14,91 $\pm$ 0,14 &  $\pm$ 0,12& 39,48 $\pm$ &  $\pm$\\ \hline
+   \bf{Local}   & \bf{86,67 $\pm$ 0,27} & \bf{87,61 $\pm$ 0.30} & \bf{14,22 $\pm$ 0,17} & \bf{ $\pm$ 0,10} & \bf{42,02 $\pm$ }& \bf{ $\pm$}\\ \hline
+\bf{Rede Comb.} & \bf{86,80 $\pm$ 0,23} & \bf{89,44 $\pm$ 0.18} & \bf{15,80 $\pm$ 0,10} &  \bf{$\pm$ 0,09} & \bf{33,76 $\pm$ }&\bf{  $\pm$}\\ \hline
+R. Comb$_{(\text{E1+E2})}$ & 86,26 $\pm$ 0,21 & 87,50 $\pm$ 0,17 & 14,91 $\pm$ 0,14 &  $\pm$ 0,12& 39,48 $\pm$ &  $\pm$\\ \hline
  \hline
 \end{tabular}
 \label{tabCompAllExp1}
