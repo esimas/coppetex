@@ -125,27 +125,32 @@
 \contentsline {figure}{\numberline {8.2}{\ignorespaces Perfil m\'edio dos eventos de raios c\'osmicos aprovados conjuntamente pelo discriminador baseado em ICA Local e pelo \emph {Neural Ringer}. . O perfil m\'edio dos el\'etrons do conjunto E15 \'e mostrado para compara\c c\~ao.}}{179}{figure.8.2}
 \contentsline {figure}{\numberline {8.3}{\ignorespaces Comparativo de desempenho em energia e $\eta $ de diferentes discriminadores na rejei\c c\~ao de eventos de raios c\'osmicos.}}{180}{figure.8.3}
 \contentsline {figure}{\numberline {8.4}{\ignorespaces Sa\IeC {\'\i }das do \emph {Neural Ringer} (treinado para os sinais simulados E10) para os sinais experimentais.}}{181}{figure.8.4}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces M\'aximo SP (m\'edia e desvio padr\~ao) obtidos variando-se o n\'umero de neur\^onios ocultos.}}{183}{figure.8.5}
-\contentsline {figure}{\numberline {8.6}{\ignorespaces Distribui\c c\~ao das sa\IeC {\'\i }das para os discriminadores neural (esquerda e acima) e de Fisher (direita e acima) e as curvas ROC (abaixo).}}{184}{figure.8.6}
-\contentsline {figure}{\numberline {8.7}{\ignorespaces SP.}}{185}{figure.8.7}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces M\'aximo SP (m\'edia e desvio padr\~ao) obtidos variando-se o n\'umero de neur\^onios ocultos.}}{182}{figure.8.5}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Distribui\c c\~ao das sa\IeC {\'\i }das para os discriminadores neural (esquerda e acima) e de Fisher (direita e acima) e as curvas ROC (abaixo).}}{183}{figure.8.6}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces SP.}}{184}{figure.8.7}
 \contentsline {figure}{\numberline {8.8}{\ignorespaces Comparativo de desempenho entre o \emph {Neural Ringer} e os dois cortes do T2Calo.}}{186}{figure.8.8}
-\contentsline {figure}{\numberline {8.9}{\ignorespaces Distribui\c c\~ao das sa\IeC {\'\i }das para os discriminadores neural (esquerda e acima) e de Fisher (direita e acima) e as curvas ROC (abaixo).}}{187}{figure.8.9}
-\contentsline {figure}{\numberline {8.10}{\ignorespaces Distribui\c c\~ao das sa\IeC {\'\i }das para os discriminadores neural (esquerda e acima) e de Fisher (direita e acima) e as curvas ROC (abaixo).}}{188}{figure.8.10}
-\contentsline {figure}{\numberline {8.11}{\ignorespaces SP.}}{189}{figure.8.11}
-\contentsline {figure}{\numberline {8.12}{\ignorespaces Comparativo de desempenho entre o \emph {Neural Ringer} e os discriminadores neurais com pr\'e-processamento por ICA (linear) e ICA Local.}}{190}{figure.8.12}
+\contentsline {figure}{\numberline {8.9}{\ignorespaces Perfil m\'edio dos eventos classificados incorretamente pelo \emph {Neural Ringer}. Os sinais m\'edios de ``el\'etrons'' e ``jatos'' s\~ao mostrados para compara\c c\~ao.}}{187}{figure.8.9}
+\contentsline {figure}{\numberline {8.10}{\ignorespaces Distribui\c c\~oes em energia e $\eta $ dos eventos classificados incorretamente pelo \emph {Neural Ringer}.}}{188}{figure.8.10}
+\contentsline {figure}{\numberline {8.11}{\ignorespaces Distribui\c c\~ao das assinaturas de cada classe nos agrupamento.}}{189}{figure.8.11}
+\contentsline {figure}{\numberline {8.12}{\ignorespaces Curvas ROC para os discriminadores baseados em ICA/NLICA para os sinais experimentais.}}{190}{figure.8.12}
 \contentsline {figure}{\numberline {8.13}{\ignorespaces Comparativo de desempenho entre o \emph {Neural Ringer} e os discriminadores neurais com pr\'e-processamento por ICA (linear) e ICA Local.}}{191}{figure.8.13}
+\contentsline {figure}{\numberline {8.14}{\ignorespaces SP m\'aximo$\times $100 obtido por cada classificador especialista (segmentado).}}{192}{figure.8.14}
+\contentsline {figure}{\numberline {8.15}{\ignorespaces Desempenho obtido,em termos do m\'aximo SP (esquerda) e das curvas ROC (direita), atrav\'es da rede combinadora.}}{193}{figure.8.15}
+\contentsline {figure}{\numberline {8.16}{\ignorespaces Comparativo de desempenho entre o \emph {Neural Ringer} e os discriminadores neurais com pr\'e-processamento por ICA (linear) e ICA Local.}}{194}{figure.8.16}
+\contentsline {figure}{\numberline {8.17}{\ignorespaces Comparativo de desempenho entre diferentes discriminadores em termos das curvas ROC.}}{195}{figure.8.17}
+\contentsline {figure}{\numberline {8.18}{\ignorespaces Parcela do tempo total gasta em cada etapa de processamento do \emph {Neural Ringer} (esquerda) e parcela do tempo espec\IeC {\'\i }fico das etapas de sele\c c\~ao de regi\~ao, anelamento e normaliza\c c\~ao gasto para cada camada do calor\IeC {\'\i }metro.}}{200}{figure.8.18}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Diagrama de um mapa auto-organiz\'avel}}{223}{figure.A.1}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Diagrama da classifica\c c\~ao a partir do mapa de caracter\IeC {\'\i }sticas}}{227}{figure.A.2}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Compress\~ao e recupera\c c\~ao do sinal $\mathbf {x}$ utilizando a transforma\c c\~ao por PCA.}}{230}{figure.A.3}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Diagrama do algoritmo de Taleb-Jutten para o modelo PNL.}}{241}{figure.A.4}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Diagrama de um mapa auto-organiz\'avel}}{230}{figure.A.1}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Diagrama da classifica\c c\~ao a partir do mapa de caracter\IeC {\'\i }sticas}}{234}{figure.A.2}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Compress\~ao e recupera\c c\~ao do sinal $\mathbf {x}$ utilizando a transforma\c c\~ao por PCA.}}{237}{figure.A.3}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Diagrama do algoritmo de Taleb-Jutten para o modelo PNL.}}{248}{figure.A.4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Esquem\'atico do problema de classifica\c c\~ao bin\'ario.}}{243}{figure.B.1}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Diagrama em blocos de um filtro casado.}}{246}{figure.B.2}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Exemplo de uma rede neural utilizada para separa\c c\~ao dos sinais de entrada em 3 classes.}}{248}{figure.B.3}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Esquem\'atico do problema de classifica\c c\~ao bin\'ario.}}{250}{figure.B.1}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Diagrama em blocos de um filtro casado.}}{253}{figure.B.2}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Exemplo de uma rede neural utilizada para separa\c c\~ao dos sinais de entrada em 3 classes.}}{255}{figure.B.3}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Exemplo de um cromossomo bin\'ario}}{252}{figure.C.1}
-\contentsline {figure}{\numberline {C.2}{\ignorespaces (a) Recombina\c c\~ao em ponto \'unico e (b) recombina\c c\~ao uniforme.}}{254}{figure.C.2}
-\contentsline {figure}{\numberline {C.3}{\ignorespaces Fluxo de um Algoritmo Gen\'etico}}{256}{figure.C.3}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Exemplo de um cromossomo bin\'ario}}{259}{figure.C.1}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces (a) Recombina\c c\~ao em ponto \'unico e (b) recombina\c c\~ao uniforme.}}{261}{figure.C.2}
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Fluxo de um Algoritmo Gen\'etico}}{263}{figure.C.3}
 \addvspace {10\p@ }
