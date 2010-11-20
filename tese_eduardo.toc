@@ -1,6 +1,5 @@
 \select@language {brazil}
 \select@language {english}
-\select@language {brazil}
 \contentsline {chapter}{Lista de Figuras}{xiii}{chapter*.3}
 \contentsline {chapter}{Lista de Tabelas}{xxi}{chapter*.4}
 \contentsline {chapter}{S\IeC {\'\i }mbolos e Abreviaturas}{xxiv}{chapter*.5}
