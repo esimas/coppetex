@@ -199,6 +199,286 @@ compreendem os modelos com restrições estruturais e os modelos
 livres), através de algoritmos com aplicação difundida na
 literatura (PNL e SOM).
 
+\subsubsection{Metodologia para Estimação da ICA Linear}
+
+No trabalho~\cite{tese:torres:2010}, foi realizado um estudo, 
+com dados simulados, a respeito da utilização do modelo linear da 
+análise de componentes independentes para extração de características dos sinais em
+anéis. De modo bastante completo, foram abordadas diversas
+configurações para a estimação dos componentes independentes. 
+A configuração que apresentou melhor resultado, em termos da eficiência 
+de discriminação, compreende as etapas listadas a seguir:
+\begin{itemize}
+ \item Compactação dos sinais em anéis de modo segmentado a partir da análise 
+de componentes principais (PCD).
+ \item Estimação da ICA através do algoritmo JADE~\ref{article:Cardoso:1993}.
+ \itam Classificação a partir de um discriminador neural alimentado pelos 
+componentes independentes.
+\end{itemize}
+
+Em comparação com o algoritmo FastICA~\ref{article:fastica:1999} (outro algoritmo 
+bastante utilizado para a estimação dos componentes independentes no modelo de mistura linear), 
+o JADE mostrou, em trabalhos anteriores~\ref{sonar:ica,simas:IEENSS09}, 
+melhores resultados em problemas de extração de características e separação de fontes.
+
+Na comparação que será apresentada nesta tese, será
+considerado apenas o modo de estimação da ICA que produziu melhor
+resultado.
+
+
+\subsubsection{Metodologia para Estimação da ICA Local}
+
+Na ICA Local, conforme mencionado no Capítulo~\ref{cap_ica},
+inicialmente é executada uma etapa de agrupamento
+não-supervisionado (\emph{clustering}), onde o conjunto 
+de sinais é mapeado em dois grupos. O número de agrupamentos 
+a ser utilizado foi escolhido considerando que o problema é de 
+classificação binária (em duas classes, elétrons e jatos).
+
+O algoritmo utilizado para o agrupamento foi o \emph{k-means}~\ref{book:duda:2000}. 
+O \emph{k-means} é um dos métodos agrupamento mais utilizados 
+na literatura~\ref{article:kmeans:2002,Alsabti98anefficient,kmeans2:2004}. 
+Uma outra alternativa para a realização do agrupamento seria o uso de mapas 
+auto-organizáveis. Para os sinais utilizados, o desempenho dos dois 
+métodos foi semelhante, porém, o esforço computacional exigido pelo 
+\emph{k-means} foi menor (justificando a escolha).
+
+Após o agrupamento, os componentes
+independentes são estimados em cada grupo (novamente foi utilizado o 
+algoritmo JADE). Na aplicação à
+filtragem \emph{online} de elétrons no ATLAS, o objetivo é a
+separação em duas classes (elétrons e jatos), então, foi realizado
+o agrupamento em dois grupos (\emph{clusters}) através do algoritmo
+\emph{k-means}.
+
+Após a divisão nos \emph{clusters} foi aplicado um algoritmo de
+ICA linear (JADE) para estimar os componentes independentes locais
+(de modo não-segmentado, ou seja, aplicando-se o algoritmo aos
+sinais em anéis de todas as camadas do calorímetro). Em seguida,
+classificadores neurais foram treinados a partir destes
+componentes.
+
+É importante notar que, devido às diferentes
+concentrações dos eventos de cada classe nos agrupamentos, 
+os patamares que otimizam o desempenho local (considerando
+os agrupamentos individualmente) podem não ser ótimos quando o
+objetivo é maximizar a eficiência no conjunto de todos os eventos.
+Deste modo, precisa-se otimizar o SP (global) variando-se os patamares
+locais (Y$_1$ e Y$_2$). Para realizar essa procedimento foi utilizado um
+algoritmo genético (AG), onde o espaço de busca é composto por Y$_1$ e Y$_2$
+e o objetivo é maximizar o SP. Uma das vantagens deste método de
+otimização é que não há a necessidade de encontrar as derivadas da
+função custo (que no caso é o produto SP) em função de Y$_1$ e
+Y$_2$, além disso, no AG a busca é realizada globalmente (mais
+detalhes no Apêndice~\ref{apend_GA}). Um diagrama do treinamento do discriminador
+baseado em ICA Local é mostrado Figura~\ref{E10local_diagAll}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=14cm]{localIcaDiag}
+\caption{Diagrama do discriminador baseado em ICA Local.} \label{E10local_diagAll}
+\end{figure}
+
+
+\subsubsection{Metodologia para Treinamento dos Mapas Auto-Organizáveis}
+
+Neste trabalho, os mapas auto-organizáveis foram utilizados por
+estarem diretamente relacionados com o paradigma da
+NLICA\footnote{O SOM foi um dos primeiros algoritmos propostos
+para a NLICA, mais detalhes em~\cite{article:simas:2007:lnlm}}.
+Porém, para estimar N componentes independentes é preciso utilizar
+um mapa auto-organizável N-dimensional. Assim, para o problema em
+questão, onde seriam estimadas algumas dezenas de componentes,
+este método seria proibitivamente lento. Um outro problema
+observado é que a precisão na estimação também diminui com o
+aumento da dimensionalidade.
+
+Uma solução encontrada foi a utilização de mapas bi-dimensionais, que,
+no contexto da NLICA, produzem uma estimativa de dois componentes
+independentes não-lineares (considerando um mapeamento sem restrições
+estruturais). Os mapas auto-organizáveis bi-dimensionais também são
+bastante úteis para a visualização e análise de dados de alta
+dimensão.
+
+Para treinamento dos mapas foram utilizadas diferentes abordagens
+que podem ser classificadas de dois modos:
+\begin{description}
+ \item[quanto à segmentação dos dados] - em não-segmentado (considerando todos os 100 anéis como
+entrada) e segmentado (utilizando, separadamente, os sinais em anéis 
+de cada camada do calorímetro, neste caso, são treinados 7 mapas,
+um para cada);
+ \item[quanto ao uso de informação supervisionada no treinamento] -
+em não-supervisionado (sendo este o procedimento tradicional de
+treinamento e referido no texto simplesmente como SOM), ajustado
+por LVQ (neste caso, após o treinamento não-supervisionado, os
+pesos do mapa são ajustados, usando informação dos rótulos de
+ classe, por um algoritmo de LVQ, para mais detalhes ver o
+Apêndice~\ref{apend_fex}) e supervisionado (este modo de treinamento
+foi descrito na Seção~\ref{sec_icasup} e consiste em utilizar os
+rótulos de classe como uma variável de entrada adicional).
+\end{description}
+
+\begin{figure}[h!]
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=som_sup_lvq.pdf,width=4cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=som_sup_cIn,width=3.5cm}}
+\end{minipage}
+\caption{Diagramas dos processos de treinamento dos mapas auto-organizáveis utilizando
+informação a respeito das classes.}\label{E10somdiag1}
+\end{figure}
+
+Considerando que serão utilizados mapas bi-dimensionais, ainda é
+necessário escolher o número de neurônios a serem utilizados na
+grade. Para guiar este processo, que usualmente é realizado de
+modo empírico (por
+tentativas)~\cite{Flexer:2001:som,book:kohonen:2001}, foram
+utilizados dois parâmetros o erro de reconstrução médio e o índice
+soma-produto (SP), conforme descritos a seguir:
+\begin{description}
+    \item[Erro de reconstrução médio (ERM)] - Os mapas auto-organizáveis
+    podem ser considerados como um método de quantização vetorial,
+    onde os pesos dos neurônios formam o \emph{codebook} (para
+    mais detalhes ver o Apêndice~\ref{apend_fex}). Na operação do
+    SOM, cada sinal $\mathbf{x}_A$ apresentado na entrada é associado ao
+    neurônio $\mathbf{w}_c$ mais próximo (considerando por exemplo a distância
+    euclidiana, este neurônio é chamado de ``neurônio vencedor'').
+    Os sinais associados a cada neurônio formam um
+    agrupamento centrado em $\mathbf{w}_c$ e podem ser aproximados
+    pelo próprio neurônio. A partir desta correspondência, é gerado um erro
+    de aproximação (ou reconstrução) definido por:
+    \begin{equation}\label{eq_erm}
+        ER=|\mathbf{x}_A-\mathbf{w}_c|.
+    \end{equation}
+    O erro de reconstrução médio é uma métrica que pode ser utilizada para
+    indicar a qualidade da aproximação obtida pelo SOM e tende a diminuir com o
+    aumento do número de neurônios do mapa (pois, deste modo, o
+    tamanho médio dos agrupamentos associados a cada neurônio
+    também tende a diminuir).
+    \item[Índice soma-produto (SP)] - Conforme definido na Equação~\ref{eq_sp}, o
+    produto SP está sendo utilizado como parâmetro para avaliar o
+    desempenho dos classificadores. Associando-se cada neurônio do
+    SOM à classe que mais o ativa, pode-se utilizar o mapa
+    auto-organizável diretamente como classificador. O SP é
+    calculado a partir das probabilidades de detecção e
+    falso-alarme produzidas pelo mapa.
+\end{description}
+
+No estudo do tamanho ótimo dos mapas foram utilizados mapas
+quadrados (L$\times$L) e retangulares (L$\times$P), variando-se o
+número de neurônios de 2 a 100. Para o treinamento foi utilizada
+função de vizinhança gaussiana e aprendizagem em lote. A largura
+da vizinhança é linearmente decrescida durante o processo de
+treinamento.
+
+Para os mapas retangulares, a proporção entre L e P escolhida foi a
+partir da relação entre as energias do primeiro e segundo
+componentes principais\footnote{Esta escolha tem o objetivo de
+melhor ``acomodar'' os dados em duas dimensões}:
+\begin{equation}\label{eq_relLP}
+    \frac{L}{P}=\frac{E_{PC1}}{E_{PC2}},
+\end{equation}
+onde $E_{PCi}$ é a energia do componente principal i. Para o
+conjunto de treino obteve-se: $\frac{E_{PC1}}{E_{PC2}}\sim
+2$, portanto os mapas retangulares utilizados tem a relação:
+L$=$2P.
+
+Na escolha da dimensão ótima, o objetivo é manter um compromisso
+entre:
+\begin{itemize}
+    \item Alto SP (consequentemente alta eficiência na discriminação);
+    \item Baixo EMR (indicando boa representação dos dados);
+    \item Pequeno número de neurônios (para garantir a rápida
+    operação do sistema de classificação).
+\end{itemize}
+
+A partir dos mapas auto-organizáveis obtidos por diferentes abordagens de treinamento,
+foram calculadas as projeções dos sinais de entrada $\mathbf{x}$ no espaço de características,
+fazendo:
+\begin{equation}\label{eq_somprojj}
+  \mathbf{u}=\mathbf{W}x
+\end{equation}
+onde $\mathbf{W}$ é a matriz de pesos sinápticos do mapa, conforme definido com mais
+detalhes no Apêndice~\label{apend_fex}.
+
+
+\subsubsection{Metodologia para Estimação do Modelo PNL}
+
+Considerando o modelo pós não-linear (PNL), foi comentado no
+Capítulo~\ref{cap_ica} que, com o aumento da dimensionalidade do
+problema (número de sinais envolvidos), há também um rápido aumento do
+custo computacional dos algoritmos e uma maior degradação na
+precisão da estimação dos componentes independentes.
+
+O algoritmo utilizado neste trabalho para estimar a NLICA através
+do modelo PNL foi proposto no trabalho~\cite{article:jutten:1999}
+e utiliza redes neurais para estimar as funções não-lineares
+(conforme descrito mais detalhadamente no
+Apêndice~\ref{apend_fex}). O treinamento é realizado através de um
+algoritmo gradiente que busca maximizar a independência entre os
+componentes estimados na saída do modelo. Este algoritmo foi
+escolhido por apresentar um custo computacional reduzido (se
+comparado a outros algoritmos que utilizam métodos de busca
+globais como propostos
+em~\cite{article:kai:2006,article:rojas:nlica:2004}), e uma boa
+precisão na estimação dos componentes independentes, conforme
+observado no trabalho~\cite{article:simas:2007:lnlm}.
+
+Com o objetivo de evitar problemas na estimação dos componentes
+independentes devido à alta dimensionalidade do problema, o algoritmo
+para o modelo PNL foi aplicado apenas no modo segmentado, pois assim,
+ao invés de utilizar os 100 anéis, a dimensão do problema é reduzida
+para o número de anéis de cada camada (PS$\rightarrow$8, E1$\rightarrow$64,
+E2$\rightarrow$8, E3$\rightarrow$8, H0$\rightarrow$4, H1$\rightarrow$4,
+H2$\rightarrow$4).
+
+A estimação dos componentes independentes pelo modelo PNL foi realizada
+de dois modos distintos, conforme descrito a seguir:
+
+\begin{description}
+ \item[Utilizando uma etapa de pré-processamento para compactação] -
+adicionalmente, foi incluído um pré-processamento para a redução
+da dimensão utilizando dois algoritmos de compactação: PCA
+(Análise de Componentes Principais - \emph{Principal Component
+Analysis}) e PCD (Componentes Principais de Discriminação -
+\emph{Principal Discriminating Components}). A compactação (assim
+como e estimação dos componentes independentes) também foi
+realizada de modo segmentado. Um diagrama do método proposto para
+a estimação dos componentes independentes através do modelo PNL é
+mostrado na Figura~\ref{PNLdiag1}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15cm]{Diagrama_pnl}
+\caption{Diagrama do discriminador baseado no modelo PNL da NLICA.} \label{PNLdiag1}
+\end{figure}
+
+ \item[Através de um algoritmo PNL modificado] - conforme descrito na
+seção~\ref{sec_icafex2} e em~\cite{article:simas:neucom2010}, no desenvolvimento 
+deste trabalho foi proposto
+um algoritmo para estimação do modelo pós não-linear da NLICA que
+utiliza informação supervisionada no processo de treinamento e estima, de
+modo simultâneo os blocos de compactação e do modelo PNL mostrados na Figura~\ref{PNLdiag1}.
+É utilizado um algoritmo genético que busca otimizar uma função custo que avalia
+a independência entre os componentes e a discriminação obtida ao alimentar um
+classificador linear com os componentes
+estimados. O número de componentes ótimo para um dado problema é estimado de modo semelhante
+ao utilizado na compactação por PCD (ou seja com o gradual acréscimo de componentes
+até a estabilização da eficiência de discriminação próximo ao seu valor máximo).
+Uma vantagem do modelo proposto é que as tarefas de compactação e estimação dos
+componentes independentes são realizadas de modo simultâneo, pelo mesmo algoritmo.
+Por outro lado, o uso do algoritmo genético contribui para o aumento do custo
+computacional para treinamento do modelo (na operação, após o
+treinamento, o custo computacional dos discriminadores baseados no modelo PNL é
+idêntico).
+\end{description}
+
+... falar da escolha do número de neurônios das redes aproximadoras ...
+
 \section{Classificação}
 
 Neste trabalho, foram utilizados classificadores neurais tipo
@@ -421,23 +701,24 @@ simulados, e em sequencia, os sinais experimentais.
 
 \subsection{Dados Simulados}
 
-Os dados simulados utilizados são compostos de elétrons isolados
-(\emph{single electrons}) e jatos hadrônicos. Dois cortes
-distintos foram aplicados no primeiro nível. Um deles simula a
-etapa inicial de operação do detector, onde a seleção do L1 é mais
-branda. O outro corte é mais seletivo, se assemelhando aos que
-serão utilizados num estágio mais avançado da operação, onde o
-objetivo é eliminar a maior parte do falso alarme. Mais detalhes a
-respeito dos dois conjuntos simulados utilizados serão
-apresentados no Capitulo~\ref{cap_dadosSim}.
-
+%Os dados simulados utilizados são compostos de elétrons isolados
+%(\emph{single electrons}) e jatos hadrônicos. Dois cortes
+%distintos foram aplicados no primeiro nível. Um deles simula a
+%etapa inicial de operação do detector, onde a seleção do L1 é mais
+%branda. O outro corte é mais seletivo, se assemelhando aos que
+%serão utilizados num estágio mais avançado da operação, onde o
+%objetivo é eliminar a maior parte do falso alarme. Mais detalhes a
+%respeito dos dois conjuntos simulados utilizados serão
+%apresentados no Capitulo~\ref{cap_dadosSim}.
+%
 %\section{Características dos Sinais Simulados}
 %
+
 Os eventos simulados utilizados foram produzidos por simulações de
-Monte Carlo pela colaboração do ATLAS, utilizando os simuladores
+Monte Carlo~\cite{book:montecarlo:2004} pela colaboração do ATLAS, utilizando os simuladores
 \textit{Pythia} (que produz as colisões) e \textit{Geant} (que
-realiza a interação dos eventos com o detector). Os sinais de
-interesse são elétrons isolados distribuídos uniformemente em
+realiza a interação dos eventos com o detector)~\cite{TDR1:ATLAS:1999}. 
+Os sinais de interesse são elétrons isolados distribuídos uniformemente na faixa
 $7<E_T<80$ GeV (onde $E_T$ é a energia transversa). O ruído de
 fundo é constituído de jatos com pelo menos um componente
 eletromagnético com $E_T>17$ GeV.
@@ -485,7 +766,7 @@ quantidade inicial de assinaturas é justificada pelo fato de terem
 sido gerados por versões distintas do \textit{software} do sistema
 de filtragem (Athena).
 
-\begin{table}[t]
+\begin{table}[b]
 \centering \caption{Composição das bases de dados utilizadas antes
 e depois do corte de primeiro nível.}\vspace{.3cm} \footnotesize
 \begin{tabular}{c|c c c| c c c}
@@ -509,17 +790,17 @@ assinaturas com energia mais alta (pois nestas assinaturas os
 cortes por vazamento hadrônico e isolamento em energia são mais
 eficientes). Sendo assim, os jatos E15i tem um ligeiro
 deslocamento em relação a energias mais baixas se comparados aos
-do conjunto E10. A distribuição em $\eta$ e $\phi$ são semelhantes
+do conjunto E10. As distribuições em $\eta$ e $\phi$ são semelhantes
 para os dois conjuntos.
 
-\begin{figure}[h!]
+\begin{figure}[b!]
 \begin{minipage}[b]{.48\linewidth}
-  \centering
+  \centering \footnotesize{Elétrons}
  \centerline{\epsfig{file=compE_e10e15_et,width=7cm}}
 \end{minipage}
 \hfill
 \begin{minipage}[b]{.48\linewidth}
-  \centering
+  \centering \footnotesize{Jatos}
  \centerline{\epsfig{file=compJ_e10e15_et,width=7cm}}
  \end{minipage}
 \hfill \linebreak
@@ -557,14 +838,14 @@ cortes considerando estes parâmetros) do que os jatos E10, sendo
 mais parecidos com os elétrons e portanto representando um ruído
 de fundo de mais difícil identificação.
 
-\begin{figure}[h!]
+\begin{figure}[b!]
 \begin{minipage}[b]{0.48\linewidth}
-  \centering
+  \centering \footnotesize{Elétrons}
  \centerline{\epsfig{file=evento_medioE10_ele,width=8cm}}
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\linewidth}
-  \centering
+  \centering \footnotesize{Jatos}
  \centerline{\epsfig{file=evento_medioE10_jat,width=8cm}}
 \end{minipage}
 \caption{Sinais em anéis (média e desvio padrão) para elétrons
@@ -572,14 +853,14 @@ de fundo de mais difícil identificação.
 E10.}\label{emedE10}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[b!]
 \begin{minipage}[b]{0.48\linewidth}
-  \centering
+  \centering \footnotesize{Elétrons}
  \centerline{\epsfig{file=evento_medioE15_ele,width=8cm}}
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\linewidth}
-  \centering
+  \centering \footnotesize{Jatos}
  \centerline{\epsfig{file=evento_medioE15_jat,width=8cm}}
 \end{minipage}
 \caption{Sinais em anéis (média e desvio padrão) para elétrons
@@ -624,12 +905,12 @@ semelhantes a elétrons do que os do conjunto E10.
 \begin{figure}[p]
 \begin{minipage}[b]{0.98\linewidth}
   \centering \footnotesize{Correlação}
- \centerline{\epsfig{file=correlacao_100aneis,width=15cm}}
+ \centerline{\epsfig{file=corr,width=15cm}}
 \end{minipage}
 \hfill \vspace{.5cm}
 \begin{minipage}[b]{0.98\linewidth}
   \centering \footnotesize{Informação Mútua}
- \centerline{\epsfig{file=infmutua_100aneisHist,width=15cm}}
+ \centerline{\epsfig{file=IM,width=15cm}}
 \end{minipage}
 \caption[Correlação (acima) e informação mútua (abaixo) entre os
 100 anéis.]{Correlação (acima) e informação mútua (abaixo) entre
@@ -653,7 +934,8 @@ identificado um vazamento de gás Hélio do sistema de refrigeração
 para o túnel do LHC, comprometendo a segurança do acelerador). Foi
 estabelecido um cronograma para o comissionamento do acelerador,
 que contemplou a gradual elevação na energia e na quantidade de prótons 
-em cada feixe. 
+em cada feixe (o que é diretamente proporcional à luminosidade 
+produzida). 
 
 Ainda em novembro de 2009 o LHC atingiu 1,18~TeV e definiu um novo
 recorde mundial (que até aquele momento era de 0.98~TeV, alcançado
@@ -662,7 +944,7 @@ foi elevada para 3~TeV e atualmente está na faixa de 7~TeV (que embora
 seja 7 vezes maior que a energia do Tevatron, é apenas
 metade da energia de projeto para o LHC que é de aproximadamente 14~TeV).
 
-Na Figura \ref{fig_evZee} pode-se visualizar um evento (colisão)
+Na Figura \ref{fig_evZee}, pode-se visualizar um evento (colisão)
 do LHC onde foram gerados um elétron e um anti-elétron num provável 
 decaimento de um bóson Z. Nos dois ângulos de corte é possível 
 visualizar a sensibilização dos calorímetros a partir da interação com o elétron 
@@ -717,7 +999,7 @@ Z em dois elétrons  (elétron e anti-elétron), extraído de \cite{Homepage:ATLAS}.
 %\label{fig_evMu}
 %\end{figure}
 
-Para avaliar a eficiência dos métodos propostos 
+Para avaliar a eficiência dos métodos propostos, 
 foram utilizados dois tipos de sinais experimentais: assinaturas de 
 raios cósmicos e sinais medidos em colisões do LHC. As principais 
 características destes conjuntos serão mostradas a seguir.
@@ -727,7 +1009,7 @@ características destes conjuntos serão mostradas a seguir.
 Os raios cósmicos \cite{book:cosmic:2002} são partículas
 originadas no espaço, que se deslocam com velocidade próxima a da
 luz. Ao penetrarem na atmosfera terrestre, interagem com os átomos
-que a constituem produzindo uma "cascata" de novas partículas
+que a constituem produzindo uma ``cascata'' de novas partículas
 menos energéticas (conhecidas como raios cósmicos secundários que
 são compostos de diversas partículas, inclusive
 múons~\cite{book:cosmicos:1990}). O poder de penetração dos raios
@@ -738,14 +1020,14 @@ compostos essencialmente por múons. A energia destas partículas
 pode ser alta, atingindo até $10^{20}$~eV.
 
 Alguns estudos conduzidos no ATLAS estão interessados na análise
-dos raios cósmicos, porém, considerando o canal elétron/jato, os
+dos raios cósmicos, porém, considerando a detecção de elétrons, os
 raios cósmicos constituem uma fonte de ruído de fundo, que deve
 ser eliminada (ou pelo menos atenuada) pelo sistema de filtragem.
 Em momentos quando o LHC está desligado (não havendo portanto
 outra fonte de sinal para os calorímetros), foram coletadas
 diversas assinaturas originadas por raios cósmicos, que serão
 utilizadas para verificar a robustez do sistema de filtragem a
-essa fonte de ruído. O conjunto utilizado é composto de 26.347
+essa fonte de ruído de fundo. O conjunto utilizado é composto de 26.347
 eventos adquiridos durante o ano de 2009.
 
 Na Figura \ref{fig_carcosmic}, pode-se observar a distribuição
@@ -813,20 +1095,17 @@ Estes eventos seriam capazes de produzir um perfil de deposição de
 energia semelhante ao de elétrons, confundindo o sistema de
 filtragem.
 
-\subsubsection{Sinais de Colisões do LHC}
+\subsubsection{Sinais de Colisões do LHC}\label{secdadosExp}
 
 Em sua fase inicial de operação, o LHC
 irá operar com energias mais baixas do que a nominal (que é de
 aproximadamente 14 TeV). Nos dados mais recentes, a energia máxima
-das colisões está limitada em 7~TeV, 3,5~TeV por cada feixe (que,
-embora represente apenas metade da energia de projeto do LHC, já é
-um valor sete vezes maior que o antigo recorde mundial, que
-pertencia ao acelerador Tevatron do Fermilab desde 2001).
+das colisões está limitada em 7~TeV, 3,5~TeV por cada feixe.
 
 Outra característica importante é a luminosidade (que indica a quantidade 
 de partículas por centímetro quadrado do detector a cada segundo), pois 
 quanto maior a luminosidade, maior a probabilidade de ocorrência 
-de eventos. Na Figura~\ref{fig_lumEc} pode-se observar a variação das 
+de eventos de interesse. Na Figura~\ref{fig_lumEc} pode-se observar a variação das 
 taxas de aceitação de assinaturas eletromagnéticas pelo primeiro nível 
 em função da luminosidade. Fica claro que, as taxas aumentam, de modo 
 aproximadamente linear, com a luminosidade.
@@ -863,7 +1142,10 @@ Os eventos utilizados nas análises apresentadas nesta tese foram produzidos
 em \emph{runs} de baixa luminosidade. Como a taxa de produção de eventos foi 
 baixa, foram gravados todas as assinaturas aprovadas pelo primeiro nível 
 (ou seja, a filtragem de alto nível não estava operando). As assinaturas 
-gravadas foram, então, submetidas à análise \emph{offline}.
+gravadas foram, então, submetidas à análise \emph{offline}. A filtragem de primeiro 
+nível realizou um corte na energia total em 2~GeV (L1EM2), gerando assinaturas 
+de segundo nível concentradas em energias maiores que 3~GeV (assinaturas do 
+tipo E3). 
 
 De modo distinto aos sinais simulados (que obtêm do próprio software 
 simulador a certificação do tipo de partícula produzida), nos sinais 
@@ -873,16 +1155,18 @@ discriminadores propostos, foram utilizadas informações obtidas da reconstrução 
 que indicam a probabilidade de um certo evento ser ou não um
 elétron, conforme descrito a seguir. 
 
+\vspace{0.5cm}
 \textbf{Critérios de Identificação de Elétrons na Análise \emph{Offline}}
+\vspace{0.5cm}
 
 O procedimento padrão para seleção de elétrons através da análise 
 \emph{offline} no ATLAS consiste em uma série de cortes lineares em 
 variáveis capazes de discriminar o sinal de elétrons dos diversos tipos 
 de ruído de fundo~\cite{tese:cern:2009}.
 
-Ao todo são calculadas em torno de 20 variáveis são calculadas a partir das 
-informações dos calorímetros de dos detectores de traço. Estes parâmetros 
-podem ser consideradas individualmente ou combinadas três conjuntos de referência 
+Ao todo, em torno de 20 variáveis são calculadas a partir das 
+informações dos calorímetros e dos detectores de traço. Estes parâmetros 
+podem ser consideradas individualmente ou combinadas em três conjuntos de referência 
 para produzir três tipos de cortes pré-estabelecidos com diferentes graus de 
 rejeição do ruído de fundo~\cite{article:lhcphysics:2010}:
 \begin{itemize}
@@ -905,10 +1189,10 @@ Deste modo, é possível obter uma maior eficiência na identificação de elétrons e
 eliminação de fótons.
 \end{itemize}
 
-A eficiência dos critérios de seleção podem variar em função da energia e da posição de 
+A eficiência dos critérios de seleção pode variar em função da energia e da posição de 
 interação no detector. Conforme mostrado na Figura~\ref{fig_perfOff}, pode-se observar 
 que, em troca de uma maior redução na aceitação de falso alarme, o critério \emph{tight} 
-produz menor eficiência na idntificação de elétrons, principalmente em energia menor que 
+produz menor eficiência na identificação de elétrons, principalmente em energia menor que 
 30~GeV e em 1$<|\eta|<$2.
 
 \begin{figure}[t]
@@ -931,17 +1215,17 @@ seleção \emph{offline} do ATLAS. Na Tabela~\ref{tab_compOffline} são mostradas a
 composições dos conjuntos original (sem nenhum corte) e após cada um dos cortes 
 (para a associação dos tipos de assinaturas foi utilizada a ``verdade'' obtida do simulador).
 Pode-se observar que, a maioria ($\sim$82~\%) das assinaturas aprovadas no corte \emph{loose} são 
-hádrons, $\sim$16~\% são elétrons produzidos a partir da conversão de fótons ou outras 
-partículas durante a interação com o calorímetro e apenas 1,6~\% são elétrons.
+hádrons, $\sim$16~\% são elétrons produzidos a partir da conversão de fótons 
+durante a interação com o detector e apenas 1,6~\% são elétrons.
 Nos critérios \emph{medium} e \emph{tight} a concentração de elétrons é gradualmente 
 aumentada, enquanto que a de partículas hadrônicas vai sendo reduzida, de modo que, 
 48~\% das assinaturas aprovadas no critério \emph{tight} são elétrons e a parcela de 
 jatos hadrônicos foi reduzida a aproximadamente 30~\%.
 
-\begin{table}[h!]
-\centering \caption[Composição das assinaturas em diferentes critérios 
-da análise \emph{offline}.]{Composição das assinaturas em diferentes critérios 
-da análise \emph{offline}, retirado de~\cite{article:lhcphysics:2010}}
+\begin{table}[b!]
+\centering \caption[Composição das assinaturas de sinais simulados aprovados em diferentes critérios 
+da análise \emph{offline}.]{Composição das assinaturas de sinais simulados aprovados em diferentes critérios 
+da análise \emph{offline}, retirado de~\cite{article:lhcphysics:2010}.}
 \vspace{0.2cm} \footnotesize
 \begin{tabular}{|c|c|c|c|}
     \cline{2-4} 
@@ -965,15 +1249,19 @@ que não passaram no critério \emph{electron loose} do
 \textit{offline} (são eventos com probabilidade muito baixa de
 serem elétrons). 
 
+\pagebreak
+
 \textbf{Run 1}
 
 O primeiro conjunto de sinais experimentais de colisões analisado foi obtido de 
-uma \emph{run} do dia 25 de maio de 2010. A energia de cada feixe foi de 3,5~GeV 
+uma \emph{run} do dia 25 de maio de 2010\footnote{A \emph{run} 155697 foi iniciada 
+às 19:38 h do dia 24/05/2010 e finalizada às 12:12 h do dia 25/05/2010.}. A energia de cada feixe foi de 3,5~GeV 
 (totalizando 7~GeV) e a luminosidade máxima igual a 2,1$\times 10^{29} cm^{-2}s^{-1}$.
 
-Os eventos aprovados no corte EM2 do primeiro nível (e consequentemente salvos em 
-mídia permanente, pois a filtragem de alto nível não estava operando) foram 
-submetidos aos critérios de seleção da análise \emph{offline} e aproximadamente 
+Os 5.550.044 eventos aprovados no corte EM2 do primeiro nível (eventos que depositaram mais de 
+2~GeV de energia nos calorímetros), e consequentemente salvos em 
+mídia permanente, pois a filtragem de alto nível não estava operando, foram 
+submetidos aos critérios de seleção da análise \emph{offline}. Aproximadamente 
 9.000 assinaturas foram aceitas pelo \emph{electron tight} (e, então, consideradas 
 nas análises como elétrons). Um total de aproximadamente 2.000.000 de assinaturas 
 foram reprovadas no critério \emph{electron loose} (e, assim, consideradas como 
@@ -983,119 +1271,66 @@ Na Figura \ref{fig_carexp}, pode-se observar que, os eventos (para
 ambas as classes) estão concentrados numa faixa de energia abaixo de 
 15~GeV. Analisando as
 distribuições em $\eta$, percebe-se que, a concentração em torno
-de $|\eta|\sim 1,5$ é bastante reduzida (esse fato provavelmente . 
-
-
-Isso se deve,
-provavelmente, pela seleção baseada nos critérios da reconstrução
-\emph{offline}, pois, como os eventos na região do \emph{crack}
-têm uma amostragem mais grosseira (devido ao menor número de
-células sensoras), eles podem não ser aprovados em nenhum dos
-critérios utilizados. As distribuições em $\phi$ tem um
+de $|\eta|\sim 1,5$ (região do \emph{crack}) é bastante reduzida 
+(com uma menor quantidade de sensores nesta área do detector 
+os eventos não são caracterizados adequadamente e a probabilidade 
+de aceitação no corte do L1 é menor). Os eventos aprovados no 
+critério \emph{electron tight} também apresentam baixa concentração 
+para $|\eta|< 0,5$ (o que pode ser explicado por uma menor eficiência 
+deste critério de seleção nesta região do detector, conforme mostrado 
+anteriormente na Figura~\ref{fig_perfOff}. As distribuições em $\phi$ tem um
 comportamento mais uniforme.
 
 \begin{figure}[bth]
 \begin{minipage}[b]{0.48\linewidth}
-  \centering
- \centerline{\epsfig{file=exp1_et,width=8cm}}
+  \centering 
+ \centerline{\epsfig{file=exp1_et,width=7.5cm}}
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\linewidth}
   \centering
- \centerline{\epsfig{file=exp1_eta,width=8cm}}
+ \centerline{\epsfig{file=exp1_eta,width=7.5cm}}
 \end{minipage}
 \hfill \linebreak
 \begin{minipage}[b]{0.98\linewidth}
   \centering
- \centerline{\epsfig{file=exp1_phi,width=8cm}}
+ \centerline{\epsfig{file=exp1_phi,width=7.5cm}}
 \end{minipage}
 \caption{Histogramas em energia $\eta$ e $\phi$ dos eventos de
 colisões do LHC.}\label{fig_carexp}
 \end{figure}
 
-As características dos perfis de deposição de energia medidos nos
-calorímetros também dependem da energia dos eventos. Conforme
-mostrado anteriormente no Capítulo~\ref{cap_atlasEtrig}, as razões
-$\frac{E_{HAD}}{E_{EM}}$ e $\frac{E_{3 \times 7}}{E_{7 \times 7}}$
-(importantes na separação elétron/jato) se modificam bastante em
-baixa energia, tornando mais difícil a identificação das
-partículas. Outro aspecto a ser considerado é a resolução relativa
-dos calorímetros, que também é função da energia, conforme a
-expressão~\cite{book:wigmans:2000}:
-\begin{equation}\label{eq_erExp}
- \frac{\sigma_E}{E}=\frac{a}{\sqrt{E}}+b.
-\end{equation}
-A expressão da Equação~\ref{eq_erExp} não considera o ruído
-eletrônico, que é proporcional a $1/\sqrt{E}$. Em testes
-experimentais dos calorímetros do ATLAS (descritos detalhadamente
-em~\cite{article:ATLAS:2008}) foram encontrados valores para os
-parâmetros $a$ e $b$ da Equação~\ref{eq_erExp}. Para a seção
-eletromagnética obteve-se $a=10,0\%.\sqrt{\text{GeV}}$ e
-$b=0,17\%$ e para a hadrônica $a\sim 21,4 \%.\sqrt{\text{GeV}}$ e
-$b\sim 0 \%$. Com estes valores, na Tabela~\ref{tab_res_exp},
-foram estimadas as resoluções esperadas para as duas seções do
-calorímetro com energia variando de 3 a 40 GeV, pode-se observar
-que, na faixa de energia dos sinais experimentais ($\sim$3GeV) a
-resolução é aproximadamente 2,5 vezes pior do que em 20~GeV.
-
-\begin{table}[h!]
-\centering \caption{Resolução relativa ($\frac{\sigma_E}{E}$ em
-\%) em função da energia.}\vspace{0.2cm} \footnotesize
-\begin{tabular}{c|c|c|c}
-    \hline
-\textbf{Energia (GeV)} & \textbf{3} & \textbf{20} & \textbf{40} \\
-\hline
-\textbf{Cal. EM} & 12,4 & 4,8 & 3,4 \\
-\textbf{Cal. HAD} & 5,9 & 2,4 & 1,8 \\
-\hline
-\end{tabular}
-\label{tab_compTimeexpSeg}
-\end{table}
-
-Um comparativo entre os eventos médios do conjunto simulado (corte
-E10) e dos sinais experimentais é apresentado na
-Figura~\ref{fig_exp_compEvMed}. Como a implementação do
-\emph{Ringer} na plataforma de software do ATLAS utilizava, no
+Na Figura~\ref{fig_exp_compEvMed} são mostrados os eventos médios 
+para as assinaturas aprovadas no critério \emph{electron tight} 
+(``elétrons'') e as reprovadas no critério \emph{electron loose} 
+(``jatos''). Como a implementação do \emph{Ringer} na plataforma 
+de software do ATLAS utilizava, no
 momento da aquisição dos dados, a normalização sequencial, os
 eventos são mostrados neste formato. Pode-se observar que, os
-eventos experimentais de elétrons tem, em média, maior energia
-hadrônica e menor concentração espacial se comparados aos
-simulados. Considerando os jatos, as diferenças são um pouco
-menores, porém, pode-se notar uma menor intensidade de energia
-hadrônica nos sinais experimentais. Deste modo, os sinais
-experimentais das duas classes apresentam maior semelhança, o que
-torna mais difícil sua separação.
+eventos se aproximam das características esperadas para as duas 
+classes (semelhante ao observado nos sinais simulados). Uma 
+particularidade observada nos eventos de ``elétrons'' é uma maior 
+concentração de energia hadrônica se comparados aos sinais 
+experimentais (que pode ser originada de fatores 
+como a maior influência do ruído de medição em sinais de 
+baixa energia e a possível presença de algumas assinaturas 
+hadrônicas no conjunto aprovado no critério \emph{electron tight}).
 
 \begin{figure}[th]
 \begin{minipage}[b]{0.48\linewidth}
-  \centering
-  \centerline{\footnotesize Elétrons/Simulados-E10}\medskip
- \centerline{\epsfig{file=e10_evmedEseq,width=7cm}}
+  \centering \footnotesize{Aprovados no \emph{electron tight} - ``Elétrons''}
+  \centerline{\epsfig{file=exp1_evE,width=7.7cm}}
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\linewidth}
-  \centering
-  \centerline{\footnotesize Jatos/Simulados-E10}\medskip
- \centerline{\epsfig{file=e10_evmedJseq,width=7cm}}
+  \centering \footnotesize{Reprovados no \emph{electron loose} - ``Jatos''}
+  \centerline{\epsfig{file=exp1_evJ,width=7.7cm}}
 \end{minipage}
-\hfill \linebreak
-\begin{minipage}[b]{0.48\linewidth}
-  \centering
-  \vspace{.4cm}
-  \centerline{\footnotesize Elétrons/Colisões}\medskip
- \centerline{\epsfig{file=exp_evmedE,width=7cm}}
-\end{minipage}
-\hfill
-\begin{minipage}[b]{0.48\linewidth}
-  \centering
-  \vspace{.4cm}
-  \centerline{\footnotesize Jatos/Colisões}\medskip
- \centerline{\epsfig{file=exp_evmedJ,width=7cm}}
-\end{minipage}
-\caption{Comparativo entre os eventos médios para o conjunto
-simulado-E10 (acima) e os sinais experimentais
-(abaixo).}\label{fig_exp_compEvMed}
+\caption{Sinais experimentais médios de ``elétrons'' e ``jatos''.}\label{fig_exp_compEvMed}
 \end{figure}
 
+\section{Análises Comparativas em Termos dos Parâmetros Físicos de Interesse}
 
+falar das análises em energia, $\eta$ e $\phi$, comentando que a análise em $\phi$ nem sempre 
+é útil ...
 

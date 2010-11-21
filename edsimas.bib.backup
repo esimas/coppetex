@@ -1828,6 +1828,35 @@ author = {E. Cervera and A. P. del Pobil}
 }
 
 
+@PHDTHESIS{tese:cern:2009,
+  AUTHOR =       {Michael James Flowerdew},
+  TITLE =        {Standard Model Z/gamma to ee production in early data at ATLAS},
+  SCHOOL =       {University of Liverpool},
+  YEAR =         {2009},
+  month =        {Dezembro},
+}
+
+@INPROCEEDINGS{article:lhcphysics:2010,
+  AUTHOR =       {Nicolas Kerschen},
+  TITLE =        {Electron performance in the ATLAS experiment},
+  BOOKTITLE =    {Proceedings of Physics at LHC Conference},
+  YEAR =         {2010},
+  pages =        {1-5},
+  month =        {Junho},
+  address =      {Hamburg, Alemanha},
+}
+
+@INPROCEEDINGS{article:lhcphysics2:2010,
+  AUTHOR =       {Marine Kuna},
+  TITLE =        {Electron and Photon Reconstruction and Identification with the ATLAS Detector},
+  BOOKTITLE =    {Proceedings of the Topical Seminar on Innovative Particle and Radiation Detectors},
+  YEAR =         {2010},
+  pages =        {1-5},
+  month =        {Junho},
+  address =      {Siena, Itália},
+}
+
+
 @BOOK{haykin:nn:2008,
   AUTHOR =       {Simon Haykin},
   TITLE =        {Neural Networks and Learning Machines},
@@ -1966,7 +1995,7 @@ author = {E. Cervera and A. P. del Pobil}
   YEAR =         {2001},
   pages =        {349-373},
   month =        {Julho},
-  address =      {Roma, ItÃ¡lia},
+  address =      {Roma, Itália},
 }
 
 
@@ -2759,13 +2788,22 @@ Joint Likelihood},
 
 @TECHREPORT{LI:ATLAS:1992,
   AUTHOR =       {ATLAS-Collaboration},
-  TITLE =        {Letter of Intents for a General Purpose pp Experiment at the
-Large Hadron Collider at CERN},
+  TITLE =        {Letter of Intents for a General Purpose pp Experiment at the Large Hadron Collider at CERN},
   INSTITUTION =  {CERN},
   YEAR =         {1992},
   month =        {Outubro},
   address =      {Genebra, Suiça},
 }
+
+@TECHREPORT{ConfNote:ATLAS:2010,
+  AUTHOR =       {ATLAS-Collaboration},
+  TITLE =        {Electron and photon reconstruction and identification in ATLAS: expected performance at high energy and results at 900 GeV},
+  INSTITUTION =  {CERN},
+  YEAR =         {2010},
+  month =        {Março},
+  address =      {Genebra, Suiça},
+}
+
 
 @TECHREPORT{TP:ATLAS:1994,
   AUTHOR =       {ATLAS-Collaboration},

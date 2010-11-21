@@ -22,6 +22,14 @@
   Title = {Signal Processing},
   Year = {2010}}
 
+@inproceedings{simas:IEENSS09,
+  Address = {Orlando, Estados Unidos},
+  Author = {R. C. Torres and D. E. F. Lima and E. F. {Simas Filho} and J. M. Seixas},
+  Booktitle = {IEEE Nuclear Science Symposium Conference Record},
+  Month = {Maio},
+  Pages = {530-536},
+  Title = {Neural online filtering based on preprocessed calorimeter data},
+  Year = {2009}}
 
 @article{article:simas:neucom2010,
   Author = {E. F. {Simas Filho} and J. M. Seixas and L. P. Caloba},
@@ -2437,6 +2445,37 @@ Joint Likelihood},
   pages =        {179-188},
 }
 
+@ARTICLE{article:kmeans:2002,
+  AUTHOR =       {Tapas Kanungo and David M. Mount and Nathan S. Netanyahu and Christine D. Piatko and Ruth Silverman and Angela Y. Wu},
+  TITLE =        {An Efficient k-Means Clustering Algorithm, Analysis and Implementation},
+  JOURNAL =      {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  YEAR =         {2002},
+  volume =       {24},
+ number =        {7},
+  pages =        {881-892},
+}
+
+@INPROCEEDINGS{Alsabti98anefficient,
+    author = {Khaled Alsabti},
+    title = {An efficient k-means clustering algorithm},
+    booktitle = {Proceedings of IPPS/SPDP Workshop on High Performance Data Mining},
+    year = {1998},
+  volume =       {1},
+  pages =        {1-6},
+  local =        {Genebra, Suiça},
+}
+
+@INPROCEEDINGS{kmeans2:2004,
+    author = {Chris Ding and Xiaofeng He},
+    title = {K-means Clustering via Principal Component Analysis},
+    booktitle = {Proc. of Int'l Conf. Machine Learning},
+    year = {2004},
+  volume =       {1},
+  pages =        {225-232},
+  local =        {Genebra, Suiça},
+}
+
+
 @BOOK{book:duda:2000,
   AUTHOR =       {Richard O. Duda and Peter E. Hart and David G. Stork},
   TITLE =        {Pattern Classification},
@@ -2788,13 +2827,22 @@ Joint Likelihood},
 
 @TECHREPORT{LI:ATLAS:1992,
   AUTHOR =       {ATLAS-Collaboration},
-  TITLE =        {Letter of Intents for a General Purpose pp Experiment at the
-Large Hadron Collider at CERN},
+  TITLE =        {Letter of Intents for a General Purpose pp Experiment at the Large Hadron Collider at CERN},
   INSTITUTION =  {CERN},
   YEAR =         {1992},
   month =        {Outubro},
   address =      {Genebra, Suiça},
 }
+
+@TECHREPORT{ConfNote:ATLAS:2010,
+  AUTHOR =       {ATLAS-Collaboration},
+  TITLE =        {Electron and photon reconstruction and identification in ATLAS: expected performance at high energy and results at 900 GeV},
+  INSTITUTION =  {CERN},
+  YEAR =         {2010},
+  month =        {Março},
+  address =      {Genebra, Suiça},
+}
+
 
 @TECHREPORT{TP:ATLAS:1994,
   AUTHOR =       {ATLAS-Collaboration},

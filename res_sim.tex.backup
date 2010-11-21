@@ -3,51 +3,33 @@
 
 A seguir, serão apresentados os resultados obtidos com a aplicação
 da metodologia proposta aos sinais dos calorímetros do ATLAS obtidos 
-a partir de simulações por técnicas de Monte Carlo. 
-
-
-\begin{itemize}
-\item \textbf{Sinais Simulados}: Em física de altas energias, o
-projeto dos detectores e sistemas de filtragem é realizado com o
-auxílio de de simuladores de colisões. Os simuladores utilizam
-informações a respeito da física (obtidas em experimentos
-anteriores e em modelos teóricos) e são capazes de reproduzir as
-características esperadas nas colisões de um acelerador (que ainda
-não está operacional). Os sinais simulados foram obtidos a partir
-de simuladores para colisões próton-próton \cite{TDR1:ATLAS:1999}
-que utilizam a técnica de Monte Carlo \cite{book:montecarlo:2004}.
-As simulações consideram as características esperadas nas colisões
-do LHC e as especificações do ATLAS. Assim como na operação real
+a partir de simulações por técnicas de Monte Carlo~\cite{book:montecarlo:2004}. 
+Assim como na operação real
 do detector, é possível aplicar diferentes cortes (formas de
-seleção) de nível 1 nos dados simulados. Nos dados simulados
+seleção) de nível 1 nos dados simulados. 
+
+Conforme mostrado no Capítulo~\ref{cap_metod}, serão utilizados dois 
+conjuntos simulados distintos de assinaturas de segundo nível, 
+aos quais foram aplicados diferentes 
+cortes no primeiro nível. Nos dados simulados
 existe a informação do tipo de partícula correspondente a cada
 assinatura, permitindo o treinamento supervisionado dos algoritmos
 de filtragem.
 
-\item \textbf{Sinais Experimentais}: São sinais que foram
-adquiridos no detector ATLAS, na fase de testes e nas primeiras
-colisões do LHC, realizadas no final de 2009 e durante o ano de
-2010. Nos dados experimentais não está disponível a informação do
-tipo de partícula correspondente a cada assinatura (exceto no caso
-dos sinais produzidos por raios cósmicos). Nesse caso, outras
-estratégias precisam ser utilizadas para avaliar o desempenho dos
-algoritmos. É comum fazer uma comparação com a identificação
-obtida no processo de reconstrução \textit{offline}.
-\end{itemize}
-
-Neste capítulo serão abordados os resultados obtidos com os dados
-simulados, e o próximo capítulo é dedicado aos sinais
-experimentais.
-
+Para cada um dos conjuntos, inicialmente serão abordados os
+discriminadores existentes para o problema (T2Calo e 
+\emph{Neural Ringer}). Em seguida, serão
+considerados os classificadores com pré-processamento por NLICA,
+nos diversos modelos utilizados neste trabalho (SOM, PNL e ICA
+Local). Adicionalmente, será realizado um estudo a respeito da 
+relevância de cada camada do calorímetro para o processo de 
+discriminação de elétrons.
 
 \section{Conjunto E10}
 
-Nesta seção, serão apresentados os resultados obtidos com o
-conjunto de sinais simulados E10. Inicialmente serão abordados os
-discriminadores existentes para o problema. Em seguida, serão
-considerados os classificadores com pré-processamento por NLICA,
-nos diversos modelos utilizados neste trabalho (SOM, PNL e ICA
-Local). Ao final os resultados serão discutidos e comparados.
+Nesta Seção, será utilizado o conjunto de sinais simulados que produziu
+as assinaturas de segundo nível do tipo E10 \emph{loose} (energia maior 
+que 10~GeV e sem considerar critérios de isolamento). 
 
 \subsection{Resultados com os Discriminadores Existentes}
 
@@ -61,7 +43,9 @@ pré-processamento para o discriminador \textit{Neural Ringer}. A
 seguir serão apresentados os resultados obtidos com estes
 classificadores.
 
-Na Tabela~\ref{tab_compE10_1}, os três discriminadores são
+Na Tabela~\ref{tab_compE10_1}\footnote{Os desvios mostrados correspondem 
+à flutuação estatística obtida no processo de treinamento por validação 
+cruzada.}, os três discriminadores são
 comparados a partir do máximo SP e dos valores das probabilidades
 de detecção (PD) e falso-alarme (PF), que indicam respectivamente
 as parcelas das assinaturas de elétrons identificados corretamente
@@ -98,7 +82,7 @@ Na Figura~\ref{fig_RT2effa}, os discriminadores T2Calo e
 identificação de elétrons e ao falso-alarme (jatos classificados
 como elétrons) em função da energia, $\eta$ e $\phi$. Nestes
 gráficos (assim como nas demais figuras semelhantes desta tese) a
-margem de erro é calculada como $100/ \sqrt{N}$, onde $N$ é o
+margem de erro (em \%) é calculada como $100/ \sqrt{N}$, onde $N$ é o
 número de eventos contido na região
 analisada~\cite{book:knoll:2000}. Considerando a energia, o
 \textit{Neural Ringer} supera o T2Calo principalmente para energia
@@ -180,7 +164,7 @@ Os histogramas em energia e $\eta$ dos eventos agrupados de acordo
 com o desempenho dos discriminadores são mostrados na
 Figura~\ref{fig_RT2comfis}. Pode-se observar que, a probabilidade
 de detecção de elétrons aumenta com a energia, e ainda, elétrons
-de energia muito baixa ($<$7~GeV)) são de difícil identificação
+de energia muito baixa ($<$7~GeV) são de difícil identificação
 para ambos os discriminadores. Para energias um pouco maiores
 (7$<$Et$<$10), o \textit{Neural Ringer} é capaz de classificar
 corretamente elétrons que são perdidos pelo T2Calo. Com os jatos
@@ -274,17 +258,6 @@ energia hadrônica).
 
 \subsubsection{Anéis $\times$ ICA}
 
-No trabalho~\cite{tese:torres:2010} foi realizado um estudo a
-respeito da utilização do modelo linear da análise de componentes
-independentes para extração de características dos sinais em
-anéis. De modo bastante completo foram abordadas diversas
-configurações para a extração dos componentes independentes, de
-modo que, na comparação que será apresentada aqui, será
-considerado apenas o modo de estimação da ICA que produziu melhor
-resultado em termos da eficiência de discriminação\footnote{Neste
-caso, os componentes independentes foram estimados a partir da
-projeção (não-segmentada) dos sinais em anéis nos componentes
-principais.}.
 
 As curvas ROC obtidas para os discriminadores \emph{Neural Ringer} e para o
 discriminador neural operando sobre os sinais em anéis projetados nos
@@ -436,15 +409,6 @@ pós não-linear (PNL).
 
 \subsubsection{ICA Local}
 
-Na ICA Local, conforme mencionado no Capítulo~\ref{cap_ica},
-inicialmente é executada uma etapa de agrupamento
-não-supervisionado (\emph{clustering}) e, a seguir, os componentes
-independentes são estimados em cada grupo. Na aplicação à
-filtragem \emph{online} de elétrons no ATLAS, o objetivo é a
-separação em duas classes (elétrons e jatos), então, foi realizado
-o agrupamento em dois grupos (\emph{clusters}) através do algoritmo
-\emph{k-means}.
-
 A Figura~\ref{E10local_clusterProb} ilustra a divisão das assinaturas
 das diferentes classes em cada \emph{cluster}. Pode-se observar que,
 o primeiro grupo é composto por aproximadamente 94~\% dos elétrons e
@@ -517,12 +481,8 @@ concentração dos sinais com perfil semelhante a jatos típicos no \emph{cluster} 
 \caption{Eventos médios de elétrons e jatos em cada \emph{cluster}.}\label{E10local_clusterEvMed}
 \end{figure}
 
-Após a divisão nos \emph{clusters} foi aplicado um algoritmo de
-ICA linear (JADE) para estimar os componentes independentes locais
-(de modo não-segmentado, ou seja, aplicando-se o algoritmo aos
-sinais em anéis de todas as camadas do calorímetro). Em seguida,
-classificadores neurais foram treinados a partir destes
-componentes. As curvas ROC obtidas para cada classificador são
+As curvas ROC obtidas para os classificadores treinados a partir 
+dos componentes independentes locais são
 mostradas na Figura~\ref{E10local_clusterROC}. Pode-se observar
 que o classificador do \emph{cluster} 1 apresenta, para a mesma
 probabilidade de detecção, em geral, um maior falso-alarme. Este
@@ -559,30 +519,9 @@ Y$_2=-0,588$ para SP$_2=0,986$). Assim, foi obtida uma
 probabilidade de detecção igual a 98,0~\% para falso-alarme de
 1,7~\% (SP=0,981).
 
-É importante notar que, devido às diferentes
-concentrações dos eventos de cada classe nos agrupamentos (o
-\emph{cluster} 1 é composto na sua maioria por elétrons e o 2 por
-jatos), os patamares que otimizam o desempenho local (considerando
-os agrupamentos individualmente) podem não ser ótimos quando o
-objetivo é maximizar a eficiência no conjunto de todos os eventos.
-Deste modo, precisa-se otimizar o SP (global) variando-se os patamares
-locais (Y$_1$ e Y$_2$). Para realizar essa procedimento foi utilizado um
-algoritmo genético (AG), onde o espaço de busca é composto por Y$_1$ e Y$_2$
-e o objetivo é maximizar o SP. Uma das vantagens deste método de
-otimização é que não há a necessidade de encontrar as derivadas da
-função custo (que no caso é o produto SP) em função de Y$_1$ e
-Y$_2$, além disso, no AG a busca é realizada globalmente (mais
-detalhes no Apêndice~\ref{apend_GA}). Um diagrama do treinamento do discriminador
-baseado em ICA Local é mostrado Figura~\ref{E10local_diagAll}.
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=14cm]{localIcaDiag}
-\caption{Diagrama do discriminador baseado em ICA Local.} \label{E10local_diagAll}
-\end{figure}
-
-A partir do procedimento descrito acima, foram escolhidos nos novos
-patamares de corte (Y$_1=0,106$ e Y$_2=-0,103$), assim, obteve-se uma
+Realizando o ajuste dos patamares de corte através do algoritmo genético visando 
+maximizar o SP global (calculado para todos os sinais), foram escolhidos novos
+patamares (Y$_1=0,106$ e Y$_2=-0,103$), assim, obteve-se uma
 probabilidade de detecção igual a 99,6~\%, para falso-alarme de
 1,5~\%, o que produz SP=0,990, otimizando o desempenho do
 discriminador.
@@ -815,110 +754,6 @@ ICA+MLP.}\label{E10local_EffComp}
 
 \subsubsection{Mapas Auto-Organizáveis - SOM}
 
-Neste trabalho, os mapas auto-organizáveis foram utilizados por
-estarem diretamente relacionados com o paradigma da
-NLICA\footnote{O SOM foi um dos primeiros algoritmos propostos
-para a NLICA, mais detalhes em~\cite{article:simas:2007:lnlm}}.
-Porém, para estimar N componentes independentes é preciso utilizar
-um mapa auto-organizável N-dimensional. Assim, para o problema em
-questão, onde seriam estimadas algumas dezenas de componentes,
-este método seria proibitivamente lento. Um outro problema
-observado é que a precisão na estimação também diminui com o
-aumento da dimensionalidade.
-
-Uma solução encontrada foi a utilização de mapas bi-dimensionais, que,
-no contexto da NLICA, produzem uma estimativa de dois componentes
-independentes não-lineares (considerando um mapeamento sem restrições
-estruturais). Os mapas auto-organizáveis bi-dimensionais também são
-bastante úteis para a visualização e análise de dados de alta
-dimensão.
-
-Para treinamento dos mapas foram utilizadas diferentes abordagens
-que podem ser classificadas de dois modos:
-\begin{description}
- \item[quanto à segmentação dos dados] - em não-segmentado (considerando todos os 100 anéis como
-entrada) e segmentado (utilizando, separadamente, os sinais em anéis 
-de cada camada do calorímetro, neste caso, são treinados 7 mapas,
-um para cada);
- \item[quanto ao uso de informação supervisionada no treinamento] -
-em não-supervisionado (sendo este o procedimento tradicional de
-treinamento e referido no texto simplesmente como SOM), ajustado
-por LVQ (neste caso, após o treinamento não-supervisionado, os
-pesos do mapa são ajustados, usando informação dos rótulos de
- classe, por um algoritmo de LVQ, para mais detalhes ver o
-Apêndice~\ref{apend_fex}) e supervisionado (este modo de treinamento
-foi descrito na Seção~\ref{sec_icasup} e consiste em utilizar os
-rótulos de classe como uma variável de entrada adicional).
-\end{description}
-
-\begin{figure}[h!]
-\begin{minipage}[b]{0.48\linewidth}
-  \centering
- \centerline{\epsfig{file=som_sup_lvq.pdf,width=4cm}}
-\end{minipage}
-\hfill
-\begin{minipage}[b]{0.48\linewidth}
-  \centering
- \centerline{\epsfig{file=som_sup_cIn,width=3.5cm}}
-\end{minipage}
-\caption{Diagramas dos processos de treinamento dos mapas auto-organizáveis utilizando
-informação a respeito das classes.}\label{E10somdiag1}
-\end{figure}
-
-Considerando que serão utilizados mapas bi-dimensionais, ainda é
-necessário escolher o número de neurônios a serem utilizados na
-grade. Para guiar este processo, que usualmente é realizado de
-modo empírico (por
-tentativas)~\cite{Flexer:2001:som,book:kohonen:2001}, foram
-utilizados dois parâmetros o erro de reconstrução médio e o índice
-soma-produto (SP), conforme descritos a seguir:
-\begin{description}
-    \item[Erro de reconstrução médio (ERM)] - Os mapas auto-organizáveis
-    podem ser considerados como um método de quantização vetorial,
-    onde os pesos dos neurônios formam o \emph{codebook} (para
-    mais detalhes ver o Apêndice~\ref{apend_fex}). Na operação do
-    SOM, cada sinal $\mathbf{x}_A$ apresentado na entrada é associado ao
-    neurônio $\mathbf{w}_c$ mais próximo (considerando por exemplo a distância
-    euclidiana, este neurônio é chamado de ``neurônio vencedor'').
-    Os sinais associados a cada neurônio formam um
-    agrupamento centrado em $\mathbf{w}_c$ e podem ser aproximados
-    pelo próprio neurônio. A partir desta correspondência, é gerado um erro
-    de aproximação (ou reconstrução) definido por:
-    \begin{equation}\label{eq_erm}
-        ER=|\mathbf{x}_A-\mathbf{w}_c|.
-    \end{equation}
-    O erro de reconstrução médio é uma métrica que pode ser utilizada para
-    indicar a qualidade da aproximação obtida pelo SOM e tende a diminuir com o
-    aumento do número de neurônios do mapa (pois, deste modo, o
-    tamanho médio dos agrupamentos associados a cada neurônio
-    também tende a diminuir).
-    \item[Índice soma-produto (SP)] - Conforme definido na Equação~\ref{eq_sp}, o
-    produto SP está sendo utilizado como parâmetro para avaliar o
-    desempenho dos classificadores. Associando-se cada neurônio do
-    SOM à classe que mais o ativa, pode-se utilizar o mapa
-    auto-organizável diretamente como classificador. O SP é
-    calculado a partir das probabilidades de detecção e
-    falso-alarme produzidas pelo mapa.
-\end{description}
-
-No estudo do tamanho ótimo dos mapas foram utilizados mapas
-quadrados (L$\times$L) e retangulares (L$\times$P), variando-se o
-número de neurônios de 2 a 100. Para o treinamento foi utilizada
-função de vizinhança gaussiana e aprendizagem em lote. A largura
-da vizinhança é linearmente decrescida durante o processo de
-treinamento.
-
-Para os mapas retangulares, a proporção entre L e P escolhida foi a
-partir da relação entre as energias do primeiro e segundo
-componentes principais\footnote{Esta escolha tem o objetivo de
-melhor ``acomodar'' os dados em duas dimensões}:
-\begin{equation}\label{eq_relLP}
-    \frac{L}{P}=\frac{E_{PC1}}{E_{PC2}},
-\end{equation}
-onde $E_{PCi}$ é a energia do componente principal i. Para o
-conjunto de treino obteve-se: $\frac{E_{PC1}}{E_{PC2}}\sim
-2$, portanto os mapas retangulares utilizados tem a relação:
-L$=$2P.
 
 A Figura~\ref{E10somSize} mostra os valores calculados para ERM e
 SP variando-se as dimensões de mapas não-segmentados. De modo semelhante, os
@@ -2240,9 +2075,9 @@ vertical indica o desempenho do \emph{Neural Ringer}.}\label{E15segCC2}
 
 ... falta fazer uma análise em $\eta$, $\phi$ e energia para a rede combinadora ...
 
-\subsection{Comparação com Discriminadores Lineares}
-
-... ainda falta fazer essa parte ...
+%\subsection{Comparação com Discriminadores Lineares}
+%
+%... ainda falta fazer essa parte ...
 
 \subsection{Comentários e Discussão}
 

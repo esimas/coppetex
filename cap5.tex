@@ -199,6 +199,288 @@ compreendem os modelos com restrições estruturais e os modelos
 livres), através de algoritmos com aplicação difundida na
 literatura (PNL e SOM).
 
+\subsubsection{Metodologia para Estimação da ICA Linear}
+
+No trabalho~\cite{tese:torres:2010}, foi realizado um estudo, 
+com dados simulados, a respeito da utilização do modelo linear da 
+análise de componentes independentes para extração de características dos sinais em
+anéis. De modo bastante completo, foram abordadas diversas
+configurações para a estimação dos componentes independentes. 
+A configuração que apresentou melhor resultado, em termos da eficiência 
+de discriminação, compreende as etapas listadas a seguir:
+\begin{itemize}
+ \item Compactação dos sinais em anéis de modo segmentado a partir da análise 
+de componentes principais (PCD).
+ \item Estimação da ICA através do algoritmo JADE~\cite{article:Cardoso:1993}.
+ \item Classificação a partir de um discriminador neural alimentado pelos 
+componentes independentes.
+\end{itemize}
+
+Em comparação com o algoritmo FastICA~\cite{article:fastica:1999} (outro algoritmo 
+bastante utilizado para a estimação dos componentes independentes no modelo de mistura linear), 
+o JADE mostrou, em trabalhos anteriores~\cite{sonar:ica,simas:IEENSS09}, 
+melhores resultados em problemas de extração de características e separação de fontes.
+
+Na comparação que será apresentada nesta tese, será
+considerado apenas o modo de estimação da ICA que produziu melhor
+resultado.
+
+
+\subsubsection{Metodologia para Estimação da ICA Local}
+
+Na ICA Local, conforme mencionado no Capítulo~\ref{cap_ica},
+inicialmente é executada uma etapa de agrupamento
+não-supervisionado (\emph{clustering}), onde o conjunto 
+de sinais é mapeado em dois grupos. O número de agrupamentos 
+a ser utilizado foi escolhido considerando que o problema é de 
+classificação binária (em duas classes, elétrons e jatos).
+
+O algoritmo utilizado para o agrupamento foi o \emph{k-means}~\cite{book:duda:2000}. 
+O \emph{k-means} é um dos métodos agrupamento mais utilizados 
+na literatura~\cite{article:kmeans:2002,Alsabti98anefficient,kmeans2:2004}. 
+Uma outra alternativa para a realização do agrupamento seria o uso de mapas 
+auto-organizáveis. Para os sinais utilizados, o desempenho dos dois 
+métodos foi semelhante, porém, o esforço computacional exigido pelo 
+\emph{k-means} foi menor (justificando a escolha).
+
+Após o agrupamento, os componentes
+independentes são estimados em cada grupo (novamente foi utilizado o 
+algoritmo JADE). Na aplicação à
+filtragem \emph{online} de elétrons no ATLAS, o objetivo é a
+separação em duas classes (elétrons e jatos), então, foi realizado
+o agrupamento em dois grupos (\emph{clusters}) através do algoritmo
+\emph{k-means}.
+
+Após a divisão nos \emph{clusters}, foi aplicado um algoritmo de
+ICA linear (JADE) para estimar os componentes independentes locais. 
+Em seguida, classificadores neurais MLP de duas camadas (um para 
+cada agrupamento) foram treinados a partir destes
+componentes. Neste trabalho, todas as etapas de processamento do 
+discriminador baseado em ICA Local (agrupamento, ICA e classificação) 
+foram realizadas de modo não-segmentado.
+
+É importante notar que, devido às diferentes
+concentrações dos eventos de cada classe nos agrupamentos, 
+os patamares que otimizam o desempenho local (considerando
+os agrupamentos individualmente) podem não ser ótimos quando o
+objetivo é maximizar a eficiência no conjunto de todos os eventos.
+Deste modo, precisa-se otimizar o SP (global) variando-se os patamares
+locais (Y$_1$ e Y$_2$). Para realizar esse procedimento, foi utilizado um
+algoritmo genético (AG)~\cite{Book:Goldberg:1989}, onde o espaço de busca 
+é composto por Y$_1$ e Y$_2$
+e o objetivo é maximizar o SP. Uma das vantagens deste método de
+otimização é que não há a necessidade de encontrar as derivadas da
+função custo (que no caso é o produto SP) em função de Y$_1$ e
+Y$_2$, além disso no AG, a busca é realizada globalmente (mais
+detalhes no Apêndice~\ref{apend_GA}). Um diagrama do treinamento do discriminador
+baseado em ICA Local é mostrado Figura~\ref{E10local_diagAll}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=14cm]{localIcaDiag}
+\caption{Diagrama do discriminador baseado em ICA Local.} \label{E10local_diagAll}
+\end{figure}
+
+
+\subsubsection{Metodologia para Treinamento dos Mapas Auto-Organizáveis}
+
+Neste trabalho, os mapas auto-organizáveis foram utilizados por
+estarem diretamente relacionados com o paradigma da
+NLICA\footnote{O SOM foi um dos primeiros algoritmos propostos
+para a NLICA, mais detalhes em~\cite{article:simas:2007:lnlm}}.
+Porém, para estimar N componentes independentes é preciso utilizar
+um mapa auto-organizável N-dimensional. Assim, para o problema em
+questão, onde seriam estimadas algumas dezenas de componentes,
+este método seria proibitivamente lento. Um outro problema
+observado é que a precisão na estimação também diminui com o
+aumento da dimensionalidade.
+
+Uma solução encontrada foi a utilização de mapas bi-dimensionais, que,
+no contexto da NLICA, produzem uma estimativa de dois componentes
+independentes não-lineares (considerando um mapeamento sem restrições
+estruturais). Os mapas auto-organizáveis bi-dimensionais também são
+bastante úteis para a visualização e análise de dados de alta
+dimensão.
+
+Para treinamento dos mapas foram utilizadas diferentes abordagens
+que podem ser classificadas de dois modos:
+\begin{description}
+ \item[quanto à segmentação dos dados] - em não-segmentado (considerando todos os 100 anéis como
+entrada) e segmentado (utilizando, separadamente, os sinais em anéis 
+de cada camada do calorímetro, neste caso, são treinados 7 mapas,
+um para cada);
+ \item[quanto ao uso de informação supervisionada no treinamento] -
+em não-supervisionado (sendo este o procedimento tradicional de
+treinamento e referido no texto simplesmente como SOM), ajustado
+por LVQ (neste caso, após o treinamento não-supervisionado, os
+pesos do mapa são ajustados, usando informação dos rótulos de
+ classe, por um algoritmo de LVQ, para mais detalhes ver o
+Apêndice~\ref{apend_fex}) e supervisionado (este modo de treinamento
+foi descrito na Seção~\ref{sec_icasup} e consiste em utilizar os
+rótulos de classe como uma variável de entrada adicional).
+\end{description}
+
+\begin{figure}[h!]
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=som_sup_lvq.pdf,width=4cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=som_sup_cIn,width=3.5cm}}
+\end{minipage}
+\caption{Diagramas dos processos de treinamento dos mapas auto-organizáveis utilizando
+informação a respeito das classes.}\label{E10somdiag1}
+\end{figure}
+
+Considerando que serão utilizados mapas bi-dimensionais, ainda é
+necessário escolher o número de neurônios a serem utilizados na
+grade. Para guiar este processo, que usualmente é realizado de
+modo empírico (por
+tentativas)~\cite{Flexer:2001:som,book:kohonen:2001}, foram
+utilizados dois parâmetros o erro de reconstrução médio e o índice
+soma-produto (SP), conforme descritos a seguir:
+\begin{description}
+    \item[Erro de reconstrução médio (ERM)] - Os mapas auto-organizáveis
+    podem ser considerados como um método de quantização vetorial,
+    onde os pesos dos neurônios formam o \emph{codebook} (para
+    mais detalhes ver o Apêndice~\ref{apend_fex}). Na operação do
+    SOM, cada sinal $\mathbf{x}_A$ apresentado na entrada é associado ao
+    neurônio $\mathbf{w}_c$ mais próximo (considerando por exemplo a distância
+    euclidiana, este neurônio é chamado de ``neurônio vencedor'').
+    Os sinais associados a cada neurônio formam um
+    agrupamento centrado em $\mathbf{w}_c$ e podem ser aproximados
+    pelo próprio neurônio. A partir desta correspondência, é gerado um erro
+    de aproximação (ou reconstrução) definido por:
+    \begin{equation}\label{eq_erm}
+        ER=|\mathbf{x}_A-\mathbf{w}_c|.
+    \end{equation}
+    O erro de reconstrução médio é uma métrica que pode ser utilizada para
+    indicar a qualidade da aproximação obtida pelo SOM e tende a diminuir com o
+    aumento do número de neurônios do mapa (pois, deste modo, o
+    tamanho médio dos agrupamentos associados a cada neurônio
+    também tende a diminuir).
+    \item[Índice soma-produto (SP)] - Conforme definido na Equação~\ref{eq_sp}, o
+    produto SP está sendo utilizado como parâmetro para avaliar o
+    desempenho dos classificadores. Associando-se cada neurônio do
+    SOM à classe que mais o ativa, pode-se utilizar o mapa
+    auto-organizável diretamente como classificador. O SP é
+    calculado a partir das probabilidades de detecção e
+    falso-alarme produzidas pelo mapa.
+\end{description}
+
+No estudo do tamanho ótimo dos mapas foram utilizados mapas
+quadrados (L$\times$L) e retangulares (L$\times$P), variando-se o
+número de neurônios de 2 a 100. Para o treinamento foi utilizada
+função de vizinhança gaussiana e aprendizagem em lote. A largura
+da vizinhança é linearmente decrescida durante o processo de
+treinamento.
+
+Para os mapas retangulares, a proporção entre L e P escolhida foi a
+partir da relação entre as energias do primeiro e segundo
+componentes principais\footnote{Esta escolha tem o objetivo de
+melhor ``acomodar'' os dados em duas dimensões}:
+\begin{equation}\label{eq_relLP}
+    \frac{L}{P}=\frac{E_{PC1}}{E_{PC2}},
+\end{equation}
+onde $E_{PCi}$ é a energia do componente principal i. Para o
+conjunto de treino obteve-se: $\frac{E_{PC1}}{E_{PC2}}\sim
+2$, portanto os mapas retangulares utilizados tem a relação:
+L$=$2P.
+
+Na escolha da dimensão ótima, o objetivo é manter um compromisso
+entre:
+\begin{itemize}
+    \item Alto SP (consequentemente alta eficiência na discriminação);
+    \item Baixo EMR (indicando boa representação dos dados);
+    \item Pequeno número de neurônios (para garantir a rápida
+    operação do sistema de classificação).
+\end{itemize}
+
+A partir dos mapas auto-organizáveis obtidos por diferentes abordagens de treinamento,
+foram calculadas as projeções dos sinais de entrada $\mathbf{x}$ no espaço de características,
+fazendo:
+\begin{equation}\label{eq_somprojj}
+  \mathbf{u}=\mathbf{W}x
+\end{equation}
+onde $\mathbf{W}$ é a matriz de pesos sinápticos do mapa, conforme definido com mais
+detalhes no Apêndice~\label{apend_fex}.
+
+
+\subsubsection{Metodologia para Estimação do Modelo PNL}
+
+Considerando o modelo pós não-linear (PNL), foi comentado no
+Capítulo~\ref{cap_ica} que, com o aumento da dimensionalidade do
+problema (número de sinais envolvidos), há também um rápido aumento do
+custo computacional dos algoritmos e uma maior degradação na
+precisão da estimação dos componentes independentes.
+
+O algoritmo utilizado neste trabalho para estimar a NLICA através
+do modelo PNL foi proposto no trabalho~\cite{article:jutten:1999}
+e utiliza redes neurais para estimar as funções não-lineares
+(conforme descrito mais detalhadamente no
+Apêndice~\ref{apend_fex}). O treinamento é realizado através de um
+algoritmo gradiente que busca maximizar a independência entre os
+componentes estimados na saída do modelo. Este algoritmo foi
+escolhido por apresentar um custo computacional reduzido (se
+comparado a outros algoritmos que utilizam métodos de busca
+globais como propostos
+em~\cite{article:kai:2006,article:rojas:nlica:2004}), e uma boa
+precisão na estimação dos componentes independentes, conforme
+observado no trabalho~\cite{article:simas:2007:lnlm}.
+
+Com o objetivo de evitar problemas na estimação dos componentes
+independentes devido à alta dimensionalidade do problema, o algoritmo
+para o modelo PNL foi aplicado apenas no modo segmentado, pois assim,
+ao invés de utilizar os 100 anéis, a dimensão do problema é reduzida
+para o número de anéis de cada camada (PS$\rightarrow$8, E1$\rightarrow$64,
+E2$\rightarrow$8, E3$\rightarrow$8, H0$\rightarrow$4, H1$\rightarrow$4,
+H2$\rightarrow$4).
+
+A estimação dos componentes independentes pelo modelo PNL foi realizada
+de dois modos distintos, conforme descrito a seguir:
+
+\begin{description}
+ \item[Utilizando uma etapa de pré-processamento para compactação] -
+adicionalmente, foi incluído um pré-processamento para a redução
+da dimensão utilizando dois algoritmos de compactação: PCA
+(Análise de Componentes Principais - \emph{Principal Component
+Analysis}) e PCD (Componentes Principais de Discriminação -
+\emph{Principal Discriminating Components}). A compactação (assim
+como e estimação dos componentes independentes) também foi
+realizada de modo segmentado. Um diagrama do método proposto para
+a estimação dos componentes independentes através do modelo PNL é
+mostrado na Figura~\ref{PNLdiag1}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15cm]{Diagrama_pnl}
+\caption{Diagrama do discriminador baseado no modelo PNL da NLICA.} \label{PNLdiag1}
+\end{figure}
+
+ \item[Através de um algoritmo PNL modificado] - conforme descrito na
+seção~\ref{sec_icafex2} e em~\cite{article:simas:neucom2010}, no desenvolvimento 
+deste trabalho foi proposto
+um algoritmo para estimação do modelo pós não-linear da NLICA que
+utiliza informação supervisionada no processo de treinamento e estima, de
+modo simultâneo os blocos de compactação e do modelo PNL mostrados na Figura~\ref{PNLdiag1}.
+É utilizado um algoritmo genético que busca otimizar uma função custo que avalia
+a independência entre os componentes e a discriminação obtida ao alimentar um
+classificador linear com os componentes
+estimados. O número de componentes ótimo para um dado problema é estimado de modo semelhante
+ao utilizado na compactação por PCD (ou seja com o gradual acréscimo de componentes
+até a estabilização da eficiência de discriminação próximo ao seu valor máximo).
+Uma vantagem do modelo proposto é que as tarefas de compactação e estimação dos
+componentes independentes são realizadas de modo simultâneo, pelo mesmo algoritmo.
+Por outro lado, o uso do algoritmo genético contribui para o aumento do custo
+computacional para treinamento do modelo (na operação, após o
+treinamento, o custo computacional dos discriminadores baseados no modelo PNL é
+idêntico).
+\end{description}
+
+... falar da escolha do número de neurônios das redes aproximadoras ...
+
 \section{Classificação}
 
 Neste trabalho, foram utilizados classificadores neurais tipo
@@ -625,12 +907,12 @@ semelhantes a elétrons do que os do conjunto E10.
 \begin{figure}[p]
 \begin{minipage}[b]{0.98\linewidth}
   \centering \footnotesize{Correlação}
- \centerline{\epsfig{file=correlacao_100aneis,width=15cm}}
+ \centerline{\epsfig{file=corr,width=15cm}}
 \end{minipage}
 \hfill \vspace{.5cm}
 \begin{minipage}[b]{0.98\linewidth}
   \centering \footnotesize{Informação Mútua}
- \centerline{\epsfig{file=infmutua_100aneisHist,width=15cm}}
+ \centerline{\epsfig{file=IM,width=15cm}}
 \end{minipage}
 \caption[Correlação (acima) e informação mútua (abaixo) entre os
 100 anéis.]{Correlação (acima) e informação mútua (abaixo) entre
@@ -912,7 +1194,7 @@ eliminação de fótons.
 A eficiência dos critérios de seleção pode variar em função da energia e da posição de 
 interação no detector. Conforme mostrado na Figura~\ref{fig_perfOff}, pode-se observar 
 que, em troca de uma maior redução na aceitação de falso alarme, o critério \emph{tight} 
-produz menor eficiência na idntificação de elétrons, principalmente em energia menor que 
+produz menor eficiência na identificação de elétrons, principalmente em energia menor que 
 30~GeV e em 1$<|\eta|<$2.
 
 \begin{figure}[t]
@@ -974,10 +1256,11 @@ serem elétrons).
 \textbf{Run 1}
 
 O primeiro conjunto de sinais experimentais de colisões analisado foi obtido de 
-uma \emph{run} do dia 25 de maio de 2010. A energia de cada feixe foi de 3,5~GeV 
+uma \emph{run} do dia 25 de maio de 2010\footnote{A \emph{run} 155697 foi iniciada 
+às 19:38 h do dia 24/05/2010 e finalizada às 12:12 h do dia 25/05/2010.}. A energia de cada feixe foi de 3,5~GeV 
 (totalizando 7~GeV) e a luminosidade máxima igual a 2,1$\times 10^{29} cm^{-2}s^{-1}$.
 
-Os eventos aprovados no corte EM2 do primeiro nível (eventos que depositaram mais de 
+Os 5.550.044 eventos aprovados no corte EM2 do primeiro nível (eventos que depositaram mais de 
 2~GeV de energia nos calorímetros), e consequentemente salvos em 
 mídia permanente, pois a filtragem de alto nível não estava operando, foram 
 submetidos aos critérios de seleção da análise \emph{offline}. Aproximadamente 
@@ -1048,5 +1331,8 @@ hadrônicas no conjunto aprovado no critério \emph{electron tight}).
 \caption{Sinais experimentais médios de ``elétrons'' e ``jatos''.}\label{fig_exp_compEvMed}
 \end{figure}
 
+\section{Análises Comparativas em Termos dos Parâmetros Físicos de Interesse}
 
+falar das análises em energia, $\eta$ e $\phi$, comentando que a análise em $\phi$ nem sempre 
+é útil ...
 

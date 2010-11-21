@@ -1010,6 +1010,16 @@
   Theory, Part I\/}.
 \newblock Wiley: Nova York, Estados Unidos, 2001.
 
+\bibitem{Flexer:2001:som}
+\MakeUppercase{ Flexer, A.}, \enquote{On the use of self-organizing maps for
+  clustering and visualization}, {\em Intelligent Data Analysis\/}, v.~5,
+  pp.~373--384, October 2001.
+
+\bibitem{book:kohonen:2001}
+\MakeUppercase{ Kohonen, T.}, {\em Self Organizing Maps\/}.
+\newblock 3rd ed.
+\newblock Springer: Berlin, Alemanha, 2001.
+
 \bibitem{kuncheva:comb:2004}
 \MakeUppercase{ Kuncheva, L.}, {\em Combining Pattern Classifiers, Methods and
   Algorithms\/}.
@@ -1072,16 +1082,6 @@
 \MakeUppercase{ Knoll, G.~F.}, {\em Radiation Detection and Measurement\/}.
 \newblock 3rd ed.
 \newblock Wiley: Nova York, Estados Unidos, 2000.
-
-\bibitem{Flexer:2001:som}
-\MakeUppercase{ Flexer, A.}, \enquote{On the use of self-organizing maps for
-  clustering and visualization}, {\em Intelligent Data Analysis\/}, v.~5,
-  pp.~373--384, October 2001.
-
-\bibitem{book:kohonen:2001}
-\MakeUppercase{ Kohonen, T.}, {\em Self Organizing Maps\/}.
-\newblock 3rd ed.
-\newblock Springer: Berlin, Alemanha, 2001.
 
 \bibitem{article:som:visual:1999}
 \MakeUppercase{ Kaski, S., Venna, J., T.Kohonen}, \enquote{Coloring that
