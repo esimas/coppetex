@@ -120,8 +120,8 @@ análise \textit{offline}.
   \begin{foreignabstract}
 ATLAS is the largest detector of the Large Hadron Collider (LHC). A large amount of information is produced 
 in the collisions, but only a small fraction is important for characterizing interesting physics, demanding 
-an efficient online event detection (trigger) system. Electrons are extremelly important for the LHC and 
-are imerse in a huge background noise of hadronic jets, as these last signatures present calorimeter energy 
+an efficient online event detection (trigger) system. Electrons are extremely important for the LHC and 
+are immerse in a huge background noise of hadronic jets, as these last signatures present calorimeter energy 
 deposition profile similar to electrons one (calorimeters are highly segmented energy measurement systems and in 
 ATLAS are split into seven layers and more than 100,000 sensing elements). In this work, the nonlinear 
 independent component analysis (NLICA) model is proposed to extract features aiming at the optimization 

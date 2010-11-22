@@ -54,12 +54,12 @@
 \BOOKMARK [1][-]{section.6.2}{Extra\347\343o de Caracter\355sticas}{chapter.6}
 \BOOKMARK [2][-]{subsection.6.2.1}{Algoritmos de Extra\347\343o de Caracter\355sticas}{section.6.2}
 \BOOKMARK [1][-]{section.6.3}{Classifica\347\343o}{chapter.6}
-\BOOKMARK [2][-]{subsection.6.3.1}{Combina\347\343o de M\372ltiplos Classificadores}{section.6.3}
+\BOOKMARK [2][-]{subsection.6.3.1}{Motiva\347\343o para o Uso de Classificadores Segmentados}{section.6.3}
+\BOOKMARK [2][-]{subsection.6.3.2}{Combina\347\343o de M\372ltiplos Classificadores}{section.6.3}
 \BOOKMARK [1][-]{section.6.4}{Especifica\347\365es de Treinamento}{chapter.6}
 \BOOKMARK [1][-]{section.6.5}{Bases de Dados}{chapter.6}
 \BOOKMARK [2][-]{subsection.6.5.1}{Dados Simulados}{section.6.5}
 \BOOKMARK [2][-]{subsection.6.5.2}{Dados Experimentais}{section.6.5}
-\BOOKMARK [1][-]{section.6.6}{An\341lises Comparativas em Termos dos Par\342metros F\355sicos de Interesse}{chapter.6}
 \BOOKMARK [0][-]{chapter.7}{Resultados - Dados Simulados}{}
 \BOOKMARK [1][-]{section.7.1}{Conjunto E10}{chapter.7}
 \BOOKMARK [2][-]{subsection.7.1.1}{Resultados com os Discriminadores Existentes}{section.7.1}

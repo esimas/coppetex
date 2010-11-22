@@ -1010,6 +1010,41 @@
   Theory, Part I\/}.
 \newblock Wiley: Nova York, Estados Unidos, 2001.
 
+\bibitem{sonar:ica}
+\MakeUppercase{ Moura, N.~N., {Simas Filho}, E.~F., Seixas, J.~M.},
+  \enquote{Advances in Sonar Signal Processing}, chap. Independent Component
+  Analysis for Passive Sonar Signal Processing, pp. 91--110, In-Tech: Vienna,
+  Austria, 2009.
+
+\bibitem{simas:IEENSS09}
+\MakeUppercase{ Torres, R.~C., Lima, D. E.~F., {Simas Filho}, E.~F.,
+  \MakeLowercase{et~al.}}, \enquote{Neural online filtering based on
+  preprocessed calorimeter data}.
+\newblock In: {\em IEEE Nuclear Science Symposium Conference Record\/}, pp.
+  530--536, Orlando, Estados Unidos, Maio 2009.
+
+\bibitem{article:kmeans:2002}
+\MakeUppercase{ Kanungo, T., Mount, D.~M., Netanyahu, N.~S.,
+  \MakeLowercase{et~al.}}, \enquote{An Efficient k-Means Clustering Algorithm,
+  Analysis and Implementation}, {\em IEEE Transactions on Pattern Analysis and
+  Machine Intelligence\/}, v.~24, n.~7, pp.~881--892, 2002.
+
+\bibitem{Alsabti98anefficient}
+\MakeUppercase{ Alsabti, K.}, \enquote{An efficient k-means clustering
+  algorithm}.
+\newblock In: {\em Proceedings of IPPS/SPDP Workshop on High Performance Data
+  Mining\/}, v.~1, pp. 1--6, Genebra, Suiça, 1998.
+
+\bibitem{kmeans2:2004}
+\MakeUppercase{ Ding, C., He, X.}, \enquote{K-means Clustering via Principal
+  Component Analysis}.
+\newblock In: {\em Proc. of Int'l Conf. Machine Learning\/}, v.~1, pp.
+  225--232, 2004.
+
+\bibitem{article:gray:1984}
+\MakeUppercase{ Gray, R.~M.}, \enquote{Vector Quantization}, {\em IEEE ASSP
+  Magazine\/}, v.~Part 1, pp.~4--29, Abril 1984.
+
 \bibitem{Flexer:2001:som}
 \MakeUppercase{ Flexer, A.}, \enquote{On the use of self-organizing maps for
   clustering and visualization}, {\em Intelligent Data Analysis\/}, v.~5,
@@ -1036,6 +1071,11 @@
   Weights}.
 \newblock In: {\em Proceedings of the International Joint Conference on Neural
   Networks\/}, v.~3, pp. 21--26, São Diego, Estados Unidos, Junho 1990.
+
+\bibitem{book:densityestim:1992}
+\MakeUppercase{ Scott, D.~W.}, {\em Multivariate Density Estimation. Theory,
+  Practice and Visualization\/}.
+\newblock Wiley: Nova York, Estados Unidos, 1992.
 
 \bibitem{article:relativeEnt:1989}
 \MakeUppercase{ Joe, H.}, \enquote{Relative Entropy Measures of Multivariate
@@ -1124,10 +1164,6 @@
 \MakeUppercase{ Gersho, A.}, \enquote{On the Structure of Vector Quantizers},
   {\em IEEE Transactions on Information Theory\/}, v.~28, n.~2, pp.~157--166,
   Março 1982.
-
-\bibitem{article:gray:1984}
-\MakeUppercase{ Gray, R.~M.}, \enquote{Vector Quantization}, {\em IEEE ASSP
-  Magazine\/}, v.~Part 1, pp.~4--29, Abril 1984.
 
 \bibitem{article:kohonenLVQ:1990}
 \MakeUppercase{ Kohonen, T.}, \enquote{Improved versions of learning vector

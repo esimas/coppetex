@@ -4,21 +4,19 @@
 A seguir, serão apresentados os resultados obtidos com a aplicação
 da metodologia proposta aos sinais dos calorímetros do ATLAS obtidos 
 a partir de simulações por técnicas de Monte Carlo~\cite{book:montecarlo:2004}. 
-Assim como na operação real
-do detector, é possível aplicar diferentes cortes (formas de
-seleção) de nível 1 nos dados simulados. 
 
 Conforme mostrado no Capítulo~\ref{cap_metod}, serão utilizados dois 
 conjuntos simulados distintos de assinaturas de segundo nível, 
 aos quais foram aplicados diferentes 
 cortes no primeiro nível. Nos dados simulados
 existe a informação do tipo de partícula correspondente a cada
-assinatura, permitindo o treinamento supervisionado dos algoritmos
-de filtragem.
+assinatura (fornecida pelo simulador), permitindo o treinamento 
+supervisionado dos algoritmos de filtragem.
 
 Para cada um dos conjuntos, inicialmente serão abordados os
 discriminadores existentes para o problema (T2Calo e 
-\emph{Neural Ringer}). Em seguida, serão
+\emph{Neural Ringer} e \emph{Ringer} com pré-processamento 
+por ICA linear). Em seguida, serão
 considerados os classificadores com pré-processamento por NLICA,
 nos diversos modelos utilizados neste trabalho (SOM, PNL e ICA
 Local). Adicionalmente, será realizado um estudo a respeito da 
@@ -54,23 +52,22 @@ discriminadores que utilizam o pré-processamento dos sinais dos
 calorímetros por anéis topológicos (\textit{Neural Ringer} e
 ICA+\textit{Ringer}) apresentam desempenho superior. É
 interessante notar que o pré-processamento por ICA possibilitou
-diminuição do falso alarme em 1,3 ponto percentual em comparação
+diminuição do falso alarme em 0,35 ponto percentual em comparação
 com o classificador que opera diretamente sobre os anéis
 (\textit{Neural Ringer}). Nesta comparação foram utilizados os
-melhores resultados obtidos na aplicação da ICA com
+melhores resultados obtidos na aplicação da ICA como
 pré-processamento, que aconteceram em conjunto com a compactação
 por PCD, conforme detalhado no artigo~\cite{chap:intech:icafis}.
 
 \begin{table}[h!]
 \centering \caption{Comparação de desempenho para diferentes
 discriminadores, corte E10.}\vspace{0.2cm} \footnotesize
-\begin{tabular}{c|c c c}
+\begin{tabular}{c|c c c c}
     \hline
-     \textbf{Discriminador}&\textbf{Máx. SP}($\times$100)& \textbf{PD} (\%) &\textbf{PF} (\%) \\
-    \hline
-   T2Calo  & 91,99 & 92,50 & 8,55 \\
-   Ringer  & 97,99 $\pm$ 0,18 & 98,77 $\pm$ 0,35 & 2,85 $\pm$ 0,11 \\
-   ICA & 98,25 $\pm$ 0,27& 99,01 $\pm$ 0,42 & 2,50 $\pm$ 0,09 \\ \hline
+   \textbf{Discriminador} &\textbf{Máx. SP}$\times$100 & \textbf{PD} (\%)  & \textbf{PF} (\%) & \textbf{PF}$_{PD=92,5\%}$ \\ \hline
+   T2Calo  & 91,99 & 92,50 & 8,55 & 8,55 \\ \hline
+   Ringer  & 97,99 $\pm$ 0,18 & 98,77 $\pm$ 0,35 & 2,85 $\pm$ 0,11 & 1,10 $\pm$ 0,08\\ \hline
+   ICA & 98,25 $\pm$ 0,27& 99,01 $\pm$ 0,42 & 2,50 $\pm$ 0,09 & 1,00 $\pm$ 0,12\\ \hline
 \end{tabular}
 \label{tab_compE10_1}
 \end{table}
@@ -135,7 +132,7 @@ T2Calo.}\label{fig_RT2effa}
 \end{figure}
 
 Considerando o comparativo de eficiência (acerto$\times$erro)
-mostrado na Figura~\ref{fig_compRT2acer}), pode-se observar que,
+mostrado na Figura~\ref{fig_compRT2acer}, pode-se observar que,
 em conjunto, os dois classificadores identificam corretamente
 $\sim$92\% dos elétrons e $\sim$90\% dos jatos. Os erros conjuntos
 representam respectivamente $\sim$0,5\% e $\sim$1,2\%.
@@ -160,26 +157,22 @@ discriminadores \textit{Neural Ringer} e T2Calo para elétrons
 (esquerda) e jatos (direita).}\label{fig_compRT2acer}
 \end{figure}
 
-Os histogramas em energia e $\eta$ dos eventos agrupados de acordo
+Os histogramas da contagem percentual em energia e $\eta$ 
+dos eventos agrupados de acordo
 com o desempenho dos discriminadores são mostrados na
-Figura~\ref{fig_RT2comfis}. Pode-se observar que, a probabilidade
-de detecção de elétrons aumenta com a energia, e ainda, elétrons
-de energia muito baixa ($<$7~GeV) são de difícil identificação
-para ambos os discriminadores. Para energias um pouco maiores
-(7$<$Et$<$10), o \textit{Neural Ringer} é capaz de classificar
-corretamente elétrons que são perdidos pelo T2Calo. Com os jatos
-ocorre o contrário, em baixa energia são quase todos identificados
-por ambos discriminadores. Para Et$\sim$20~GeV e Et$>$80~GeV há
-uma queda na eficiência do T2Calo que não afeta o \textit{Ringer}.
-
-Considerando os histogramas em $\eta$, observa-se que o T2Calo
-apresenta queda no desempenho próximo ao \textit{crack} ($\eta
-\sim 1,5$), para ambas as classes. Em $|\eta| > 2,5$ (região
-próxima ao túnel do LHC, onde a granularidade do calorímetro é
-gradualmente reduzida, conforme mostrado na Tabela~\ref{tab_calo})
-o T2Calo apresenta uma severa queda de desempenho na identificação
-de elétrons. O \textit{Neural Ringer} é mais robusto a estas
-limitações do calorímetro.
+Figura~\ref{fig_RT2comfis}. Nestes gráficos, os valores percentuais 
+foram calculados considerando, em cada faixa (\emph{bin}) do histograma, 
+a parcela dos eventos que pertence a uma das quatro classes de 
+acerto/erro dos discriminadores (definidas anteriormente na 
+Figura~\ref{{fig_compRT2acer}}. Por exemplo, dos eventos de 
+elétrons que tem energia menor que 4~GeV (e consequentemente pertencem ao primeiro 
+\emph{bin} do histograma), nenhum foi classificado corretamente pelo 
+T2Calo, $\sim$30~\% foi identificado pelo \emph{Ringer} 
+e $\sim$70~\% foi classificado incorretamente por ambos os discriminadores. 
+Deste modo, pode-se concluir que, elétrons
+de energia muito baixa são de difícil identificação
+para ambos os discriminadores (embora o \emph{Ringer} tenha vantagem 
+sobre o T2Calo).
 
 \begin{figure}[htp]
 \begin{minipage}[b]{0.48\linewidth}
@@ -220,10 +213,27 @@ limitações do calorímetro.
   \centering
  \centerline{\epsfig{file=RnokT2nokEta,width=7cm}}
 \end{minipage}
-\caption{Eficiência (esquerda) e falso alarme (direita) em
-energia, $\eta$ e $\phi$ para o \textit{Neural Ringer} e o
-T2Calo.}\label{fig_RT2comfis}
+\caption{Histogramas da contagem (em \%) em energia (esquerda) e $\eta$ (direita)
+para assinaturas de elétrons e jatos de acordo com as decisões 
+dos discriminadores T2Calo e \emph{Neural Ringer}.}\label{fig_RT2comfis}
 \end{figure}
+
+Pode-se observar que, a probabilidade
+de detecção de elétrons aumenta com a energia. Para energias um pouco maiores
+(7$<$Et$<$10), o \textit{Neural Ringer} é capaz de classificar
+corretamente elétrons que são perdidos pelo T2Calo. Com os jatos
+ocorre o contrário, em baixa energia são quase todos identificados
+por ambos os discriminadores. Para Et$\sim$20~GeV e Et$>$80~GeV há
+uma queda na eficiência do T2Calo que não afeta o \textit{Ringer}.
+
+Considerando os histogramas em $\eta$, observa-se que o T2Calo
+apresenta queda no desempenho próximo ao \textit{crack} ($\eta
+\sim 1,5$), para ambas as classes. Em $|\eta| > 2,5$ (região
+próxima ao túnel do LHC, onde a granularidade do calorímetro é
+gradualmente reduzida, conforme mostrado na Tabela~\ref{tab_calo}),
+o T2Calo apresenta uma severa queda de desempenho na identificação
+de elétrons. O \textit{Neural Ringer} é mais robusto a estas
+limitações do calorímetro.
 
 Continuando a análise de desempenho dos discriminadores, foram
 calculados os eventos médios de elétrons e jatos para os
@@ -238,12 +248,12 @@ energética) na camada E1.
 \begin{figure}[p]
 \begin{minipage}[b]{0.98\linewidth}
   \centering
- \centerline{\epsfig{file=RT2evmedcompE,width=15cm}}
+ \centerline{\epsfig{file=RT2evmedEcomp,width=15cm}}
 \end{minipage}
 \hfill \vspace{1cm}
 \begin{minipage}[b]{0.98\linewidth}
   \centering
- \centerline{\epsfig{file=RT2evmedcompJ,width=15cm}}
+ \centerline{\epsfig{file=RT2evmedJcomp,width=15cm}}
 \end{minipage}
 \caption{Comparação (\textit{Neural Ringer}$\times$T2Calo) dos
 eventos médios para elétrons (acima) e jatos (abaixo).}
@@ -258,12 +268,11 @@ energia hadrônica).
 
 \subsubsection{Anéis $\times$ ICA}
 
-
 As curvas ROC obtidas para os discriminadores \emph{Neural Ringer} e para o
 discriminador neural operando sobre os sinais em anéis projetados nos
 componentes independentes são mostrados na Figura~\ref{figE10RingerIcaRoc}.
-Pode-se observar que, o uso da ICA produz um aumento na eficiência
-(considerando a área sob a curva ROC).
+Pode-se observar que, o uso da ICA (segmentada e com compactação por PCD) 
+produz um aumento na eficiência (considerando a área sob a curva ROC).
 
 \begin{figure}[h!]
 \begin{minipage}[b]{0.98\linewidth}
@@ -277,7 +286,7 @@ ICA$+$MLP.}\label{figE10RingerIcaRoc}
 
 Considerando o gráfico de dispersão das saídas das redes neurais
 alimentadas diretamente pelos sinais em anéis e pelos componentes
-independentes (ver Figura~\ref{fig_RICAscatter}), pode-se observar
+independentes (ver Figura~\ref{fig_RICAscatter}), pode-se observar que
 há uma grande concordância entre os dois discriminadores, tanto em
 termo dos acertos como dos erros.
 
@@ -409,11 +418,16 @@ pós não-linear (PNL).
 
 \subsubsection{ICA Local}
 
+A extração de características por ICA Local, conforme mencionado no 
+Capítulo~\ref{cap_metod}, é dividida em duas etapas: agrupamento 
+não-supervisionado (\emph{clustering}) e projeção nos componentes 
+independentes estimados localmente (para cada agrupamento).
+
 A Figura~\ref{E10local_clusterProb} ilustra a divisão das assinaturas
 das diferentes classes em cada \emph{cluster}. Pode-se observar que,
 o primeiro grupo é composto por aproximadamente 94~\% dos elétrons e
-11~\% dos jatos e o restante dos eventos (6~\% dos elétrons e 89~\% dos jatos) é designado ao
-segundo grupo.
+11~\% dos jatos e o restante dos eventos (6~\% dos elétrons e 
+89~\% dos jatos) é designado ao segundo grupo.
 
 \begin{figure}[t]
 \centering
@@ -422,7 +436,7 @@ segundo grupo.
 \emph{clusters}.} \label{E10local_clusterProb}
 \end{figure}
 
-Na Figura~\ref{E10local_cluster1car} são mostradas as
+Na Figura~\ref{E10local_cluster1car}, são mostradas as
 distribuições em energia e $\eta$, para os eventos dos
 \emph{clusters} 1 e 2. Pode-se observar que, os elétrons do grupo 1
 apresentam distribuição aproximadamente uniforme em energia e
@@ -453,7 +467,7 @@ são mais energéticos.
 Considerando os perfis de deposição médios para elétrons e jatos nos
 agrupamentos e também em toda a base de sinais (ver Figura~\ref{E10local_clusterEvMed}),
 percebe-se que o perfil médio dos elétrons do \emph{cluster} 1 é muito semelhante ao
-ao de elétrons típicos (considerando todo o conjunto simulado com corte E10). Por
+de perfil médio dos elétrons calculado para todo o conjunto E10. Por
 outro lado, os elétrons associados ao segundo agrupamento tem perfil médio um pouco
 diferente, apresentado maior energia hadrônica (por isso foram agrupados num conjunto
 composto na sua maioria por jatos). Para os jatos ocorre o oposto, com a
@@ -478,7 +492,8 @@ concentração dos sinais com perfil semelhante a jatos típicos no \emph{cluster} 
   \centering
  \centerline{\epsfig{file=E10local_jatoC2,width=16cm}}
 \end{minipage}
-\caption{Eventos médios de elétrons e jatos em cada \emph{cluster}.}\label{E10local_clusterEvMed}
+\caption{Eventos médios de elétrons e jatos calculados em cada \emph{cluster}, 
+comparados aos perfis médios para todo o conjunto E10.}\label{E10local_clusterEvMed}
 \end{figure}
 
 As curvas ROC obtidas para os classificadores treinados a partir 
@@ -520,7 +535,8 @@ probabilidade de detecção igual a 98,0~\% para falso-alarme de
 1,7~\% (SP=0,981).
 
 Realizando o ajuste dos patamares de corte através do algoritmo genético visando 
-maximizar o SP global (calculado para todos os sinais), foram escolhidos novos
+maximizar o SP global (calculado para todos os sinais do conjunto E10), 
+foram escolhidos novos
 patamares (Y$_1=0,106$ e Y$_2=-0,103$), assim, obteve-se uma
 probabilidade de detecção igual a 99,6~\%, para falso-alarme de
 1,5~\%, o que produz SP=0,990, otimizando o desempenho do
@@ -541,14 +557,13 @@ A Tabela~\ref{tab_compE10_1ocal} apresenta um resumo dos resultados.
 \begin{table}[b]
 \centering \caption{Comparação de desempenho para diferentes
 discriminadores, corte E10.}\vspace{0.2cm} \footnotesize
-\begin{tabular}{c|c c c}
+\begin{tabular}{c|c c c c}
     \hline
-     \textbf{Discriminador}&\textbf{Máx. SP}($\times$100)& \textbf{PD} (\%) &\textbf{PF} (\%) \\
-    \hline
-   T2Calo  & 91,99 & 92,50 & 8,55 \\
-   Ringer  & 97,99 $\pm$ 0,18 & 98,77 $\pm$ 0,35 & 2,85 $\pm$ 0,11 \\
-   ICA & 98,25 $\pm$ 0,27& 99,01 $\pm$ 0,42 & 2,50 $\pm$ 0,09 \\
-  Local& 99,05 $\pm$ 0,28 & 99,60 $\pm$ 0,43 & 1,50 $\pm$ 0,08\\ \hline
+  \textbf{Discriminador} &\textbf{Máx. SP}$\times$100 & \textbf{PD} (\%)  & \textbf{PF} (\%) & \textbf{PF}$_{PD=92,5\%}$ \\ \hline
+   T2Calo  & 91,99 & 92,50 & 8,55 & 8,55 \\ \hline
+   Ringer  & 97,99 $\pm$ 0,18 & 98,77 $\pm$ 0,35 & 2,85 $\pm$ 0,11 & 1,10 $\pm$ 0,08\\ \hline
+   ICA & 98,25 $\pm$ 0,27& 99,01 $\pm$ 0,42 & 2,50 $\pm$ 0,09 & 1,00 $\pm$ 0,12\\ \hline
+  Local& 99,05 $\pm$ 0,28 & 99,60 $\pm$ 0,43 & 1,50 $\pm$ 0,08& 0,85 $\pm$ 0,09\\ \hline
 \end{tabular}
 \label{tab_compE10_1ocal}
 \end{table}
@@ -1108,21 +1123,6 @@ semelhante aos outros modelos da NLICA utilizados, principalmente em regiões ond
 
 
 \subsection{Estudo da Relevância por Camada}
-
-Considerando que no problema em estudo o tempo de processamento é um fator crucial, e
-sabendo que a maior parte do esforço computacional é exigido pelas rotinas de seleção de
-dados e anelamento (geração dos sinais em anéis), foi realizado um estudo a respeito
-da relevância das variáveis de entrada dos discriminadores.
-
-Uma característica particular do problema é que a seleção da informação das regiões de
-interesse no sistema de filtragem do ATLAS é realizada de uma única vez em cada camada,
-ou seja, mesmo que uma camada tenha
-poucos anéis relevantes, para acessá-los é necessário solicitar os dados de toda camada
-(mais detalhes serão apresentados na Seção~\ref{sec_timeSeg}).
-
-Considerando o exposto, a análise da relevância das variáveis de entrada foi conduzida
-com o objetivo de verificar a influência de cada uma das sete camadas no processo de
-discriminação.
 
 Inicialmente, para os discriminadores propostos, foi avaliado o
 desempenho de discriminação quando os anéis de uma dada camada são
