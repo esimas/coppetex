@@ -60,8 +60,10 @@ pré-processamento, que aconteceram em conjunto com a compactação
 por PCD, conforme detalhado no artigo~\cite{chap:intech:icafis}.
 
 \begin{table}[h!]
-\centering \caption{Comparação de desempenho para diferentes
-discriminadores, corte E10.}\vspace{0.2cm} \footnotesize
+\centering \caption{Comparação de desempenho entre o T2Calo, \emph{Neural Ringer}, 
+e o discriminador neural com pré-processamento por ICA para o conjunto E10. 
+São mostrados o máximo SP, os valores de PD e PF que produzem o máximo SP e 
+PF para PD=92,5\%.}\vspace{0.2cm} \footnotesize
 \begin{tabular}{c|c c c c}
     \hline
    \textbf{Discriminador} &\textbf{Máx. SP}$\times$100 & \textbf{PD} (\%)  & \textbf{PF} (\%) & \textbf{PF}$_{PD=92,5\%}$ \\ \hline
@@ -164,7 +166,7 @@ Figura~\ref{fig_RT2comfis}. Nestes gráficos, os valores percentuais
 foram calculados considerando, em cada faixa (\emph{bin}) do histograma, 
 a parcela dos eventos que pertence a uma das quatro classes de 
 acerto/erro dos discriminadores (definidas anteriormente na 
-Figura~\ref{{fig_compRT2acer}}. Por exemplo, dos eventos de 
+Figura~\ref{fig_compRT2acer}. Por exemplo, dos eventos de 
 elétrons que tem energia menor que 4~GeV (e consequentemente pertencem ao primeiro 
 \emph{bin} do histograma), nenhum foi classificado corretamente pelo 
 T2Calo, $\sim$30~\% foi identificado pelo \emph{Ringer} 
@@ -467,7 +469,7 @@ são mais energéticos.
 Considerando os perfis de deposição médios para elétrons e jatos nos
 agrupamentos e também em toda a base de sinais (ver Figura~\ref{E10local_clusterEvMed}),
 percebe-se que o perfil médio dos elétrons do \emph{cluster} 1 é muito semelhante ao
-de perfil médio dos elétrons considerando todo o conjunto simulado com corte E10. Por
+de perfil médio dos elétrons calculado para todo o conjunto E10. Por
 outro lado, os elétrons associados ao segundo agrupamento tem perfil médio um pouco
 diferente, apresentado maior energia hadrônica (por isso foram agrupados num conjunto
 composto na sua maioria por jatos). Para os jatos ocorre o oposto, com a
@@ -492,7 +494,8 @@ concentração dos sinais com perfil semelhante a jatos típicos no \emph{cluster} 
   \centering
  \centerline{\epsfig{file=E10local_jatoC2,width=16cm}}
 \end{minipage}
-\caption{Eventos médios de elétrons e jatos em cada \emph{cluster}.}\label{E10local_clusterEvMed}
+\caption{Eventos médios de elétrons e jatos calculados em cada \emph{cluster}, 
+comparados aos perfis médios para todo o conjunto E10.}\label{E10local_clusterEvMed}
 \end{figure}
 
 As curvas ROC obtidas para os classificadores treinados a partir 
@@ -534,7 +537,8 @@ probabilidade de detecção igual a 98,0~\% para falso-alarme de
 1,7~\% (SP=0,981).
 
 Realizando o ajuste dos patamares de corte através do algoritmo genético visando 
-maximizar o SP global (calculado para todos os sinais), foram escolhidos novos
+maximizar o SP global (calculado para todos os sinais do conjunto E10), 
+foram escolhidos novos
 patamares (Y$_1=0,106$ e Y$_2=-0,103$), assim, obteve-se uma
 probabilidade de detecção igual a 99,6~\%, para falso-alarme de
 1,5~\%, o que produz SP=0,990, otimizando o desempenho do
@@ -553,62 +557,46 @@ A Tabela~\ref{tab_compE10_1ocal} apresenta um resumo dos resultados.
 \end{figure}
 
 \begin{table}[b]
-\centering \caption{Comparação de desempenho para diferentes
-discriminadores, corte E10.}\vspace{0.2cm} \footnotesize
-\begin{tabular}{c|c c c}
+\centering \caption{Comparação de desempenho entre o discriminador baseado 
+na ICA Local e outros classificadores para o conjunto E10. São mostrados o máximo SP, os valores de 
+PD e PF que produzem o máximo SP e PF para PD=92,5\%.}\vspace{0.2cm} \footnotesize
+\begin{tabular}{c|c c c c}
     \hline
-     \textbf{Discriminador}&\textbf{Máx. SP}($\times$100)& \textbf{PD} (\%) &\textbf{PF} (\%) \\
-    \hline
-   T2Calo  & 91,99 & 92,50 & 8,55 \\
-   Ringer  & 97,99 $\pm$ 0,18 & 98,77 $\pm$ 0,35 & 2,85 $\pm$ 0,11 \\
-   ICA & 98,25 $\pm$ 0,27& 99,01 $\pm$ 0,42 & 2,50 $\pm$ 0,09 \\
-  Local& 99,05 $\pm$ 0,28 & 99,60 $\pm$ 0,43 & 1,50 $\pm$ 0,08\\ \hline
+  \textbf{Discriminador} &\textbf{Máx. SP}$\times$100 & \textbf{PD} (\%)  & \textbf{PF} (\%) & \textbf{PF}$_{PD=92,5\%}$ \\ \hline
+   T2Calo  & 91,99 & 92,50 & 8,55 & 8,55 \\ \hline
+   Ringer  & 97,99 $\pm$ 0,18 & 98,77 $\pm$ 0,35 & 2,85 $\pm$ 0,11 & 1,10 $\pm$ 0,08\\ \hline
+   ICA & 98,25 $\pm$ 0,27& 99,01 $\pm$ 0,42 & 2,50 $\pm$ 0,09 & 1,00 $\pm$ 0,12\\ \hline
+  Local& 99,05 $\pm$ 0,28 & 99,60 $\pm$ 0,43 & 1,50 $\pm$ 0,08& 0,85 $\pm$ 0,09\\ \hline
 \end{tabular}
 \label{tab_compE10_1ocal}
 \end{table}
 
-A Figura~\ref{E10local_clasOutComp} mostra a distribuição das saídas dos classificadores neurais
-operando sobre os anéis e sobre os componentes independentes de acordo com a decisão do discriminador
-baseado em ICA Local. Pode-se observar que, há uma grande concordância entre os discriminadores, o que
-pode ser observado também na Tabela~\ref{TabE10LocalCompEff} em termos das taxas conjuntas de acerto e erro.
-
-\begin{figure}[t!]
-\begin{minipage}[b]{0.48\linewidth}
-  \centering \footnotesize{Elétrons}
- \centerline{\epsfig{file=E10local_ringerOutxClasL,width=8cm}}
-\end{minipage}
-\hfill
-\begin{minipage}[b]{0.48\linewidth}
-  \centering \footnotesize{Jatos}
- \centerline{\epsfig{file=E10local_ringerOutJxClasL,width=8cm}}
-\end{minipage}
-\begin{minipage}[b]{0.48\linewidth}
-  \centering \vspace{0.4cm} \footnotesize{Elétrons}
- \centerline{\epsfig{file=E10local_ICAoutxClasL,width=8cm}}
-\end{minipage}
-\hfill
-\begin{minipage}[b]{0.48\linewidth}
-  \centering \footnotesize{Jatos}
- \centerline{\epsfig{file=E10local_ICAoutJxClasL,width=8cm}}
-\end{minipage}
-\caption{Comparativo de eficiência (esquerda) e falso-alarme
-(direita) dos discriminadores \emph{Neural Ringer} ICA+MLP e Local
-ICA+MLP.}\label{E10local_clasOutComp}
-\end{figure}
-
-\begin{table}[b]
-\centering \caption{Taxas conjuntas (\%) de acerto e erro para diferentes discriminadores.}\vspace{0.2cm} \footnotesize
-\begin{tabular}{c| c |c |c |c |c |c |c |c |c|}
-    \hline
-   \multicolumn{2}{|c|}{} & \multicolumn{2}{c|}{Ringer Acerta}&\multicolumn{2}{c|}{Ringer Erra} &\multicolumn{2}{c|}{ICA Acerta} & \multicolumn{2}{c|}{ICA erra} \\
-    \cline{3-10}
-\multicolumn{2}{|c|}{} & Elétron & Jato & Elétron & Jato & Elétron & Jato & Elétron & Jato \\ \hline
-  \multirow{2}{*}{Local} & Acerta & 98,89 & 97,41 & 0,72 & 1,03 & 98,63 & 97,00 & 0,98 & 1,45\\ \cline{2-10}
-    & Erra & 0,13 & 0,19 & 0,27 & 1,37 & 0,15 & 0,15 & 0,24 & 1,40 \\
-    \hline
-\end{tabular}
-\label{TabE10LocalCompEff}
-\end{table}
+%A Figura~\ref{E10local_clasOutComp} mostra a distribuição das saídas dos classificadores neurais
+%operando sobre os anéis e sobre os componentes independentes de acordo com a decisão do discriminador
+%baseado em ICA Local. 
+%\begin{figure}[t!]
+%\begin{minipage}[b]{0.48\linewidth}
+%  \centering \footnotesize{Elétrons}
+% \centerline{\epsfig{file=E10local_ringerOutxClasL,width=8cm}}
+%\end{minipage}
+%\hfill
+%\begin{minipage}[b]{0.48\linewidth}
+%  \centering \footnotesize{Jatos}
+% \centerline{\epsfig{file=E10local_ringerOutJxClasL,width=8cm}}
+%\end{minipage}
+%\begin{minipage}[b]{0.48\linewidth}
+%  \centering \vspace{0.4cm} \footnotesize{Elétrons}
+% \centerline{\epsfig{file=E10local_ICAoutxClasL,width=8cm}}
+%\end{minipage}
+%\hfill
+%\begin{minipage}[b]{0.48\linewidth}
+%  \centering \footnotesize{Jatos}
+% \centerline{\epsfig{file=E10local_ICAoutJxClasL,width=8cm}}
+%\end{minipage}
+%\caption{Comparativo de eficiência (esquerda) e falso-alarme
+%(direita) dos discriminadores \emph{Neural Ringer} ICA+MLP e Local
+%ICA+MLP.}\label{E10local_clasOutComp}
+%\end{figure}
 
 A Figura~\ref{E10local_Eff} mostra um comparativo da eficiência e
 falso-alarme (em $\eta$, $\phi$ e energia) entre os
@@ -653,29 +641,76 @@ região do crack ($|\eta| \sim 1,5$).
 ICA+MLP.}\label{E10local_Eff}
 \end{figure}
 
-As características dos eventos classificados corretamente pelo
-discriminador baseado em ICA Local e incorretamente pelos demais
-podem ser observadas em detalhes a partir dos histogramas da
-Figura~\ref{E10local_EffComp}. Considerando a energia, fica
-evidente a superioridade do ICA Local principalmente em energias
-mais baixas (para elétrons e jatos). Analisando a posição de
-interação (em função da pseudorapidez - $\eta$), observa-se que o
-uso da ICA Local produz maior eficiência na identificação de
-elétrons em torno de três regiões distintas:\emph{crack}
-($|\eta|\sim 1,5$),em $\eta\sim 0$ e $|\eta|\sim 2,5$. As duas
-últimas regiões são pontos de interconexão entre módulos do
-calorímetro eletromagnético, em $\eta=0$ são conectadas as duas
+A partir da análise das taxas conjuntas de acerto e erro mostradas na 
+Tabela~\ref{TabE10LocalCompEff}, pode-se observar que, há uma grande 
+concordância entre os discriminadores. Por exemplo, os discriminadores 
+baseados no pré-processamento por ICA (linear e local) classificam 
+corretamente 98,89~\% dos elétrons e 97,41~\% dos jatos. A superioridade 
+do ICA local fica evidente quando analizamos as taxas de acerto$\times$erro. 
+Pode-se ver que, 1,03~\% dos jatos são classificados corretamente atravé do 
+processamento por ICA local e perdidos no caso da ICA linear, enquanto que 
+o oposto (Local ICA erra e ICA acerta) acontece para apenas 0,19~\%.
+
+\begin{table}[t]
+\centering \caption{Taxas conjuntas (\%) de acerto e erro para diferentes discriminadores.}\vspace{0.2cm} \footnotesize
+\begin{tabular}{|c| c |c |c |c |c |c |c |c |c|}
+    \hline
+   \multicolumn{2}{|c|}{} & \multicolumn{2}{c|}{ICA acerta}&\multicolumn{2}{c|}{ICA erra} &\multicolumn{2}{c|}{Ringer acerta} & \multicolumn{2}{c|}{Ringer erra} \\
+    \cline{3-10}
+\multicolumn{2}{|c|}{} & Elétron & Jato & Elétron & Jato & Elétron & Jato & Elétron & Jato \\ \hline
+  \multirow{2}{*}{Local} & Acerta & 98,89 & 97,41 & 0,72 & 1,03 & 98,63 & 97,00 & 0,98 & 1,45\\ \cline{2-10}
+    & Erra & 0,13 & 0,19 & 0,27 & 1,37 & 0,15 & 0,15 & 0,24 & 1,40 \\
+    \hline
+\end{tabular}
+\label{TabE10LocalCompEff}
+\end{table}
+
+As características dos eventos classificados corretamente por um dos 
+discriminadores e incorretamente por outro (considerando \emph{Ringer}, 
+ICA linear e ICA local) podem ser observadas em detalhes a partir dos 
+histogramas da Figura~\ref{E10local_EffComp}. Nestes gráficos, de 
+modo semelhante ao realizado na Figura~\ref{fig_RT2comfis}, 
+os valores percentuais foram calculados considerando, em cada faixa 
+(\emph{bin}) do histograma, a parcela dos eventos que pertence 
+à classes de acerto/erro em questão.
+
+Pode-se observar que, existem regiões onde há uma maior 
+probabilidade de erro de identificação. 
+Por exemplo, a maior parte dos erros para elétrons são concentrados 
+em energias menores que 30~GeV (conforme comentado anteriormente 
+no Capítulo~\ref{cap_atlasEtrig} em baixas energias as características 
+dos perfis de deposição de elétrons e jatos são mais semelhantes), 
+e em três faixas em $\eta$ ($\eta\sim 0$, 
+$|\eta|\sim 1,5$ e $|\eta|\sim 2,5$). Nestas regiões em $\eta$ 
+existem interconexões entre os módulos do calorímetro eletromagnético. 
+Em $\eta=0$ são conectadas as duas
 metades do barril\footnote{O barril do calorímetro eletromagnético
 é dividido em duas partes (\emph{half-barrels}), um deles cobre a
-faixa $0<\eta <1,475$ e o outro $-1,475<\eta <0$.} e em
+faixa $0<\eta <1,475$ e o outro $-1,475<\eta <0$.}. Em $|\eta|\sim 1,5$ 
+há uma descontinuidade para passagem de cabos de alimentação e dados 
+(conhecida como \emph{crack}) e em
 $|\eta|=2,5$ há a junção dos dois blocos cilíndricos que compõem a
 tampa\footnote{As tampas do calorímetro eletromagnético são
 divididas em dois módulos coaxiais o \emph{inner wheel} e o
 \emph{outer wheel}, que cobrem respectivamente as regiões de
-$2,5<|\eta|<3,2$ e $1,375<|\eta|<2,5$.}. Para os jatos observa-se
-um considerável aumento da eficiência em $|\eta|< 1,5$ (com
-acentuado destaque em torno do \emph{crack}) (... pesquisar o
-motivo...).
+$2,5<|\eta|<3,2$ e $1,375<|\eta|<2,5$.}.
+
+Considerando as regiões descritas acima, pode-se observar que o discriminador 
+baseado em ICA local consegue identificar corretamente uma maior quantidade 
+de eventos que os demais classificadores. Por exemplo, observa-se que, em 
+baixa energia ($\sim$5~GeV) com a ICA local é possível identificar corretamente 
+$\sim$4~\% dos elétrons perdidos pelo \emph{Ringer} e o contrário só é verdade 
+para $\sim$1~\% destes eventos. Na comparação ICA local com ICA (linear) estas 
+taxas são respectivamente $\sim$4~\% (havendo um pico de $\sim$10~\% para 
+a primeira faixa de energia) e $\sim$0,7~\%. O uso da ICA local também produz 
+melhores resultados nas três faixas em $\eta$ onde existem as interconexões 
+entre os módulos do calorímetro
+
+Para os jatos observa-se que com a ICA local há um considerável aumento 
+da eficiência em $|\eta|< 1,5$ (com acentuado destaque em torno do 
+\emph{crack}). Considerando a energia, o pré-processamento por ICA local 
+produz uma maior taxa de identificação em quase toda a faixa de energia, 
+com destaque para baixas energias ($<$20~GeV) e também próximo a 100~GeV.
 
 \begin{figure}[p]
 \begin{minipage}[b]{0.98\linewidth}
@@ -768,14 +803,25 @@ ICA+MLP.}\label{E10local_EffComp}
 
 \subsubsection{Mapas Auto-Organizáveis - SOM}
 
+No pré-processamento por mapas auto-organizáveis foram utilizadas 
+abordagens de treinamento que podem ser divididas conforme a 
+segmentação da informação em segmentada e não-segmentada e conforme 
+a utilização de informação supervisionada em não-supervisionada, 
+ajustada por LVQ (quantização vetorial por aprendizado) e supervisionada.
 
-A Figura~\ref{E10somSize} mostra os valores calculados para ERM e
-SP variando-se as dimensões de mapas não-segmentados. De modo semelhante, os
+Em todos os casos, é necessário escolher o número de neurônios 
+a serem utilizados em cada mapa. Neste trabalho, 
+conforme descrito anteriormente 
+no Capítulo~\ref{cap_metod}, para esta escolha foram utilizados o 
+erro médio de reconstrução (ERM) e o índice SP calculados para cada 
+mapa. A Figura~\ref{E10somSize} mostra os valores calculados para ERM e
+SP, variando-se as dimensões de mapas não-segmentados com treinamento 
+não-supervisionado. De modo semelhante, os
 resultados obtidos para os mapas segmentados são apresentados na
-Figura~\ref{E10somSegSize}. Nesta comparação, foram considerados os mapas
-não-supervisionados, porém, resultado semelhante foi obtido para os outros
-modos de treinamento, assim, foram escolhidos os mesmos tamanhos para
-todas as configurações de treinamento.
+Figura~\ref{E10somSegSize} (desta vez para os mapas supervisiondos). 
+Resultados semelhantes foram obtidos para as outras
+abordagens de treinamento. Deste modo, foram escolhidos os mesmos tamanhos para
+todas as configurações.
 
 \begin{figure}[h!]
 \begin{minipage}[b]{0.48\linewidth}
@@ -788,7 +834,8 @@ todas as configurações de treinamento.
  \centerline{\epsfig{file=E10som_SPmapas,width=8cm}}
 \end{minipage}
 \caption{Erro de reconstrução médio e SP calculados variando-se o
-número de neurônios do mapa.}\label{E10somSize}
+número de neurônios do mapa (para mapas não-segmentados 
+treinados de modo não-supervisionado).}\label{E10somSize}
 \end{figure}
 
 \begin{figure}[h!]
@@ -802,20 +849,33 @@ número de neurônios do mapa.}\label{E10somSize}
  \centerline{\epsfig{file=E10som_SPmapasSeg,width=8cm}}
 \end{minipage}
 \caption{Erro de reconstrução médio e SP calculados variando-se o
-número de neurônios do mapa.}\label{E10somSegSize}
+número de neurônios do mapa (para mapas segmentados treinados 
+de modo supervisionado).}\label{E10somSegSize}
 \end{figure}
 
-Conforme mencionado anteriormente no Capítulo~\ref{cap_metod}, para a escolha da dimensão ótima 
-dos mapas, o objetivo é manter um compromisso entre: alto SP, baixo EMR e pequeno número 
-de neurônios. 
-
+Na escolha da dimensão ótima dos mapas, o objetivo é manter um 
+compromisso entre: alto SP, baixo EMR e pequeno número de neurônios. 
+Então, buscou-se o mapa i que atende às restrições:
+\begin{itemize}
+ \item $ERM_i-ERM_{\text{Min}} < 25\%\Delta_{ERM}$ (onde $ERM_{\text{Min}}$ é 
+o mínimo valor do ERM considerando todos os mapas treinados 
+e $\Delta_{ERM}$ a variação do $ERM$);
+ \item $SP_{\text{Max}}-SP_i < 20\%\Delta_{SP}$ (onde $SP_{\text{Max}}$ é 
+o máximo valor do SP e $\Delta_{SP}$ a variação do $SP$);
+ \item Ter o menor número de neurônios entre os mapas que satisfazem às 
+restriçoes acima.
+\end{itemize}
+Pois, desta forma, para o mapa i escolhido garante-se que, o ERM está 
+entre os 25~\% menores e o SP entre os 20~\% maiores.
+ 
 A Tabela~\ref{E10somTabDim} mostra os mapas escolhidos nas
 abordagens segmentada e não-segmentada. É importante notar que,
 os métodos que utilizam informação das classes no treinamento
-(SOM+LVQ e SOM Sup.) produzem maiores valores do SP.
-Na Figura~\ref{figE15somPlot0} pode-se observar a probabilidade de
-ativação dos neurônios de um mapa treinado para a camada E1 antes
-e depois da LVQ, percebe-se que o ajuste supervisionado é capaz de
+(SOM+LVQ e SOM Sup.) produzem maiores valores do SP, sendo que 
+o SOM$+$LVQ supera o SOM supervisionado apenas nas camadas PS, 
+H1 e H2. Na Figura~\ref{figE15somPlot0} pode-se observar a probabilidade de
+ativação dos neurônios de um mapa treinado para a camada E2 antes
+e depois da LVQ, percebe-se que, o ajuste supervisionado é capaz de
 reduzir a região de confusão do mapa, onde ambas as classes
 apresentam considerável probabilidade de ativação.
 
@@ -826,10 +886,10 @@ considerando a operação do SOM diretamente como um
 classificador).}
 \begin{tabular}{c| c c c c c c c |c}
     \hline
-     &  \multicolumn{7}{c|}{\textbf{SOM Segmentado}} &\textbf{SOM não-seg.}\\
-    Camada &\textbf{PS} & \textbf{E1}  & \textbf{E2} & \textbf{E3} & \textbf{H0} & \textbf{H1} & \textbf{H2}& \textbf{todas}\\
+     &  \multicolumn{7}{c|}{\textbf{SOM Segmentado}} &\textbf{SOM}\\
+    Camada &\textbf{PS} & \textbf{E1}  & \textbf{E2} & \textbf{E3} & \textbf{H0} & \textbf{H1} & \textbf{H2}& \textbf{não-seg.}\\
     %\hline
-    Dimensões do mapa & 5$\times$5 & 10$\times$5 & 6$\times$6 & 6$\times$6 & 6$\times$6 & 6$\times$3 & 4$\times$4 & 12$\times$6\\  \hline
+    Dimensões do mapa & 5$\times$5 & 7$\times$7 & 6$\times$6 & 6$\times$6 & 6$\times$6 & 6$\times$3 & 4$\times$4 & 12$\times$6\\  \hline
     Não-supervisionado& 70,31 & 84,12 & 82,77 & 69,78 & 74,15 & 57,24 & 56,13 & 91,10 \\
     Ajustado por LVQ & 72,76 & 91,02 & 88,30 & 72,98 & 76,32 & 68,45 & 60,23 & 92,67\\
     Supervisionado & 72,54 & 95,30 & 92,21 & 73,18 & 77,09 & 67,33 & 59,82 & 96,14\\ \hline
@@ -848,7 +908,8 @@ classificador).}
  \centerline{\epsfig{file=E15som_plotMapaLvq,width=8cm}}
 \end{minipage}
 \caption{Probabilidade de ativação dos neurônios antes (esquerda)
-e depois da LVQ (direita).} \label{figE15somPlot0}
+e depois da LVQ (direita) num mapa segmentado treinado para 
+a camada E2.} \label{figE15somPlot0}
 \end{figure}
 
 Utilizando-se as projeções $\mathbf{u}=\mathbf{W}x$ (onde $\mathbf{W}$ é a matriz 
@@ -856,10 +917,10 @@ de pesos do mapa) como entradas para discriminadores neurais,
 foram obtidas as curvas ROC mostradas na Figura~\ref{E10somRoc}. Pode-se observar
 que, o pré-processamento pelo mapa supervisionado não-segmentado produziu uma
 pequena melhora no desempenho se comparado ao \emph{Neural Ringer}, porém,
-para a região de baixo falso-alarme, o pré-processamento por ICA é mais eficiente.
-Nas demais abordagens do SOM, o pré-processamento não foi capaz de produzir
-maior eficiência do que o \emph{Neural Ringer}. Um resumo dos resultados é apresentado
-na Tabela~\ref{tab_compE10_som}.
+para a região de baixo falso-alarme, o pré-processamento por ICA é um pouco 
+mais eficiente. Nas demais abordagens do SOM, o pré-processamento não 
+foi capaz de produzir maior eficiência do que o \emph{Neural Ringer}. 
+Um resumo dos resultados é apresentado na Tabela~\ref{tab_compE10_som}.
 
 \begin{figure}[h!]
 \begin{minipage}[b]{0.98\linewidth}
@@ -873,20 +934,21 @@ a classificação por uma rede MLP.}
 
 \begin{table}[h]
 \centering \caption{Comparação de desempenho para diferentes
-discriminadores, corte E10.}\vspace{0.2cm} \footnotesize
-\begin{tabular}{c|c c c}
-    \hline
-     \textbf{Discriminador}&\textbf{Máx. SP}($\times$100)& \textbf{PD} (\%) &\textbf{PF} (\%) \\
-    \hline
-   T2Calo  & 91,99 & 92,50 & 8,55 \\
-   Ringer  & 97,99 $\pm$ 0,18 & 98,77 $\pm$ 0,35 & 2,85 $\pm$ 0,11 \\
-   ICA & 98,25 $\pm$ 0,27& 99,01 $\pm$ 0,42 & 2,50 $\pm$ 0,09 \\
-   SOM & 96,01 $\pm$ 0,23& 94,8 $\pm$ 0,33& 2,75 $\pm$ 0,10 \\
- SOM Seg.& 97,47 $\pm$ 0,31& 98,00 $\pm$ 0.47& 3,05 $\pm$ 0,19\\
- SOM+LVQ& 98,01 $\pm$ 0,26& 98,90 $\pm$ 0.36& 2,87 $\pm$ 0,17\\
- SOM Seg.+LVQ& 97,81 $\pm$ 0,19& 98,52 $\pm$ 0,40 & 2,90 $\pm$ 0,11\\
- SOM Sup.& 98,15 $\pm$ 0,22& 99,10 $\pm$ 0,36& 2,83 $\pm$ 0,17\\
- SOM Sup. Seg.& 97,75 $\pm$ 0,18 & 98,01 $\pm$ 0,45 & 2,50 $\pm$ 0,13\\
+abordagens de treinamento dos mapas auto-organizáveis para o conjunto E10. 
+São mostrados o máximo SP, os valores de 
+PD e PF que produzem o máximo SP e PF para PD=92,5\%.}\vspace{0.2cm} \footnotesize
+\begin{tabular}{c|c c c c}
+    \hline \hline
+   \textbf{Discriminador} &\textbf{Máx. SP}$\times$100 & \textbf{PD} (\%)  & \textbf{PF} (\%) & \textbf{PF}$_{PD=92,5\%}$ \\ \hline
+   T2Calo  & 91,99 & 92,50 & 8,55 & 8,55 \\ \hline
+   Ringer  & 97,99 $\pm$ 0,18 & 98,77 $\pm$ 0,35 & 2,85 $\pm$ 0,11 & 1,10 $\pm$ 0,08\\ \hline
+   ICA & 98,25 $\pm$ 0,27& 99,01 $\pm$ 0,42 & 2,50 $\pm$ 0,09 & 1,00 $\pm$ 0,12\\ \hline
+   SOM & 96,01 $\pm$ 0,23& 94,8 $\pm$ 0,33& 2,75 $\pm$ 0,10 &  2,40 $\pm$ 0,11\\ \hline
+ SOM Seg.& 97,47 $\pm$ 0,31& 98,00 $\pm$ 0.47& 3,05 $\pm$ 0,19& 1,96 $\pm$ 0,09\\ \hline
+ SOM+LVQ& 98,01 $\pm$ 0,26& 98,90 $\pm$ 0.36& 2,87 $\pm$ 0,17& 1,09 $\pm$ 0,15\\ \hline
+ SOM Seg.+LVQ& 97,81 $\pm$ 0,19& 98,52 $\pm$ 0,40 & 2,90 $\pm$ 0,11& 1,94 $\pm$0,10\\ \hline
+ SOM Sup.& 98,15 $\pm$ 0,22& 99,10 $\pm$ 0,36& 2,83 $\pm$ 0,17& 1,02 $\pm$ 0,13\\ \hline
+ SOM Sup. Seg.& 97,75 $\pm$ 0,18 & 98,01 $\pm$ 0,45 & 2,50 $\pm$ 0,13& 1,46 $\pm$ 0,10\\ \hline
 \hline
 \end{tabular}
 \label{tab_compE10_som}
@@ -899,7 +961,7 @@ apresentado na Figura~\ref{E10som_Eff}. Pode-se observar que, em termos da
 discriminação de elétrons, o uso tanto da ICA como do SOM produzem maior eficiência se comparados ao discriminador
 neural operando sem pré-processamento (\emph{Neural Ringer}). Analisando-se a aceitação do falso-alarme,
 O discriminador baseado em ICA apresenta o melhor resultado, enquanto que o uso do SOM não produz
-significativa redução do falso-alarme em comparação ao \emph{Neural Ringer}. Pode-se perceber também que,
+significativa redução do falso alarme em comparação ao \emph{Neural Ringer}. Pode-se perceber também que
 o ganho obtido pelo SOM ocorre, de modo semelhante a ICA Local, em torno do
 \emph{crack} para $|\eta|\sim 0$ e $|\eta|\sim 2,4$ e na faixa de energia menor que 40~GeV.
 
@@ -940,7 +1002,7 @@ SOM+MLP.}\label{E10som_Eff}
 \textbf{SOM como ferramenta para visualização}
 
 Os mapas auto-organizáveis são muito úteis para visualização de
-sinais multi-dimensionais, aplicações em diferentes problemas
+sinais multi-dimensionais, sendo que, aplicações em diferentes domínios
 podem ser encontradas em~\cite{article:som:visual:1999,article:som:visual:2000}. No caso dos sinais do calorímetro
 do ATLAS, neste trabalho está sendo proposta a utilização de uma
 representação em duas dimensões onde o neurônio vencedor é
@@ -956,7 +1018,8 @@ reconstrução do neurônio para o sinal em questão).
  \end{itemize}
 Na Figura~\ref{figE15somPlot1} pode-se visualizar os eventos de um
 elétron e um jato típicos através da representação 2-D do mapa de
-características. Observa-se que, os padrões para as duas classes
+características (para um mapa supervisionado não-segmentado de dimensões 
+4$\times$2). Observa-se que os padrões para as duas classes
 são bem distintos, com concentração em lados opostos do mapa.
 
 A intensidade das saídas de cada neurônio também pode ser
@@ -997,10 +1060,13 @@ cada evento.
 
 \subsubsection{Modelo com Restrições Estruturais - PNL}
 
-... colocar alguma descrição inicial...
+Conforme descrito anteriormente, para a estimação dos componentes 
+independentes através do modelo PNL foi utilizada a abordagem 
+segmentada associada a um bloco de pré-processamento para compactação 
+da informação.
 
 Considerando a compactação por PCA, num problema de classificação
-é importante notar que, não há garantia que, as componentes mais
+é importante notar que não se garante que, as componentes mais
 energéticas (que normalmente são retidas após a PCA) carreguem
 toda a informação discriminante para o problema. Neste trabalho,
 para escolha do número de componentes principais, foi calculado o
@@ -1022,17 +1088,24 @@ energia por PCA.}\footnotesize
 \label{tbpcae10}
 \end{table}
 
-Pode-se observar que, o nível de retenção de energia pode ser reduzido a até 50\% e ainda assim,
+Pode-se observar que o nível de retenção de energia pode ser reduzido a $\sim$50\% e, ainda assim,
 o máximo SP continua aproximadamente igual ao obtido com a utilização de todos os componentes. Se
-a energia continuar sendo reduzida o desempenho de discriminação decresce de modo mais acentuado.
+a energia continuar sendo reduzida, o desempenho de discriminação decresce de modo mais acentuado.
 
 Conforme descrito na Seção~\ref{sec_pcd}, a análise de componentes principais (PCD) fornece uma alternativa
 à PCA para compactação em problemas de classificação. Na PCD, os sinais de entrada são projetados
 em direções que produzem máxima discriminação entre as classes. As direções discriminantes são encontradas
 a partir de uma rede neural MLP treinada de modo supervisionado. O número de PCDs adequado a cada
 problema é encontrado a partir de um procedimento (descrito mais detalhadamente
-na Seção~\ref{sec_pcd}) no qual há um gradual acréscimo no número de componentes até o ponto em que,
+na Seção~\ref{sec_pcd}) no qual há um gradual acréscimo no número de componentes até o ponto em que
 a adição de um novo componente não contribui para aumentar a eficiência de discriminação.
+
+No algoritmo PNL modificado, o bloco de compactação é estimado de modo simultâneo 
+ao modelo PNL, através do procedimento descrito no Capítulo~\ref{cap_ica}. Para 
+estimar o ótimo número de componentes após a compactação é adotado um 
+procedimento semelhante ao realizado para a PCD (gradual acréscimo no 
+número de componentes até não haver ganho significativo na eficiência de 
+discriminação com a inclusão de mais componentes).
 
 Na Tabela~\ref{E10tab_compac} são mostrados os números de componentes estimados para cada camada do calorímetro
 após a compactação por PCA e PCD e para o algoritmo PNL modificado. Pode-se observar que, a PCA é
@@ -1040,13 +1113,14 @@ capaz de produzir uma maior redução no número de componentes se comparado às dem
 
 \begin{table}[h!]
 \centering \caption{Número de componentes estimados a partir da
-compactação por PCA (50\% de retenção de energia) e PCD.}\vspace{0.2cm} \footnotesize
+compactação por PCA (50\% de retenção de energia), PCD e 
+pelo modelo PNL modificado.}\vspace{0.2cm} \footnotesize
 \begin{tabular}{c | c c c c c c c | c}
     \hline
      \textbf{Layer} & \textbf{PS} & \textbf{E1} & \textbf{E2} & \textbf{E3} & \textbf{H0} & \textbf{H1} & \textbf{H0} & \textbf{Total} \\
 \hline
     \textbf{Rings} & 8 & 64 & 8 & 8 & 4 & 4 & 4 & 100 \\
-    \textbf{PCA} & 3 & 10 & 1 & 3 & 2 & 2 & 2 & 23 \\
+    \textbf{PCA}$_{\text{ (50\%)}}$ & 3 & 10 & 1 & 3 & 2 & 2 & 2 & 23 \\
     \textbf{PCD} & 6 & 4 & 5 & 4 & 3 & 3 & 3 & 28 \\
     \textbf{PNL Mod.} & 5 & 8 & 6 & 4 & 3 & 3 & 2 & 31 \\
 \hline
@@ -1054,7 +1128,8 @@ compactação por PCA (50\% de retenção de energia) e PCD.}\vspace{0.2cm} \footnot
 \label{E10tab_compac}
 \end{table}
 
-O algoritmo utilizado para estimar o modelo de mistura PNL utiliza redes neurais MLP de duas camadas 
+Os algoritmos utilizados para estimar o modelo de mistura PNL (tanto no 
+modelo tradicional como no modificado) utilizam redes neurais MLP de duas camadas 
 para estimar as funções não-lineares. Um parâmetro que precisa ser escolhido adequadamente no modelo 
 é o número de neurônios na camada oculta destas redes neurais, pois assim é possível controlar o 
 grau de não-linearidade no modelo PNL estimado. Considerando o exposto, foram realizadas diversas 
@@ -1062,7 +1137,7 @@ inicializações do discriminador baseado no modelo PNL\footnote{Os resultados mos
 configuração com compactação por PCD, porém, para os outros modelos o comportamento se mostrou 
 bastante semelhante.}, variando-se o número de neurônios ocultos das redes aproximadoras. Na 
 Tabela~\ref{tabE10pnl_perfNH}, pode-se observar que, com o aumento do número de neurônios (e 
-consequentemente do grau de não-linearidade permitido ao modelo) o desempenho de discriminação piora. 
+consequentemente do grau de não-linearidade permitido ao modelo), o desempenho de discriminação piora. 
 
 \begin{table}[h!]
 \centering \caption{Comparação entre discriminadores baseados no
@@ -1086,7 +1161,8 @@ os componentes independentes (produzindo baixa eficiência).
 
 A eficiência de discriminação obtida com o treinamento de classificadores neurais alimentados pelos componentes
 independentes estimados pelo modelo PNL é mostrada na Figura~\ref{E10pnl_rocs}. Pode-se observar que,
-as abordagens que consideram a informação supervisionada durante o treinamento apresentam maior eficiência.
+as abordagens que consideram a informação supervisionada durantea extração de características 
+(PNL+PCD e PNL modificado) apresentam maior eficiência.
 Um resumo dos resultados obtidos é mostrado na Tabela~\ref{tab_compE10_pnl}.
 
 \begin{figure}[h]
@@ -1098,17 +1174,15 @@ Um resumo dos resultados obtidos é mostrado na Tabela~\ref{tab_compE10_pnl}.
 \begin{table}[h]
 \centering \caption{Comparação de desempenho para diferentes
 discriminadores, corte E10.}\vspace{0.2cm} \footnotesize
-\begin{tabular}{c|c c c}
-    \hline
-     \textbf{Discriminador}&\textbf{Máx. SP}($\times$100)& \textbf{PD} (\%) &\textbf{PF} (\%) \\
-    \hline
-   T2Calo  & 91,99 & 92,50 & 8,55 \\
-   Ringer  & 97,99 $\pm$ 0,18 & 98,77 $\pm$ 0,35 & 2,85 $\pm$ 0,11 \\
-   ICA & 98,25 $\pm$ 0,27& 99,01 $\pm$ 0,42 & 2,50 $\pm$ 0,09 \\
-   SOM & 96,01 $\pm$ 0,23& 94,8 $\pm$ 0,33& 2,75 $\pm$ 0,10 \\
-  PNL+PCA& 97,67 $\pm$ 0,23& 98,61 $\pm$ 0,30& 3,30 $\pm$ 0,11\\
- PNL+PCD& 98,30 $\pm$ 0,29 & 99,00 $\pm$ 0.37& 2,40 $\pm$ 0,10\\
- PNL Mod.& 98,55 $\pm$ 0,21& 99,34 $\pm$ 0.41& 2,29 $\pm$ 0,15\\
+\begin{tabular}{c|c c c c}
+    \hline \hline
+   \textbf{Discriminador} &\textbf{Máx. SP}$\times$100 & \textbf{PD} (\%)  & \textbf{PF} (\%) & \textbf{PF}$_{PD=92,5\%}$ \\ \hline
+   T2Calo  & 91,99 & 92,50 & 8,55 & 8,55 \\ \hline
+   Ringer  & 97,99 $\pm$ 0,18 & 98,77 $\pm$ 0,35 & 2,85 $\pm$ 0,11 & 1,10 $\pm$ 0,08\\ \hline
+   ICA & 98,25 $\pm$ 0,27& 99,01 $\pm$ 0,42 & 2,50 $\pm$ 0,09 & 1,00 $\pm$ 0,12\\ \hline
+ PNL+PCA& 97,67 $\pm$ 0,23& 98,61 $\pm$ 0,30& 3,30 $\pm$ 0,11& 1,15 $\pm$ 0,16\\ \hline
+ PNL+PCD& 98,30 $\pm$ 0,29 & 99,00 $\pm$ 0.37& 2,40 $\pm$ 0,10& 0,94 $\pm$ 0,12\\ \hline
+ PNL Mod.& 98,55 $\pm$ 0,21& 99,34 $\pm$ 0.41& 2,29 $\pm$ 0,15& 0,70 $\pm$ 0,08\\ \hline
  \hline
 \end{tabular}
 \label{tab_compE10_pnl}
@@ -1150,7 +1224,12 @@ pré-processamento por ICA/NLICA. Conforme mostrado na
 Figura~\ref{E10figCombClasSPretr}, pode-se observar que, a
 retirada das camadas E3, H1 e H2 individualmente quase não provoca
 queda no SP, e mais ainda, retirando-se ao mesmo tempo as camadas
-H1 e H2 há uma ligeiro aumento na eficiência de discriminação. É
+H1 e H2 há uma ligeiro aumento na eficiência de discriminação 
+(indicando que, na verdade, estas camadas introduzem informação 
+capaz de confundir o classificador, o que pode ser justificado 
+considerando que estas são as últimas camadas do calorímetro e, 
+como, pouca energia é depositada nelas, seu sinal é, 
+em muitas vezes, dominado por ruído de medição). É
 possível até retirar ao mesmo tempo três camadas (PS, H1 e H2) e,
 ainda assim, o desempenho é pouco afetado.
 
@@ -1199,7 +1278,7 @@ saídas do classificador segmentado da camada E1 (que produziu maior
 eficiência de discriminação) e as saídas dos discriminadores
 treinados para as demais camadas. Pode-se observar que, para a
 identificação de elétrons, apenas a camada E2 é capaz de complementar
-a decisão da E1 de modo significativo, pode-se observar uma pequena concentração
+a decisão da E1 de modo significativo, há uma pequena concentração
 de eventos próximos a (-1;1) no gráfico E1$\times$E2, que indicam
 eventos identificados corretamente pelo discriminador da camada E2 e
 incorretamente pela E1.
@@ -1214,7 +1293,7 @@ incorretamente pela E1.
   \centering  \footnotesize{--- Jatos ---}
  \centerline{\epsfig{file=E10segC_scatterJ,width=15cm}}
 \end{minipage}
-\caption{Gráficos de dispersão entre a saída do classificador
+\caption{Gráficos de correlação entre a saída do classificador
 treinado para a camada E1 e para as demais camadas, para
 assinaturas de elétrons (acima) e jatos
 (abaixo).}\label{E10fig_combScatter}
@@ -1227,11 +1306,11 @@ da camada E1 e acerto dos demais).
 
 A partir das saídas dos classificadores especialistas
 (segmentados), foram testados diversos métodos de combinação de
-classificadores como média (aritmética) e média geométrica das
+classificadores como média (aritmética e geométrica) das
 saídas, votação e também o uso de uma rede neural combinadora
 (conforme descrito na Seção~\ref{secMultClas}) para a composição
 da informação segmentada na composição da decisão elétron/jato. Os
-modos de combinação ainda podem utilizar como fator de ponderação
+modos de combinação ainda podem utilizar, como fator de ponderação,
 os valores máximos do SP calculados para cada classificador
 segmentado. Um comparativo da eficiência de cada um dos métodos de
 combinação é mostrado na Figura~\ref{E10fig_combClasRoc} em termos
@@ -1287,15 +1366,14 @@ reirando-se, de modo segmentado, parte da informação.}\label{E10fig_combClasnh}
 
 Sabendo que a combinação dos classificadores segmentados utilizando a
 rede combinadora é capaz de produzir um aumento na eficiência de discriminação, e
-considerando a existência de informações redundantes nas diversas camadas
+considerando a existência de informações confundidoras em algumas camadas
 (conforme mostrado anteriormente nesta Seção), a rede combinadora foi
-re-treinada, retirando-se a informação de alguns dos classificadores segmentados
-(de modo semelhante ao realizado anteriormente para o classificador neural de duas camadas).
+re-treinada, retirando-se a informação de alguns dos classificadores segmentados. 
 Conforme mostrado na Figura~\ref{E10fig_combClasnh}, utilizando a rede combinadora
 é possível obter desempenho ligeiramente melhor que o \emph{Neural Ringer} utilizando-se apenas
 a primeira e segunda camadas eletromagnéticas. Essa redução no uso da informação, conforme
 será mostrado na Seção~\ref{sec_timeSeg}, corresponde a uma economia de aproximadamente
-30~\% do tempo total de processamento.
+20~\% do tempo total de processamento.
 
 ... falta colocar plots de eficiência em $\eta$, $\phi$ e energia comparando com o Ringer ...
 %\begin{table}[h!]
@@ -1319,25 +1397,16 @@ sinais pré-processados (mapeados nos componentes independentes) o problema se to
 linearmente separável. Deste modo, discriminadores de Fisher~\cite{book:duda:2000}
 foram alimentados com os componentes independentes estimados.
 
-A Figura~\ref{figE10FisherCompRoc} mostra as curvas ROC obtidas para as diversas
-abordagens de pré-processamento através de ICA/NLICA (para o ICA Local, é mostrado
-apenas o ponto ótimo encontrado pelo algoritmo genético). Pode-se observar que, os
-discriminadores não-lineares apresentam sempre melhor desempenho.
+A Figura~\ref{figE10FisherCompRoc} mostra as curvas ROC obtidas 
+para as diversas abordagens de pré-processamento através de 
+ICA/NLICA (para o ICA Local, é mostrado apenas o ponto ótimo 
+encontrado pelo algoritmo genético, para o SOM foi considerado 
+o SOM supervisionado não-segmentado e para o PNL o pré-processamento 
+por PCD). Pode-se observar que, para 
+um mesmo pré-processamento, os discriminadores não-lineares (neurais)
+apresentam sempre melhor desempenho do que os lineares (Fisher).
 
-...(precisa trocar essa figura, etá errada - eixos e curva PNL+MLP)
-
-É importante notar que, em alguns casos, como no pré-processamento
-por ICA, o uso do discriminador linear produz, para uma eficiência
-de 97~\% um aumento de aproximadamente um ponto percentual no
-falso alarme, de modo que o uso do discriminante de Fisher poderia
-ser justificado para redução do custo computacional na operação
-\emph{online}. O bom desempenho do classificador linear baseado na
-ICA pode ser justificado por haver maior separação entre as
-classes nos componentes independentes se comparado com os sinais
-em anéis, este fato pode ser visualizado na
-Figura~\ref{E10fig_histE2pcd}.
-
-\begin{figure}[t!]
+\begin{figure}[b!]
 \begin{minipage}[b]{0.98\linewidth}
   \centering
  \centerline{\epsfig{file=E10_roc_comp_fisherxnn,width=10cm}}
@@ -1346,13 +1415,15 @@ Figura~\ref{E10fig_histE2pcd}.
 \caption{Curvas ROC para discriminadores lineares (\emph{Fisher}) e não-lineares (MLP).}\label{figE10FisherCompRoc}
 \end{figure}
 
-Considerando o pré-processamento por NLICA, o uso dos discriminadores lineares provoca uma queda
-mais severa no desempenho. Uma explicação para isto pode ser encontrada analisando-se, por
-exemplo, um par de componentes independentes obtidos pelos modelos ICA (linear) e PNL para a camada E2, conforme mostrado
-na Figura~\ref{E10fig_scatterPNL2}. Pode-se observar que, que o mapeamento não-linear
-(produzido pela NLICA) produz classes separadas por uma fronteira não-linear, que
-seria facilmente identificada pelo discriminador neural, porém, tornaria mais difícil a discriminação
-por um classificador linear.
+É importante notar que, em alguns casos, como no pré-processamento
+por ICA, o uso do discriminador linear produz, para uma eficiência
+de 97~\% um aumento de aproximadamente um ponto percentual no
+falso alarme, de modo que o uso do discriminante de Fisher poderia
+ser justificado para redução do custo computacional na operação
+\emph{online}. O bom desempenho do classificador linear baseado na
+ICA pode ser justificado por haver maior separação entre as
+classes nos componentes independentes em comparação com os sinais
+em anéis, conforme indica a Figura~\ref{E10fig_histE2pcd}.
 
 \begin{figure}[t!]
 \begin{minipage}[b]{0.48\linewidth}
@@ -1364,18 +1435,29 @@ por um classificador linear.
   \centering
  \centerline{\epsfig{file=E10histPcdE2,width=7.5cm}}
 \end{minipage}
-\caption{Histogramas de um sinal em anel da camada E2 (esquerda) e
-de um dos componentes independentes estimados para a mesma camada (direita).}\label{E10fig_histE2pcd}
+\caption{Histogramas do terceiro anel da camada E2 (esquerda) e
+de um dos componentes independentes (ICA linear) estimados para 
+a mesma camada (direita).}\label{E10fig_histE2pcd}
 \end{figure}
 
-\begin{figure}[t!]
+Considerando o pré-processamento por NLICA, o uso dos discriminadores 
+lineares provoca uma queda mais severa no desempenho. Uma explicação 
+para isto pode ser encontrada analisando-se, por exemplo, um par de 
+componentes independentes obtidos pelos modelos ICA (linear) e PNL 
+para a camada E2, conforme mostrado na Figura~\ref{E10fig_scatterPNL2}. 
+Pode-se observar que, que o mapeamento não-linear
+(obtido pela NLICA) produz classes separadas por uma fronteira 
+não-linear, que pode ser identificada pelo discriminador neural, 
+mas não por um classificador linear.
+
+\begin{figure}[h!]
 \begin{minipage}[b]{0.48\linewidth}
-  \centering
+  \centering \footnotesize{Projeções da ICA Linear}
  \centerline{\epsfig{file=E10projICA2d,width=7.5cm}}
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\linewidth}
-  \centering
+  \centering \footnotesize{Projeções do modelo PNL}
  \centerline{\epsfig{file=E10projSOM2d2,width=7.5cm}}
 \end{minipage}
 \caption{Gráficos de dispersão entre componentes independentes
@@ -1388,16 +1470,18 @@ Um resumo dos resultados obtidos com o conjunto de dados simulados de
 assinaturas do tipo E10 é
 apresentado na Tabela~\ref{tabCompAllE10}. Pode-se observar que, entre os
 algoritmos utilizados para estimação da NLICA, o de ICA Local apresentou
-maior eficiência de discriminação, seguido do modelo PNL modificado. Ficou evidente também, os benefícios
+maior eficiência de discriminação, seguido do modelo PNL modificado. 
+Ficaram evidentes, também, os benefícios
 da segmentação dos processos de extração de características e classificação,
 pois, com a aplicação da rede combinadora, foi possível obter desempenho
 superior ao da rede neural convencional (utilizada no \emph{Neural Ringer}).
 Foi possível observar ainda que, mesmo retirando-se a informação de 5 das 7 camadas
-(o que pode produzir uma economia de aproximadamente 30~\% do tempo total de processamento)
+(o que pode produzir uma economia de aproximadamente 20~\% do tempo total de processamento)
 a rede combinadora apresenta desempenho equivalente ao do \emph{Neural Ringer}.
 
 \begin{table}[t!]\footnotesize
-\centering \caption{Comparação dos resultados obtidos para diferentes discriminadores considerando o
+\centering \caption{Comparação dos resultados obtidos para diferentes discriminadores no 
+conjunto E10 considerando o
 máximo SP($\times$100), as probabilidades de decisão (PD) e falso-alarme (PF) para o melhor SP e a
 probabilidade de falso-alarme para PD$=$92,5\%.}
 \begin{tabular}{c|c|c|c|c}
@@ -1413,11 +1497,11 @@ probabilidade de falso-alarme para PD$=$92,5\%.}
  SOM Seg.+LVQ& 97,81 $\pm$ 0,19& 98,52 $\pm$ 0,40 & 2,90 $\pm$ 0,11& 1,94 $\pm$0,10\\ \hline
  SOM Sup.& 98,15 $\pm$ 0,22& 99,10 $\pm$ 0,36& 2,83 $\pm$ 0,17& 1,02 $\pm$ 0,13\\ \hline
  SOM Sup. Seg.& 97,75 $\pm$ 0,18 & 98,01 $\pm$ 0,45 & 2,50 $\pm$ 0,13& 1,46 $\pm$ 0,10\\ \hline
- Local& 99,05 $\pm$ 0,28 & 99,60 $\pm$ 0,43 & 1,50 $\pm$ 0,08& 0,85 $\pm$ 0,09\\ \hline
+ \bf{Local}& \bf 99,05 $\pm$ 0,28 &\bf 99,60 $\pm$ 0,43 &\bf 1,50 $\pm$ 0,08&\bf 0,85 $\pm$ 0,09\\ \hline
  PNL+PCA& 97,67 $\pm$ 0,23& 98,61 $\pm$ 0,30& 3,30 $\pm$ 0,11& 1,15 $\pm$ 0,16\\ \hline
  PNL+PCD& 98,30 $\pm$ 0,29 & 99,00 $\pm$ 0.37& 2,40 $\pm$ 0,10& 0,94 $\pm$ 0,12\\ \hline
  PNL Mod.& 98,55 $\pm$ 0,21& 99,34 $\pm$ 0.41& 2,29 $\pm$ 0,15& 0,70 $\pm$ 0,08\\ \hline
- Rede Comb.& 98,65 $\pm$ 0,34& 99,12 $\pm$ 0,34& 1,82 $\pm$ 0,09& 0,61 $\pm$ 0.07\\ \hline
+ \bf Rede Comb.& \bf98,65 $\pm$ 0,34& \bf99,12 $\pm$ 0,34&\bf 1,82 $\pm$ 0,09&\bf 0,61 $\pm$ 0.07\\ \hline
 Rede Comb. E1+E2& 98,08 $\pm$ 0,26 & 98,46 $\pm$ 0,33 & 2,30 $\pm$ 0,12 & 0,94 $\pm$ 0,10\\ \hline
  \hline
 \end{tabular}
@@ -1425,7 +1509,7 @@ Rede Comb. E1+E2& 98,08 $\pm$ 0,26 & 98,46 $\pm$ 0,33 & 2,30 $\pm$ 0,12 & 0,94 $
 \end{table}
 
 Considerando o desempenho dos diferentes modos de estimação da NLICA utilizados neste
-trabalho, observou-se algumas características em comum:
+trabalho, observaram-se algumas características em comum:
 \begin{itemize}
  \item Aumento da eficiência de discriminação em eventos baixa energia, que usualmente
 são mais influenciados pelo ruído de medição inerente ao calorímetro;
@@ -1437,29 +1521,79 @@ calorímetro eletromagnético.
 \end{itemize}
 
 Considerando especificamente o pré-processamento por mapas auto-organizáveis, 
-pode-se utilizar a resposta aos mapas como instrumento de visualização das 
-características dos eventos. Esta ferramenta pode ser útil para a análise 
-offline dos eventos.
+pode-se utilizar a resposta aos mapas como instrumento de visualização 
+\emph{online} do sistema de filtragem.
+
 
 \section{Conjunto E15i}
 
 Em comparação com o conjunto E10, o problema de discriminação das assinaturas
-E15i é uma tarefa mais difícil, pois, como o corte realizado pelo nível 1 foi mais severo, as
-assinaturas de jatos que chegam ao segundo nível tem características mais semelhantes ao elétron
-médio (conforme mostrado anteriormente na Figura~\ref{emedE15}), então, é importante verificar
+E15i é uma tarefa bem mais difícil, pois, com o corte realizado pelo nível 1 bem mais severo, as
+assinaturas de jatos que chegam ao segundo nível têm características mais semelhantes às de um elétron
+médio (conforme mostrado anteriormente na Figura~\ref{emedE15}). Assim, é importante verificar
 o desempenho dos métodos propostos neste novo contexto, repetindo as análises realizadas 
 anteriormente.
 
 \subsection{Resultados com os Discriminadores existentes}
 
-Em um outro trabalho~\cite{tese:torres:2010}, desenvolvido dentro do mesmo grupo de pesquisa,
-foi realizado um estudo sobre os métodos de pré-processamento linear aplicados aos
-sinais em anéis do conjunto E15i. Foram consideradas técnicas de compactação como análise de
-componentes principais (PCA) e componentes principais de discriminação (PCA), em conjunto com
-o modelo linear da análise de componentes independentes (ICA). Deste modo, serão apresentados
-aqui apenas um resumo com os principais resultados e conclusões obtidos no referido trabalho.
+Em um outro trabalho~\cite{tese:torres:2010}, desenvolvido dentro do mesmo 
+grupo de pesquisa, foi realizado um estudo sobre os métodos de 
+pré-processamento linear aplicados aos sinais em anéis do conjunto E15i. 
+Foram consideradas técnicas de compactação como análise de componentes 
+principais (PCA) e componentes principais de discriminação (PCA), em conjunto 
+com o modelo linear da análise de componentes independentes (ICA). 
+Deste modo, serão apresentados aqui apenas um resumo com os principais 
+resultados e conclusões obtidos no referido trabalho.
 
-... mostrar resultados da tese do rodrigo com o ringer e o melhor ICA ...
+A Tabela~\ref{tabCompICAE15} 
+apresenta uma comparação dos resultados obtidos com o T2Calo, 
+\emph{Neural Ringer} e com o discriminador neural operando sobre 
+os componentes independentes (modelo linear).
+Para este conjunto de dados simulados tipo E15i, as eficiências de discriminação 
+apresentaram uma considerável redução em comparação aos sinais E10 
+(devido à maior semelhança entre os perfis de elétrons e jatos). 
+Considerando o pré-processamento por ICA linear, de modo análogo ao 
+observado no conjunto E10, a melhor configuração para 
+estimação dos componentes independentes foi através da abordagem 
+segmentada e com compactação por PCD. 
+
+\begin{table}[tbh]\footnotesize
+\centering \caption{Comparação dos resultados obtidos para oT2Calo, 
+\emph{Neural Ringer} e o discriminador neural operando em conjunto 
+com a ICA (linear) para o conjunto E15. São mostrados o
+máximo SP($\times$100), as probabilidades de decisão (PD) e falso-alarme (PF) para o melhor SP e a
+probabilidade de falso-alarme para PD$=$97,2\%.}
+\begin{tabular}{c|c|c|c|c}
+    \hline 
+    \textbf{Discriminador} &\textbf{Máx. SP}$\times$100 & \textbf{PD} (\%)  & \textbf{PF} (\%) & \textbf{PF}$_{PD=97,2\%}$ \\
+    \hline
+   T2Calo  & 87,93 & 97,34 & 20,30 & 20,30\\ \hline
+Ringer  & 94,94 $\pm$ 0,12 & 96,69 $\pm$ 0,27 & 6,79 $\pm$ 0,30 & 7,31 $\pm$ 0,25\\ \hline
+   ICA  & 95,17 $\pm$ 0,10 & 96,86 $\pm$ 0,52 & 6,50 $\pm$ 0,39  & 6,81 $\pm$ 0,31 \\ \hline
+\end{tabular}
+\label{tabCompICAE15}
+\end{table}
+
+A Figura~\ref{figE15ICA} mostra um comparativo entre as eficiências em $\eta$ e 
+energia para o discriminador baseado nos componentes independentes (com 
+compactação por PCD) e o T2Calo. Pode-se observar que, o pré-processamento 
+por ICA em conjunto com o classificador neural, produzem uma maior eficiência 
+na identificação de elétrons principalmente em baixas energias e próximo às 
+regiões de interconexões entre os módulos do calorímetro ($\eta\sim 0$, 
+$|\eta|\sim 1,5$ e $|\eta|\sim 2,5$). O falso alarme é reduzido em 
+toda a faixa de $\eta$ e, principalmente, para energias entre 15 e 50~GeV.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=15cm]{Torres_et_eta_phi-pcd}
+\caption[Comparativo da eficiência em energia (esquerda) e $\eta$ (direita) para 
+o T2Calo e o discriminador baseado no pré-processamento em ICA com 
+compactação por PCD.]{Comparativo da eficiência em energia (esquerda) e $\eta$ 
+(direita) para o T2Calo e o discriminador baseado no pré-processamento 
+em ICA com compactação por PCD, retirada de~\cite{tese:torres:2010}.} 
+\label{figE15ICA}
+\end{figure}
+
 
 \subsection{Resultados com Pré-Processamento por NLICA}
 
@@ -1487,7 +1621,13 @@ Considerando as distribuições em $\eta$ e energia dos eventos agrupados em
 cada um dos \emph{clusters} (ver Figura~\ref{E15local_clusterCar}), pode-se
 observar que, o comportamento em $\eta$ é bastante semelhante ao obtido para
 o conjunto E10, onde tanto os jatos, como a pequena parte dos elétrons
-associada ao agrupamento 2 estão concentrados em torno do \emph{crack}.
+associada ao agrupamento 2 estão concentrados em torno do \emph{crack}. 
+Por outro lado, diferente do observado para o conjunto E10, o 
+perfil dos jatos do grupo 1 (que estão agrupados juntamente 
+com a maioria dos elétrons) é bastante semelhante aos do grupo 2. 
+Uma explicação para esse fato é que, nos sinais E15i, a seleção 
+de nível 1 foi bastante severa e deixou passar apenas jatos 
+com características estatísticas mais semelhantes.
 
 \begin{figure}[p!]
 \begin{minipage}[b]{0.98\linewidth}
@@ -1504,14 +1644,14 @@ associada ao agrupamento 2 estão concentrados em torno do \emph{crack}.
 (abaixo).}\label{E15local_clusterCar}
 \end{figure}
 
-A Figura~\ref{figE15localClusEvMed} mostra os perfis médios de elétrons e jatos
-para os dois agrupamentos, pode-se observar que, o agrupamento 1 concentra os
+Os perfis médios de elétrons e jatos nos dois agrupamentos são mostrados 
+na Figura~\ref{figE15localClusEvMed}. Pode-se observar que o agrupamento 1 concentra os
 elétrons típicos e os jatos parecidos com eles (apresentando maior energia
 eletromagnética), enquanto que, o segundo agrupamento
 reune os elétrons com características mais semelhantes a jatos (elétrons com
 menor concentração de energia na segunda camada eletromagnética e um pequeno
-pico de energia na camada hadrônica\footnote{Uma justificativa para a existência
-de parcela considerável de energia hadrônica em elétrons é que estas
+pico de energia na camada hadrônica\footnote{Uma justificativa para a existência 
+de energia hadrônica em elétrons é que estas
 assinaturas, conforme mostrado na Figura~\ref{E15local_clusterCar}, interagiram com o
 calorímetro eletromagnético na região do \emph{crack} e por isso encontraram menor
 quantidade de material para absorver sua energia, ficando um resíduo que
@@ -1537,7 +1677,8 @@ atinge a seção hadrônica}).
  \centerline{\epsfig{file=E15local_jatoC2,width=8cm}}
 \end{minipage}
 \caption{Eventos médios de elétrons e jatos nos
-\emph{clusters} 1 e 2.}\label{figE15localClusEvMed}
+\emph{clusters} 1 e 2 comparados com os eventos médios 
+considerando todo o conjunto de assinaturas E15i.}\label{figE15localClusEvMed}
 \end{figure}
 
 Considerando a metodologia para projeto do discriminador baseado na ICA
@@ -1549,9 +1690,10 @@ dos classificadores, novamente foi utilizado um algoritmo genético.
 Para a escolha da topologia (número de neurônios ocultos) dos classificadores locais, foram
 realizadas diversas inicializações das redes neurais, variando-se (de 3 a 23)
 o número de neurônios na camada oculta. A
-Figura~\ref{figE15local_clasSPnh} mostra os resultados obtidos. Para o Discriminador
-do \emph{cluster} 1 a máxima eficiência foi atingida para 13 neurônios ocultos,
-enquanto, para o \emph{cluster} 2, foram necessários 17 neurônios.
+Figura~\ref{figE15local_clasSPnh} mostra os resultados obtidos. 
+Para o Discriminador do \emph{cluster} 1, a máxima eficiência foi 
+atingida para 13 neurônios ocultos, enquanto para o \emph{cluster} 2, 
+foram necessários 17 neurônios.
 
 \begin{figure}[t]
 \centering
@@ -1566,10 +1708,10 @@ Pode-se observar que, para um mesmo valor de eficiência (Ex. 96~\%), o pré-proce
 por ICA Local reduz a aceitação do falso alarme em aproximadamente 1,8 ponto percentual.
 
 Um resumo dos resultados obtidos com a ICA Local é mostrado na Tabela~\ref{tab_compE15_1ocal}.
-Pode-se observar que, o pré-processamento por ICA Local produz um aumento no
+Pode-se observar que o pré-processamento por ICA Local produz um aumento no
 índice SP, porém, o ponto (PD;PF) que produz esse máximo apresenta uma menor
-probabilidade de detecção que para os demais discriminadores (esse fato é
-compensado por uma maior redução na aceitação de falso-alarme).
+probabilidade de detecção do que para os demais discriminadores (esse fato é
+compensado por uma maior redução na aceitação de falso alarme).
 
 \begin{figure}[tbh]
 \centering
@@ -1578,27 +1720,30 @@ compensado por uma maior redução na aceitação de falso-alarme).
 \end{figure}
 
 \begin{table}[tbh]
-\centering \caption{Comparação de desempenho para diferentes
-discriminadores, corte E15i.}\vspace{0.2cm} \footnotesize
-\begin{tabular}{c|c c c}
+\centering \caption{Comparação dos resultados obtidos com o pré-processamento 
+por ICA local com outros discriminadores para o conjunto E15i. Foram 
+considerados omáximo SP($\times$100), as probabilidades de decisão (PD) e 
+falso alarme (PF) para o melhor SP e a
+probabilidade de falso alarme para PD$=$97,2\%.}\vspace{0.2cm} \footnotesize
+\begin{tabular}{c|c c c c}
+    \hline    \hline
+   \textbf{Discriminador} &\textbf{Máx. SP}$\times$100 & \textbf{PD} (\%)  & \textbf{PF} (\%) & \textbf{PF}$_{PD=97,2\%}$ \\
     \hline
-     \textbf{Discriminador}&\textbf{Máx. SP}($\times$100)& \textbf{PD} (\%) &\textbf{PF} (\%) \\
-    \hline
-   T2Calo  & 87,93 & 97,34 & 20,30 \\ 
-Ringer  & 94,94 $\pm$ 0,12 & 96,69 $\pm$ 0,27 & 6,79 $\pm$ 0,30 \\
-   ICA  & 95,17 $\pm$ 0,10 & 96,86 $\pm$ 0,52 & 6,50 $\pm$ 0,39  \\
- Local  & 95,85 $\pm$ 0,21 & 96,02 $\pm$ 0,29& 4,31 $\pm$ 0,43 \\
+   T2Calo  & 87,93 & 97,34 & 20,30 & 20,30\\ \hline
+Ringer  & 94,94 $\pm$ 0,12 & 96,69 $\pm$ 0,27 & 6,79 $\pm$ 0,30 & 7,31 $\pm$ 0,25\\ \hline
+   ICA  & 95,17 $\pm$ 0,10 & 96,86 $\pm$ 0,52 & 6,50 $\pm$ 0,39  & 6,81 $\pm$ 0,31 \\ \hline
+ Local  & 95,85 $\pm$ 0,21 & 96,02 $\pm$ 0,29& 4,31 $\pm$ 0,43& 6,54 $\pm$ 0,45\\ \hline
 \hline
 \end{tabular}
 \label{tab_compE15_1ocal}
 \end{table}
 
 Comparando o discriminador baseado na ICA Local com o \emph{Neural
-Ringer} em termos da eficiência e do falso-alarme para diferentes
+Ringer} em termos da eficiência e do falso alarme para diferentes
 valores de $\eta$ e energia (ver Figura~\ref{E15local_Eff}),
 pode-se observar que, para os pontos de máximo SP, a eficiência
 obtida através do ICA Local é menor que a do \emph{Neural Ringer}
-principalmente em energia menor que 40 GeV e perto de $\eta\sim 0$
+principalmente para energias menores do que 40 GeV e perto de $\eta\sim 0$
 (interconexão entre os módulos do barril do calorímetro
 eletromagnético) e $|\eta|\sim 1,5$ (\emph{crack}). Esta menor
 eficiência é compensada por uma redução na aceitação de jatos em
@@ -1627,8 +1772,6 @@ quase todas as faixas de energia e $\eta$.
 (direita) dos discriminadores \emph{Neural Ringer} e Local
 ICA+MLP.}\label{E15local_Eff}
 \end{figure}
-
-\pagebreak
 
 \subsubsection{Mapas Auto-Organizáveis - SOM}
 
@@ -1672,10 +1815,13 @@ não-segmentado e abaixo para o segmentado.}\label{figE15somSize}
 
 A Tabela~\ref{tabE15somClas} mostra as dimensões escolhidas para
 os mapas e os respectivos valores do índice SP obtidos,
-considerando as diferentes abordagens para treinamento. Pode-se
-observar que, de modo semelhante ao que aconteceu com o conjunto
-E10, os métodos que utilizam informação das classes no
-processo de treinamento apresentam maiores valores do SP.
+considerando as diferentes abordagens para treinamento. Comparando 
+com as dimensões ótimas escolhidas para o conjunto E10 (ver 
+Tabela~\ref{E10somTabDim}) observa-se que, para os mapas 
+segmentados das camadas PS, E2, E3, H0 e H1 o número de neurônios dobrou, 
+na camada H2 aumentou de 16 para 32. Apenas na camada  E1 o tamanho 
+permaneceu aproximadamente constante. Para o caso não segmentado, o 
+tamanho do mapa permaneceu constante. 
 
 \begin{table}[b!]\footnotesize
 \centering \caption{Máximo SP($\times$100) para diferentes
@@ -1684,10 +1830,10 @@ considerando a operação do SOM diretamente como um
 classificador).}
 \begin{tabular}{c| c c c c c c c |c}
     \hline
-     &  \multicolumn{7}{c|}{\textbf{SOM Segmentado}} &\textbf{SOM não-seg.}\\
-    Camada &\textbf{PS} & \textbf{E1}  & \textbf{E2} & \textbf{E3} & \textbf{H0} & \textbf{H1} & \textbf{H2}& \textbf{todas}\\
+     &  \multicolumn{7}{c|}{\textbf{SOM Segmentado}} &\textbf{SOM}\\
+    Camada &\textbf{PS} & \textbf{E1}  & \textbf{E2} & \textbf{E3} & \textbf{H0} & \textbf{H1} & \textbf{H2}& \textbf{não-seg.}\\
     %\hline
-    Dimensões do mapa & 10$\times$5 & 10$\times$5 & 10$\times$5 & 12$\times$6 & 12$\times$6 & 6$\times$6 & 6$\times$6 & 10$\times$5\\  \hline
+    Dimensões do mapa & 10$\times$5 & 10$\times$5 & 10$\times$5 & 12$\times$6 & 12$\times$6 & 6$\times$6 & 6$\times$6 & 12$\times$6\\  \hline
     Não-supervisionado& 72.45 & 79.86  & 80.06  & 75.56 & 74.64  & 65.34  & 59.60 & 89.29\\
     Ajustado por LVQ  & 76.13 & 84.31  &  86.73 & 76.93 &  75.07 &  66.15 & 59.97 & 90.58\\
     Supervisionado & 74.48  & 89.02  &  89.27 & 75.51 &  74.75 &  64.78 & 59.63 & 92.80\\ \hline
@@ -1700,8 +1846,9 @@ não-segmentado, supervisionado e com ajuste por LVQ),
 classificadores neurais supervisionados foram treinados e a
 Figura~\ref{figE15somROC} mostra as curvas ROC obtidas para cada
 caso e a Tabela~\ref{tab_compE15_som} apresenta um resumo dos 
-resultados. Percebe-se que, a maior eficiência (em termos do máximo SP) 
-foi obtida para a abordagem supervisionada do SOM (treinada no modo não-segmentado). 
+resultados. Percebe-se que, assim como no caso do conjunto E10, 
+a maior eficiência (em termos do máximo SP) foi obtida para a 
+abordagem supervisionada do SOM (treinada no modo não-segmentado). 
 Neste caso, o uso da abordagem segmentada produziu aumento da eficiência 
 apenas para o SOM não-supervisionado. Com o treinamento supervisionado, a 
 abordagem não-segmentada apresentou melhor desempenho.
@@ -1731,19 +1878,20 @@ E15i).} \label{figE15somROC}
 \begin{table}[h]
 \centering \caption{Comparação de desempenho para diferentes
 discriminadores, corte E10.}\vspace{0.2cm} \footnotesize
-\begin{tabular}{c|c c c}
+\begin{tabular}{c|c c c c}
     \hline
-     \textbf{Discriminador}&\textbf{Máx. SP}($\times$100)& \textbf{PD} (\%) &\textbf{PF} (\%) \\
     \hline
-   T2Calo  & 87,93 & 97,34 & 20,30 \\ 
-Ringer  & 94,94 $\pm$ 0,12 & 96,69 $\pm$ 0,27 & 6,79 $\pm$ 0,30 \\
-   ICA  & 95,17 $\pm$ 0,10 & 96,86 $\pm$ 0,52 & 6,50 $\pm$ 0,39  \\
-    SOM & 91,49 $\pm$ 0,15 & 96,42 $\pm$ 0,45 & 13,31 $\pm$ 0,38  \\
-SOM Seg.& 94,70 $\pm$ 0,18 & 96,22 $\pm$ 0,49 & 6,81 $\pm$ 0,41  \\
- SOM+LVQ& 94,92 $\pm$ 0,13 & 96,66 $\pm$ 0,43 & 6,80 $\pm$ 0,37  \\
-SOM Seg.+LVQ& 93,74 $\pm$ 0,17 & 96,51 $\pm$ 0,51 & 8,98 $\pm$ 0,44 \\
-SOM Sup.& 95,54 $\pm$ 0,09 & 97,20 $\pm$ 0,33 & 6,10 $\pm$ 0,39\\
-SOM Sup. Seg.& 95,22 $\pm$ 0,11 & 96,87 $\pm$ 0,41 & 6,41 $\pm$ 0,31 \\
+    \textbf{Discriminador} &\textbf{Máx. SP}$\times$100 & \textbf{PD} (\%)  & \textbf{PF} (\%) & \textbf{PF}$_{PD=97,2\%}$ \\
+    \hline
+   T2Calo  & 87,93 & 97,34 & 20,30 & 20,30\\ \hline
+Ringer  & 94,94 $\pm$ 0,12 & 96,69 $\pm$ 0,27 & 6,79 $\pm$ 0,30 & 7,31 $\pm$ 0,25\\ \hline
+   ICA  & 95,17 $\pm$ 0,10 & 96,86 $\pm$ 0,52 & 6,50 $\pm$ 0,39  & 6,81 $\pm$ 0,31 \\ \hline
+    SOM & 91,49 $\pm$ 0,15 & 96,42 $\pm$ 0,45 & 13,31 $\pm$ 0,38  & 14,95  $\pm$ 0,30\\ \hline
+SOM Seg.& 94,70 $\pm$ 0,18 & 96,22 $\pm$ 0,49 & 6,81 $\pm$ 0,41 & 7,94 $\pm$ 0,33\\ \hline
+ SOM+LVQ& 94,92 $\pm$ 0,13 & 96,66 $\pm$ 0,43 & 6,80 $\pm$ 0,37 & 7,69 $\pm$ 0,29\\ \hline
+SOM Seg.+LVQ& 93,74 $\pm$ 0,17 & 96,51 $\pm$ 0,51 & 8,98 $\pm$ 0,44 & 9,97 $\pm$ 0,41\\ \hline
+SOM Sup.& 95,54 $\pm$ 0,09 & 97,20 $\pm$ 0,33 & 6,10 $\pm$ 0,39& 5,96 $\pm$ 0,23\\ \hline
+SOM Sup. Seg.& 95,22 $\pm$ 0,11 & 96,87 $\pm$ 0,41 & 6,41 $\pm$ 0,31 & 6,61 $\pm$ 0,27\\ \hline
 \hline
 \end{tabular}
 \label{tab_compE15_som}
@@ -1790,10 +1938,11 @@ discriminador SOM+MLP e incorretamente pelo \emph{Neural Ringer}.
 Percebe-se que, o pré-processamento por SOM é capaz de produzir
 aumento da eficiência e redução do falso alarme principalmente
 próximo ao \emph{crack} e para eventos de energia menor que
-40~GeV. Analisando-se os eventos médios para esses eventos
+40~GeV. Analisando-se os perfis de deposição de energia médios 
+para esses eventos (ver Figura~\ref{figE15somEvmed}),
 percebe-se que o pré-processamento por SOM permite a identificação
-de eventos de elétrons que apresentam uma parcela considerável de
-energia hadrônica e de jatos que tem perfil muito semelhante a
+de eventos de elétrons que apresentam um aumento na parcela de
+energia hadrônica e de jatos que têm perfil muito semelhante a
 elétrons típicos (pouca energia hadrônica e concentração ao redor
 do centro).
 
@@ -1826,15 +1975,15 @@ discriminador SOM+MLP e incorretamente pelo \emph{Neural Ringer}.}
 \caption{Eventos médios (e desvio padrão) de elétrons (esquerda) e
 jatos (direita) classificados corretamente pelo discriminador
 SOM+MLP e incorretamente pelo \emph{Neural Ringer}.}
-\label{figE15somEffComp}
+\label{figE15somEvmed}
 \end{figure}
 
 \subsubsection{Modelo com Restrições Estruturais - PNL}
 
 Para o modelo PNL, os algoritmos utilizados apresentam limitações
 quanto à dimensionalidade do problema (número de componentes a
-serem estimados), de modo que para um número elevado de
-componentes a estimação se torna lenta e com baixa precisão
+serem estimados), de modo que, para um número elevado de
+componentes, a estimação se torna lenta e com baixa precisão
 (muitas vezes divergindo, ou seja, não consegue finalizar a
 estimação do modelo). Assim, conforme feito anteriormente para os
 sinais do conjunto E10, a estimação do modelo PNL foi realizada
@@ -1847,27 +1996,16 @@ objetivo de determinar o grau de não-linearidade mais adequado
 para o problema, o número de neurônios foi variado de dois a
 quatro, (realizando-se 10 inicializações para cada caso) e os
 componentes independentes estimados foram utilizados como entrada
-para classificadores neurais supervisionados. Na
-Figura~\ref{figE15pnlROC} são mostradas as curvas ROC obtidas.
-Pode-se observar que o melhor desempenho foi obtido para dois
+para classificadores neurais supervisionados. Pode-se observar 
+que o melhor desempenho foi obtido para dois
 neurônios. Aumentando-se o grau da não-linearidade a eficiência de
-discriminação cai. Este resultado de certa forma já era esperado
+discriminação cai. Este resultado é idêntico ao encontrado para os 
+sinais do conjunto E10 e de certa forma já era esperado
 pois, devido às características construtivas dos calorímetros não
 espera-se fenômenos fortemente não-lineares. Um resumo dos
 resultados é apresentado na Tabela~\ref{tabE15pnl_perf}.
-Percebe-se que, em comparação com o \emph{Neural Ringer}, o
-pré-processamento através do modelo PNL é capaz de reduzir em
-aproximadamente 1\% o falso alarme.
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=9cm]{E15pnl_compRocs}
-\caption{Curvas ROC obtidas variando-se o número de neurônios
-utilizados para estimar as funções não-lineares do modelo PNL
-(conjunto E15i).} \label{figE15pnlROC}
-\end{figure}
-
-\begin{table}[h!]
+\begin{table}[bth]
 \centering \caption{Comparação entre discriminadores baseados no
 pré-processamento através do modelo PNL.}\vspace{0.2cm}
 \footnotesize
@@ -1882,14 +2020,54 @@ pré-processamento através do modelo PNL.}\vspace{0.2cm}
 \label{tabE15pnl_perf}
 \end{table}
 
-Na Figura~\ref{figE15pnlEff}, pode-se observar uma comparação do
+Na Figura~\ref{figE15pnlROC} são mostradas as curvas ROC obtidas para 
+as diversas abordagens de treinamento do modelo PNL. Pode-se observar 
+que o pré-processamento a partir do modelo PNL modificado produziu um  
+aumento na eficiência em relação ao \emph{Ringer} e ao discriminador 
+neural com pré-processamento por ICA. O PNL+PCD também foi capaz de 
+superar estes dois discriminadores apenas em uma pequena região da 
+ROC, enquanto que o PNL+PCA apresentou desempenho inferior ao 
+\emph{Neural Ringer}. Os resultados estão resumidos na 
+Tabela~\ref{tab_compE15_pnl}.
+Percebe-se que, em comparação com o \emph{Neural Ringer}, o
+pré-processamento através do modelo PNL modificado é capaz de reduzir em
+aproximadamente 1,3 ponto percentual o falso alarme para PD=97,2~\%.
+
+\begin{figure}[bth]
+\centering
+\includegraphics[width=9cm]{E15pnl_compRocs}
+\caption{Curvas ROC obtidas variando-se o número de neurônios
+utilizados para estimar as funções não-lineares do modelo PNL
+(conjunto E15i).} \label{figE15pnlROC}
+\end{figure}
+
+\begin{table}[bth]
+\centering \caption{Comparação de desempenho para diferentes
+discriminadores, corte E10.}\vspace{0.2cm} \footnotesize
+\begin{tabular}{c|c c c c}
+    \hline
+    \hline
+    \textbf{Discriminador} &\textbf{Máx. SP}$\times$100 & \textbf{PD} (\%)  & \textbf{PF} (\%) & \textbf{PF}$_{PD=97,2\%}$ \\
+    \hline
+   T2Calo  & 87,93 & 97,34 & 20,30 & 20,30\\ \hline
+Ringer  & 94,94 $\pm$ 0,12 & 96,69 $\pm$ 0,27 & 6,79 $\pm$ 0,30 & 7,31 $\pm$ 0,25\\ \hline
+   ICA  & 95,17 $\pm$ 0,10 & 96,86 $\pm$ 0,52 & 6,50 $\pm$ 0,39  & 6,81 $\pm$ 0,31 \\ \hline
+ PNL+PCA& 94,55 $\pm$ 0,17 & 96,13 $\pm$ 0,32 & 7,01 $\pm$ 0,37 & 8,42 $\pm$ 0,33\\ \hline
+ PNL+PCD& 95,20 $\pm$ 0,13 & 96,88 $\pm$ 0,25& 6,46 $\pm$ 0,41& 6,67 $\pm$ 0,31\\ \hline
+\bf PNL Mod.&\bf 95,54 $\pm$ 0,19  &\bf 97,57 $\pm$ 0,43&\bf 6,47 $\pm$ 0,29&\bf 5,98 $\pm$ 0,35\\ \hline
+  \hline
+\end{tabular}
+\label{tab_compE15_pnl}
+\end{table}
+
+Na Figura~\ref{figE15pnlEff}, é apresentada uma comparação de
 desempenho entre os discriminadores PNL+MLP e \emph{Neural
 Ringer}. Pode-se observar que, em termos da eficiência, os dois
 discriminadores apresentam desempenho semelhante, embora o
 pré-processamento através do modelo PNL produza uma queda no
 desempenho próximo ao \emph{crack} ($|\eta|\sim 1,5$).
-Considerando o falso-alarme, o uso da NLICA produz redução
-aproximadamente uniforme em quase toda a faixa de energia e
+Considerando o falso alarme, o uso da NLICA produz redução
+aproximadamente uniforme em quase todas as faixas de energia e
 $\eta$.
 
 \begin{figure}[h!]
@@ -1916,34 +2094,15 @@ $\eta$.
 $\eta$.}\label{figE15pnlEff}
 \end{figure}
 
-\begin{table}[h]
-\centering \caption{Comparação de desempenho para diferentes
-discriminadores, corte E10.}\vspace{0.2cm} \footnotesize
-\begin{tabular}{c|c c c}
-    \hline
-     \textbf{Discriminador}&\textbf{Máx. SP}($\times$100)& \textbf{PD} (\%) &\textbf{PF} (\%) \\
-    \hline
-   T2Calo  & 87,93 & 97,34 & 20,30 \\ 
-Ringer  & 94,94 $\pm$ 0,12 & 96,69 $\pm$ 0,27 & 6,79 $\pm$ 0,30 \\
-   ICA  & 95,17 $\pm$ 0,10 & 96,86 $\pm$ 0,52 & 6,50 $\pm$ 0,39 \\
- PNL+PCA& 94,55 $\pm$ 0,17 & 96,13 $\pm$ 0,32 & 7,01 $\pm$ 0,37\\ 
- PNL+PCD& 95,20 $\pm$ 0,13 & 96,88 $\pm$ 0,25& 6,46 $\pm$ 0,41\\
-PNL Mod.& 95,54 $\pm$ 0,19  & 97,57 $\pm$ 0,43& 6,47 $\pm$ 0,29\\ 
-
- \hline
-\end{tabular}
-\label{tab_compE10_pnl}
-\end{table}
-
-   
 
 \subsection{Estudo da Relevância por Camada}
 
 Para avaliar a relevância de cada uma das camadas no processo de discriminação, foram 
-treinados classificadores neurais retirando parte da informação (referente a uma ou mais 
-camadas do calorímetro). A Figura~\ref{E15segCC1} mostra o máximo SP obtido em função da 
-parcela da informação retirada. Pode-se observar que, retirando-se a informação de todas 
-as camadas hadrônicas o desempenho obtido é equivalente ao do discriminador treinado com 
+treinados classificadores neurais retirando-se parte da informação (referente 
+a uma ou mais camadas do calorímetro). A Figura~\ref{E15segCC1} mostra o 
+máximo SP obtido em função da parcela da informação retirada. Pode-se 
+observar que, retirando-se a informação de todas as camadas hadrônicas 
+o desempenho obtido é equivalente ao do discriminador treinado com 
 toda a informação.
 
 \begin{figure}[tbh]
