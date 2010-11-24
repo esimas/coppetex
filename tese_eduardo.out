@@ -74,13 +74,14 @@
 \BOOKMARK [2][-]{subsection.7.2.4}{Coment\341rios e Discuss\343o}{section.7.2}
 \BOOKMARK [0][-]{chapter.8}{Resultados - Dados Experimentais}{}
 \BOOKMARK [1][-]{section.8.1}{Efici\352ncia dos Sistemas de Classifica\347\343o Propostos na Rejei\347\343o de Raios C\363smicos}{chapter.8}
-\BOOKMARK [1][-]{section.8.2}{Colis\365es do LHC}{chapter.8}
+\BOOKMARK [1][-]{section.8.2}{Colis\365es do LHC - Run 1}{chapter.8}
 \BOOKMARK [2][-]{subsection.8.2.1}{Resultados - An\351is}{section.8.2}
 \BOOKMARK [2][-]{subsection.8.2.2}{Resultados - ICA e NLICA}{section.8.2}
 \BOOKMARK [2][-]{subsection.8.2.3}{Estudo da relev\342ncia por camada}{section.8.2}
 \BOOKMARK [2][-]{subsection.8.2.4}{Coment\341rios e Discuss\343o}{section.8.2}
-\BOOKMARK [1][-]{section.8.3}{Estimativa do custo computacional dos algoritmos propostos}{chapter.8}
-\BOOKMARK [2][-]{subsection.8.3.1}{Abordagens segmentadas}{section.8.3}
+\BOOKMARK [1][-]{section.8.3}{Colis\365es do LHC - Run 2}{chapter.8}
+\BOOKMARK [1][-]{section.8.4}{Estimativa do custo computacional dos algoritmos propostos}{chapter.8}
+\BOOKMARK [2][-]{subsection.8.4.1}{Abordagens segmentadas}{section.8.4}
 \BOOKMARK [0][-]{chapter.9}{Conclus\365es}{}
 \BOOKMARK [1][-]{section.9.1}{Trabalhos Futuros}{chapter.9}
 \BOOKMARK [0][-]{chapter*.28}{Refer\352ncias Bibliogr\341ficas}{}
@@ -96,7 +97,6 @@
 \BOOKMARK [2][-]{subsection.A.4.1}{Princ\355pios de Estima\347\343o dos Componentes Independentes}{section.A.4}
 \BOOKMARK [2][-]{subsection.A.4.2}{Pr\351-Processamento dos Sinais para ICA}{section.A.4}
 \BOOKMARK [2][-]{subsection.A.4.3}{Principais Algoritmos para ICA}{section.A.4}
-\BOOKMARK [2][-]{subsection.A.4.4}{Extens\365es ao Modelo B\341sico de ICA}{section.A.4}
 \BOOKMARK [1][-]{section.A.5}{ICA N\343o-Linear}{appendix.A}
 \BOOKMARK [2][-]{subsection.A.5.1}{Algoritmo Taleb-Jutten para o Modelo PNL}{section.A.5}
 \BOOKMARK [0][-]{appendix.B}{Conceitos Fundamentais em Classifica\347\343o de Sinais}{}

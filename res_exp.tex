@@ -178,7 +178,7 @@ rejeição de eventos de raios cósmicos.}\label{figcosmicEF}
 \section{Colisões do LHC}
 
 Conforme mostrado no Capítulo~\ref{cap_metod}, os sinais experimentais disponíveis até o
-momento tem características físicas bem distintas dos sinais
+momento tem características físicas distintas dos sinais
 simulados utilizados para desenvolvimento dos discriminadores,
 estando concentrados em uma faixa de energia muito baixa.
 
@@ -187,9 +187,13 @@ deposição nos calorímetros depende da energia da partícula. Sabendo que
 a faixa de energia dos sinais experimentais não estava presente nos
 conjuntos simulados utilizado\footnote{Os sinais simulados estavam concentrados em energias
 maiores que 10~GeV (assinaturas de segundo nível do tipo E10 e E15), enquanto que, os
-experimentais estão numa faixa inferior (assinaturas tipo E3)}, é provável
-que os discriminadores treinados para os sinais simulados não operem de modo adequado
-nestes sinais experimentais.
+experimentais estão numa faixa inferior (assinaturas tipo E3)}. Outra questão 
+a ser considerada é que nos sinais simulados havia a informação dos simuladores a 
+respeito da classe (elétron ou jatos) de cada assinatura. Para os sinais experimentais 
+é utilizada a decisão da análise \emph{offline}, que está sujeita a erros de 
+classificação. Conforme mostrado na Seção~\ref{secDadosExp}, no critério 
+\emph{electron\_tight} do \emph{offline} (utilizado neste trabalho para a identificação 
+de elétrons) aproximadamente 30~\% dos eventos aceitos são jatos hadrônicos.
 
 Deste modo, aplicando-se diretamente aos sinais experimentais a
 versão do \emph{Neural Ringer} treinada para o conjunto simulado
@@ -831,6 +835,7 @@ R. Comb$_{(\text{E1+E2})}$ & 86,26 $\pm$ 0,21 & 87,50 $\pm$ 0,17 & 14,91 $\pm$ 0
 \end{tabular}
 \label{tabCompAllExp1}
 \end{table}
+
 
 \section{Estimativa do custo computacional dos algoritmos
 propostos}

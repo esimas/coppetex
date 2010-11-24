@@ -405,7 +405,7 @@ soma-produto (SP), conforme descritos a seguir:
     SOM à classe que mais o ativa, pode-se utilizar o mapa
     auto-organizável diretamente como classificador. O SP é
     calculado a partir das probabilidades de detecção e
-    falso-alarme produzidas pelo mapa.
+    falso alarme produzidas pelo mapa.
 \end{description}
 
 No estudo do tamanho ótimo dos mapas, foram utilizados mapas
@@ -820,14 +820,14 @@ Este corte é mais
 utilizado para teste do sistema de filtragem no período inicial de
 operação do detector, pois é pouco provável a identificação de
 assinaturas relevantes, uma vez que, uma grande quantidade de
-eventos de falso-alarme é aprovada pelo nível 1.
+eventos de falso alarme é aprovada pelo nível 1.
 
  \item O segundo corte utilizado é mais seletivo, se assemelhando aos que
 serão utilizados num estágio mais avançado da operação do detector, onde o
 objetivo é eliminar a maior parte do falso alarme. Neste caso, o nível 1 
 utiliza uma combinação de critérios como:
   \subitem - energia total maior que 13~GeV;
-  \subitem - corte de vazamento para as camadas hadrônicas: a energia nas camadas hadrônicas é calculada e se ela for maior que um valor limite (neste caso 1 GeV) o evento é rejeitado pelo L1;
+  \subitem - corte de vazamento para as camadas hadrônicas: a energia nas camadas hadrônicas é calculada e, se ela for maior que um valor limite (neste caso 1 GeV), o evento é rejeitado pelo L1;
   \subitem - corte de isolamento em energia: efetuado a partir da relação entre a energia no centro ($\sum E_C$) e na periferia ($\sum E_P$) do perfil de deposição de energia da segunda camada eletromagnética, se $\frac{\sum E_P}{\sum E_C}$ for maior que um limiar pré-estabelecido o evento é rejeitado pelo L1.
 
 As assinaturas aprovadas neste corte do primeiro nível estão concentradas na faixa de energia maior 
@@ -869,8 +869,8 @@ no limiar de corte em energia para os dois conjuntos. Considerando
 a energia dos jatos, o corte E15i elimina a maioria das
 assinaturas com energia mais alta (pois nestas assinaturas os
 cortes por vazamento hadrônico e isolamento em energia são mais
-eficientes). Sendo assim, os jatos E15i tem um ligeiro
-deslocamento em relação a energias mais baixas se comparados aos
+eficientes). Sendo assim, os jatos E15i têm um ligeiro
+deslocamento em relação a energias mais baixas, se comparados aos
 do conjunto E10. As distribuições em $\eta$ e $\phi$ são semelhantes
 para os dois conjuntos.
 
@@ -951,7 +951,7 @@ E15.}\label{emedE15}
 
 A correlação entre os 100 anéis para sinais de elétrons e jatos
 dos dois conjuntos simulados é mostrada na
-Figura~\ref{figSimCorr}. Pode-se observar que, para elétrons há
+Figura~\ref{figSimCorr}. Pode-se observar que, para elétrons, há
 uma forte correlação entre os primeiros anéis das camadas
 eletromagnéticas (tanto dentro das camadas, como entre diferentes
 camadas). Nos jatos, a correlação é estendida para as camadas
@@ -970,7 +970,7 @@ onde $H(.)$ é a entropia~\cite{book:cover:1991}.
 
 A informação mútua entre duas variáveis é nula quando elas são
 independentes, porém, não há um limite superior fixo (como no caso
-da correlação). Nesta análise a entropia foi estimada através do 
+da correlação). Nesta análise, a entropia foi estimada através do 
 método de \emph{kernel}~\cite{book:densityestim:1992} e foi 
 utilizado o procedimento de normalização proposto 
 no trabalho~\cite{article:relativeEnt:1989}
@@ -1385,7 +1385,7 @@ comportamento mais uniforme.
   \centering
  \centerline{\epsfig{file=exp1_phi,width=7.5cm}}
 \end{minipage}
-\caption{Histogramas em energia $\eta$ e $\phi$ dos eventos de
+\caption{Histogramas em energia, $\eta$ e $\phi$ dos eventos de
 colisões do LHC.}\label{fig_carexp}
 \end{figure}
 
@@ -1415,7 +1415,8 @@ hadrônicas no conjunto aprovado no critério \emph{electron tight}).
   \centering \footnotesize{Reprovados no \emph{electron loose} - ``Jatos''}
   \centerline{\epsfig{file=exp1_evJ,width=7.7cm}}
 \end{minipage}
-\caption{Sinais experimentais médios de ``elétrons'' e ``jatos''.}\label{fig_exp_compEvMed}
+\caption{Sinais experimentais médios de ``elétrons'' e ``jatos'' 
+do \emph{run} 1.}\label{fig_exp_compEvMed}
 \end{figure}
 
 \vspace{0.5cm}
@@ -1439,8 +1440,59 @@ no critério \emph{electron tight} (e portanto consideradas como ``elétrons'').
 Aproximadamente 1.200.000 assinaturas foram reprovadas no critério \emph{electron loose} 
 e portanto consideradas como ``jatos''.
 
-Nas Figuras ... pode-se observar as características destes eventos, e ...
+Na Figura~\ref{fig_carexp2}, mostra as características em energia 
+e $\eta$ dos eventos identificados segundo os critérios da análise \emph{offline} 
+como elétrons e jatos (para os dois conjuntos experimentais). Pode-se observar 
+que, para as duas classes, os eventos do \emph{run} 2 apresentam uma 
+ligeira tendência para maiores energias. Os perfis em $\eta$ são bastante 
+semelhantes para os dois \emph{runs}.
 
-- semelhança com o outro conjunto?
-- diferenças?
+\begin{figure}[h]
+\begin{minipage}[b]{0.48\linewidth}
+  \centering 
+ \centerline{\epsfig{file=exp2_etE,width=7.5cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering 
+ \centerline{\epsfig{file=exp2_etaE,width=7.5cm}}
+\end{minipage}
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=exp2_etJ,width=7.5cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=exp2_etaJ,width=7.5cm}}
+\end{minipage}
+\hfill \linebreak
+\caption{Histogramas em energia e $\eta$ dos eventos de
+colisões do LHC para os dois \emph{runs} analisados.}\label{fig_carexp2}
+\end{figure}
+
+\pagebreak
+
+Considerando os eventos médios mostrados na Figura~\ref{fig_exp2_compEvMed}, 
+pode-se verificar que as características dos perfis são muito semelhantes 
+ao observado para o \emph{run} 1.
+
+\begin{figure}[th]
+\begin{minipage}[b]{0.48\linewidth}
+  \centering \footnotesize{Aprovados no \emph{electron tight} - ``Elétrons''}
+  \centerline{\epsfig{file=exp2_evMedE,width=7.7cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering \footnotesize{Reprovados no \emph{electron loose} - ``Jatos''}
+  \centerline{\epsfig{file=exp2_evMedJ,width=7.7cm}}
+\end{minipage}
+\caption{Sinais experimentais médios de ``elétrons'' e ``jatos'' 
+do \emph{run} 2.}\label{fig_exp2_compEvMed}
+\end{figure}
+
+%Nas Figuras ... pode-se observar as características destes eventos, e ...
+%
+%- semelhança com o outro conjunto?
+%- diferenças?
 

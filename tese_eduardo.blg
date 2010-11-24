@@ -1,7 +1,7 @@
 This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: tese_eduardo.aux
 The style file: coppe-unsrt.bst
-Reallocated field_info (elt_size=4) to 10704 items from 5000.
+Reallocated field_info (elt_size=4) to 10612 items from 5000.
 Database file #1: edsimas.bib
 Repeated entry---line 381 of file edsimas.bib
  : %@article{Article:Simasimtc:2005
@@ -169,45 +169,45 @@ Warning--empty pages in article:som:visual:1999
 Warning--empty pages in article:som:visual:2000
 Name 2 in "P. G. Georgiev and F. Theis, and A. Cichocki" has a comma at the end for entry article:sca:2005
 while executing---line 2563 of file coppe-unsrt.bst
-You've used 248 entries,
+You've used 244 entries,
             2438 wiz_defined-function locations,
-            1908 strings with 42818 characters,
-and the built_in function-call counts, 60041 in all, are:
-= -- 4839
-> -- 1516
-< -- 232
-+ -- 735
-- -- 487
-* -- 5613
-:= -- 7982
-add.period$ -- 549
-call.type$ -- 248
+            1892 strings with 42174 characters,
+and the built_in function-call counts, 58916 in all, are:
+= -- 4743
+> -- 1489
+< -- 227
++ -- 722
+- -- 478
+* -- 5496
+:= -- 7834
+add.period$ -- 540
+call.type$ -- 244
 change.case$ -- 25
 chr.to.int$ -- 48
-cite$ -- 277
-duplicate$ -- 3556
-empty$ -- 6787
-format.name$ -- 487
-if$ -- 13765
+cite$ -- 273
+duplicate$ -- 3494
+empty$ -- 6668
+format.name$ -- 478
+if$ -- 13510
 int.to.chr$ -- 0
-int.to.str$ -- 248
-missing$ -- 281
-newline$ -- 858
-num.names$ -- 249
-pop$ -- 884
+int.to.str$ -- 244
+missing$ -- 277
+newline$ -- 845
+num.names$ -- 245
+pop$ -- 877
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1389
+skip$ -- 1363
 stack$ -- 0
-substring$ -- 4103
-swap$ -- 1495
-text.length$ -- 216
+substring$ -- 4000
+swap$ -- 1465
+text.length$ -- 211
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 29
-while$ -- 490
-width$ -- 251
-write$ -- 2401
+while$ -- 481
+width$ -- 247
+write$ -- 2362
 (There were 31 error messages)

@@ -1252,28 +1252,6 @@
 \newblock In: {\em Anais do Congresso Brasileiro de Redes Neurais\/}, v.~1, pp.
   133--138, São Paulo, 2003.
 
-\bibitem{article:amri:1998}
-\MakeUppercase{ Cichocki, A., Douglas, S., Amari, S.}, \enquote{Robust
-  techniques for independent component analysis with noisy data}, {\em
-  Neurocomputing\/}, v.~22, n. 1-3, pp.~113--129, 1998.
-
-\bibitem{article:hyvarinen:1998noisy}
-\MakeUppercase{ Hyvarinen, A.}, \enquote{Independent Component Analysis in the
-  Presence of Gaussian Noise by Maximizing Joint Likelihood}, {\em
-  Neurocomputing\/}, v.~22, n. 1-3, pp.~49--67, 1998.
-
-\bibitem{article:hyvarinen:1999noisy}
-\MakeUppercase{ Hyvarinen, A.}, \enquote{Sparse Code Shrinkage: Denoising of
-  Nongaussian Data by Maximum Likelihood Estimation}, {\em Neural
-  Computation\/}, v.~11, n.~7, pp.~1739--1768, 1999.
-
-\bibitem{article:jutten:2002}
-\MakeUppercase{ Paraschiv-Ionescu, A., Jutten, C., Aminian, K.,
-  \MakeLowercase{et~al.}}, \enquote{Source separation in strong noisy mixtures
-  a study of wavelet de-noising pre-processing}.
-\newblock In: {\em IEEE International Conference on Acoustics, Speech, and
-  Signal Processing\/}, v.~2, pp. 1681--1684, Orlando, Estados Unidos, 2002.
-
 \bibitem{article:tan:20000}
 \MakeUppercase{ Tan, Y., Wang, J.}, \enquote{Nonlinear blind separation using
   an {RBF} network model}.

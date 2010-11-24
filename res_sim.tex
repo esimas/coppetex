@@ -2215,19 +2215,23 @@ vertical indica o desempenho do \emph{Neural Ringer}.}\label{E15segCC2}
 
 Na Tabela~\ref{tabCompAllE15} é apresentada uma comparação entre os diversos discriminadores 
 propostos até aqui para o conjunto E15i. Considerando os algoritmos de pré-processamento para 
-o discriminador neural, o melhor desempenho (em termos do máximo SP), foi, assim como para o 
-conjunto E10, obtido para o discriminador baseado em ICA Local. O uso do SOM supervisionado e 
-do modelo PNL modificado acabou produzindo valores semelhantes do SP. Uma vantagem do SOM é 
-a possibilidade de associar, também, as ferramentas de visualização do evento inerentes ao modelo. 
-Em geral, pode-se verificar que o uso da informação supervisionada, como era esperado, sempre 
-produziu aumento na eficiência de discriminação.
+o discriminador neural, o melhor desempenho (em termos do máximo SP) foi obtido para o 
+discriminador baseado em ICA Local (de modo semelhante ao obtido para o conjunto E10). 
+O uso do SOM supervisionado e do modelo PNL modificado acabou produzindo valores semelhantes do SP. 
+Uma vantagem do SOM é a possibilidade de associar, também, as ferramentas de visualização 
+do evento inerentes ao modelo. Comparando com os resultados para o conjunto E10, nos 
+sinais tipo E15i o desempenho relativo do SOM foi melhor (em comparação aos demais discriminadores).
+Em geral, pode-se verificar que o uso da informação supervisionada produziu aumento 
+na eficiência de discriminação em comparação aos mesmos algoritmos treinados de modo não 
+supervisionado.
 
 Considerando o uso dos classificadores segmentados, observa-se que a exploração da informação 
 segmentada através da rede combinadora foi bastante eficiente na separação elétron/jato, sendo 
-este o modelo de discriminador que produziu maior eficiência de discriminação. É importante 
+este o modelo de discriminador que produziu maior eficiência. É importante 
 notar ainda que, utilizando apenas a informação de duas camadas (E1 e E2), é possível obter 
-desempenho equivalente (ligeiramente inferior) ao \emph{Neural Ringer}. Com essa última 
-configuração, é possível reduzir o tempo total de processamento em aproximadamente 30~\%.
+desempenho equivalente (ligeiramente inferior) ao \emph{Neural Ringer} com redução do tempo 
+de processamento (conforme será discutido na Seção~\ref{sec_timeSeg}, esta redução é da ordem de 20~\% do tempo 
+total).
 
 \begin{table}[b!]\footnotesize
 \centering \caption{Comparação dos resultados obtidos para diferentes discriminadores no conjunto E15i considerando o
@@ -2257,7 +2261,24 @@ Rede Comb. E1+E2& 94,84 $\pm$ 0,23 & 96,65 $\pm$ 0,31 & 6,95 $\pm$ 0,44 & 7,32 $
 \label{tabCompAllE15}
 \end{table}
 
+A partir dos resultados obtidos com os conjunto simulados foi possível chegar a algumas 
+conclusões:
+\begin{itemize}
+ \item A extração de características através da NLICA é capaz de revelar informações relevantes 
+que facilitam a identificação de assinaturas provenientes de regiões do detector (como as 
+interconexões entre os módulos do calorímetro) e faixas de energia (principalmente as baixas energias) 
+onde o classificador neural operando diretamente sobre os sinais em anéis apresenta queda na 
+eficiência de discriminação.
+ 
+ \item Entre os algoritmos de NLICA utilizados, a ICA local apresentou destacada eficiência 
+(em termos do máximo SP) para os dois conjuntos.
 
-%... o objetivo a partir daqui é comparar os resultados dos diversos métodos de NLICA ...
+ \item A exploração de toda a segmentação dos sinais medidos nos calorímetros a partir da 
+utilização de classificadores especialistas na informação de cada camada é capaz de produzir 
+maior eficiência e também redução no tempo total de processamento (quando apenas as camadas 
+mais relevantes são utilizadas).
+\end{itemize}
+
+
 
 

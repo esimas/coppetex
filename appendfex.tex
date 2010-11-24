@@ -56,7 +56,7 @@ h_{ij}(n)=\exp(-d_{ij}^2/2\sigma^2(n))
 onde $d_{ij}$ é a distância do neurônio j para o neurônio vencedor i
 e $\sigma(n)$ é a largura da função vizinhança na n-ésima iteração.
 
-... falar de outras funções de vizinhança utilizadas ...
+%... falar de outras funções de vizinhança utilizadas ...
 
 O mapa de características possui algumas propriedades, listadas a
 seguir \cite{haykin:nn:2008}:
@@ -724,121 +724,9 @@ otimização quasi-Newton), suas vantagens aparecem quando o nível de
 ruído aumenta, neste caso o método de Akuzawa apresenta melhores
 resultados.
 
-
-\subsection{Extensões ao Modelo Básico de ICA}
-
-A análise de componentes independentes em sua formulação básica
-mostrada nas equações (\ref{icamatrix}) e (\ref{icamatrix2}) é
-empregada com sucesso em uma grande variedade de aplicações. O
-modelo básico de ICA não considera que os sinais podem estar
-contaminados por ruído aditivo, ou que o sinal misturado seja gerado
-de forma não-linear. No ambiente do calorímetro do ATLAS, o ruído
-estará presente nas células absorvedoras de energia, e por
-características de construção do sistema, transformações
-não-lineares dos sinais poderão estar presentes.
-
-\subsubsection{ICA para Sinais Ruidosos}
-
-Sabe-se que os sinais reais no ambiente do calorímetro do ATLAS
-estarão contaminados por ruído. A formulação básica da ICA, mostrada
-na equação (\ref{icamatrix}), não considera a presença de ruído. Um
-modelo mais realista permite a obtenção do modelo da ICA para sinais
-ruidosos (\textit{Noisy ICA}) \cite{book:oja:2001}:
-\begin{equation}\label{noisy_ica}
-    \mathbf{x}=\mathbf{As}+\mathbf{n},
-\end{equation}
-\\
-onde $\mathbf{n}=(n_1,n_2,...)$ é o vetor de ruído. Em geral,
-considera-se que o ruído é gaussiano e independente das componentes
-independentes. Assume-se também que a matriz de covariância do ruído
-$\Sigma=\sigma^2 I$ é conhecida.
-
-A equação (\ref{noisy_ica}) pode ser associada a ruído de sensores,
-uma vez que o ruído $n_i$ é adicionado separadamente a cada fonte
-$x_i$. O ruído de fonte, que é adicionado às componentes
-independentes $s_i$ é representado pela equação a seguir:
-\begin{equation}\label{noisy_ica2}
-    \mathbf{x}=\mathbf{A}(\mathbf{s}+\mathbf{n})
-\end{equation}
-
-Um caso especial que pode simplificar bastante o problema de
-estimação das componentes independentes em ambiente ruidoso acontece
-quando existem poucas fontes de ruído. Se o número total de
-componentes de ruído é menor que o de componentes independentes, o
-modelo básico da ICA pode ser adaptado. Define-se o vetor
-$\mathbf{\widetilde{s}}=(s_1,...,s_k,n_1,...,n_l)^T$, onde $s_i$
-($i=1,...,k$) são as componentes independentes e $n_j$ ($j=1,...,l$)
-são as fontes de ruído. Assumindo-se que o número de misturas é
-$k+l$, então o modelo básico da ICA pode ser aplicado a
-$x=A\widetilde{s}$ e usando-se um algoritmo deflacionário
-consegue-se estimar as $k$ componentes menos gaussianas, que são as
-próprias ICs.
-
-Na maioria das vezes, deseja-se considerar que o ruído foi
-adicionado a cada uma das misturas; assim, $k+l$ é maior que o
-número de misturas, e o modelo básico da ICA não pode ser aplicado
-ao vetor $\widetilde{s}$.
-
-O processo de estimação das componentes independentes já é bastante
-difícil na formulação básica, e quando o ruído é considerado o
-cenário piora consideravelmente. Nos modelos das equações
-(\ref{noisy_ica}) e (\ref{noisy_ica2}) pode-se verificar que as ICs
-não são obtidas apenas com a inversão da matriz de mistura
-$\mathbf{W}$:
-\begin{equation}\label{noisy_ica3}
-    \mathbf{Wx}=\mathbf{s}+\mathbf{Wn}
-\end{equation}
-
-A solução do problema da equação (\ref{noisy_ica3}) envolve duas
-etapas: o uso de métodos de otimização numérica para obter uma
-aproximação do ruído e, a partir de então, a estimação das
-componentes independentes. Em uma abordagem mais simples e que
-parece ser a mais promissora para o \textit{noisy ICA}, são
-utilizadas técnicas de remoção de tendência para reduzir os efeitos
-do ruído, adaptando-se os métodos básicos de ICA para o caso ruidoso
-\cite{article:amri:1998}.
-%
-%Se a medida da não-gaussianidade for a curtose, é quase trivial a
-%construção de métodos deflacionários para a \textit{noisy ICA}, pois
-%a curtose é imune ao ruído gaussiano \cite{book:oja:2001}. Porém
-%sabe-se que os cumulantes de alta ordem são sensíveis a pontos fora
-%da distribuição principal (\textit{outliers}), dificultando o uso
-%para a extração das componentes independentes.
-
-O algoritmo FastICA pode ser adaptado para sinais contaminados por
-ruído usando medidas não tendenciosas da Gaussianidade
-\cite{article:hyvarinen:1998noisy}:
-\begin{equation}\label{noisyfastica}
-    \mathbf{w}^*=E\{\tilde{\mathbf{x}}g(\mathbf{w}^T)\tilde{\mathbf{x}}\}-(I+\tilde{\mathbf{\Sigma}})\mathbf{w}E\{g'(\mathbf{w}^T\tilde{\mathbf{x}})\},
-\end{equation}
-\\
-sendo que a norma do novo valor $\mathbf{w}^*$ é tornada unitária
-após cada iteração, e $\tilde{\mathbf{\Sigma}}$ é dado por:
-\begin{equation}\label{sigg}
-    \tilde{\mathbf{\Sigma}}=E\{\tilde{\mathbf{n}}\tilde{\mathbf{n}}^T\}=(\mathbf{C}-\mathbf{\Sigma})^{-1/2}\mathbf{\Sigma}(\mathbf{C}-\mathbf{\Sigma})^{-1/2}
-\end{equation}
-\\
-onde $\mathbf{C}=E\{\mathbf{x}\mathbf{x}^T\}$ é a matriz de
-covariância dos sinais ruidosos observados. A função $g(.)$ pode ser
-escolhida entre as abaixo:
-%\begin{equation}\label{ee}
-%    \begin{array}{ccc}
-%       g_1(u)=\tgh(u), & g_2(u)=u exp(-u^2/2), & g_3(u)=u^3
-%     \end{array}
-%\end{equation}
-
-Outras técnicas como o ``encolhimento de código esparso"
-(\textit{Sparse Code Shrinkage}) \cite{article:hyvarinen:1999noisy}
-também são utilizadas para a extração das componentes independentes
-para sinais ruidosos. Em casos onde o nível de ruído é muito alto,
-pode-se tentar o uso de técnicas de processamento de sinais como
-\textit{wavelets} ou filtragem
-adaptativa~\cite{article:jutten:2002}.
-
-
 \section{ICA Não-Linear}
 
-Conforme mostrado no Capítulo \ref{cap_fex}, o modelo da ICA
+Conforme mostrado no Capítulo \ref{cap_ica}, o modelo da ICA
 não-linear (NLICA) apresenta uma formulação mais geral que o linear.
 A seguir será mostrado o desenvolvimento teórico de um algoritmo
 para a estimação das componentes independentes no modelo pós

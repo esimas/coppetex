@@ -41,10 +41,10 @@ padrão de entrada.
 
 Considerando vetores de entrada $\mathbf{x}=[x_1,x_2,...,x_k]^T$, como os 
 neurônios são totalmente conectados às entradas, o vetor de pesos sinápticos 
-do neurônio j pode ser definido por: $\mathbf{wj}=[w_{1j},w_{2j},...,w_{kj}]^T$. 
+do neurônio j pode ser definido por: $\mathbf{w}j=[w_{1j},w_{2j},...,w_{kj}]^T$. 
 A atualização do vetor de pesos é feita através da equação:
 \begin{equation}\label{pesos_som}
-    \mathbf{w_j(n+1)}=\mathbf{w_j(n)}+\eta (n) h_{ij}(n)(\mathbf{x(n)}-\mathbf{w_j(n))},
+    \mathbf{w_j(n+1)}=\mathbf{w}_j(n)+\eta (n) h_{ij}(n)(\mathbf{x}(n)-\mathbf{w}_j(n)),
 \end{equation}
 \\
 sendo $\eta (n)$ a taxa de aprendizagem, um tipo de função de
@@ -63,7 +63,7 @@ seguir \cite{haykin:nn:2008}:
 
 \begin{enumerate}
   \item é formado pelo conjunto de
-vetores de pesos sinápticos $w_i$ no espaço de saída discreto e
+vetores de pesos sinápticos $\mathbf{w}_i$ no espaço de saída discreto e
 fornece uma boa aproximação para o espaço de entrada;
 
   \item é ordenado de modo
@@ -73,6 +73,12 @@ adjacentes no mapa de características;
   \item regiões do espaço de entrada que possuem alta
 probabilidade de ocorrência são mapeadas para domínios maiores do
 espaço de saída;
+
+  \item a matriz de pesos sinápticos pode ser defnida por:
+\begin{equation}
+  \mathbf{W}=[\mathbf{w}_1,\mathbf{w}_2,...,\mathbf{w}_P],
+\end{equation}
+onde P é o número de neurônios do mapa.
 
 \end{enumerate}
 

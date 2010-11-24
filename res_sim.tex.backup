@@ -1790,9 +1790,13 @@ ICA+MLP.}\label{E15local_Eff}
 \end{figure}
 
 A Figura~\ref{E15local_EffComp} possibilita uma comparação
-mais detalhada entre os discriminadores considerando
-eficiência e falso alarme em função de $\eta$ e energia. É
-possível verificar que...
+mais detalhada entre os discriminadores considerando as distribuições 
+em $\eta$ e energia dos eventos classificados corretamente através 
+da ICA local e incorretamente pelos demais discriminadores (\emph{Ringer} 
+e ICA). De modo semelhante ao verificado para o conjunto E10, pode-se 
+observar que a superioridade da ICA local é mais evidente nas regiões 
+das interconexões do calorímetro ($|\eta|\sim 1,5$ e $|\eta|\sim 2,5$) e 
+em baixas energias.
 
 \begin{figure}[tbh]
 \begin{minipage}[b]{0.48\linewidth}
@@ -1938,34 +1942,31 @@ SOM Sup. Seg.& 95,22 $\pm$ 0,11 & 96,87 $\pm$ 0,41 & 6,41 $\pm$ 0,31 & 6,61 $\pm
 
 Um comparativo da eficiência e do falso alarme em função da
 energia e de $\eta$ é mostrado na Figura~\ref{figE15somEff} para
-os discriminadores SOM-Sup.+MLP, \emph{Neural Ringer} e T2Calo.
-Pode-se observar que o T2Calo, apresenta um falso alarme
-consideravelmente maior que os demais, e uma pior eficiência,
-principalmente em baixa energia e perto do \emph{crack} ($|\eta|
-\sim 1,5$). Comparando os outros dois discriminadores, percebe-se
-que o pré-processamento através do SOM-Sup. é capaz de produzir
+os discriminadores SOM-Sup.+MLP e \emph{Neural Ringer}.
+Pode-se observar que o pré-processamento através do SOM-Sup. 
+é capaz de produzir
 ligeiro aumento na eficiência, principalmente próximo a $|\eta|
 \sim 1,5$ e também uma pequena redução do falso alarme.
 
 \begin{figure}[h!]
 \begin{minipage}[b]{0.48\linewidth}
   \centering
- \centerline{\epsfig{file=E15som_compEffEt_t2,width=7cm}}
+ \centerline{\epsfig{file=E15som_compEffEt_t2,width=7.5cm}}
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\linewidth}
   \centering
- \centerline{\epsfig{file=E15som_compEffEta_t2,width=7cm}}
+ \centerline{\epsfig{file=E15som_compEffEta_t2,width=7.5cm}}
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\linewidth}
   \centering
- \centerline{\epsfig{file=E15som_compFaEta_t2,width=7cm}}
+ \centerline{\epsfig{file=E15som_compFaEta_t2,width=7.5cm}}
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\linewidth}
   \centering
- \centerline{\epsfig{file=E15som_compFaEta_t2,width=7cm}}
+ \centerline{\epsfig{file=E15som_compFaEta_t2,width=7.5cm}}
 \end{minipage}
 \caption{Eficiência (acima) e falso alarme (abaixo) em energia e
 $\eta$.}\label{figE15somEff}
@@ -2214,19 +2215,23 @@ vertical indica o desempenho do \emph{Neural Ringer}.}\label{E15segCC2}
 
 Na Tabela~\ref{tabCompAllE15} é apresentada uma comparação entre os diversos discriminadores 
 propostos até aqui para o conjunto E15i. Considerando os algoritmos de pré-processamento para 
-o discriminador neural, o melhor desempenho (em termos do máximo SP), foi, assim como para o 
-conjunto E10, obtido para o discriminador baseado em ICA Local. O uso do SOM supervisionado e 
-do modelo PNL modificado acabou produzindo valores semelhantes do SP. Uma vantagem do SOM é 
-a possibilidade de associar, também, as ferramentas de visualização do evento inerentes ao modelo. 
-Em geral, pode-se verificar que o uso da informação supervisionada, como era esperado, sempre 
-produziu aumento na eficiência de discriminação.
+o discriminador neural, o melhor desempenho (em termos do máximo SP) foi obtido para o 
+discriminador baseado em ICA Local (de modo semelhante ao obtido para o conjunto E10). 
+O uso do SOM supervisionado e do modelo PNL modificado acabou produzindo valores semelhantes do SP. 
+Uma vantagem do SOM é a possibilidade de associar, também, as ferramentas de visualização 
+do evento inerentes ao modelo. Comparando com os resultados para o conjunto E10, nos 
+sinais tipo E15i o desempenho relativo do SOM foi melhor (em comparação aos demais discriminadores).
+Em geral, pode-se verificar que o uso da informação supervisionada produziu aumento 
+na eficiência de discriminação em comparação aos mesmos algoritmos treinados de modo não 
+supervisionado.
 
 Considerando o uso dos classificadores segmentados, observa-se que a exploração da informação 
 segmentada através da rede combinadora foi bastante eficiente na separação elétron/jato, sendo 
-este o modelo de discriminador que produziu maior eficiência de discriminação. É importante 
+este o modelo de discriminador que produziu maior eficiência. É importante 
 notar ainda que, utilizando apenas a informação de duas camadas (E1 e E2), é possível obter 
-desempenho equivalente (ligeiramente inferior) ao \emph{Neural Ringer}. Com essa última 
-configuração, é possível reduzir o tempo total de processamento em aproximadamente 30~\%.
+desempenho equivalente (ligeiramente inferior) ao \emph{Neural Ringer} com redução do tempo 
+de processamento (conforme será discutido na Seção~\ref{sec_timeSeg}, esta redução é da ordem de 20~\% do tempo 
+total).
 
 \begin{table}[b!]\footnotesize
 \centering \caption{Comparação dos resultados obtidos para diferentes discriminadores no conjunto E15i considerando o
