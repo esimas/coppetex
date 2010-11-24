@@ -85,16 +85,16 @@
 \contentsline {subsubsection}{Mapas Auto-Organiz\'aveis - SOM}{147}{section*.23}
 \contentsline {subsubsection}{Modelo com Restri\c c\~oes Estruturais - PNL}{152}{section*.24}
 \contentsline {subsection}{\numberline {7.1.3}Estudo da Relev\^ancia por Camada}{156}{subsection.7.1.3}
-\contentsline {subsection}{\numberline {7.1.4}Compara\c c\~ao com Discriminadores Lineares}{161}{subsection.7.1.4}
+\contentsline {subsection}{\numberline {7.1.4}Compara\c c\~ao com Discriminadores Lineares}{162}{subsection.7.1.4}
 \contentsline {subsection}{\numberline {7.1.5}Coment\'arios e Discuss\~ao}{163}{subsection.7.1.5}
 \contentsline {section}{\numberline {7.2}Conjunto E15i}{165}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Resultados com os Discriminadores existentes}{165}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}Resultados com Pr\'e-Processamento por NLICA}{166}{subsection.7.2.2}
-\contentsline {subsubsection}{ICA Local}{166}{section*.25}
-\contentsline {subsubsection}{Mapas Auto-Organiz\'aveis - SOM}{170}{section*.26}
-\contentsline {subsubsection}{Modelo com Restri\c c\~oes Estruturais - PNL}{175}{section*.27}
-\contentsline {subsection}{\numberline {7.2.3}Estudo da Relev\^ancia por Camada}{178}{subsection.7.2.3}
-\contentsline {subsection}{\numberline {7.2.4}Coment\'arios e Discuss\~ao}{180}{subsection.7.2.4}
+\contentsline {subsection}{\numberline {7.2.1}Resultados com os Discriminadores existentes}{166}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Resultados com Pr\'e-Processamento por NLICA}{167}{subsection.7.2.2}
+\contentsline {subsubsection}{ICA Local}{167}{section*.25}
+\contentsline {subsubsection}{Mapas Auto-Organiz\'aveis - SOM}{173}{section*.26}
+\contentsline {subsubsection}{Modelo com Restri\c c\~oes Estruturais - PNL}{178}{section*.27}
+\contentsline {subsection}{\numberline {7.2.3}Estudo da Relev\^ancia por Camada}{180}{subsection.7.2.3}
+\contentsline {subsection}{\numberline {7.2.4}Coment\'arios e Discuss\~ao}{182}{subsection.7.2.4}
 \contentsline {chapter}{\numberline {8}Resultados - Dados Experimentais}{184}{chapter.8}
 \contentsline {section}{\numberline {8.1}Efici\^encia dos Sistemas de Classifica\c c\~ao Propostos na Rejei\c c\~ao de Raios C\'osmicos}{184}{section.8.1}
 \contentsline {section}{\numberline {8.2}Colis\~oes do LHC}{187}{section.8.2}
@@ -105,7 +105,7 @@
 \contentsline {section}{\numberline {8.3}Estimativa do custo computacional dos algoritmos propostos}{204}{section.8.3}
 \contentsline {subsection}{\numberline {8.3.1}Abordagens segmentadas}{206}{subsection.8.3.1}
 \contentsline {chapter}{\numberline {9}Conclus\~oes}{209}{chapter.9}
-\contentsline {section}{\numberline {9.1}Trabalhos Futuros}{211}{section.9.1}
+\contentsline {section}{\numberline {9.1}Trabalhos Futuros}{212}{section.9.1}
 \contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{213}{chapter*.28}
 \contentsline {chapter}{\numberline {A}Aspectos Te\'oricos das T\'ecnicas de Extra\c c\~ao de Caracter\IeC {\'\i }sticas}{239}{appendix.A}
 \contentsline {section}{\numberline {A.1}Mapas Auto-Organiz\'aveis}{239}{section.A.1}

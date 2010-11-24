@@ -1,4 +1,4 @@
-\chapter{Resultados - Dados Experimentais}\label{cap_resul}
+\chapter{Resultados - Dados Experimentais}\label{cap_resulExp}
 
 Neste capítulo serão apresentados os resultados obtidos através da
 aplicação da metodologia proposta para sinais medidos no detector
@@ -233,12 +233,12 @@ o discriminador de elétrons padrão do ATLAS (T2Calo) pode ser configurado de dua
 formas diferentes (de acordo com a física de interesse):
 \begin{itemize}
  \item \textbf{T2EM3\_Loose}: este corte apresenta maior eficiência na identificação de elétrons e, consequentemente maior
-aceitação de falso-alarme. Para os sinais disponíveis, este corte identificou corretamente 98,10~\% dos
+aceitação de falso alarme. Para os sinais disponíveis, este corte identificou corretamente 98,10~\% dos
 ``elétrons'' para um falso alarme igual a 64,07~\%.
 
  \item \textbf{T2EM3\_Medium}: num ajuste diferente, o T2Calo é capaz de eliminar maior parcela das assinaturas
 hadrônicas em troca de uma pequena redução na eficiência. Para o conjunto utilizado, este critério identificou
-96,50~\% dos ``elétrons'', aceitando como falso-alarme 55,73~\% dos ``jatos''.
+96,50~\% dos ``elétrons'', aceitando como falso alarme 55,73~\% dos ``jatos''.
 \end{itemize}
 
 
@@ -289,7 +289,7 @@ distribuições da saída da rede neural (com 5 neurônios ocultos) e da projeção de
 discriminador linear de Fisher. Observa-se que, a rede neural produziu
 maior separação entre as classes. Ainda na mesma Figura, pode-se visualizar as
 curvas ROC obtidas pelos dois discriminadores em comparação com os valores das
-probabilidades de detecção (PD) e falso-alarme (PF) para os cortes do T2Calo.
+probabilidades de detecção (PD) e falso alarme (PF) para os cortes do T2Calo.
 É possível visualizar que, a rede neural proporciona melhor desempenho que o T2Calo
 (para os dois cortes), porém, o discriminante de Fisher perde para o corte T2ME3\_\emph{loose}
 e apresenta desempenho aproximadamente igual ao T2EM3\_\emph{tight}.
@@ -319,17 +319,17 @@ o ponto de máximo SP para o \emph{Neural Ringer} (SPmax$\times$100=85,55; PD$\si
 apresenta eficiência menor que os
 cortes do T2Calo, dificultando a comparação entre os discriminadores. Para contornar
 esse problema, é preciso modificar o patamar de corte do classificador. Na
-Figura~\ref{fig_exp_spPDpf}, é mostrada a variação do SP e das probabilidades de detecção e falso-alarme
+Figura~\ref{fig_exp_spPDpf}, é mostrada a variação do SP e das probabilidades de detecção e falso alarme
 para diferentes valores do patamar de decisão. Pode-se observar que, há uma região central
 onde os valores do SP se mantém próximos ao máximo. Assim, ajustando-se o patamar para -0,70, é possível obter
-eficiência de 93,0~\% para um falso-alarme de 30,4~\% (SP$\times$100=80,9). Reduzindo ainda
+eficiência de 93,0~\% para um falso alarme de 30,4~\% (SP$\times$100=80,9). Reduzindo ainda
 mais o patamar para -0,81, chega-se à mesma eficiência do corte T2E3\_\emph{medium} ($\sim$96~\%),
-para um falso-alarme igual a 43,2~\% (porém, neste caso o SP caiu para 75,1).
+para um falso alarme igual a 43,2~\% (porém, neste caso o SP caiu para 75,1).
 
 \begin{table}[t!]
 \centering \caption{Comparação dos resultados obtidos para o \emph{Neural Ringer} e o T2Calo considerando o
-máximo SP($\times$100), as probabilidades de decisão (PD) e falso-alarme (PF) para o melhor SP e a
-probabilidade de falso-alarme para PD$=$96\% e PD$=$98\%.}\vspace{0.2cm} \scriptsize
+máximo SP($\times$100), as probabilidades de decisão (PD) e falso alarme (PF) para o melhor SP e a
+probabilidade de falso alarme para PD$=$96\% e PD$=$98\%.}\vspace{0.2cm} \scriptsize
 \begin{tabular}{c|c|c|c|c|c}
     \hline \hline
     \textbf{Discriminador} &\textbf{SP}$_{\text{Max.}}\times$100 & \textbf{PD} (\%)  & \textbf{PF} (\%) & \textbf{PF}$_{\text{PD=96\%}}$ & \textbf{PF}$_{\text{PD=98\%}}$ \\
@@ -350,7 +350,7 @@ probabilidade de falso-alarme para PD$=$96\% e PD$=$98\%.}\vspace{0.2cm} \script
 
 Na Figura~\ref{fig_compRingerT2} é apresentada uma comparação entre o \emph{Neural Ringer}
 e os dois cortes do T2Calo em termos da eficiência e
-do falso-alarme. Para o corte T2EM3\_\emph{Loose},
+do falso alarme. Para o corte T2EM3\_\emph{Loose},
 o \emph{Neural Ringer} foi ajustado para
 a mesma probabilidade de detecção ($\sim$98~\%). Pode-se verificar que, o \emph{Ringer}
 é superior para altos valores de $|\eta|$ e próximo a $\eta=0$ e para baixa energia, porém
@@ -606,19 +606,19 @@ sinais experimentais.} \label{figExp1NlicaRocs}
 Um resumo dos resultados obtidos com o pré-processamento por
 ICA/NLICA é mostrado na tabela~\ref{tabCompNLICAExp1}. Os
 discriminadores são comparados em termos do máximo SP, das
-probabilidades de detecção e falso-alarme que produziram o máximo
-SP e das probabilidades de falso-alarme para diferentes valores de
+probabilidades de detecção e falso alarme que produziram o máximo
+SP e das probabilidades de falso alarme para diferentes valores de
 PD. Percebe-se que, o pré-processamento por ICA Local maximiza o
-SP e minimiza a probabilidade de falso-alarme para PD=93~\%,
+SP e minimiza a probabilidade de falso alarme para PD=93~\%,
 porém, quando a PD aumenta, o desempenho piora. Para PD=96~\% e
 PD=98~\% (correspondentes aos cortes do T2Calo), o discriminador
 baseado nos componentes independentes estimados pelo modelo PNL
-apresentou maior redução do falso-alarme.
+apresentou maior redução do falso alarme.
 
 \begin{table}[hbt]
 \centering \caption{Comparação dos resultados obtidos para diferentes discriminadores baseados no pré-processamento
-por ICA/NLICA considerando o máximo SP($\times$100), as probabilidades de decisão (PD) e falso-alarme (PF) para o melhor SP e a
-probabilidade de falso-alarme para PD$=$93\%, PD$=$96\% e PD$=$98\%.}\vspace{0.2cm} \tiny
+por ICA/NLICA considerando o máximo SP($\times$100), as probabilidades de decisão (PD) e falso alarme (PF) para o melhor SP e a
+probabilidade de falso alarme para PD$=$93\%, PD$=$96\% e PD$=$98\%.}\vspace{0.2cm} \tiny
 \begin{tabular}{c|c|c|c|c|c|c}
     \hline \hline
     \textbf{Discriminador} &\textbf{SP}$_{\text{Max.}}\times$100 & \textbf{PD} (\%)  & \textbf{PF} (\%) & \textbf{PF}$_{\text{PD=93\%}}$ & \textbf{PF}$_{\text{PD=96\%}}$ & \textbf{PF}$_{\text{PD=98\%}}$ \\
@@ -666,8 +666,8 @@ os discriminadores neurais com pré-processamento por ICA (linear) e ICA Local.}\
 Na Figura~\ref{figLocalPhis}, os discriminadores baseados na ICA linear e na ICA Local foram comparados
 com o \emph{Neural Ringer} (todos ajustado para uma probabilidade de detecção de $\sim$93~\%).
 Pode-se observar que, o \emph{Ringer} apresenta eficiência ligeiramente mais alta próximo a 10~GeV e na
-região do \emph{crack}. Essa diferença é compensada por uma redução no falso-alarme em quase todas as
-faixas de energia e $\eta$. No gráfico do falso-alarme em $\eta$ é possível visualizar claramente
+região do \emph{crack}. Essa diferença é compensada por uma redução no falso alarme em quase todas as
+faixas de energia e $\eta$. No gráfico do falso alarme em $\eta$ é possível visualizar claramente
 que há uma gradual redução do \emph{Ringer} para a ICA linear e depois para a ICA Local.
 
 \subsection{Estudo da relevância por camada}
@@ -722,13 +722,13 @@ informação dos classificadores especialistas são comparados com os de outros dis
 na Tabela~\ref{tabCompCCExp1}. Pode-se observar que as duas configurações da rede combinadora
 são capazes de obter melhor desempenho que os outros discriminadores. Considerando os
 valores fixados para a probabilidade de detecção, a rede combinadora (utilizando a informação
-de todas as camadas) produz uma redução do falso-alarme sempre maior que 8 pontos percentuais
+de todas as camadas) produz uma redução do falso alarme sempre maior que 8 pontos percentuais
 em relação ao \emph{Neural Ringer}.
 
 \begin{table}[htb]
 \centering \caption{Comparação dos resultados obtidos para diferentes discriminadores considerando o
-máximo SP($\times$100), as probabilidades de decisão (PD) e falso-alarme (PF) para o melhor SP e a
-probabilidade de falso-alarme para PD$=$93\%, PD$=$96\% e PD$=$98\%.}\vspace{0.2cm} \tiny
+máximo SP($\times$100), as probabilidades de decisão (PD) e falso alarme (PF) para o melhor SP e a
+probabilidade de falso alarme para PD$=$93\%, PD$=$96\% e PD$=$98\%.}\vspace{0.2cm} \tiny
 \begin{tabular}{c|c|c|c|c|c|c}
     \hline \hline
     \textbf{Discriminador} &\textbf{SP}$_{\text{Max.}}\times$100 & \textbf{PD} (\%)  & \textbf{PF} (\%) & \textbf{PF}$_{\text{PD=93\%}}$ & \textbf{PF}$_{\text{PD=96\%}}$ & \textbf{PF}$_{\text{PD=98\%}}$ \\
@@ -812,8 +812,8 @@ abordagens equivalentes.
 
 \begin{table}[bth]
 \centering \caption{Comparação dos resultados obtidos para diferentes discriminadores considerando o
-máximo SP($\times$100), as probabilidades de decisão (PD) e falso-alarme (PF) para o melhor SP e a
-probabilidade de falso-alarme para PD$=$93\%, PD$=$96\% e PD$=$98\%.}\vspace{0.2cm} \tiny
+máximo SP($\times$100), as probabilidades de decisão (PD) e falso alarme (PF) para o melhor SP e a
+probabilidade de falso alarme para PD$=$93\%, PD$=$96\% e PD$=$98\%.}\vspace{0.2cm} \tiny
 \begin{tabular}{c|c|c|c|c|c|c}
     \hline \hline
     \textbf{Discriminador} &\textbf{SP}$_{\text{Max.}}\times$100 & \textbf{PD} (\%)  & \textbf{PF} (\%) & \textbf{PF}$_{\text{PD=93\%}}$ & \textbf{PF}$_{\text{PD=96\%}}$ & \textbf{PF}$_{\text{PD=98\%}}$ \\

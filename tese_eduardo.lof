@@ -83,13 +83,13 @@
 \contentsline {figure}{\numberline {7.13}{\ignorespaces Curvas ROC obtidas para os classificadores neurais nos diferentes \emph {clusters}.}}{142}{figure.7.13}
 \contentsline {figure}{\numberline {7.14}{\ignorespaces Varia\c c\~ao do m\'aximo SP com o n\'umero de neur\^onios ocultos.}}{142}{figure.7.14}
 \contentsline {figure}{\numberline {7.15}{\ignorespaces Diagrama do discriminador baseado em ICA Local.}}{143}{figure.7.15}
-\contentsline {figure}{\numberline {7.16}{\ignorespaces Comparativo de efici\^encia (esquerda) e falso-alarme (direita) dos discriminadores \emph {Neural Ringer} ICA+MLP e Local ICA+MLP.}}{144}{figure.7.16}
+\contentsline {figure}{\numberline {7.16}{\ignorespaces Comparativo de efici\^encia (esquerda) e falso alarme (direita) dos discriminadores \emph {Neural Ringer} ICA+MLP e Local ICA+MLP.}}{144}{figure.7.16}
 \contentsline {figure}{\numberline {7.17}{\ignorespaces Comparativo de efici\^encia entre os discriminadores \emph {Neural Ringer} ICA+MLP e Local ICA+MLP.}}{146}{figure.7.17}
 \contentsline {figure}{\numberline {7.18}{\ignorespaces Erro de reconstru\c c\~ao m\'edio e SP calculados variando-se o n\'umero de neur\^onios do mapa (para mapas n\~ao-segmentados treinados de modo n\~ao-supervisionado).}}{147}{figure.7.18}
 \contentsline {figure}{\numberline {7.19}{\ignorespaces Erro de reconstru\c c\~ao m\'edio e SP calculados variando-se o n\'umero de neur\^onios do mapa (para mapas segmentados treinados de modo supervisionado).}}{148}{figure.7.19}
 \contentsline {figure}{\numberline {7.20}{\ignorespaces Probabilidade de ativa\c c\~ao dos neur\^onios antes (esquerda) e depois da LVQ (direita) num mapa segmentado treinado para a camada E2.}}{149}{figure.7.20}
 \contentsline {figure}{\numberline {7.21}{\ignorespaces Curvas ROC obtidas para os diferentes modos de treinamento do SOM ap\'os a classifica\c c\~ao por uma rede MLP.}}{150}{figure.7.21}
-\contentsline {figure}{\numberline {7.22}{\ignorespaces Comparativo de efici\^encia (esquerda) e falso-alarme (direita) dos discriminadores \emph {Neural Ringer} ICA+MLP e SOM+MLP.}}{151}{figure.7.22}
+\contentsline {figure}{\numberline {7.22}{\ignorespaces Comparativo de efici\^encia (esquerda) e falso alarme (direita) dos discriminadores \emph {Neural Ringer} ICA+MLP e SOM+MLP.}}{151}{figure.7.22}
 \contentsline {figure}{\numberline {7.23}{\ignorespaces Visualiza\c c\~ao 2-D de eventos de el\'etron (esquerda) e jato (direita) t\IeC {\'\i }picos atrav\'es do SOM.}}{153}{figure.7.23}
 \contentsline {figure}{\numberline {7.24}{\ignorespaces Visualiza\c c\~ao 3-D de eventos de el\'etron (esquerda) e jato (direita) t\IeC {\'\i }picos atrav\'es do SOM.}}{153}{figure.7.24}
 \contentsline {figure}{\numberline {7.25}{\ignorespaces Curvas ROC para os discriminadores baseados no modelo PNL.}}{156}{figure.7.25}
@@ -99,27 +99,28 @@
 \contentsline {figure}{\numberline {7.29}{\ignorespaces Gr\'aficos de correla\c c\~ao entre a sa\IeC {\'\i }da do classificador treinado para a camada E1 e para as demais camadas, para assinaturas de el\'etrons (acima) e jatos (abaixo).}}{160}{figure.7.29}
 \contentsline {figure}{\numberline {7.30}{\ignorespaces Curvas ROC obtidas para os diversos m\'etodos de combina\c c\~ao de classificadores.}}{161}{figure.7.30}
 \contentsline {figure}{\numberline {7.31}{\ignorespaces Varia\c c\~ao do m\'aximo SP com o n\'umero de neur\^onios ocultos para a rede combinadora (esquerda) e m\'aximo SP obtido atrav\'es da rede combinadora reirando-se, de modo segmentado, parte da informa\c c\~ao.}}{161}{figure.7.31}
-\contentsline {figure}{\numberline {7.32}{\ignorespaces Curvas ROC para discriminadores lineares (\emph {Fisher}) e n\~ao-lineares (MLP).}}{162}{figure.7.32}
-\contentsline {figure}{\numberline {7.33}{\ignorespaces Histogramas do terceiro anel da camada E2 (esquerda) e de um dos componentes independentes (ICA linear) estimados para a mesma camada (direita).}}{163}{figure.7.33}
-\contentsline {figure}{\numberline {7.34}{\ignorespaces Gr\'aficos de dispers\~ao entre componentes independentes estimados por ICA linear (esquerda) e pelo modelo PNL (direita).}}{163}{figure.7.34}
-\contentsline {figure}{\numberline {7.35}{\ignorespaces Comparativo da efici\^encia em energia (esquerda) e $\eta $ (direita) para o T2Calo e o discriminador baseado no pr\'e-processamento em ICA com compacta\c c\~ao por PCD.}}{167}{figure.7.35}
-\contentsline {figure}{\numberline {7.36}{\ignorespaces Divis\~ao dos eventos de el\'etrons e jatos nos dois agrupamentos.}}{168}{figure.7.36}
-\contentsline {figure}{\numberline {7.37}{\ignorespaces Distribui\c c\~oes em energia e $\eta $ dos eventos nos \emph {clusters} 1 (acima) e 2 (abaixo).}}{169}{figure.7.37}
-\contentsline {figure}{\numberline {7.38}{\ignorespaces Eventos m\'edios de el\'etrons e jatos nos \emph {clusters} 1 e 2 comparados com os eventos m\'edios considerando todo o conjunto de assinaturas E15i.}}{170}{figure.7.38}
-\contentsline {figure}{\numberline {7.39}{\ignorespaces Varia\c c\~ao do m\'aximo SP com o n\'umero de neur\^onios ocultos.}}{171}{figure.7.39}
-\contentsline {figure}{\numberline {7.40}{\ignorespaces Comparativo de efici\^encia a partir das Curvas ROC.}}{171}{figure.7.40}
-\contentsline {figure}{\numberline {7.41}{\ignorespaces Comparativo de efici\^encia (esquerda) e falso-alarme (direita) dos discriminadores \emph {Neural Ringer} e Local ICA+MLP.}}{172}{figure.7.41}
-\contentsline {figure}{\numberline {7.42}{\ignorespaces Erro quadr\'atico m\'edio (esquerda) e SP (direita) calculados variando-se as dimens\~oes dos mapas, acima para o modo n\~ao-segmentado e abaixo para o segmentado.}}{173}{figure.7.42}
-\contentsline {figure}{\numberline {7.43}{\ignorespaces Curvas ROC para as diversas abordagens do SOM (conjunto E15i).}}{174}{figure.7.43}
-\contentsline {figure}{\numberline {7.44}{\ignorespaces Efici\^encia (acima) e falso-alarme (abaixo) em energia e $\eta $.}}{175}{figure.7.44}
-\contentsline {figure}{\numberline {7.45}{\ignorespaces Distribui\c c\~oes em $\eta $ e energia dos eventos de el\'etrons (esquerda) e jatos (direita) classificados corretamente pelo discriminador SOM+MLP e incorretamente pelo \emph {Neural Ringer}.}}{176}{figure.7.45}
-\contentsline {figure}{\numberline {7.46}{\ignorespaces Eventos m\'edios (e desvio padr\~ao) de el\'etrons (esquerda) e jatos (direita) classificados corretamente pelo discriminador SOM+MLP e incorretamente pelo \emph {Neural Ringer}.}}{176}{figure.7.46}
-\contentsline {figure}{\numberline {7.47}{\ignorespaces Curvas ROC obtidas variando-se o n\'umero de neur\^onios utilizados para estimar as fun\c c\~oes n\~ao-lineares do modelo PNL (conjunto E15i).}}{178}{figure.7.47}
-\contentsline {figure}{\numberline {7.48}{\ignorespaces Efici\^encia (acima) e falso-alarme (abaixo) em energia e $\eta $.}}{179}{figure.7.48}
-\contentsline {figure}{\numberline {7.49}{\ignorespaces M\'aximo SP obtido ap\'os treinamento das redes neurais retirando (de modo segmentado) parte da informa\c c\~ao.}}{180}{figure.7.49}
-\contentsline {figure}{\numberline {7.50}{\ignorespaces Varia\c c\~ao do desempenho da rede neural combinadora variando-se o n\'umero de neur\^onios da camada oculta.}}{181}{figure.7.50}
-\contentsline {figure}{\numberline {7.51}{\ignorespaces M\'aximo SP (esquerda) e curvas ROC (direita) obtidas para a rede combinadora retirando-se a informa\c c\~ao (de modo segmentado) de uma ou mais camadas do calor\IeC {\'\i }metro, a linha tracejada vertical indica o desempenho do \emph {Neural Ringer}.}}{182}{figure.7.51}
-\contentsline {figure}{\numberline {7.52}{\ignorespaces Comparativo de efici\^encia (esquerda) e falso-alarme (direita) dos discriminadores \emph {Neural Ringer} e Local ICA+MLP.}}{183}{figure.7.52}
+\contentsline {figure}{\numberline {7.32}{\ignorespaces Efici\^encia (acima) e falso alarme (abaixo) em energia e $\eta $.}}{162}{figure.7.32}
+\contentsline {figure}{\numberline {7.33}{\ignorespaces Curvas ROC para discriminadores lineares (\emph {Fisher}) e n\~ao-lineares (MLP).}}{163}{figure.7.33}
+\contentsline {figure}{\numberline {7.34}{\ignorespaces Histogramas do terceiro anel da camada E2 (esquerda) e de um dos componentes independentes (ICA linear) estimados para a mesma camada (direita).}}{164}{figure.7.34}
+\contentsline {figure}{\numberline {7.35}{\ignorespaces Gr\'aficos de dispers\~ao entre componentes independentes estimados por ICA linear (esquerda) e pelo modelo PNL (direita).}}{164}{figure.7.35}
+\contentsline {figure}{\numberline {7.36}{\ignorespaces Comparativo da efici\^encia em energia (esquerda) e $\eta $ (direita) para o T2Calo e o discriminador baseado no pr\'e-processamento em ICA com compacta\c c\~ao por PCD.}}{167}{figure.7.36}
+\contentsline {figure}{\numberline {7.37}{\ignorespaces Divis\~ao dos eventos de el\'etrons e jatos nos dois agrupamentos.}}{168}{figure.7.37}
+\contentsline {figure}{\numberline {7.38}{\ignorespaces Distribui\c c\~oes em energia e $\eta $ dos eventos nos \emph {clusters} 1 (acima) e 2 (abaixo).}}{169}{figure.7.38}
+\contentsline {figure}{\numberline {7.39}{\ignorespaces Eventos m\'edios de el\'etrons e jatos nos \emph {clusters} 1 e 2 comparados com os eventos m\'edios considerando todo o conjunto de assinaturas E15i.}}{170}{figure.7.39}
+\contentsline {figure}{\numberline {7.40}{\ignorespaces Varia\c c\~ao do m\'aximo SP com o n\'umero de neur\^onios ocultos.}}{171}{figure.7.40}
+\contentsline {figure}{\numberline {7.41}{\ignorespaces Comparativo de efici\^encia a partir das Curvas ROC.}}{171}{figure.7.41}
+\contentsline {figure}{\numberline {7.42}{\ignorespaces Comparativo de efici\^encia (esquerda) e falso alarme (direita) dos discriminadores \emph {Neural Ringer} e Local ICA+MLP.}}{172}{figure.7.42}
+\contentsline {figure}{\numberline {7.43}{\ignorespaces Comparativo de efici\^encia (esquerda) e falso alarme (direita) dos discriminadores \emph {Neural Ringer} e Local ICA+MLP.}}{173}{figure.7.43}
+\contentsline {figure}{\numberline {7.44}{\ignorespaces Erro quadr\'atico m\'edio (esquerda) e SP (direita) calculados variando-se as dimens\~oes dos mapas, acima para o modo n\~ao-segmentado e abaixo para o segmentado.}}{174}{figure.7.44}
+\contentsline {figure}{\numberline {7.45}{\ignorespaces Curvas ROC para as diversas abordagens do SOM (conjunto E15i).}}{175}{figure.7.45}
+\contentsline {figure}{\numberline {7.46}{\ignorespaces Efici\^encia (acima) e falso alarme (abaixo) em energia e $\eta $.}}{176}{figure.7.46}
+\contentsline {figure}{\numberline {7.47}{\ignorespaces Distribui\c c\~oes em $\eta $ e energia dos eventos de el\'etrons (esquerda) e jatos (direita) classificados corretamente pelo discriminador SOM+MLP e incorretamente pelo \emph {Neural Ringer}.}}{177}{figure.7.47}
+\contentsline {figure}{\numberline {7.48}{\ignorespaces Eventos m\'edios (e desvio padr\~ao) de el\'etrons (esquerda) e jatos (direita) classificados corretamente pelo discriminador SOM+MLP e incorretamente pelo \emph {Neural Ringer}.}}{177}{figure.7.48}
+\contentsline {figure}{\numberline {7.49}{\ignorespaces Curvas ROC obtidas variando-se o n\'umero de neur\^onios utilizados para estimar as fun\c c\~oes n\~ao-lineares do modelo PNL (conjunto E15i).}}{179}{figure.7.49}
+\contentsline {figure}{\numberline {7.50}{\ignorespaces Efici\^encia (acima) e falso alarme (abaixo) em energia e $\eta $.}}{180}{figure.7.50}
+\contentsline {figure}{\numberline {7.51}{\ignorespaces M\'aximo SP obtido ap\'os treinamento das redes neurais retirando (de modo segmentado) parte da informa\c c\~ao.}}{181}{figure.7.51}
+\contentsline {figure}{\numberline {7.52}{\ignorespaces Varia\c c\~ao do desempenho da rede neural combinadora variando-se o n\'umero de neur\^onios da camada oculta.}}{182}{figure.7.52}
+\contentsline {figure}{\numberline {7.53}{\ignorespaces M\'aximo SP (esquerda) e curvas ROC (direita) obtidas para a rede combinadora retirando-se a informa\c c\~ao (de modo segmentado) de uma ou mais camadas do calor\IeC {\'\i }metro, a linha tracejada vertical indica o desempenho do \emph {Neural Ringer}.}}{183}{figure.7.53}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {8.1}{\ignorespaces Sa\IeC {\'\i }da dos classificadores neurais (acima) e comparativo de rejei\c c\~ao (abaixo) para eventos de raios c\'osmicos.}}{186}{figure.8.1}
 \contentsline {figure}{\numberline {8.2}{\ignorespaces Perfil m\'edio dos eventos de raios c\'osmicos aprovados conjuntamente pelo discriminador baseado em ICA Local e pelo \emph {Neural Ringer}. . O perfil m\'edio dos el\'etrons do conjunto E15 \'e mostrado para compara\c c\~ao.}}{187}{figure.8.2}

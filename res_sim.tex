@@ -45,7 +45,7 @@ Na Tabela~\ref{tab_compE10_1}\footnote{Os desvios mostrados correspondem
 à flutuação estatística obtida no processo de treinamento por validação 
 cruzada.}, os três discriminadores são
 comparados a partir do máximo SP e dos valores das probabilidades
-de detecção (PD) e falso-alarme (PF), que indicam respectivamente
+de detecção (PD) e falso alarme (PF), que indicam respectivamente
 as parcelas das assinaturas de elétrons identificados corretamente
 e jatos classificados como elétrons. Percebe-se que os
 discriminadores que utilizam o pré-processamento dos sinais dos
@@ -65,11 +65,11 @@ e o discriminador neural com pré-processamento por ICA para o conjunto E10.
 São mostrados o máximo SP, os valores de PD e PF que produzem o máximo SP e 
 PF para PD=92,5\%.}\vspace{0.2cm} \footnotesize
 \begin{tabular}{c|c c c c}
-    \hline
+    \hline \hline
    \textbf{Discriminador} &\textbf{Máx. SP}$\times$100 & \textbf{PD} (\%)  & \textbf{PF} (\%) & \textbf{PF}$_{PD=92,5\%}$ \\ \hline
    T2Calo  & 91,99 & 92,50 & 8,55 & 8,55 \\ \hline
    Ringer  & 97,99 $\pm$ 0,18 & 98,77 $\pm$ 0,35 & 2,85 $\pm$ 0,11 & 1,10 $\pm$ 0,08\\ \hline
-   ICA & 98,25 $\pm$ 0,27& 99,01 $\pm$ 0,42 & 2,50 $\pm$ 0,09 & 1,00 $\pm$ 0,12\\ \hline
+  \bf ICA &\bf 98,25 $\pm$ 0,27&\bf 99,01 $\pm$ 0,42 &\bf 2,50 $\pm$ 0,09 &\bf 1,00 $\pm$ 0,12\\ \hline \hline
 \end{tabular}
 \label{tab_compE10_1}
 \end{table}
@@ -78,7 +78,7 @@ PF para PD=92,5\%.}\vspace{0.2cm} \footnotesize
 
 Na Figura~\ref{fig_RT2effa}, os discriminadores T2Calo e
 \textit{Neural Ringer} são comparados quanto à eficiência na
-identificação de elétrons e ao falso-alarme (jatos classificados
+identificação de elétrons e ao falso alarme (jatos classificados
 como elétrons) em função da energia, $\eta$ e $\phi$. Nestes
 gráficos (assim como nas demais figuras semelhantes desta tese) a
 margem de erro (em \%) é calculada como $100/ \sqrt{N}$, onde $N$ é o
@@ -371,7 +371,7 @@ energias muito baixas (Et$<$10~GeV) o \emph{Ringer} apresenta
 desempenho melhor, porém, na faixa intermediária o ICA é superior.
 Analisando em $\eta$, o pré-processamento por ICA contribui para o
 aumento da eficiência principalmente em torno do \emph{crack}
-($|\eta|\sim 1,5$) e reduz o falso-alarme região central do
+($|\eta|\sim 1,5$) e reduz o falso alarme região central do
 gráfico ($|\eta| < 1,5$).
 
 Uma análise comparativa mais detalhada pode ser realizada a partir
@@ -502,7 +502,7 @@ As curvas ROC obtidas para os classificadores treinados a partir
 dos componentes independentes locais são
 mostradas na Figura~\ref{E10local_clusterROC}. Pode-se observar
 que o classificador do \emph{cluster} 1 apresenta, para a mesma
-probabilidade de detecção, em geral, um maior falso-alarme. Este
+probabilidade de detecção, em geral, um maior falso alarme. Este
 fato indica que, a separação elétron/jato neste agrupamento é uma
 tarefa mais difícil que para o \emph{cluster} 2.
 
@@ -533,14 +533,14 @@ decisão escolhidos a partir do máximo SP de cada
 classificador local, ou seja, considerando apenas os eventos de cada
 agrupamento (que são respectivamente Y$_1=0,660$ para SP$_1=0,944$ e
 Y$_2=-0,588$ para SP$_2=0,986$). Assim, foi obtida uma
-probabilidade de detecção igual a 98,0~\% para falso-alarme de
+probabilidade de detecção igual a 98,0~\% para falso alarme de
 1,7~\% (SP=0,981).
 
 Realizando o ajuste dos patamares de corte através do algoritmo genético visando 
 maximizar o SP global (calculado para todos os sinais do conjunto E10), 
 foram escolhidos novos
 patamares (Y$_1=0,106$ e Y$_2=-0,103$), assim, obteve-se uma
-probabilidade de detecção igual a 99,6~\%, para falso-alarme de
+probabilidade de detecção igual a 99,6~\%, para falso alarme de
 1,5~\%, o que produz SP=0,990, otimizando o desempenho do
 discriminador.
 
@@ -561,12 +561,12 @@ A Tabela~\ref{tab_compE10_1ocal} apresenta um resumo dos resultados.
 na ICA Local e outros classificadores para o conjunto E10. São mostrados o máximo SP, os valores de 
 PD e PF que produzem o máximo SP e PF para PD=92,5\%.}\vspace{0.2cm} \footnotesize
 \begin{tabular}{c|c c c c}
-    \hline
+    \hline \hline
   \textbf{Discriminador} &\textbf{Máx. SP}$\times$100 & \textbf{PD} (\%)  & \textbf{PF} (\%) & \textbf{PF}$_{PD=92,5\%}$ \\ \hline
    T2Calo  & 91,99 & 92,50 & 8,55 & 8,55 \\ \hline
    Ringer  & 97,99 $\pm$ 0,18 & 98,77 $\pm$ 0,35 & 2,85 $\pm$ 0,11 & 1,10 $\pm$ 0,08\\ \hline
    ICA & 98,25 $\pm$ 0,27& 99,01 $\pm$ 0,42 & 2,50 $\pm$ 0,09 & 1,00 $\pm$ 0,12\\ \hline
-  Local& 99,05 $\pm$ 0,28 & 99,60 $\pm$ 0,43 & 1,50 $\pm$ 0,08& 0,85 $\pm$ 0,09\\ \hline
+ \bf Local&\bf 99,05 $\pm$ 0,28 &\bf 99,60 $\pm$ 0,43 &\bf 1,50 $\pm$ 0,08&\bf 0,85 $\pm$ 0,09\\ \hline \hline
 \end{tabular}
 \label{tab_compE10_1ocal}
 \end{table}
@@ -593,17 +593,17 @@ PD e PF que produzem o máximo SP e PF para PD=92,5\%.}\vspace{0.2cm} \footnotesi
 %  \centering \footnotesize{Jatos}
 % \centerline{\epsfig{file=E10local_ICAoutJxClasL,width=8cm}}
 %\end{minipage}
-%\caption{Comparativo de eficiência (esquerda) e falso-alarme
+%\caption{Comparativo de eficiência (esquerda) e falso alarme
 %(direita) dos discriminadores \emph{Neural Ringer} ICA+MLP e Local
 %ICA+MLP.}\label{E10local_clasOutComp}
 %\end{figure}
 
 A Figura~\ref{E10local_Eff} mostra um comparativo da eficiência e
-falso-alarme (em $\eta$, $\phi$ e energia) entre os
+falso alarme (em $\eta$, $\phi$ e energia) entre os
 discriminadores neurais operando sobre os anéis (\emph{Neural Ringer}),
 os componentes independentes (ICA) e os componentes independentes locais.
 Pode-se observar que, o pré-processamento por ICA Local produz
-maior eficiência e menor falso-alarme para todas as grandezas
+maior eficiência e menor falso alarme para todas as grandezas
 analisadas, considerando especificamente a pseudo-rapidez
 ($\eta$), há uma considerável melhora do desempenho próximo à
 região do crack ($|\eta| \sim 1,5$).
@@ -636,7 +636,7 @@ região do crack ($|\eta| \sim 1,5$).
   \centering
  \centerline{\epsfig{file=E10local_FaPhi,width=8cm}}
 \end{minipage}
-\caption{Comparativo de eficiência (esquerda) e falso-alarme
+\caption{Comparativo de eficiência (esquerda) e falso alarme
 (direita) dos discriminadores \emph{Neural Ringer} ICA+MLP e Local
 ICA+MLP.}\label{E10local_Eff}
 \end{figure}
@@ -917,7 +917,7 @@ de pesos do mapa) como entradas para discriminadores neurais,
 foram obtidas as curvas ROC mostradas na Figura~\ref{E10somRoc}. Pode-se observar
 que, o pré-processamento pelo mapa supervisionado não-segmentado produziu uma
 pequena melhora no desempenho se comparado ao \emph{Neural Ringer}, porém,
-para a região de baixo falso-alarme, o pré-processamento por ICA é um pouco 
+para a região de baixo falso alarme, o pré-processamento por ICA é um pouco 
 mais eficiente. Nas demais abordagens do SOM, o pré-processamento não 
 foi capaz de produzir maior eficiência do que o \emph{Neural Ringer}. 
 Um resumo dos resultados é apresentado na Tabela~\ref{tab_compE10_som}.
@@ -947,7 +947,7 @@ PD e PF que produzem o máximo SP e PF para PD=92,5\%.}\vspace{0.2cm} \footnotesi
  SOM Seg.& 97,47 $\pm$ 0,31& 98,00 $\pm$ 0.47& 3,05 $\pm$ 0,19& 1,96 $\pm$ 0,09\\ \hline
  SOM+LVQ& 98,01 $\pm$ 0,26& 98,90 $\pm$ 0.36& 2,87 $\pm$ 0,17& 1,09 $\pm$ 0,15\\ \hline
  SOM Seg.+LVQ& 97,81 $\pm$ 0,19& 98,52 $\pm$ 0,40 & 2,90 $\pm$ 0,11& 1,94 $\pm$0,10\\ \hline
- SOM Sup.& 98,15 $\pm$ 0,22& 99,10 $\pm$ 0,36& 2,83 $\pm$ 0,17& 1,02 $\pm$ 0,13\\ \hline
+\bf SOM Sup.&\bf 98,15 $\pm$ 0,22&\bf 99,10 $\pm$ 0,36&\bf 2,83 $\pm$ 0,17&\bf 1,02 $\pm$ 0,13\\ \hline
  SOM Sup. Seg.& 97,75 $\pm$ 0,18 & 98,01 $\pm$ 0,45 & 2,50 $\pm$ 0,13& 1,46 $\pm$ 0,10\\ \hline
 \hline
 \end{tabular}
@@ -956,10 +956,10 @@ PD e PF que produzem o máximo SP e PF para PD=92,5\%.}\vspace{0.2cm} \footnotesi
 
 Considerando a abordagem de treinamento do SOM que apresentou maior eficiência de discriminação
 (SOM Supervisionado), um comparativo com os discriminadores baseados nos componentes independentes
-e nos anéis, em termos da eficiência e do falso-alarme para diferentes valores de $\eta$, $\phi$ e energia, é
+e nos anéis, em termos da eficiência e do falso alarme para diferentes valores de $\eta$, $\phi$ e energia, é
 apresentado na Figura~\ref{E10som_Eff}. Pode-se observar que, em termos da
 discriminação de elétrons, o uso tanto da ICA como do SOM produzem maior eficiência se comparados ao discriminador
-neural operando sem pré-processamento (\emph{Neural Ringer}). Analisando-se a aceitação do falso-alarme,
+neural operando sem pré-processamento (\emph{Neural Ringer}). Analisando-se a aceitação do falso alarme,
 O discriminador baseado em ICA apresenta o melhor resultado, enquanto que o uso do SOM não produz
 significativa redução do falso alarme em comparação ao \emph{Neural Ringer}. Pode-se perceber também que
 o ganho obtido pelo SOM ocorre, de modo semelhante a ICA Local, em torno do
@@ -993,7 +993,7 @@ o ganho obtido pelo SOM ocorre, de modo semelhante a ICA Local, em torno do
   \centering
  \centerline{\epsfig{file=E10som_compFAPhi,width=8cm}}
 \end{minipage}
-\caption{Comparativo de eficiência (esquerda) e falso-alarme
+\caption{Comparativo de eficiência (esquerda) e falso alarme
 (direita) dos discriminadores \emph{Neural Ringer} ICA+MLP e
 SOM+MLP.}\label{E10som_Eff}
 \end{figure}
@@ -1182,7 +1182,7 @@ discriminadores, corte E10.}\vspace{0.2cm} \footnotesize
    ICA & 98,25 $\pm$ 0,27& 99,01 $\pm$ 0,42 & 2,50 $\pm$ 0,09 & 1,00 $\pm$ 0,12\\ \hline
  PNL+PCA& 97,67 $\pm$ 0,23& 98,61 $\pm$ 0,30& 3,30 $\pm$ 0,11& 1,15 $\pm$ 0,16\\ \hline
  PNL+PCD& 98,30 $\pm$ 0,29 & 99,00 $\pm$ 0.37& 2,40 $\pm$ 0,10& 0,94 $\pm$ 0,12\\ \hline
- PNL Mod.& 98,55 $\pm$ 0,21& 99,34 $\pm$ 0.41& 2,29 $\pm$ 0,15& 0,70 $\pm$ 0,08\\ \hline
+\bf PNL Mod.&\bf 98,55 $\pm$ 0,21&\bf 99,34 $\pm$ 0.41&\bf 2,29 $\pm$ 0,15&\bf 0,70 $\pm$ 0,08\\ \hline
  \hline
 \end{tabular}
 \label{tab_compE10_pnl}
@@ -1375,18 +1375,34 @@ a primeira e segunda camadas eletromagnéticas. Essa redução no uso da informação
 será mostrado na Seção~\ref{sec_timeSeg}, corresponde a uma economia de aproximadamente
 20~\% do tempo total de processamento.
 
-... falta colocar plots de eficiência em $\eta$, $\phi$ e energia comparando com o Ringer ...
-%\begin{table}[h!]
-%\centering \caption{Comparação de desempenho dos classificadores
-%segmentados.}\vspace{0.2cm} \footnotesize
-%\begin{tabular}{c|c c c c c c c}
-%    \hline
-%     \textbf{Camada} &\textbf{PS} &\textbf{E1} &\textbf{E2} &\textbf{E3} &\textbf{H0} &\textbf{H1} &\textbf{H2}\\
-%    \hline
-%    \textbf{Max. SP}$\times$100 & 64,9 & 95,1 & 88,8 & 58,7 & 66,7 & 49,6 & 37,8 \\ \hline
-%\end{tabular}
-%\label{tab_compSegC}
-%\end{table}
+Um comparativo da eficiência para diferentes valores de $\eta$ e energia é 
+apresentado na Figura~\ref{figE10combCEff}. Pode-se observar que, o uso da 
+rede combinadora produz maior eficiência e menor falso alarme para quase 
+todas as regiões em $\eta$ e principalmente em baixas energias. 
+
+\begin{figure}[h!]
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=E10redeCC_compEffEt,width=7.7cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=E10redeCC_compEffEta,width=7.7cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=E10redeCC_compFaEt,width=7.7cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=E10redeCC_compFaEta,width=7.7cm}}
+\end{minipage}
+\caption{Eficiência (acima) e falso alarme (abaixo) em energia e
+$\eta$.}\label{figE10combCEff}
+\end{figure}
 
 \subsection{Comparação com Discriminadores Lineares}
 
@@ -1482,8 +1498,8 @@ a rede combinadora apresenta desempenho equivalente ao do \emph{Neural Ringer}.
 \begin{table}[t!]\footnotesize
 \centering \caption{Comparação dos resultados obtidos para diferentes discriminadores no 
 conjunto E10 considerando o
-máximo SP($\times$100), as probabilidades de decisão (PD) e falso-alarme (PF) para o melhor SP e a
-probabilidade de falso-alarme para PD$=$92,5\%.}
+máximo SP($\times$100), as probabilidades de decisão (PD) e falso alarme (PF) para o melhor SP e a
+probabilidade de falso alarme para PD$=$92,5\%.}
 \begin{tabular}{c|c|c|c|c}
     \hline \hline
     \textbf{Discriminador} &\textbf{Máx. SP}$\times$100 & \textbf{PD} (\%)  & \textbf{PF} (\%) & \textbf{PF}$_{PD=92,5\%}$ \\
@@ -1517,7 +1533,7 @@ são mais influenciados pelo ruído de medição inerente ao calorímetro;
 descontinuidades como o \emph{crack} (para passagem de cabos) e as
 interconexões dos diferentes módulos do barril e da tampa do
 calorímetro eletromagnético.
- \item Redução do falso-alarme aproximadamente uniforme em $\eta$, $\phi$ e energia.
+ \item Redução do falso alarme aproximadamente uniforme em $\eta$, $\phi$ e energia.
 \end{itemize}
 
 Considerando especificamente o pré-processamento por mapas auto-organizáveis, 
@@ -1561,15 +1577,15 @@ segmentada e com compactação por PCD.
 \centering \caption{Comparação dos resultados obtidos para oT2Calo, 
 \emph{Neural Ringer} e o discriminador neural operando em conjunto 
 com a ICA (linear) para o conjunto E15. São mostrados o
-máximo SP($\times$100), as probabilidades de decisão (PD) e falso-alarme (PF) para o melhor SP e a
-probabilidade de falso-alarme para PD$=$97,2\%.}
+máximo SP($\times$100), as probabilidades de decisão (PD) e falso alarme (PF) para o melhor SP e a
+probabilidade de falso alarme para PD$=$97,2\%.} \vspace{0.2cm}
 \begin{tabular}{c|c|c|c|c}
-    \hline 
+    \hline \hline
     \textbf{Discriminador} &\textbf{Máx. SP}$\times$100 & \textbf{PD} (\%)  & \textbf{PF} (\%) & \textbf{PF}$_{PD=97,2\%}$ \\
     \hline
    T2Calo  & 87,93 & 97,34 & 20,30 & 20,30\\ \hline
 Ringer  & 94,94 $\pm$ 0,12 & 96,69 $\pm$ 0,27 & 6,79 $\pm$ 0,30 & 7,31 $\pm$ 0,25\\ \hline
-   ICA  & 95,17 $\pm$ 0,10 & 96,86 $\pm$ 0,52 & 6,50 $\pm$ 0,39  & 6,81 $\pm$ 0,31 \\ \hline
+  \bf ICA  &\bf 95,17 $\pm$ 0,10 &\bf 96,86 $\pm$ 0,52 &\bf 6,50 $\pm$ 0,39  &\bf 6,81 $\pm$ 0,31 \\ \hline \hline
 \end{tabular}
 \label{tabCompICAE15}
 \end{table}
@@ -1625,9 +1641,9 @@ associada ao agrupamento 2 estão concentrados em torno do \emph{crack}.
 Por outro lado, diferente do observado para o conjunto E10, o 
 perfil dos jatos do grupo 1 (que estão agrupados juntamente 
 com a maioria dos elétrons) é bastante semelhante aos do grupo 2. 
-Uma explicação para esse fato é que, nos sinais E15i, a seleção 
-de nível 1 foi bastante severa e deixou passar apenas jatos 
-com características estatísticas mais semelhantes.
+Uma possível explicação para esse fato é que, nos sinais E15i, a seleção 
+de nível 1 foi bastante severa e deixou passar apenas uma estatística 
+reduzida para jatos.
 
 \begin{figure}[p!]
 \begin{minipage}[b]{0.98\linewidth}
@@ -1721,8 +1737,8 @@ compensado por uma maior redução na aceitação de falso alarme).
 
 \begin{table}[tbh]
 \centering \caption{Comparação dos resultados obtidos com o pré-processamento 
-por ICA local com outros discriminadores para o conjunto E15i. Foram 
-considerados omáximo SP($\times$100), as probabilidades de decisão (PD) e 
+por ICA local com os de outros discriminadores para o conjunto E15i. Foram 
+considerados o máximo SP($\times$100), as probabilidades de decisão (PD) e 
 falso alarme (PF) para o melhor SP e a
 probabilidade de falso alarme para PD$=$97,2\%.}\vspace{0.2cm} \footnotesize
 \begin{tabular}{c|c c c c}
@@ -1732,7 +1748,7 @@ probabilidade de falso alarme para PD$=$97,2\%.}\vspace{0.2cm} \footnotesize
    T2Calo  & 87,93 & 97,34 & 20,30 & 20,30\\ \hline
 Ringer  & 94,94 $\pm$ 0,12 & 96,69 $\pm$ 0,27 & 6,79 $\pm$ 0,30 & 7,31 $\pm$ 0,25\\ \hline
    ICA  & 95,17 $\pm$ 0,10 & 96,86 $\pm$ 0,52 & 6,50 $\pm$ 0,39  & 6,81 $\pm$ 0,31 \\ \hline
- Local  & 95,85 $\pm$ 0,21 & 96,02 $\pm$ 0,29& 4,31 $\pm$ 0,43& 6,54 $\pm$ 0,45\\ \hline
+\bf Local  &\bf 95,85 $\pm$ 0,21 &\bf 96,02 $\pm$ 0,29&\bf 4,31 $\pm$ 0,43&\bf 6,54 $\pm$ 0,45\\ \hline
 \hline
 \end{tabular}
 \label{tab_compE15_1ocal}
@@ -1768,9 +1784,33 @@ quase todas as faixas de energia e $\eta$.
   \centering
  \centerline{\epsfig{file=E15local_compFaEta,width=8cm}}
 \end{minipage}
-\caption{Comparativo de eficiência (esquerda) e falso-alarme
+\caption{Comparativo de eficiência (esquerda) e falso alarme
 (direita) dos discriminadores \emph{Neural Ringer} e Local
 ICA+MLP.}\label{E15local_Eff}
+\end{figure}
+
+A Figura~\ref{E15local_EffComp} possibilita uma comparação
+mais detalhada entre os discriminadores considerando as distribuições 
+em $\eta$ e energia dos eventos classificados corretamente através 
+da ICA local e incorretamente pelos demais discriminadores (\emph{Ringer} 
+e ICA). De modo semelhante ao verificado para o conjunto E10, pode-se 
+observar que a superioridade da ICA local é mais evidente nas regiões 
+das interconexões do calorímetro ($|\eta|\sim 1,5$ e $|\eta|\sim 2,5$) e 
+em baixas energias.
+
+\begin{figure}[tbh]
+\begin{minipage}[b]{0.48\linewidth}
+  \centering \footnotesize{Local ICA acerta Ringer erra}
+ \centerline{\epsfig{file=E15local_compE_localRinger,width=8cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering \footnotesize{Local ICA acerta ICA erra}
+ \centerline{\epsfig{file=E15local_compE_localIca,width=8cm}}
+\end{minipage}
+\caption{Comparativo de eficiência (esquerda) e falso alarme
+(direita) dos discriminadores \emph{Neural Ringer} e Local
+ICA+MLP.}\label{E15local_EffComp}
 \end{figure}
 
 \subsubsection{Mapas Auto-Organizáveis - SOM}
@@ -1863,7 +1903,7 @@ E15i).} \label{figE15somROC}
 %\begin{table}[h]\footnotesize
 %\centering \caption{Comparação de desempenho entre diferentes
 %discriminadores considerando o máximo SP e a probabilidade de
-%falso-alarme (PF) para probabilidade de detecção de 97\%.}
+%falso alarme (PF) para probabilidade de detecção de 97\%.}
 %\vspace{0.2cm}
 %\begin{tabular}{c c c c c c c}
 %    \hline
@@ -1876,8 +1916,11 @@ E15i).} \label{figE15somROC}
 %\end{table}
 
 \begin{table}[h]
-\centering \caption{Comparação de desempenho para diferentes
-discriminadores, corte E10.}\vspace{0.2cm} \footnotesize
+\centering \caption{Comparação dos resultados obtidos através do pré-processamento 
+por SOM com os de outros discriminadores para o conjunto E15i. Foram 
+considerados o máximo SP($\times$100), as probabilidades de decisão (PD) e 
+falso alarme (PF) para o melhor SP e a
+probabilidade de falso alarme para PD$=$97,2\%.}\vspace{0.2cm} \footnotesize
 \begin{tabular}{c|c c c c}
     \hline
     \hline
@@ -1890,45 +1933,42 @@ Ringer  & 94,94 $\pm$ 0,12 & 96,69 $\pm$ 0,27 & 6,79 $\pm$ 0,30 & 7,31 $\pm$ 0,2
 SOM Seg.& 94,70 $\pm$ 0,18 & 96,22 $\pm$ 0,49 & 6,81 $\pm$ 0,41 & 7,94 $\pm$ 0,33\\ \hline
  SOM+LVQ& 94,92 $\pm$ 0,13 & 96,66 $\pm$ 0,43 & 6,80 $\pm$ 0,37 & 7,69 $\pm$ 0,29\\ \hline
 SOM Seg.+LVQ& 93,74 $\pm$ 0,17 & 96,51 $\pm$ 0,51 & 8,98 $\pm$ 0,44 & 9,97 $\pm$ 0,41\\ \hline
-SOM Sup.& 95,54 $\pm$ 0,09 & 97,20 $\pm$ 0,33 & 6,10 $\pm$ 0,39& 5,96 $\pm$ 0,23\\ \hline
+\bf SOM Sup.&\bf 95,54 $\pm$ 0,09 &\bf 97,20 $\pm$ 0,33 &\bf 6,10 $\pm$ 0,39&\bf 5,96 $\pm$ 0,23\\ \hline
 SOM Sup. Seg.& 95,22 $\pm$ 0,11 & 96,87 $\pm$ 0,41 & 6,41 $\pm$ 0,31 & 6,61 $\pm$ 0,27\\ \hline
 \hline
 \end{tabular}
 \label{tab_compE15_som}
 \end{table}
 
-Um comparativo da eficiência e do falso-alarme em função da
+Um comparativo da eficiência e do falso alarme em função da
 energia e de $\eta$ é mostrado na Figura~\ref{figE15somEff} para
-os discriminadores SOM-Sup.+MLP, \emph{Neural Ringer} e T2Calo.
-Pode-se observar que o T2Calo, apresenta um falso-alarme
-consideravelmente maior que os demais, e uma pior eficiência,
-principalmente em baixa energia e perto do \emph{crack} ($|\eta|
-\sim 1,5$). Comparando os outros dois discriminadores, percebe-se
-que o pré-processamento através do SOM-Sup. é capaz de produzir
+os discriminadores SOM-Sup.+MLP e \emph{Neural Ringer}.
+Pode-se observar que o pré-processamento através do SOM-Sup. 
+é capaz de produzir
 ligeiro aumento na eficiência, principalmente próximo a $|\eta|
-\sim 1,5$ e também uma pequena redução do falso-alarme.
+\sim 1,5$ e também uma pequena redução do falso alarme.
 
 \begin{figure}[h!]
 \begin{minipage}[b]{0.48\linewidth}
   \centering
- \centerline{\epsfig{file=E15som_compEffEt_t2,width=7cm}}
+ \centerline{\epsfig{file=E15som_compEffEt_t2,width=7.5cm}}
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\linewidth}
   \centering
- \centerline{\epsfig{file=E15som_compEffEta_t2,width=7cm}}
+ \centerline{\epsfig{file=E15som_compEffEta_t2,width=7.5cm}}
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\linewidth}
   \centering
- \centerline{\epsfig{file=E15som_compFaEta_t2,width=7cm}}
+ \centerline{\epsfig{file=E15som_compFaEta_t2,width=7.5cm}}
 \end{minipage}
 \hfill
 \begin{minipage}[b]{0.48\linewidth}
   \centering
- \centerline{\epsfig{file=E15som_compFaEta_t2,width=7cm}}
+ \centerline{\epsfig{file=E15som_compFaEta_t2,width=7.5cm}}
 \end{minipage}
-\caption{Eficiência (acima) e falso-alarme (abaixo) em energia e
+\caption{Eficiência (acima) e falso alarme (abaixo) em energia e
 $\eta$.}\label{figE15somEff}
 \end{figure}
 
@@ -2042,8 +2082,11 @@ utilizados para estimar as funções não-lineares do modelo PNL
 \end{figure}
 
 \begin{table}[bth]
-\centering \caption{Comparação de desempenho para diferentes
-discriminadores, corte E10.}\vspace{0.2cm} \footnotesize
+\centering \caption{Comparação dos resultados obtidos através do pré-processamento 
+pelo modelo PNL com os de outros discriminadores para o conjunto E15i. Foram 
+considerados o máximo SP($\times$100), as probabilidades de decisão (PD) e 
+falso alarme (PF) para o melhor SP e a
+probabilidade de falso alarme para PD$=$97,2\%.}\vspace{0.2cm} \footnotesize
 \begin{tabular}{c|c c c c}
     \hline
     \hline
@@ -2090,7 +2133,7 @@ $\eta$.
   \centering
  \centerline{\epsfig{file=E15pnl_etaFa,width=8cm}}
 \end{minipage}
-\caption{Eficiência (acima) e falso-alarme (abaixo) em energia e
+\caption{Eficiência (acima) e falso alarme (abaixo) em energia e
 $\eta$.}\label{figE15pnlEff}
 \end{figure}
 
@@ -2162,8 +2205,8 @@ informação (de modo segmentado) de uma ou mais camadas do calorímetro, a linha t
 vertical indica o desempenho do \emph{Neural Ringer}.}\label{E15segCC2}
 \end{figure}
 
-... falta fazer uma análise em $\eta$, $\phi$ e energia para a rede combinadora ...
-
+%... falta fazer uma análise em $\eta$, $\phi$ e energia para a rede combinadora ...
+%
 %\subsection{Comparação com Discriminadores Lineares}
 %
 %... ainda falta fazer essa parte ...
@@ -2187,9 +2230,9 @@ desempenho equivalente (ligeiramente inferior) ao \emph{Neural Ringer}. Com essa
 configuração, é possível reduzir o tempo total de processamento em aproximadamente 30~\%.
 
 \begin{table}[b!]\footnotesize
-\centering \caption{Comparação dos resultados obtidos para diferentes discriminadores considerando o
-máximo SP($\times$100), as probabilidades de decisão (PD) e falso-alarme (PF) para o melhor SP e a
-probabilidade de falso-alarme para PD$=$97,2\%.}
+\centering \caption{Comparação dos resultados obtidos para diferentes discriminadores no conjunto E15i considerando o
+máximo SP($\times$100), as probabilidades de decisão (PD) e falso alarme (PF) para o melhor SP e a
+probabilidade de falso alarme para PD$=$97,2\%.}
 \begin{tabular}{c|c|c|c|c}
     \hline \hline
     \textbf{Discriminador} &\textbf{Máx. SP}$\times$100 & \textbf{PD} (\%)  & \textbf{PF} (\%) & \textbf{PF}$_{PD=97,2\%}$ \\
@@ -2215,24 +2258,6 @@ Rede Comb. E1+E2& 94,84 $\pm$ 0,23 & 96,65 $\pm$ 0,31 & 6,95 $\pm$ 0,44 & 7,32 $
 \end{table}
 
 
-... o objetivo a partir daqui é comparar os resultados dos diversos métodos de NLICA ...
+%... o objetivo a partir daqui é comparar os resultados dos diversos métodos de NLICA ...
 
-A Figura~\ref{E15local_EffComp} possibilita uma comparação
-mais detalhada entre os discriminadores considerando
-eficiência e falso-alarme em função de $\eta$ e energia. É
-possível verificar que...
 
-\begin{figure}[tbh]
-\begin{minipage}[b]{0.48\linewidth}
-  \centering \footnotesize{Local ICA acerta Ringer erra}
- \centerline{\epsfig{file=E15local_compE_localRinger,width=8cm}}
-\end{minipage}
-\hfill
-\begin{minipage}[b]{0.48\linewidth}
-  \centering \footnotesize{Local ICA acerta ICA erra}
- \centerline{\epsfig{file=E15local_compE_localIca,width=8cm}}
-\end{minipage}
-\caption{Comparativo de eficiência (esquerda) e falso-alarme
-(direita) dos discriminadores \emph{Neural Ringer} e Local
-ICA+MLP.}\label{E15local_EffComp}
-\end{figure}
