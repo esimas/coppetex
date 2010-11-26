@@ -56,6 +56,7 @@
 \BOOKMARK [1][-]{section.6.3}{Classifica\347\343o}{chapter.6}
 \BOOKMARK [2][-]{subsection.6.3.1}{Motiva\347\343o para o Uso de Classificadores Segmentados}{section.6.3}
 \BOOKMARK [2][-]{subsection.6.3.2}{Combina\347\343o de M\372ltiplos Classificadores}{section.6.3}
+\BOOKMARK [2][-]{subsection.6.3.3}{Compara\347\343o com Discriminadores Lineares}{section.6.3}
 \BOOKMARK [1][-]{section.6.4}{Especifica\347\365es de Treinamento}{chapter.6}
 \BOOKMARK [1][-]{section.6.5}{Bases de Dados}{chapter.6}
 \BOOKMARK [2][-]{subsection.6.5.1}{Dados Simulados}{section.6.5}
@@ -74,17 +75,16 @@
 \BOOKMARK [2][-]{subsection.7.2.4}{Coment\341rios e Discuss\343o}{section.7.2}
 \BOOKMARK [0][-]{chapter.8}{Resultados - Dados Experimentais}{}
 \BOOKMARK [1][-]{section.8.1}{Efici\352ncia dos Sistemas de Classifica\347\343o Propostos na Rejei\347\343o de Raios C\363smicos}{chapter.8}
-\BOOKMARK [1][-]{section.8.2}{Colis\365es do LHC - Run 1}{chapter.8}
+\BOOKMARK [1][-]{section.8.2}{Colis\365es do LHC}{chapter.8}
 \BOOKMARK [2][-]{subsection.8.2.1}{Resultados - An\351is}{section.8.2}
 \BOOKMARK [2][-]{subsection.8.2.2}{Resultados - ICA e NLICA}{section.8.2}
 \BOOKMARK [2][-]{subsection.8.2.3}{Estudo da relev\342ncia por camada}{section.8.2}
 \BOOKMARK [2][-]{subsection.8.2.4}{Coment\341rios e Discuss\343o}{section.8.2}
-\BOOKMARK [1][-]{section.8.3}{Colis\365es do LHC - Run 2}{chapter.8}
-\BOOKMARK [1][-]{section.8.4}{Estimativa do custo computacional dos algoritmos propostos}{chapter.8}
-\BOOKMARK [2][-]{subsection.8.4.1}{Abordagens segmentadas}{section.8.4}
+\BOOKMARK [1][-]{section.8.3}{Estimativa do custo computacional dos algoritmos propostos}{chapter.8}
+\BOOKMARK [2][-]{subsection.8.3.1}{Abordagens segmentadas}{section.8.3}
 \BOOKMARK [0][-]{chapter.9}{Conclus\365es}{}
 \BOOKMARK [1][-]{section.9.1}{Trabalhos Futuros}{chapter.9}
-\BOOKMARK [0][-]{chapter*.28}{Refer\352ncias Bibliogr\341ficas}{}
+\BOOKMARK [0][-]{chapter*.25}{Refer\352ncias Bibliogr\341ficas}{}
 \BOOKMARK [0][-]{appendix.A}{Aspectos Te\363ricos das T\351cnicas de Extra\347\343o de Caracter\355sticas}{}
 \BOOKMARK [1][-]{section.A.1}{Mapas Auto-Organiz\341veis}{appendix.A}
 \BOOKMARK [2][-]{subsection.A.1.1}{Quantiza\347\343o Vetorial por Aprendizado}{section.A.1}
@@ -99,12 +99,13 @@
 \BOOKMARK [2][-]{subsection.A.4.3}{Principais Algoritmos para ICA}{section.A.4}
 \BOOKMARK [1][-]{section.A.5}{ICA N\343o-Linear}{appendix.A}
 \BOOKMARK [2][-]{subsection.A.5.1}{Algoritmo Taleb-Jutten para o Modelo PNL}{section.A.5}
+\BOOKMARK [2][-]{subsection.A.5.2}{Outros Modelos de Misturas com Restri\347\365es Estruturais}{section.A.5}
+\BOOKMARK [2][-]{subsection.A.5.3}{Algoritmos para o modelo sem restri\347\365es estruturais}{section.A.5}
 \BOOKMARK [0][-]{appendix.B}{Conceitos Fundamentais em Classifica\347\343o de Sinais}{}
 \BOOKMARK [1][-]{section.B.1}{Teste de Hip\363teses}{appendix.B}
 \BOOKMARK [1][-]{section.B.2}{Crit\351rio de Bayes}{appendix.B}
-\BOOKMARK [1][-]{section.B.3}{Filtros Casados}{appendix.B}
-\BOOKMARK [1][-]{section.B.4}{Discriminante Linear de Fisher}{appendix.B}
-\BOOKMARK [1][-]{section.B.5}{Classificadores Neurais}{appendix.B}
+\BOOKMARK [1][-]{section.B.3}{Discriminante Linear de Fisher}{appendix.B}
+\BOOKMARK [1][-]{section.B.4}{Classificadores Neurais}{appendix.B}
 \BOOKMARK [0][-]{appendix.C}{Algoritmos Gen\351ticos}{}
 \BOOKMARK [1][-]{section.C.1}{Algoritmo Gen\351tico como M\351todo de Otimiza\347\343o}{appendix.C}
 \BOOKMARK [1][-]{section.C.2}{Estrutura de um Algoritmo Gen\351tico}{appendix.C}

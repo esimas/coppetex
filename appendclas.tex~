@@ -1,0 +1,374 @@
+\chapter{Conceitos Fundamentais em Classificação de Sinais}
+\label{apend_clas}
+
+A seguir serão mostrados os fundamentos teóricos de algumas técnicas
+de classificação de padrões, iniciando-se com uma visão geral do
+problema de decisão binária. Serão apresentadas técnicas lineares
+como Filtros Casados e Análise de Discriminantes, e não-lineares,
+como Redes Neurais.
+
+\section{Teste de Hipóteses}
+
+Considerando-se inicialmente a discriminação entre duas hipóteses
+$H_1$ e $H_0$, o problema de classificação pode ser resumido pelo
+esquema da Figura \ref{class}. A fonte gera as saídas, que após
+passarem por um meio probabilístico, precisam ser detectadas a
+partir das observações do processo. As regras de decisão, que formam
+o sistema classificador, são projetadas para maximizar a
+probabilidade de detecção correta.
+
+\begin{figure} \centering
+\includegraphics[width=12cm]{cap3_transicao}
+\caption{Esquemático do problema de classificação binário.}
+\label{class}
+\end{figure}
+
+No caso da decisão binária, cada vez que uma observação é efetuada 4
+situações podem ocorrer:
+\\decidir pela hipótese $H_1$, sendo $H_0$ verdadeira;
+\\decidir pela hipótese $H_0$, sendo $H_1$ verdadeira;
+\\decidir pela hipótese $H_1$, sendo $H_1$ verdadeira; \\decidir pela hipótese $H_0$, sendo $H_0$ verdadeira.
+
+%\begin{itemize}
+%  \item decidir por $H_1$, sendo $H_0$;
+%  \item decidir por $H_0$, sendo $H_1$;
+%  \item decidir por $H_1$, sendo $H_1$;
+%  \item decidir por $H_0$, sendo $H_0$.
+%\end{itemize}
+As duas primeiras são erros de decisão e as duas últimas
+classificações corretas. Cada uma das hipóteses é associada a uma
+saída da fonte, que é mapeada em uma região do espaço de observação.
+Considerando um espaço de observação de dimensão $N$ finita, um
+ponto neste espaço pode ser representado por um vetor:
+
+\begin{equation}\label{r}
+    \mathbf{r}=[r_1,r_2,...,r_N].
+\end{equation}
+\\
+O mecanismo de transição probabilística gera pontos de acordo com as
+densidades de probabilidade condicionais
+$P_{\mathbf{r}/H_0}(\mathbf{R}/H_0)$ e
+$P_{\mathbf{r}/H_1}(\mathbf{R}/H_1)$. Quando essas probabilidades
+são conhecidas ou podem ser estimadas de alguma forma, o projeto do
+sistema classificador pode ser simplificado. Os critérios de
+\textit{Bayes} e \textit{Neyman-Pearson} são procedimentos clássicos
+utilizados para a escolha da regra de decisão.
+
+\section{Critério de Bayes}
+
+O critério de \textit{Bayes} necessita do conhecimento das
+probabilidades a priori $P_1$ e $P_0$ de a fonte produzir $H_1$ ou
+$H_0$, das probabilidades condicionais
+$P_{\mathbf{r}/H_0}(\mathbf{R}/H_0)$ e
+$P_{\mathbf{r}/H_1}(\mathbf{R}/H_1)$ e dos custos $C_{ij}$
+associados à escolha da hipótese $i$ sendo $j$ a verdadeira. O risco
+é, então, definido como \cite{book:vantrees1:2001}:
+\begin{equation}\label{riscobayes}
+    \begin{array}{c}
+       \mathfrak{R}=C_{00}P_0\int_{Z_0}P_{\mathbf{r}/H_0}(\mathbf{R}/H_0)d\mathbf{R}
+    \\+C_{10}P_0\int_{Z_1}P_{\mathbf{r}/H_0}(\mathbf{R}/H_0)d\mathbf{R}\\
+        +C_{11}P_1\int_{Z_1}P_{\mathbf{r}/H_1}(\mathbf{R}/H_1)d\mathbf{R}\\
+    +C_{01}P_1\int_{Z_0}P_{\mathbf{r}/H_1}(\mathbf{R}/H_1)d\mathbf{R}
+    \end{array},
+\end{equation}
+\\
+onde os elementos do espaço de observação que pertencem às partições
+$Z_0$ e $Z_1$ são associados, respectivamente, a $H_0$ e $H_1$. As
+variáveis $C_{ij}$ representam o custo da escolha da hipótese $i$
+quando a hipótese verdadeira é a $j$. Em geral assume-se que o custo
+de uma decisão errada ($C_{ij}$ sendo $i\neq j$) é maior do que o de
+um acerto ($C_{ij}$ sendo $i=j$).
+
+Minimizando o risco $\mathfrak{R}$ da equação (\ref{riscobayes})
+chega-se a \cite{book:vantrees1:2001}:
+
+\begin{equation}\label{seme1}
+    \frac{P_{\mathbf{r}/H_1}(\mathbf{R}/H_1)}{P_{\mathbf{r}/H_0}(\mathbf{R}/H_0)}\gtrless_{H_0}^{H_1}\frac{P_0(C_{10}-C_{00})}{P_1(C_{01}-C_{11})};
+\end{equation}
+\\
+a expressão à esquerda é chamada razão de semelhança
+($\Lambda(\mathbf{R})$) e a fração à direita é o valor limiar
+(patamar) do teste ($\kappa$). Com isso, a equação (\ref{seme1}) se
+reduz a:
+\begin{equation}\label{seme2}
+  \Lambda(\mathbf{R})  \gtrless_{H_0}^{H_1} \kappa;
+\end{equation}
+\\
+então, se a razão de semelhança é maior que o patamar, decide-se por
+$H_1$, caso contrário, escolhe-se $H_0$.
+
+Quando os custos não são conhecidos, pode-se adotar o critério
+\textit{minimax}, que minimiza o risco máximo; após algumas
+considerações chega-se a:
+\begin{equation}\label{minimax}
+    \begin{array}{c}
+      C_{00}=C_{11}=0 \\
+      C_{01}P_M = C_{10}P_F
+    \end{array},
+\end{equation}
+\\
+onde $P_F=\int_{Z_1}P_{\mathbf{r}/H_0}(\mathbf{R}/H_0)d\mathbf{R}$ é
+a probabilidade de falso-alarme (terminologia usada em sistemas de
+radar, indicando que decidiu-se pela presença do alvo $H_1$ estando
+o mesmo ausente) e
+$P_M=\int_{Z_0}P_{\mathbf{r}/H_1}(\mathbf{R}/H_1)d\mathbf{R}$ é a
+probabilidade de perda do alvo.
+
+O teste de \textit{Neyman-Pearson} \cite{book:shanmugan:1988} é
+utilizado quando não se tem informações sobre os custos ou as
+probabilidades a priori. Escolhe-se um valor limite para a
+probabilidade de falso-alarme e procura-se minimizar a probabilidade
+de perda do alvo para o valor escolhido. Como o critério utiliza
+$P_F$ e $P_M$ é preciso conhecer as probabilidades condicionais
+$P_{\mathbf{r}/H_0}(\mathbf{R}/H_0)$ e
+$P_{\mathbf{r}/H_1}(\mathbf{R}/H_1)$.
+
+\section{Discriminante Linear de Fisher}
+
+A análise de discriminantes busca a direção $\mathbf{w}$ onde as
+projeções $\mathbf{y}$ dos sinais de entrada $\mathbf{x}$ sejam
+maximamente separáveis. A análise por discriminante de Fisher (FDA -
+\textit{Fisher Discriminant Analysis}) busca a direção ótima de
+discriminação utilizando 2 parâmetros: a distância inter-classes, e
+a distância intra-classes \cite{article:fisher:1936}.
+
+Numa formulação matricial o objetivo é encontrar a direção
+$\mathbf{w}_0$ que maximiza a expressão:
+\begin{equation}\label{fisher1}
+    J(\mathbf{w})=\frac{\mathbf{w}^T \mathbf{S_B} \mathbf{w}}{\mathbf{w}^T \mathbf{S_{w}} \mathbf{w}}
+\end{equation}
+\\
+onde $\mathbf{m}_i$ é a média da classe $i$,
+$\mathbf{S_B}=(\mathbf{m}_1-\mathbf{m}_2)(\mathbf{m}_1-\mathbf{m}_2)^T$
+é a matriz de separação inter-classes e $\mathbf{S_{w}}=\mathbf{S}_1
++ \mathbf{S}_2$ é a matriz de separação intra-classes, sendo:
+\begin{equation}\label{fisher2}
+\mathbf{S}_i=\sum_{\mathbf{x} \in
+\mathcal{D_i}}(\mathbf{x}-\mathbf{m}_i)(\mathbf{x}-\mathbf{m}_i)^T
+\end{equation}
+
+Pode-se provar que a direção ótima que maximiza (\ref{fisher1}) é
+dada por \cite{book:duda:2000}:
+\begin{equation}\label{fisher3}
+\mathbf{w}=\mathbf{S_{w}}^{-1}(\mathbf{m}_1-\mathbf{m}_2)
+\end{equation}
+
+O discriminante de Fisher é capaz de encontrar a transformação
+linear ótima dos sinais de entrada de modo que os sinais projetados
+$\mathbf{y}=\mathbf{w}^T \mathbf{x}$ tenham máxima separação.
+Pode-se realizar a análise por discriminante de Fisher de modo
+analítico usando-se as equações (\ref{fisher1}), (\ref{fisher2}) e
+(\ref{fisher3}), ou de modo iterativo a partir de uma rede neural de
+uma camada e neurônio linear.
+%
+%\subsection{Parâmetros de desempenho de classificadores}
+%
+%Existem inúmeras formas para avaliar o desempenho dos
+%classificadores entre as quais pode-se mencionar a curva ROC
+%(\textit{Receiver Operating Characteristic}) e o índice SP.
+%
+%A curva ROC é obtida calculando-se probabilidade de detecção (PD) e
+%a probabilidade de falso alarme (PF) variando-se o patamar de
+%decisão \cite{book:vantrees1:2001}. Na Figura \ref{roc} podem ser
+%vistas duas curvas ROC, sendo o classificador de melhor desempenho
+%geral aquele que tem maior área sob a curva (curva 2 - tracejada).
+%Porém, se o objetivo é operar o sistema com um falso alarme de no
+%máximo 10\%, a curva 1 apresenta maior probabilidade de detecção e
+%conseqüentemente um melhor desempenho nesta região da curva ROC.
+%
+%\begin{figure} \centering
+%\includegraphics[width=5cm]{cap3_roc.eps}
+%\caption{Exemplos de curvas ROC, curva 1 em linha contínua e curva 2
+%tracejada.} \label{roc}
+%\end{figure}
+%
+%O índice SP  é definido na equação \ref{sp}
+%\cite{article:seixas:2005}:
+%
+%\begin{equation}\label{sp}
+%    SP=(Ef_1+Ef_2)(Ef_1\times Ef_2)
+%\end{equation}
+%\\
+%onde $Ef_1$ e $Ef_2$ são respectivamente a eficiência de detecção
+%para as classes $C_1$ e $C_2$. A eficiência de detecção de uma
+%classe é definida como o número elementos classificados corretamente
+%dividido pelo total de amostras da classe. Quando $Ef_1=Ef_2=1$ o
+%valor máximo $SP=2$ é atingido. Como a curva ROC e o índice SP são
+%calculados variando o patamar de decisão, podem ser usados para a
+%escolha do patamar ótimo para operação do classificador.
+
+\section{Classificadores Neurais}
+
+%As Redes Neurais Artificiais (RNAs) são, assim como os algoritmos
+%genéticos e o recozimento simulado (\textit{simulated annealing}),
+%técnicas computacionais que têm inspiração em fenômenos naturais. Os
+%algoritmos genéticos \cite{Book:Goldberg:1989} tentam sintetizar os
+%fenômenos de reprodução e seleção natural dos indivíduos para a
+%busca de otimização global. A técnica \textit{simulated annealing}
+%utiliza algoritmos que simulam o fenômeno do recozimento de metais,
+%onde após grande agitação das moléculas a energia é perdida de forma
+%lenta e gradual \cite{Article:Finnerty:1994}.
+
+As redes neurais artificiais (RNA) \cite{haykin:nn:2008} são modelos
+matemáticos que emulam algumas características do cérebro humano,
+sendo capazes de adquirir conhecimento (aprender) e generalizar
+(responder corretamente a estímulos novos). Devido ao poder
+computacional, obtido de sua estrutura paralelamente distribuída, e
+às habilidades de aprender e generalizar, as RNAs vêm sendo
+utilizadas em diversas aplicações como reconhecimento de padrões e
+classificação \cite{Article:Simasimtc:2005}, processamento de sinais
+\cite{Article:Simas:2006}, aproximação de funções
+\cite{Article:Zoppoli:1996}, controle e identificação de sistemas
+\cite{Article:ichikawa:1992}. A seguir serão descritos os
+fundamentos matemáticos das redes neurais e sua aplicação como
+classificadores. Os livros \cite{haykin:nn:2008} e
+\cite{book:wasserman:1989} fornecem textos mais abrangentes sobre
+assunto.
+
+Uma diferença fundamental entre os classificadores neurais e os
+métodos clássicos é que nestes últimos é
+necessário formular um modelo matemático a partir dos sinais. Na
+abordagem neural, o classificador trabalha diretamente no conjunto
+de dados, ficando o modelo matemático implícito nos valores dos
+pesos sinápticos obtidos após o treinamento. 
+
+As redes de múltiplas camadas alimentadas adiante
+(\textit{feed-forward}) são compostas a partir da conexão seqüencial
+de duas ou mais camadas de neurônios. Essas redes são usualmente
+chamadas de perceptrons de múltiplas camadas (MLP -
+\textit{Multi-layer Perceptrons}) por serem uma generalização do
+perceptron de camada única. Pode-se verificar na Figura \ref{mlp2}
+que a saída de uma camada é utilizada como entrada da próxima. A
+rede mostrada tem três camadas: a camada de entrada, formada pelos
+nós sensoriais, a camada oculta, e a camada de saída. As conexões
+com o ambiente externo são feitas pelas camadas de entrada e saída.
+Por não possuirem laços de realimentação as redes
+\textit{feed-forward} são estruturalmente estáveis. A camada oculta
+é responsável, em um processo de reconhecimento de padrões, por
+extrair características estatísticas de ordem elevada, transformando
+os dados de entrada.
+
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=8cm]{cap3_class}
+\caption{Exemplo de uma rede neural utilizada para separação dos
+sinais de entrada em 3 classes.} \label{mlp2}
+\end{figure}
+
+As redes MLP utilizam, em geral, neurônios com função de ativação
+tipo sigmoidal (tangente hiperbólica ou logística). Em alguns casos
+pode-se utilizar neurônios lineares.
+
+Na etapa de propagação do sinal para frente, o vetor de entradas é apresentado à
+  rede, o sinal percorre todas as camadas e a saída da rede é calculada. A
+  saída do neurônio $j$ da camada $l$ é obtida de:
+    \begin{equation}\label{ne}
+        y_j^{(l)}(n)=\varphi_j\bigg(\sum_{i=0}^{m}\omega_{ji}^{(l)}(n)y_{i}^{(l-1)}(n)\bigg)
+    \end{equation}
+    \\
+    onde $\varphi_j(.)$ é a função de ativação e $\omega_{ji}^{(l)}$ o conjunto de pesos do neurônio
+    $j$. A saída da camada anterior $y_{i}^{(l-1)}(n)$ é a entrada
+    da camada $l$. Para os neurônios da primeira camada as entradas
+    são os elementos do vetor $\mathbf{x}(n)$.
+
+
+Para o projeto do classificador neural, em geral, dividem-se os pares entrada
+saída disponíveis nos conjuntos de treino, teste e validação. A
+divisão é importante para garantir que a rede treinada consiga
+generalizar bem o conhecimento adquirido. Apenas o conjunto de
+treino é considerado para o ajuste dos pesos sinápticos. O conjunto
+de validação é utilizado na parada do treinamento em caso de
+sobre-aprendizado. O sobre-aprendizado acontece quando a rede se
+ajusta demais ao conjunto de treino, perdendo capacidade de
+generalização. O resultado esperado do classificador é avaliado
+através do conjunto de teste, que não foi usado no ajuste dos pesos
+nem na parada do algoritmo.
+
+Para decisão entre duas classes, pode-se usar na camada de saída um
+neurônio tipo tangente hiperbólica, associando-se $y=+1$ para uma
+classe e $y=-1$ para a outra. 
+
+Para decisão entre $N$ classes
+($N\geq3$), pode-se fazer com que a camada de saída tenha $N$
+neurônios. Associa-se um neurônio para cada classe. Quando a classe
+$k$ estiver presente, a saída desejada no neurônio $k$ associado
+deve ser $+1$ e nos demais $-1$. Na fase de operação decide-se pela
+classe do neurônio com a maior saída. A rede da Figura \ref{mlp2} é
+um exemplo de arquitetura que pode ser usada para a separação entre
+três classes a partir de um espaço de entrada de dimensão $m$.
+
+Antes da utilização, os exemplos de treinamento da rede devem ser pré-processados para 
+facilitar o processo de extração de características através de procedimentos 
+como a remoção da média e a normalização. Em alguns casos quando 
+a faixa dinâmica de uma variável é muito grande pode-se aplicar a função 
+logarítmica para diminuir a excursão total.
+
+
+%
+%A atenção para alguns procedimentos básicos pode simplificar o
+%projeto e até otimizar o desempenho dos classificadores neurais
+%\cite{Book:Haykin:2001}:
+%
+%\begin{itemize}
+%  \item entradas de classes semelhantes devem produzir
+%  representações semelhantes;
+%
+%  \item representações diferentes devem ser associadas a elementos
+%  de classes distintas;
+%
+%  \item características importantes devem ser mapeadas por um maior
+%  número de neurônios;
+%
+%  \item informações a priori sobre o problema devem ser
+%incorporadas
+%  no projeto da rede.
+%\end{itemize}
+%
+%\begin{figure}[tbph]
+%\begin{center}
+%\subfigure[]{\label{classes31}\epsfig{file=cap3_classes31.eps,width=6cm,clip=}}
+%\subfigure[]{\label{classes32}\epsfig{file=cap3_classes32.eps,width=6cm,clip=}}
+%\end{center}
+%\caption{(a) Classes no espaço de entrada e (b) no espaço oculto.}
+%\end{figure}
+
+%Considerando uma rede de duas camadas (ver Figura \ref{mlp2}), a
+%camada oculta é responsável por um mapeamento não-linear das
+%entradas. Este mapeamento busca a máxima separação das classes
+%diferentes, facilitando o processo de classificação realizado pela
+%camada de saída.
+%Para ilustrar esse processo, utilizou-se uma rede
+%com duas entradas ($m=2$) e dois neurônios na camada oculta ($k=2$),
+%com o objetivo de escolher entre 3 classes.
+%Conforme mostrado nas Figuras \ref{classes31} e \ref{classes32} as
+%classes são mapeadas pela rede neural para as extremidades do espaço
+%oculto, simplificando a separação a ser realizada pelos neurônios da
+%camada de saída.
+%
+%Outro passo importante é o pré-processamento dos pares entrada-saída
+%disponíveis. Alguma simplificação do problema, com a diminuição da
+%dimensão das entradas, pode ser obtido calculando as correlações
+%cruzadas das entradas e as correlações destas com as saídas.
+%Entradas com pouca correlação com as saídas podem ser desprezadas
+%pois não contribuem significativamente para o processo de
+%classificação, e podem até prejudicar o processo de aprendizagem.
+%Caso ocorram duas entradas muito correlacionadas, é importante
+%realizar a descorrelação antes de iniciar o treinamento.
+%Procedimentos como normalização, remoção da média e limitação da
+%faixa dinâmica de excursão das variáveis também são fundamentais
+%para o bom desempenho do classificador.
+%
+%Técnicas como Análise de Componentes Principais (PCA -
+%\textit{Principal Component Analysis}) e Análise de Componentes
+%Independentes (ICA - \textit{Independent Component Analysis}) podem
+%ser utilizadas como pré-processamento para os classificadores
+%neurais. A PCA obtém uma transformação linear onde as componentes na
+%nova base são ortogonais entre si e ordenadas por energia, podendo
+%ser utilizada para compactação da informação a partir do uso apenas
+%das componentes mais energéticas. A ICA, diferente da PCA, busca
+%componentes estatisticamente independentes, ou seja, não-linearmente
+%descorrelacionadas. Enquanto a PCA extrai componentes de máxima
+%representação para reconstrução do sinal, a ICA tenta encontrar, sem
+%supervisão externa, informações importantes escondidas no conjunto
+%apresentado, de modo que a estrutura essencial dos sinais esteja
+%mais acessível \cite{book:oja:2001}.

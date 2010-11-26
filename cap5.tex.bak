@@ -1,4 +1,4 @@
-\chapter{Metodologia Proposta}\label{cap_metod}
+\chapter{Metodologia Proposta e Bases de Dados Utilizadas}\label{cap_metod}
 
 Neste capítulo, será apresentada a metodologia proposta para
 otimizar o sistema neural de detecção de elétrons no segundo nível
@@ -15,7 +15,7 @@ supervisionados na arquitetura MLP).
 Considerando que cada camada do calorímetro do ATLAS tem
 propriedades físicas distintas, neste trabalho os sistemas de
 discriminação podem operar de dois modos. No modo segmentado
-o processamento é realizado a nível de cada camada. No modo
+o processamento é realizado em cada camada. No modo
 não-segmentado, os sinais de todas as camadas são concatenados num
 único vetor, que é utilizado como entrada para os discriminadores.
 
@@ -59,22 +59,20 @@ varia entre -1 e 1),
 calcula-se os valores do SP correspondentes. O SP máximo indica um
 patamar que apresenta alta eficiência para as duas classes.
 
-Na Figura~\ref{roccomp1} são mostradas as distribuição das saídas
+Na Figura~\ref{roccomp1} são mostradas as distribuições das saídas
 de dois classificadores (fictícios) para duas classes distintas.
 Percebe-se, que no exemplo 1, há uma maior superposição entre as
-distribuições das duas classes (se comparado ao exemplo 2).
-Observando as curvas ROC (ver Figura~\ref{roccomp2}) geradas para
-estes classificadores, percebe-se que o classificador do exemplo 2
-produz uma maior área sob a curva ROC, e consequentemente maior
-eficiência de discriminação (o que já era esperado a partir da
-análise dos histogramas das saídas). Ainda na
-Figura~\ref{roccomp2}, pode-se observar as curvas do patamar de
-decisão (Y) versus o SP para os dois exemplos. Percebe-se que os
-valores máximos do SP, em cada caso, aconteceram para valores
-distintos do patamar. Nas curvas ROC e SP são marcados os pontos
-de máximo SP e indicados os valores de PD, PF e do patamar
-ótimo para cada caso. É importante
-notar que o SP é sensível a degradação da eficiência de qualquer uma das classes.
+duas classes (se comparado ao exemplo 2). Observando as curvas ROC
+(ver Figura~\ref{roccomp2}) geradas para estes classificadores,
+percebe-se que o classificador do exemplo 2 produz uma maior área
+sob a curva, e consequentemente maior eficiência de discriminação
+(o que já era esperado a partir da análise dos histogramas das
+saídas). Ainda na Figura~\ref{roccomp2}, pode-se observar as
+curvas do patamar de decisão (Y) versus o SP para os dois
+exemplos. Percebe-se que os valores máximos do SP, em cada caso,
+aconteceram para valores distintos do patamar. Nas curvas ROC e
+SP, são marcados os pontos de máximo SP e indicados os valores de
+PD, PF e do patamar ótimo para cada caso.
 
 \begin{figure}[h!]
 \begin{minipage}[b]{0.48\linewidth}
@@ -104,11 +102,47 @@ Exemplo 1 à esquerda e Exemplo 2 à direita.}\label{roccomp1}
 classificadores distintos.}\label{roccomp2}
 \end{figure}
 
-Adicionalmente a estes parâmetros, serão realizadas comparações de
-desempenho em termos de algumas variáveis físicas das assinaturas
-de interesse como a energia e a posição de interação no detector
-(considerando os eixos $\eta$ e $\phi$ do sistema de coordenadas
-do ATLAS).
+É importante notar que, o SP é sensível à degradação da eficiência
+de qualquer uma das classes, e ainda que, o máximo SP serve como
+uma métrica para comparação da eficiência de dois ou mais
+discriminadores (quanto maior o valor do máximo SP, mais
+eficiente é o classificador em termos da minimização do
+erro para as duas classes).
+
+Adicionalmente a estes parâmetros, serão realizadas nesta tese
+comparações de desempenho a partir da variação da eficiência e do
+falso alarme em função de algumas variáveis físicas de interesse
+como a energia e a posição de interação no detector (considerando
+os eixos $\eta$ e $\phi$ do sistema de coordenadas do ATLAS).
+Estas análises permitem validar os resultados obtidos considerando
+conhecimento especialista do problema.
+
+Para expressar os resultados da eficiência de classificação
+(considerando os parâmetros máximo SP, PD e PF) serão
+apresentados, para cada parâmetro, o valor médio e o desvio padrão
+associados, considerando-se as diversas inicializações de
+treinamento através do procedimento de validação
+cruzada~\cite{haykin:nn:2008} descrito a seguir:
+\begin{enumerate}
+    \item Os sinais disponíveis (para cada classe) são divididos de modo
+aleatório em 12 grupos (com aproximadamente a mesma quantidade de
+eventos em cada um).
+    \item Sorteia-se 4 grupos (em cada classe) para compor o
+conjunto de treino, 4 para o conjunto de validação e outros 4 para
+o de teste.
+    \item O procedimento de treinamento é realizado.
+    \item O resultado é armazenado e o treinamento re-iniciado até
+    completar 10 inicializações.
+\end{enumerate}
+Os algoritmos de extração de características (NLICA) também são
+re-iniciados a cada sorteio assim como os classificadores neurais.
+
+Para as análises em termos dos parâmetros físicos de interesse
+(energia, $\eta$ e $\phi$) são calculados histogramas onde, em
+geral, são mostradas barras de erro calculadas como
+$100/\sqrt{N}$, onde $N$ é o número de eventos contidos em cada
+região analisada ao longo das faixas dinâmicas de cada
+parâmetro~\cite{book:knoll:2000}.
 
 \section{Extração de Características}
 
@@ -131,9 +165,10 @@ procedimento é ilustrado na Figura~\ref{fig_fexg}.
 estimadas separadamente (de modo segmentado) para os anéis
 produzidos em cada camada do calorímetro. Este procedimento, em
 geral, produz resultados de mais fácil interpretação física, pois
-sabe-se que cada camada do calorímetro possui características
-distintas como o tipo dos sensores e a granularidade das células
-detectoras. A Figura \ref{fig_fexs} ilustra este procedimento.
+sabe-se que cada camada do calorímetro possui
+ca\-rac\-te\-rís\-ticas distintas como o tipo dos sensores e a
+granularidade das células detectoras. A Figura \ref{fig_fexs}
+ilustra este procedimento.
 \end{itemize}
 
 \begin{figure}[th]
@@ -145,7 +180,7 @@ não-segmentado.} \label{fig_fexg}
 
 \begin{figure}[th]
 \centering
-\includegraphics[width=11cm]{cap3_fex_seg}
+\includegraphics[width=13cm]{cap3_fex_seg}
 \caption{Processo de extração de características no modo
 segmentado.} \label{fig_fexs}
 \end{figure}
@@ -163,15 +198,21 @@ dados envolve sempre toda a informação da RoI numa certa camada).
 Como as camadas do calorímetro são sobrepostas, e o evento que se
 desenvolve interage com todas elas, pode ocorrer algum tipo de
 redundância nas informações produzidas nos diversos segmentos.
+
+Por outro lado, algumas camadas do calorímetro são projetadas
+especialmente para conter a parte final dos chuveiros,
+apresentando uma baixa relação sinal-ruído (e consequentemente não
+devem ser relevantes para o processo de identificação de elétrons)
+
 Neste trabalho, será realizado um estudo visando identificar as
-camadas que apresentam informação redundante, e verificar qual a
-economia obtida no tempo de processamento se as camadas
-redundantes forem descartadas.
+camadas que realmente apresentam informações relevantes, e
+verificar qual a economia obtida no tempo de processamento se as
+camadas não-relevantes forem descartadas.
 
 \subsection{Algoritmos de Extração de Características}\label{sec_fex5}
 
 Este trabalho está focado na utilização do modelo não-linear da
-análise de componentes independentes (NLICA) para extrair
+análise de componentes independentes (NLICA) visando extrair
 características relevantes do sinais dos calorímetros para a
 discriminação elétron/jato no segundo nível de filtragem do ATLAS.
 
@@ -179,9 +220,10 @@ Considerando os diversos algoritmos e modelos existentes para a
 estimação da NLICA (mostrados no Capítulo~\ref{cap_ica}), no
 contexto deste trabalho, foram utilizados três configurações:
 \begin{itemize}
- \item um algoritmo para o modelo sem restrições estruturais, neste caso foram utilizados mapas auto-organizáveis - SOM;
- \item algoritmos que estimam o modelo pós não-linear (PNL);
- \item adicionalmente, foi utilizado o modelo da ICA Local.
+ \item Um algoritmo para o modelo sem restrições estruturais,
+ neste caso foi utilizado o mapa auto-organizável - SOM;
+ \item Algoritmos que estimam o modelo pós não-linear (PNL);
+ \item Adicionalmente, foi utilizado o modelo da ICA Local.
 \end{itemize}
 
 Foram utilizados também algumas das modificações que incluem
@@ -189,8 +231,9 @@ informação supervisionada no processo de estimação dos componentes
 independentes (conforme detalhado na seção~\ref{sec_icasup}).
 Neste contexto, foram testadas duas possibilidades:
 \begin{itemize}
- \item utilização dos rótulos de classe como entrada para os algoritmos;
- \item compactação através da análise de componentes de discriminação (PCD).
+ \item Utilização dos rótulos de classe como entrada para os
+ algoritmos.
+ \item Compactação através da análise de componentes de discriminação (PCD).
 \end{itemize}
 
 As configurações listadas acima foram escolhidas com o objetivo de
@@ -198,6 +241,316 @@ explorar os principais modos de estimação da NLICA (que
 compreendem os modelos com restrições estruturais e os modelos
 livres), através de algoritmos com aplicação difundida na
 literatura (PNL e SOM).
+
+A seguir serão descritas as metodologias utilizadas para a
+estimação dos modelos da ICA.
+
+\subsubsection{Metodologia para Estimação da ICA Linear}
+
+No trabalho~\cite{tese:torres:2010}, foi realizado um estudo, com
+dados simulados, a respeito da utilização do modelo linear da
+análise de componentes independentes para extração de
+características dos sinais em anéis. De modo bastante completo,
+foram abordadas diversas configurações para a estimação dos
+componentes independentes. A configuração que apresentou melhor
+resultado, em termos da eficiência de dis\-cri\-mi\-na\-ção,
+compreende as etapas listadas a seguir:
+\begin{itemize}
+ \item Compactação dos sinais em anéis de modo segmentado a partir da análise
+de componentes principais (PCD).
+ \item Estimação da ICA através do algoritmo JADE~\cite{article:Cardoso:1993}.
+ \item Classificação a partir de um discriminador neural alimentado pelos
+componentes independentes.
+\end{itemize}
+
+Em comparação com o algoritmo FastICA~\cite{article:fastica:1999} (outro algoritmo
+bastante utilizado para a estimação dos componentes independentes no modelo de mistura linear),
+o JADE mostrou, em trabalhos anteriores~\cite{sonar:ica,simas:IEENSS09},
+melhores resultados em problemas de extração de características e separação de fontes.
+
+Na comparação que será apresentada nesta tese, será
+considerado apenas o modo de estimação da ICA que produziu melhor
+resultado.
+
+
+\subsubsection{Metodologia para Estimação da ICA Local}
+
+Na ICA Local, conforme mencionado no Capítulo~\ref{cap_ica},
+inicialmente é executada uma etapa de agrupamento
+não-supervisionado (\emph{clustering}), onde o conjunto
+de sinais é mapeado em dois grupos. O número de agrupamentos
+a ser utilizado foi escolhido considerando que o problema é de
+classificação binária (em duas classes, elétrons e jatos).
+
+O algoritmo utilizado para o agrupamento foi o \emph{k-means}~\cite{book:duda:2000}.
+O \emph{k-means} é um dos métodos agrupamento mais utilizados
+na literatura~\cite{article:kmeans:2002,Alsabti98anefficient,kmeans2:2004}.
+Uma outra alternativa para a realização do agrupamento seria o uso de mapas
+auto-organizáveis. Para os sinais utilizados, o desempenho dos dois
+métodos foi semelhante, porém, o esforço computacional exigido pelo
+\emph{k-means} foi menor.
+
+Após a divisão nos \emph{clusters}, foi aplicado um algoritmo de
+ICA linear (JADE) para estimar os componentes independentes locais.
+Em seguida, classificadores neurais MLP de duas camadas (um para
+cada agrupamento) foram treinados a partir destes
+componentes. Neste trabalho, todas as etapas de processamento do
+discriminador baseado em ICA Local (agrupamento, ICA e classificação)
+foram realizadas de modo não-segmentado.
+
+É importante notar que, devido às diferentes
+concentrações dos eventos de cada classe nos agrupamentos,
+os patamares que otimizam o desempenho local (considerando
+os agrupamentos individualmente) podem não ser ótimos quando o
+objetivo é maximizar a eficiência no conjunto de todos os eventos.
+Deste modo, precisa-se otimizar o SP (global) variando-se os patamares
+locais (Y$_1$ e Y$_2$). Para realizar esse procedimento, foi utilizado um
+algoritmo genético (AG)~\cite{Book:Goldberg:1989}, onde o espaço de busca
+é composto por Y$_1$ e Y$_2$
+e o objetivo é maximizar o SP. Uma das vantagens deste método de
+otimização é que não há a necessidade de encontrar as derivadas da
+função custo (que no caso é o produto SP) em função de Y$_1$ e
+Y$_2$, além disso no AG, a busca é realizada globalmente (mais
+detalhes no Apêndice~\ref{apend_GA}). Um diagrama do treinamento do discriminador
+baseado em ICA Local é mostrado Figura~\ref{E10local_diagAll}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=14cm]{localIcaDiag}
+\caption{Diagrama do discriminador baseado em ICA Local.} \label{E10local_diagAll}
+\end{figure}
+
+
+\subsubsection{Metodologia para Treinamento dos Mapas Auto-Organizáveis}
+
+Neste trabalho, os mapas auto-organizáveis foram utilizados por
+estarem diretamente relacionados com o paradigma da
+NLICA\footnote{O SOM foi um dos primeiros algoritmos propostos
+para a NLICA, mais detalhes em~\cite{article:simas:2007:lnlm}}.
+Porém, para estimar N componentes independentes, é preciso utilizar
+um mapa auto-organizável N-dimensional. Assim, para o problema em
+questão, onde seriam estimados algumas dezenas de componentes,
+este método seria proibitivamente lento. Um outro problema
+observado é que a precisão na estimação também diminui com o
+aumento da dimensionalidade.
+
+Uma solução encontrada foi a utilização de mapas bi-dimensionais, que,
+no contexto da NLICA, produzem uma estimativa de dois componentes
+independentes não-lineares (considerando um mapeamento sem restrições
+estruturais). Os mapas auto-organizáveis bi-dimensionais também são
+bastante úteis para a visualização e análise de dados de alta dimensão
+(monitoração \emph{online} do \emph{trigger} ou análise \emph{offline}
+dos eventos salvos em mídia permanente).
+
+Para treinamento dos mapas foram utilizadas diferentes abordagens,
+que podem ser classificadas de dois modos:
+\begin{description}
+ \item[quanto à segmentação dos dados] - em não-segmentado (considerando todos os 100 anéis como
+entrada) e segmentado (utilizando, separadamente, os sinais em
+anéis de cada camada do calorímetro, neste caso, são treinados 7
+mapas, um para cada camada);
+ \item[quanto ao uso de informação supervisionada no treinamento] -
+em não-supervisionado (sendo este o procedimento tradicional de
+treinamento de mapas auto-organizáveis e referido no texto
+simplesmente como SOM), ajustado por LVQ~\cite{article:gray:1984}
+(neste caso, após o treinamento não-supervisionado, os pesos do
+mapa são ajustados, usando informação dos rótulos de
+ classe, por um algoritmo de quantização vetorial por aprendizado - LVQ,
+para mais detalhes ver o Apêndice~\ref{apend_fex}) e
+supervisionado (este modo de treinamento foi descrito na
+Seção~\ref{sec_icasup} e consiste em utilizar os rótulos de classe
+como uma variável de entrada adicional). A
+Figura~\ref{E10somdiag1} ilustra os processos de treinamento dos
+SOM utilizando informação das classes.
+\end{description}
+
+\begin{figure}[h!]
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=som_sup_lvq.pdf,width=4cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=som_sup_cIn,width=3.5cm}}
+\end{minipage}
+\caption{Diagramas dos processos de treinamento dos mapas auto-organizáveis utilizando
+informação a respeito das classes através de LVQ (esquerda) e rótulos de classe
+como entradas (direita).}\label{E10somdiag1}
+\end{figure}
+
+Considerando que serão utilizados mapas bi-dimensionais, ainda é
+necessário escolher o número de neurônios de cada mapa e sua
+distribuição na grade (quadrada, retangular, etc). Para guiar este
+processo, que usualmente é realizado de modo empírico (por
+tentativas)~\cite{Flexer:2001:som,book:kohonen:2001}, foram
+utilizados dois parâmetros: o erro de reconstrução médio e o
+índice soma-produto (SP), conforme descritos a seguir:
+\begin{description}
+    \item[Erro de reconstrução médio (ERM)] - Os mapas auto-organizáveis
+    podem ser considerados como um método de quantização vetorial,
+    onde os pesos dos neurônios formam o \emph{codebook} (para
+    mais detalhes ver o Apêndice~\ref{apend_fex}). Na operação do
+    SOM, cada sinal $\mathbf{x}_A$ apresentado na entrada é associado ao
+    neurônio $\mathbf{w}_c$ mais próximo (considerando, por exemplo, a distância
+    euclidiana), este neurônio é chamado de ``neurônio vencedor''.
+    Os sinais associados a cada neurônio formam um
+    agrupamento centrado em $\mathbf{w}_c$ e podem ser aproximados
+    pelo próprio neurônio. A partir desta correspondência, é gerado um erro
+    de aproximação (ou reconstrução) definido por:
+    \begin{equation}\label{eq_erm}
+        ER=|\mathbf{x}_A-\mathbf{w}_c|.
+    \end{equation}
+    O erro de reconstrução médio é uma métrica que pode ser utilizada para
+    indicar a qualidade da aproximação obtida pelo SOM e tende a diminuir com o
+    aumento do número de neurônios do mapa (pois, deste modo, o
+    tamanho médio dos agrupamentos associados a cada neurônio
+    também tende a diminuir).
+    \item[Índice soma-produto (SP)] - o produto SP (conforme definido
+    na Equação~\ref{eq_sp}), está sendo utilizado como parâmetro
+    para avaliar o desempenho dos classificadores. Associando-se
+    cada neurônio do SOM à classe que mais o ativa, pode-se utilizar o mapa
+    auto-organizável diretamente como classificador. O SP é
+    calculado a partir das probabilidades de detecção e
+    falso alarme produzidas pelo mapa.
+\end{description}
+
+No estudo do tamanho ótimo dos mapas, foram utilizados mapas
+quadrados (L$\times$L) e retangulares (L$\times$P), variando-se o
+número de neurônios de 2 a 100. Para o treinamento, foi utilizada a
+função de vizinhança gaussiana e aprendizagem em batelada. A largura
+da vizinhança é linearmente decrescida durante o processo de
+treinamento.
+
+Para os mapas retangulares, a proporção entre L e P foi escolhida a
+partir da razão entre as energias retidas pelo primeiro e segundo
+componentes principais\footnote{Esta escolha tem o objetivo de
+melhor ``acomodar'' os dados em duas dimensões}:
+\begin{equation}\label{eq_relLP}
+    \frac{L}{P}=\frac{E_{PC1}}{E_{PC2}},
+\end{equation}
+onde $E_{PCi}$ é a energia do componente principal i. Tanto para
+os dados simulados, como para os experimentais, obteve-se:
+$\frac{E_{PC1}}{E_{PC2}}\sim 2$, portanto os mapas retangulares
+utilizados tem a relação: L$=$2P.
+
+Na escolha da dimensão ótima, o objetivo é manter um compromisso
+entre:
+\begin{itemize}
+    \item Alto SP (consequentemente alta eficiência na discriminação);
+    \item Baixo EMR (indicando boa representação dos dados);
+    \item Reduzido número de neurônios (para garantir a rápida
+    operação do sistema de classificação).
+\end{itemize}
+
+A partir dos mapas auto-organizáveis, obtidos por diferentes
+abordagens de treinamento, foram calculadas as projeções dos
+sinais de entrada $\mathbf{x}$ no espaço de características,
+fazendo:
+\begin{equation}\label{eq_somprojj}
+  \mathbf{u}=\mathbf{W}\mathbf{x}
+\end{equation}
+onde $\mathbf{W}$ é a matriz de pesos sinápticos do mapa, conforme
+definido com mais detalhes no Apêndice~\ref{apend_fex}. Nos
+discriminadores baseados na extração de características por mapas
+auto-organizáveis, os classificadores são alimentados pelas
+projeções $\mathbf{u}$.
+
+
+\subsubsection{Metodologia para Estimação do Modelo PNL}
+
+Considerando o modelo pós não-linear (PNL), foi comentado no
+Capítulo~\ref{cap_ica} que, com o aumento da dimensionalidade do
+problema (número de sinais envolvidos), há também um rápido aumento do
+custo computacional dos algoritmos e uma maior degradação na
+precisão da estimação dos componentes independentes.
+
+O algoritmo utilizado neste trabalho para estimar a NLICA através
+do modelo PNL foi proposto em~\cite{article:jutten:1999} e estima
+as funções não-lineares através de redes neurais MLP (conforme
+descrito mais detalhadamente no Apêndice~\ref{apend_fex}). O
+treinamento é realizado através de um algoritmo gradiente que
+busca maximizar a independência entre os componentes estimados na
+saída do modelo. Este algoritmo foi escolhido por apresentar um
+custo computacional reduzido (se comparado a outros algoritmos que
+utilizam métodos de busca globais, como propostos
+em~\cite{article:kai:2006,article:rojas:nlica:2004}), e uma boa
+precisão na estimação dos componentes independentes, conforme
+observado no trabalho~\cite{article:simas:2007:lnlm}.
+
+Com o objetivo de evitar problemas na estimação dos componentes
+independentes, devidos à alta dimensionalidade do problema, o algoritmo
+para o modelo PNL foi aplicado apenas no modo segmentado, pois assim,
+ao invés de utilizar os 100 anéis, a dimensão do problema é reduzida
+para o número de anéis de cada camada (PS$\rightarrow$8, E1$\rightarrow$64,
+E2$\rightarrow$8, E3$\rightarrow$8, H0$\rightarrow$4, H1$\rightarrow$4,
+H2$\rightarrow$4).
+
+A estimação dos componentes independentes pelo modelo PNL foi realizada
+de dois modos distintos, conforme descrito a seguir:
+
+\begin{description}
+ \item[Utilizando uma etapa de pré-processamento para compactação] -
+foi incluído um pré-processamento para a redução da dimensão
+utilizando dois algoritmos de compactação: PCA (Análise de
+Componentes Principais - \emph{Principal Component Analysis}) e
+PCD (Componentes Principais de Discriminação - \emph{Principal
+Discriminating Components})~\cite{seixas:pcd:1995}. A compactação
+(assim como a estimação dos componentes independentes) também foi
+realizada de modo segmentado. Um diagrama do método proposto para
+a estimação dos componentes independentes através do modelo PNL é
+mostrado na Figura~\ref{PNLdiag1}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15cm]{Diagrama_pnl}
+\caption{Diagrama do discriminador baseado no modelo PNL da NLICA.} \label{PNLdiag1}
+\end{figure}
+
+ \item[Através de um algoritmo PNL modificado] - conforme descrito na
+seção~\ref{sec_icafex2} e em~\cite{article:simas:neucom2010}, no
+desenvolvimento deste trabalho foi proposto um algoritmo para
+estimação do modelo pós não-linear da NLICA, que utiliza
+informação supervisionada no processo de treinamento e, estima de
+modo simultâneo os blocos de compactação e do modelo PNL mostrados
+na Figura~\ref{PNLdiag1}. É utilizado um algoritmo genético para
+otimizar uma função custo que avalia, ao mesmo tempo, a
+independência entre os componentes e a discriminação obtida ao
+alimentar um classificador linear com os componentes estimados. O
+número de componentes ótimo para um dado problema é estimado de
+modo semelhante ao realizado na compactação por PCD (ou seja com o
+gradual acréscimo de componentes até a estabilização da eficiência
+de discriminação próximo ao seu valor máximo). Uma vantagem do
+modelo proposto é que as tarefas de compactação e estimação dos
+componentes independentes são realizadas de modo simultâneo, pelo
+mesmo algoritmo. Por outro lado, o uso do algoritmo genético
+contribui para o aumento do custo computacional no treinamento (na
+operação \emph{online}, após o treinamento, o custo computacional
+dos discriminadores baseados no modelo PNL é idêntico).
+\end{description}
+
+Conforme mencionado anteriormente (e descrito com mais detalhes no
+Apêndice~\ref{apend_fex}), na estimação das não-linearidades do
+modelo PNL são utilizadas redes neurais (cada função não-linear é
+aproximada por uma rede MLP de duas camadas com uma variável de
+entrada, camada oculta de neurônios tipo tangente hiperbólica e um
+neurônio de saída com função de ativação linear). Um parâmetro que
+precisa ser escolhido antes do treinamento é o número de neurônios
+ocultos das redes aproximadoras. Quanto maior for este número,
+maior a capacidade da rede neural em aprender mapeamentos com alto
+grau de não-linearidade.
+
+No contexto deste trabalho, o número de neurônios ocultos das
+redes aproximadoras foi escolhido através do procedimento descrito
+a seguir. Inicialmente, foi determinado que todas as redes teriam
+o mesmo número de neurônios ocultos. Em seguida, foram treinados
+diferentes modelos PNL variando-se o número de neurônios
+(iniciando-se por redes de um único neurônio oculto e
+adicionando-se neurônios gradualmente). Para cada novo modelo
+treinado, os componentes independentes foram calculados e
+utilizados para alimentar os discriminadores neurais. Deste modo,
+foi escolhida a configuração que apresentou maior eficiência de
+discriminação.
 
 \section{Classificação}
 
@@ -242,6 +595,45 @@ Figura~\ref{fig_classeg}.
 \caption{Decisão utilizando classificadores segmentados.}
 \label{fig_classeg}
 \end{figure}
+
+\subsection{Motivação para o Uso de Classificadores Segmentados}
+
+No problema em estudo, o tempo de processamento é um fator crucial, e
+a maior parte do esforço computacional é exigido pelas rotinas de seleção de
+dados e anelamento (geração dos sinais em anéis).
+
+Uma característica particular do problema é que a seleção da informação das regiões de
+interesse no sistema de filtragem do ATLAS é realizada de uma única vez em cada camada,
+ou seja, mesmo que uma camada tenha
+poucos anéis relevantes, para acessá-los é necessário solicitar os dados de toda camada
+(mais detalhes serão apresentados na Seção~\ref{sec_timeSeg}).
+
+Considerando o exposto, a realização dos processos de extração de características e
+classificação de modo segmentado (por camada do calorímetro) permite verificar a
+influência (relevância) de cada uma das sete camadas no processo de
+discriminação.
+
+Uma estimativa da relevância da i-ésima camada no processo de identificação de elétrons
+pode ser obtida a partir do procedimento descrito a seguir:
+\begin{itemize}
+ \item substitui-se (no conjunto de teste) os anéis da camada i pelos
+seus valores médios (calculados no conjunto de treino);
+ \item propaga-se o conjunto de teste (com a camada i substituída pela média)
+por todas as etapas do discriminador (pré-processamento e classificação)
+ \item calcula-se a eficiência obtida.
+\end{itemize}
+Quanto menor for o máximo SP calculado para a camada i substituída pela média,
+mais relevante esta camada é para o problema.
+
+Alternativamente, o treinamento de classificadores especialistas na informação
+de cada camada do calorímetro (classificadores segmentados) também pode indicar
+a relevância das informações de cada camada. Neste caso, quanto maior o máximo SP
+calculado para o classificador especialista na camada i, mais relevante é a
+informação desta camada para a identificação de elétrons.
+
+Após o treinamento dos classificadores especialistas, pode-se também combinar
+as informações obtidas dos diversos segmentos, visando maximizar o desempenho de
+discriminação através da utilização de uma maior parte da informação disponível.
 
 Um problema que surge na utilização de múltiplos classificadores é
 como combinar suas saídas para produzir a decisão final, o modo
@@ -296,6 +688,7 @@ Deste modo, conforme ilustrado na Figura~\ref{fig_rede3Cam}, é
 formada uma rede MLP de 3 camadas de neurônios, porém, a camada de
 entrada não é totalmente conectada. O procedimento de treinamento
 desta rede neural compreende as etapas a seguir:
+
 \begin{enumerate}
     \item Treinamento dos classificadores segmentados;
     \item Com as redes treinadas, calcula-se as saídas dos
@@ -309,10 +702,33 @@ desta rede neural compreende as etapas a seguir:
 \begin{figure}[th]
 \centering
 \includegraphics[width=11cm]{rede3cam}
-\caption{Modelo de rede combinadora para os classificadores segmentados.} \label{fig_rede3Cam}
+\caption{Modelo de rede combinadora para os classificadores
+segmentados.} \label{fig_rede3Cam}
 \end{figure}
 
 %\subsubsection{Estudo a Respeito dos Métodos de Combinação de Classificadores}
+
+\subsection{Comparação com Discriminadores Lineares}
+
+O discriminador linear (de Fisher)~\cite{book:duda:2000},
+apresenta algumas vantagens para a aplicação num sistema de
+filtragem \emph{online} em relação ao classificador neural como:
+\begin{itemize}
+    \item Maior rapidez na operação.
+    \item Mais fácil interpretação dos resultados.
+\end{itemize}
+
+Neste contexto, é necessário verificar se o pré-processamento que
+está sendo proposto é capaz de revelar características
+discriminantes, de modo que o classificador neural possa ser
+substituído por um discriminador linear sem haver significativa
+perda de eficiência.
+
+Com este propósito, as características estimadas, pelos diversos
+modelos da análise de componentes independentes, serão utilizadas
+como entradas para um discriminante linear e os resultados obtidos
+comparados com o da rede neural.
+
 
 \section{Especificações de Treinamento}
 
@@ -355,29 +771,10 @@ utilizados.}\vspace{0.2cm} \footnotesize
 \label{tab_treinoEsp}
 \end{table}
 
-Para avaliar a flutuação estatística inerente aos dados, o
-treinamento dos discriminadores foi realizado a partir do processo
-de validação cruzada~\cite{haykin:nn:2008} descrito a seguir:
-
-\begin{enumerate}
-    \item Os sinais disponíveis (para cada classe) são divididos de modo
-aleatório em 12 grupos (com aproximadamente a mesma quantidade de
-eventos em cada um).
-    \item Sorteia-se 4 grupos (em cada classe) para compor o
-conjunto de treino, 4 para o conjunto de validação e outros 4 para
-o de teste.
-    \item O procedimento de treinamento é realizado.
-
-    \item O resultado é armazenado e o treinamento re-iniciado até
-    completar 10 inicializações.
-\end{enumerate}
-
-Os algoritmos de extração de características (NLICA) também são
-re-iniciados a cada sorteio assim como os classificadores neurais.
-
 \section{Bases de Dados}
 
-Neste trabalho, serão utilizadas bases de dados de características
+Neste trabalho, para avaliação da metodologia proposta,
+serão utilizadas bases de dados de características
 distintas. Toda fase de projeto e teste dos discriminadores foi
 iniciada antes do LHC entrar em operação, então, para estas
 tarefas foram empregados sinais simulados. A plataforma de
@@ -389,25 +786,756 @@ diferentes subdetectores). É possível também configurar diferentes
 estratégias de seleção para o primeiro nível de filtragem,
 simulando diversos cenários de operação do detector.
 
-Os dados simulados utilizados são compostos de elétrons isolados
-(\emph{single electrons}) e jatos hadrônicos. Dois cortes
-distintos foram aplicados no primeiro nível. Um deles simula a
-etapa inicial de operação do detector, onde a seleção do L1 é mais
-branda. O outro corte é mais seletivo, se assemelhando aos que
-serão utilizados num estágio mais avançado da operação, onde o
-objetivo é eliminar a maior parte do falso alarme. Mais detalhes a
-respeito dos dois conjuntos simulados utilizados serão
-apresentados no Capitulo~\ref{cap_dadosSim}.
+Com o início das colisões do LHC (a partir do final de 2009), foi
+possível adquirir dados experimentais. Um cronograma para a
+operação do acelerador foi fixado, compreendendo um gradual
+aumento da energia e da luminosidade dos feixes de prótons. Os
+sinais experimentais analisados foram obtidos em colisões onde a
+energia total é aproximadamente 7~GeV (3,5~GeV em cada feixe) e a
+luminosidade máxima chegou a aproximadamente
+$10^{29}cm^{-2}s^{-1}$. Comparando com os valores nominais de
+projeto para o LHC (energia igual a 14~GeV e luminosidade de
+$10^{34}cm^{-2}s^{-1}$), percebe-se que ainda há uma considerável
+diferença entre as duas configurações. Sabendo que os sinais
+simulados foram produzidos considerando as condições nominais do
+acelerador, é possível que as características físicas dos sinais
+experimentais (neste estágio de operação) ainda não sejam
+perfeitamente refletidas nos conjuntos simulados.
 
-Com o início das colisões do LHC (a partir do final de 2009), foi possível adquirir dados
-experimentais. Uma outra classe de sinais utilizada para teste dos
-discriminadores propostos são as assinaturas de raios cósmicos.
-Essas partículas, originadas fora da atmosfera terrestre, são
-altamente energéticas e capazes de penetrar na crosta terrestre
-atingindo o ATLAS a 100 metros de profundidade. É necessário
-verificar a robustez dos algoritmos propostos quanto a rejeição
-das assinaturas de raios cósmicos.
+Outra classe de sinais utilizada para teste dos discriminadores
+propostos são as assinaturas de raios cósmicos. Essas partículas,
+originadas fora da atmosfera terrestre, são altamente energéticas
+e capazes de penetrar na crosta terrestre atingindo o ATLAS a 100
+metros de profundidade e interagindo com os calorímetros. É
+necessário verificar a robustez dos algoritmos propostos quanto a
+rejeição das assinaturas de raios cósmicos, pois eles também podem
+constituir o ruído de fundo na identificação de elétrons.
 
-Nos próximos capítulos serão mostrados os resultados obtidos neste
-trabalho, iniciando com os dados simulados, e em seguida os sinais
-experimentais.
+A seguir, será apresentada uma breve descrição dos conjuntos de
+sinais utilizados. Inicialmente serão abordados os dados
+simulados, e em sequencia, os sinais experimentais.
+
+\subsection{Dados Simulados}
+
+%Os dados simulados utilizados são compostos de elétrons isolados
+%(\emph{single electrons}) e jatos hadrônicos. Dois cortes
+%distintos foram aplicados no primeiro nível. Um deles simula a
+%etapa inicial de operação do detector, onde a seleção do L1 é mais
+%branda. O outro corte é mais seletivo, se assemelhando aos que
+%serão utilizados num estágio mais avançado da operação, onde o
+%objetivo é eliminar a maior parte do falso alarme. Mais detalhes a
+%respeito dos dois conjuntos simulados utilizados serão
+%apresentados no Capitulo~\ref{cap_dadosSim}.
+%
+%\section{Características dos Sinais Simulados}
+%
+
+Os eventos simulados utilizados foram produzidos por simulações de
+Monte Carlo~\cite{book:montecarlo:2004} pela colaboração do ATLAS,
+utilizando os simuladores \textit{Pythia} (que produz as colisões)
+e \textit{Geant} (que realiza a interação dos eventos com o
+detector)~\cite{TDR1:ATLAS:1999}. Os sinais de interesse são
+elétrons isolados distribuídos uniformemente na faixa
+$7<E_T<80$~GeV (onde $E_T$ é a energia transversa). O ruído de
+fundo é constituído de jatos com pelo menos um componente
+eletromagnético com $E_T>17$~GeV.
+
+Neste trabalho foram utilizados dois conjuntos distintos de dados
+simulados:
+\begin{itemize}
+ \item Ao primeiro conjunto, foi aplicado um corte de nível 1 que
+simula a etapa inicial de operação do detector, onde a seleção do
+L1 é mais branda. A filtragem de primeiro nível realiza apenas um
+corte linear na energia total do evento, deixando passar os
+eventos com energia maior que 7~GeV (os eventos de baixa energia
+são eliminados). Considerando a imprecisão do primeiro nível no
+cálculo da energia total do evento, as assinaturas que chegam ao
+L2 após este corte estão concentradas em energias maiores que
+10~GeV e, por isso, são denominadas E10 (ou E10-\textit{loose}).
+Este corte é mais utilizado para teste do sistema de filtragem no
+período inicial de operação do detector, pois é pouco provável a
+identificação de assinaturas relevantes, uma vez que, uma grande
+quantidade de eventos de falso alarme é aprovada pelo nível 1.
+
+ \item O segundo corte utilizado é mais seletivo, se assemelhando aos que
+serão utilizados num estágio mais avançado da operação do detector, onde o
+objetivo é eliminar a maior parte do falso alarme. Neste caso, o nível 1
+utiliza uma combinação de critérios como:
+  \subitem - energia total maior que 13~GeV;
+  \subitem - corte de vazamento para as camadas hadrônicas: a energia nas camadas hadrônicas é calculada e, se ela for maior que um valor limite (neste caso 1 GeV), o evento é rejeitado pelo L1;
+  \subitem - corte de isolamento em energia: efetuado a partir da relação entre a energia no centro ($\sum E_C$) e na periferia ($\sum E_P$) do perfil de deposição de energia da segunda camada eletromagnética, se $\frac{\sum E_P}{\sum E_C}$ for maior que um limiar pré-estabelecido o evento é rejeitado pelo L1.
+
+As assinaturas aprovadas neste corte do primeiro nível estão concentradas na faixa de energia maior
+que 15~GeV, sendo chamadas de E15i (o sufixo i indica que foram utilizados critérios de isolamento).
+\end{itemize}
+
+Na Tabela \ref{tab_dadossim}, são apresentados o número de
+assinaturas de cada conjunto, juntamente com os eventos que
+passaram pela seleção do L1. Conforme esperado, o corte E15i
+produziu uma redução muito maior do ruído de fundo (da ordem de
+93~\%), se comparado ao E10 (que eliminou apenas 55~\% dos jatos).
+Em contrapartida, o corte E15i eliminou uma quantidade
+significativa de elétrons (52~\%), enquanto que o E10 preservou
+98~\% deles. Embora as características físicas dos eventos dos
+dois conjuntos (E10 e E15i) sejam as mesmas, a diferença entre a
+quantidade inicial de assinaturas é justificada pelo fato de terem
+sido gerados por versões distintas do \textit{software} do sistema
+de filtragem (Athena).
+
+\begin{table}[b]
+\centering \caption{Composição das bases de dados utilizadas antes
+e depois do corte de primeiro nível.}\vspace{.3cm} \footnotesize
+\begin{tabular}{c|c c c| c c c}
+  \hline
+       & \multicolumn{3}{c|}{\bf{E10}}& \multicolumn{3}{c}{\bf{E15i}}   \\  \hline
+  \textbf{Assinatura} & \textbf{Inicial} & \textbf{Após L1} & \textbf{Corte} (\%) & \textbf{Inicial} & \textbf{Após L1} & \textbf{Corte} (\%) \\ \hline
+  \textbf{Elétron}   & 479.902 & 470.282 & 2.0 & 294.040 & 140.824 & 52.11 \\
+  \textbf{Jato}    & 711.046 & 314.843 & 55.7 & 198.841 & 13.160 & 93.4 \\
+  \hline
+\end{tabular}
+\label{tab_dadossim}
+\end{table}
+
+Na Figura \ref{comp_L1}, são mostradas as distribuições em
+energia, $\eta$ (pseudorapidez) e $\phi$ (ângulo azimutal) para
+elétrons e jatos dos conjuntos E10 e E15i após os cortes do L1. No
+gráfico da energia dos elétrons, percebe-se claramente a diferença
+no limiar de corte em energia para os dois conjuntos. Considerando
+a energia dos jatos, o corte E15i elimina a maioria das
+assinaturas com energia mais alta (pois nestas assinaturas os
+cortes por vazamento hadrônico e isolamento em energia são mais
+eficientes). Sendo assim, os jatos E15i têm um ligeiro
+deslocamento em relação a energias mais baixas, se comparados aos
+do conjunto E10. As distribuições em $\eta$ e $\phi$ são semelhantes
+para os dois conjuntos.
+
+\begin{figure}[t!]
+\begin{minipage}[b]{.48\linewidth}
+  \centering \footnotesize{Elétrons}
+ \centerline{\epsfig{file=compE_e10e15_et,width=7cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{.48\linewidth}
+  \centering \footnotesize{Jatos}
+ \centerline{\epsfig{file=compJ_e10e15_et,width=7cm}}
+ \end{minipage}
+\hfill \linebreak
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=compE_e10e15_eta,width=7cm}}
+ \end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=compJ_e10e15_eta,width=7cm}}
+ \end{minipage}
+\hfill \linebreak
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=compE_e10e15_phi,width=7cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=compJ_e10e15_phi,width=7cm}}
+\end{minipage}
+\caption{Distribuição em energia, $\eta$ e $\phi$ das assinaturas
+de elétrons (esquerda) e jatos (direita) aprovadas pelos cortes de
+primeiro nível tipo E10 e E15i.} \label{comp_L1}
+\end{figure}
+
+Nas Figuras \ref{emedE10} e \ref{emedE15} são mostrados os eventos
+médios (média e desvio padrão de cada anel) para elétrons e jatos
+após os cortes E10 \textit{loose} e E15i. Pode-se observar que os
+perfis dos elétrons são semelhantes nos dois casos. Por outro
+lado, os jatos E15i apresentam uma menor energia hadrônica e menor
+espalhamento (o que já era esperado, uma vez que foram efetuados
+cortes considerando estes parâmetros) do que os jatos E10, sendo
+mais parecidos com os elétrons e portanto representando um ruído
+de fundo de mais difícil identificação.
+
+\begin{figure}[b!]
+\begin{minipage}[b]{0.48\linewidth}
+  \centering \footnotesize{Elétrons}
+ \centerline{\epsfig{file=evento_medioE10_ele,width=8cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering \footnotesize{Jatos}
+ \centerline{\epsfig{file=evento_medioE10_jat,width=8cm}}
+\end{minipage}
+\caption{Sinais em anéis (média e desvio padrão) para elétrons
+(esquerda) e jatos (direita) que chegam ao L2 no corte
+E10.}\label{emedE10}
+\end{figure}
+
+\begin{figure}[b!]
+\begin{minipage}[b]{0.48\linewidth}
+  \centering \footnotesize{Elétrons}
+ \centerline{\epsfig{file=evento_medioE15_ele,width=8cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering \footnotesize{Jatos}
+ \centerline{\epsfig{file=evento_medioE15_jat,width=8cm}}
+\end{minipage}
+\caption{Sinais em anéis (média e desvio padrão) para elétrons
+(esquerda) e jatos (direita) que chegam ao L2 no corte
+E15.}\label{emedE15}
+\end{figure}
+
+A correlação entre os 100 anéis para sinais de elétrons e jatos
+dos dois conjuntos simulados é mostrada na
+Figura~\ref{figSimCorr}. Pode-se observar que, para elétrons, há
+uma forte correlação entre os primeiros anéis das camadas
+eletromagnéticas (tanto dentro das camadas, como entre diferentes
+camadas). Nos jatos, a correlação é estendida para as camadas
+hadrônicas.
+
+\begin{figure}[p]
+\begin{minipage}[b]{0.98\linewidth}
+  \centering \footnotesize{Correlação}
+ \centerline{\epsfig{file=corr,width=15cm}}
+\end{minipage}
+\hfill \vspace{.5cm}
+\begin{minipage}[b]{0.98\linewidth}
+  \centering \footnotesize{Informação Mútua}
+ \centerline{\epsfig{file=IM,width=15cm}}
+\end{minipage}
+\caption[Correlação (acima) e informação mútua (abaixo) entre os
+100 anéis.]{Correlação (acima) e informação mútua (abaixo) entre
+os 100 anéis, retirada
+de~\cite{tese:torres:2010}.}\label{figSimCorr}
+\end{figure}
+
+Embora a correlação mostre, de certa forma, a dependência entre os
+anéis, apenas os momentos estatísticos de primeira e segunda ordem
+são considerados no cálculo desta variável. Um parâmetro capaz de
+explorar todos os momentos é a informação mútua.
+
+A informação mútua entre duas variáveis é nula quando elas são
+independentes, porém, não há um limite superior fixo (como no caso
+da correlação). Nesta análise, a entropia foi estimada através do
+método de \emph{kernel}~\cite{book:densityestim:1992} e foi
+utilizado o procedimento de normalização proposto no
+trabalho~\cite{article:relativeEnt:1989} para limitar a informação
+mútua ao intervalo [0,1]. Observando a Figura~\ref{figSimCorr},
+pode-se perceber que a dependência entre os primeiros anéis das
+camadas eletromagnéticas se confirma, além disso, é possível
+observar também alguma relação entre as camadas eletromagnéticas e
+hadrônicas (que não estava evidente na correlação). Ficou evidente
+também, que a dependência entre os anéis de jatos aumenta no
+conjunto E15i (em relação aos jatos do E10). Isso pode ser
+justificado pois, devido à seleção mais exigente no primeiro
+nível, deixando passar apenas uma classe de assinaturas de jatos
+que apresenta características mais semelhantes aos elétrons.
+
+Conforme comentado no Capítulo~\ref{cap_atlasEtrig}, o treinamento
+de classificadores neurais pode ser otimizado com a redução da
+dependência entre as variáveis de entrada. Neste contexto, a
+aplicação da ICA/NLICA como um pré-processamento para o
+classificador \emph{Neural Ringer} pode contribuir para um aumento
+na eficiência de discriminação.
+
+
+\subsection{Dados Experimentais}\label{secDadosExp}
+
+A partir do final de 2009, o LHC entrou novamente em operação,
+após uma interrupção para reparos (em setembro de 2008 foi
+identificado um vazamento de gás Hélio do sistema de refrigeração
+para o túnel do LHC, comprometendo a segurança do acelerador). Foi
+estabelecido um cronograma para o comissionamento do acelerador,
+que contemplou a gradual elevação na energia e na quantidade de prótons
+em cada feixe (o que é diretamente proporcional à luminosidade
+produzida).
+
+Ainda em novembro de 2009 o LHC atingiu 1,18~TeV e definiu um novo
+recorde mundial (que até aquele momento era de 0.98~TeV, alcançado
+pelo acelerador Tevatron no Fermilab). No início de 2010 a energia
+foi elevada para 3~TeV e atualmente está na faixa de 7~TeV (que embora
+seja 7 vezes maior que a energia do Tevatron, é apenas
+metade da energia de projeto para o LHC que é de aproximadamente 14~TeV).
+
+Na Figura \ref{fig_evZee}, pode-se visualizar um evento (colisão)
+do LHC onde foram gerados um elétron e um anti-elétron num provável
+decaimento de um bóson Z. Nos dois ângulos de corte é possível
+visualizar a sensibilização dos calorímetros a partir da interação com o elétron
+e o anti-elétron (marcados em amarelo), que se deslocaram em direções opostas.
+Na parte superior esquerda é possível visualizar a energia depositada na
+segunda camada eletromagnética pelas duas partículas.
+
+%O elétron está
+%marcado em vermelho e aponta para baixo. Percebe-se que o elétron
+%não sensibiliza a seção hadrônica (pequenos quadrados em tons mais
+%escuros ou em amarelo indicam a sensibilização dos calorímetros)
+%\footnote{Neste diagrama, o calorímetro eletromagnético e o
+%hadrônico estão marcados respectivamente de verde e avermelhado.}.
+%Os jatos são representados pelos conjuntos de linhas adjacentes
+%que depositam energia na seção hadrônica do calorímetro. A linha
+%tracejada indica a direção onde foi detectada a ocorrência de
+%$E_{Tmiss}$ (falta de energia transversa).
+%
+%Um outro evento do LHC visualizado pelo ATLAS é mostrado na
+%Figura~\ref{fig_evMu}, neste caso, pode-se observar dois múons,
+%que possivelmente foram gerados do decaimento de um bóson Z. É
+%interessante notar que somente os múons ultrapassam os
+%calorímetros, atingindo as câmaras de múons, que ficam na região
+%mais externa do detector.
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=15cm]{Exp_atlaseventZee}
+\caption[Visualização de um evento do LHC candidato ao decaimendo de um bóson
+Z em dois elétrons (elétron e anti-elétron).]{Visualização de um evento do LHC candidato ao decaimendo de um bóson
+Z em dois elétrons  (elétron e anti-elétron), extraído de \cite{Homepage:ATLAS}.} \label{fig_evZee}
+\end{figure}
+
+%\begin{figure}[th]
+%\centering
+%\includegraphics[width=11cm]{event_e_jet}
+%\caption[Visualização de um evento do LHC (7 GeV) onde foram
+%produzidos um elétron e três jatos.]{Visualização de um evento do
+%LHC (energia total dos feixes igual a 7 GeV) onde foram produzidos
+%um elétron (marcado em vermelho, apontando para baixo) e três
+%jatos, extraído de \cite{Homepage:ATLAS}.} \label{fig_evEJet}
+%\end{figure}
+%
+%\begin{figure}[th]
+%\centering
+%\includegraphics[width=15cm]{event_Z_mm}
+%\caption[Visualização de um evento do LHC (7 GeV) onde foram
+%produzidos dois múons a partir do decaimento de um bóson
+%Z.]{Visualização de um evento do LHC (energia total dos feixes
+%igual a 7 GeV) onde foram produzidos dois múons a partir do
+%decaimento de um bóson Z, extraído de \cite{Homepage:ATLAS}.}
+%\label{fig_evMu}
+%\end{figure}
+
+Para avaliar a eficiência dos métodos propostos,
+foram utilizados dois tipos de sinais experimentais: assinaturas de
+raios cósmicos e sinais medidos em colisões do LHC. As principais
+características destes conjuntos serão mostradas a seguir.
+
+\subsubsection{Sinais de Raios Cósmicos}
+
+Os raios cósmicos \cite{book:cosmic:2002} são partículas
+originadas no espaço, que se deslocam com velocidade próxima a da
+luz. Ao penetrarem na atmosfera terrestre, interagem com os átomos
+que a constituem produzindo uma ``cascata'' de novas partículas
+menos energéticas (conhecidas como raios cósmicos secundários, que
+são compostos de diversas partículas, inclusive
+múons~\cite{book:cosmicos:1990}). O poder de penetração dos raios
+cósmicos é alto, podendo atingir o detector ATLAS (instalado a uma
+profundidade de aproximadamente 100 m) e interagir com o material
+dos calorímetros. Os raios cósmicos que chegam ao detector são
+compostos essencialmente por múons. A energia destas partículas
+pode ser alta, atingindo até $10^{20}$~eV.
+
+Alguns estudos conduzidos no ATLAS estão interessados na análise
+dos raios cósmicos, porém, considerando a detecção de elétrons, os
+raios cósmicos constituem uma fonte de ruído de fundo, que deve
+ser eliminada (ou pelo menos atenuada) pelo sistema de filtragem.
+Em momentos quando o LHC está desligado (não havendo portanto
+outra fonte de sinal para os calorímetros), foram coletadas
+diversas assinaturas originadas por raios cósmicos, que serão
+utilizadas para verificar a robustez do sistema de filtragem a
+essa fonte de ruído de fundo. O conjunto utilizado é composto de 26.347
+eventos adquiridos durante o ano de 2009.
+
+Na Figura \ref{fig_carcosmic}, pode-se observar a distribuição
+destes eventos para diferentes valores de energia, $\eta$ e
+$\phi$. Percebe-se que, embora concentrados abaixo de
+100~GeV, estes eventos podem atingir energia bastante elevada (até a ordem de
+400~GeV, ocorrendo eventos isolados em 500~GeV e $\sim$1~TeV).
+Devido à proveniência (direção de chegada) da radiação cósmica que
+atinge o detector, a distribuição em $\eta$ não é uniforme,
+havendo uma maior probabilidade destas partículas incidirem
+perpendicularmente ao detector (produzindo valores baixos de
+$\eta$). Considerando a distribuição em $\phi$, percebe-se uma
+maior uniformidade.
+
+\begin{figure}[h!]
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cosmics_et,width=8cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=cosmics_eta,width=8cm}}
+\end{minipage}
+\hfill \linebreak
+\begin{minipage}[b]{0.98\linewidth}
+  \centering
+ \centerline{\epsfig{file=cosmics_phi,width=8cm}}
+\end{minipage}
+\caption{Histogramas em energia $\eta$ e $\phi$ dos eventos de
+raios cósmicos.}\label{fig_carcosmic}
+\end{figure}
+
+Nos histogramas em $\eta$ e $\phi$, pode-se visualizar um grande
+pico em cada um deles, correspondendo à região em torno de
+($\eta;\phi$)$=$(-0,3;1,6). Analisando-se o perfil de deposição de
+energia nesta região, observou-se uma grande quantidade de eventos
+que apresentam energia na camada E2, porém, nas outras apenas
+ruído (um evento deste tipo é mostrado na
+Figura~\ref{fig_cosmic_fant}). É muito improvável que um evento
+físico real atravesse sete camadas do calorímetro e deposite
+energia em apenas uma delas. Neste contexto, concluiu-se que,
+estes eventos (chamados de eventos ``fantasmas'') foram gerados
+por problemas nas células da segunda camada eletromagnética do
+calorímetro, que, por algum motivo desconhecido, acusam a
+deposição de energia mesmo quando nenhum evento foi recebido.
+
+\begin{figure}[h!]
+\begin{minipage}[b]{0.98\linewidth}
+  \centering
+ \centerline{\epsfig{file=ev_cosmico_fant1,width=16cm}}
+\end{minipage}
+\caption[Exemplo de evento fantasma em
+($\eta;\phi$)$=$(-0,3;1,6).]{Exemplo de evento fantasma em
+($\eta;\phi$)$=$(-0,3;1,6), retirado
+de~\cite{tese:torres:2010}.}\label{fig_cosmic_fant}
+\end{figure}
+
+Considerando a física envolvida no processo de interação dos raios
+cósmicos (que são compostos essencialmente por múons), espera-se
+que a maior parte dos eventos seja facilmente rejeitada pelos
+discriminadores. Porém, em alguns casos raros, múons podem
+interagir com o calorímetro produzindo fótons e pares $e^-e^+$.
+Estes eventos seriam capazes de produzir um perfil de deposição de
+energia semelhante ao de elétrons, confundindo o sistema de
+filtragem.
+
+\subsubsection{Sinais de Colisões do LHC}\label{secdadosExp}
+
+Em sua fase inicial de operação, o LHC
+irá operar com energias mais baixas do que a nominal (que é de
+aproximadamente 14 TeV). Nos dados mais recentes, a energia máxima
+das colisões está limitada em 7~TeV, 3,5~TeV por cada feixe.
+
+Outra característica importante é a luminosidade (que indica a quantidade
+de partículas por centímetro quadrado do detector a cada segundo), pois
+quanto maior a luminosidade, maior a probabilidade de ocorrência
+de eventos de interesse (e também de ruído de fundo). Na
+Figura~\ref{fig_lumEc}, pode-se observar a variação das
+taxas de aceitação de assinaturas eletromagnéticas pelo primeiro nível
+em função da luminosidade. Fica claro que, as taxas aumentam, de modo
+aproximadamente linear, com a luminosidade.
+
+\begin{figure}[h!]
+\begin{minipage}[b]{0.98\linewidth}
+  \centering
+ \centerline{\epsfig{file=expectedL1RateEM,width=8cm}}
+\end{minipage}
+\caption[Taxas de aceitação de assinaturas eletromagnéticas noL1 em função
+da luminosidade.]{Taxas de aceitação de assinaturas eletromagnéticas noL1 em função
+da luminosidade~\cite{ConfNote:ATLAS:2010}.}\label{fig_lumEc}
+\end{figure}
+
+As colisões de prótons do LHC realizadas em 2010\footnote{As
+colisões de prótons no ano de 2010 começaram em 30 de março e
+encerraram em 4 de novembro, quando foi dado início ao programa de
+colisões de íons de chumbo (átomos de chumbo dos quais foram
+retirados todos os elétrons Pb$^{82+}$). As colisões com íons
+pesados produzem ca\-rac\-te\-rís\-ticas semelhantes às que
+supostamente ocorreram no Big Bang, permitindo o estudo de
+acontecimentos que se suscederam à origem do universo. O LHC tem
+um detector especialmente projetado para lidar com estas colisões
+o ALICE, porém, os detectores ATLAS e CMS também irão adquirir
+informações destas colisões. No início de dezembro está previsto o
+desligamento do LHC por aproximadamente dois meses para manutenção
+de rotina.}, contemplaram um gradual aumento da luminosidade. Nos
+primeiros meses de operação, a luminosidade foi mantida baixa e
+ocorreram muitos períodos de operação (\emph{runs}) não-estáveis
+(nos quais, por algum problema de ordem técnica as colisões não
+produziram informações de interesse). À medida que a equipe de
+operação do acelerador ganhou maior experiência, a luminosidade
+foi aumentada, permitindo a produção de uma maior quantidade de
+informações de interesse para os detectores.
+
+Os eventos utilizados nas análises apresentadas nesta tese foram
+produzidos em \emph{runs} com luminosidade da ordem de $10^{29}
+cm^{-2}s^{-1}$ (a luminosidade de projeto para o LHC é
+$10^{34}cm^{-2}s^{-1}$). Como a taxa de produção de eventos foi
+baixa, foram gravados todas as assinaturas aprovadas pelo primeiro
+nível (ou seja, a filtragem de alto nível não estava operando). As
+assinaturas gravadas foram, então, submetidas à análise
+\emph{offline}. Visando a seleção de partículas eletromagnéticas
+(elétrons e fótons), a filtragem de primeiro nível realizou um
+corte na energia total em 2~GeV (L1EM2), gerando assinaturas de
+segundo nível concentradas em energias maiores que 3~GeV
+(assinaturas do tipo E3).
+
+De modo distinto aos sinais simulados (que obtêm do próprio software
+simulador a certificação do tipo de partícula produzida), nos sinais
+obtidos experimentalmente nas colisões do LHC não há a caracterização
+prévia do tipo de partícula. Neste caso, para avaliar o desempenho dos
+discriminadores propostos, foram utilizadas informações obtidas da
+reconstrução \textit{offline},
+que indicam a probabilidade de um certo evento ser ou não um
+elétron, conforme descrito a seguir.
+
+\vspace{0.5cm}
+\textbf{Critérios de Identificação de Elétrons na Análise \emph{Offline}}
+\vspace{0.5cm}
+
+O procedimento padrão para seleção de elétrons através da análise
+\emph{offline} no ATLAS consiste em uma série de cortes lineares em
+variáveis capazes de discriminar o sinal de elétrons dos diversos tipos
+de ruído de fundo~\cite{tese:cern:2009}.
+
+Ao todo, em torno de 20 variáveis são calculadas a partir das
+informações dos calorímetros e dos detectores de traço. Estes
+parâmetros podem ser considerados individualmente ou combinadas em
+três conjuntos de referência para produzir cortes
+pré-estabelecidos com diferentes graus de rejeição do ruído de
+fundo conforme descritos a seguir~\cite{article:lhcphysics:2010}:
+\begin{itemize}
+ \item \emph{Loose} - este critério se propõe basicamente a rejeitar a maior
+parte do ruído de fundo, nele são consideradas variáveis como a forma do
+chuveiro de deposição de energia na segunda camada eletromagnética e o
+vazamento hadrônico. Não é possível distinguir elétrons de fótons, pois este
+critério não considera informações do detector de traços.
+ \item \emph{Medium} - apresenta uma maior rejeição de píons e de fótons que se
+converteram em elétrons\footnote{Ao interagirem com o material do detector de
+traços, alguns fótons podem se transformar em elétrons, constituindo outra fonte
+de ruído para a identificação de elétrons isolados.}, pois, além das
+variáveis utilizadas no corte \emph{loose}, considera também, a forma do chuveiro
+na primeira camada eletromagnética, a isolação lateral e uma análise básica das
+informações do detector de traços.
+ \item \emph{Tight} - além dos parâmetros utilizados no critério \emph{electron medium},
+este corte utiliza toda a precisão disponível no detector de traços, buscando,
+com precisão, a coincidência entre as posições do traço e do \emph{cluster} identificado no calorímetro.
+Deste modo, é possível obter uma maior eficiência na identificação de elétrons e na
+eliminação de fótons.
+\end{itemize}
+
+A eficiência dos critérios de seleção pode variar em função da energia e da posição de
+interação no detector. Conforme mostrado na Figura~\ref{fig_perfOff}, pode-se observar
+que, em troca de uma maior redução na aceitação de falso alarme, o critério \emph{tight}
+produz menor eficiência na identificação de elétrons, principalmente em energia menor que
+30~GeV e em 1$<|\eta|<$2.
+
+\begin{figure}[t]
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=atlasOffEtCuts,width=7.5cm}}
+\end{minipage}
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=atlasOffEtaCuts,width=7.5cm}}
+\end{minipage}
+\caption[Eficiência dos cortes do \emph{offline} em função de $\eta$ e da energia.]
+{Eficiência dos cortes do \emph{offline} em função de $\eta$ e da
+energia, retirado de~\cite{ConfNote:ATLAS:2010}.}\label{fig_perfOff}
+\end{figure}
+
+Nos trabalhos \cite{article:lhcphysics:2010,article:lhcphysics2:2010}, foi apresentado
+um estudo onde um conjunto simulado (por Monte Carlo) foi submetido aos critérios da
+seleção \emph{offline} do ATLAS. Na Tabela~\ref{tab_compOffline} são mostradas as
+composições dos conjuntos original (sem nenhum corte) e após cada um dos cortes
+(para a associação dos tipos de assinaturas foi utilizada a ``verdade'' obtida do simulador).
+Pode-se observar que, a maioria ($\sim$82~\%) das assinaturas aprovadas no corte \emph{loose} são
+hádrons, $\sim$16~\% são elétrons produzidos a partir da conversão de fótons
+durante a interação com o detector e apenas 1,6~\% são elétrons.
+Nos critérios \emph{medium} e \emph{tight} a concentração de elétrons é gradualmente
+aumentada, enquanto que a de partículas hadrônicas vai sendo reduzida, de modo que,
+48~\% das assinaturas aprovadas no critério \emph{tight} são elétrons e a parcela de
+jatos hadrônicos foi reduzida a aproximadamente 30~\%.
+
+\begin{table}[b!]
+\centering \caption[Composição das assinaturas de sinais simulados aprovados em diferentes critérios
+da análise \emph{offline}.]{Composição das assinaturas de sinais simulados aprovados em diferentes critérios
+da análise \emph{offline}, retirado de~\cite{article:lhcphysics:2010}.}
+\vspace{0.2cm} \footnotesize
+\begin{tabular}{|c|c|c|c|}
+    \cline{2-4}
+ \multicolumn{1}{c}{}& \multicolumn{3}{|c|}{Composição (\%)}\\ \hline
+\textbf{Critério} & \textbf{Hádrons} & \textbf{Elétrons/conversões} & \textbf{Elétrons} \\
+\hline
+\textbf{Nenhum} &82,1 & 16,3 & 1,6 \\
+\textbf{Loose} & 67,5 & 28,4 & 4,1 \\
+\textbf{Medium} & 66,5 & 22,8 & 10,7 \\
+\textbf{Tight} & 29,6 & 22,4 & 48,1 \\
+\hline
+\end{tabular}
+\label{tab_compOffline}
+\end{table}
+
+Nos resultados apresentados nesta tese, foram considerados como
+elétrons os eventos aprovados no critério \emph{electron tight}
+do \textit{offline} (estes eventos tem maior probabilidade de serem realmente
+elétrons). Para o conjunto dos jatos, foram utilizados os eventos
+que não passaram no critério \emph{electron loose} do
+\textit{offline} (são eventos com probabilidade muito baixa de
+serem elétrons).
+
+\vspace{0.5cm}
+\textbf{Run 1}
+\vspace{0.5cm}
+
+O primeiro conjunto de sinais experimentais de colisões analisado foi obtido de
+uma \emph{run} do dia 25 de maio de 2010\footnote{A \emph{run} 155697 foi iniciada
+às 19h 38min do dia 24/05/2010 e finalizada às 12h 12min do dia 25/05/2010.}.
+A energia de cada feixe foi de 3,5~TeV
+(totalizando 7~TeV) e a luminosidade máxima igual a 2,1$\times 10^{29} cm^{-2}s^{-1}$.
+
+Os 5.550.044 eventos aprovados no corte L1EM2 do primeiro nível
+(eventos que depositaram mais de 2~GeV de energia nos
+calorímetros), e consequentemente salvos em mídia permanente, pois
+a filtragem de alto nível não estava operando, foram submetidos
+aos critérios de seleção da análise \emph{offline}.
+Aproximadamente 9.000 assinaturas foram aceitas pelo
+\emph{electron tight} (e, então, consideradas nas análises como
+elétrons). Um total de aproximadamente 2.000.000 de assinaturas
+foram reprovadas no critério \emph{electron loose} (e, assim,
+consideradas como jatos).
+
+Na Figura \ref{fig_carexp}, pode-se observar que, os eventos (para
+ambas as classes) estão concentrados numa faixa de energia abaixo
+de 15~GeV. Analisando as distribuições em $\eta$, percebe-se que,
+a concentração em torno de $|\eta|\sim 1,5$ (região do
+\emph{crack}) é bastante reduzida (com uma menor quantidade de
+sensores nesta área do detector os eventos não são caracterizados
+adequadamente e a probabilidade de aceitação no corte do L1 é
+menor, associado a isso, a eficiência da análise \emph{offline}
+também é reduzida nessa região). Os eventos aprovados no critério
+\emph{electron tight} também apresentam baixa concentração para
+$|\eta|< 0,5$ (o que pode ser explicado por uma menor eficiência
+deste critério de seleção nesta região do detector, conforme
+mostrado anteriormente na Figura~\ref{fig_perfOff}. As
+distribuições em $\phi$ tem um comportamento mais uniforme.
+
+\begin{figure}[bth]
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=exp1_et,width=7.5cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=exp1_eta,width=7.5cm}}
+\end{minipage}
+\hfill \linebreak
+\begin{minipage}[b]{0.98\linewidth}
+  \centering
+ \centerline{\epsfig{file=exp1_phi,width=7.5cm}}
+\end{minipage}
+\caption{Histogramas em energia, $\eta$ e $\phi$ dos eventos de
+colisões do LHC.}\label{fig_carexp}
+\end{figure}
+
+Na Figura~\ref{fig_exp_compEvMed} são mostrados os eventos médios
+para as assinaturas aprovadas no critério \emph{electron tight}
+(``elétrons'') e as reprovadas no critério \emph{electron loose}
+(``jatos''). Como a implementação do \emph{Ringer} na plataforma
+de software do ATLAS utilizava, no momento da aquisição dos dados,
+a normalização sequencial, os eventos são mostrados neste formato.
+Pode-se observar que, os ``jatos'' apresentam caraterísticas
+semelhantes às esperadas para estas partículas (espalhamento
+espacial do perfil de deposição e considerável vazamento
+hadrônico). Uma particularidade observada nos eventos de
+``elétrons'' é uma maior concentração de energia hadrônica se
+comparados aos sinais experimentais (que pode ser originada de
+fatores como a maior influência do ruído de medição em sinais de
+baixa energia e a possível presença de algumas assinaturas
+hadrônicas no conjunto aprovado no critério \emph{electron tight})
+da análise \textit{offline}.
+
+\begin{figure}[th]
+\begin{minipage}[b]{0.48\linewidth}
+  \centering \footnotesize{Aprovados no \emph{electron tight} - ``Elétrons''}
+  \centerline{\epsfig{file=exp1_evE,width=7.7cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering \footnotesize{Reprovados no \emph{electron loose} - ``Jatos''}
+  \centerline{\epsfig{file=exp1_evJ,width=7.7cm}}
+\end{minipage}
+\caption{Sinais experimentais médios de ``elétrons'' e ``jatos''
+do \emph{run} 1.}\label{fig_exp_compEvMed}
+\end{figure}
+
+\vspace{0.5cm}
+\textbf{Run 2}
+\vspace{0.5cm}
+
+O segundo conjunto de sinais experimentais de colisões do LHC foim
+extraído da run do dia 05 de julho de 2010 \footnote{A run 158582
+começou às 01h 22min do dia 05 de julho de 2010 e terminou às 13h
+59min do mesmo dia.}. As configurações do sistema de filtragem
+foram semelhantes ao da primeira \emph{run} (todas as assinaturas
+aprovadas no primeiro nível foram salvas em mídia permanente). A
+energia das colisões foi mantida em 7~TeV, porém a luminosidade
+máxima foi aumentada para 6,1$\times 10^{29} cm^{-2}s^{-1}$ (três
+vezes maior que na \emph{run} 1).
+
+Devido a restrições de ordem operacional, apenas uma parte desta
+\emph{run} está certificada pelos operadores do ATLAS para
+utilização (marcadas como ``\emph{ready for physics}'').
+Considerando este trecho, as assinaturas aprovadas no critério EM2
+do primeiro nível (assinaturas que depositaram mais de 2~GeV nos
+calorímetros) foram submetidas à análise \emph{offline} e
+aproximadamente 12.000 delas foram aceitas no critério
+\emph{electron tight} (e portanto consideradas como ``elétrons'').
+Aproximadamente 1.200.000 assinaturas foram reprovadas no critério
+\emph{electron loose} e portanto consideradas como ``jatos''.
+
+Na Figura~\ref{fig_carexp2}, mostra as características em energia
+e $\eta$ dos eventos identificados segundo os critérios da análise
+\emph{offline} como elétrons e jatos (para os dois conjuntos
+experimentais). Pode-se observar que, para as duas classes, os
+eventos do \emph{run} 2 apresentam uma ligeira tendência para
+maiores energias (o que pode ser justificado pela luminosidade
+3$\times$ maior). Os perfis em $\eta$ são bastante semelhantes
+para os dois \emph{runs}.
+
+\begin{figure}[h]
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=exp2_etE,width=7.5cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=exp2_etaE,width=7.5cm}}
+\end{minipage}
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=exp2_etJ,width=7.5cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+ \centerline{\epsfig{file=exp2_etaJ,width=7.5cm}}
+\end{minipage}
+\hfill \linebreak
+\caption{Histogramas em energia e $\eta$ dos eventos de
+colisões do LHC para os dois \emph{runs} analisados.}\label{fig_carexp2}
+\end{figure}
+
+\pagebreak
+
+Considerando os eventos médios mostrados na Figura~\ref{fig_exp2_compEvMed},
+pode-se verificar que as características dos perfis são muito semelhantes
+ao observado para o \emph{run} 1.
+
+\begin{figure}[th]
+\begin{minipage}[b]{0.48\linewidth}
+  \centering \footnotesize{Aprovados no \emph{electron tight} - ``Elétrons''}
+  \centerline{\epsfig{file=exp2_evMedE,width=7.7cm}}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering \footnotesize{Reprovados no \emph{electron loose} - ``Jatos''}
+  \centerline{\epsfig{file=exp2_evMedJ,width=7.7cm}}
+\end{minipage}
+\caption{Sinais experimentais médios de ``elétrons'' e ``jatos''
+do \emph{run} 2.}\label{fig_exp2_compEvMed}
+\end{figure}
+
+%Nas Figuras ... pode-se observar as características destes eventos, e ...
+%
+%- semelhança com o outro conjunto?
+%- diferenças?

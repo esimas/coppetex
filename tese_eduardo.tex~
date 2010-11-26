@@ -39,9 +39,17 @@
 \usepackage{multirow}
 
 \graphicspath{{./figuras/}} \DeclareGraphicsExtensions{.pdf}
+\hyphenation{re-pre-senta possi-bi-li-da-de reco-nhe-ci-mento
+si-mu-la-dos apro-xi-ma-da-mente apro-xi-ma-dos ori-gi-nal-mente
+co-nhe-ci-mento ener-gia pro-ble-mas pro-ble-ma supervi-sio-na-do
+va-lo-res co-nhe-ci-dos me-lhor apre-sen-ta-dos
+res-pec-ti-va-men-te se-pa-ra-da-men-te li-near ace-le-ra-dor
+con-si-de-ra-dos con-ver-te-ram des-cri-tos pro-ba-bi-li-da-de
+e-xis-ten-tes as-si-na-tu-ras dis-cri-mi-na-dor}
 
-\makelosymbols
-\makeloabbreviations
+%\~{a}   \c{c}
+
+\makelosymbols \makeloabbreviations
 
 \begin{document}
   \title{Análise Não-Linear de Componentes Independentes para uma Filtragem Online
@@ -53,7 +61,7 @@ Baseada em Calorimetria de Alta Energia e com Fina Segmentação}
   \examiner{Prof.}{Luiz Wagner Pereira Biscainho}{D.Sc.}
   \examiner{Prof.}{Leandro Salazar de Paula}{D.Sc.}
 %  \examiner{Prof.}{André C. Ponce de Leon F. de Carvalho}{Ph.D}
-  \examiner{Prof.}{Marley M. B. Rebuzzi Vellasco}{Ph.D.}
+  \examiner{Prof.}{Marley Maria Bernardes Rebuzzi Vellasco}{Ph.D.}
   \examiner{Prof.}{Guilherme de Alencar Barreto}{D.Sc.}
 \department{PEE}
   \date{12}{2010}
@@ -80,9 +88,18 @@ não existiria.
 Aos colegas, professores e funcionários do Laboratório de
 Processamento de Sinais (LPS/COPPE/UFRJ) pela inestimável ajuda na
 condução do trabalho, em especial aos amigos Natanael Moura,
-Rodrigo Torres, Danilo Enoque e Werner Freund.
+Rodrigo Torres, Werner Freund, Danilo Enoque, Danilo Lima.
 
-%Aos professores Antônio Cezar de Castro Lima, Luiz Alberto Luz de Almeida, Ana Isabela de Araujo Cunha, Roberto da Costa e Silva e Ademar de Barros Fontes, da Universidade Federal da Bahia, que contribuíram decisivamente para minha formação acadêmica durante a graduação e o mestrado, gostaria de dizer que esse trabalho é a consolidação de tudo que aprendi com vocês.
+A toda a colaboração TDAq do ATLAS, em especial a Denis Damazio
+(BNL/CERN) pela disponibilização dos dados utilizados e pela
+inestimável ajuda na solução das dúvidas que surgiam durante as
+análises realizadas.
+
+%Aos professores Antônio Cezar de Castro Lima, Luiz Alberto Luz de
+%Almeida, Ana Isabela de Araujo Cunha, Roberto da Costa e Silva e
+%Ademar de Barros Fontes, da Universidade Federal da Bahia, que
+%contribuíram decisivamente para minha formação acadêmica durante
+%a graduação e o mestrado, gostaria de dizer que esse trabalho é %a consolidação de tudo que aprendi com vocês.
 
 Ao Instituto Federal de Educação, Ciência e Tecnologia da Bahia,
 pelo apoio concedido para a finalização deste trabalho.
@@ -92,43 +109,56 @@ ausência durante este período e por me incentivarem sempre a
 continuar, especialmente ao amigo Frederico Wegelin, pela
 companhia e apoio durante o tempo em que morei no Rio de Janeiro.
 
-Em especial, dedico esse trabalho a minha esposa Cléa e minha filha
-Letícia pelo amor e apoio em todos os momentos.
+Aos meus pais pelo amor e apoio durante toda minha existência.
+
+Em especial, agradeço a minha esposa Cléa e minha filha Letícia
+por tornarem tudo mais fácil com suas doses diárias de amor,
+carinho e compreensão.
 
   \begin{abstract}
 O ATLAS é o maior detector do acelerador de partículas LHC. Nas
-colisões, uma enorme quantidade de informação é produzida,
-porém, apenas uma pequena parcela é importante para a caracterização
-dos fenômenos físicos de inte\-resse, o que exige um
-eficiente sistema para detecção (filtragem) \textit{online} de eventos.
-Os elétrons são partículas extremamente importantes para
-o LHC, e aparecem mascarados por um
-intenso ruído de fundo composto de jatos hadrônicos, pois esses
-últimos podem apresentar perfil de deposição de energia nos calorímetros seme\-lhan\-te ao de elétrons
-(os calorímetros são medidores de energia com fina segmentação e no ATLAS são divididos em sete camadas,
-totalizando mais de 100.000 sensores). Neste trabalho, é proposta a
-utilização do modelo não-linear da análise
-de componentes independentes no processo de extração de características, visando
- otimizar o desempenho do sistema neural de filtragem \textit{online} de elétrons no ATLAS (\textit{Neural Ringer}).
-Para explorar toda a segmentação e granularidade disponíveis, a extração de
-características foi efetuada separadamente para cada camada do calorímetro.
-Diversos algoritmos foram utilizados na estimação dos componentes independentes. Através da abordagem proposta, foi possível alcançar alta
-eficiência de discriminação, gerando dados mais limpos para a
-análise \textit{offline}.
+colisões, uma enorme quantidade de informação é produzida, porém,
+apenas uma pequena parcela é importante para a caracterização dos
+fenômenos físicos de inte\-resse, o que exige um eficiente sistema
+para detecção (filtragem) \textit{online} de eventos. Os elétrons
+são partículas extremamente importantes para o LHC, e aparecem
+mascarados por um intenso ruído de fundo composto de jatos
+hadrônicos, os quais podem apresentar perfil de deposição de
+energia nos calorímetros seme\-lhan\-te ao de elétrons. Os
+calorímetros são medidores de energia com fina segmentação e, no
+ATLAS, são divididos em sete camadas, totalizando mais de 100.000
+sensores. Neste trabalho, é proposta a utilização do modelo
+não-linear da análise de componentes independentes no processo de
+extração de características, visando otimizar o desempenho do
+sistema neural de filtragem \textit{online} de elétrons no ATLAS
+(\textit{Neural Ringer}). Para explorar toda a segmentação e
+granularidade disponíveis, a extração de características foi
+efetuada separadamente para cada camada do calorímetro. Diversos
+algoritmos foram utilizados na estimação dos componentes
+independentes. Através da abordagem proposta, foi possível
+alcançar alta eficiência de discriminação, gerando dados mais
+limpos para a análise \textit{offline}.
   \end{abstract}
 
   \begin{foreignabstract}
-ATLAS is the largest detector of the Large Hadron Collider (LHC). A large amount of information is produced 
-in the collisions, but only a small fraction is important for characterizing interesting physics, demanding 
-an efficient online event detection (trigger) system. Electrons are extremely important for the LHC and 
-are immerse in a huge background noise of hadronic jets, as these last signatures present calorimeter energy 
-deposition profile similar to electrons one (calorimeters are highly segmented energy measurement systems and in 
-ATLAS are split into seven layers and more than 100,000 sensing elements). In this work, the nonlinear 
-independent component analysis (NLICA) model is proposed to extract features aiming at the optimization 
-of the ATLAS electron online neural discriminator (Neural Ringer). In order to cope with the full segmentation 
-and granularity available, feature extraction was performed at layer-level. Different algorithms were used 
-for the independent components estimation. Through the proposed approach, higher discrimination efficiency 
-was achieved, producing cleaner data for offline analysis.
+ATLAS is the largest detector of the Large Hadron Collider (LHC).
+A large amount of information is produced in the collisions, but
+only a small fraction is important for characterizing interesting
+physics, demanding an efficient online event detection (trigger)
+system. Electrons are extremely important for the LHC and are
+immerse in a huge background noise of hadronic jets, as these last
+signatures present calorimeter energy deposition profile similar
+to electron one. Calorimeters are highly segmented energy
+measurement systems and in ATLAS are split into seven layers and
+more than 100,000 sensing elements. In this work, the nonlinear
+independent component analysis (NLICA) model is proposed to
+extract features aiming at the optimization of the ATLAS electron
+online neural discriminator (Neural Ringer). In order to cope with
+the full segmentation and granularity available, feature
+extraction was performed at layer-level. Different algorithms were
+used for the independent components estimation. Through the
+proposed approach, higher discrimination efficiency was achieved,
+producing cleaner data for offline analysis.
   \end{foreignabstract}
 
   \tableofcontents

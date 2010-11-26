@@ -11,18 +11,19 @@ Acquisition}) do detector ATLAS.
 \section{Introdução aos Sistemas de Filtragem em HEP}
 
 A maioria  dos fenômenos físicos que são estudadas atualmente em
-experimentos de física de altas energias são raros, pois a grande
+experimentos de física de altas energias são raros, pois grande
 parte da informação produzida representa processos já conhecidos
-(identificados e estudados anteriormente em outro
-experimentos)~\cite{article:trigger:watz}. Por exemplo, o LHC
-produzirá uma taxa de eventos da ordem de 10$^9$ Hz para alta
-luminosidade ($L=10^{34}$cm$^{-2}$s$^{-1}$). Dependendo de sua
-massa, a taxa de produção esperada para o bóson de Higgs varia
-entre 10$^{-1}$ e 10$^{-2}$ Hz \cite{article:trigconf:2009}. Neste
-caso a frequência de interesse é de 10$^{10}$ a 10$^{11}$ vezes
-menor que a taxa de eventos produzidos, o que significa dizer que
-todo o restante da informação produzida representa ruído de fundo
-para a identificação da física de interesse.
+(identificados e estudados anteriormente em outros
+experimentos)~\cite{article:trigger:watz}. Por exemplo, quando
+estiver operando em alta luminosidade
+($L=10^{34}$cm$^{-2}$s$^{-1}$), o LHC produzirá uma taxa de
+eventos da ordem de 10$^9$ Hz e a taxa de produção esperada para o
+bóson de Higgs (dependendo de sua massa) varia entre 10$^{-1}$ e
+10$^{-2}$ Hz \cite{article:trigconf:2009}. Neste caso, a
+frequência de interesse é de 10$^{10}$ a 10$^{11}$ vezes menor que
+a taxa de eventos produzidos, o que significa dizer que todo o
+restante da informação produzida representa ruído de fundo para a
+identificação da física de interesse.
 
 Conforme ilustrado na Figura~\ref{fig_gentrigdiag}, os sistemas de
 \textit{trigger}, em geral, utilizam diferentes níveis
@@ -35,10 +36,10 @@ Como os níveis são hierárquicos (sequenciais), uma vez que o
 evento foi rejeitado em um dado nível ele não está mais disponível
 para análise nos níveis posteriores \cite{article:trigger:watz}.
 
-\begin{figure}[h!] \centering
+\begin{figure}[t!] \centering
 \includegraphics[width=9cm]{capt_trigdiag}
-\caption{Diagrama em blocos do sistema de filtragem genérico para
-um experimento de HEP.} \label{fig_gentrigdiag}
+\caption{Diagrama em blocos de um sistema de filtragem genérico
+para experimentos de HEP.} \label{fig_gentrigdiag}
 \end{figure}
 
 O primeiro nível de filtragem (L1 - \textit{Level One}) tem
@@ -53,41 +54,42 @@ ATLAS, CMS, CDF~\cite{Homepage:cdf} e D0~\cite{Homepage:d0}, por
 exemplo, utilizam filtragem de primeiro nível em \textit{hardware}
 dedicado.
 
-A filtragem de alto nível (HLT - \textit{high-level trigger}) pode
-ser implementada através de \textit{software} e executado em
-paralelo por computadores pessoais (PCs). Este estágio dispõe de
-um maior tempo para produzir a decisão de aceitação ou rejeição e
-opera com uma menor taxa de eventos (uma vez que uma parcela do
-ruído de fundo já foi rejeitada pelo primeiro nível). As análises
-executadas no HLT envolvem operações mais complexas (comparadas ao
-L1) e podem até requerer a recomposição completa do
-evento~\cite{article:trigger:volker2004}. O detector H1 do
-acelerador HERA é uma exceção, pois no segundo nível de filtragem
-utiliza redes neurais artificiais implementadas em
-\textit{hardware}, mais detalhes a respeito do sistema de detecção
-neural do H1 serão fornecidos na próxima seção.
+A filtragem de alto nível (HLT - \textit{high-level trigger})
+dispõe de um maior tempo para produzir a decisão de aceitação ou
+rejeição e opera com uma menor taxa de eventos (uma vez que uma
+parcela do ruído de fundo já foi rejeitada pelo primeiro nível).
+Assim, este estágio pode ser implementada através de
+\textit{software} e executado em paralelo por computadores
+pessoais (PCs). As análises executadas no HLT envolvem operações
+mais complexas (comparadas ao L1) e podem até requerer a
+recomposição completa do evento~\cite{article:trigger:volker2004}.
+O detector H1 do acelerador HERA~\cite{article:hera:2008} é uma
+exceção, pois no segundo nível de filtragem utiliza redes neurais
+artificiais implementadas em \textit{hardware}, mais detalhes a
+respeito do sistema de detecção neural do H1 serão fornecidos na
+próxima seção.
 
 As características de seleção de cada nível variam de acordo com o
 experimento em questão \cite{article:trigger:watz}. Em modernos
 experimentos de física de alta energia os detectores são divididos
 em sub-sistemas responsáveis pela detecção de classes específicas
-de assinaturas. Por exemplo os calorímetros podem ser utilizados
-para a identificação de candidatos a elétrons, fótons e jatos, já
-os múons necessitam de um detector específico (o sistema de
-múons). O sistema de filtragem utiliza informações destes
-sub-detectores para identificar as assinaturas da física de
-interesse.
+de assinaturas (canais de interesse). Por exemplo os calorímetros
+podem ser utilizados para a identificação de candidatos a
+elétrons, fótons e jatos, já os múons necessitam de um detector
+específico (o sistema de múons). O sistema de filtragem utiliza
+informações destes sub-detectores para identificar as assinaturas
+nos diversos canais da física de interesse.
 
 Considerando os detectores ATLAS e CMS (os dois detectores de
 propósito geral do LHC), diferentes soluções foram utilizadas para
 resolver o problema de filtragem e aquisição de dados. No ATLAS, o
-nível 1 transmite para o nível 2 um sub-conjunto da informação
-total do detector (conhecido como região de interesse - RoI, do
-inglês \textit{Region of Interest}) que contém as características
-necessárias para a identificação da assinatura em questão
-\cite{article:triggerint:2008}. O CMS utiliza um sistema de
-filtragem de primeiro nível que envia toda a informação do evento
-ao HLT~\cite{article:cms:trigger:2004}.
+nível 1 transmite para o nível 2 apenas um sub-conjunto da
+informação total do detector (conhecido como região de interesse -
+RoI, do inglês \textit{Region of Interest}) que contém as
+características necessárias para a identificação da assinatura em
+questão \cite{article:triggerint:2008}. O CMS utiliza um sistema
+de filtragem de primeiro nível que envia toda a informação do
+evento ao HLT~\cite{article:cms:trigger:2004}.
 
 A utilização das RoI exige inteligência para selecionar
 adequadamente a informação necessária, mas a grande vantagem é que
@@ -108,25 +110,25 @@ As redes neurais artificiais (RNA) \cite{haykin:nn:2008} de
 treinamento supervisionado vêm sendo utilizadas em experimentos de
 física de altas energias, desde o início da década de 1990, com
 objetivo de auxiliar na detecção \textit{online} dos eventos e
-também para caracterização dos fenômenos físicos de interesse em
-análises \textit{offline}. Mais detalhes a respeito das redes
-neurais artificiais (e sua utilização como classificador
+também para carac\-te\-ri\-zação dos fenômenos físicos de
+interesse em análises \textit{offline}. Mais detalhes a respeito
+das redes neurais artificiais (e sua utilização como classificador
 supervisionado) podem ser encontrados no Apêndice
 \ref{apend_clas}.
 
 Em geral, nas aplicações de filtragem \textit{online} são
 utilizados classificadores neurais na arquitetura Perceptron de
-Múltiplas Camadas com treinamento
-supervisionado~\cite{haykin:nn:2008}. A escolha de redes neurais
-para aplicações em sistemas de \textit{trigger} é motivada pelo
-fato do problema ser essencialmente de reconhecimento de padrões
-(identificação das assinaturas de interesse). Uma outra
-característica particular é que as assinaturas não tem estrutura
-temporal, representando as medições instantâneas dos diversos
-sub-detectores. Finalmente, a possibilidade de realizar
-implementação paralela (seja em \textit{hardware} ou
-\textit{software}) possibilita a redução do tempo de
-processamento~\cite{article:h1trig:2004}.
+Múltiplas Camadas (MLP - \emph{Multi-Layer Perceptron}) com
+treinamento supervisionado~\cite{haykin:nn:2008}. A escolha de
+redes neurais para aplicações em sistemas de \textit{trigger} é
+motivada pelo fato do problema ser essencialmente de
+reconhecimento de padrões (identificação das assinaturas de
+interesse). Uma outra característica particular é que as
+assinaturas não tem estrutura temporal, representando as medições
+instantâneas dos diversos sub-detectores. Finalmente, a
+possibilidade de realizar implementação paralela (seja em
+\textit{hardware} ou \textit{software}) possibilita a redução do
+tempo de processamento~\cite{article:h1trig:2004}.
 
 O primeiro sistema de filtragem \textit{online} (\textit{trigger})
 baseado em redes neurais foi projetado e testado no detector D0 do
@@ -164,8 +166,9 @@ operou sozinho.
 
 Visando minimizar o tempo de processamento, as redes neurais dos
 detectores D0 e H1 foram implementadas em \textit{hardware}
-dedicado~\cite{article:nnphys:1995}. Outras aplicações de rede
-neural implementadas em \textit{hardware} podem ser encontradas em
+dedicado~\cite{article:nnphys:1995}. Outras aplicações de redes
+neurais implementadas em \textit{hardware} podem ser encontradas
+em
 \cite{article:spencer:1989,article:denbynnh:2003,article:nnhad:2007}.
 
 No experimento HEGRA (\textit{High-Energy Gamma Ray Astronomy})
@@ -174,7 +177,7 @@ de raios cósmicos instalados a 2000 metros de altitude, na ilha La
 Palma, Espanha, uma rede neural foi utilizada para separar eventos
 de raios cósmicos carregados eletricamente ($\gamma$-induzidos) do
 ruído de fundo composto por chuveiros induzidos por hadrons (que é
-100 vezes mais frequente que a assinatura de interesse). O
+$\sim$100 vezes mais frequente que a assinatura de interesse). O
 classificador neural foi alimentado por medições de um conjunto de
 221 cintiladores, que possibilitam a reconstrução da direção da
 partícula primária. Diversas topologias de classificadores neurais
@@ -218,8 +221,8 @@ eficiência de classificação da ordem de 90 $\%$ para cada classe.
 Redes neurais artificiais foram utilizadas também para a estimação
 da massa de top-quarks e eventos de raios cósmicos,
 respectivamente, no acelerador Tevatron do
-Fermilab~\cite{article:mlhep:2009} e no observatório Pierre
-Auger~\cite{article:riggi:2007}. A massa de top-quarks é
+Fermilab~\cite{article:mlhep:2009} e no observatório \emph{Pierre
+Auger}~\cite{article:riggi:2007}. A massa de top-quarks é
 extremamente alta se comparado às demais partículas elementares
 (aproximadamente 40 vezes maior que o segundo quark mais pesado).
 O motivo para tal característica ainda não está completamente
@@ -250,9 +253,9 @@ experimentais (para baixas energias) e simulados (por
 que a rede neural foi capaz de realizar a estimação com alta
 precisão, superando métodos tradicionalmente utilizados (como os
 métodos do centroide \cite{article:centroide:2006} e da máxima
-verossimilhança \cite{article:ml:1997}), atingindo precisão menor
-que 1 mm para baixas energias e aproximadamente igual a 2,1 mm
-para altas energias.
+verossi\-mi\-lhan\-ça \cite{article:ml:1997}), atingindo precisão
+menor que 1 mm para baixas energias e aproximadamente igual a 2,1
+mm para altas energias.
 
 Mesmo com todos os exemplos de aplicações bem sucedidas de redes
 neurais, o seu uso está longe de ser uma unanimidade entre a
@@ -272,14 +275,15 @@ utilizados em HEP) \cite{article:denby:1999}. Essa característica
 particular da HEP talvez tenha produzido uma resistência maior ao
 uso de redes neurais em comparação a outros campos da ciência. No
 caso da aplicação no detector H1, toda a colaboração do
-experimento precisou se convencer que as redes não eram uma caixa
-preta misteriosa e um esforço conjunto foi feito no sentido de
-entender como as redes funcionam e como podem ser ajustadas de
-modo ótimo para cada problema \cite{article:nnphys:1995}. De um
-modo geral, o uso de redes neurais está consolidado e bem aceito
-como ferramenta importante na análise \textit{offline}, porém, no
-trigger online a situação ainda é ambígua, com grupos a favor e
-outros contra \cite{article:denby:1999}.
+experimento precisou se convencer que as redes não eram uma
+``caixa'' preta misteriosa e um esforço conjunto foi feito no
+sentido de entender como as redes funcionam e como podem ser
+ajustadas de modo ótimo para cada problema
+\cite{article:nnphys:1995}. De um modo geral, o uso de redes
+neurais está consolidado e bem aceito como ferramenta importante
+na análise \textit{offline}, porém, no \emph{trigger online} a
+situação ainda é ambígua, com grupos a favor e outros contra
+\cite{article:denby:1999}.
 
 \section{O Sistema de Filtragem \textit{Online} do ATLAS}
 \label{sec_trig}
@@ -291,32 +295,34 @@ ruído de fundo (eventos não-relevantes) gravados em mídia
 permanente \cite{TDR:ATLAS:1998}.
 
 Considerando as condições de operação do LHC ($40\times 10^6$
-colisões por segundo, frequencia de interações de 1 GHZ, eventos
+colisões por segundo, frequência de interações de 1 GHZ, eventos
 de interesse raros e imersos em intenso ruído de fundo) e sabendo
 que, a cada evento (colisão do LHC), no ATLAS são gerados
-aproximadamente 1,5 MByte de informação, é produzido no detector
-aproximadamente 60 TBytes de informação por segundo. Com a
-tecnologia disponível atualmente não é viável armazenar essa
-quantidade de informação. Mesmo que as leituras de todos os
-eventos fossem acumuladas, o processo de filtragem
-\textit{offline} sobre toda essa massa de dados não seria
-possível. Assim, é necessário um sistema eficiente de filtragem
-\textit{online}.
+$\sim$1,5~MByte de informação, é produzido no detector
+$\sim$60~TBytes de informação por segundo. Com a tecnologia
+disponível atualmente não é viável armazenar essa quantidade de
+informação. Mesmo que as leituras de todos os eventos fossem
+acumuladas, o processo de identificação \textit{offline} sobre
+toda essa massa de dados não seria possível. Assim, é necessário
+um sistema eficiente de filtragem \textit{online}.
 
 O sistema de filtragem do ATLAS (usualmente chamado de sistema de
 \textit{trigger}) acessa informação dos três principais
 sub-detectores, o detector de trajetórias, os calorímetros e a
-câmara de múons. O \textit{trigger} online opera em 3 níveis
-sequenciais de seleção de eventos: o nível 1 (L1), o nível 2 (L2)
-e o filtro de eventos (EF - \textit{event filter}), sendo que os
-dois últimos juntos compõem a filtragem de alto nível (HLT -
-\textit{High Level Trigger}) \cite{article:HLT1:2003}. Cada nível
-é responsável pela rejeição de uma parcela das assinaturas não
-relevantes (ruído de fundo), refinando a decisão do nível
-anterior. A Figura \ref{trigger} ilustra as principais
-características dos três níveis de filtragem de eventos no ATLAS.
+câmara de múons. O sistema trabalha com canais (ou menus) de
+\emph{trigger}, que representam as diversas classes de assinaturas
+de interesse (elétrons, múons, jatos, etc). O \textit{trigger}
+\emph{online} opera em 3 níveis sequenciais de seleção de eventos:
+o nível 1 (L1), o nível 2 (L2) e o filtro de eventos (EF -
+\textit{event filter}), sendo que os dois últimos juntos compõem a
+filtragem de alto nível (HLT - \textit{High Level Trigger})
+\cite{article:HLT1:2003}. Cada nível é responsável pela rejeição
+de uma parcela das assinaturas não relevantes (ruído de fundo),
+refinando a decisão do nível anterior. A Figura \ref{trigger}
+ilustra as principais características dos três níveis de filtragem
+de eventos no ATLAS.
 
-\begin{figure}[h!] \centering
+\begin{figure}[b!] \centering
 \includegraphics[width=9cm]{cap2_trigger}
 \caption[Diagrama em blocos do sistema de filtragem e aquisição de
 dados do ATLAS.]{Diagrama em blocos do sistema de filtragem e
@@ -327,7 +333,7 @@ aquisição de dados do ATLAS, extraído de \cite{TDR1:ATLAS:1999}.}
 O primeiro nível tem sérias restrições quanto ao tempo de
 processamento (latência máxima de 2,5$\mu s$), recebendo a plena
 taxa de eventos do LHC como entrada. Esse nível é implementado em
-\textit{hardware} dedicado, e para produzir a decisão rapidamente,
+\textit{hardware} dedicado e, para produzir a decisão rapidamente,
 usa apenas parte da re\-so\-lução disponível ao detector. A
 combinação da baixa resolução com critérios de seleção
 simplificados resulta numa aceitação de parcela considerável do
@@ -335,14 +341,14 @@ ruído de fundo pelo primeiro nível, que deve ser gradualmente
 reduzida pelos níveis subsequentes. Até a decisão do primeiro
 nível quanto à aceitação ou rejeição do evento, toda a informação
 do detector relacionada a esse evento é mantida em um
-\textit{pipeline} de memórias. O L1 entrega ao segundo nível a
-localização das áreas onde possivelmente aconteceram eventos de
-interesse, regiões estas conhecidas como RoI (\textit{Regions of
-Interest}).
+\textit{pipeline} de memórias temporárias. O L1 entrega ao segundo
+nível a localização das áreas onde possivelmente aconteceram
+eventos de interesse, regiões estas conhecidas como RoI
+(\textit{Regions of Interest}).
 
 A seleção de eventos no L2 é feita através de \textit{software}
 especializado, rodando em um conjunto de $\approx$700 PCs
-(Computadores Pessoais) dedicados operando em ambiente de
+(computadores pessoais) dedicados operando em ambiente de
 processamento distribuído  \cite{article:triggerint:2008}. Neste
 nível, o tempo máximo para tomada de decisão é 40 ms e estão
 disponível informações (que podem ser descarregadas através pelos
@@ -354,7 +360,7 @@ refinados (em comparação com o L1), reduzindo consideravelmente o
 ruído de fundo, sem perder muitas assinaturas de interesse.
 
 O filtro de eventos é o último estágio do sistema de filtragem,
-recebendo uma taxa de eventos mais baixa, tendo latência de alguns
+recebendo uma taxa de eventos mais baixa e com latência de alguns
 segundos para tomada de decisão. O EF tem acesso a todo o evento
 (não somente à RoI como no L2) e utiliza técnicas semelhantes às
 da reconstrução \textit{offline} operando num conjunto de
@@ -364,10 +370,11 @@ posterior análise \textit{offline}.
 
 A estratégia de processamento sequencial permite que os eventos
 sejam rejeitados na primeira etapa possível, minimizando a
-necessidade de acesso a informações, e facilitando o ajuste e
-eventual modificação das estratégias de extração de
-características. Na Tabela \ref{tab_trigg} é apresentado um resumo
-das principais características dos 3 níveis de filtragem do ATLAS.
+necessidade de acesso a informações, e facilitando os ajustes e
+eventuais modificações nas estratégias de extração de
+ca\-rac\-te\-rísticas. Na Tabela \ref{tab_trigg} é apresentado um
+resumo das principais características dos três níveis de filtragem
+do ATLAS.
 
 \begin{table}[h!]
 \centering \caption{Principais características do sistema de
@@ -407,9 +414,11 @@ filtragem. Para o ATLAS, foram utilizados ge\-ra\-do\-res de
 eventos para colisões próton-próton como HERWIG, ISAJET, GEANT e
 PYTHIA, descritos em \cite{TDR1:ATLAS:1999} e
 \cite{TDR:ATLAS:2003}. Os algoritmos de classificação e extração
-de carac\-terísticas foram projetados para os dados simulados e
-posteriormente adaptados para a realidade de operação quando do
-início da aquisição de dados.
+de carac\-terísticas propostos neste trabalho foram projetados
+para os dados simulados e posteriormente adaptados para a
+realidade de operação quando do início da aquisição de dados
+(conforme será descrito em mais detalhes no
+Capítulo~\ref{cap_metod}).
 
 \subsection{Primeiro Nível de Filtragem}
 
@@ -439,26 +448,33 @@ partículas eletromagnéticas e hadrônicas, e nos sub-detectores RPC
 Chambers}) para a detecção de múons, conforme mostrado na
 Figura~\ref{lvl1}. O filtro dos calorímetros é dividido em três
 sub-sistemas (Pré-processador, Processador de Regiões e
-Processador de Soma de Energia/Jato). O pré-processador digitaliza
-os sinais medidos e envia as informações para os processadores de
-regiões (CP - \textit{Cluster Processor}) e de soma de energia /
-jatos (JEP - \textit{Jet/Energy Sum Processor}). O CP é
-responsável pela identificação dos candidatos a elétrons, fótons e
-$\tau$-leptons e o JEP identifica candidatos a jatos e produz a
-soma global de energia do evento. Considerando o filtro de múons,
-cada um dos sub-detectores é responsável pela identificação dos
-candidatos a múons em uma região do detector, o RPC opera no
-barril e o TGC na tampa. Se a assinatura analisada satisfaz um
-critério de aceitação
+Processador de Soma de Energia/Jato).
+
+\begin{figure}[b!] \centering
+\includegraphics[width=12cm]{cap2_nivel1}
+\caption{Diagrama em blocos do primeiro nível de filtragem.}
+\label{lvl1}
+\end{figure}
+
+O pré-processador digitaliza os sinais medidos e envia as
+informações para os processadores de regiões (CP - \textit{Cluster
+Processor}) e de soma de energia / jatos (JEP - \textit{Jet/Energy
+Sum Processor}). O CP é responsável pela identificação dos
+candidatos a elétrons, fótons e $\tau$-leptons e o JEP identifica
+candidatos a jatos e produz a soma global de energia do evento.
+Considerando o filtro de múons, cada um dos sub-detectores é
+responsável pela identificação dos candidatos a múons em uma
+região do detector, o RPC opera no barril e o TGC na tampa. Se a
+assinatura analisada satisfaz um critério de aceitação
  de algum dos sub-detectores (calorímetros, RPC ou TGC), então ela é aceita pelo L1 e enviada para
 uma análise mais criteriosa na filtragem de alto-nível.
 
 Até a tomada de decisão de nível 1, toda a informação do evento é
-armazenada em memórias tipo \textit{pipeline}. Quando um evento é
-aceito, as informações referentes a este são descarregadas para
-uso pelo nível 2 de filtragem. As informações dos eventos
-rejeitados são descartadas (não estando mais acessível para a
-filtragem de alto-nível).
+armazenada num \textit{pipeline} de memórias temporárias. Quando
+um evento é aceito, as informações referentes a ele são
+descarregadas para uso pelo nível 2 de filtragem. As informações
+dos eventos rejeitados são descartadas (não estando mais
+acessíveis para a filtragem de alto-nível).
 
 O L1 é responsável por fornecer ao HLT informações sobre a posição
 (no plano $\eta$,$\phi$) onde os eventos aceitos ocorreram,
@@ -470,14 +486,10 @@ sistema de filtragem do L1 é implementado utilizando hardware
 dedicado (através de FPGAs) conforme detalhado em
 \cite{artigo:L1:implem}.
 
-\begin{figure} \centering
-\includegraphics[width=13cm]{cap2_nivel1}
-\caption{Diagrama em blocos do primeiro nível de filtragem.}
-\label{lvl1}
-\end{figure}
+
 %, adaptado de \cite{TDR:ATLAS:1998}
 
-Na Tabela \ref{tab_lvl1} são mostradas as freqüências dos
+Na Tabela \ref{tab_lvl1} são mostradas as frequências dos
 principais canais de filtragem esperadas na saída do L1 quando o
 LHC estiver operando em alta luminosidade
 (L=10$^{34}$cm$^{-2}s{-1}$). Os principais objetos de
@@ -489,7 +501,7 @@ de saída esperada para o nível 1 na operação do
 LHC~\cite{TDR:ATLAS:1998}.
 
 \begin{table}
-\centering \caption[Freqüência esperada para os principais canais
+\centering \caption[Frequência esperada para os principais canais
 de \textit{trigger} no primeiro nível de filtragem do ATLAS
 (L=10$^{34}$cm$^{-2}s{-1}$).]{Freqüência esperada para os
 principais canais de \textit{trigger} no primeiro nível de
@@ -559,6 +571,13 @@ ROBs), através da rede do L2, para o Filtro de Eventos (EF).
 Quando o evento é rejeitado, as informações referentes a ele são
 descartadas.
 
+\begin{figure}[b!]
+\centering
+\includegraphics[width=9.5cm]{cap2_nivel2}
+\caption{Diagrama em blocos do segundo nível de filtragem.}
+\label{fig_l2}
+\end{figure}
+
 As principais características desejadas para os algoritmos de
 filtragem no L2 são listadas a seguir~\cite{TDR:ATLAS:2003}:
 \begin{itemize}
@@ -592,20 +611,13 @@ utilizados em computadores pessoais) e praticamente toda a
 comunicação é feita através de redes \textit{Gigabit
 Ethernet}~\cite{livro:gigaeth:1999}. As aplicações estão sendo
 desenvolvidas utilizando C++~\cite{livro:c:2003}. Estas escolhas
-foram feitas considerando-se padronização, velocidade,
-confiabilidade e facilidade na reposição de equipamentos.
+foram feitas considerando-se fatores como: padronização,
+velocidade, confiabilidade e facilidade na reposição de
+equipamentos.
 
 Mais informações sobre os componentes dos sistemas de filtragem
-podem ser encontradas em \cite{TDR:ATLAS:1998},
-\cite{TDR:ATLAS:2003}, \cite{TDR1:ATLAS:1999} e
-\cite{TDR2:ATLAS:1999}.
-
-\begin{figure}[t!]
-\centering
-\includegraphics[width=9.5cm]{cap2_nivel2}
-\caption{Diagrama em blocos do segundo nível de filtragem.}
-\label{fig_l2}
-\end{figure}
+podem ser encontradas em
+\cite{TDR2:ATLAS:1999,TDR1:ATLAS:1999,TDR:ATLAS:2003,TDR:ATLAS:1998}.
 
 \subsubsection{Desafios do HLT}
 
@@ -615,9 +627,9 @@ ATLAS. Então, percebe-se que, os algoritmos do HLT operam num
 espaço de decisão multidimensional, com restrições no tempo de
 processamento e rígidos padrões de eficiência. Deve-se notar
 também que, as características do sistema de filtragem podem mudar
-com o melhor conhe\-ci\-men\-to do detector, após os testes e o
-início de operação. Percebe-se, então, que o sistema de
-\textit{trigger} de alto nível demanda esforços no sentido de
+após os testes e o início de operação, com o melhor
+conhe\-ci\-men\-to do detector. Percebe-se, então, que o sistema
+de \textit{trigger} de alto nível demanda esforços no sentido de
 propor, testar e comparar diferentes estratégias de seleção.
 
 Embora existam algoritmos desenvolvidos pela colaboração do ATLAS
@@ -628,28 +640,28 @@ discriminação da física de interesse e, ao mesmo tempo, maior
 rejeição do ruído de fundo.
 
 Neste contexto, se encaixa este trabalho, que visa propor uma
-otimização ao Neural Ringer
+otimização ao \emph{Neural Ringer}
 \cite{tese:andre:2006,tese:torres:2010} que é um discriminator
 alternativo para o canal elétron/jato e apresenta desempenho
 superior ao T2Calo (discriminador oficial do ATLAS) e tempo de
 processamento dentro da janela permitida ao L2 ($\approx$40 ms).
 
-No próximo capítulo será descrito o processo de identificação de
-elétrons a partir de informações de calorimetria. Considerando o
-L2 do ATLAS, serão descritos os discriminadores T2Calo e
-\textit{Neural Ringer}.
+No próximo capítulo, será descrito o processo de identificação de
+elétrons a partir de informações de calorimetria no ATLAS,
+considerando especialmente os discriminadores de segundo nível
+T2Calo e \textit{Neural Ringer}.
 
 \subsection{Plataforma de \textit{Software} do Sistema de Filtragem}
 
 A colaboração do ATLAS desenvolveu um conjunto de softwares e
 ferramentas de controle (conhecidos como Athena)
-\cite{TP:athena:2001} que permitem aos membros da colaboração,
+\cite{TP:athena:2001}, que permitem aos membros da colaboração,
 independente de sua localização geográfica, acesso e análise dos
 dados gerados no detector.
 
 O Athena, em sua estrutura modular, dispõe de rotinas para:
 \begin{itemize}
- \item Simulação (incorporando algoritmos como o Pythia, que simula a colisão dos feixes de prótons e o Geant, que
+ \item Simulação (incorporando algoritmos como o \emph{Pythia}, que simula a colisão dos feixes de prótons e o \emph{Geant}, que
 simula a interação das partículas com a matéria e o comportamento
 dos detectores);
  \item Filtragem (\textit{Trigger});
@@ -662,15 +674,15 @@ O núcleo (\textit{kernel}) do Athena é baseado no projeto Gaudi
 detector LHCb e posteriormente adaptado para as necessidades do
 ATLAS. O Athena, na verdade, define uma estrutura
 (\textit{framework}) de controle comum para todos os aplicativos e
-análises necessárias para a colaboração do ATLAS.
+análises necessárias para a colaboração do \linebreak ATLAS.
 
 Entre os principais benefícios do uso de uma estrutura comum
 pode-se mencionar:
 \begin{itemize}
  \item Os desenvolvedores compartilham a mesma estrutura, onde podem inserir os seus próprios códigos, de acordo com
 sua necessidade específica;
- \item A comunicação e compatibilidade entre os diversos componentes é mais facilmente garantida;
- \item Facilidade para re-uso de código, poupando tempo no desenvolvimento de rotinas mais complexas.
+ \item A comunicação e a compatibilidade entre os diversos componentes é mais facilmente garantida;
+ \item Existe facilidade para re-uso de código, poupando tempo no desenvolvimento de rotinas mais complexas.
 \end{itemize}
 
 O Athena está sendo utilizado no desenvolvimento e teste de

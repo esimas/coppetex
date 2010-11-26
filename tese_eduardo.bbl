@@ -105,7 +105,7 @@
   Instruments and Methods in Physics Research A\/}, v.~478, pp.~46--61, 2002.
 
 \bibitem{Homepage:CERN}
-\MakeUppercase{ CERN-Colaboration}, \enquote{CERN}, Disponível em
+\MakeUppercase{ CERN-Colaboration}, \enquote{CERN Homepage}, Disponível em
   :$<$http://www.cern.ch/$>$. Acesso em: 20 de março de 2007.
 
 \bibitem{article:darkm:2005}
@@ -140,8 +140,7 @@
 
 \bibitem{Homepage:brookhaven}
 \MakeUppercase{ Brookhaven}, \enquote{Brookhaven National Laboratory},
-  Disponível em: $<$http://www.bnl.gov/$>$. Acesso em: 02 de julho de 2009,
-  2009.
+  Disponível em: $<$http://www.bnl.gov/$>$. Acesso em: 02 de julho de 2009.
 
 \bibitem{Homepage:lhc}
 \MakeUppercase{ LHC-Collaboration}, \enquote{Large Hadron Collider}, Disponível
@@ -255,6 +254,11 @@
 \MakeUppercase{ D0-Collaboration}, \enquote{The D0 Experiment}, Disponível em:
   $<$http://www-cdf.fnal.gov/$>$. Acesso em: 21 de abril de 2010.
 
+\bibitem{article:hera:2008}
+\MakeUppercase{ Nguyet, T.~T.}, \enquote{Searches for new physics by the {H1}
+  experiment at {HERA}}, {\em Acta Physica Polonica B Proceedings
+  Supplement\/}, v.~1, n.~2, pp.~407--409, 2008.
+
 \bibitem{article:triggerint:2008}
 \MakeUppercase{ Riu, I., Abolins, M., et. al, P.~A.}, \enquote{Integration of
   the Trigger and Data Acquisition Systems in {ATLAS}}, {\em IEEE Transactions
@@ -292,11 +296,6 @@
 \MakeUppercase{ Denby, B.}, \enquote{Neural Networks in high-energy physics, a
   ten year perspective}, {\em Computer Physics Communications\/}, v.~1, n. 119,
   pp.~219--231, 1999.
-
-\bibitem{article:hera:2008}
-\MakeUppercase{ Nguyet, T.~T.}, \enquote{Searches for new physics by the {H1}
-  experiment at {HERA}}, {\em Acta Physica Polonica B Proceedings
-  Supplement\/}, v.~1, n.~2, pp.~407--409, 2008.
 
 \bibitem{article:h1trig2:2004}
 \MakeUppercase{ Zimmermann, J., Kiesling, C.}, \enquote{Neural networks for the
@@ -438,6 +437,11 @@
   Theory\/}.
 \newblock Wiley: Nova Jersey, Estados Unidos, 2006.
 
+\bibitem{article:hyvarinen:2000}
+\MakeUppercase{ Hyvarinen, A., Oja, E.}, \enquote{Independent Component
+  Analysis: Algorithms and Applications}, {\em Neural Networks\/}, v.~13, n.
+  4-5, pp.~411--430, 2000.
+
 \bibitem{article:herman:2006}
 \MakeUppercase{ {Lima Jr}., H., Seixas, J.}, \enquote{A segmented principal
   component analysis applied to calorimetry information at ATLAS}, {\em Nuclear
@@ -493,11 +497,6 @@
 \MakeUppercase{ Cichocki, A., Amari, S.}, {\em Adaptive Blind Signal and Image
   Processing\/}.
 \newblock John Willey and Sons: West Sussex, Reino Unido, 2002.
-
-\bibitem{article:hyvarinen:2000}
-\MakeUppercase{ Hyvarinen, A., Oja, E.}, \enquote{Independent Component
-  Analysis: Algorithms and Applications}, {\em Neural Networks\/}, v.~13, n.
-  4-5, pp.~411--430, 2000.
 
 \bibitem{jutten:nlica:2003}
 \MakeUppercase{ Jutten, C., Karhunen, J.}, \enquote{Advances in Nonlinear Blind
@@ -607,21 +606,12 @@
   using Higher Order Statistics and a Genetic Algorithm}, {\em IEEE
   Transactions on Evolutionary Computation\/}, v.~5, n.~6, pp.~600--612, 2001.
 
-\bibitem{article:woo:nl2005}
-\MakeUppercase{ Woo, W.~L., Dlay, S.~S.}, \enquote{Nonlinear blind source
-  separation using a hybrid RBF-FMLP network}, {\em IEE Proceedings on Vision,
-  Image and Signal Processing\/}, v.~8, n.~2, pp.~173--183, 2005.
-
 \bibitem{article:gao:nl2005}
 \MakeUppercase{ Gao, P., Woo, W., Dlay, S.~S.}, \enquote{Neural network
   approaches to nonlinear blind source separation}.
 \newblock In: {\em Proceedings of the Eighth International Symposium on Signal
   Processing and Its Applications\/}, v.~1, pp. 78--81, Sydney, Australia,
   2005.
-
-\bibitem{book:function:1984}
-\MakeUppercase{ Griffel, D.~H.}, {\em Applied Functional Analysis\/}.
-\newblock Dover: West Sussex, Reino Unido, 1985.
 
 \bibitem{article:pajunen:1996}
 \MakeUppercase{ Pajunen, P., Hyvarinen, A., Karhunen, J.}, \enquote{Nonlinear
@@ -641,80 +631,15 @@
   Visualisation, pp. 377--388, {\em Lecture Notes in Computer Science\/},
   Springer, 2003.
 
-\bibitem{article:bishop:1998}
-\MakeUppercase{ Bishop, C.~M., Svensen, M., Willians, C. K.~I.}, \enquote{GTM:
-  The generative topographic mapping}, {\em Neural Computation\/}, v.~10,
-  pp.~215--234, 1998.
-
-\bibitem{article:pajunen:1997}
-\MakeUppercase{ Pajunen, P., Karhunen, J.}, \enquote{A maximum likelihood
-  approach to nonlinear blind source separation}.
-\newblock In: {\em Proceedings of the International Conference on Artificial
-  Neural Networks\/}, v.~1, pp. 541--546, Lausanne, Suiça, 1997.
-
 \bibitem{article:lappalainen:2000}
 \MakeUppercase{ Lappalainen, H., Honkela, A.}, \enquote{Advances in Independent
   Component Analysis}, chap. Bayesian nonlinear independent component analysis
   by multi-layer perceptrons, pp. 93--121, Springer, 2000.
 
-\bibitem{article:lappalainen:bay1999}
-\MakeUppercase{ Lappalainen, H.}, \enquote{Ensemble learning for independent
-  component analysis}.
-\newblock In: {\em Proceedings of the International Workshop on Independent
-  Component Analysis and Blind Signal Separation\/}, v.~1, pp. 7--12, Aussois,
-  France, 1999.
-
-\bibitem{aricle:minskin:2000}
-\MakeUppercase{ Lappalainen, H., Miskin, J.~W.}, \enquote{Advances in
-  Independent Component Analysis}, chap. Ensemble learning, pp. 75--92,
-  Springer, 2000.
-
-\bibitem{article:valpola:2000ica}
-\MakeUppercase{ Valpola, H.}, \enquote{Nonlinear independent component analysis
-  using ensemble learning: Theory}.
-\newblock In: {\em Proceedings of the International Workshop on Independent
-  Component Analysis and Blind Signal Separation\/}, v.~1, pp. 351--356,
-  Helsinki, Finlândia, 2000.
-
-\bibitem{article:honkela:2004ica}
-\MakeUppercase{ Honkela, A.}, \enquote{Approximating nonlinear transformations
-  of probability distributions for nonlinear independent component analysis}.
-\newblock In: {\em ProceedingsProceedings of the IEEE International Joint
-  Conference on Neural Networks\/}, v.~3, pp. 2169--2174, Budapest, Hungria,
-  2004.
-
-\bibitem{article:honkela:2007}
-\MakeUppercase{ Honkela, A., Valpola, H., Ilin, A., \MakeLowercase{et~al.}},
-  \enquote{Blind separation of nonlinear mixtures by variational bayesian
-  learning}, {\em Digital Signal Processing\/}, v.~17, n.~5, pp.~914--934,
-  2007.
-
-\bibitem{article:ilin:2004ie}
-\MakeUppercase{ Ilin, A., Achard, S., Jutten, C.}, \enquote{Bayesian versus
-  constrained structure approaches for source separation in post-nonlinear
-  mixtures}.
-\newblock In: {\em Proceedings of the IEEE International Joint Conference on
-  Neural Networks\/}, v.~3, pp. 2181--2186, Budapest, Hungria, Julho 2004.
-
 \bibitem{article:misep:2004}
 \MakeUppercase{ Almeida, L.~B.}, \enquote{Linear and Nonlinear ICA based on
   Mutual Information}, {\em The Journal of Machine Learning Research\/}, v.~4,
   n.~7, pp.~1297--1318, 2004.
-
-\bibitem{article:Almeida05}
-\MakeUppercase{ Almeida, L.~B., Hyvärinen, A.}, \enquote{Separating a real-life
-  nonlinear image mixture}, {\em Journal of Machine Learning Research\/}, v.~6,
-  pp.~1199--1229, 2005.
-
-\bibitem{article:misep:pnl}
-\MakeUppercase{ Zheng, C.-H., Huang, D.-S., Li, K., \MakeLowercase{et~al.}},
-  \enquote{MISEP Method for Postnonlinear Blind Source Separation}, {\em Neural
-  Compututation\/}, v.~19, n.~9, pp.~2557--2578, 2007.
-
-\bibitem{article:misep:pnll}
-\MakeUppercase{ Sun, Z.-L.}, \enquote{An extension of {MISEP} for
-  post-nonlinear-linear mixture separation}, {\em IEEE Transactions on Circuits
-  and Systems\/}, v.~56, n.~8, pp.~654--658, 2009.
 
 \bibitem{karhunen:local:1999}
 \MakeUppercase{ Karhunen, J., Malaroiu, S.}, \enquote{Local independent
@@ -1010,6 +935,11 @@
   Theory, Part I\/}.
 \newblock Wiley: Nova York, Estados Unidos, 2001.
 
+\bibitem{book:knoll:2000}
+\MakeUppercase{ Knoll, G.~F.}, {\em Radiation Detection and Measurement\/}.
+\newblock 3rd ed.
+\newblock Wiley: Nova York, Estados Unidos, 2000.
+
 \bibitem{sonar:ica}
 \MakeUppercase{ Moura, N.~N., {Simas Filho}, E.~F., Seixas, J.~M.},
   \enquote{Advances in Sonar Signal Processing}, chap. Independent Component
@@ -1118,11 +1048,6 @@
   Neural Filtering based on Independent Components of Pre-Processed
   Information, pp. 337--358, In-Tech: India, 2010.
 
-\bibitem{book:knoll:2000}
-\MakeUppercase{ Knoll, G.~F.}, {\em Radiation Detection and Measurement\/}.
-\newblock 3rd ed.
-\newblock Wiley: Nova York, Estados Unidos, 2000.
-
 \bibitem{article:som:visual:1999}
 \MakeUppercase{ Kaski, S., Venna, J., T.Kohonen}, \enquote{Coloring that
   reveals high-dimensional structures in data}.
@@ -1159,6 +1084,17 @@
   \enquote{Blind source separation based on self-organizing neural network},
   {\em Engineering Applications of Artificial Intelligence\/}, v.~19, n.~3,
   pp.~305--311, 2006.
+
+\bibitem{article:bishop:1998}
+\MakeUppercase{ Bishop, C.~M., Svensen, M., Willians, C. K.~I.}, \enquote{GTM:
+  The generative topographic mapping}, {\em Neural Computation\/}, v.~10,
+  pp.~215--234, 1998.
+
+\bibitem{article:pajunen:1997}
+\MakeUppercase{ Pajunen, P., Karhunen, J.}, \enquote{A maximum likelihood
+  approach to nonlinear blind source separation}.
+\newblock In: {\em Proceedings of the International Conference on Artificial
+  Neural Networks\/}, v.~1, pp. 541--546, Lausanne, Suiça, 1997.
 
 \bibitem{article:gersho:1982}
 \MakeUppercase{ Gersho, A.}, \enquote{On the Structure of Vector Quantizers},
@@ -1233,30 +1169,74 @@
 \newblock In: {\em Proceedings of the IEEE Int. Conf. on Acoustics, Speech and
   Signal Processing\/}, v.~4, pp. 2109--2112, Glasgow, Reino Unido, 1989.
 
-\bibitem{article:akuzawa:2001}
-\MakeUppercase{ Akuzawa, T., Murata, N.}, \enquote{Multiplicative Nonholonomic
-  Newton-like Algorithm}, {\em Chaos, Solitons and Fractals\/}, v.~12, n.~4,
-  pp.~785--793, 2001.
-
-\bibitem{article:extakuzawa:2000}
-\MakeUppercase{ Akuzawa, T.}, \enquote{Extended Quasi-Newton Method for the
-  ICA}.
-\newblock In: {\em Proceedings of the Int. Workshop Independent Component Anal.
-  Blind Signal Separation\/}, pp. 521--525, Helsinki, Finlândia, 2000.
-
-\bibitem{article:cuenca:2003}
-\MakeUppercase{ Cuenca, W.~M., Levy, A.~F., Seixas, J.~M.,
-  \MakeLowercase{et~al.}}, \enquote{Análise de Componentes Independentes para
-  Extração Cega de Ruídos Gaussianos dos Sinais de Descargas Parcias em
-  Equipamentos de Alta Tensão}.
-\newblock In: {\em Anais do Congresso Brasileiro de Redes Neurais\/}, v.~1, pp.
-  133--138, São Paulo, 2003.
-
 \bibitem{article:tan:20000}
 \MakeUppercase{ Tan, Y., Wang, J.}, \enquote{Nonlinear blind separation using
   an {RBF} network model}.
 \newblock In: {\em Proceedings of the IEEE International Symposium on Circuits
   and Systems\/}, v.~3, pp. 634--637, Genebra, Suiça, 2000.
+
+\bibitem{article:woo:nl2005}
+\MakeUppercase{ Woo, W.~L., Dlay, S.~S.}, \enquote{Nonlinear blind source
+  separation using a hybrid RBF-FMLP network}, {\em IEE Proceedings on Vision,
+  Image and Signal Processing\/}, v.~8, n.~2, pp.~173--183, 2005.
+
+\bibitem{book:function:1984}
+\MakeUppercase{ Griffel, D.~H.}, {\em Applied Functional Analysis\/}.
+\newblock Dover: West Sussex, Reino Unido, 1985.
+
+\bibitem{article:lappalainen:bay1999}
+\MakeUppercase{ Lappalainen, H.}, \enquote{Ensemble learning for independent
+  component analysis}.
+\newblock In: {\em Proceedings of the International Workshop on Independent
+  Component Analysis and Blind Signal Separation\/}, v.~1, pp. 7--12, Aussois,
+  France, 1999.
+
+\bibitem{aricle:minskin:2000}
+\MakeUppercase{ Lappalainen, H., Miskin, J.~W.}, \enquote{Advances in
+  Independent Component Analysis}, chap. Ensemble learning, pp. 75--92,
+  Springer, 2000.
+
+\bibitem{article:valpola:2000ica}
+\MakeUppercase{ Valpola, H.}, \enquote{Nonlinear independent component analysis
+  using ensemble learning: Theory}.
+\newblock In: {\em Proceedings of the International Workshop on Independent
+  Component Analysis and Blind Signal Separation\/}, v.~1, pp. 351--356,
+  Helsinki, Finlândia, 2000.
+
+\bibitem{article:honkela:2004ica}
+\MakeUppercase{ Honkela, A.}, \enquote{Approximating nonlinear transformations
+  of probability distributions for nonlinear independent component analysis}.
+\newblock In: {\em ProceedingsProceedings of the IEEE International Joint
+  Conference on Neural Networks\/}, v.~3, pp. 2169--2174, Budapest, Hungria,
+  2004.
+
+\bibitem{article:honkela:2007}
+\MakeUppercase{ Honkela, A., Valpola, H., Ilin, A., \MakeLowercase{et~al.}},
+  \enquote{Blind separation of nonlinear mixtures by variational bayesian
+  learning}, {\em Digital Signal Processing\/}, v.~17, n.~5, pp.~914--934,
+  2007.
+
+\bibitem{article:ilin:2004ie}
+\MakeUppercase{ Ilin, A., Achard, S., Jutten, C.}, \enquote{Bayesian versus
+  constrained structure approaches for source separation in post-nonlinear
+  mixtures}.
+\newblock In: {\em Proceedings of the IEEE International Joint Conference on
+  Neural Networks\/}, v.~3, pp. 2181--2186, Budapest, Hungria, Julho 2004.
+
+\bibitem{article:Almeida05}
+\MakeUppercase{ Almeida, L.~B., Hyvärinen, A.}, \enquote{Separating a real-life
+  nonlinear image mixture}, {\em Journal of Machine Learning Research\/}, v.~6,
+  pp.~1199--1229, 2005.
+
+\bibitem{article:misep:pnl}
+\MakeUppercase{ Zheng, C.-H., Huang, D.-S., Li, K., \MakeLowercase{et~al.}},
+  \enquote{MISEP Method for Postnonlinear Blind Source Separation}, {\em Neural
+  Compututation\/}, v.~19, n.~9, pp.~2557--2578, 2007.
+
+\bibitem{article:misep:pnll}
+\MakeUppercase{ Sun, Z.-L.}, \enquote{An extension of {MISEP} for
+  post-nonlinear-linear mixture separation}, {\em IEEE Transactions on Circuits
+  and Systems\/}, v.~56, n.~8, pp.~654--658, 2009.
 
 \bibitem{book:shanmugan:1988}
 \MakeUppercase{ Shanmugan, K.~S., Breipohl, A.~M.}, {\em Random Signals,

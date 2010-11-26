@@ -1,0 +1,122 @@
+\chapter{Conclusões}
+
+A física de partículas ou física de altas energias (HEP-\emph{High-Energy Physics}) se propõe a estudar as 
+características fundamentais da matéria. Para isso, ao longo dos anos, vêm sendo contruídos 
+experimentos, cada vez mais complexos, que envolvem profissionais de diversas áreas como engenharia, computação, 
+matemática e física nas etapas de projeto, montagem e operação.
+
+O conhecimento adquirido em experimentos de HEP está bastante difundido na sociedade em aplicações 
+como a rede mundial de computadores (WWW-\emph{World-Wide Web}), que foi idealizada inicialmente 
+para troca de informação entre os diversos institutos participantes da colaboração do CERN ao redor do 
+mundo, e na medicina, em tratamentos como a rádio-terapia e exames tipo a cintilografia e o PET 
+(\emph{positron emission tomography} ou tomografia por emissão de pósitrons), que produz uma 
+imagem em três dimensões das características funcionais do corpo humano.
+
+O Grande Colisionador Hadrônico (LHC-\emph{Large Hadron Collider}), que produziu suas primeiras colisões no final 
+de 2009, no CERN, iniciou uma nova era de descobertas, estabelecendo recordes em energia e luminosidade. 
+Diversos avanços tecnológicos foram necessários desde o projeto até a conclusão da montagem do LHC e 
+seus diversos detectores. 
+
+Para lidar com a enorme quantidade de informação produzida 
+nas colisões do LHC, os detectores são dotados de um sistema de filtragem (\emph{trigger}) 
+\emph{online}, que deve apresentar, entre outras características:
+\begin{itemize}
+ \item Alta eficiência na detecção da física de interesse;
+ \item Baixa aceitação do ruído de fundo;
+ \item Rapidez na tomada de decisão.
+\end{itemize}
+
+O bom funcionamento do sistema de filtragem é fundamental para o desempenho do 
+detector, porém, atender a todas as demandas inerentes à aplicação é uma tarefa de difícil solução. 
+Em geral, os sistemas de filtragem são divididos em estágios (níveis) sequenciais de 
+seleção, onde o ruído de fundo (informação não relevante) é gradualmente reduzido. 
+
+No detector ATLAS (o maior detector de propósito geral do LHC), o sistema de filtragem é sub-dividido em 
+três níveis. O discriminador padrão utilizado no experimento para seleção de elétrons no 
+segundo nível de filtragem (T2Calo)
+opera através de cortes lineares em parâmetros calculados a partir de informações do perfil 
+de deposição de energia medido nos calorímetros. Os elétrons são extremamente importantes para 
+o experimento, pois estão presentes em decaimentos de diversos fenômenos físicos de interesse.
+
+Num trabalho anterior~\cite{tese:andre:2006}, 
+foi proposto um classificador alternativo ao T2Calo que combina o pré-processamento da informação 
+medida nos calorímetros em anéis concêntricos com a utilização de classificadores neurais supervisionados 
+(arquitetura Perceptron de Múltiplas Camadas). 
+Este discriminador (\emph{Neural Ringer}) está implementado na plataforma de \emph{software} do 
+detector e opera em paralelo com o T2Calo, apresentando maior eficiência de discriminação. 
+Em~\cite{tese:torres:2010} foi proposta uma extensão 
+ao \emph{Neural Ringer} incorporando uma etapa de pré-processamento linear (através da 
+análise de componentes independentes - ICA) ao classificador neural. Foi observado que a extração 
+de características através da ICA produziu um aumento na eficiência de discriminação em comparação 
+ao discriminador operando diretamente sobre os sinais em anéis.
+
+Neste contexto, este trabalho propôs a utilização do modelo não-linear da análise de componentes independentes (NLICA) 
+para a extração de características dos sinais em anéis, como uma etapa de pré-processamento para o discriminador 
+neural. A estimação da NLICA foi realizada a partir de três estratégias distintas: pelo modelo pós não-linear (PNL), 
+por mapas auto-organizáveis (para estimar um modelo não-linear sem restrições estruturais) e pela ICA local. 
+Com os algoritmos utilizados, foi possível obter maior eficiência de discriminação 
+para regiões do detector que apresentam menor número de células sensoras (\emph{cracks} e 
+interconexões dos módulos do calorímetro) e para eventos de menor energia (que apresentam menor relação 
+sinal-interferência). 
+
+Comparando os três métodos, observou-se que o pré-processamento por ICA local apresentou 
+maior eficiência (em termos do máximo SP) para os dois conjuntos simulados utilizados 
+e também para os sinais experimentais. O uso do pré-procesamento por mapas auto-organizáveis 
+possibilita, além de um discriminador \emph{online} com alta eficiência, a visualização 
+dos eventos em gráficos de duas ou três dimensões.
+Foi mostrado também que, o uso da informação das classes na estimação dos componentes independentes 
+produziu, em todos os casos, aumento na eficiência de discriminação em comparação com 
+as versões não-supervisionadas.
+
+Considerando o tempo de processamento, percebeu-se, que a adição do pré-processamento por 
+NLICA não contribui significativamente para o aumento no custo computacional. Na verdade, 
+a maior parte do tempo é gasta para solicitação da informação e formação dos sinais em 
+anéis, sendo que, estas duas etapas são realizadas em bloco, por cada camada do calorímetro. 
+
+Numa tentativa de explorar ao máximo a segmentação disponível nos calorímetros do ATLAS, 
+foram treinados classificadores especialistas nas informações de cada camada. Deste modo, 
+foi possível verificar a relevância dos diversos segmentos na identificação de elétrons. 
+Para combinar a informação dos especialistas foram empregados diversos 
+métodos de combinação de classificadores como média, votação e uma rede neural combinadora. 
+Observou-se que a rede combinadora (que na operação \emph{online} pode ser implementada 
+através de uma rede neural de três camadas com a camada de entrada não completamente conectada) 
+apresentou maior eficiência entre os métodos de combinação de classificadores utilizados.
+
+Através da rede combinadora, verificou-se que a retirada de 5 das 7 camadas influencia 
+pouco na eficiência de discriminação (em comparação com o \emph{Neural Ringer}). 
+Por outro lado, com o uso apenas desta parcela 
+da informação (referente às camadas E1 e E2) é possível reduzir o tempo 
+total de processamento em aproximadamente~20~\%.
+
+\section{Trabalhos Futuros}
+
+À medida que o conhecimento a respeito do detector e dos fenômenos físicos envolvidos aumenta, 
+os algoritmos de filtragem evoluem continuamente, incorporando novas informações. 
+Recentemente, o discriminador padrão do ATLAS para o canal elétron/jato (T2Calo) foi modificado, 
+e agora opera com patamares de corte variáveis em função de $\eta$. 
+
+Esta estratégia tem como 
+objetivo melhorar a eficiência em áreas como o \emph{crack} e as interconexões entre 
+módulos, pois com a menor quantidade de sensores, as características dos eventos destas regiões são 
+modificadas e os cortes utilizados no restante do detector não produzem bom desempenho de discriminação. 
+Uma abordagem semelhante poderia ser adotada para o discriminador neural.
+
+Considerando o bom desempenho obtido com o pré-processamento por ICA/NLICA, outra opção 
+seria a utilização de algoritmos de extração de características que estão diretamente 
+relacionados com a análise de componentes independentes como a fatorização 
+de matrizes não-negativas (\emph{non-negative matrix factorization})~\cite{book:nmf:2009}
+ou a análise de componentes esparsos (\emph{sparse component analysis})
+~\cite{article:sca:2004,article:sca:2005}. 
+
+Pode-se ainda testar outras arquiteturas de classificadores neurais como as funções 
+de base radial (\emph{radial basis functions}) e máquinas de vetor de suporte 
+(\emph{support vector machine})~\cite{haykin:nn:2008}, visando otimizar o processo de 
+classificação. Sendo que, neste caso, seria 
+necessário um trabalho adicional para a implementação do discriminador no 
+sistema de filtragem do detector.
+
+Embora os discriminadores propostos neste trabalho tenham sido desenvolvidos para o sistema de filtragem 
+\emph{online}, os altos índices de eficiência obtidos indicam que é possível também 
+pensar numa aplicação à filtragem \emph{offline}, especialmente para os discriminadores 
+baseados no pré-processamento por mapas auto-organizáveis, devido às ferramentas de 
+visualização inerentes ao método.

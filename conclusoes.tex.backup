@@ -73,14 +73,20 @@ NLICA não contribui significativamente para o aumento no custo computacional. Na
 a maior parte do tempo é gasta para solicitação da informação e formação dos sinais em 
 anéis, sendo que, estas duas etapas são realizadas em bloco, por cada camada do calorímetro. 
 
-Com o objetivo de identificar a redundância da informação entre as diferentes camadas e 
-sua relevância na discriminação elétron/jato, foi realizado o treinamento de discriminadores 
-especialistas na informação de cada segmento do calorímetro. Assim, verificou-se que,
-existe um alto grau de redundância  e a retirada de 5 das 7 camadas influencia 
-pouco na eficiência de discriminação. Por outro lado, com o uso apenas desta parcela 
+Numa tentativa de explorar ao máximo a segmentação disponível nos calorímetros do ATLAS, 
+foram treinados classificadores especialistas nas informações de cada camada. Deste modo, 
+foi possível verificar a relevância dos diversos segmentos na identificação de elétrons. 
+Para combinar a informação dos especialistas foram empregados diversos 
+métodos de combinação de classificadores como média, votação e uma rede neural combinadora. 
+Observou-se que, a rede combinadora (que na operação \emph{online} pode ser implementada 
+através de uma rede neural de três camadas com a camada de entrada não completamente conectada) 
+apresentou maior eficiência entre os métodos de combinação de classificadores utilizados.
+
+Através da rede combinadora, verificou-se que a retirada de 5 das 7 camadas influencia 
+pouco na eficiência de discriminação (em comparação com o \emph{Neural Ringer}). 
+Por outro lado, com o uso apenas desta parcela 
 da informação (referente apenas às camadas E1 e E2) é possível reduzir o tempo 
 total de processamento em aproximadamente~20~\%.
-
 
 \section{Trabalhos Futuros}
 

@@ -39,15 +39,18 @@ determina uma vizinhança topológica de neurônios excitados; e a
 reforçar a resposta do neurônio vencedor, e de seus vizinhos, ao
 padrão de entrada.
 
-Considerando vetores de entrada $\mathbf{x}=[x_1,x_2,...,x_k]^T$, como os 
-neurônios são totalmente conectados às entradas, o vetor de pesos sinápticos 
-do neurônio j pode ser definido por: $\mathbf{w}j=[w_{1j},w_{2j},...,w_{kj}]^T$. 
+Considerando vetores de entrada $\mathbf{x}=[x_1,x_2,...,x_k]^T$, como os
+neurônios são totalmente conectados às entradas, o vetor de pesos sinápticos
+do neurônio j pode ser definido por: $\mathbf{w}j=[w_{1j},w_{2j},...,w_{kj}]^T$.
 A atualização do vetor de pesos é feita através da equação:
 \begin{equation}\label{pesos_som}
     \mathbf{w_j(n+1)}=\mathbf{w}_j(n)+\eta (n) h_{ij}(n)(\mathbf{x}(n)-\mathbf{w}_j(n)),
 \end{equation}
 \\
-sendo $\eta (n)$ a taxa de aprendizagem, um tipo de função de
+sendo $\eta (n)$ a taxa de aprendizagem. A função de vizinhança é escolhida
+de modo que tenha seu valor máximo em $j$ e decresce à medida que se afasta.
+A largura da função de vizinhança decresce à medida que o tempo passa.
+Um tipo de função de
 vizinhança $h_{ij}(n)$ usualmente utilizada é definida por:
 \begin{equation}\label{neigbor}
 h_{ij}(n)=\exp(-d_{ij}^2/2\sigma^2(n))
@@ -74,7 +77,7 @@ adjacentes no mapa de características;
 probabilidade de ocorrência são mapeadas para domínios maiores do
 espaço de saída;
 
-  \item a matriz de pesos sinápticos pode ser defnida por:
+  \item a matriz de pesos sinápticos pode ser definida por:
 \begin{equation}
   \mathbf{W}=[\mathbf{w}_1,\mathbf{w}_2,...,\mathbf{w}_P],
 \end{equation}
@@ -84,7 +87,7 @@ onde P é o número de neurônios do mapa.
 
 No mapa de características, o neurônio que apresentar maior saída é
 consi\-derado o vencedor, ou seja a saída do SOM é do tipo ``vencedor
-leva tudo" (WTA - \textit{winner takes all}). O neurônio ativado é
+leva tudo" (\textit{winner takes all}). O neurônio ativado é
 escolhido a partir de sua semelhança com a entrada $\mathbf{x}_A$ apresentada. É
 comum a utilização da distância euclidiana como métrica da
 proxi\-midade entre dois vetores; nesse caso, o neurônio vencedor é
@@ -102,6 +105,30 @@ Os mapas auto-organizáveis pertencem à classe de algoritmos de
 codificação vetorial, sendo capazes de encontrar, de forma
 otimizada, um número fixo de vetores ou palavras de código que
 melhor representem o conjunto de sinais.
+
+Com uma formulação alternativa aos SOM, o Mapeamento Topográfico
+Generativo (GTM - \textit{Generative Topographic Mapping}) foi
+introduzido em \cite{article:bishop:1998}, e apresenta princípios
+estatísticos mais fundamentados que o mapa SOM. O método GTM
+básico tem poucas vantagens práticas em relação aos Mapas
+Auto-Organizáveis, pois aqui as componentes independentes também
+são assumidas como processos uniformemente distribuídos e o espaço
+de características é formado a partir de uma grade retangular
+discreta m-dimensional. Porém, devido a sua formulação matemática,
+o GTM pode ser estendido para variáveis não uniformes.
+
+O trabalho \cite{article:pajunen:1997} propõe uma modificação à
+formulação básica onde são introduzidos coe\-fi\-cientes de
+ponderação que permitem a estimação de componentes independentes
+com qualquer tipo de distribuição. Os componentes são modelados
+como misturas de sinais Gaussianos e os parâmetros são estimados
+usando o algoritmo \textit{Expectation Maximization}
+\cite{article:hyvarinen:2000}. O treinamento do GTM envolve dois
+passos, a avaliação da probabilidade a \textit{posteriori} e a
+adaptação dos parâmetros do modelo, neste sentido, o processo é
+semelhante ao utilizado pela abordagem da inferência Bayesiana,
+que será mostrada com mais detalhes a seguir. Não foram
+encontradas muitas aplicações do GTM na estimação da NLICA.
 
 \subsection{Quantização Vetorial por Aprendizado}
 
@@ -301,6 +328,24 @@ Nesse caso, uma solução é utilizar métodos iterativos de extração
 das componentes principais, através de redes neurais
 \cite{article:oja:pca,tese:joao:2007}.
 
+A PCA não-linear (NLPCA - \textit{Non-linear Principal Component
+Analysis}) pode ser vista como uma extensão não linear da PCA, e é
+capaz de encontrar projeções descorrelacionadas não-linearmente.
+Enquanto o objetivo da PCA é minimizar o erro médio quadrático de
+reconstrução do sinal projetando as componentes numa base
+ortonormal, a NLPCA pode ser definida de modo simples através da
+função-objetivo a ser minimizada:
+\begin{equation}\label{nlpca}
+    J(\mathbf{w}_1,\mathbf{w}_2,...,\mathbf{w}_n)=\mathcal{E}\{||\mathbf{x}-\sum_{i=1}^n g_i(\mathbf{w}_i^Tx)\mathbf{w}_i||^2\},
+\end{equation}
+\\
+onde $g_1(.), g_2(.), ..., g_n(.)$ é um conjunto de funções
+escalares e não-lineares, e os vetores $\mathbf{w}_i$ formam a base
+do sub-espaço onde serão projetadas as entradas $\mathbf{x}$. Quando
+o mínimo de $J(\mathbf{w}_1,\mathbf{w}_2,...,\mathbf{w}_n)$ for
+encontrado, o produto $\mathbf{w}_i^Tx$ dará as componentes
+principais não-lineares. Se $g_i(y)=y$ para todo $i$, então equação
+(\ref{nlpca}) se reduz à função objetivo da PCA.
 
 \subsection{Redução de Dimensão}
 
@@ -339,6 +384,9 @@ computacional e conseqüentemente o tempo de processamento.
 
 
 \section{Análise de Componentes Independentes}
+
+A seguir serão descritos alguns aspectos relacionados com a teoria e
+os principais algoritmos da ICA.
 
 \subsection{Princípios de Estimação dos Componentes Independentes}
 
@@ -494,26 +542,9 @@ aconselha o uso de $f(y)=y^3$ e $g(y)=arctg(y)$, já o
 \textit{Chichocki-Unbehauen} sugere uma função polinomial e a
 tangente hiperbólica.
 
-A PCA não-linear (NLPCA - \textit{Non-linear Principal Component
-Analysis}) pode ser vista como uma extensão não linear da PCA, e é
-capaz de encontrar projeções descorrelacionadas não-linearmente.
-Enquanto o objetivo da PCA é minimizar o erro médio quadrático de
-reconstrução do sinal projetando as componentes numa base
-ortonormal, a NLPCA pode ser definida de modo simples através da
-função-objetivo a ser minimizada:
-\begin{equation}\label{nlpca}
-    J(\mathbf{w}_1,\mathbf{w}_2,...,\mathbf{w}_n)=\mathcal{E}\{||\mathbf{x}-\sum_{i=1}^n g_i(\mathbf{w}_i^Tx)\mathbf{w}_i||^2\},
-\end{equation}
-\\
-onde $g_1(.), g_2(.), ..., g_n(.)$ é um conjunto de funções
-escalares e não-lineares, e os vetores $\mathbf{w}_i$ formam a base
-do sub-espaço onde serão projetadas as entradas $\mathbf{x}$. Quando
-o mínimo de $J(\mathbf{w}_1,\mathbf{w}_2,...,\mathbf{w}_n)$ for
-encontrado, o produto $\mathbf{w}_i^Tx$ dará as componentes
-principais não-lineares. Se $g_i(y)=y$ para todo $i$, então equação
-(\ref{nlpca}) se reduz à função objetivo da PCA. Quando os sinais
-satisfazem ao modelo da ICA, mostrado na equação (\ref{icamatrix}), a
-NLPCA obtém uma aproximação das componentes independentes.
+Quando os sinais satisfazem ao modelo da ICA, mostrado na equação (\ref{icamatrix}), a
+NLPCA (que busca a descorrelação não-linear nos componentes estimados)
+também pode ser utilizada para obter uma aproximação dos componentes independentes.
 
 
 \subsection{Pré-Processamento dos Sinais para ICA}
@@ -525,7 +556,7 @@ seja, têm sua média removida fazendo-se:
     \mathbf{x}\leftarrow \mathbf{x}-\mathcal{E}\{\mathbf{x}\}
 \end{equation}
 
-Outra transformação importante é o branqueamento. Um vetor
+Outra transformação importante é o branqueamento. Um vetor \linebreak
 $\mathbf{z}=(z_1,z_2,...,z_n)^T$ é dito branco quando os elementos
 $z_i$ são descorrelacionados e têm variância unitária. O
 branqueamento pode ser realizado por uma transformação linear:
@@ -667,11 +698,12 @@ diagonalização, então busca-se a matriz $\mathbf{W}$ que diagonaliza
 $F(\mathbf{M})$ para qualquer $\mathbf{M}$ (ou seja, \linebreak
 $Q=\mathbf{W}F(\mathbf{M_i})\mathbf{W}^T$ é uma matriz diagonal).
 
-A função custo do método JADE busca a diagonalização de $\mathbf{Q}$
-pela maximização da soma dos elementos de sua diagonal. As matrizes
-$\mathbf{M_i}$ utilizadas são as automatrizes do tensor cumulante
-dos dados, pois assim tem-se um conjunto de N matrizes que contém
-toda a informação relevante a respeito dos cumulantes.
+A função custo do método JADE busca a diagonalização de
+$\mathbf{Q}$ pela maximização da soma dos elementos de sua
+diagonal. As matrizes $\mathbf{M_i}$ utilizadas são as
+auto-matrizes do tensor cumulante dos dados, pois assim tem-se um
+conjunto de N matrizes que contém toda a informação relevante a
+respeito dos cumulantes.
 
 Os métodos tensoriais \cite{article:fobi:1989,article:Cardoso:1993}
 foram, provavelmente, a primeira classe de algoritmos capazes de
@@ -681,56 +713,13 @@ dimensão, pois o custo computacional aumenta rapidamente com o
 número de componentes a serem estimados.
 
 
-
-\subsubsection{Algoritmo Multiplicativo com Iteração de Newton}
-
-Um algoritmo multiplicativo para ICA foi proposto por Akuzawa e
-Murata em \cite{article:akuzawa:2001}. Usando a curtose como função
-para avaliar a independência, esse algoritmo utiliza estratégia de
-otimização de segunda ordem, através do método de Newton
-\cite{Book:Luenberger:1984}, para estimar as componentes
-independentes.
-
-O algoritmo proposto por Akuzawa não requer pré-branqueamento,
-operando diretamente sobre os dados medidos. Resultados
-experimentais obtidos em
-\cite{article:extakuzawa:2000,article:cuenca:2003} indicam que o
-algoritmo de Akuzawa apresenta melhor desempenho que FastICA e JADE
-quando os sinais estão contaminados por ruído Gaussiano.
-
-Considerando a transformação linear $\mathbf{Y}=\mathbf{CX}$, o
-objetivo do algoritmo de Akuzawa é encontrar a matriz $\mathbf{C}$
-que maximiza a independência entre as componentes de $\mathbf{y}$.
-Os passos a seguir são executados durante as iterações:
-
-\begin{enumerate}
-\item Escolher $C_0$ (a matriz de separação inicial) e a matriz $\Delta_0$ (N $\times$ N);
-\item Calcular a iteração $C_t=\exp (\Delta_t -1)C_{t-1}$;
-\item Avalie a função custo em $C_t$ usando uma expansão de segunda ordem em torno de $C_{t-1}$;
-\item $\Delta_t$ é escolhido como o ponto de sela da função custo;
-\item Retorne para o passo 2 até convergir.
-\end{enumerate}
-
-Mais detalhes a respeito da execução do passo 4 podem ser
-encontradas em \cite{article:akuzawa:2001}. Modificações no método
-de Akuzawa foram propostos em \cite{article:extakuzawa:2000} com o
-objetivo de reduzir o custo computacional pela substituição das
-iterações de Newton pelo método quasi-Newton
-\cite{Book:Luenberger:1984}.
-
-Comparado com FastICA e JADE, o algoritmo multiplicativo de Akuzawa
-é mais lento (mesmo em sua versão modificada que utiliza o método de
-otimização quasi-Newton), suas vantagens aparecem quando o nível de
-ruído aumenta, neste caso o método de Akuzawa apresenta melhores
-resultados.
-
 \section{ICA Não-Linear}
 
-Conforme mostrado no Capítulo \ref{cap_ica}, o modelo da ICA
-não-linear (NLICA) apresenta uma formulação mais geral que o linear.
-A seguir será mostrado o desenvolvimento teórico de um algoritmo
-para a estimação das componentes independentes no modelo pós
-não-linear.
+Conforme mostrado no Capítulo~\ref{cap_ica}, o modelo da ICA
+não-linear (NLICA) apresenta uma formulação mais geral que o
+linear. A seguir será mostrado o desenvolvimento teórico de um
+algoritmo para a estimação das componentes independentes no modelo
+pós não-linear.
 
 \subsection{Algoritmo Taleb-Jutten para o Modelo PNL}
 
@@ -751,7 +740,7 @@ com um neurônio linear na saída:
     g_k (u)=\sum_{h=1}^{N_H} \xi^{h} \sigma (\omega^h u - \eta^h),
 \end{equation}
 onde $N_H$ é o número de neurônios ocultos. A divergência de
-Kullback-Lieber é utilizada para encontrar as regras de aprendizado
+\emph{Kullback-Lieber} é utilizada para encontrar as regras de aprendizado
 para a estimação das funções não-lineares
 \cite{article:jutten:1999}.
 
@@ -778,3 +767,168 @@ com sucesso na separação de misturas PNL. Por exemplo, em
 \textit{Radial Basis Function}). Em um outro trabalho
 \cite{article:solazzi:pnl:2004}, a separação foi realizada por redes
 neurais com funções de ativação do tipo \textit{spline}.
+
+
+\subsection{Outros Modelos de Misturas com Restrições
+Estruturais}
+
+Alguns modelos com restrições estruturais diferentes do PNL foram
+propostos na literatura. No trabalho
+\cite{article:solazzi:pnl:2004}, o modelo de mistura é definido
+por:
+\begin{equation}\label{eq_pnll}
+    \mathbf{x}=\mathbf{A_2}f(\mathbf{A_1}\mathbf{s}),
+\end{equation}
+sendo $\mathbf{A_1}$ e $\mathbf{A_2}$ matrizes quadradas e
+$f=[f_1,f_2,...,f_N]^T$ um mapeamento com funções não-lineares
+aplicadas a cada componente (assim como o modelo PNL, este também
+não permite não-linearidades aplicadas a mais de um componente). O
+modelo definido na Equação \ref{eq_pnll} e ilustrado também na
+Figura \ref{fig_pnll} é chamado Pós Não-linear Linear (PNL-L). O
+bloco linear $\mathbf{A_2}$ é executado após a aplicação das
+funções não-lineares, produzindo um modelo mais geral que o PNL.
+Nos trabalhos \cite{article:woo:nl2005,article:gao:nl2005} são
+propostos algoritmos baseados em redes neurais para a estimação do
+modelo PNL-L.
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=7cm]{cap3_pnll}
+\caption{Diagrama do modelo PNL-L.} \label{fig_pnll}
+\end{figure}
+
+Em \cite{article:gao:nl2005}, um modelo estrutural chamado mono
+não-linearidade (ver Figura \ref{fig_mnlin}) foi proposto para o
+problema da NLICA. Neste modelo os sinais observados são gerados a
+partir de:
+\begin{equation}\label{eq_mnlin}
+    \mathbf{x}=f^{-1}(\mathbf{A}f(\mathbf{s})).
+\end{equation}
+Este modelo (chamado de mistura de mono não-linearidade é
+ilustrado na Figura~\ref{fig_mnlin}) é dito mais geral que o PNL,
+pois as funções não-lineares ($f_i$) podem ser aplicadas a mais de
+um componente. A análise deste modelo, a partir da teoria da
+análise funcional (\textit{functional
+analysis})~\cite{book:function:1984}, mostra que pode representar
+qualquer mistura com duas camadas de
+não-linearidades~\cite{article:gao:nl2005}.
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=8.5cm]{cap3_mononl}
+\caption{Diagrama do modelo da Mono não-linearidade.}
+\label{fig_mnlin}
+\end{figure}
+
+\subsection{Algoritmos para o modelo sem restrições estruturais}
+
+A seguir serão descritos dois algoritmos para estimação da NLICA
+sem restrições estruturais.
+
+\subsubsection{NLICA a partir de Inferência Bayesiana}
+
+Nos métodos baseados em inferência Bayesiana, considera-se que os
+sinais observados são gerados a partir
+de~\cite{article:lappalainen:2000}:
+\begin{equation}
+    \mathbf{x}=f(\mathbf{s}) + \mathbf{n}
+\end{equation}
+onde $\mathbf{n}$ é definido como ruído Gaussiano independente dos
+componentes a serem estimados.
+
+Neste contexto, os componentes independentes são modelados como
+misturas de sinais de distribuição Gaussiana.Pode-se provar que,
+dado um número suficiente de Gaussianas, qualquer distribuição de
+probabilidade pode ser aproximada~\cite{article:lappalainen:2000}.
+Uma variação deste método foi aplicada em
+\cite{article:lappalainen:bay1999} para o mo\-de\-lo linear da
+ICA. Em grande parte dos algoritmos Bayesianos para NLICA, redes
+neurais tipo MLP de duas camadas são treinadas para aproximar o
+mapeamento não-linear, neste caso, têm-se
+que~\cite{jutten:nlica:2003}:
+\begin{equation}
+    f(\mathbf{s})=\mathbf{B}\Phi(\mathbf{As}+\mathbf{a})+\mathbf{b}
+\end{equation}
+
+Em um método de estimação Bayesiano, probabilidades a
+\textit{posteriori} são asso\-cia\-das a cada modelo não-linear
+que, possivelmente, teria gerado os dados observados. Verificar
+uma quantidade tão grande de modelos não é possível na prática;
+então, os métodos Bayesianos para NLICA utilizam uma técnica
+chamada de ``aprendizagem amostral" (EL - \textit{ensemble
+learning}) \cite{aricle:minskin:2000}. Na EL, somente o conjunto
+mais provável de modelos é testado utilizando uma aproximação
+paramétrica que é ajustada à probabilidade a \textit{posteriori}
+\cite{article:valpola:2000ica}.
+
+Métodos Bayesianos de NLICA foram propostos
+em~\cite{article:honkela:2004ica} e \cite{article:honkela:2007}.
+No trabalho~\cite{article:ilin:2004ie} foram realizados testes
+experimentais para comparar o desempenho dos mode\-los Bayesiano e
+pós não-linear (PNL) na estimação dos componentes independentes,
+as principais conclusões foram:
+\begin{itemize}
+    \item os algoritmos PNL apresentam desempenho superior quando as misturas
+     seguem o modelo PNL clássico (não-linearidades inversíveis e mesmo número de componentes independentes e
+     sinais observados);
+    \item o desempenho de ambos os métodos pode ser melhorada a partir da
+    exploração da informação de mais misturas que componentes independentes;
+    \item a principal vantagem do método Bayesiano é que mapeamentos mais
+    genéricos podem ser produzidos (uma vez que não há restrições estruturais).
+    Estes métodos geralmente apresentam maior custo computacional e necessitam
+    de várias inicializações para obter uma solução ótima (podem apresentar
+    problemas com mínimos locais da função custo).
+\end{itemize}
+
+No trabalho \cite{app:nlica:qui} um algoritmo Bayesiano de NLICA
+foi utilizado com sucesso para a separação de sinais medidos em um
+conjunto de sensores químicos.
+
+\subsubsection{O Algoritmo MISEP}
+
+O algoritmo MISEP \cite{article:misep:2004} utiliza a minimização
+da Informação Mútua como estratégia para busca pelos componentes
+independentes. Esta rotina é considerada como uma extensão do
+método INFOMAX \cite{book:oja:2001}, podendo ser utilizado para
+estimar tanto o modelo linear quanto o não-linear da ICA. Na
+Figura \ref{fig_misep} pode-se observar um diagrama do MISEP (para
+duas entradas e duas saídas), onde $x_i$ e $y_i$ são
+respectivamente os sinais observados e os componentes
+independentes estimados, o bloco $\mathbf{G(.)}$, no caso linear,
+aproxima a matriz de separação $\mathbf{W}$, e para a NLICA, deve
+fornecer uma aproximação do mapeamento não-linear inverso. As
+funções não-lineares $\psi_i$ e as variáveis de saída $z_i$ são
+utilizadas apenas no processo de treinamento. Após a convergência
+do algoritmo, as não-linearidades devem ser aproximações da função
+de probabilidade cumulativa (cdf - \textit{cumulative distribution
+function}) dos componentes independentes.
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=7cm]{cap4_misep}
+\caption{Diagrama do algoritmo MISEP.} \label{fig_misep}
+\end{figure}
+
+Para a aplicação em NLICA, o bloco $\mathbf{G}(.)$ é estimado por
+uma rede neural (que pode utilizar tanto a arquitetura
+\textit{perceptron} de múltiplas camadas - MLP como rede de
+funções de base radial - RBF). Como o objetivo é estimar a função
+de probabilidade cumulativa (cdf - \textit{cumulative distribution
+function}), as saídas $z_i$ são restritas ao intervalo [0,1] e as
+$\psi_i$ são limitadas a funções estritamente crescentes. Para
+estimação iterativa de cada função $\psi_i$, são utilizadas redes
+neurais MLP com uma camada oculta (de neurônios sigmoidais) e uma
+camada de saída (linear). Estas redes tem uma entrada ($y_i$) e
+uma saída ($z_i$). O treinamento do modelo MISEP é feito a partir
+da maximização da entropia das saídas $z_i$, o que acaba
+produzindo a minimização da informação mútua dos componentes
+$y_i$, mais detalhes podem ser encontrados
+em~\cite{article:misep:2004}
+
+O MISEP foi aplicado em processamento de sinais de
+áudio~\cite{article:misep:2004} e separação de imagens
+\cite{article:Almeida05}. Foram propostas também, modificações ao
+algoritmo MISEP visando otimizar a estimação dos componentes
+independentes quando as misturas seguem os modelos pós não-linear
+(PNL)~\cite{article:misep:pnl} e pós não-linear-linear
+(PNL-L)~\cite{article:misep:pnll}.

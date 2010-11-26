@@ -123,54 +123,6 @@ $P_F$ e $P_M$ é preciso conhecer as probabilidades condicionais
 $P_{\mathbf{r}/H_0}(\mathbf{R}/H_0)$ e
 $P_{\mathbf{r}/H_1}(\mathbf{R}/H_1)$.
 
-\begin{figure}[tbph]
-\centering
-\includegraphics[width=9cm]{cap3_fcas}
-\caption{Diagrama em blocos de um filtro casado.} \label{fcas}
-\end{figure}
-
-\section{Filtros Casados}
-
-Quando o processo de detecção é realizado em ambiente ruidoso o
-desempenho dos classificadores decai bastante. Os filtros casados
-são utilizados em processos de detecção onde as formas de onda dos
-sinais corrompidos por ruído são conhecidas. Os filtros casados
-maximizam a razão sinal-ruído em ambiente de ruído branco. Um
-processo estocástico é dito branco quando sua densidade espectral de
-potência $S(\omega)$ é constante em todas as freqüências
-\cite{book:peebles:2001}:
-\begin{equation}\label{sw}
-    S(\omega)=N_0/2
-\end{equation}
-\\
-A autocorrelação do processo branco, calculada a partir da
-transformada de Fourier inversa de $S(\omega)$ é
-$R_{xx}=N_0/2\delta(t)$, ou seja, o ruído branco tem correlação nula
-com qualquer cópia deslocada dele mesmo.
-
-No caso de sinais digitais, conforme mostrado na Figura \ref{fcas},
-o filtro casado é implementado através do calculo da correlação do
-sinal recebido $y[k]$ com as formas de ondas esperadas $s_{1}[k]$ e
-$s_{0}[k]$. As saídas dos correlacionadores são subtraídas e
-comparadas com um patamar de decisão; se o valor for maior que o
-patamar decide-se por $H_1$, caso contrário por $H_0$.
-
-Se o ruído de fundo não for branco, o desempenho dos filtros cai
-bastante. Esse problema é minimizado se o ruído é conhecido.
-Pode-se, então, projetar um filtro branqueador. A desvantagem do
-branqueador é que ele atua também sobre o sinal, alterando suas
-características estatísticas.
-
-Embora muito utilizadas, por sua formulação matemática relativamente
-simples e bom desempenho em diversas aplicações, as técnicas
-mostradas até aqui apresentam as desvantagens de necessitarem
-conhecimento prévio a respeito das distribuições de probabilidade,
-custos ou forma de onda dos sinais de entrada. Em muitos casos
-práticos essas informações não estão disponíveis, sendo necessária a
-utilização de outros métodos de classificação. Além disso, o
-desempenho dessas técnicas piora bastante em ambiente de ruído
-colorido e também quando as classes estão muito sobrepostas.
-
 \section{Discriminante Linear de Fisher}
 
 A análise de discriminantes busca a direção $\mathbf{w}$ onde as
@@ -207,7 +159,7 @@ $\mathbf{y}=\mathbf{w}^T \mathbf{x}$ tenham máxima separação.
 Pode-se realizar a análise por discriminante de Fisher de modo
 analítico usando-se as equações (\ref{fisher1}), (\ref{fisher2}) e
 (\ref{fisher3}), ou de modo iterativo a partir de uma rede neural de
-uma camada.
+uma camada e neurônio linear.
 %
 %\subsection{Parâmetros de desempenho de classificadores}
 %
@@ -269,20 +221,32 @@ classificação \cite{Article:Simasimtc:2005}, processamento de sinais
 \cite{Article:Zoppoli:1996}, controle e identificação de sistemas
 \cite{Article:ichikawa:1992}. A seguir serão descritos os
 fundamentos matemáticos das redes neurais e sua aplicação como
-classificadores. Maior ênfase será dada às redes alimentadas adiante
-(\textit{feedforward neural networks}) com treinamento
-supervisionado. Os livros \cite{haykin:nn:2008} e
+classificadores. Os livros \cite{haykin:nn:2008} e
 \cite{book:wasserman:1989} fornecem textos mais abrangentes sobre
 assunto.
 
 Uma diferença fundamental entre os classificadores neurais e os
-métodos clássicos como os filtros casados é que nestes últimos é
+métodos clássicos é que nestes últimos é
 necessário formular um modelo matemático a partir dos sinais. Na
 abordagem neural, o classificador trabalha diretamente no conjunto
 de dados, ficando o modelo matemático implícito nos valores dos
-pesos sinápticos obtidos após o treinamento. Os classificadores
-neurais têm obtido resultados bastante animadores em problemas para
-os quais métodos clássicos não apresentam bom desempenho.
+pesos sinápticos obtidos após o treinamento.
+
+As redes de múltiplas camadas alimentadas adiante
+(\textit{feed-forward}) são compostas a partir da conexão sequencial
+de duas ou mais camadas de neurônios. Essas redes são usualmente
+chamadas de perceptrons de múltiplas camadas (MLP -
+\textit{Multi-layer Perceptrons}) por serem uma generalização do
+perceptron de camada única. Pode-se verificar na Figura \ref{mlp2}
+que a saída de uma camada é utilizada como entrada da próxima. A
+rede mostrada tem três camadas: a camada de entrada, formada pelos
+nós sensoriais, a camada oculta, e a camada de saída. As conexões
+com o ambiente externo são feitas pelas camadas de entrada e saída.
+Por não possuirem laços de realimentação as redes
+\textit{feed-forward} são estruturalmente estáveis. A camada oculta
+é responsável, em um processo de reconhecimento de padrões, por
+extrair características estatísticas de ordem elevada, transformando
+os dados de entrada.
 
 \begin{figure}[tbph]
 \centering
@@ -291,7 +255,23 @@ os quais métodos clássicos não apresentam bom desempenho.
 sinais de entrada em 3 classes.} \label{mlp2}
 \end{figure}
 
-Para o projeto do classificador neural dividem-se os pares entrada
+As redes MLP utilizam, em geral, neurônios com função de ativação
+tipo sigmoidal (tangente hiperbólica ou logística). Em alguns casos
+pode-se utilizar neurônios lineares.
+
+Na etapa de propagação do sinal para frente, o vetor de entradas é apresentado à
+  rede, o sinal percorre todas as camadas e a saída da rede é calculada. A
+  saída do neurônio $j$ da camada $l$ é obtida de:
+    \begin{equation}\label{ne}
+        y_j^{(l)}(n)=\varphi_j\bigg(\sum_{i=0}^{m}\omega_{ji}^{(l)}(n)y_{i}^{(l-1)}(n)\bigg)
+    \end{equation}
+    \\
+    onde $\varphi_j(.)$ é a função de ativação e $\omega_{ji}^{(l)}$ o conjunto de pesos do neurônio
+    $j$. A saída da camada anterior $y_{i}^{(l-1)}(n)$ é a entrada
+    da camada $l$. Para os neurônios da primeira camada as entradas
+    são os elementos do vetor $\mathbf{x}(n)$.
+
+Para o projeto do classificador neural, em geral, dividem-se os pares entrada
 saída disponíveis nos conjuntos de treino, teste e validação. A
 divisão é importante para garantir que a rede treinada consiga
 generalizar bem o conhecimento adquirido. Apenas o conjunto de
@@ -305,7 +285,9 @@ nem na parada do algoritmo.
 
 Para decisão entre duas classes, pode-se usar na camada de saída um
 neurônio tipo tangente hiperbólica, associando-se $y=+1$ para uma
-classe e $y=-1$ para a outra. Para decisão entre $N$ classes
+classe e $y=-1$ para a outra.
+
+Para decisão entre $N$ classes
 ($N\geq3$), pode-se fazer com que a camada de saída tenha $N$
 neurônios. Associa-se um neurônio para cada classe. Quando a classe
 $k$ estiver presente, a saída desejada no neurônio $k$ associado
@@ -313,6 +295,14 @@ deve ser $+1$ e nos demais $-1$. Na fase de operação decide-se pela
 classe do neurônio com a maior saída. A rede da Figura \ref{mlp2} é
 um exemplo de arquitetura que pode ser usada para a separação entre
 três classes a partir de um espaço de entrada de dimensão $m$.
+
+Antes da utilização, os exemplos de treinamento da rede devem ser pré-processados para
+facilitar o processo de extração de características através de procedimentos
+como a remoção da média e a normalização. Em alguns casos quando
+a faixa dinâmica de uma variável é muito grande pode-se aplicar a função
+logarítmica para diminuir a excursão total.
+
+
 %
 %A atenção para alguns procedimentos básicos pode simplificar o
 %projeto e até otimizar o desempenho dos classificadores neurais
@@ -341,11 +331,11 @@ três classes a partir de um espaço de entrada de dimensão $m$.
 %\caption{(a) Classes no espaço de entrada e (b) no espaço oculto.}
 %\end{figure}
 
-Considerando uma rede de duas camadas (ver Figura \ref{mlp2}), a
-camada oculta é responsável por um mapeamento não-linear das
-entradas. Este mapeamento busca a máxima separação das classes
-diferentes, facilitando o processo de classificação realizado pela
-camada de saída.
+%Considerando uma rede de duas camadas (ver Figura \ref{mlp2}), a
+%camada oculta é responsável por um mapeamento não-linear das
+%entradas. Este mapeamento busca a máxima separação das classes
+%diferentes, facilitando o processo de classificação realizado pela
+%camada de saída.
 %Para ilustrar esse processo, utilizou-se uma rede
 %com duas entradas ($m=2$) e dois neurônios na camada oculta ($k=2$),
 %com o objetivo de escolher entre 3 classes.
