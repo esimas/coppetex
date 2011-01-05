@@ -22,6 +22,13 @@
   Title = {Signal Processing},
   Year = {2010}}
 
+@inproceedings{simas:IEENSS09,
+  Address = {Orlando, Estados Unidos},
+  Author = {R. C. Torres and D. E. F. Lima and E. F. {Simas Filho} and J. M. Seixas},
+  Booktitle = {IEEE Nuclear Science Symposium Conference Record},
+  Pages = {530-536},
+  Title = {Neural online filtering based on preprocessed calorimeter data},
+  Year = {2009}}
 
 @article{article:simas:neucom2010,
   Author = {E. F. {Simas Filho} and J. M. Seixas and L. P. Caloba},
@@ -40,7 +47,7 @@
   Editor = {T. Adali and C. Jutten and J. Romano and A. Barros},
   Month = {Março},
   Pages = {718-725},
-  Publisher = {Springer},
+  Publisher = {Springer: Londres, Reino Unido},
   Series = {Lecture Notes In Conputer Science},
   Title = {High-Energy Particle Online Discriminators Based on Nonlinear Independent Components},
   Year = {2009}}
@@ -55,12 +62,12 @@
   Year = {2009}}
 
 @inbook{sonar:ica,
-  Address = {Vienna, Austria},
+  Address = {Viena, Áustria},
   Author = {N. N. Moura and E. F. {Simas Filho} and J. M. Seixas},
   Chapter = {Independent Component Analysis for Passive Sonar Signal Processing},
   Editor = {Sergio Rui Silva},
   Pages = {91-110},
-  Publisher = {In-Tech},
+  Publisher = {In-Tech: Viena, Áustria},
   Title = {Advances in Sonar Signal Processing},
   Year = {2009}}
 
@@ -72,7 +79,7 @@ detector},
   YEAR =         {2008},
   volume =       {1},
   pages =        {1-5},
-  address =      {Lausanne, Suiça},
+  address =      {Lausanne, Suíça},
   month =        {Agosto},
 }
 
@@ -177,7 +184,7 @@ detector},
   BOOKTITLE =    {Proceedings of the IEEE Instrumentation and Measurement Technology Conference},
   volume =       {3},
   pages =        {2288-2293},
-  address =      {Ottawa, Canada},
+  address =      {Ottawa, Canadá},
 }
 
 %@ARTICLE{Article:Simasimtc:2005,
@@ -212,7 +219,7 @@ detector},
   TITLE =        {Advances in Sonar Technology},
   CHAPTER =      {Independent Component Analysis for Passive Sonar Signal Processing},
   pages =        {91-110},
-  PUBLISHER =    {In-Tech},
+  PUBLISHER =    {In-Tech: Viena, Áustria},
   YEAR =         {2009},
 }
 
@@ -584,11 +591,11 @@ detector},
   TITLE =        {Independent Component Analysis Applications in Physics},
   BOOKTITLE =    {Proceedings of the Int. Joint Conference on Neural Networks},
   YEAR =         {2005},
-  address =      {Montreal, Canada},
+  address =      {Montreal, Canadá},
   volume =       {1},
   number =       {1},
   pages =        {2213-2216},
-  address =      {Montreal, Canada},
+  address =      {Montreal, Canadá},
 }
 
 @ARTICLE{article:costagli:ica,
@@ -614,8 +621,8 @@ detector},
   TITLE =        {A Modified {ICA} Approach for Signal Separation in {CMB} maps},
   JOURNAL =      {Astronomy and Astrophysics Journal},
   YEAR =         {2008},
-  month =        {Fevereiro},
   volume =       {802},
+  number =       {1},
   pages =        {1-12},
 }
 
@@ -646,8 +653,7 @@ detector},
  title = {On the use of self-organizing maps for clustering and visualization},
  journal = {Intelligent Data Analysis},
  volume = {5},
- issue = {5},
- month = {October},
+ number = {5},
  year = {2001},
  pages = {373-384},
 }
@@ -769,7 +775,7 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   YEAR =         {2000},
   volume =       {3},
   pages =        {634-637},
-  address =      {Genebra, Suiça},
+  address =      {Genebra, Suíça},
 }
 
 @INPROCEEDINGS{article:lan:2005,
@@ -791,7 +797,7 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   TITLE =        {Independent Component Analysis and Blind Signal Separation},
   CHAPTER =      {A Comparison of Linear ICA and Local Linear ICA for Mutual Information Based Feature Ranking},
   pages =        {823-830},
-  PUBLISHER =    {Springer},
+  PUBLISHER =    {Springer: Londres, Reino Unido},
   YEAR =         {2006},
   volume =       {3889},
   series =       {Lecture Notes in Computer Science},
@@ -804,7 +810,7 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   TITLE =        {Independent Component Analysis and Blind Signal Separation},
   CHAPTER =      {ICA as a Preprocessing Technique for Classification},
   pages =        {1165-1172},
-  PUBLISHER =    {Springer},
+  PUBLISHER =    {Springer: Londres, Reino Unido},
   YEAR =         {2004},
   volume =       {3195},
   series =       {Lecture Notes in Computer Science},
@@ -891,7 +897,7 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   YEAR =         {2005},
   volume =       {1},
   pages =        {78-81},
-  address =      {Sydney, Australia},
+  address =      {Sidney, Austrália},
 }
 
 @INPROCEEDINGS{article:lappalainen:bay1999,
@@ -911,9 +917,9 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   TITLE =        {Advances in Independent Component Analysis},
   CHAPTER =      {Ensemble learning},
   pages =        {75-92},
-  PUBLISHER =    {Springer},
+  PUBLISHER =    {Springer: Londres, Reino Unido},
   YEAR =         {2000},
-  adress =       {London, Reino Unido},
+  adress =       {Londres, Reino Unido},
 }
 
 @INPROCEEDINGS{article:valpola:2000ica,
@@ -974,6 +980,7 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   JOURNAL =      {International Journal of Neural Systems},
   YEAR =         {2000},
   volume =       {10},
+ number =        {6},
   pages =        {439-451},
 }
 
@@ -996,7 +1003,7 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   YEAR =         {2006},
   volume =       {1},
   pages =        {857-862},
-  address =      {Vancouver, Canada},
+  address =      {Vancouver, Canadá},
 }
 
 
@@ -1006,7 +1013,7 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
   TITLE =        {Advances in Independent Component Analysis},
   CHAPTER =      {Multi-class independent component analysis for rank deficient distributions},
   pages =        {145-160},
-  PUBLISHER =    {Springer-Verlag},
+  PUBLISHER =    {Springer-Verlag: Londres, Reino Unido},
   YEAR =         {2000},
   adress =       {Londres, Reino Unido},
 }
@@ -1014,7 +1021,7 @@ J. A. Bogaerts and M. Bosman and B. Caron and P. Casado and G. Cataldi},
 
 @book{book:almeida:2006,
   Author = {Luis B. Almeida},
-  Publisher = {Morgan and Claypool},
+  Publisher = {Morgan and Claypool: San Rafael, Estados Unidos},
   Title = {Nonlinear Source Separation},
   Year = {2006}}
 
@@ -1104,9 +1111,9 @@ Existence and Uniqueness results},
   TITLE =        {Advances in Independent Component Analysis},
   CHAPTER =      {Bayesian nonlinear independent component analysis by multi-layer perceptrons},
   pages =        {93-121},
-  PUBLISHER =    {Springer},
+  PUBLISHER =    {Springer: Londres, Reino Unido},
   YEAR =         {2000},
-  adress =       {London, Reino Unido},
+  adress =       {Londres, Reino Unido},
 }
 
 @ARTICLE{article:puntonet:2003,
@@ -1123,7 +1130,7 @@ Existence and Uniqueness results},
   YEAR =         {1997},
   volume =       {1},
   pages =        {541-546},
-  address =      {Lausanne, Suiça},
+  address =      {Lausanne, Suíça},
 }
 
 
@@ -1133,6 +1140,7 @@ Existence and Uniqueness results},
   JOURNAL =      {Neural Computation},
   YEAR =         {1998},
   volume =       {10},
+  number =       {1},
   pages =        {215-234},
 }
 
@@ -1145,7 +1153,6 @@ Existence and Uniqueness results},
   volume =       {1},
   pages =        {1207-1210},
   address =      {Hong Kong},
-  month =        {Setembro},
 }
 
 @ARTICLE{article:jutten:2004,
@@ -1184,7 +1191,6 @@ author={S. Kaski and J. Venna and T.Kohonen},
 booktitle={Proceedings of the International Conference on Neural Information Processing},
 title={Coloring that reveals high-dimensional structures in data},
 year={1999},
-month={novembro}
 volume={2},
 number={1},
 pages={729-734},
@@ -1196,7 +1202,6 @@ author={Johan Himberg},
 booktitle={Proceedings of the Int. Joint Conference on Neural Networks},
 title={A SOM based cluster visualization and its application for false coloring},
 year={2000},
-month={Julho}
 volume={3},
 number={1},
 pages={587-592},
@@ -1208,7 +1213,6 @@ author={Gruber, P. and Theis, F.J. and Stadlthanner, K. and Lang, E.W. and Tome,
 booktitle={Proceedings of the IEEE International Joint Conference on Neural Networks},
 title={Denoising using Local ICA and kernel-PCA},
 year={2004},
-month={Julho}
 volume={3},
 number={1},
 pages={2071-2076},
@@ -1251,9 +1255,10 @@ author = {E. Cervera and A. P. del Pobil}
 @INBOOK{article:cluster2:1998,
   AUTHOR =       {Atsuhiro Takasu},
   editor =       {S. Arikawa and H. Motoda},
-  TITLE =        {Lecture Notes In Computer Science},
+  TITLE =        {Discovery Science},
   CHAPTER =      {On the Number of Clusters in Cluster Analysis},
-  PUBLISHER =    {Springer},
+  PUBLISHER =    {Springer: Londres, Reino Unido},
+  series =        {Lecture Notes In Computer Science},
   YEAR =         {1998},
   volume =       {1532},
   pages =        {62-63},
@@ -1318,12 +1323,13 @@ author = {E. Cervera and A. P. del Pobil}
 @INBOOK{article:icafexI:2001,
   AUTHOR =       {N. Kwak and C. H. Choi and J. Y. Choi},
   editor =       {G. Dorffner and H. Bischof and K. Hornik},
-  TITLE =        {Lecture Notes In Computer Science (ICANN)},
+  TITLE =        {Artificial Neural Networks},
   CHAPTER =      {Feature Extraction Using ICA},
-  PUBLISHER =    {Springer},
+  PUBLISHER =    {Springer: Londre, Reino Unido},
   YEAR =         {2001},
   volume =       {2130},
   pages =        {568-573},
+  series =       {Lecture Notes in Computer Science},
 }
 
 @ARTICLE{article:icafexII:2002,
@@ -1380,7 +1386,7 @@ author = {E. Cervera and A. P. del Pobil}
   INSTITUTION =  {CERN},
   YEAR =         {2001},
   month =        {Agosto},
-  address =      {Genebra, Suiça},
+  address =      {Genebra, Suíça},
 }
 
 @ARTICLE{article:almeida:2008,
@@ -1497,6 +1503,7 @@ author = {E. Cervera and A. P. del Pobil}
   JOURNAL =      {Information Sciences},
   YEAR =         {2009},
   volume =       {179},
+  number =       {22},
   pages =        {3815-3831},
 }
 
@@ -1665,7 +1672,7 @@ author = {E. Cervera and A. P. del Pobil}
   JOURNAL =      {The European Physical Journal C - Particles and Fields},
   YEAR =         {2004},
   volume =       {34},
-  number =       {1}
+  number =       {1},
   pages =        {117-128},
 }
 
@@ -1677,7 +1684,7 @@ author = {E. Cervera and A. P. del Pobil}
   JOURNAL =      {Nuclear Instruments and Methods in Physics Research Section A},
   YEAR =         {2007},
   volume =       {580},
-  number =       {2}
+  number =       {2},
   pages =        {1008-1012},
 }
 
@@ -1717,7 +1724,6 @@ author = {E. Cervera and A. P. del Pobil}
   Address = {São Diego, Estados Unidos},
   Author = {D. Nguyen and B. Widrow},
   Booktitle = {Proceedings of the International Joint Conference on Neural Networks},
-  Month = {Junho},
   volume = {3},
   Pages = {21-26},
   Title = {Improving the Learning Speed of 2-Layer Neural Networks by Choosing Initial Values of the Adaptive Weights},
@@ -1727,7 +1733,6 @@ author = {E. Cervera and A. P. del Pobil}
   Address = {Cardiff, Wales, Inglaterra},
   Author = {C. Wei and L.C. Khor and W.L. Woo and S.S. Dlay},
   Booktitle = {Proceedings of the International Conference on Digital Signal Processing},
-  Month = {Julho},
   Pages = {551-554},
   Title = {A Novel Iterative Conditional Maximization Method for Post-Nonlinear Underdetermined Blind Source Separation},
   Year = {2007}}
@@ -1736,7 +1741,6 @@ author = {E. Cervera and A. P. del Pobil}
   Address = {Cingapura},
   Author = {T. V. Nguyen and J. C. Patra and A. Das},
   Booktitle = {Proceedings of the International Conference on Communications Systems},
-  Month = {Setembro},
   Pages = {260-264},
   Title = {A Geometric Approach to Post-Nonlinear Mixture in Blind Source Separation},
   Year = {2004}}
@@ -1769,7 +1773,7 @@ author = {E. Cervera and A. P. del Pobil}
   Editor = {J. Rosca and D. Erdogmus and J. C. Principe and S. Haykin},
   Month = {Março},
   Pages = {773-780},
-  Publisher = {Springer},
+  Publisher = {Springer: Londres, Reino Unido},
   Series = {Lecture Notes In Conputer Science},
   Title = {Post-nonlinear Underdetermined ICA by Bayesian Statistics},
   Year = {2006}}
@@ -1779,7 +1783,6 @@ author = {E. Cervera and A. P. del Pobil}
   Author = {L. T. Duarte and C. Jutten and S. Moussaoui},
   Booktitle = {Independent Component Analysis And Signal Separation, 8th International Conference},
   Editor = {T. Adali and C. Jutten and J. Romano and A. Barros},
-  Month = {Março},
   Pages = {662-669},
   Publisher = {Springer},
   Series = {Lecture Notes In Conputer Science},
@@ -1842,8 +1845,7 @@ author = {E. Cervera and A. P. del Pobil}
   BOOKTITLE =    {Proceedings of Physics at LHC Conference},
   YEAR =         {2010},
   pages =        {1-5},
-  month =        {Junho},
-  address =      {Hamburg, Alemanha},
+  address =      {Hamburgo, Alemanha},
 }
 
 @INPROCEEDINGS{article:lhcphysics2:2010,
@@ -1852,7 +1854,6 @@ author = {E. Cervera and A. P. del Pobil}
   BOOKTITLE =    {Proceedings of the Topical Seminar on Innovative Particle and Radiation Detectors},
   YEAR =         {2010},
   pages =        {1-5},
-  month =        {Junho},
   address =      {Siena, Itália},
 }
 
@@ -1984,8 +1985,7 @@ author = {E. Cervera and A. P. del Pobil}
   volume =       {53},
   number =       {5},
   pages =        {1275-1281},
-  month =        {Junho},
-}
+ }
 
 
 @INPROCEEDINGS{drees:lep:2001,
@@ -2075,6 +2075,24 @@ author = {E. Cervera and A. P. del Pobil}
   pages =        {117-125},
 }
 
+@BOOK{book:densityestim:1992,
+  AUTHOR =       {D. W. Scott},
+  TITLE =        {Multivariate Density Estimation. Theory, Practice and Visualization},
+  PUBLISHER =    {Wiley},
+  YEAR =         {1992},
+  address =      {Nova York, Estados Unidos},
+}
+
+@ARTICLE{Shwartz05fastkernel,
+    author = {Sarit Shwartz and Michael Zibulevsky and Yoav Y. Schechner},
+    title = {Fast kernel entropy estimation and optimization},
+    journal = {Signal Processing},
+    year = {2005},
+    volume = {85},
+    number = {5},
+    pages = {2005}
+}
+
 
 @INPROCEEDINGS{seixas:pcd:1995,
   AUTHOR =       {L.P. Caloba and J.M. Seixas and F.S. Pereira},
@@ -2091,8 +2109,7 @@ author = {E. Cervera and A. P. del Pobil}
   BOOKTITLE =    {Proceedings of the 6th IEEE International Conference on Electronics, Circuits and Systems (ICECS)},
   YEAR =         {1999},
   pages =        {415-418},
-  month =        {Setembro},
-  address =      {Pafos, Cyprus},
+  address =      {Pafos, Chipre},
 }
 
 
@@ -2153,7 +2170,6 @@ author = {E. Cervera and A. P. del Pobil}
   volume =       {84},
   number =       {10},
   pages =        {1358-1384},
-  month =        {Outubro},
 }
 
 
@@ -2172,10 +2188,11 @@ author = {E. Cervera and A. P. del Pobil}
   address =      {Nova York, Estados Unidos},
 }
 
-@ARTICLE{article:rprop:1993,
+@INPROCEEDINGS{article:rprop:1993,
+  address =      {São Francisco, Estados Unidos},
   AUTHOR =       {M. Riedmiller and H. Braun},
   TITLE =        {A direct adaptive method for faster backpropagation learning, the {RPROP} algorithm},
-  JOURNAL =      {Proc. of Int. Conf. on Neural Networks},
+  BOOKTITLE =      {Proc. of Int. Conf. on Neural Networks},
   YEAR =         {1993},
   pages =        {586-591},
 }
@@ -2327,7 +2344,7 @@ Techniques in Physics Research},
   PUBLISHER =    {Springer},
   YEAR =         {2001},
   edition =      {3rd},
-  address =      {Berlin, Alemanha},
+  address =      {Berlim, Alemanha},
 }
 
 
@@ -2401,7 +2418,6 @@ Joint Likelihood},
   YEAR =         {1984},
   volume =       {Part 1},
   pages =        {4-29},
-  month =        {Abril},
 }
 
 
@@ -2416,6 +2432,26 @@ Joint Likelihood},
   month =        {Março},
 }
 
+
+@ARTICLE{Markou03noveltydetection,
+    author = {Markos Markou and Sameer Singh},
+    title = {Novelty Detection: A Review - Part 1: Statistical Approaches},
+    journal = {Signal Processing},
+    year = {2003},
+    volume = {83},
+    pages = {2481-2497}
+}
+
+
+@INPROCEEDINGS{article:rejectionClass:2009,
+  AUTHOR =       {R. Sousa and B. Mora and J. S. Cardoso},
+  TITLE =        {An Ordinal Data Method for the Classification with Reject Option},
+  BOOKTITLE =    {Proceedings of the International Conference on Machine Learning and Applications},
+  YEAR =         {2009},
+  volume =       {1},
+  pages =        {746-750},
+  address =      {Miami Beach, Estados Unidos},
+}
 
 @INPROCEEDINGS{article:kohonenLVQ:1990,
   AUTHOR =       {Teuvo Kohonen},
@@ -2436,6 +2472,37 @@ Joint Likelihood},
   volume =       {7},
   pages =        {179-188},
 }
+
+@ARTICLE{article:kmeans:2002,
+  AUTHOR =       {Tapas Kanungo and David M. Mount and Nathan S. Netanyahu and Christine D. Piatko and Ruth Silverman and Angela Y. Wu},
+  TITLE =        {An Efficient k-Means Clustering Algorithm, Analysis and Implementation},
+  JOURNAL =      {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  YEAR =         {2002},
+  volume =       {24},
+ number =        {7},
+  pages =        {881-892},
+}
+
+@INPROCEEDINGS{Alsabti98anefficient,
+    author = {Khaled Alsabti},
+    title = {An efficient k-means clustering algorithm},
+    booktitle = {Proceedings of IPPS/SPDP Workshop on High Performance Data Mining},
+    year = {1998},
+  volume =       {1},
+  pages =        {1-6},
+  address =        {Genebra, Suíça},
+}
+
+@INPROCEEDINGS{kmeans2:2004,
+    author = {Chris Ding and Xiaofeng He},
+    title = {K-means Clustering via Principal Component Analysis},
+    booktitle = {Proc. of Int'l Conf. Machine Learning},
+    year = {2004},
+  volume =       {1},
+  pages =        {225-232},
+  address =        {Genebra, Suíça},
+}
+
 
 @BOOK{book:duda:2000,
   AUTHOR =       {Richard O. Duda and Peter E. Hart and David G. Stork},
@@ -2486,8 +2553,7 @@ Joint Likelihood},
   volume =       {140},
   number =       {6},
   pages =        {362-370},
-  month =        {Novembro},
-}
+ }
 
 @ARTICLE{article:Cichocki:1996,
   AUTHOR =       {Andrzej Cichocki and Rolf Unbehauen},
@@ -2575,7 +2641,6 @@ Joint Likelihood},
   volume =       {559},
   number =       {1},
   pages =        {129-133},
-  month =        {Abril},
 }
 
 
@@ -2690,7 +2755,6 @@ Joint Likelihood},
   author =       {Brookhaven},
   title =        {Brookhaven National Laboratory},
   howpublished = {Disponível em: $<$http://www.bnl.gov/$>$. Acesso em: 02 de julho de 2009},
-  year =         {2009},
 }
 
 @MISC{homepage:kek,
@@ -2766,7 +2830,7 @@ Joint Likelihood},
 
 @MISC{Homepage:CERN,
   author =       {CERN-Colaboration},
-  title =        {CERN},
+  title =        {CERN Homepage},
   howpublished = {Disponível em :$<$http://www.cern.ch/$>$. Acesso em: 20 de março de 2007},
   %year =         {2006},
 }
@@ -2792,7 +2856,7 @@ Joint Likelihood},
   INSTITUTION =  {CERN},
   YEAR =         {1992},
   month =        {Outubro},
-  address =      {Genebra, Suiça},
+  address =      {Genebra, Suíça},
 }
 
 @TECHREPORT{ConfNote:ATLAS:2010,
@@ -2801,7 +2865,7 @@ Joint Likelihood},
   INSTITUTION =  {CERN},
   YEAR =         {2010},
   month =        {Março},
-  address =      {Genebra, Suiça},
+  address =      {Genebra, Suíça},
 }
 
 
@@ -2812,7 +2876,7 @@ Large Hadron Collider at CERN},
   INSTITUTION =  {CERN},
   YEAR =         {1994},
   month =        {Dezembro},
-  address =      {Genebra, Suiça},
+  address =      {Genebra, Suíça},
 }
 
 @TECHREPORT{TDR1:ATLAS:1999,
@@ -2821,7 +2885,7 @@ Large Hadron Collider at CERN},
   INSTITUTION =  {CERN},
   YEAR =         {1999},
   month =        {Maio},
-  address =      {Genebra, Suiça},
+  address =      {Genebra, Suíça},
 }
 
 @TECHREPORT{TDR2:ATLAS:1999,
@@ -2830,7 +2894,7 @@ Large Hadron Collider at CERN},
   INSTITUTION =  {CERN},
   YEAR =         {1999},
   month =        {Maio},
-  address =      {Genebra, Suiça},
+  address =      {Genebra, Suíça},
 }
 
 @TECHREPORT{TDR:ATLAS:2003,
@@ -2839,7 +2903,7 @@ Large Hadron Collider at CERN},
   INSTITUTION =  {CERN},
   YEAR =         {2003},
   month =        {Maio},
-  address =      {Genebra, Suiça},
+  address =      {Genebra, Suíça},
 }
 
 @TECHREPORT{TDR:ATLAS:1998,
@@ -2848,7 +2912,7 @@ Large Hadron Collider at CERN},
   INSTITUTION =  {CERN},
   YEAR =         {1998},
   month =        {Junho},
-  address =      {Genebra, Suiça},
+  address =      {Genebra, Suíça},
 }
 
 
@@ -2887,7 +2951,6 @@ Large Hadron Collider at CERN},
   YEAR =         {2003},
   volume =       {1},
   pages =        {282-287},
-  month =        {Outubro},
   address =      {Portland, EUA},
 }
 
@@ -3217,7 +3280,7 @@ Large Hadron Collider at CERN},
 @PHDTHESIS{Article:Schwefel:1975,
   AUTHOR =       "Hans-Paul Schwefel",
   TITLE =        "Evolutionsstrategie und numerische Optimierung",
-  SCHOOL =       "TU Berlin",
+  SCHOOL =       "TU Berlim",
   YEAR =         "1975"
 }
 

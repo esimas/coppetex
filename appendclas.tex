@@ -3,7 +3,7 @@
 
 A seguir serão mostrados os fundamentos teóricos de algumas técnicas
 de classificação de padrões, iniciando-se com uma visão geral do
-problema de decisão binária. Serão apresentadas técnicas lineares
+problema de decisão binária. Serão apresentadas técnicas lineares,
 como Filtros Casados e Análise de Discriminantes, e não-lineares,
 como Redes Neurais.
 
@@ -11,7 +11,7 @@ como Redes Neurais.
 
 Considerando-se inicialmente a discriminação entre duas hipóteses
 $H_1$ e $H_0$, o problema de classificação pode ser resumido pelo
-esquema da Figura \ref{class}. A fonte gera as saídas, que após
+esquema da Figura \ref{class}. A fonte gera as saídas, que, após
 passarem por um meio probabilístico, precisam ser detectadas a
 partir das observações do processo. As regras de decisão, que formam
 o sistema classificador, são projetadas para maximizar a
@@ -35,7 +35,7 @@ situações podem ocorrer:
 %  \item decidir por $H_1$, sendo $H_1$;
 %  \item decidir por $H_0$, sendo $H_0$.
 %\end{itemize}
-As duas primeiras são erros de decisão e as duas últimas
+As duas primeiras são erros de decisão, e as duas últimas
 classificações corretas. Cada uma das hipóteses é associada a uma
 saída da fonte, que é mapeada em uma região do espaço de observação.
 Considerando um espaço de observação de dimensão $N$ finita, um
@@ -68,8 +68,8 @@ associados à escolha da hipótese $i$ sendo $j$ a verdadeira. O risco
        \mathfrak{R}=C_{00}P_0\int_{Z_0}P_{\mathbf{r}/H_0}(\mathbf{R}/H_0)d\mathbf{R}
     \\+C_{10}P_0\int_{Z_1}P_{\mathbf{r}/H_0}(\mathbf{R}/H_0)d\mathbf{R}\\
         +C_{11}P_1\int_{Z_1}P_{\mathbf{r}/H_1}(\mathbf{R}/H_1)d\mathbf{R}\\
-    +C_{01}P_1\int_{Z_0}P_{\mathbf{r}/H_1}(\mathbf{R}/H_1)d\mathbf{R}
-    \end{array},
+    +C_{01}P_1\int_{Z_0}P_{\mathbf{r}/H_1}(\mathbf{R}/H_1)d\mathbf{R},
+    \end{array}
 \end{equation}
 \\
 onde os elementos do espaço de observação que pertencem às partições
@@ -86,7 +86,7 @@ chega-se a \cite{book:vantrees1:2001}:
     \frac{P_{\mathbf{r}/H_1}(\mathbf{R}/H_1)}{P_{\mathbf{r}/H_0}(\mathbf{R}/H_0)}\gtrless_{H_0}^{H_1}\frac{P_0(C_{10}-C_{00})}{P_1(C_{01}-C_{11})};
 \end{equation}
 \\
-a expressão à esquerda é chamada razão de semelhança
+a expressão à esquerda é chamada razão de verosimilhança
 ($\Lambda(\mathbf{R})$) e a fração à direita é o valor limiar
 (patamar) do teste ($\kappa$). Com isso, a equação (\ref{seme1}) se
 reduz a:
@@ -94,21 +94,21 @@ reduz a:
   \Lambda(\mathbf{R})  \gtrless_{H_0}^{H_1} \kappa;
 \end{equation}
 \\
-então, se a razão de semelhança é maior que o patamar, decide-se por
-$H_1$, caso contrário, escolhe-se $H_0$.
+então, se a razão de verosimilhança é maior que o patamar, decide-se por
+$H_1$, em caso contrário, escolhe-se $H_0$.
 
 Quando os custos não são conhecidos, pode-se adotar o critério
 \textit{minimax}, que minimiza o risco máximo; após algumas
-considerações chega-se a:
+considerações, chega-se a:
 \begin{equation}\label{minimax}
     \begin{array}{c}
       C_{00}=C_{11}=0 \\
-      C_{01}P_M = C_{10}P_F
-    \end{array},
+      C_{01}P_M = C_{10}P_F,
+    \end{array}
 \end{equation}
 \\
 onde $P_F=\int_{Z_1}P_{\mathbf{r}/H_0}(\mathbf{R}/H_0)d\mathbf{R}$ é
-a probabilidade de falso-alarme (terminologia usada em sistemas de
+a probabilidade de falso alarme (terminologia usada em sistemas de
 radar, indicando que decidiu-se pela presença do alvo $H_1$ estando
 o mesmo ausente) e
 $P_M=\int_{Z_0}P_{\mathbf{r}/H_1}(\mathbf{R}/H_1)d\mathbf{R}$ é a
@@ -116,8 +116,8 @@ probabilidade de perda do alvo.
 
 O teste de \textit{Neyman-Pearson} \cite{book:shanmugan:1988} é
 utilizado quando não se tem informações sobre os custos ou as
-probabilidades a priori. Escolhe-se um valor limite para a
-probabilidade de falso-alarme e procura-se minimizar a probabilidade
+probabilidades \textit{a priori}. Escolhe-se um valor limite para a
+probabilidade de falso alarme e procura-se minimizar a probabilidade
 de perda do alvo para o valor escolhido. Como o critério utiliza
 $P_F$ e $P_M$ é preciso conhecer as probabilidades condicionais
 $P_{\mathbf{r}/H_0}(\mathbf{R}/H_0)$ e
@@ -125,32 +125,32 @@ $P_{\mathbf{r}/H_1}(\mathbf{R}/H_1)$.
 
 \section{Discriminante Linear de Fisher}
 
-A análise de discriminantes busca a direção $\mathbf{w}$ onde as
+A análise de discriminantes busca a direção $\mathbf{w}$ na qual as
 projeções $\mathbf{y}$ dos sinais de entrada $\mathbf{x}$ sejam
-maximamente separáveis. A análise por discriminante de Fisher (FDA -
-\textit{Fisher Discriminant Analysis}) busca a direção ótima de
-discriminação utilizando 2 parâmetros: a distância inter-classes, e
-a distância intra-classes \cite{article:fisher:1936}.
+maximamente separáveis. A análise por discriminante de Fisher (FDA-\textit{Fisher Discriminant Analysis}) 
+busca a direção ótima de
+discriminação utilizando 2 parâmetros: a distância interclasses, e
+a distância intraclasses \cite{article:fisher:1936}.
 
-Numa formulação matricial o objetivo é encontrar a direção
+Numa formulação matricial, o objetivo é encontrar a direção
 $\mathbf{w}_0$ que maximiza a expressão:
 \begin{equation}\label{fisher1}
-    J(\mathbf{w})=\frac{\mathbf{w}^T \mathbf{S_B} \mathbf{w}}{\mathbf{w}^T \mathbf{S_{w}} \mathbf{w}}
+    J(\mathbf{w})=\frac{\mathbf{w}^T \mathbf{S_B} \mathbf{w}}{\mathbf{w}^T \mathbf{S_{w}} \mathbf{w}},
 \end{equation}
 \\
 onde $\mathbf{m}_i$ é a média da classe $i$,
 $\mathbf{S_B}=(\mathbf{m}_1-\mathbf{m}_2)(\mathbf{m}_1-\mathbf{m}_2)^T$
-é a matriz de separação inter-classes e $\mathbf{S_{w}}=\mathbf{S}_1
-+ \mathbf{S}_2$ é a matriz de separação intra-classes, sendo:
+é a matriz de separação interclasses e $\mathbf{S_{w}}=\mathbf{S}_1
++ \mathbf{S}_2$ é a matriz de separação intraclasses, sendo:
 \begin{equation}\label{fisher2}
 \mathbf{S}_i=\sum_{\mathbf{x} \in
-\mathcal{D_i}}(\mathbf{x}-\mathbf{m}_i)(\mathbf{x}-\mathbf{m}_i)^T
+\mathcal{D_i}}(\mathbf{x}-\mathbf{m}_i)(\mathbf{x}-\mathbf{m}_i)^T.
 \end{equation}
 
 Pode-se provar que a direção ótima que maximiza (\ref{fisher1}) é
 dada por \cite{book:duda:2000}:
 \begin{equation}\label{fisher3}
-\mathbf{w}=\mathbf{S_{w}}^{-1}(\mathbf{m}_1-\mathbf{m}_2)
+\mathbf{w}=\mathbf{S_{w}}^{-1}(\mathbf{m}_1-\mathbf{m}_2).
 \end{equation}
 
 O discriminante de Fisher é capaz de encontrar a transformação
@@ -235,14 +235,14 @@ pesos sinápticos obtidos após o treinamento.
 As redes de múltiplas camadas alimentadas adiante
 (\textit{feed-forward}) são compostas a partir da conexão sequencial
 de duas ou mais camadas de neurônios. Essas redes são usualmente
-chamadas de perceptrons de múltiplas camadas (MLP -
-\textit{Multi-layer Perceptrons}) por serem uma generalização do
-perceptron de camada única. Pode-se verificar na Figura \ref{mlp2}
+chamadas de perceptrons de múltiplas camadas (MLP-\textit{Multi-layer Perceptrons}) 
+por serem uma generalização do
+percéptron de camada única. Pode-se verificar na Figura \ref{mlp2}
 que a saída de uma camada é utilizada como entrada da próxima. A
 rede mostrada tem três camadas: a camada de entrada, formada pelos
 nós sensoriais, a camada oculta, e a camada de saída. As conexões
 com o ambiente externo são feitas pelas camadas de entrada e saída.
-Por não possuirem laços de realimentação as redes
+Por não possuírem laços de realimentação, as redes
 \textit{feed-forward} são estruturalmente estáveis. A camada oculta
 é responsável, em um processo de reconhecimento de padrões, por
 extrair características estatísticas de ordem elevada, transformando
@@ -250,25 +250,25 @@ os dados de entrada.
 
 \begin{figure}[tbph]
 \centering
-\includegraphics[width=8cm]{cap3_class}
+\includegraphics[width=6cm]{cap3_class}
 \caption{Exemplo de uma rede neural utilizada para separação dos
 sinais de entrada em 3 classes.} \label{mlp2}
 \end{figure}
 
 As redes MLP utilizam, em geral, neurônios com função de ativação
 tipo sigmoidal (tangente hiperbólica ou logística). Em alguns casos
-pode-se utilizar neurônios lineares.
+podem-se utilizar neurônios lineares.
 
-Na etapa de propagação do sinal para frente, o vetor de entradas é apresentado à
+Na etapa de propagação do sinal para a frente, o vetor de entradas é apresentado à
   rede, o sinal percorre todas as camadas e a saída da rede é calculada. A
   saída do neurônio $j$ da camada $l$ é obtida de:
     \begin{equation}\label{ne}
-        y_j^{(l)}(n)=\varphi_j\bigg(\sum_{i=0}^{m}\omega_{ji}^{(l)}(n)y_{i}^{(l-1)}(n)\bigg)
+        y_j^{(l)}(n)=\varphi_j\bigg(\sum_{i=0}^{m}\omega_{ji}^{(l)}(n)y_{i}^{(l-1)}(n)\bigg),
     \end{equation}
     \\
-    onde $\varphi_j(.)$ é a função de ativação e $\omega_{ji}^{(l)}$ o conjunto de pesos do neurônio
+    onde $\varphi_j(.)$ é a função de ativação e $\omega_{ji}^{(l)}$ é o conjunto de pesos do neurônio
     $j$. A saída da camada anterior $y_{i}^{(l-1)}(n)$ é a entrada
-    da camada $l$. Para os neurônios da primeira camada as entradas
+    da camada $l$. Para os neurônios da primeira camada, as entradas
     são os elementos do vetor $\mathbf{x}(n)$.
 
 Para o projeto do classificador neural, em geral, dividem-se os pares entrada
@@ -277,7 +277,7 @@ divisão é importante para garantir que a rede treinada consiga
 generalizar bem o conhecimento adquirido. Apenas o conjunto de
 treino é considerado para o ajuste dos pesos sinápticos. O conjunto
 de validação é utilizado na parada do treinamento em caso de
-sobre-aprendizado. O sobre-aprendizado acontece quando a rede se
+sobreaprendizado. O sobreaprendizado acontece quando a rede se
 ajusta demais ao conjunto de treino, perdendo capacidade de
 generalização. O resultado esperado do classificador é avaliado
 através do conjunto de teste, que não foi usado no ajuste dos pesos
@@ -289,17 +289,17 @@ classe e $y=-1$ para a outra.
 
 Para decisão entre $N$ classes
 ($N\geq3$), pode-se fazer com que a camada de saída tenha $N$
-neurônios. Associa-se um neurônio para cada classe. Quando a classe
+neurônios. Associa-se um neurônio a cada classe. Quando a classe
 $k$ estiver presente, a saída desejada no neurônio $k$ associado
-deve ser $+1$ e nos demais $-1$. Na fase de operação decide-se pela
+deve ser $+1$ e nos demais, $-1$. Na fase de operação, decide-se pela
 classe do neurônio com a maior saída. A rede da Figura \ref{mlp2} é
 um exemplo de arquitetura que pode ser usada para a separação entre
 três classes a partir de um espaço de entrada de dimensão $m$.
 
 Antes da utilização, os exemplos de treinamento da rede devem ser pré-processados para
 facilitar o processo de extração de características através de procedimentos
-como a remoção da média e a normalização. Em alguns casos quando
-a faixa dinâmica de uma variável é muito grande pode-se aplicar a função
+como a remoção da média e a normalização. Em alguns casos, quando
+a faixa dinâmica de uma variável é muito grande, pode-se aplicar a função
 logarítmica para diminuir a excursão total.
 
 

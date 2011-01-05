@@ -1,6 +1,10 @@
 \chapter{Produção Científica}
 \label{apend_pub}
 
+A seguir, serão apresentados os resumos dos trabalhos publicados no desenvolvimento desta 
+tese, com o propósito de facilitar a busca do leitor por mais referências a respeito da 
+pesquisa desenvolvida. Os artigos estão em ordem cronológica (iniciando pelo mais recente) e 
+divididos de acordo com o veículo de publicação.
 
 \section{Publicações em periódicos}
 
@@ -26,7 +30,7 @@ Independent Components}. \textit{Proceedings of Science} (nova denominação do
 
 \textbf{Resumo}: \linebreak Um estudo detalhado a respeito da
 aplicação do modelo pós não-linear da análise de componentes
-independentes foi conduzido neste trabalho. Entre os tópicos
+independentes foi conduzido neste trabalho. Dentre os tópicos
 estudados pode-se destacar a busca pelo grau de não-linearidade
 ótimo para o problema.
 
@@ -40,12 +44,12 @@ Trigger}. \textit{Proceedings of Science} (nova denominação do
 \textbf{Resumo}: \linebreak Neste trabalho foram estudados alguns
 métodos de compactação de sinais para serem aplicados como
 pré-processamento à análise de componentes independentes. Entre os
-métodos testados pode-se destacar NLPCA (Análise de Componentes
+métodos testados podem-se destacar NLPCA (Análise de Componentes
 Principais Não-Lineares - \textit{Nonlinear Principal Component
 Analysis}), PCA (Análise de Componentes Principais) e PCD
 (Componentes Principais de Discriminação - \textit{Principal
 Components of Discrimination}). O processo de extração de
-características foi realizado de modo segmentado (a nível de cada
+características foi realizado de modo segmentado (para cada
 camada do calorímetro).
 
 \item \textit{Eduardo F. Simas Filho, José M. de Seixas e Luiz P. Calôba}.
@@ -65,7 +69,7 @@ não-linear). Os resultados obtidos foram comparados em termos do
 desempenho de discriminação.
 
 \item \textit{Eduardo F. Simas Filho, José M. de Seixas e Luiz P.
-Calôba}. S\textbf{elf-organized mapping of calorimetry information
+Calôba}. \textbf{Self-organized mapping of calorimetry information
 for high efficient online electron/jet identification in ATLAS}.
 \textit{Proceedings of Science} (nova denominação do
 \textit{Journal of High Energy Physics/Online}), v. ACAT07, p.
@@ -75,7 +79,7 @@ for high efficient online electron/jet identification in ATLAS}.
 auto-organizáveis (SOM - \textit{Self-organizing Maps}) para a
 extração de características na filtragem \textit{online} de elétrons
 do ATLAS foi conduzido neste trabalho. Os SOM foram aplicados de
-modo não-segmentado (considerando como entrada um vetor composto
+modo não-segmentado considerando como entrada um vetor composto
 pelos sinais em anéis gerados a partir de todas as camadas dos
 calorímetros.
 
@@ -108,7 +112,7 @@ publicação).
 \textbf{Resumo}: \linebreak Neste trabalho foi realizado um estudo
 comparativo de diversas abordagens baseadas em análise de
 componentes independentes (ICA - \textit{Independent Component
-Analysis}) para extração de características na filtragem online do
+Analysis}) para extração de características na filtragem \emph{online} do
 ATLAS. Os componentes independentes foram estimados de ambos os
 modos, segmentado e não-segmentado. Para a classificação foram
 utilizados classificadores neurais e classificadores lineares
@@ -125,7 +129,7 @@ Calorimetria de Alta Energia e com Fina Segmentação}. In: Workshop de Teses e Di
 em Inteligência Artificial (parte do Joint Conference SBIA/SBRN), p. 1-8, São Bernardo do Campo-SP, 2010.
 
 \textbf{Resumo}: \linebreak Neste trabalho foi apresentado um resumo com os 
-principais resultados obtidos até o momento da submissão, que incluiam a base de dados simulados 
+principais resultados obtidos até o momento da submissão, que incluíam a base de dados simulados 
 com assinaturas E10.
 
 \item \textit{Rodrigo C. Torres, Danilo E. F. Lima, Eduardo F. Simas Filho e J. M. Seixas}.
@@ -154,11 +158,11 @@ classificadores segmentados foram testados. Com o uso dos
 classificadores especialistas foi possível aumentar a eficiência de
 discriminação e ainda identificar que existe redundância na
 informação disponível nas diversas camadas dos calorímetros. Neste
-caso, foi mostrado que, mesmo sem utilizar os sinais de algumas
-camadas o desempenho de discriminação se mantém quase inalterado.
+caso, foi mostrado que mesmo sem utilizar os sinais de algumas
+camadas, o desempenho de discriminação se mantém quase inalterado.
 Como o processo de formação dos sinais em anéis é responsável pela
 maior parte do tempo de processamento, quanto menor a quantidade de
-informação necessária mais rápida a decisão é tomada.
+informação necessária, mais rápido a decisão é tomada.
 
 \item \textit{Eduardo F. Simas Filho, José M. de Seixas e Luiz P. Calôba}. \textbf{Local
 Independent Component Analysis Applied to Highly Segmented
@@ -177,7 +181,7 @@ a High Event Rate Detector}. In: European Signal Processing
 Conference, p. 1-5, Lausanne, Suiça, 2008.
 
 \textbf{Resumo}: \linebreak Mapas auto-organizáveis foram aplicados
-de modo segmentado (a nível de cada camada do calorímetro) para
+de modo segmentado (para cada camada do calorímetro) para
 extração de características sobre os sinais em anéis. Um estudo para
 busca do tamanho ótimo do mapa foi conduzido considerando o erro
 médio de representação obtido. Foi mostrado que com a abordagem
@@ -190,7 +194,7 @@ In: IEEE International Conference on Electronics, Circuits and
 Systems, v. 1. p. 530-533, Malta, 2008.
 
 \textbf{Resumo}: \linebreak Foi proposta a estimação dos componentes principais de discriminação
-(PCD - \textit{Principal Discriminating Components})
+(PCD-\textit{Principal Discriminating Components})
 de modo segmentado (a nível de cada camada do calorímetro),
 aproveitando, desta forma, toda a segmentação e granularidade disponíveis ao
 detector. As PCDs (obtidas em cada camada) foram concatenadas e utilizadas para treinar um classificador neural.

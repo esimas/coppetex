@@ -13,26 +13,35 @@
 $c$ \> Velocidade da Luz no Vácuo\\
 $E$ \> Energia \\
 $eV$ \> Elétron-Volt \\
+$e^-/j$ \> Elétron/Jato\\
 $\mathcal{E}(.)$ \> Operador esperança \\
+$E_{EM}$ \> Energia eletromagnética\\
 $Ef_i$ \> Eficiência de discriminação da classe $i$\\
+$E_{Had}$ \> Energia hadrônica\\
+$E_{ratio}$ \> Razão de energia (variável do T2Calo)\\
 $E_T$ \> Energia transversa\\
-$E_T^{miss}$ \> Energia transversa faltante\\
+$E_T^{miss}$ \> Falta de energia transversa\\
+$fit$ \> Função aptidão\\
 $H(.)$ \> Entropia\\
 $I(.)$ \> Informação mútua\\
 $J(.)$ \> Negentropia\\
 $kurt(.)$ \> Curtose\\
 $m$ \> Massa\\
+$p_{mut}$ \> Probabilidade de mutação do Algoritmo Genético\\
 $p_T$ \> Momento transverso\\
+$p_{rec}$ \> Probabilidade de recombinação do Algoritmo Genético\\
 $p_x(x)$ \> Função de densidade de probabilidade\\
+$R_{shape}$ \> Razão de forma (variável do T2Calo)\\
 $\eta$ \> Pseudo-rapidez (sistema de coordenadas do ATLAS)\\
 $\theta$ \> Ângulo polar (sistema de coordenadas do ATLAS)\\
 $\lambda(.)$ \> Razão de semelhança\\
 $\phi$ \> Ângulo azimutal (sistema de coordenadas do ATLAS)\\
-$e^-/j$ \> Elétron/Jato\\
 $\mathbf{s}$ \> Vetor das fontes independentes\\
+$S(\omega)$ \> Densidade espectral de potência\\
 $\mathbf{x}$ \> Vetor dos sinais observados (medidos)\\
 $\mathbf{y}$ \> Vetor dos componentes independentes estimados\\
 $\mathbf{z}$ \> Vetor dos sinais branqueados\\
+
 
 %$x(t)$ \> Sinal de informação contínuo, no domínio do tempo\\
 %$j$ \> $\sqrt{-1}$\\
@@ -62,7 +71,7 @@ $\mathbf{z}$ \> Vetor dos sinais branqueados\\
 
 \end{tabbing}
 
-%\newpage
+\pagebreak
 
 \section*{Abreviaturas}
 
@@ -75,7 +84,7 @@ optou-se por mantê-las em inglês.
 AG \> Algoritmo Genético\\
 ALEPH \> Detector do acelerador LEP\\
 ALICE \> Detector do LHC\\
-ASIC \> \emph{Application specific integrated circuit}\\
+ASIC \> \emph{Application-specific integrated circuit}\\
 ATLAS \> \textit{A Toroidal LHC AparattuS}\\
 BOOSTER \> Experimento do laboratório Fermilab\\
 cdf \> Função de distribuição cumulativa\\
@@ -90,18 +99,18 @@ D0 \> Detector do Fermilab\\
 DELPHI \> Detector do LEP\\
 DESY \> \textit{Deutsches Elektronen-SynchrotronDie}\\
 DL \> Discriminante Linear\\
-DNA \> ...\\
+DNA \> Ácido desoxirribonucleico\\
 DSP \> \emph{Digital signal processing}\\
 E1 \> Primeira camada eletromagnética do calorímetro do ATLAS\\
 E2 \> Segunda camada eletromagnética do calorímetro do ATLAS\\
 E3 \> Terceira camada eletromagnética do calorímetro do ATLAS\\
-EEG \> Eletro-encefalograma\\
+EEG \> Eletroencefalograma\\
 EELS \> Espectropia por perda de energia de elétrons\\
 EF \> Filtro de Eventos (\textit{Event Filter})\\
-EL \> \emph{Emsemble learning}\\
+EL \> \emph{Ensemble learning}\\
 EM \> Eletromagnético\\
 FastICA \> Algoritmo de extração das componentes independentes\\
-FDL \> Discriminante linear de Fisher\\
+FLD \> Discriminante linear de Fisher\\
 FPGA \> \textit{Field-Programmable Gate Array}\\
 Fermilab \> \textit{Fermi National Accelerator Laboratory}\\
 %DFT \> \textit{Discrete Fourier transform}\\
@@ -114,7 +123,7 @@ H0 \> Primeira camada hadrônica do calorímetro do ATLAS\\
 H1 \> Segunda camada hadrônica do calorímetro do ATLAS\\
 H2 \> Terceira camada hadrônica do calorímetro do ATLAS\\
 HAD \> Hadrônico\\
-HLT \> \textit{High Level Trigger}\\
+HLT \> \textit{High-Level Trigger}\\
 HEGRA \> Experimento de astrofísica de alta energia\\
 HEP \> \textit{High-Energy Physics}\\
 HERA \> Experimento do laboratório DESY\\
@@ -139,7 +148,7 @@ L2PU \> Unidade de processamento do L2\\
 L2SV \> Supervisor do L2\\
 LVQ \> Quantização vetorial por aprendizado\\
 MISEP \> Algoritmo para ICA/NLICA\\
-MLP \> Perceptron de múltiplas camadas\\
+MLP \> Percéptron de múltiplas camadas\\
 MSSM \> \emph{Minimal supersymmetric Standard Model}\\
 NLICA \> \textit{Non-linear independent component analysis}\\
 NLPCA \> \textit{Non-linear principal component analysis}\\
@@ -149,6 +158,7 @@ PCD \> \textit{Principal Components for Discrimination}\\
 pdf \> Função densidade de probabilidade\\
 PMT \> Foto-multiplicadora\\
 PNL \> \textit{Post Nonlinear model}\\
+PS \> Camada \emph{pré-sampler} (pré-amostradora) do ATLAS\\
 PYTHIA \> Simulador de Monte Carlo para colisões de partículas\\
 %PSD \> \textit{Power espectral density}\\
 %RLS \> \textit{Recursive least square algorithm}\\
@@ -167,7 +177,7 @@ RPC \> \emph{Resistive Plate Chamber}\\
 RPROP \> \textit{Resilient back-propagation}\\
 SFI \> \emph{Sub-farmer input}\\
 SICA \> \textit{Segmented independent component analysis}\\
-SLAC \> ... \\
+SLAC \> \emph{Stanford Linear Accelerator Center} \\
 SPCA \> \textit{Segmented principal component analysis}\\
 SM \> Modelo Padrão de interação entre as partículas elementares
 (\textit{Standard Model})\\

@@ -43,7 +43,7 @@ de filtragem do ATLAS (\textit{A Toroidal LHC
 Aparatus})~\cite{article:ATLAS:2008}, maior detector de propósito
 geral do acelerador de partículas LHC (\textit{Large Hadron
 Collider})~\cite{article:LHC:2008}. O LHC entrou em operação no
-final de 2008, logo depois, passou por reparos no sistema de
+final de 2008, logo depois passou por reparos no sistema de
 resfriamento de um dos seus supercondutores, voltando a operar no
 final de 2009.
 
@@ -124,7 +124,7 @@ verificada experimentalmente.
 
 Parcela importante das informações necessárias para a
 caracterização dos eventos é obtida do sistema de calorímetros,
-que, no ATLAS, é subdividido em 7 camadas. Os calorímetros são
+que no ATLAS é subdividido em 7 camadas. Os calorímetros são
 medidores de energia compostos por um grande número de sensores
 (células). Ao interagirem com o material do calorímetro, as
 partículas perdem energia (e consequentemente velocidade). As
@@ -155,7 +155,7 @@ eventos de interesse e minimizar a probabilidade de armazenar
 eventos não desejados (ruído de fundo ou falso-alarme). Em um
 ambiente como este, a alta dimensão dos dados, o intenso ruído de
 fundo e o curto tempo de resposta exigido são sérios entraves para
-o processamento e classificação \textit{online} de eventos.
+o processamento e a classificação \textit{online} de eventos.
 
 No ATLAS, o sistema \textit{online} de filtragem
 (\textit{trigger}) de eventos é composto por três níveis de
@@ -183,7 +183,7 @@ redução de $2\times 10^5$ vezes.
 %níveis de filtragem existentes.
 
 No contexto dos diversos canais de interesse para a física no
-ATLAS, este trabalho dedica-se à na discriminação elétron/jato
+ATLAS, este trabalho dedica-se à discriminação elétron/jato
 (e$^-/$j). Os elétrons podem estar envolvidos em fenômenos como o
 decaimento do bóson de Higgs, supersimetria e a descoberta de
 novos bósons. Porém, em termos de calorimetria, alguns jatos podem
@@ -209,7 +209,7 @@ segundo nível de filtragem (L2) do detector ATLAS. Os algoritmos
 desenvolvidos apresentaram maior eficiência de discriminação e
 tempo de processamento dentro das restrições do L2.
 
-\section{Trabalhos Anteriores}
+\section{Trabalhos Anteriores Desenvolvidos pelo Grupo de Pesquisa}
 
 Considerando os desafios existentes no ambiente de filtragem
 \textit{online} do \linebreak ATLAS, no qual os sinais são
@@ -233,8 +233,16 @@ elétrons (que ficou conhecido como \textit{Neural Ringer}) foi
 implementado no sistema (\textit{software}) de filtragem do ATLAS.
 Numa comparação de desempenho entre o Neural Ringer e o
 discriminador oficial do ATLAS (T2Calo) foi mostrado que o
-\textit{Ringer} apresenta desempenho superior e é capaz de operar
+\textit{Ringer} apresenta desempenho superior e, embora produza 
+aumento no tempo de processamento da ordem de 90~\%, é capaz de operar
 dentro da janela de tempo permitida para o segundo nível (L2).
+
+Devido a fatores como a alta taxa de eventos e o longo tempo de 
+operação esperado para o acelerador, o ambiente de filtragem 
+\emph{online} de eventos no ATLAS exige algoritmos com alta 
+eficiência e rápida decisão. Neste contexto, modificações na 
+estrutura básica do discriminador \emph{Neural Ringer} foram 
+propostas visando otimizar suas características.
 
 No trabalho \cite{tese:torres:2010} alguns métodos de compactação
 como Análise de Componentes Principais (PCA - \textit{Principal
@@ -277,11 +285,11 @@ características e classificação, visando explorar adequadamente
 toda segmentação e granularidade disponíveis no detector.
 
 O modelo da NLICA foi originalmente definido para realizar a
-extração de características de modo não-supervisionado. Ou seja,
+extração de características de modo não-supervisionado, ou seja,
 não há como garantir que a transformação seja útil para o problema
 de classificação (no sentido de revelar características
 discriminantes). Neste trabalho, portanto, foram propostas
-modificações no modelo tradicional da NLICA visando a estimação de
+modificações no modelo tradicional da NLICA visando à estimação de
 componentes com maior poder de discriminação entre as classes.
 
 \section{Metodologia}
@@ -303,7 +311,7 @@ Foram aplicados diversos algoritmos para estimar o modelo
 não-linear dos componentes independentes (NLICA). Visando explorar
 adequadamente as características do detector, o modo de executar
 as tarefas de extração de características e classificação foi
-variado entre as abordagens segmentada (onde o processamento é
+variado entre as abordagens segmentada (que o processamento é
 feito em cada camada do calorímetro) e não-segmentada (quando os
 sinais em anéis, gerados a partir de todas as camadas, são
 concatenados em um único vetor).
@@ -314,7 +322,7 @@ mapas auto-organizáveis) e o modelo pós não-linear (que restringe
 os mapeamentos não-lineares possíveis a uma mistura linear seguida
 de funções não-lineares aplicadas a cada componente desta
 mistura). A ICA Local, que é um modelo diretamente ligado ao da
-NLICA também foi utilizada. Para cada modelo proposto foi
+NLICA, também foi utilizada. Para cada modelo proposto foi
 realizado um estudo comparativo de desempenho com o discriminador
 neural operando diretamente sobre os sinais em anéis (\emph{Neural
 Ringer}).
@@ -334,10 +342,10 @@ No Capítulo 2 será apresentado o ambiente científico no qual o
 trabalho foi desenvolvido, contextualizando o detector de
 partículas ATLAS, o acelerador LHC e o CERN. Uma descrição dos
 sistemas de filtragem (\textit{trigger}) \textit{online} em
-experimentos de física de altas energias e será apresentada no
+experimentos de física de altas energias será apresentada no
 Capítulo 3, com foco no detector ATLAS.
 
-Será descrito no Capítulo 4, o processo de seleção de elétrons
+Será descrito, no Capítulo 4, o processo de seleção de elétrons
 utilizando informações de calorimetria no contexto do sistema de
 filtragem do ATLAS. No Capítulo 5, serão mostrados os fundamentos
 teóricos das técnicas de extração de características que serão
@@ -347,7 +355,7 @@ A metodologia empregada no desenvolvimento deste trabalho,
 juntamente com os conjuntos de sinais utilizados, serão descritos
 no Capítulo 6. Os resultados obtidos serão apresentados nos
 Capítulos~7 e 8, sendo o primeiro dedicado aos conjuntos de dados
-simulados e o segundo, aos sinais adquiridos experimentalmente. As
+simulados e o segundo aos sinais adquiridos experimentalmente. As
 conclusões e os futuros trabalhos são os tópicos abordados no
 Capítulo~9.
 

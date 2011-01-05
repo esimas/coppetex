@@ -27,14 +27,14 @@ A Tabela~\ref{tab_cosmicRes} mostra os resultados obtidos para
 diferentes discriminadores. Pode-se observar que os
 classificadores que utilizam os sinais em anéis apresentam
 desempenho superior ao T2Calo em pelo menos 1,1 ponto percentual.
-Com o pré-processamento por ICA e Local ICA, foi possível melhorar
+Com o pré-processamento por ICA e ICA Local, foi possível melhorar
 ligeiramente a taxa de rejeição obtida pelo \emph{Neural Ringer}.
 
 Quando a informação segmentada dos sinais em anéis é explorada na
 classificação através da rede combinadora, é possível aumentar
 a rejeição dos raios cósmicos em relação ao \emph{Neural Ringer}.
 Considerando a rede combinadora utilizando apenas as informações
-das camadas E1 e E2 observa-se que o desempenho diminui um pouco,
+das camadas E1 e E2, observa-se que o desempenho diminui um pouco,
 mas ainda fica superior ao obtido pelo T2Calo.
 
 \begin{table}[h]
@@ -56,11 +56,11 @@ para os discriminadores com pré-processamento por ICA, SOM, PNL e
 ICA Local são mostradas na Figura~\ref{figcosmicBarC} (no
 treinamento foi utilizada a saída alvo igual a 1 para elétrons).
 Os patamares de corte estão indicados em linhas tracejadas
-verticais. Percebe-se que, para todos os casos houve uma alta
+verticais. Percebe-se que para todos os casos houve uma alta
 concentração perto de -1, indicando que a maioria das assinaturas
 de raios cósmicos é facilmente classificada como ruído de fundo.
 
-Ainda na Figura~\ref{figcosmicBarC}, pode-se observar um comparativo
+Ainda na Figura~\ref{figcosmicBarC}, pode-se observar uma comparação
 de desempenho entre os diferentes discriminadores que utilizam o
 pré-processamento por ICA/NLICA e o \emph{Neural Ringer} a partir da
 parcela das assinaturas que eles acertam e erram em conjunto. Nesta
@@ -89,7 +89,7 @@ de assinaturas rejeitadas.
  \centerline{\epsfig{file=cosmics_LocalRingerBarComp,width=7cm}}
 \end{minipage}
 \begin{minipage}[b]{0.98\linewidth}
-  \centering \footnotesize{Comparativo de rejeição}
+  \centering \footnotesize{Comparação de rejeição}
  \end{minipage}
 \caption{Saída dos classificadores neurais (acima) e comparativo
 de rejeição (abaixo) para eventos de raios cósmicos.}\label{figcosmicBarC}
@@ -98,18 +98,18 @@ de rejeição (abaixo) para eventos de raios cósmicos.}\label{figcosmicBarC}
 A Figura~\ref{fig_cosmicErr} mostra o perfil médio dos eventos de
 raios cósmicos que são aprovados (aceitos incorretamente como
 elétrons) conjuntamente pelo \emph{Ringer} e pelo discriminador
-baseado em ICA Local. Pode-se observar que, os eventos aceitos
-tem, em média, um perfil que se assemelha ao perfil médio de
+baseado em ICA Local. Pode-se observar que os eventos aceitos
+têm, em média, um perfil que se assemelha ao perfil médio de
 elétrons.
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=9.5cm]{bar-cosmicos-aprov}
 \caption{Perfil médio dos eventos de raios cósmicos aprovados conjuntamente pelo discriminador baseado em
-ICA Local e pelo \emph{Neural Ringer}. . O perfil médio dos elétrons do conjunto E15 é mostrado para comparação.} \label{fig_cosmicErr}
+ICA Local e pelo \emph{Neural Ringer}. O perfil médio dos elétrons do conjunto E15 é mostrado para comparação.} \label{fig_cosmicErr}
 \end{figure}
 
-Por fim, são apresentadas na Figura~\ref{figcosmicEF}, as eficiências
+Por fim, são apresentadas na Figura~\ref{figcosmicEF} as eficiências
 na rejeição dos raios cósmicos em função da energia e $\eta$ para diferentes
 discriminadores. Observa-se que o T2Calo
 apresenta uma flutuação muito maior que os outros discriminadores
@@ -169,7 +169,7 @@ do \emph{Neural Ringer}.
   \centering
  \centerline{\epsfig{file=cosmics-comp-ef-etaLocal,width=8cm}}
 \end{minipage}
-\caption{Comparativo de desempenho em energia e $\eta$ de diferentes discriminadores na
+\caption{Comparação de desempenho em energia e $\eta$ de diferentes discriminadores na
 rejeição de eventos de raios cósmicos.}\label{figcosmicEF}
 \end{figure}
 
@@ -177,23 +177,23 @@ rejeição de eventos de raios cósmicos.}\label{figcosmicEF}
 
 \section{Colisões do LHC}
 
-Conforme mostrado no Capítulo~\ref{cap_metod}, os sinais experimentais disponíveis até o
+Conforme discutido no Capítulo~\ref{cap_metod}, os sinais experimentais disponíveis até o
 momento tem características físicas distintas dos sinais
 simulados utilizados para desenvolvimento dos discriminadores,
-estando concentrados em uma faixa de energia muito baixa\footnote{Os 
+estando concentrados em uma faixa de energia muito baixa\footnote{Os
 sinais simulados estavam concentrados em energias
 maiores que 10~GeV (assinaturas de segundo nível do tipo E10 e E15), enquanto que, os
-experimentais estão numa faixa inferior (assinaturas tipo E3)}. Conforme mostrado 
+experimentais estão numa faixa inferior (assinaturas tipo E3)}. Conforme mostrado
 na Seção~\ref{sec_t2calo}, as características do perfil de
-deposição nos calorímetros depende da energia da partícula. 
+deposição nos calorímetros depende da energia da partícula.
 
-Outra questão 
-a ser considerada é que nos sinais simulados havia a informação dos simuladores a 
-respeito da classe (elétron ou jatos) de cada assinatura. Para os sinais experimentais 
-é utilizada a decisão da análise \emph{offline}, que está sujeita a erros de 
-classificação. Conforme mostrado na Seção~\ref{secDadosExp}, no critério 
-\emph{electron\_tight} do \emph{offline} (utilizado neste trabalho para a identificação 
-de elétrons) aproximadamente 30~\% dos eventos aceitos são jatos hadrônicos.
+Outra questão
+a ser considerada é que nos sinais simulados havia a informação dos simuladores a
+respeito da classe (elétron ou jatos) de cada assinatura. Para os sinais experimentais
+é utilizada a decisão da análise \emph{offline}, que está sujeita a erros de
+classificação. Conforme mostrado na Seção~\ref{secDadosExp}, no critério
+\emph{electron\_tight} do \emph{offline} (utilizado neste trabalho para a identificação
+de elétrons), aproximadamente 30~\% dos eventos aceitos são jatos hadrônicos.
 
 A informação da reconstrução \emph{offline} será
 utilizada como verdade para o treinamento. Conforme exposto
@@ -206,9 +206,9 @@ pois sabe-se que mesmo o critério mais seletivo da análise
 O conjunto de ``jatos'' é composto pelas assinaturas que não
 foram aceitas no critério \emph{electron loose}.
 
-Deste modo, aplicando-se diretamente aos sinais experimentais a
+Deste modo, aplicando-se diretamente aos sinais experimentais à
 versão do \emph{Neural Ringer} treinada para o conjunto simulado
-E10 é obtida uma eficiência de apenas 31,83~\%, para um falso
+E10, é obtida uma eficiência de apenas 31,83~\%, para um falso
 alarme igual a 19,50~\%. A Figura~\ref{fig_exp_RoutE10} mostra as
 saídas do classificador neural. Pode-se observar que, as
 distribuições dos eventos de ``elétrons'' e ``jatos'' é bem semelhante,
@@ -226,7 +226,7 @@ simulados E10) para os sinais experimentais.}
 
 \begin{table}[h]
 \centering \caption{Comparação do desempenho de diferentes
-discriminadores quando aplicados diretamente aos sinais experimentais 
+discriminadores quando aplicados diretamente aos sinais experimentais
 considerando a informação reconstrução \emph{offline} como ``verdade''.}\vspace{0.2cm}
 \footnotesize
 \begin{tabular}{c|c|c|c|c|c|c}
@@ -245,19 +245,19 @@ técnicas de pré-processamento propostas neste trabalho, o processo
 de treinamento será repetido (seguindo a mesma metodologia
 utilizada para os sinais simulados, porém com um maior foco
 nas técnicas que apresentaram melhor desempenho para aqueles
-conjuntos), utilizando agora os sinais experimentais e a 
+conjuntos), utilizando agora os sinais experimentais e a
 identificação das assinaturas a partir da análise \emph{offline}.
 
-Os eventos disponíveis a partir dos dois \emph{runs} experimentais 
-utilizados foram divididos igualmente nos conjuntos de treino, teste 
-e validação. Ao todo estão disponíveis $\sim$21.000 assinaturas de ``elétrons'' e 
+Os eventos disponíveis a partir dos dois \emph{runs} experimentais
+utilizados foram divididos igualmente nos conjuntos de treino, teste
+e validação. Ao todo estão disponíveis $\sim$21.000 assinaturas de ``elétrons'' e
 $\sim$3.200.000 de ``jatos''.
 
-Considerando as assinaturas de segundo nível do tipo E3 (com energia maior que 3~GeV)
+Considerando as assinaturas de segundo nível do tipo E3 (com energia maior que 3~GeV),
 o discriminador de elétrons padrão do ATLAS (T2Calo) pode ser configurado de duas
 formas diferentes (de acordo com a física de interesse):
 \begin{itemize}
- \item \textbf{T2EM3\_Loose}: este corte apresenta maior eficiência na identificação de elétrons e, consequentemente maior
+ \item \textbf{T2EM3\_Loose}: este corte apresenta maior eficiência na identificação de elétrons e, consequentemente, maior
 aceitação de falso alarme. Para os sinais disponíveis, este corte identificou corretamente 98,10~\% dos
 ``elétrons'' para um falso alarme igual a 64,07~\%.
 
@@ -302,7 +302,7 @@ número de neurônios ocultos.} \label{fig_exp_nh}
 \begin{itemize}
  \item Maior sobreposição entre as características de elétrons e jatos medidas no calorímetro quando
 a energia é mais baixa;
- \item Maior influencia de fenômenos inerentes dos sinais experimentais como ruído
+ \item Maior influência de fenômenos inerentes dos sinais experimentais como ruído
 de medição (que é agravado para baixa energia, pois a relação sinal-interferência é menor);
  \item Incerteza na determinação do tipo de partícula, pois sabe-se que, o critério
 de seleção da análise \emph{offline} aceita assinaturas hadrônicas como sendo elétrons.
@@ -311,11 +311,11 @@ de seleção da análise \emph{offline} aceita assinaturas hadrônicas como sendo el
 Na Figura~\ref{fig_expnn5}, são mostradas as
 distribuições da saída da rede neural (com 5 neurônios ocultos) e da projeção de um
 discriminador linear de Fisher. Observa-se que a rede neural produziu
-maior separação entre as classes. Ainda na mesma Figura, pode-se visualizar as
+maior separação entre as classes. Ainda na mesma Figura, podem-se visualizar as
 curvas ROC obtidas pelos dois discriminadores em comparação com os valores das
 probabilidades de detecção~(PD) e falso alarme~(PF) para os cortes do T2Calo.
 É possível visualizar que a rede neural proporciona melhor desempenho em comparação ao T2Calo
-(para os dois cortes), porém, o discriminante de \emph{Fisher} perde para o corte T2ME3\_\emph{loose}
+(para os dois cortes), porém o discriminante de \emph{Fisher} perde para o corte T2ME3\_\emph{loose}
 e apresenta desempenho aproximadamente igual ao T2EM3\_\emph{tight}.
 
 \begin{figure}[bht]
@@ -338,16 +338,16 @@ e apresenta desempenho aproximadamente igual ao T2EM3\_\emph{tight}.
 de Fisher (direita e acima) e as curvas ROC (abaixo).}\label{fig_expnn5}
 \end{figure}
 
-A Tabela~\ref{tabExpRinger} compara os resultado obtidos até aqui. Pode-se observar que,
+A Tabela~\ref{tabExpRinger} compara os resultado obtidos até aqui. Pode-se observar que
 o ponto de máximo SP para o \emph{Neural Ringer} (SPmax$\times$100=85,55; PD$\sim$84~\% e PF$\sim$13~\%)
 apresenta eficiência menor que os
 cortes do T2Calo, dificultando a comparação entre os discriminadores. Para contornar
 esse problema, é preciso modificar o patamar de corte do classificador. Na
 Figura~\ref{fig_exp_spPDpf}, é mostrada a variação do SP e das probabilidades de detecção e falso alarme
-para diferentes valores do patamar de decisão. Pode-se observar que, há uma região central
-onde os valores do SP se mantém próximos ao máximo. Assim, ajustando-se o patamar para -0,70, é possível obter
+para diferentes valores do patamar de decisão. Pode-se observar que há uma região central
+onde os valores do SP se mantêm próximos ao máximo. Assim, ajustando-se o patamar para -0,70, é possível obter
 eficiência de 93,0~\% para um falso alarme de 30,4~\% (SP$\times$100=80,9). Reduzindo ainda
-mais o patamar para -0,81, chega-se à mesma eficiência do corte T2E3\_\emph{medium} ($\sim$96~\%),
+mais o patamar para -0,81, chega-se à mesma eficiência do corte T2E3\_\emph{medium} ($\sim$96~\%)
 para um falso alarme de $\sim$43,2~\% (porém, neste caso o SP caiu para 75,1).
 
 \begin{table}[t!]
@@ -369,23 +369,23 @@ probabilidade de falso alarme para PD$=$96\% e PD$=$98\%.}\vspace{0.2cm} \script
 \begin{figure}[htb]
 \centering
 \includegraphics[width=9cm]{expR1ringer_compSPpdpf}
-\caption{SP.} \label{fig_exp_spPDpf}
+\caption{Variação do SP e das probabilidades de detecção e falso alarme com o patamar de decisão.} \label{fig_exp_spPDpf}
 \end{figure}
 
 Na Figura~\ref{fig_compRingerT2} é apresentada uma comparação entre o \emph{Neural Ringer}
 e os dois cortes do T2Calo em termos da eficiência e
 do falso alarme. Para o corte T2EM3\_\emph{Loose},
-o \emph{Neural Ringer} foi ajustado para a mesma probabilidade de detecção ($\sim$98~\%). 
-Pode-se verificar que, o \emph{Ringer}
+o \emph{Neural Ringer} foi ajustado para a mesma probabilidade de detecção ($\sim$98~\%).
+Pode-se verificar que o \emph{Ringer}
 é superior para altos valores de $|\eta|$ e próximo a $\eta=0$ e para baixa energia, porém
 o discriminador neural apresentou eficiência inferior na região do \emph{crack}. Observando
 o falso alarme, fica evidente
-a superioridade do \emph{Ringer} para quase todas as faixas de energia e 
-pseudorapidez ($\eta$). Embora os dois discriminadores tenham sido ajustados 
-para o mesmo valor de eficiência ($\sim$98~\%), a aparente superioridade do 
-T2Calo em algumas faixas (como no \emph{crack}) se deve à pouca quantidade de 
-eventos nestas regiões, o que dificulta o aprendizado da rede para essas assinaturas. 
-Como estes eventos são poucos, essa diferença não influencia consideravelmente na 
+a superioridade do \emph{Ringer} para quase todas as faixas de energia e
+pseudo-rapidez ($\eta$). Embora os dois discriminadores tenham sido ajustados
+para o mesmo valor de eficiência ($\sim$98~\%), a aparente superioridade do
+T2Calo em algumas faixas (como no \emph{crack}) se deve à pouca quantidade de
+eventos nestas regiões, o que dificulta o aprendizado da rede para essas assinaturas.
+Como estes eventos são poucos, essa diferença não influencia consideravelmente na
 eficiência global.
 
 \begin{figure}[pht]
@@ -441,31 +441,33 @@ eficiência global.
 %  \centerline{\footnotesize Jatos/Simulados-E10}\medskip
  \centerline{\epsfig{file=exp1ringer_t2etaCompMediumFA,width=6.5cm}}
 \end{minipage}
-\hfill \caption{Comparativo de desempenho entre o \emph{Neural Ringer} e os
+\hfill \caption{Comparação de desempenho entre o \emph{Neural Ringer} e os
 dois cortes do T2Calo.}\label{fig_compRingerT2}
 \end{figure}
 
-Considerando agora o corte T2EM3\_\emph{Medium},
-mostra que, de modo semelhante ao verificado no critério T2EM3\_\emph{Loose},
-para uma mesma probabilidade de detecção ($\sim$96~\%), o \emph{Neural Ringer} reduz significativamente
-o falso alarme de modo aproximadamente uniforme em energia. Analisando as distribuições em
+Considerando agora o corte T2EM3\_\emph{Medium}, de modo semelhante ao
+verificado no critério T2EM3\_\emph{Loose},
+para uma mesma probabilidade de detecção ($\sim$96~\%), o \emph{Neural Ringer}
+reduz significativamente
+o falso alarme de modo aproximadamente uniforme em energia.
+Analisando as distribuições em
 $\eta$, observa-se novamente que há uma inversão nas curvas de falso alarme dos dois discriminadores.
 É interessante notar que, o \emph{Ringer} consegue reduzir bastante a aceitação de falso alarme
 na região do \emph{crack}.
 
 Embora o \emph{Neural Ringer} tenha produzido um desempenho de discriminação
 superior aos cortes do T2Calo, há uma grande discrepância entre os resultados
-obtidos para os sinais simulados. Neste contexto, visando uma melhor caracterização
+obtidos para os sinais simulados. Neste contexto, visando a uma melhor caracterização
 das assinaturas que o \emph{Ringer} classifica incorretamente, foram selecionados
-os eventos onde a saída do classificador neural é muito próxima ao valor alvo
+os eventos onde a saída do classificador neural era muito próxima ao valor-alvo
 atribuído à classe oposta (assinaturas de ``elétrons'' com saída da
 rede neural próxima a -1 e assinaturas de ``jatos'' com saída próxima a 1).
 As características destas assinaturas (em termos dos perfis de deposição médios
 e das distribuições em energia e $\eta$) serão comparadas a seguir.
 
 Os perfis médios dos eventos classificados incorretamente pelo \emph{Neural Ringer}
-(para as duas classes) são mostrados na Figura~\ref{figRingerPerfis} e comparados
-com os eventos médios de ``elétrons'' e ``jatos''. É possível verificar que,
+(para as duas classes) são mostrados na Figura~\ref{figRingerPerfis}, e comparados
+com os eventos médios de ``elétrons'' e ``jatos''. É possível verificar que
 os eventos classificados incorretamente pelo \emph{Ringer} apresentam perfis
 médios bastante semelhantes ao perfil da outra classe.
 
@@ -500,7 +502,7 @@ para comparação.}\label{figRingerPerfis}
 
 Analisando a energia e a posição de interação (em função da coordenada $\eta$) dos
 eventos classificados incorretamente pelo \emph{Neural Ringer} (ver Figura~\ref{figRingerFailPhis}),
-observa-se que, os erros do na identificação de elétrons estão concentrados
+observa-se que os erros do na identificação de elétrons estão concentrados
 nas regiões onde a seleção \emph{offline} apresenta baixa eficiência
 (baixas energias, $\eta \sim 0$, $|\eta| \sim 1,5$ e $|\eta| \sim 2,5$), conforme
 mostrado anteriormente na Figura~\ref{fig_perfOff}.
@@ -551,20 +553,20 @@ um sub-conjunto dos critérios do \emph{offline}\footnote{As quatro variáveis
 calculadas pelo T2Calo são estimadas novamente na seleção \emph{offline},
 porém, sem restrições de tempo de processamento, o processo de cálculo é mais preciso
 e a elas são adicionados outros parâmetros de análise, totalizando aproximadamente 20 variáveis,
- conforme descrito anteriormente na Seção\ref{secdadosExp}.} este discriminador tem seu
+ conforme descrito anteriormente na Seção~\ref{secdadosExp}.}, este discriminador tem seu
 desempenho menos influenciado pelos erros da seleção \emph{offline}.
 
 \subsection{Resultados - ICA e NLICA}
 
 Considerando os discriminadores baseados em pré-processamento por ICA/NLICA, para os sinais
-experimentais, os algoritmos de extração de características foram re-treinados apenas nas
+experimentais os algoritmos de extração de características foram re-treinados apenas nas
 configurações que obtiveram melhor desempenho para os sinais simulados (em geral, foram
 sempre as que utilizam, de algum modo, informação supervisionada para estimar os componentes
 independentes). Assim, os componentes independentes foram estimados utilizando os
-modelos/abordages de treinamento a seguir:
+modelos/abordagens de treinamento a seguir:
 \begin{itemize}
  \item ICA (linear e segmentado) com compactação por PCD;
- \item ICA Local;
+ \item ICA Local (não-segmentado);
  \item SOM Supervisionado (não-segmentado);
  \item PNL Modificado (segmentado).
 \end{itemize}
@@ -606,18 +608,37 @@ A seguir, os componentes independentes foram estimados localmente e utilizados p
 alimentar os classificadores neurais. Variando-se o número de neurônios em cada rede neural
 (de 1 a 20), chegou-se a valores ótimos de eficiência para 11 neurônios no agrupamento 1 e
 3 no 2. A seguir, foi utilizado um algoritmo genético para realizar a busca pelos patamares
-de corte dos classificadores locais que maximiza o SP.
+de corte dos classificadores locais que maximizam o SP.
 
 Para o SOM, foi necessário repetir a busca pelo tamanho ótimo do
 mapa, considerando como parâmetros a serem analisados o erro de
 reconstrução médio e o SP. Para o mapa supervisionado
-não-segmentado, melhor compromisso entre os dois parâmetros foi
+não-segmentado, o melhor compromisso entre os dois parâmetros foi
 obtido para um mapa com uma grade de neurônios retangular de
 14$\times$7 neurônios.
 
 No modelo PNL, novamente foi identificado que o grau de não-linearidade ótimo para o
-problema era baixo, pois melhor eficiência de discriminação foi obtida quando as funções
-não-lineares foram estimadas por redes neurais de apenas dois neurônios ocultos.
+problema era baixo, pois a melhor eficiência de discriminação foi obtida quando as funções
+não-lineares foram estimadas por redes neurais de apenas dois neurônios ocultos. A
+compactação a partir do modelo PNL modificado produziu o número de componentes conforme
+listado na Tabela~\ref{tabexp1CompPNL}. Pode-se observar que a redução foi semelhante
+à obtida a partir da PCD.
+
+
+\begin{table}[b!]
+\centering \caption{Número de componentes estimados a partir da
+compactação por PCD e pelo modelo PNL modificado.}\vspace{0.2cm} \footnotesize
+\begin{tabular}{c | c c c c c c c | c}
+    \hline
+     \textbf{Layer} & \textbf{PS} & \textbf{E1} & \textbf{E2} & \textbf{E3} & \textbf{H0} & \textbf{H1} & \textbf{H0} & \textbf{Total} \\
+\hline
+    \textbf{Rings} & 8 & 64 & 8 & 8 & 4 & 4 & 4 & 100 \\
+      \textbf{PCD} & 6 & 5 & 5 & 6 & 3 & 3 & 2 & 30 \\
+      \textbf{PNL Mod.} & 6 & 7 & 5 & 5 & 3 & 3 & 2 & 31 \\
+    \hline
+\end{tabular}
+\label{tabexp1CompPNL}
+\end{table}
 
 A Figura~\ref{figExp1NlicaRocs} mostra as curvas ROC obtidas a partir dos discriminadores
 treinados com os componentes independentes. Pode-se observar que, a ICA linear é capaz
@@ -626,7 +647,7 @@ a partir do SOM e do modelo PNL foi capaz de melhorar ligeiramente o desempenho 
 relação a ICA linear. Por fim, a ICA Local produziu a maior eficiência (em termos do
 máximo SP).
 
-\begin{figure}[htb]
+\begin{figure}[b!]
 \centering
 \includegraphics[width=9cm]{expR1NLICA_compRoc}
 \caption{Curvas ROC para os discriminadores baseados em ICA/NLICA para os
@@ -638,14 +659,14 @@ ICA/NLICA é mostrado na tabela~\ref{tabCompNLICAExp1}. Os
 discriminadores são comparados em termos do máximo SP, das
 probabilidades de detecção e falso alarme que produziram o máximo
 SP e das probabilidades de falso alarme para diferentes valores de
-PD. Percebe-se que, o pré-processamento por ICA Local maximiza o
+PD. Percebe-se que o pré-processamento por ICA Local maximiza o
 SP e minimiza a probabilidade de falso alarme para PD=93~\%,
 porém, quando a PD aumenta, o desempenho piora. Para PD=96~\% e
 PD=98~\% (correspondentes aos cortes do T2Calo), o discriminador
 baseado nos componentes independentes estimados pelo modelo PNL
 apresentou maior redução do falso alarme.
 
-\begin{table}[hbt]
+\begin{table}[b!]
 \centering \caption{Comparação dos resultados obtidos para diferentes discriminadores baseados no pré-processamento
 por ICA/NLICA considerando o máximo SP($\times$100), as probabilidades de decisão (PD) e falso alarme (PF) para o melhor SP e a
 probabilidade de falso alarme para PD$=$93\%, PD$=$96\% e PD$=$98\%.}\vspace{0.2cm} \tiny
@@ -658,8 +679,8 @@ probabilidade de falso alarme para PD$=$93\%, PD$=$96\% e PD$=$98\%.}\vspace{0.2
    Ringer  & 85,55 $\pm$ 0,21 & 84,00 $\pm$ 0,19 & 12,95 $\pm$ 0,11 & 30,40 $\pm$ 0,13 & 43,16 $\pm$ 0,16 & 57,63 $\pm$ 0,17\\ \hline
        ICA & 85,96 $\pm$ 0,24 & 86,36 $\pm$ 0,22 & 14,48 $\pm$ 0,13 & 27,29 $\pm$ 0,12 & 41,44 $\pm$ 0,20 & 53,16 $\pm$ 0,29\\ \hline
   SOM Sup. & 86,26 $\pm$ 0,20 & 85,34 $\pm$ 0,29 & 12,81 $\pm$ 0,11 & 26,81 $\pm$ 0,17 & 40,65 $\pm$ 0,25 & 55,89 $\pm$ 0,27\\ \hline
-   PNL Mod.& 86,06 $\pm$ 0,18 & 86,10 $\pm$ 0.15 & 13,98 $\pm$ 0,12 & 25,60 $\pm$ 0,21 & 39,01 $\pm$ 0,22 & 56,01 $\pm$ 0.26\\ \hline
-   \bf{Local}   & \bf{86,67 $\pm$ 0,27} & \bf{87,61 $\pm$ 0.30} & \bf{14,22 $\pm$ 0,17} & \bf{23,52 $\pm$ 0,10} & \bf{42,02 $\pm$ 0,26}& \bf{56,01 $\pm$ 0,29}\\ \hline
+   \bf PNL Mod.&\bf 86,06 $\pm$ 0,18 &\bf 86,10 $\pm$ 0,15 &\bf 13,98 $\pm$ 0,12 &\bf 25,60 $\pm$ 0,21 &\bf 39,01 $\pm$ 0,22 &\bf 56,01 $\pm$ 0,26\\ \hline
+   \bf{Local}   & \bf{86,67 $\pm$ 0,27} & \bf{87,61 $\pm$ 0,30} & \bf{14,22 $\pm$ 0,17} & \bf{23,52 $\pm$ 0,10} & \bf{42,02 $\pm$ 0,26}& \bf{56,01 $\pm$ 0,29}\\ \hline
  \hline
 \end{tabular}
 \label{tabCompNLICAExp1}
@@ -695,14 +716,14 @@ os discriminadores neurais com pré-processamento por ICA (linear) e ICA Local.}\
 
 Na Figura~\ref{figLocalPhis}, os discriminadores baseados na ICA linear e na ICA Local foram comparados
 com o \emph{Neural Ringer} (todos ajustado para uma probabilidade de detecção de $\sim$93~\%).
-Pode-se observar que, o \emph{Ringer} apresenta eficiência ligeiramente mais alta próximo a 10~GeV e na
+Pode-se observar que o \emph{Ringer} apresenta eficiência ligeiramente mais alta próximo a 10~GeV e na
 região do \emph{crack}. Essa diferença é compensada por uma redução no falso alarme em quase todas as
 faixas de energia e $\eta$. No gráfico do falso alarme em $\eta$ é possível visualizar claramente
-que há uma gradual redução do \emph{Ringer} para a ICA linear e depois para a ICA Local.
+que há uma gradual redução do \emph{Ringer} para a ICA linear e depois, para a ICA Local.
 
 \subsection{Estudo da relevância por camada}
 
-A partir das análises realizadas nos sinais simulados, observou-se que, o modo mais eficiente
+A partir das análises realizadas nos sinais simulados, observou-se que o modo mais eficiente
 para realizar o estudo da relevância por camada é treinar classificadores especialistas na
 informação de cada camada do calorímetro, e utilizar uma rede neural combinadora para aproveitar
 ao máximo toda a segmentação da informação.
@@ -712,8 +733,7 @@ treinados classificadores especialistas. A Figura~\ref{figExp1SPsegClas1} mostra
 valores do máximo SP obtidos por cada discriminador especialista. Pode-se observar
 que, de modo semelhante ao obtido para os sinais simulados, a camada mais importante
 para a discriminação é a E1, seguida da E2 e PS. As camadas hadrônicas e a E3 são as
-menos discriminantes (este resultado é bastante semelhante ao observado nos sinais
-simulados).
+menos discriminantes.
 
 \begin{figure}[htb]
 \centering
@@ -722,9 +742,9 @@ simulados).
 (segmentado).} \label{figExp1SPsegClas1}
 \end{figure}
 
-Em sequencia, a rede combinadora foi treinada utilizado a
+Em sequência, a rede combinadora foi treinada utilizado a
 informação dos classificadores especialistas. O processo de
-treinamento foi re-iniciado retirando-se, por camada, a informação
+treinamento foi reiniciado retirando-se, por camada, a informação
 dos classificadores especialistas. A Figura~\ref{figCombClasRocs}
 ilustra os resultados obtidos em termos do máximo SP e das curvas
 ROC. Pode-se ver que, mesmo retirando a informação de cinco (das
@@ -743,7 +763,7 @@ sete) camadas do calorímetro, obtém-se eficiência maior que a do
 %  \centerline{\footnotesize Jatos/Simulados-E10}\medskip
  \centerline{\epsfig{file=expR1redeCC_compRocRetirando,width=7.3cm}}
 \end{minipage}
-\hfill \caption{Desempenho obtido,em termos do máximo SP (esquerda) e das curvas
+\hfill \caption{Desempenho obtido, em termos do máximo SP (esquerda) e das curvas
 ROC (direita), através da rede combinadora.}\label{figCombClasRocs}
 \end{figure}
 
@@ -777,7 +797,7 @@ Os discriminadores T2Calo (corte EM3-\emph{medium}), \emph{Neural Ringer} e Rede
 (utilizando a informação de todas as camadas) são comparados na Figura~\ref{figCombClasPhis}
 em função do desempenho em energia e $\eta$. Pode-se observar que, embora o T2Calo apresente
 maior eficiência para algumas regiões em $\eta$, a rede combinadora é capaz de reduzir o falso
-alarme para toda a faixa de energia e especialmente na região onde $|\eta|<1$.
+alarme para toda a faixa de energia e, especialmente, na região onde $|\eta|<1$.
 
 \begin{figure}[ht]
 \begin{minipage}[b]{0.48\linewidth}
@@ -803,11 +823,11 @@ alarme para toda a faixa de energia e especialmente na região onde $|\eta|<1$.
 %  \centerline{\footnotesize Jatos/Simulados-E10}\medskip
  \centerline{\epsfig{file=exp1CC_ringerCompEtaFA,width=7cm}}
 \end{minipage}
-\hfill \caption{Comparativo de desempenho entre o \emph{Neural Ringer} e
-os discriminadores neurais com pré-processamento por ICA (linear) e ICA Local.}\label{figCombClasPhis}
+\hfill \caption{Comparativo de desempenho entre o T2Calo, \emph{Neural Ringer} e
+a rede combinadora.}\label{figCombClasPhis}
 \end{figure}
 
-\pagebreak
+%\pagebreak
 
 \subsection{Comentários e Discussão}
 
@@ -872,15 +892,15 @@ ATLAS como uma sub-rotina do T2Calo e seu fluxo de processamento
 envolve as etapas a seguir:
 \begin{enumerate}
     \item \textbf{Seleção de região} (T2Calo) - são selecionados os
-    dados utilizados pelo T2Calo (0,4927$\pm$0,0787)~ms;
+    dados utilizados pelo T2Calo $\rightarrow$ (0,4927$\pm$0,0787)~ms;
     \item \textbf{Pré-processamento} (T2Calo) - as variáveis de decisão do
-    T2Calo são calculadas (0,1408$\pm$0,0148)~ms;
+    T2Calo são calculadas $\rightarrow$ (0,1408$\pm$0,0148)~ms;
     \item \textbf{Seleção de região} (\emph{Ringer})  - são selecionados os
-    dados utilizados pelo \textit{Neural Ringer} (0,4375$\pm$0,0996)~ms;
-    \item \textbf{Anelamento} - construção dos anéis (0,0986$\pm$0,0165)~ms;
-    \item \textbf{Normalização} - o vetor com os anéis é normalizado (0.0026$\pm$0,0015)~ms;
+    dados utilizados pelo \textit{Neural Ringer} $\rightarrow$ (0,4375$\pm$0,0996)~ms;
+    \item \textbf{Anelamento} - construção dos anéis $\rightarrow$ (0,0986$\pm$0,0165)~ms;
+    \item \textbf{Normalização} - o vetor com os anéis é normalizado $\rightarrow$ (0.0026$\pm$0,0015)~ms;
     \item \textbf{Classificação Neural} - a rede neural produz a decisão
-    de aceitação/rejeição do evento (0,0387$\pm$0,0018)~ms.
+    de aceitação/rejeição do evento $\rightarrow$ (0,0387$\pm$0,0018)~ms.
 \end{enumerate}
 Em conjunto, as seis etapas totalizam (1,2109$\pm$0,1288)~ms.
 
@@ -888,10 +908,10 @@ Com o uso de uma etapa de pré-processamento para a classificação
 neural (através da NLICA), é necessário verificar o efeito desta
 modificação no tempo total para tomada de decisão.
 
-As rotinas para operação da ICA Local e do modelo PNL foram
+As rotinas para operação da ICA Local e do modelo PNL e do SOM foram
 implementadas no sistema de filtragem do ATLAS e seu custo
 computacional avaliado a partir da propagação de um conjunto de
-eventos através das duas cadeias de processamento. Nesta
+eventos através das cadeias de processamento. Nesta
 avaliação, as etapas de 1 a 5 do fluxo do \textit{Neural Ringer}
 não são modificadas. Apenas na etapa 6, é adicionado o
 pré-processamento para a rede neural através dos algoritmos
@@ -941,7 +961,7 @@ o classificador SOM+MLP, a entrada da rede neural é definida por:
 Este sinal é projetado na matriz de pesos $\mathbf{W}$ da camada
 de entrada, gerando o sinal $\mathbf{WDx}$ que é utilizado como
 entrada para os neurônios da primeira camada. Para operação do
-classificador pode-se definir uma nova rede que utiliza
+classificador, pode-se definir uma nova rede que utiliza
 $\mathbf{W_D=W.D}$ como matriz de pesos da camada de entrada.
 Deste modo, o discriminador SOM+MLP pode ser simplificado para
 apenas uma rede MLP, que tem como entrada os sinais em anéis
@@ -993,10 +1013,11 @@ realizando os processos de extração de características e classificação de modo s
 
 Na Tabela~\ref{tab_compTimeexpSeg} são mostrados os tempos gastos nos processos
 de seleção da informação da região de interesse, produção dos sinais em anéis
-(anelamento) e normalização para cada camada do calorímetro. Pode-se observar que, a primeira camada
+(anelamento) e normalização para cada camada do calorímetro. Pode-se
+observar que, a primeira camada
 eletromagnética é a que demanda mais tempo de processamento (por apresentar
 maior quantidade de sensores), seguida das camadas hadrônicas (para as camadas
-hadrônicas o processo é um pouco mais demorado pois o calorímetro hadrônico
+hadrônicas o processo é um pouco mais demorado, pois o calorímetro hadrônico
 é segmentado em um maior número de módulos e, dependendo da posição de interação,
 a RoI pode conter informação de vários destes módulos).
 

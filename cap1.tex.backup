@@ -1,15 +1,16 @@
 \chapter{Introdução}
 
 O processamento estatístico de sinais encontra aplicações nas
-diversas áreas do conhecimento, desde medicina e saúde pública até
-as bolsas de valores. Seu uso pode simplificar as tarefas de
-análise de dados e classificação, pois permite mapear o conjunto de sinais em
-um espaço onde sua estrutura fundamental está mais acessível.
+diversas áreas do co\-nhe\-cimento, desde medicina e saúde pública
+até as bolsas de valores. Seu uso pode simplificar as tarefas de
+análise de dados e classificação, pois permite mapear o conjunto
+de sinais em um espaço onde sua estrutura fundamental está mais
+acessível.
 
 Este trabalho descreve a aplicação das técnicas de processamento
 estatístico no sistema de filtragem (detecção) \textit{online} de
-um detector de partículas elementares de altas energias. O objetivo é
-extrair características relevantes para guiar o
+um detector de partículas elementares de altas energias. O
+objetivo é extrair características relevantes para guiar o
 processo de identificação das partículas.
 
 
@@ -18,8 +19,8 @@ processo de identificação das partículas.
 Com os constantes avanços tecnológicos dos sistemas eletrônicos de
 aquisição de informações, é crescente a necessidade de técnicas
 eficientes para o processamento \textit{online} de sinais. As
-grandezas físicas são registradas por elementos sensores, que podem
-ser únicos (como na medição da velocidade de um motor), ou
+grandezas físicas são registradas por elementos sensores, que
+podem ser únicos (como na medição da velocidade de um motor), ou
 combinados aos milhares para obter o resultado final (como na
 captura de vídeo e imagem digitais).
 
@@ -33,37 +34,39 @@ sensores com características distintas.
 
 Se há a necessidade de uma resposta rápida, pode ser utilizada a
 combinação de técnicas de compactação de sinais e processamento
-distribuído. O cenário pode ficar ainda mais complicado quando o volume
-de dados é alto e o problema a ser resolvido apresenta elevado grau
-de complexidade.
+distribuído. O cenário pode ficar ainda mais complicado quando o
+volume de dados é alto e o problema a ser resolvido apresenta
+elevado grau de complexidade.
 
 O ambiente de aplicação deste trabalho é o sistema \textit{online}
 de filtragem do ATLAS (\textit{A Toroidal LHC
 Aparatus})~\cite{article:ATLAS:2008}, maior detector de propósito
 geral do acelerador de partículas LHC (\textit{Large Hadron
 Collider})~\cite{article:LHC:2008}. O LHC entrou em operação no
-final de 2008, logo depois, passou por reparos no sistema de
+final de 2008, logo depois passou por reparos no sistema de
 resfriamento de um dos seus supercondutores, voltando a operar no
 final de 2009.
 
 No LHC, os sinais de interesse são raros, estão imersos em um
 intenso ruído de fundo e a perda de um desses eventos compromete
 severamente o desempenho dos detectores. Neste caso, é necessária
-uma estratégia de filtragem capaz de remover, ou pelo menos atenuar
-a intensidade do ruído sem perder os eventos de interesse.
+uma estratégia de filtragem capaz de remover, ou pelo menos
+atenuar a intensidade do ruído de fundo sem perder os eventos de
+interesse.
 
 Combinado a isso, a taxa de ocorrência de eventos é extremamente
-elevada, fazendo com que o intervalo entre eventos consecutivos seja
-extremamente pequeno. Considerando ainda que os detectores são
-altamente segmentados e apresentam fina granularidade de células
-detectoras, a quantidade de informação produzida é enorme. Neste
-contexto, a seleção de eventos precisa ser realizada de modo
-\textit{online} e sob severas restrições no tempo de processamento.
+elevada, fazendo com que o intervalo entre eventos consecutivos
+seja extremamente pequeno. Considerando ainda que os detectores
+são altamente segmentados e apresentam fina granularidade de
+células detectoras, a quantidade de informação produzida é
+enorme~($\sim$60 TB$/$s). Neste contexto, a seleção de eventos
+precisa ser realizada de modo \textit{online} e sob severas
+restrições no tempo de processamento.
 
 Técnicas que utilizam informações da estatística dos sinais, como
-Análise de Componentes Principais (PCA - \textit{Principal Component
-Analysis})~\cite{book:pca:2002}, Análise de Componentes
-Independentes ICA (\textit{Independent Component Analysis})
+Análise de Componentes Principais (PCA - \textit{Principal
+Component Analysis})~\cite{book:pca:2002}, Análise de Componentes
+Independentes (ICA - \textit{Independent Component Analysis})
 \cite{book:oja:2001} e Redes Neurais Artificiais (RNA)
 \cite{haykin:nn:2008}, são frequentemente utilizadas na solução de
 problemas onde há a necessidade de processamento veloz, flexível e
@@ -95,34 +98,39 @@ eficiente.
 \section{Motivação}
 
 Desde o final do século 19, quando foi descoberto o elétron, o
-estudo da física de partículas elementares de altas energias, ou simplesmente física
-de altas energias (HEP \textit{High-Energy Physics}), teve um crescimento acentuado. Na década de 1950, com
-o uso dos aceleradores, foram descobertas centenas de novas
+estudo da física de partículas elementares de altas energias, ou
+simplesmente física de altas energias (HEP \textit{High-Energy
+Physics}), teve um crescimento acentuado. Na década de 1950, com o
+uso dos aceleradores, foram descobertas centenas de novas
 partículas. A física de partículas de altas energias pretende
 encontrar os componentes fundamentais da matéria e descrever suas
 formas de interação.
 
-O LHC \cite{article:LHC:2008} é o maior e mais potente acelerador de partículas da atualidade e está em operação
-no CERN (Organização Européia para Pesquisa
-Nuclear) desde 2008. Ao operar na máxima capacidade, produzirá uma taxa de colisões que
-chegará a 40MHz. Entretanto, as assinaturas de interesse ocorrerão
-numa freqüência muito menor, o que faz do sistema de filtragem
+O LHC \cite{article:LHC:2008} é o maior e mais potente acelerador
+de partículas jamais construído e está em operação no CERN
+(Organização Européia para Pesquisa Nuclear) desde 2008. Ao operar
+na máxima capacidade, produzirá uma taxa de colisões que chegará a
+40MHz. Entretanto, as assinaturas de interesse ocorrerão numa
+freqüência muito menor, o que faz do sistema de filtragem
 \textit{online} um componente fundamental para os detectores.
 
-O ATLAS \cite{article:ATLAS:2008} é um detector de propósito geral do LHC e está posicionado em um dos pontos de
-colisão. Entre os principais objetivos do ATLAS, pode-se destacar a
-busca pela partícula conhecida como \textit{bóson de Higgs}, que
-segundo estudos teóricos seria responsável por interagir com as
-partículas fornecendo-lhes massa \cite{livro:fisica1:2006}. A
-partícula de Higgs ainda não foi verificada experimentalmente.
+O ATLAS \cite{article:ATLAS:2008} é um detector de propósito geral
+do LHC e está posicionado em um dos pontos de colisão. Entre os
+principais objetivos do ATLAS, pode-se destacar a busca do
+\textit{bóson de Higgs}, que, segundo estudos teóricos, seria
+responsável por interagir com as partículas fornecendo-lhes massa
+\cite{livro:fisica1:2006}. A partícula de Higgs ainda não foi
+verificada experimentalmente.
 
-Parcela importante das informações necessárias para a caracterização
-dos eventos é obtida do sistema de calorímetros, que, no ATLAS, é subdividido
-em 7 camadas. Os calorímetros são medidores de energia compostos por um grande número de
-sensores (células). Ao interagirem com o material do calorímetro as partículas perdem energia
-(e consequentemente velocidade). As células dos calorímetros quantificam a
-energia perdida pelas partículas incidentes e a informação do perfil de deposição de energia é utilizada
-para a caracterização do tipo de partícula.
+Parcela importante das informações necessárias para a
+caracterização dos eventos é obtida do sistema de calorímetros,
+que no ATLAS é subdividido em 7 camadas. Os calorímetros são
+medidores de energia compostos por um grande número de sensores
+(células). Ao interagirem com o material do calorímetro, as
+partículas perdem energia (e consequentemente velocidade). As
+células dos calorímetros quantificam a energia perdida pelas
+partículas incidentes e a informação do perfil de deposição de
+energia é utilizada para a caracterização do tipo de partícula.
 
 %Algumas delas são instáveis e apenas existem por um curto período de
 %tempo, sendo rapidamente transformadas em outras menos energéticas.
@@ -140,21 +148,21 @@ para a caracterização do tipo de partícula.
 %intenso ruído de fundo. Uma eficiente filtragem \textit{online}
 %permite o processo de busca e análise \textit{offline}.
 
-Os objetivos principais dos sistemas de filtragem \textit{online} em
-experimentos de físicas de altas energias são maximizar a
-probabilidade de detecção (e consequente armazenamento) dos eventos
-de interesse, e minimizar a probabilidade de armazenar eventos não
-desejados (ruído de fundo ou falso-alarme). Em um ambiente como este, a alta
-dimensão dos dados, o intenso ruído de fundo e o curto tempo de
-resposta exigido são sérios
-entraves para o processamento e classificação \textit{online} de
-eventos.
+Os objetivos principais dos sistemas de filtragem \textit{online},
+em experimentos de física de altas energias, são maximizar a
+probabilidade de detecção (e consequente armazenamento) dos
+eventos de interesse e minimizar a probabilidade de armazenar
+eventos não desejados (ruído de fundo ou falso-alarme). Em um
+ambiente como este, a alta dimensão dos dados, o intenso ruído de
+fundo e o curto tempo de resposta exigido são sérios entraves para
+o processamento e a classificação \textit{online} de eventos.
 
-No ATLAS, o sistema \textit{online} de filtragem (\textit{trigger})
-de eventos é composto por três níveis de seleção sequenciais. O ruído de fundo é gradualmente
-reduzido a cada nível de filtragem, esperando-se armazenar, em
-mídia permanente, uma taxa máxima de 200 Hz \cite{LI:ATLAS:1992}.
-Considerando que a freqüência de colisões é 40 MHz, deve haver uma
+No ATLAS, o sistema \textit{online} de filtragem
+(\textit{trigger}) de eventos é composto por três níveis de
+seleção sequenciais. O ruído de fundo é gradualmente reduzido a
+cada nível de filtragem, esperando-se armazenar, em mídia
+permanente, uma taxa máxima de 200~Hz \cite{LI:ATLAS:1992}.
+Considerando que a freqüência de colisões é 40~MHz, deve haver uma
 redução de $2\times 10^5$ vezes.
 
 %O primeiro nível (L1 -
@@ -174,46 +182,47 @@ redução de $2\times 10^5$ vezes.
 %colaboração do ATLAS estão prontos para operar nos diversos canais e
 %níveis de filtragem existentes.
 
-No contexto dos diversos canais de interesse para a física no ATLAS,
-este trabalho se encontra focado na discriminação elétron/jato
-(e$^-/$j). Os elétrons podem estar envolvidos em fenômenos como o decaimento
-do bóson de Higgs, supersimetria e a descoberta de novos bósons. Porém, em
-termos de calorimetria, alguns jatos podem apresentar um perfil de
-deposição de energia semelhante ao dos elétrons. Portanto, os jatos
-representam ruído de fundo no processo de identificação de elétrons.
-Apenas uma parcela dos candidatos a elétrons aceitos pelo
-primeiro nível são realmente elétrons; cabendo à filtragem de alto
-nível reduzir ainda mais o ruído de fundo, mantendo a maior parte das assinaturas de
-interesse.
+No contexto dos diversos canais de interesse para a física no
+ATLAS, este trabalho dedica-se à discriminação elétron/jato
+(e$^-/$j). Os elétrons podem estar envolvidos em fenômenos como o
+decaimento do bóson de Higgs, supersimetria e a descoberta de
+novos bósons. Porém, em termos de calorimetria, alguns jatos podem
+apresentar um perfil de deposição de energia semelhante ao dos
+elétrons. Portanto, os jatos representam ruído de fundo no
+processo de identificação de elétrons. Apenas uma parcela dos
+candidatos a elétrons aceitos pelo primeiro nível são realmente
+elétrons; cabendo à filtragem de alto nível (segundo e terceiro
+níveis) reduzir ainda mais o ruído de fundo, mantendo a maior
+parte das assinaturas de interesse.
 
 Considerando a alta taxa de eventos e a intensidade do ruído de
 fundo produzidos pelo LHC, a busca por algoritmos de filtragem
-\textit{online} mais eficientes é uma tarefa importante.
-A redução no número de eventos não relevantes (ruído de fundo)
-armazenados em mídia permanente significa maior eficiência na
-análise \textit{offline} dos eventos de interesse e redução do
-espaço (mídia) necessário para armazenamento.
+\textit{online} mais eficientes demonstra ser uma tarefa
+importante. A redução do número de eventos não relevantes (ruído
+de fundo) armazenados em mídia permanente significa maior
+eficiência na análise \textit{offline} dos eventos de interesse e
+redução do espaço (mídia) necessário para armazenamento.
 
-Neste trabalho estão sendo propostas alternativas para o algoritmo
-padrão de detecção de elétrons em uso atualmente no segundo
-nível de filtragem (L2) do detector ATLAS. Os algoritmos desenvolvidos
-apresentam maior eficiência de discriminação e tempo de
-processamento dentro das restrições do L2.
+Neste trabalho, estão sendo propostas alternativas para o
+algoritmo padrão de detecção de elétrons em uso atualmente no
+segundo nível de filtragem (L2) do detector ATLAS. Os algoritmos
+desenvolvidos apresentaram maior eficiência de discriminação e
+tempo de processamento dentro das restrições do L2.
 
-\section{Trabalhos Anteriores}
+\section{Trabalhos Anteriores Desenvolvidos pelo Grupo de Pesquisa}
 
 Considerando os desafios existentes no ambiente de filtragem
-\textit{online} do \linebreak ATLAS, no qual os sinais são adquiridos
-com fina segmentação, estão imersos em intenso ruído de fundo e as
-assinaturas de interesse são raras, técnicas avançadas de extração
-de características podem ser utilizadas para melhorar a eficiência
-de classificação.
+\textit{online} do \linebreak ATLAS, no qual os sinais são
+adquiridos com fina segmentação, estão imersos em intenso ruído de
+fundo e as assinaturas de interesse são raras, técnicas avançadas
+de extração de características podem ser utilizadas para melhorar
+a eficiência de classificação.
 
 No trabalho~\cite{article:seixas:1996} foi inicialmente proposto o
 uso de um classificador neural supervisionado (arquitetura
 \textit{Perceptron} de Múltiplas Camadas) para o canal
 elétron/jato do segundo nível de filtragem do detector ATLAS.
-Utilizando informação especialista a respeito do problema, os
+Utilizando informação especia\-lista a respeito do problema, os
 sinais medidos nos calorímetros são formatados em anéis
 concêntricos de deposição de energia. A formatação dos anéis
 preserva a informação discriminante do perfil de deposição de
@@ -225,52 +234,61 @@ implementado no sistema (\textit{software}) de filtragem do ATLAS.
 Numa comparação de desempenho entre o Neural Ringer e o
 discriminador oficial do ATLAS (T2Calo) foi mostrado que o
 \textit{Ringer} apresenta desempenho superior e é capaz de operar
-dentro da janela de tempo permitida para o L2.
+dentro da janela de tempo permitida para o segundo nível (L2).
 
 No trabalho \cite{tese:torres:2010} alguns métodos de compactação
 como Análise de Componentes Principais (PCA - \textit{Principal
 Component Analysis}) \cite{book:pca:2002} e Componentes Principais
 de Discriminação (PCD - \textit{Principal Componentes of
-Discrimination}) \cite{seixas:pcd:1995} foram aplicados, em
+Discrimination}) \cite{seixas:pcd:1995} foram aplicados em
 conjunto com o modelo linear da Análise de Componentes
 Independentes (ICA - \textit{Independent Component Analysis})
 \cite{book:oja:2001}, sobre os sinais em anéis como um
 pré-processamento para o classificador neural. A utilização destas
-técnicas de extração de características e compactação permitiu
+técnicas de extração de características e compactação permitiu um
 aumento do desempenho de classificação e redução do tempo
-necessário para tomada de decisão. Neste trabalho foi realizada
+necessário para tomada de decisão. Neste trabalho, foi realizada
 também uma implementação otimizada do \textit{Neural Ringer} no
 sistema \textit{online} de filtragem do ATLAS operando como uma
-sub-rotina do T2Calo. Neste nova versão o custo computacional foi
-reduzido e o Ringer utiliza uma parte do processamento realizado
+sub-rotina do T2Calo. Nesta nova versão, o custo computacional foi
+reduzido e o Ringer utilizou uma parte do processamento realizado
 pelo T2Calo.
 
 \section{Objetivos}
 
-Os calorímetros são projetados para serem detectores lineares, porém, diversas fontes de não-linearidades
-podem surgir numa implementação prática \cite{book:wigmans:2000}. Neste caso, um método não-linear de extração
-de características talvez seja mais indicado para o problema.
+Os calorímetros são projetados para serem detectores lineares,
+porém, diversas fontes de não-linearidades podem surgir numa
+implementação prática \cite{book:wigmans:2000}. Neste caso, um
+método não-linear de extração de características talvez seja mais
+indicado para o problema.
 
-O principal objetivo do presente trabalho é avaliar o desempenho obtido pelo discriminador \textit{Neural Ringer}
-quando os sinais em anéis são pré-processados por métodos de extração de características baseados
-no modelo não-linear da análise de componentes independentes (NLICA - \textit{Nonlinear Independent
+O principal objetivo do presente trabalho é avaliar o desempenho
+obtido pelo discriminador \textit{Neural Ringer} quando os sinais
+em anéis são pré-processados por métodos de extração de
+características baseados no modelo não-linear da análise de
+componentes independentes (NLICA - \textit{Nonlinear Independent
 Component Analysis})~\cite{book:almeida:2006}.
 
-Neste contexto, foram utilizados diversos modelos e algoritmos de estimação da NLICA e seus resultados
-comparados em termos da eficiência de discriminação e do tempo de processamento. Foi proposta também a
-segmentação dos processos de extração de características e classificação, visando explorar adequadamente
+Neste contexto, foram utilizados diversos modelos e algoritmos de
+estimação da NLICA e seus resultados foram comparados em termos da
+eficiência de discriminação e do tempo de processamento. Foi
+proposta também a segmentação dos processos de extração de
+características e classificação, visando explorar adequadamente
 toda segmentação e granularidade disponíveis no detector.
 
-O modelo da NLICA foi originalmente definido para realizar a extração de características de modo não-supervisionado.
-Ou seja, não há como garantir que a transformação seja útil para o problema de classificação (no sentido
-de revelar características discriminantes). Neste trabalho foram propostas modificações no modelo tradicional
-da NLICA visando a estimação de componentes com maior poder de discriminação entre as classes.
+O modelo da NLICA foi originalmente definido para realizar a
+extração de características de modo não-supervisionado. Ou seja,
+não há como garantir que a transformação seja útil para o problema
+de classificação (no sentido de revelar características
+discriminantes). Neste trabalho, portanto, foram propostas
+modificações no modelo tradicional da NLICA visando a estimação de
+componentes com maior poder de discriminação entre as classes.
 
 \section{Metodologia}
 
 O projeto dos discriminadores de partículas foi realizado a partir
 de um conjunto de eventos simulados. Estas simulações, por
-técnicas de Monte Carlo~\cite{book:montecarlo:2004}, consideram
+técnicas de Monte Carlo~\cite{book:montecarlo:2004}, consi\-deram
 todas as características físicas do detector e do acelerador.
 Foram utilizados, também, conjuntos de dados experimentais obtidos
 na fase inicial de operação do LHC. Sabe-se que os raios cósmicos
@@ -282,57 +300,61 @@ esse sinal. Uma outra análise utilizou eventos de colisão obtidos
 recentemente na fase inicial de operação do LHC.
 
 Foram aplicados diversos algoritmos para estimar o modelo
-não-linear das componentes independentes (NLICA). Visando explorar
+não-linear dos componentes independentes (NLICA). Visando explorar
 adequadamente as características do detector, o modo de executar
 as tarefas de extração de características e classificação foi
 variado entre as abordagens segmentada (onde o processamento é
-feito a nível de cada camada do calorímetro) e não-segmentada
-(quando os sinais em anéis, gerados a partir de todas as camadas,
-são concatenados em um único vetor).
+feito em cada camada do calorímetro) e não-segmentada (quando os
+sinais em anéis, gerados a partir de todas as camadas, são
+concatenados em um único vetor).
 
-Entre os diversos modelos existentes para a a estimação da NLICA,
-neste trabalho foram utilizados os modelos sem restrição
-estrutural (através dos mapas auto-organizáveis) e o modelo pós
-não-linear (que restrige os mapeamentos não-lineares possíveis a
-uma mistura linear seguida de funções não-lineares aplicadas a
-cada componente desta mistura). A ICA Local, que é um modelo
-diretamente ligado ao da NLICA também foi utilizada. Para cada
-modelo proposto foi realizado um estudo comparativo de desempenho
-com o Neural Ringer quando este opera diretamente sobre os sinais
-em anéis.
+Entre os diversos modelos existentes para a estimação da NLICA,
+foram utilizados o modelo sem restrição estrutural (através dos
+mapas auto-organizáveis) e o modelo pós não-linear (que restringe
+os mapeamentos não-lineares possíveis a uma mistura linear seguida
+de funções não-lineares aplicadas a cada componente desta
+mistura). A ICA Local, que é um modelo diretamente ligado ao da
+NLICA também foi utilizada. Para cada modelo proposto foi
+realizado um estudo comparativo de desempenho com o discriminador
+neural operando diretamente sobre os sinais em anéis (\emph{Neural
+Ringer}).
 
-Considerando o sistema de classificação neural, foi proposta a
-utilização de classificadores especialistas na informação de cada
-camada do calorímetro. Diversos modos de combinar a informação
-deste conjunto de classificadores foram testados. Deste modo
-verificou-se que há redundância de informação entre as diversas
-camadas do calorímetro. Pode-se, então, obter o mesmo desempenho
-de discriminação utilizando-se apenas uma parcela das informações
-disponíveis e, assim, contribuir para a redução do tempo de
-processamento.
+Visando explorar toda a segmentação disponível aos sinais dos
+calorímetros do ATLAS, foi proposta a utilização de
+classificadores especialistas na informação de cada camada.
+Diversos modos de combinar a informação deste conjunto de
+classificadores foram testados com o objetivo de identificar se
+existem camadas não relevantes para a discriminação de elétrons.
+Deste modo, pretende-se contribuir para a redução do tempo de
+processamento pela eliminação da informação não relevante.
 
 \section{Conteúdo do Trabalho}
 
 No Capítulo 2 será apresentado o ambiente científico no qual o
-trabalho está sendo desenvolvido, contextualizando o detector de
-partículas ATLAS, o acelerador LHC e o CERN. Uma descrição dos sistemas
-de \textit{trigger online} em experimentos de física de altas
-energias e ,mais especificamente, no detector ATLAS serão apresentadas
-no Capítulo 3.
+trabalho foi desenvolvido, contextualizando o detector de
+partículas ATLAS, o acelerador LHC e o CERN. Uma descrição dos
+sistemas de filtragem (\textit{trigger}) \textit{online} em
+experimentos de física de altas energias e será apresentada no
+Capítulo 3, com foco no detector ATLAS.
 
-É descrito, no Capítulo 4, o processo de seleção de elétrons utilizando informações de calorimetria no
-detector ATLAS. No Capítulo 5, serão mostrados os fundamentos teóricos das técnicas
-de extração de características e teste de hipótese que serão
+Será descrito no Capítulo 4, o processo de seleção de elétrons
+utilizando informações de calorimetria no contexto do sistema de
+filtragem do ATLAS. No Capítulo 5, serão mostrados os fundamentos
+teóricos das técnicas de extração de características que serão
 utilizadas para a otimização do sistema de filtragem do ATLAS.
 
-A metodologia empregada no desenvolvimento deste trabalho é descrita no Capítulo 6. Os conjuntos de dados utilizados
-para desenvolvimento e teste dos sistemas de classificação propostos serão apresentados no Capítulo 7.
-
-Os resultados obtidos serão apresentadas no Capítulo~8. As
+A metodologia empregada no desenvolvimento deste trabalho,
+juntamente com os conjuntos de sinais utilizados, serão descritos
+no Capítulo 6. Os resultados obtidos serão apresentados nos
+Capítulos~7 e 8, sendo o primeiro dedicado aos conjuntos de dados
+simulados e o segundo, aos sinais adquiridos experimentalmente. As
 conclusões e os futuros trabalhos são os tópicos abordados no
 Capítulo~9.
 
-Nos Apêndices A e B são fornecidas as bases matemáticas para uma
-melhor compreensão, respectivamente, dos algoritmos de extração de características e classificação utilizados.
-Finalmente, no Apêndice C serão listadas
-as publicações produzidas com os resultados obtidos neste trabalho.
+Nos Apêndices A e B serão fornecidas, respectivamente, as bases
+matemáticas para uma melhor compreensão dos algoritmos de extração
+de características e classificação utilizados. No Apêndice C será
+descrito o algoritmo genético utilizado para algumas tarefas de
+otimização no decorrer da tese. Finalmente, no Apêndice D serão
+listadas as publicações produzidas com os resultados obtidos neste
+trabalho.

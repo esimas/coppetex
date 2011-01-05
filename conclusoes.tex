@@ -11,7 +11,7 @@ operação.
 O conhecimento adquirido em experimentos de HEP está bastante difundido na sociedade em aplicações
 como a rede mundial de computadores (WWW-\emph{World-Wide Web}), que foi idealizada inicialmente
 para troca de informação entre os diversos institutos participantes da colaboração do CERN ao redor do
-mundo, e na medicina, em tratamentos como a rádio-terapia e exames tipo a cintilografia e o PET
+mundo, e na medicina, em tratamentos como a radioterapia e exames como a cintilografia e o PET
 (\emph{positron emission tomography} ou tomografia por emissão de pósitrons), que produz uma
 imagem em três dimensões das características funcionais do corpo humano.
 
@@ -30,7 +30,7 @@ nas colisões do LHC, os detectores são dotados de um sistema de filtragem (\emph
 \end{itemize}
 
 O bom funcionamento do sistema de filtragem é fundamental para o desempenho do
-detector, porém, atender a todas as demandas inerentes à aplicação é uma tarefa de difícil solução.
+detector; porém, atender a todas as demandas inerentes à aplicação é uma tarefa de difícil solução.
 Em geral, os sistemas de filtragem são divididos em estágios (níveis) sequenciais de
 seleção, onde o ruído de fundo (informação não relevante) é gradualmente reduzido.
 
@@ -63,7 +63,7 @@ neural. A estimação da NLICA foi realizada a partir de três estratégias distinta
 por mapas auto-organizáveis (para estimar um modelo não-linear sem restrições estruturais) e pela ICA local.
 Com os algoritmos utilizados, foi possível obter maior eficiência de discriminação
 para regiões do detector que apresentam menor número de células sensoras (\emph{cracks} e
-interconexões dos módulos do calorímetro) e para eventos de menor energia (que apresentam menor relação
+interconexões dos módulos do calorímetro) e para eventos de menor energia (que apresentam menor razão
 sinal-interferência).
 
 Comparando os três métodos, observou-se que o pré-processamento
@@ -72,18 +72,18 @@ para os dois conjuntos simulados utilizados e também para os
 sinais experimentais. O uso do pré-processamento por mapas
 auto-organizáveis possibilita, além de um discriminador
 \emph{online} com alta eficiência, a visualização dos eventos em
-gráficos de duas ou três dimensões. Foi mostrado também que, o uso
+gráficos de duas ou três dimensões. Foi mostrado também que o uso
 da informação das classes na estimação dos componentes
 independentes produziu, em todos os casos, aumento na eficiência
 de discriminação em comparação com as versões não-supervisionadas.
 
-Considerando o tempo de processamento, percebeu-se, que a adição do pré-processamento por
+Considerando o tempo de processamento, percebeu-se que a adição do pré-processamento por
 NLICA não contribui significativamente para o aumento no custo computacional. Na verdade,
 a maior parte do tempo é gasta para solicitação da informação e formação dos sinais em
-anéis, sendo que, estas duas etapas são realizadas em bloco, por cada camada do calorímetro.
+anéis, sendo que estas duas etapas são realizadas em bloco, por cada camada do calorímetro.
 
 Numa tentativa de explorar ao máximo a segmentação disponível nos calorímetros do ATLAS,
-foram treinados classificadores especialistas nas informações de cada camada. Deste modo,
+foram treinados classificadores especialistas nas informações de cada camada. Desse modo,
 foi possível verificar a relevância dos diversos segmentos na identificação de elétrons.
 Para combinar a informação dos especialistas foram empregados diversos
 métodos de combinação de classificadores como média, votação e uma rede neural combinadora.
@@ -93,7 +93,7 @@ apresentou maior eficiência entre os métodos de combinação de classificadores ut
 
 Através da rede combinadora, verificou-se que a retirada de 5 das 7 camadas influencia
 pouco na eficiência de discriminação (em comparação com o \emph{Neural Ringer}).
-Por outro lado, com o uso apenas desta parcela
+Por outro lado, com o uso de apenas esta parcela
 da informação (referente às camadas E1 e E2) é possível reduzir o tempo
 total de processamento em aproximadamente~20~\%.
 
@@ -120,9 +120,11 @@ ou a análise de componentes esparsos (\emph{sparse component analysis})
 Pode-se ainda testar outras arquiteturas de classificadores neurais como as funções
 de base radial (\emph{radial basis functions}) e máquinas de vetor de suporte
 (\emph{support vector machine})~\cite{haykin:nn:2008}, visando otimizar o processo de
-classificação. Sendo que, neste caso, seria
+classificação. Neste caso, seria
 necessário um trabalho adicional para a implementação do discriminador no
-sistema de filtragem do detector.
+sistema de filtragem do detector. Considerando uma rede neural MLP, pode-se testar 
+diferentes estratégias de treinamento, incluindo por exemplo uma classe de rejeição~\cite{article:rejectionClass:2009}, 
+ou através da detecção de novidades~\cite{Markou03noveltydetection}.
 
 Embora os discriminadores propostos neste trabalho tenham sido desenvolvidos para o sistema de filtragem
 \emph{online}, os altos índices de eficiência obtidos indicam que é possível também

@@ -1,75 +1,77 @@
 %comecei a trabalhar na versao final em 15 de junho de 2009
 
-\chapter{Física de Partículas e o detector ATLAS}
+\chapter{Física de Partículas e o Detector ATLAS}
 \label{cap_atlas}
 
 Os experimentos de Física de Partículas Elementares têm como
 principais objetivos a confirmação de modelos desenvolvidos
 teoricamente e a identificação de novos fenômenos. O experimento
 LHC~\cite{article:LHC:2008} é o maior acelerador de partículas já
-desenvolvido e quando operando em máxima capacidade, serão gerados
+desenvolvido e, quando estiver operando em máxima capacidade, serão gerados
 aproximadamente $10^9$ interações por segundo. Os detectores são
-responsáveis por selecionar, dentro de um conjunto enorme, os raros
-eventos de real interesse. O projeto e a
-montagem do detector ATLAS (\textit{A Thoroidal LHC Apparatus})
+responsáveis por selecionar, dentro de um conjunto enorme, os
+raros eventos de real interesse. O projeto e a montagem do
+detector ATLAS (\textit{A Thoroidal LHC Apparatus})
 \cite{article:ATLAS:2008} foram conduzidos por uma cola\-bo\-ração
-de 36 países, conhecida como \textit{ATLAS Collaboration}, contando
-com pesquisadores de mais de 150 universidades e centros de
-pesquisa~\cite{Homepage:ATLAS}. Sendo um dos detectores de propósito
-geral do experimento LHC, o ATLAS tem formato cilíndrico e foi
-projetado para cobrir um ângulo sólido próximo a $4\pi$ ao redor da
-região de colisão.
+de 36 países, conhecida como \textit{ATLAS Collaboration},
+contando com pesquisadores de mais de 150 universidades e centros
+de pesquisa~\cite{Homepage:ATLAS}. Sendo um dos detectores de
+propósito geral do experimento LHC, o ATLAS tem formato cilíndrico
+e foi projetado para cobrir um ângulo sólido próximo a $4\pi$ ao
+redor da região de colisão.
 
 
-\section{Panorama geral da física de partículas elementares}
+\section{Panorama Geral da Física de Partículas Elementares}
 
-A noção de que a matéria é composta por um conjunto de constituintes
-elementares existe há mais de 2000 anos, desde o tempo dos filósofos
-gregos~\cite{book:fernow:1986}. No decorrer do século 20, a
-compreensão dos componentes elementares da matéria forneceu à
-comunidade científica mundial informações importantes a res\-peito
-das leis fundamentais da natureza. O estudo da física de partículas
-elementares teve início no final do século 19, quando foi descoberto
-o elétron, experimentando um crescimento acen\-tua\-do na década de
-1950, quando foram descobertas centenas de novas partículas. A
-partir de sua criação em 1954, o CERN (Centro Europeu para Pesquisa
-Nuclear) contribuiu significativamente nesse processo.
+A noção de que a matéria é composta por um conjunto de
+constituintes elementares existe há mais de 2000 anos, desde o
+tempo dos filósofos gregos~\cite{book:fernow:1986}. No decorrer do
+século 20, a compreensão dos componentes elementares da matéria
+forneceu à comunidade científica mundial informações importantes a
+res\-peito das leis fundamentais da natureza. O estudo da física
+de partículas elementares teve início no final do século 19,
+quando foi descoberto o elétron, experimentando um crescimento
+acen\-tua\-do na década de 1950, quando foram descobertas centenas
+de novas partículas. A partir de sua criação em 1954, o CERN
+(Centro Europeu para Pesquisa Nuclear) contribuiu
+significativamente nesse processo.
 
-Inicialmente, pensava-se que a matéria era constituída de partículas
-subatô\-micas, chamadas elétrons, prótons e nêutrons. Mais tarde,
-descobriu-se que os prótons e nêutrons são compostos de quarks. Hoje
-sabe-se que toda a matéria no universo é composta de léptons e
-quarks. Existem ainda outras partículas elementares que são
-responsáveis por promover a interação entre léptons e quarks.
-Juntamente com as descobertas experimentais, estudos teóricos
-possibilitaram o desenvolvimento do Modelo Padrão
-(SM-\textit{Standard Model})~\cite{livro:fisica1:2006} que descreve
-e prevê, de forma unificada, o comportamento das partículas e das
-forças de interação.
+Inicialmente, pensava-se que a matéria era constituída de
+partículas subatô\-micas, chamadas elétrons, prótons e nêutrons.
+Mais tarde, descobriu-se que os prótons e nêutrons são compostos
+de quarks. Hoje sabe-se que toda a matéria no universo é composta
+de léptons e quarks. Existem ainda outras partículas elementares
+que são responsáveis por promover a interação entre léptons e
+quarks. Juntamente com as descobertas experimentais, estudos
+teóricos possibilitaram o desenvolvimento do Modelo Padrão
+(SM-\textit{Standard Model})~\cite{livro:fisica1:2006} que
+descreve e prevê, de forma unificada, o comportamento das
+partículas e das forças de interação.
 
 As características e propriedades dos processos nucleares dependem
 da ener\-gia envolvida. A unidade de energia mais utilizada, neste
-contexto, é o elétron-volt (eV) e seus múltiplos (MeV, GeV ou TeV).
-O elétron-volt é definido como a energia necessária para aumentar o
-potencial elétrico de um elétron em 1 volt (em unidades do Sistema
-Internacional temos: 1eV$=$1,6$\times
-10^{-19}$J)~\cite{book:martin:2006}. Os fenômenos produzidos quando
-a energia das partículas é menor que $20MeV$ são chamados de física
-a baixas energias. A faixa entre $20MeV$ e $400MeV$ corresponde à
-física a energias intermediárias, e finalmente, fenômenos com
-energia superior a $400MeV$ são estudados na física a altas
-energias~\cite{book:chung:2001}.
+contexto, é o elétron-volt (eV) e seus múltiplos
+(10$^6$ev$\dashrightarrow$MeV, 10$^9$ev$\dashrightarrow$GeV ou
+10$^{12}$ev$\dashrightarrow$TeV). O elétron-volt é definido como a
+energia necessária para aumentar o potencial elétrico de um
+elétron em 1 volt (em unidades do Sistema Internacional temos:
+1eV$=$1,6$\times 10^{-19}$J)~\cite{book:martin:2006}. Os fenômenos
+produzidos quando a energia das partículas é menor que 20~MeV são
+chamados de física a baixas energias. A faixa entre 20~MeV e
+400~MeV corresponde à física a energias intermediárias e,
+finalmente, fenômenos com energia superior a 400~MeV são estudados
+na física a altas energias~\cite{book:chung:2001}.
 
 %, extraído de \cite{livro:fisica1:2006}
 
 Os experimentos realizados a partir do início da década de 1970
-foram fundamentais para o desenvolvimento e teste do Modelo Padrão,
-mas também despertaram dúvidas a respeito de questões que não são
-completamente respondidas. O SM (ver Figura \ref{SM}), divide as
-partículas elementares em quarks e léptons. Existem seis tipos de
-léptons (elétron, múon, tau e três neutrino) e seis tipos de quarks
-(\textit{up}, \textit{down}, \textit{charm}, \textit{strange},
-\textit{top} e \textit{bottom}).
+foram fundamentais para o desenvolvimento e teste do Modelo
+Padrão, mas também despertaram dúvidas a respeito de questões que
+não são completamente respondidas. O SM (ver Figura \ref{SM}),
+divide as partículas elementares em quarks e léptons. Existem seis
+tipos de léptons (elétron, múon, tau e três neutrino diferentes) e
+seis tipos de quarks (\textit{up}, \textit{down}, \textit{charm},
+\textit{strange}, \textit{top} e \textit{bottom}).
 
 \begin{figure}[h!] \centering
 \includegraphics[width=7cm]{cap2_sm}
@@ -80,20 +82,19 @@ elementares incluindo o, ainda não confirmado, bóson de Higgs.}
 
 Atualmente são conhecidas quatro formas de interação (ou
 acoplamento) entre as partículas elementares, são elas
-eletromagnética, gravitacional, fraca e forte. A força gravitacional
-é predominante entre corpos massivos separados por longas
-distâncias. Entre partículas, onde a massa é da ordem de
-$10^{-27}$Kg, a interação gravitacional tem intensidade muito baixa.
-Para distâncias maiores que $10^{-13}$cm, a força eletromagnética
-domina, enquanto que para distancias menores, as interações forte e
-fraca se destacam. A intensidade relativa (em comparação com a
-interação forte) dos quatro tipos de interação é mostrada na Tabela
-\ref{tab_forcas} \cite{book:mist:2003}.
+eletromagnética, gravitacional, fraca e forte. A força
+gravitacional é predominante entre corpos massivos separados por
+longas distâncias. Entre partículas, onde a massa é da ordem de
+$10^{-27}$Kg, a interação gravitacional tem intensidade muito
+baixa. Para distâncias maiores que $10^{-13}$cm, a força
+eletromagnética domina enquanto que, para distancias menores, as
+interações forte e fraca se destacam. A intensidade relativa (em
+comparação com a interação forte) dos quatro tipos de interação é
+mostrada na Tabela \ref{tab_forcas} \cite{book:mist:2003}.
 
 \begin{table}[b!]
-\centering
-\caption{Intensidade relativa (em comparação com a interação forte)
-dos diversos tipos de interação.}\vspace{.3cm}
+\centering \caption{Intensidade relativa (em comparação com a
+interação forte) dos diversos tipos de interação.}\vspace{.3cm}
 \begin{tabular}{cc }
   \hline
   % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
@@ -107,54 +108,56 @@ dos diversos tipos de interação.}\vspace{.3cm}
 \label{tab_forcas}
 \end{table}
 
-Existem algumas teorias que descrevem como as interações elementares
-ocorrem. A eletrodinâmica quântica (QED - \textit{Quantum
-Eletrodynamics}) considera que os processos elétricos e magnéticos
-acontecem a partir da interação fundamental entre dois elétrons, com
-a troca de um fóton. O fóton é a partícula mediadora da interação
-eletromagnética.
+Existem algumas teorias que descrevem como as interações
+elementares ocorrem. A eletrodinâmica quântica (QED -
+\textit{Quantum Electrodynamics}) considera que os processos
+elétricos e magnéticos acontecem a partir da interação fundamental
+entre dois elétrons, com a troca de um fóton. O fóton é a
+partícula mediadora da interação eletromagnética.
 
-De modo semelhantes são definidos os outros tipos de interação. Para
-a interação forte, as partículas mediadoras são os glúons. Os bósons
-W e Z mediam a interação fraca e o gráviton a interação
+De modo semelhante são definidos os outros tipos de interação.
+Para a interação forte, as partículas mediadoras são os glúons. Os
+bósons W e Z mediam a interação fraca e o gráviton, a interação
 gravitacional. A teoria da cromodinâmica quântica (QCD -
-\textit{Quantum Chromodynamics}) \cite{book:QCD:2003}, por exemplo,
-descreve como os quarks e glúons interagem para formar os hadrons
-(prótons e neutrons são exem\-plos de hádrons). Uma diferença entre
-a QED e a QCD é que na última, os quarks e glúons não são observados
-como partículas livres (mas apenas na forma de hádrons), em oposição
-aos elétrons e fótons da QED. Mesmo em colisões de alta energia,
-quando quarks são produzidos, eles se afastam rapidamente uns dos
-outros, e antes que possam ser observados, se convertem em ``jatos"
-de hádrons (ou jatos hadrônicos)~\cite{book:martin:2006}.
+\textit{Quantum Chromodynamics}) \cite{book:QCD:2003}, por
+exemplo, descreve como os quarks e glúons interagem para formar os
+hadrons (prótons e neutrons são exem\-plos de hádrons). Uma
+diferença entre a QED e a QCD é que na última, os quarks e glúons
+não são observados como partículas livres (mas apenas na forma de
+hádrons), em oposição aos elétrons e fótons da QED. Mesmo em
+colisões de alta energia, quando quarks são produzidos, eles se
+afastam rapidamente uns dos outros e, antes que possam ser
+observados, convertem-se em ``jatos" de hádrons (ou jatos
+hadrônicos)~\cite{book:martin:2006}.
 
-Considerando as partículas e formas de interação já verificadas experimentalmente 
-e uma formulação atualmente aceita pela física teórica
-(conhecida como \textit{Gauge Invariance}), todas as partículas
-elementares teriam massa nula. Esta previsão é contrária aos
-resultados experimentais e somente pode ser corrigida assumindo-se
-que existe um outro tipo de interação. Esta interação foi prevista
-pelo cientista inglês Peter Higgs em 1964, tendo como partícula
-mediadora o bóson de Higgs, que é responsável por fornecer massa às
-partículas~\cite{book:martin:2006}. A existência do bóson de Higgs é
-a mais importante previsão do modelo padrão ainda não verificada
-experimentalmente e sua busca é de máxima importância para a física
-de partículas.
+Considerando as partículas e formas de interação já verificadas
+experimentalmente e uma formulação atualmente aceita pela física
+teórica (conhecida como \textit{Gauge Invariance}), todas as
+partículas elementares teriam massa nula. Esta previsão é
+contrária aos resultados experimentais e somente pode ser
+corrigida assumindo-se que existe um outro tipo de interação. Esta
+interação foi prevista pelo cientista inglês Peter Higgs em 1964,
+tendo como partícula mediadora o bóson de Higgs, que é responsável
+por fornecer massa às partículas~\cite{book:martin:2006}. A
+existência do bóson de Higgs é a mais importante previsão do
+modelo padrão ainda não verificada experimentalmente e sua busca é
+de máxima importância para a física de partículas.
 
-Nas últimas décadas, os experimentos com aceleradores de partículas
-se tornaram gigantescos empreendimentos envolvendo milhares de
-físicos e engenheiros, com contribuição financeira e intelectual de
-dezenas de países. 
+Nas últimas décadas, os experimentos com aceleradores de
+partículas se tornaram gigantescos empreendimentos envolvendo
+milhares de físicos e engenheiros, com contribuição financeira e
+intelectual de dezenas de países.
 
-As partículas são injetadas na máquina por dispositivos que produzem uma fonte de alta
-intensidade e baixa energia. Os aceleradores usam força eletromagnética para
-aumentar a energia de partículas estáveis e carregadas
-eletricamente. Quanto às características construtivas,
-os aceleradores podem ser divididos em alvo-fixo ou colisionadores
-de feixes. Nos aceleradores de alvo-fixo, as partículas são
-aceleradas até a máxima energia, quando o feixe é retirado da
-máquina e direcionado a um alvo estacionário. Nos colisionadores,
-feixes de partículas são acelerados, em sentidos opostos, e quando a energia desejada é
+As partículas são injetadas na máquina por dispositivos que
+produzem uma fonte de alta intensidade e baixa energia. Os
+aceleradores usam força eletromagnética para aumentar a energia de
+partículas estáveis e carregadas eletricamente. Quanto às
+características construtivas, os aceleradores podem ser divididos
+em de alvo fixo ou colisionadores de feixes. Nos aceleradores de
+alvo fixo, as partículas são aceleradas até a máxima energia,
+quando o feixe é retirado da máquina e direcionado a um alvo
+estacionário. Nos colisionadores, feixes de partículas são
+acelerados, em sentidos opostos, e quando a energia desejada é
 atingida, os feixes são colocados em rota de colisão em alguns
 pontos específicos do percurso. Quanto ao percurso dos feixes, os
 aceleradores podem ser lineares ou circulares
@@ -164,32 +167,32 @@ Imediatamente após a colisão, uma grande quantidade de partículas
 elementares é produzida. Algumas delas são estáveis, porém outras
 têm curtíssimo tempo de vida. Os elétrons e prótons, por exemplo,
 têm vida média superior a $10^{23}$ anos, enquanto os múons podem
-ter vida média da ordem de $10^{-6}$ segundos
-\cite{book:chung:2001}. Para que todos os eventos sejam corretamente
-identificados, um complexo sistema de detecção precisa ser
-construído.
+ter vida média da ordem de $10^{-6}$ segundo
+\cite{book:chung:2001}. Para que todos os eventos sejam
+corretamente identificados, um complexo sistema de detecção
+precisa ser construído.
 
 A massa (m) das partículas é usualmente expressa em função da
-energia equi\-va\-lente ($m=E/c^2$, onde $c$ é a velocidade da luz e
-$E$ a energia). Os bósons W e Z, por exemplo, têm massa, respectivamente, de 80 e 91
-GeV/c$^2$ (onde 1GeV/c$^2$=1,78$\times 10^{-27}$ kg). Na Tabela
-\ref{tab_massa}, são mostradas as massas de algumas partículas
-importantes. Ainda não é possível determinar a massa esperada para o
-bóson de Higgs, porém, a partir do conhe\-ci\-men\-to adquirido
-com os experimentos operados antes do LHC, sua massa deve ser maior
-que 115 GeV/c$^2$ \cite{livro:fisica1:2006}.
+energia equi\-va\-lente ($m=E/c^2$, onde $c$ é a velocidade da luz
+e $E$, a energia). Os bósons W e Z, por exemplo, têm massa,
+respectivamente, de 80 e 91 GeV/c$^2$ (onde 1GeV/c$^2$=1,78$\times
+10^{-27}$ kg). Na Tabela \ref{tab_massa}, são mostradas as massas
+de algumas partículas importantes. Ainda não é possível determinar
+a massa esperada para o bóson de Higgs, porém, a partir do
+conhe\-ci\-men\-to adquirido com os experimentos operados antes do
+LHC, sua massa deve ser maior que 115 GeV/c$^2$
+\cite{livro:fisica1:2006}.
 
 O acelerador LHC (\textit{Large Hadron Collider} - Grande
-Colisionador Hadrônico)~\cite{article:LHC:2008,article:LHC:2002} em
-operação no CERN (Centro Europeu para Pesquisa Nuclear)
-\cite{Homepage:CERN}, será capaz de atingir energia de até 14 TeV e
-permitir a visualização do bóson de Higgs, caso o Modelo Padrão
+Colisionador Hadrônico)~\cite{article:LHC:2008,article:LHC:2002},
+em operação no CERN (Centro Europeu para Pesquisa Nuclear)
+\cite{Homepage:CERN}, será capaz de atingir energia de até 14 TeV
+e permitir a visualização do bóson de Higgs, caso o Modelo Padrão
 esteja correto.
 
-\begin{table}[h!]
-\centering
-\caption{Exemplos de valores da massa (em energia equivalente) de
-algumas partículas.}\vspace{.3cm}
+\begin{table}[b!]
+\centering \caption{Exemplos de valores da massa (em energia
+equivalente) de algumas partículas.}\vspace{.3cm}
 \begin{tabular}{cc }
   \hline
   % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
@@ -205,81 +208,85 @@ algumas partículas.}\vspace{.3cm}
 \end{table}
 
 Além da busca pelo bóson de Higgs, existem outras questões que
-precisam ser respondidas em física de partículas. É um desejo antigo
-dos físicos, desde Einstein, a unificação das teorias sobre as
-forças de interação entre as partículas, incluindo no Modelo Padrão a força
-gravitacional. O estudo da física de partículas também é fundamental
-para o entendimento da natureza e origem do universo. Pretende-se,
-por exemplo, descobrir informações sobre a composição da matéria
-escura \cite{article:darkm:2005}, super-simetria
-\cite{article:susy:1996} e violação de CP (do inglês \textit{Charge
-Parity})~\cite{book:cpv:1999}.
+precisam ser respondidas em física de partículas. É um desejo
+antigo dos físicos, desde Einstein, a unificação das teorias sobre
+as forças de interação entre as partículas, incluindo no Modelo
+Padrão a força gravitacional. O estudo da física de partículas
+também é fundamental para o entendimento da natureza e origem do
+universo. Pretende-se, por exemplo, descobrir informações sobre a
+composição da matéria escura \cite{article:darkm:2005},
+super-simetria \cite{article:susy:1996} e violação de CP (do
+inglês \textit{Charge Parity})~\cite{book:cpv:1999}.
 
-Entre os laboratórios que conduzem experimentos em física de
-partículas pode-se destacar: CERN, DESY \cite{Homepage:desy}, KEK
+Dentre os laboratórios que conduzem experimentos em física de
+partículas podem-se destacar: CERN, DESY \cite{Homepage:desy}, KEK
 \cite{homepage:kek}, Fermilab \cite{Homepage:Fermilab}, SLAC
 \cite{homepage:slac} e Brookhaven~\cite{Homepage:brookhaven},
 localizados respectivamente na Suíça, Alemanha, Japão e os três
-últimos nos Estados Unidos.
+últimos, nos Estados Unidos.
 
 O CERN, fundado em 1954, é atualmente um dos maiores centros de
 pesquisas em física de partículas do mundo. Localizado em Genebra,
 Suíça, funciona com base num complexo sistema de colaboração
 internacional, que envolve centenas de instituições de pesquisa em
-centenas de paises \cite{Homepage:CERN}.
+centenas de países \cite{Homepage:CERN}.
 
-\section{O acelerador LHC}
+\section{O Acelerador LHC}
 
-No CERN, foi projetado e construído o experimento LHC (\textit{Large Hadron Collider} ou Grande Colisionador de 
-Hádrons), que iniciou sua operação no final de 2008~\cite{article:LHC:2008,Homepage:lhc}. O LHC pode atingir níveis 
-de energia de, aproximadamente, 14 TeV. O percurso do
-acelerador, localizado na fronteira franco-suíça, é aproximadamente
-circular, com 27 Km de comprimento, numa profundidade do solo que
-varia de 50 a 150 metros (ver Figura \ref{mapaLHC}). Feixes de
-prótons são acelerados em sentidos opostos e direcionados para
-colisão nos centros dos detectores.
+No CERN, foi projetado e construído o experimento LHC
+(\textit{Large Hadron Collider} ou Grande Colisionador de
+Hádrons), que iniciou sua operação no final de
+2008~\cite{article:LHC:2008,Homepage:lhc}. O LHC pode atingir
+níveis de energia de, aproximadamente, 14 TeV. O percurso do
+acelerador, localizado na fronteira franco-suíça, é
+aproximadamente circular, com 27 km de comprimento, numa
+profundidade do solo que varia de 50 a 150 metros (ver Figura
+\ref{mapaLHC}). Feixes de prótons são acelerados em sentidos
+opostos e direcionados para colisão nos centros dos detectores.
 
-\begin{figure}[b!]
+\begin{figure}[t!]
 \centering
 \includegraphics[width=15cm]{cap2_lhc_map2}
-\caption{Mapa de localização dos detectores do LHC.} \label{mapaLHC}
+\caption{Mapa de localização dos detectores do LHC.}
+\label{mapaLHC}
 \end{figure}
 
 O LHC tem 6 detectores com propósitos diferentes: ATLAS
 \cite{article:ATLAS:2008}, CMS~\cite{article:CMS:2008},
-LHCb~\cite{article:LHCb:2008}, LHCf~\cite{article:LHCf:2008}, ALICE
-\cite{article:ALICE:2008} e TOTEM \cite{article:TOTEM:2008}. O ATLAS
-e o LHCf estão localizados em Meyrin, Suíça, o CMS e o TOTEM em
-Cessy, França, o ALICE em St. Genis-Pouilly, França e o LHCb em
-Ferney-Voltaire, França (os experimentos TOTEM e LHCf não são
-mostrados na Figura \ref{mapaLHC} pois estão em locais próximos
-respectivamente ao CMS e ATLAS). O ATLAS (\textit{A Toroidal LHC
-AparattuS}) e o CMS (\textit{Compact Muon Solenoid}) são detectores
-de propósito geral, enquanto os outros são dedicados a aplicações
-específicas, como o LHCb, que é dedicado a explorar informações
-sobre a física proveniente dos hádrons do tipo \textbf{b} produzida
-nas colisões do LHC.
+LHCb~\cite{article:LHCb:2008}, LHCf~\cite{article:LHCf:2008},
+ALICE \cite{article:ALICE:2008} e TOTEM \cite{article:TOTEM:2008}.
+O ATLAS e o LHCf estão localizados em Meyrin, Suíça, o CMS e o
+TOTEM em Cessy, França, o ALICE em St. Genis-Pouilly, França, e o
+LHCb em Ferney-Voltaire, França (os experimentos TOTEM e LHCf não
+são mostrados na Figura \ref{mapaLHC} pois estão em locais
+próximos respectivamente ao CMS e ATLAS). O ATLAS (\textit{A
+Toroidal LHC AparattuS}) e o CMS (\textit{Compact Muon Solenoid})
+são detectores de propósito geral, enquanto os ou\-tros são
+dedicados a aplicações específicas, como o LHCb, que é dedicado a
+explorar informações sobre a física proveniente dos hádrons do
+tipo \textbf{b} produzida nas colisões do LHC.
 
-Quando operando em máxima capacidade, o LHC irá produzir colisões de
-feixes de prótons a cada 25 ns e atingirá energia 7 vezes maior que
-o Tevatron, que é o acelerador de maior energia em operação
+Quando operando em máxima capacidade, o LHC irá produzir colisões
+de feixes de prótons a cada 25 ns e atingirá energia 7 vezes maior
+que o Tevatron, que é o acelerador de maior energia em operação
 atual\-mente, funcionando no Fermilab.
 
-O número de colisões por centímetro quadrado produzidas por segundo
-é chamado de luminosidade (L)~\cite{book:martin:2006}:
+O número de colisões por centímetro quadrado produzidas por
+segundo é chamado de luminosidade (L)~\cite{book:martin:2006}:
 \begin{equation}\label{lumi}
     L=n\frac{N_1N_2}{A}f
 \end{equation}
-onde $n$ é o número de feixes, $N_1$ e $N_2$ o número de partículas
-em cada feixe, $A$ a área da seção transversal do feixe e $f$ a
-frequência de colisão. Quanto maior a luminosidade do experimento,
-maior a quantidade de informação (partículas) gerada.
+onde $n$ é o número de feixes, $N_1$ e $N_2$ os números de
+partículas em cada feixe, $A$ a área da seção transversal do feixe
+e $f$ a frequência de colisão. Quanto maior a luminosidade do
+experimento, maior a quantidade de informação (partículas) gerada.
 
-Quando operando numa luminosidade jamais alcançada por outros experimentos
-($10^{34}cm^{-2}s^{-1}$), espera-se, em média, 25 choques próton-próton a cada cruzamento de feixe (colisão).
-Como a frequencia de colisões é de 40~MHZ, a taxa de interações será
-da ordem de 1 GHz. No LHC, fatores como a alta taxa de interações,
-as altas doses de radiação, a multiplicidade de partículas e largas
+Quando operando numa luminosidade jamais alcançada por outros
+experimentos ($10^{34}cm^{-2}s^{-1}$), esperam-se, em média, 25
+choques próton-próton a cada cruzamento de feixe (colisão). Como a
+frequência de colisões é de 40~MHz, a taxa de interações será da
+ordem de 1 GHz. No LHC, fatores como a alta taxa de interações, as
+altas doses de radiação, a multiplicidade de partículas e as largas
 faixas de ener\-gia a cobrir, em conjunto com a necessidade de
 medições precisas, definiram novos padrões para o projeto dos
 detectores.
@@ -287,28 +294,29 @@ detectores.
 A seguir, serão descritas, de modo geral, as principais
 características do detector ATLAS.
 
-\section{Características gerais do detector ATLAS}
+\section{Características Gerais do Detector ATLAS}
 
-Os métodos de detecção em física têm como princípio básico promover
-interação entre as partículas em estudo e um material conhecido,
-produzindo informações sobre a natureza e as características da
-própria partícula. Os instrumentos que possibilitam a medição
-experimental destas quantidades físicas são chamados de detectores.
-Em particular, os detectores de energia são chamados de
-calorímetros. À medida que a energia envolvida aumenta, o sistema de
-detecção precisa ser mais sofisticado \cite{book:chung:2001}.
+Os métodos de detecção em física têm como princípio básico
+promover interação entre as partículas em estudo e um material
+conhecido, produzindo informações sobre a natureza e as
+características da própria partícula. Os instrumentos que
+possibilitam a medição experimental destas quantidades físicas são
+chamados de detectores. Em particular, os detectores de energia
+são chamados de calorímetros. À medida que a energia envolvida
+aumenta, o sistema de detecção precisa ser mais sofisticado
+\cite{book:chung:2001}.
 
 O ATLAS foi fruto do trabalho de uma grande colaboração, que
-envolveu milhares de físicos, engenheiros, técnicos e estudantes por
-um período de vinte anos de projeto, desenvolvimento, fabricação e
-instalação.
+envolveu mi\-lha\-res de físicos, engenheiros, técnicos e
+estudantes por um período de vinte anos de projeto,
+desenvolvimento, fabricação e instalação.
 
 O detector tem 45 m de comprimento, 25 m de altura e pesa
 aproximadamente 7.000 toneladas, sendo dividido em subsistemas
-dispostos em camadas. Conforme ilustrado na Figura \ref{atlas_diag},
-os principais subsistemas são: detector de trajetórias (ou de
-traço), calorímetros eletromagnético e hadrônico e os detectores de
-múons.
+dispostos em camadas. Conforme ilustrado na Figura
+\ref{atlas_diag}, os principais subsistemas são: detector de
+trajetórias (ou de traço), calorímetros eletromagnético e
+hadrônico e os detectores de múons.
 
 \begin{figure}[h!]
 \centering
@@ -320,37 +328,37 @@ A função dos detectores de trajetória é medir o momento das
 partículas ele\-tri\-camente carregadas, a partir da curvatura de
 sua trajetória, quando imersos no campo magnético do solenóide
 central \cite{atlastracking:2007}. Caminhando do eixo central para
-as extre\-mi\-dades, em sequência, estão os calorímetros, que medem
-a energia depositada pelas partículas \cite{atlascalo:2002}. Na
-interação com as células do calorímetro, são produzidos chuveiros de
-partículas secundárias \cite{book:wigmans:2000}. Num último estágio
-está o detector de múons, sistema dedicado à detecção destas
-partículas, que são as únicas que não ficam contidas nos
-calorímetros \cite{atlasmuon:2004}.
+as extre\-mi\-dades, em sequência, estão os calorímetros, que
+medem a energia depositada pelas partículas \cite{atlascalo:2002}.
+Na interação com as células do calorímetro, são produzidos
+chuveiros de partículas secundárias \cite{book:wigmans:2000}. Num
+último estágio está o detector de múons, sistema dedicado à
+detecção destas partículas, que são as únicas que não ficam
+contidas nos calorímetros \cite{atlasmuon:2004}.
 
 O sistema $xyz$ de coordenadas do ATLAS é único para todos os
 subsistemas. Conforme mostrado na Figura \ref{atlas_coord}, a
 direção do feixe do LHC define o eixo $z$, e os eixos $x$ e $y$
-formam um plano transverso ao feixe. A direção positiva do eixo $x$
-é definida apontando do ponto de interação para o centro do anel do
-LHC, e o eixo $y$ positivo aponta para cima. O ângulo azimutal é
-obtido a partir de:
+formam um plano transverso ao feixe. A direção positiva do eixo
+$x$ é definida apontando do ponto de interação para o centro do
+anel do LHC, e o eixo $y$ positivo aponta para cima. O ângulo
+azimutal é obtido a partir de:
 
 \begin{equation}\label{phi}
    \phi=\textrm{arctg}(x/y),
 \end{equation}
 \\
-sendo que $\phi=0$ corresponde ao eixo $x$ positivo e $\phi$ aumenta
-no sentido horário. O ângulo polar $\theta$ é medido a partir do
-eixo do feixe (eixo $z$ positivo). O momento transverso $p_T$, a
-energia transversa $E_T$ e a energia transversa perdida $E_T^{miss}$
-são definidas no plano $xy$. A pseudo-rapidez $\eta$ é calculada a
-partir do ângulo $\theta$ de es\-pa\-lha\-mento em relação ao eixo
-$z$ (ângulo de saída das partículas após a
+sendo que $\phi=0$ corresponde ao eixo $x$ positivo e $\phi$
+aumenta no sentido horário. O ângulo polar $\theta$ é medido a
+partir do eixo do feixe (eixo $z$ positivo). O momento transverso
+$p_T$, a energia transversa $E_T$ e a energia transversa perdida
+$E_T^{miss}$ são definidas no plano $xy$. A pseudo-rapidez $\eta$
+é calculada a partir do ângulo $\theta$ de es\-pa\-lha\-mento em
+relação ao eixo $z$ (ângulo de saída das partículas após a
 colisão)~\cite{LI:ATLAS:1992}:
 
-\begin{figure}[b!] \centering
-\includegraphics[width=6cm]{cap2_coord}
+\begin{figure}[t!] \centering
+\includegraphics[width=14cm]{cap2_coord}
 \caption{Eixo de coordenadas do ATLAS.} \label{atlas_coord}
 \end{figure}
 
@@ -360,13 +368,13 @@ colisão)~\cite{LI:ATLAS:1992}:
 \\
 A partir das definições das equações \ref{phi} e \ref{eta},
 define-se o eixo ($\eta,\phi$), onde o ângulo $\phi$ representa a
-rotação e $\eta$ a direção de projeção das partículas após a
-colisão. Grandes valores da pseudo-rapidez indicam que a colisão das
-partículas não foi frontal, pois o ângulo de saída, após o choque, é
-pequeno, no limite quando $\theta \rightarrow 0$ então $\eta
-\rightarrow \infty$. Nesse tipo de colisão, como quase não houve
-choque, a produção de partículas elementares é pequena. O ATLAS foi
-projetado com baixa resolução para $\eta>3$.
+rotação e $\eta$, a direção de projeção das partículas após a
+colisão. Grandes valores da pseudo-rapidez indicam que a colisão
+das partículas não foi frontal, pois o ângulo de saída $\theta$,
+após o choque, é pequeno, no limite quando $\theta \rightarrow 0$
+então $\eta \rightarrow \infty$. Nesse tipo de colisão, como quase
+não houve choque, a produção de partículas elementares é pequena.
+O ATLAS foi projetado com baixa resolução para $\eta>3$.
 
 \begin{figure}[tbph]
 \begin{center}
@@ -376,28 +384,30 @@ projetado com baixa resolução para $\eta>3$.
 \end{figure}
 %, extraídas de \cite{Homepage:ATLAS}
 
-Após uma colisão, as partículas geradas interagem com o material do
-detector, perdendo energia e consequentemente velocidade. Na Figura
-\ref{corte1} pode-se visualizar os subsistemas do ATLAS num corte
-transversal (paralelo ao plano $xy$). Percebe-se que a câmara de
-múons e o calorímetro hadrônico têm as maiores dimensões. Na figura
-\ref{corte2} é mostrada a penetração e consequente visualização
-esperadas de algumas partículas nas camadas do detector. Não
-espera-se, por exemplo, deposição de energia de fótons ou elétrons
-além das camadas eletromagnéticas do calorímetro, pois estas
-partículas interagem intensamente com os materiais que compõem a
-seção eletromagnética, perdendo toda sua energia. As partículas
-hadrônicas (por exemplo: prótons e néutrons) em geral interagem menos intensamente com o calorímetro
-eletromagnético e precisam das camadas hadrônicas para serem
-paradas. Os múons são partículas que perdem pouca energia
+Após uma colisão, as partículas geradas interagem com o material
+do detector, perdendo energia e, consequentemente, velocidade. Na
+Figura \ref{corte1} podem-se visualizar os subsistemas do ATLAS num
+corte transversal (paralelo ao plano $xy$). Percebe-se que a
+câmara de múons e o calorímetro hadrônico têm as maiores
+dimensões. Na figura \ref{corte2} são mostradas a penetração e a
+consequente visualização esperadas de algumas partículas nas
+camadas do detector. Não se espera, por exemplo, deposição de
+energia de fótons ou elétrons além das camadas eletromagnéticas do
+calorímetro, pois estas partículas interagem intensamente com os
+materiais que compõem a seção eletromagnética, perdendo toda a sua
+energia. As partículas hadrônicas (por exemplo, prótons e
+nêutrons), em geral, interagem menos intensamente com o
+calorímetro eletromagnético e precisam das camadas hadrônicas para
+serem paradas. Os múons são partículas que perdem pouca energia
 nos calorímetros, necessitando de um sistema especial para serem
 detectados, o detector de múons.
 
 O ATLAS foi projetado e construído considerando-se as condições
 experimentais produzidas pelas colisões do LHC e com o objetivo de
 obter informações importantes para responder às questões chave em
-física de partículas. Entre os principais critérios utilizados para
-o projeto do detector pode-se destacar \cite{article:ATLAS:2008}:
+física de partículas. Dentre os principais critérios utilizados
+para o projeto do detector podem-se destacar
+\cite{article:ATLAS:2008}:
 
 \begin{itemize}
   \item Os elementos sensores e circuitos eletrônicos devem
@@ -407,8 +417,8 @@ o projeto do detector pode-se destacar \cite{article:ATLAS:2008}:
 
   \item Excelente calorimetria eletromagnética para a identificação de
 elétrons e fótons, complementada por informações acuradas dos
-calorímetros hadrônicos, para medições de jatos hadrônicos e energia
-transversa $E_T$;
+calorímetros hadrônicos, para medições de jatos hadrônicos e
+energia transversa $E_T$;
 
   \item Eficiente sistema de identificação de trajetória para medição do
 momento;
@@ -420,45 +430,46 @@ momento;
 
   \item Alta eficiência do sistema de filtragem (\textit{trigger}),
 armazenando a maioria dos eventos físicos de interesse e reduzindo
-ao máximo o ruído de fundo (informação não relevante) produzido nas
-colisões do LHC.
+ao máximo o ruído de fundo (informação não relevante) produzido
+nas colisões do LHC.
 \end{itemize}
 
-Conforme mencionado no Capítulo 1, o estudo conduzido neste trabalho
-utiliza informações do sistema de calorímetros do ATLAS e propõe
-algoritmos para a otimização da detecção (\textit{trigger}) de elétrons. Nas
-próximas seções, serão des\-cri\-tos o sistema de calorímetros
-do ATLAS e a importância da detecção de elétrons para o desempenho
-do experimento.
+Conforme mencionado no Capítulo 1, o estudo conduzido neste
+trabalho utiliza informações do sistema de calorímetros do ATLAS e
+propõe algoritmos para a otimização da detecção (\textit{trigger})
+de elétrons. Nas próximas seções, serão des\-cri\-tos o sistema de
+calorímetros do ATLAS e a importância da detecção de elétrons para
+o desempenho do experimento.
 
 
-\section{Principais objetos de interesse no ATLAS}
+\section{Principais Objetos de Interesse no ATLAS}
 
 Dentre os eventos gerados nas colisões do LHC, apenas uma pequena
 parte será útil para a caracterização dos processos da ``nova
 física". Com o LHC operando em alta luminosidade podem ocorrer até
-10$^9$ interações por segundo, porém, os eventos de interesse são
-muito raros. Por exemplo a depender de sua massa, a taxa de ocorrência do 
-bóson de Higgs pode variar de 0,01 a 0,1 Hz e eventos de supersimetria são esperados a 
-1 Hz~\cite{article:trigconf:2009}
+10$^9$ interações por segundo; porém, os eventos de interesse são
+muito raros. Por exemplo, a depender de sua massa, a taxa de
+ocorrência do bóson de Higgs pode variar de 0,01 a 0,1 Hz e
+eventos de supersimetria são esperados a
+$\sim$1~Hz~\cite{article:trigconf:2009}.
 
-Provar a existência do bóson de Higgs é um dos principais objetivos
-do LHC. Com o conhecimento adquirido até agora, não é possível
-determinar sua massa $m_H$, embora seu limite inferior ($m_H>114$
-GeV/c$^2$) tenha sido determinado pelos resultados obtidos em outros
-aceleradores, como o LEP (\textit{Large Electron Positron Collider},
-acelerador que operou no CERN de 1989 a 2000) \cite{drees:lep:2001}.
-O limite superior esperado por estudos teóricos é $\sim$ 1 TeV/c$^2$
-\cite{book:lhc:2008}.
+Provar a existência do bóson de Higgs é um dos principais
+objetivos do LHC. Com o conhecimento adquirido até agora, não é
+possível determinar sua massa $m_H$, embora seu limite inferior
+($m_H>114$ GeV/c$^2$) tenha sido determinado pelos resultados
+obtidos em outros aceleradores, como o LEP (\textit{Large Electron
+Positron Collider}, acelerador que operou no CERN de 1989 a 2000)
+\cite{drees:lep:2001}. O limite superior esperado por estudos
+teóricos é $\sim$ 1 TeV/c$^2$ \cite{book:lhc:2008}.
 
 Considerando os diversos decaimentos possíveis para a partícula de
-Higgs, espera-se que o canal mais limpo para seu estudo aconteça se
-sua massa estiver aproximadamente na faixa 150$<m_H<$700 GeV/c$^2$
-\cite{article:ATLAS:2008}. Neste caso, o Higgs pode apresentar o
-decaimento em 2 bósons Z, com cada Z, por sua vez,
-decaindo\footnote{No decaimento de partículas elementares, parte da
-massa da partícula é convertida em energia e o restante em massa de
-outras partículas} em dois léptons (elétrons ou múons):
+Higgs, espera-se que o canal mais limpo para seu estudo aconteça
+se sua massa estiver aproximadamente na faixa 150$<m_H<$700
+GeV/c$^2$ \cite{article:ATLAS:2008}. Neste caso, o Higgs pode
+apresentar o decaimento em 2 bósons Z, com cada Z, por sua vez,
+decaindo\footnote{No decaimento de partículas elementares, parte
+da massa da partícula é convertida em energia e o restante em
+massa de outras partículas} em dois léptons (elétrons ou múons):
 \begin{equation}\label{higgs_dec}
     H \rightarrow ZZ^{(*)} \rightarrow l^+ l^- l^+ l^-
 \end{equation}
@@ -467,20 +478,21 @@ Para este canal de busca do Higgs, é fundamental que os detectores
 tenham um sistema de filtragem capaz de identificar com alta
 eficiência elétrons e múons. Estas duas partículas, assim como os
 fótons, jatos e os taus, são importantes também para o melhor
-entendimento da supersimetria (SUSY - \emph{supersimetry})
-\cite{livro:fisica1:2006}. Os taus também podem levar aos modelos de
-Higgs estendidos \cite{TDR2:ATLAS:1999}. Outro fenômeno importante é a energia transversa perdida
-($E_T^{miss}$), que geralmente é atribuído a partículas 
-que passaram pelo detector e não foram detectadas. A $E_T^{miss}$ pode ser identificada a partir da violação 
-dos princípios de conservação de energia e momento.
+entendimento da supersimetria (SUSY - \emph{supersymmetry})
+\cite{livro:fisica1:2006}. Os taus também podem levar aos modelos
+de Higgs estendidos \cite{TDR2:ATLAS:1999}. Outro fenômeno
+importante é a energia transversa perdida ($E_T^{miss}$), que
+geralmente é atribuído a partículas que passaram pelo detector e
+não foram detectadas. A $E_T^{miss}$ pode ser identificada a
+partir da violação dos princípios de conservação de energia e
+momento.
 
-Um resumo com os principais
-objetos de interesse no ATLAS e suas aplicações na física é mostrado
-na Tabela \ref{tab_fisica}.
+Um resumo com os principais objetos de interesse no ATLAS e suas
+aplicações na Física é mostrado na Tabela \ref{tab_fisica}.
 
 \begin{table}[h!]
-\centering
-\caption[Principais objetos de interesse no ATLAS.]{Principais objetos de interesse no ATLAS, extraída de
+\centering \caption[Principais objetos de interesse no
+ATLAS.]{Principais objetos de interesse no ATLAS, extraída de
 \cite{article:HLT1:2003}.}\vspace{.3cm}
 \begin{tabular}{c c }
   \hline
@@ -498,184 +510,224 @@ na Tabela \ref{tab_fisica}.
 \end{table}
 %, extraída de \cite{article:HLT1:2003}book:montecarlo:2004
 
-A identificação \textit{online} destes objetos dentro de um universo
-enorme de informações é realizada pelo sistema de filtragem
-(\textit{trigger}). Conforme mencionado, um dos objetos de interesse
-na filtragem do ATLAS é o elétron. Para a identificação de elétrons,
-a informação obtida no sistema de calorímetros é muito importante.
-Em termos da calorimetria, as assinaturas de elétrons podem ser
-confundidas com perfis de energia gerados por alguns jatos
-hadrônicos (espacialmente concentrados nas camadas eletromagnéticas
-e com pouca energia nas hadrônicas). Considerando que a produção de
-jatos será muito frequente nas colisões do LHC, estes formarão um
-intenso ruído de fundo para a identificação de elétrons, tornando a discriminação elétron/jato (e$^-$/j)
-importante para o desempenho do detector.
+A identificação \textit{online} destes objetos dentro de um
+universo enorme de informações é realizada pelo sistema de
+filtragem (\textit{trigger}). Conforme mencionado, um dos objetos
+de interesse na filtragem do ATLAS é o elétron. Para a
+identificação de elétrons, a informação obtida no sistema de
+calorímetros é muito importante. Em termos da calorimetria, as
+assinaturas de elétrons podem ser confundidas com perfis de
+energia gerados por alguns jatos hadrônicos (espacialmente
+concentrados nas camadas eletromagnéticas e com pouca energia nas
+hadrônicas). Considerando que a produção de jatos será muito
+frequente nas colisões do LHC, estes formarão um intenso ruído de
+fundo para a identificação de elétrons, tornando a discriminação
+elétron/jato (e$^-$/j) importante para o desempenho do detector.
 
-\section{O sistema de calorimetria do ATLAS}
+\section{O Sistema de Calorimetria do ATLAS}
 
-\subsection{Breve introdução à calorimetria}
+\subsection{Breve Introdução à Calorimetria}
 
-Calorímetros \cite{book:wigmans:2000} representam uma importante
-classe de detectores para medição de energia e posição da partícula.
-Durante o processo de absorção, as partículas interagem com o
-material dos calorímetros gerando partículas secundárias que, por
-sua vez, interagem também gerando outras partículas e assim por
-diante. Este processo é chamado de cascata ou chuveiro de
-partículas. Os calorímetros podem apresentar resposta muito rápida,
-da ordem de nanosegundos \cite{book:wigmans:2000}, e, por isso, são
-utilizados intensamente pelo sistema de filtragem online
-(\textit{trigger}). As prováveis classes de partículas são
-identificadas a partir das características esperadas para o seu
-perfil de deposição de energia.
+Os calorímetros \cite{book:wigmans:2000} representam uma
+importante classe de detectores para medição da energia e da
+posição de interação da partícula. Durante o processo de absorção,
+as partículas interagem com o material dos calorímetros gerando
+partículas secundárias que, por sua vez, interagem novamente
+gerando outras partículas, e assim por diante. Este processo é
+chamado de cascata ou chuveiro de partículas. Os calorímetros
+podem apresentar resposta muito rápida, da ordem de nano-segundos
+\cite{book:wigmans:2000}, e, por isso, são utilizados intensamente
+pelo sistema de filtragem online (\textit{trigger}). As prováveis
+classes de partículas são identificadas a partir das
+características esperadas para o seu perfil de deposição de
+energia.
 
-Calorímetros são detectores de absorção total. O processo de medição
-utilizado é destrutivo e as partículas não estão disponíveis após a
-passagem pelos calorímetros (com excessão aos múons, que conseguem
-penetrar em grande quantidade de matéria e necessitam de um detector
-especial a câmara de múons). Quando partículas atravessam matéria,
-elas em geral interagem e perdem assim uma parte de sua energia.
-Neste processo o meio é excitado ou aquecido (daí o termo
-calorimetria). Na prática absorção ``total" significa 99 a 99,9 $\%$
-da energia (ou até um pouco menos). A depender do tipo de partícula
-e da energia envolvida, a partícula pode exceder os limites do
-calorímetro (vazar) e assim interferir em outros detectores
-(como a câmara de múons)~\cite{book:wigmans:2000}.
+Calorímetros são detectores de absorção total. O processo de
+medição utilizado é destrutivo e as partículas não estão
+disponíveis após a passagem pelos calorímetros (com exceção aos
+múons, que conseguem penetrar em grande quantidade de matéria e
+necessitam de um detector especial a câmara de múons). Quando
+partículas atra\-ve\-ssam matéria, elas em geral interagem e
+perdem, assim, uma parte de sua energia. Neste processo o meio é
+excitado ou aquecido (daí o termo calorimetria). Na prática,
+absorção ``total" significa de 99 a 99,9 $\%$ da energia (ou até um
+pouco menos). A depender do tipo de partícula e da energia
+envolvida, a partícula pode exceder os limites do calorímetro
+(vazar) e, assim, interferir em outros detectores (como a câmara de
+múons)~\cite{book:wigmans:2000}.
 
 Os calorímetros podem ser classificados em homogêneos ou
 amostradores. No calorímetro homogêneo todo o volume do detector é
 sensível às partículas e contribui para produção do sinal. No
 calorímetro amostrador, o material passivo interage com as
-partículas (absorvendo sua energia) e o material ativo produz o sinal~\cite{book:wigmans:2000}.
+partículas (absorvendo sua energia) e o material ativo produz o
+sinal~\cite{book:wigmans:2000}.
 
-A depender do tipo de partícula, a interação com o calorímetro ocorre de modo distinto. 
-Partículas eletromagnéticas (EM), como elétrons e pósitrons, interagem com a matéria gerando
-um chuveiro de partículas menos energéticas e necessitam de pequena
-quantidade de material para serem totalmente absorvidas. Os múons,
-por outro lado, perdem sua energia muito lentamente necessitando de
-grande quantidade de matéria para a absorção total. As partículas
-hadrônicas interagem com a matéria através da força nuclear forte. O
-processo de interação é muito mais complexo que o EM e uma variedade
-muito grande de fenômenos pode ocorrer. Os hadrons podem, por
-exemplo, se comportar de modo semelhante a elétrons e múons, ou se
-envolverem em uma interação nuclear e se transformarem em 15 novos
-hádrons. Uma parte da energia das interações hadrônicas não é
-visível (detectável) pelos calorímetros pois os hadrons neutros não
-ionizam o calorímetro e a energia é perdida em interações nucleares
-(não detectadas pelo calorímetro)~\cite{book:wigmans:2000}.
+A depender do tipo de partícula, a interação com o calorímetro
+ocorre de modo distinto. Partículas eletromagnéticas (EM), como
+elétrons e pósitrons, interagem com a matéria gerando um chuveiro
+de partículas menos energéticas, e necessitam de pequena quantidade
+de material para serem totalmente absorvidas. Os múons, por outro
+lado, perdem sua energia muito lentamente, necessitando de grande
+quantidade de matéria para a absorção total. As partículas
+hadrônicas interagem com a matéria através da força nuclear forte.
+O processo de interação é muito mais complexo que o EM e uma
+variedade muito grande de fenômenos pode ocorrer. Os hádrons
+podem, por exemplo, se comportar de modo semelhante a elétrons e
+múons, ou se envolver em uma interação nuclear e se
+transformarem em vários novos hádrons. Uma parte da energia das
+interações hadrônicas não é visível (detectável) pelos
+calorímetros, pois os hádrons neutros não ionizam o calorímetro e a
+energia é perdida em interações nucleares (não detectadas pelo
+calorímetro)~\cite{book:wigmans:2000}.
 
-Como as características dos chuveiros eletromagnéticos e hadrônicos
-são di\-fe\-ren\-tes, na prática, são utilizados tipos de
-calorímetro específicos para estas classes de partículas
-\cite{book:martin:2006}. O calorímetro eletromagnético é usualmente
-instalado internamente ao hadrônico. As partículas eletromagnéticas
-(ex: elétrons e fótons) apresentam perfil de deposição de energia
-que, em geral, é concentrado em torno do ponto de colisão.
-Tipicamente, as partículas eletromagnéticas são absorvidas
-completamente nos calorímetros eletromagnéticos. Os chuveiros
-hadrônicos apresentam formas va\-ria\-das e iniciam sua interação
-com o calorímetro eletromagnético, mas, em geral, somente são
-completamente absorvidas nas camadas hadrônicas (mais externas).
+Como as características dos chuveiros eletromagnéticos e
+hadrônicos são di\-fe\-ren\-tes, na prática são utilizados tipos
+de calorímetro específicos para estas classes de partículas
+\cite{book:martin:2006}. O calorímetro eletromagnético é
+usualmente instalado internamente ao hadrônico. As partículas
+eletromagnéticas (ex: elétrons e fótons) apresentam perfil de
+deposição de energia que, em geral, é concentrado em torno do
+ponto de colisão. Tipicamente, as partículas eletromagnéticas são
+absorvidas completamente nos calorímetros eletromagnéticos. Os
+chuveiros hadrônicos apresentam formas va\-ria\-das e iniciam sua
+interação com o calorímetro eletromagnético, mas, em geral,
+somente são completamente absorvidas nas camadas hadrônicas (mais
+externas).
 
 Os calorímetros deveriam ser intrinsecamente lineares para a
-detecção de partículas EM. Por exemplo um par de elétrons de 10 GeV
-deveria gerar um sinal de mesma intensidade que um único elétron de
-20 GeV. Na prática, desvios do comportamento linear (para partículas
-EM) podem ser observados na prática devido a fenômenos como
-\cite{book:wigmans:2000}:
+detecção de partículas EM. Por exemplo, um par de elétrons de 10
+GeV deveria gerar um sinal de mesma intensidade que um único
+elétron de 20 GeV. Na prática, desvios do comportamento linear
+(para partículas EM) podem ser observados na prática devido a
+fenômenos como \cite{book:wigmans:2000}:
 \begin{itemize}
-    \item Saturação das foto-multiplicadoras (PMT - \textit{Photo-Multipliers}) - as PMT convertem luz dos calorímetros cintiladores em sinais elétricos, sua saturação implica em distorção não-linear dos sinais elétricos;
-    \item Vazamento do chuveiro - com o aumento da energia algumas partículas podem extrapolar os limites do detector, havendo, neste caso, perda de parte da informação;
-    \item Recombinação dos elétrons com íons do material ativo - se isso ocorrer a ionização não é detectada;
+    \item Saturação das fotomultiplicadoras (PMT -
+    \textit{Photo-Multipliers}) - as PMT convertem luz
+    dos calorímetros cintiladores em sinais elétricos, e
+    sua saturação implica distorção não-linear dos sinais elétricos;
+    \item Vazamento do chuveiro - com o aumento da energia, algumas
+    partículas podem extrapolar os limites do detector, havendo,
+    neste caso, perda de parte da informação;
+    \item Recombinação dos elétrons com íons do material ativo -
+    se isso ocorrer a ioni\-za\-ção não é detectada;
     \item Atenuação da luz - a luz emitida pelo material ativo (cintilante) pode ser atenuada antes de atingir as PMT.
 \end{itemize}
 
 Calorímetros homogêneos são intrinsecamente não-lineares para a
 detecção de hadrons e jatos. A fração EM de chuveiros hadrônicos
-depende da energia e varia bastante de evento para evento, tornando
-a resposta hadrônica não-constante em função da energia (tanto para
-calorímetros homogêneos como para os amostradores). A fração não EM
-(que produz interações nucleares) é, em geral, menor. Em qualquer
-calorímetro a resolução em energia para hádrons é pior que para
-elétrons de mesma energia. Isso se deve ao fato de ocorrerem
-flutuações na energia visível (detectável) aos calorímetros
+depende da energia e varia bastante de evento para evento,
+tornando a resposta hadrônica não-constante em função da energia
+(tanto para calorímetros homogêneos como para os amostradores). A
+fração não EM (que produz interações nucleares) é, em geral,
+menor. Em qualquer calorímetro a resolução em energia para hádrons
+é pior que para elétrons de mesma energia. Isso se deve ao fato de
+ocorrerem flutuações na energia visível (detectável) aos
+calorímetros \cite{book:wigmans:2000}.
+
+Diferente de outros tipos de detectores, a precisão dos
+calorímetros aumenta com a energia \cite{book:wigmans:2000}:
+\begin{equation}\label{res_calo}
+    \frac{\sigma_E}{E} \propto \frac{1}{\sqrt{E}},
+\end{equation}
+onde E é a energia incidente por partícula e $\sigma_E$ a variação
+(desvio padrão) esperada na medição. Outras fontes de flutuações
+de menor importância contribuem com fatores de outra ordem, como:
+ruído eletrônico $\propto 1/E$ (que domina em baixa energia,
+principalmente em calorímetros de Argônio Líquido - LAr); e
+vazamento lateral do chuveiro $ \propto 1/(E)^{1/4}$. Existem
+ainda flutuações que são independentes da energia. Uma
+característica interessante é que as flutuações podem não ser
+simétricas em torno do valor médio. Um estudo detalhado a respeito
+das flutuações encontradas em calorímetros pode ser encontrado em
 \cite{book:wigmans:2000}.
 
-Diferente de outros tipos de detectores, a precisão dos calorímetros
-aumenta com a energia \cite{book:wigmans:2000}:
-\begin{equation}\label{res_calo}
-    \frac{\sigma_E}{E} \propto \frac{1}{\sqrt{E}}
-\end{equation}
-onde E é a energia incidente por partícula e $\sigma_E$ a variação (desvio padrão) esperado na medição. Outras fontes de
-flutuações de menor importância contribuem com fatores de outra
-ordem como ruído eletrônico: $\propto 1/E$ (domina em baixa energia,
-principalmente em calorímetros de Argônio Líquido - LAr); e vazamento lateral do chuveiro: $ \propto
-1/(E)^{1/4}$. Existem ainda flutuações que são independentes da energia. Uma característica interessante é que as flutuações
-podem não ser simétricas em torno do valor médio. Um estudo detalhado a respeito das flutuações encontradas em calorímetros pode ser encontrado em \cite{book:wigmans:2000}.
-
 Para o calorímetro do ATLAS, foi calculada experimentalmente
-em~\cite{atlascalo:2002} a resolução esperada . Os valores
+em~\cite{atlascalo:2002} a re\-so\-lução esperada. Os valores
 encontrados foram $0,1/\sqrt{E}$ e $0,4/\sqrt{E}$, respectivamente
 para os calorímetros eletromagnético (de argônio líquido) e
-hadrônico (de telhas cintilantes). A seguir, o sistema de calorímetros do ATLAS será descrito mais detalhadamente.
+hadrônico (de telhas cintilantes). A seguir, o sistema de
+calorímetros do ATLAS será descrito mais detalhadamente.
 
-\subsection{Características dos calorimetros do ATLAS}
+\subsection{Características dos Calorímetros do ATLAS}
 
 O sistema de calorímetros do detector ATLAS
 \cite{article:ATLAS:2008} é sub-dividido em 7 camadas
-\cite{atlascalo:2002}, sendo 4 eletromagnéticas (PS, E1, E2, E3) e 3
-hadrônicas (H0, H1 e H2), conforme Figura \ref{atlas_calo}. Cada
+\cite{atlascalo:2002}, sendo 4 eletromagnéticas (PS, E1, E2, E3) e
+3 hadrônicas (H0, H1 e H2), conforme se vê na Figura \ref{atlas_calo}. Cada
 camada apresenta diferente concentração de células detectoras por
-unidade de área (granularidade). O calorímetro eletromagnético (EM)
-é composto de finas folhas de chumbo separadas por dispositivos
-sensores de argônio líquido, cobrindo a região onde $|\eta|<3,2$. As
-três camadas do calorímetro eletromagnético são divididas em barril
+unidade de área (granularidade). O calorímetro eletromagnético
+(EM) é composto de finas folhas de chumbo separadas por
+dispositivos sensores de argônio líquido, cobrindo a região onde
+$|\eta|<3,2$. As três camadas do calorímetro eletromagnético (E1,
+E2 e E3, também chamadas respectivamente de \emph{front},
+\emph{middle} e \emph{back layers}) são divididas em barril
 (região central do detector, onde $|\eta|<1,5$) e tampa (regiões
 mais externas onde $1,4<|\eta|<3,2$). Na região onde $|\eta|<1,8$,
-imediatamente antes da primeira camada EM existe uma fina camada de
-argônio líquido chamada pré-amostrador (\textit{presampler} ou PS).
-O pré-amostrador é importante para corrigir medições nas quais
-existe perda de energia no caminho até os calorímetros.
-
-O calorímetro hadrônico envolve o eletromagnético. Na região onde
-$|\eta|<1,7$, ele é composto de placas absorvedoras de aço separadas
-por telhas de material plástico cintilante. Quando as partículas
-atravessam as telhas elas emitem luz de intensidade proporcional à
-energia incidente \cite{TDR1:ATLAS:1999}. O sinal luminoso é então
-convertido em elétrico através de placas foto-multiplicadoras. Esta
-parte do calorímetro hadrônico do ATLAS é conhecida como calorímetro
-de telhas (\textit{Tile Calorimeter} ou simplesmente
-\textit{TileCal}) e é dividida em barril ($|\eta|<1,0$) e
-barril-extendido ($0,8<|\eta|<1,7$) \cite{article:tilecal:2006}.
-Para a tampa do calorímetro hadrônico ($|\eta|>1,5$) utiliza-se a
-tecnologia do argônio líquido.
+imediatamente antes da primeira camada EM existe uma fina camada
+de argônio líquido chamada pré-amostrador (\textit{pre-sampler} ou
+PS). O pré-amostrador é importante para corrigir medições nas
+quais existe perda de energia no caminho até os calorímetros.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=11cm]{cap2_calo}
+\includegraphics[width=10cm]{cap2_calo1}
 \caption{Disposição em camadas dos calorímetros do ATLAS.}
 \label{atlas_calo}
 \end{figure}
 
+O calorímetro hadrônico envolve o eletromagnético. Na região onde
+$|\eta|<1,7$, ele é composto de placas absorvedoras de aço
+separadas por telhas de material plástico cintilante. Quando as
+partículas atravessam as telhas, emitem luz de intensidade
+proporcional à energia incidente \cite{TDR1:ATLAS:1999}. O sinal
+luminoso é então convertido em elétrico através de placas
+foto multiplicadoras. Esta parte do calorímetro hadrônico do
+\linebreak {ATLAS} é conhecida como calorímetro de telhas
+(\textit{Tile Calorimeter} ou simplesmente \textit{TileCal}), e é
+dividida em barril ($|\eta|<1,0$) e barril estendido
+($0,8<|\eta|<1,7$)~\cite{article:tilecal:2006}. Para a tampa do
+calorímetro hadrônico ($|\eta|>1,5$) utiliza-se a tecnologia do
+argônio líquido.
+
 A informação da energia depositada nas camadas do calorímetro, com
-fina segmentação, é muito importante para a caracterização das partículas. 
-Após um evento ser aceito pelo sistema de filtragem,
+fina segmentação, é muito importante para a caracterização das
+partículas. Após um evento ser aceito pelo sistema de filtragem,
 todas as informações relativas a este evento são armazenadas em
 mídia permanente para posterior análise \textit{off-line}. A
 granularidade, ou quantidade de células por unidade de área, varia
-entre as camadas do calorímetro. A Tabela \ref{tab_calo} traz
-informações sobre a região de cobertura em $\eta$, granularidade e
-quantidade de canais de leitura (células sensoras) de cada camada do
-calorímetro.
+entre as camadas do calorímetro.
 
-\begin{table}[t!]
+Conforme ilustrado na Figura \ref{calo_cell}, percebe-se que a
+primeira camada eletromagnética apresenta mais fina segmentação em
+$\eta$, possibilitando medição precisa do ponto de colisão nessa
+coordenada. A segunda camada apresenta células detectoras
+quadradas e maior profundidade, absorvendo maior parcela da
+energia. A terceira camada, por sua vez, captura os detalhes do
+final do chuveiro eletromagnético.
+
+\begin{figure}[h!]
 \centering
-\caption{Região de cobertura em $\eta$, granularidade e número de
-canais de leitura das camadas dos calorímetros.} \vspace{.3cm}
+\includegraphics[width=13cm]{cap2_caloem}
+\caption[Granularidade e profundidade das camadas do calorímetro
+eletromagnético.]{Granularidade e profundidade das camadas do
+calorímetro eletromagnético, extraído de
+\cite{article:ATLAS:2008}.} \label{calo_cell}
+\end{figure}
+
+\pagebreak A Tabela \ref{tab_calo} traz informações sobre a região
+de cobertura em $\eta$, granularidade e quantidade de canais de
+leitura (células sensoras) de cada camada do calorímetro.
+
+\begin{table}[b!]
+\centering \caption{Região de cobertura em $\eta$, granularidade e
+número de canais de leitura das camadas dos calorímetros.}
+\vspace{.3cm}
 \begin{tabular}{l c c}
   \hline
   \hline
   % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
-  \textbf{Pre-amostrador}    & \textbf{Barril}  & \textbf{Tampa}  \\  \hline
+  \textbf{Pré-amostrador}    & \textbf{Barril}  & \textbf{Tampa}  \\  \hline
   Cobertura   &  $|\eta|<1,52$ & $1,5<|\eta|<1,8$   \\
   Granularidade ($\Delta \eta \times \Delta \phi$)    &  $0,025 \times 0,1$ & $0,025 \times 0,1$  \\
   Canais de Leitura & 7808 & 1536 (ambos os lados)\\
@@ -710,86 +762,100 @@ canais de leitura das camadas dos calorímetros.} \vspace{.3cm}
 \end{table}
 %, extraída de \cite{article:ATLAS:2008}
 
-Conforme ilustrado na Figura \ref{calo_cell}, percebe-se que a
-primeira camada eletromagnética apresenta mais fina segmentação em $\eta$ 
-possibilitando medição precisa do ponto de colisão nessa coordenada. A segunda camada
-apresenta células detectoras quadradas e maior profundidade,
-absorvendo maior parcela da energia. A terceira camada, por sua vez,
-captura os detalhes do final do chuveiro eletromagnético.
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=13cm]{cap2_caloem}
-\caption[Granularidade e profundidade das camadas do calorímetro
-eletromagnético.]{Granularidade e profundidade das camadas do calorímetro
-eletromagnético, extraído de \cite{article:ATLAS:2008}.}
-\label{calo_cell}
-\end{figure}
 %, adaptada de \cite{article:ATLAS:2008}
 
-Calorímetros são construídos utilizando estruturas modulares. Os
-cabos de transmissão de sinais e alimentação passam por espaços
-existentes entre os módulos (conhecidos como \textit{cracks}). No ATLAS, na região
-de $|\eta|\approx 1,5$ (interconexão entre barril e barril-extendido)
-existe uma descontinuidade nos calorímetros para passagem de cabos de alimentação e dados do detector
-de trajetória e do barril do calorímetro eletromagnético
-\cite{article:ATLAS:2008}. Nesta faixa, há menor quantidade de
-células detectoras e, consequentemente, baixa resolução nas medições
-obtidas (o que pode representar um problema para o sistema de
-filtragem).
+Conforme descrito em~\cite{article:ATLAS:2008}, os calorímetros do
+ATLAS são construídos utilizando estruturas modulares. Os cabos de
+transmissão de sinais e alimentação passam por espaços existentes
+entre os módulos (conhecidos como \textit{cracks}). Na região onde
+$|\eta|\approx 1,5$ (interconexão entre barril e barril estendido)
+existe uma descontinuidade nos calorímetros para passagem de cabos
+de alimentação e dados do detector de trajetória e do barril do
+calorímetro eletromagnético. Em $\eta=0$ são conectadas as duas
+metades (\emph{half-barrels}) do barril do calorímetro
+eletromagnético, um deles cobre a faixa $0<\eta <1,475$ e o outro
+$-1,475<\eta <0$. Em $|\eta|=2,5$ há a junção dos dois blocos
+cilíndricos que compõem a tampa (\emph{inner wheel} e o
+\emph{outer wheel}), que cobrem respectivamente as regiões de
+$2,5<|\eta|<3,2$ e $1,375<|\eta|<2,5$. Nestas faixas, a quantidade
+de células detectoras é reduzida e, consequentemente, uma menor
+resolução nas medições é obtida (o que pode representar um
+problema para o sistema de filtragem).
 
 
-\subsection{Desempenho esperado dos calorímetros}
+\subsection{Desempenho Esperado dos Calorímetros}
 
-Devido a limitações construtivas, a precisão nas medições dos calorímetros do ATLAS varia com a 
-energia e a posição de interação. Uma característica particular do ATLAS é a grande quantidade 
-de material instalado entre o ponto de colisão e o sistema de calorímetros, fato que provoca medição incorreta da 
-energia de elétrons, por exemplo, em 119 GeV ~5$\%$ da energia de elétrons é perdida neste material. A Figura 
-\ref{cap3_fig_enloss} ilustra este problema. Uma fina camada detectora (chamada Pré-Amostrador ou 
-\textit{Pre-Sampler} - PS) foi instalada imediatamente 
-antes da primeira camada do calorímetro eletromagnético numa tentativa de estimar a energia perdida pelas partículas 
-antes de chegarem ao calorímetro. Os sinais medidos no PS são ponderados por um fator $\alpha$ e somados aos sinais
-medidos nas outras camadas para compor a energia total do evento~\cite{book:wigmans:2000}:
+Devido a limitações construtivas, a precisão nas medições dos
+calorímetros do \linebreak ATLAS varia com a energia e a posição
+de interação. Uma característica particular do ATLAS é a grande
+quantidade de material instalado entre o ponto de colisão e o
+sistema de calorímetros, fato que provoca medição incorreta da
+energia de elétrons, por exemplo, em 119 GeV ~5$\%$ da energia de
+elétrons é perdida neste material. A Figura \ref{cap3_fig_enloss}
+ilustra este problema. Uma fina camada detectora (chamada
+Pré-Amostrador ou \textit{Pre-Sampler} - PS) foi instalada
+imediatamente antes da primeira camada do calorímetro
+eletromagnético numa tentativa de estimar a energia perdida pelas
+partículas antes de chegarem ao calorímetro. Os sinais medidos no
+PS são ponderados por um fator $\alpha$ e somados aos sinais
+medidos nas outras camadas para compor a energia total do
+evento~\cite{book:wigmans:2000}:
 \begin{equation}\label{ps}
 E_{tot} = E_{calo} + \alpha E_{ps}.
 \end{equation}
 
 \begin{figure}[h!] \centering
 \includegraphics[width=9cm]{cap3_enperdida}
-\caption[Energia perdida por elétrons antes do calorímetro.]{Energia perdida por elétrons antes do calorímetro, adaptado de~\cite{article:ATLAS:2008}.} \label{cap3_fig_enloss}
+\caption[Energia perdida por elétrons antes do
+calorímetro.]{Energia perdida por elétrons antes do calorímetro,
+adaptado de~\cite{article:ATLAS:2008}.} \label{cap3_fig_enloss}
 \end{figure}
 
-Um outro fator que pode provocar medição incorreta nos calorímetros é o vazamento de energia de elétrons além da 
-terceira camada eletromagnética. O calorímetro eletromagnético foi projetado para conter todo o chuveiro 
-eletromagnético, porém, principalmente os eventos que insidem na região de transição entre o barril e o 
-barril extendido, por encontrarem menor quantidade de material para 
-interagirem, podem alcançar o calorímetro hadrônico. Essa região é conhecida como \textit{crack}, fica localizada próximo a $\eta=1.5$ 
-e apresenta um número reduzido de células detectoras. Conforme ilustrado na Figura \ref{fig_envazahad}, a energia de 
-elétrons é quase totalmente concentrada no calorímetro eletromagnético, porém, quando a partícula interage próximo 
-ao \textit{crack}, uma parcela significativa de energia chega ao calorímetro hadrônico. 
+Um outro fator que pode provocar medição incorreta nos
+calorímetros é o vazamento de energia de elétrons além da terceira
+camada eletromagnética. O calorímetro eletromagnético foi
+projetado para conter todo o chuveiro eletromagnético, porém,
+principalmente os eventos que incidem na região de transição entre
+o barril e o barril estendido ($\eta \sim 1,5$), por encontrarem
+menor quantidade de material para interagirem (\textit{crack}),
+podem alcançar o calorímetro hadrônico. Conforme ilustrado na
+Figura \ref{fig_envazahad}, a energia de elétrons é quase
+totalmente concentrada no calorímetro eletromagnético, porém,
+quando a partícula interage próximo ao \textit{crack}, uma parcela
+significativa de energia chega ao calorímetro hadrônico.
 
 
 \begin{figure} \centering
 \includegraphics[width=9cm]{capt_ensec}
-\caption{Energia normalizada média depositada nas secções eletromagnética e hadrônica em função de $\eta$ para elétrons.} \label{fig_envazahad}
+\caption{Energia normalizada média depositada nas seções
+eletromagnética e hadrônica em função de $\eta$ para elétrons.}
+\label{fig_envazahad}
 \end{figure}
 
-Numa tentativa de corrigir as medições de energia, fatores de ponderação dependentes de $\eta$ são utilizados na 
-estimativa da energia total do evento~\cite{article:ATLAS:2008}:
+Numa tentativa de corrigir as medições de energia, fatores de
+ponderação dependentes de $\eta$ são utilizados na estimativa da
+energia total do evento~\cite{article:ATLAS:2008}:
 \begin{equation}
  E=s(\eta)[c(\eta)+w_0(\eta).E_{PS}+E_{EM1}+E_{EM2}+w_3(\eta).E_{EM3}]
 \end{equation}
-sendo $s$ um fator global de correção, $c$ uma tendência (ou \textit{bias}), $w_0$ corrige a energia perdida antes do 
-calorímetro e $w_3$ corrige o vazamento longitudinal de energia, os termos $E_{PS}$, $E_{EM1}$, $E_{EM2}$ e $E_{EM3}$ 
-representam a energia medida em cada camada do calorímetro eletromagnético (\textit{presampler}, primeira, segunda e 
-terceira camadas eletromagnéticas).
+sendo $s$ um fator global de correção, $c$ uma tendência (ou
+\textit{bias}), $w_0$ corrige a energia perdida antes do
+calorímetro e $w_3$ corrige o vazamento longitudinal de energia,
+os termos $E_{PS}$, $E_{EM1}$, $E_{EM2}$ e $E_{EM3}$ representam a
+energia medida em cada camada do calorímetro eletromagnético
+(\textit{presampler}, primeira, segunda e terceira camadas
+eletromagnéticas).
 
-Os erros relativos ($\frac{\sigma_E}{E}$) esperados em função da energia e de $\eta$ para assinaturas de elétrons 
-são mostrados na Figura \ref{cap3_enres}. Percebe-se que a precisão diminui para baixas energias e próximo ao 
-\textit{crack} ($\eta \approx 1.5$). Sempre que o erro de medição aumenta, a caracterização das partículas 
-é prejudicada, provocando queda de desempenho dos algoritmos de filtragem de elétrons.
+Os erros relativos ($\frac{\sigma_E}{E}$) esperados em função da
+energia e de $\eta$ para assinaturas de elétrons são mostrados na
+Figura \ref{cap3_enres}. Percebe-se que a precisão diminui para
+baixas energias e próximo ao \textit{crack} ($\eta \approx 1.5$).
+Sempre que o erro de medição aumenta, a caracterização das
+partículas é prejudicada, provocando queda de desempenho dos
+algoritmos de filtragem de elétrons.
 
-\begin{figure}[t!]
+\begin{figure}[h!]
 \begin{minipage}[b]{.48\linewidth}
   \centering
  \centerline{\epsfig{file=cap3_enres,width=8cm}}
@@ -803,7 +869,9 @@ são mostrados na Figura \ref{cap3_enres}. Percebe-se que a precisão diminui para
  \vspace{.3cm}
   \centerline{(b)}\medskip
  \end{minipage}
-\caption[Erro relativo do calorímetro na medição da energia de elétrons para diferentes valores de (a) energia e (b)~$\eta$.]{Erro relativo do calorímetro na medição da energia de elétrons para diferentes valores de (a) energia e (b)~$\eta$, adaptado de~\cite{article:ATLAS:2008}.} \label{cap3_enres}
+\caption[Erro relativo do calorímetro na medição da energia de
+elétrons para diferentes valores de (a) energia e
+(b)~$\eta$.]{Erro relativo do calorímetro na medição da energia de
+elétrons para diferentes valores de (a) energia e (b)~$\eta$,
+adaptado de~\cite{article:ATLAS:2008}.} \label{cap3_enres}
 \end{figure}
-
-
